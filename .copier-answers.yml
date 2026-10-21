@@ -1,0 +1,16 @@
+# Changes here will be overwritten by Copier
+_commit: v0.5.0
+_src_path: https://github.com/linkml/linkml-project-copier
+add_example: true
+copyright_year: '2026'
+email: palazzo@unb.br
+existing_license_file: ''
+full_name: Pedro P. Palazzo
+gh_action_docs_preview: true
+gh_action_pypi: false
+github_org: arqtrad
+license: MIT
+project_description: Esquemas LinkML para os Documentários da Arquitetura Tradicional.
+project_name: wasth_schema
+project_slug: wasth_schema
+
