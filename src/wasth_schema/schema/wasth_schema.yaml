@@ -131,6 +131,8 @@ enums:
       local:
 
   RelationType:
+    description: >-
+      Os tipos de relação entre objetos são definidos pelo VRA Core.
     reachable_from:
       source_ontology: vra:isRelatedTo
       include_self: false
@@ -271,7 +273,6 @@ enums:
         meaning: lido:lido00524
       other:
         meaning: lido:lido00136
-
 
 types:
 

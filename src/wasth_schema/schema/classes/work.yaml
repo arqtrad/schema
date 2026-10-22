@@ -33,6 +33,11 @@ classes:
     slot_usage:
 
       id:
+        description: >-
+          Cada edificação terá um identificador gerado a partir do seu
+          georreferenciamento usando Open Location Code ("PlusCode"). Este
+          identificador usa o campo `id`, que será gerado automaticamente pelo
+          programa WASTH.
         range: OlcPlusCode11
 
       record_author:
@@ -42,7 +47,7 @@ classes:
         required: true
 
       category:
-        range: uriorcurie
+        ifabsent: string(http://terminology.lido-schema.org/lido00096)
 
       relation:
         range: RelatedWork

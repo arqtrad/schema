@@ -60,12 +60,6 @@ slots:
     slot_uri: schema:identifier # dcterms:identifier
     description: Local or external identifier.
 
-  id:
-    identifier: true
-    range: uriorcurie
-    slot_uri: dcterms:identifier
-    description: Unique identifier for this object.
-
   description:
     required: true
     range: string

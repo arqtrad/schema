@@ -25,18 +25,66 @@ classes:
     description: >-
       Common data and methods for WASTH objects: architectural works,
       places, and vocabulary concepts.
+    attributes:
+
+      id:
+        identifier: true
+        range: uriorcurie
+        slot_uri: dcterms:identifier
+        description: Unique identifier for this object.
+
+      author:
+        range: OrcidId
+        slot_uri: dcterms:creator
+        description: ORCID iD of the record author or maintainer.
+
+      date:
+        range: date
+        slot_uri: dcterms:created
+        description: Date the record was created or last substantively revised.
+
+      title:
+        description: The preferred human-readable label for a Thing.
+        required: true
+        range: string
+        slot_uri: dcterms:title # schema:name
+
+      title_source:
+        description: >-
+          📚 A fonte do título title_source é opcional ; um título pode ser
+          atestado em mais de uma fonte, por isso este campo é uma lista de
+          itens (cada item começa com um hífen).
+
+          Se a fonte for cadastrada, o campo `refid` deve conter a chave de
+          citação (citation key) que consta do registro bibliográfico na
+          biblioteca do nosso projeto de pesquisa no Zotero. Em geral, a chave
+          de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
+
+          Se necessário, incluir no campo note uma especificação adicional,
+          como o número da página da referência bibliográfica de onde a
+          informação foi extraída.
+
+          Todos os campos source no restante da ficha devem ser preenchidos do
+          mesmo modo. (Equivalente DublinCore: bibliographiCitation).
+        range: BibliographicCitation
+        multivalued: true
+        inlined_as_list: true
+
+      category:
+        description: >-
+          An index element for the broad category the object/work in focus
+          belongs to. Examples may include human-made object or natural object.
+        range: uriorcurie
+        designates_type: true
+        slot_uri: lido:lidoCategory
+
     slots:
-      - id
-      - record_author
-      - record_date
-      - title
-      - category
       - description
       - record_rights
       # Os campos abaixo são opcionais
       - title_type
       - title_source
-      - alternate_name
+      - alt_name
       - bibliographic_citation
       - identifiers
       - temporal
@@ -47,21 +95,23 @@ classes:
 
   Appellation:
     attributes:
-      title_type:
-        alias: type
-        slot_uri: lido:Appellation
-        range: TitleType
-        ifabsent: string(descriptive)
+
       title_preference:
+        description: >-
+          Indica se o nome em questão deve ser oculto ou não, se é uma versão
+          alternativa ou uma variante de grafia, etc.
         alias: label_type
         range: LabelType
         ifabsent: string(alternative)
+
     slots:
       - display
+      - title_type
       - bibliographic_citation
 
   RelatedObject:
     description: Relation to another object or work.
+    attributes:
     slots:
       - display
       - relation_type
@@ -80,43 +130,27 @@ classes:
 
 slots:
 
-  record_author:
-    alias: author
-    range: OrcidId
-    slot_uri: dcterms:creator
-    description: ORCID iD of the record author or maintainer.
+  alt_name:
+    description: >-
+      O bloco titles permite cadastrar outros nomes pelos quais a edificação
+      será eventualmente conhecida. É uma lista opcional de itens, e se
+      existir, os campos de cada item da lista devem ser preenchidos como os do
+      título principal.
 
-  record_date:
-    alias: date
-    range: date
-    slot_uri: dcterms:created
-    description: Date the record was created or last substantively revised.
+      O campo display de cada item contém o texto do título (nome).
 
-  title:
-    required: true
-    range: string
-    slot_uri: dcterms:title # schema:name
-
-  category:
-    range: string
-    designates_type: true
-    slot_uri: lido:lidoCategory
-
-  title_type:
-    recommended: true
-    range: TitleType
-    slot_uri: dcterms:type
-
-  title_source:
-    range: BibliographicCitation
-    multivalued: true
-    inlined_as_list: true
-
-  alternate_name:
-    description: Alternative or structured appellations for the object.
+      Este bloco pode ser omitido por completo se não houver títulos
+      alternativos.
     range: Appellation
     multivalued: true
     inlined_as_list: true
+
+  title_type:
+    description: Indica se o título é um nome próprio, descritivo, etc.
+    alias: type
+    slot_uri: lido:Appellation
+    range: TitleType
+    ifabsent: string(descriptive)
 
   identifiers:
     range: TypedReference
