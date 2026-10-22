@@ -1,0 +1,237 @@
+id: https://tradicional.arq.br/schema/work
+name: wasth-work
+title: WASTH Work
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  wasth: https://tradicional.arq.br/schema/
+  lido: http://www.lido-schema.org/
+  dcterms: http://purl.org/dc/terms/
+  unit: http://qudt.org/vocab/unit/
+  skos: http://www.w3.org/2004/02/skos/core#
+
+default_prefix: wasth
+default_range: string
+
+imports:
+  - linkml:types
+  - thing
+  - shared
+  - concept
+  - spatial
+  - temporal
+  - resource
+
+classes:
+
+  Work:
+    is_a: Thing
+    description: >-
+      A WASTH record for an architectural work, aligned with the LIDO
+      object/work record model.
+
+    slot_usage:
+
+      id:
+        range: OlcPlusCode11
+
+      record_author:
+        required: true
+
+      record_date:
+        required: true
+
+      category:
+        range: uriorcurie
+
+      relation:
+        range: RelatedWork
+        slot_uri: lido:relatedWorkSet
+
+    slots:
+      - work_type_condition
+      - work_type_form
+      - work_type_function
+      - work_type_context
+      - work_type_material
+      - work_type_technique
+      - work_type_subject_type
+      - work_type_use
+      - measurements
+      - medium
+      - spatial
+      - classification
+      - tags
+      - location_historic
+      - inscriptions
+      - collection
+      - repository
+      - subject
+      - work_rights
+      - resources
+
+  Topic:
+    slots:
+      - topic_type
+      - topic_extent
+      - topic_concept
+
+  RelatedWork:
+    is_a: RelatedObject
+    slot_usage:
+      related_object:
+        range: Work
+      relation_display:
+        slot_uri: lido:displayRelatedWork
+    description: |
+      As formas mais comuns de relação no nosso projeto são :
+
+        - depicted in: A edificação é representada numa pintura ou desenho
+          artístico;
+
+        - documented by: Informações sobre a edificação estão publicadas numa
+          referência bibliográfica, processo administrativo ou outro documento
+          textual impresso, manuscrito ou eletrônico;
+
+        - has plan / has floor plan / has section / has elevation / has
+          rendering: Essas relações mostram a existência de desenhos técnicos
+          da edificação, sejam eles históricos ou recentes, compilados de
+          fontes externas a este projeto de pesquisa.
+
+        - has construction drawing / has design / has sketch: Essas relações se
+          referem a desenhos históricos (fontes primárias) que atestam o
+          processo de projeto da edificação.
+
+      ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER
+      CADASTRADOS NO GRUPO resource, MAIS ABAIXO.
+
+      O grupo relation é destinado unicamente a cadastrar relações desta
+      edificação com objetos autônomos, tais como outras edificações, conjuntos
+      urbanos, obras de artes visuais, referências bibliográficas ou acervos
+      arquivísticos.
+
+slots:
+
+  work_type_condition:
+    recommended: true
+    range: ConceptReference
+    multivalued: true
+    inlined_as_list: false
+
+  work_type_form:
+    recommended: true
+    range: ConceptReference
+    multivalued: true
+    inlined_as_list: false
+
+  work_type_function:
+    recommended: true
+    range: ConceptReference
+    multivalued: true
+    inlined_as_list: false
+
+  work_type_context:
+    recommended: true
+    range: ConceptReference
+    multivalued: true
+    inlined_as_list: false
+
+  work_type_material:
+    recommended: true
+    range: MaterialTech
+    multivalued: true
+    inlined_as_list: false
+
+  work_type_technique:
+    recommended: true
+    range: MaterialTech
+    multivalued: true
+    inlined_as_list: false
+
+  work_type_subject_type:
+    recommended: true
+    range: ConceptReference
+    multivalued: true
+    inlined_as_list: false
+
+  work_type_use:
+    recommended: true
+    range: ConceptReference
+    multivalued: true
+    inlined_as_list: false
+
+  classification:
+    range: ConceptReference
+    multivalued: true
+    inlined_as_list: false
+    slot_uri: lido:classification
+
+  tags:
+    range: string
+    multivalued: true
+    description: >-
+      Provisional uncontrolled keywords. Prefer `classifications` or
+      `subject` for curated vocabulary terms.
+
+  location_historic:
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+    description: >-
+      Antigas jurisdições ou designações para o lugar onde o objeto se
+      encontra. Para um sítio de onde o objeto foi fisicamente removido, usar
+      `spatial: former_site:`.
+
+  inscriptions:
+    range: Inscription
+    multivalued: true
+    inlined_as_list: true
+
+  collection:
+    range: Thing
+    multivalued: true
+    inlined_as_list: false
+    slot_uri: lido:collection
+
+  subject:
+    range: Topic
+    multivalued: true
+    inlined_as_list: true
+    slot_uri: lido:subjectSet
+    description: |
+      Recomenda-se articular o tema em três níveis : descrição, identificação e
+      interpretação.
+
+      DESCRIÇÃO se refere a elementos imediatamente reconhecíveis sem
+      necessidade de conhecimento especializado : coluna(ta)s, arcadas,
+      brasões, cunhais, ornamentos em geral.
+
+      IDENTIFICAÇÃO se refere ao reconhecimento das particularidades
+      arquitetônicas ou iconográficas dos elementos : p. ex. as colunas são da
+      ordem toscana, a abóbada é de aresta, o brasão pertence a tal família...
+
+      INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou
+      político dos elementos, incluindo questões de status e estilo.
+
+  topic_type:
+    range: TopicType
+    description: Tipos de temas segundo o VRA Core.
+
+  topic_extent:
+    range: Thing
+    description: Parte do objeto à qual o tema pertence, se for o caso.
+
+  topic_concept:
+    range: Concept
+    slot_uri: skos:Concept
+
+  work_rights:
+    range: Right
+    multivalued: true
+    inlined_as_list: true
+    slot_uri: lido:rightsWorkSet
+
+  resources:
+    range: Resource
+    multivalued: true
+    inlined_as_list: true

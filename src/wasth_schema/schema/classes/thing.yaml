@@ -1,0 +1,165 @@
+id: https://tradicional.arq.br/schema/thing
+name: wasth-thing
+title: WASTH common object model
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  wasth: https://tradicional.arq.br/schema/
+  dcterms: http://purl.org/dc/terms/
+  schema: http://schema.org/
+  lido: http://www.lido-schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+
+default_prefix: wasth
+default_range: string
+
+imports:
+  - linkml:types
+  - resource
+  - shared
+
+classes:
+
+  Thing:
+    abstract: true
+    description: >-
+      Common data and methods for WASTH objects: architectural works,
+      places, and vocabulary concepts.
+    slots:
+      - id
+      - record_author
+      - record_date
+      - title
+      - category
+      - description
+      - record_rights
+      # Os campos abaixo são opcionais
+      - title_type
+      - title_source
+      - alternate_name
+      - bibliographic_citation
+      - identifiers
+      - temporal
+      - repository
+      - collection
+      - relation
+      - content
+
+  Appellation:
+    attributes:
+      title_type:
+        alias: type
+        slot_uri: lido:Appellation
+        range: TitleType
+        ifabsent: string(descriptive)
+      title_preference:
+        alias: label_type
+        range: LabelType
+        ifabsent: string(alternative)
+    slots:
+      - display
+      - bibliographic_citation
+
+  RelatedObject:
+    description: Relation to another object or work.
+    slots:
+      - display
+      - relation_type
+      - related_object
+      - resource
+      - related_object_type
+      - related_object_note
+      - bibliographic_citation
+
+  Repository:
+    is_a: Thing
+    description: Entidade com existência jurídica e espacial.
+    slots:
+      - spatial
+      - legal_body
+
+slots:
+
+  record_author:
+    alias: author
+    range: OrcidId
+    slot_uri: dcterms:creator
+    description: ORCID iD of the record author or maintainer.
+
+  record_date:
+    alias: date
+    range: date
+    slot_uri: dcterms:created
+    description: Date the record was created or last substantively revised.
+
+  title:
+    required: true
+    range: string
+    slot_uri: dcterms:title # schema:name
+
+  category:
+    range: string
+    designates_type: true
+    slot_uri: lido:lidoCategory
+
+  title_type:
+    recommended: true
+    range: TitleType
+    slot_uri: dcterms:type
+
+  title_source:
+    range: BibliographicCitation
+    multivalued: true
+    inlined_as_list: true
+
+  alternate_name:
+    description: Alternative or structured appellations for the object.
+    range: Appellation
+    multivalued: true
+    inlined_as_list: true
+
+  identifiers:
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+    description: Published or external identifiers for the object.
+
+  temporal:
+    description: Temporalidade do objeto.
+    range: Event
+    multivalued: true
+    inlined_as_list: true
+
+  collection:
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+    description: Collections or aggregations to which the object belongs.
+
+  repository:
+    range: Repository
+    multivalued: true
+    inlined_as_list: true
+
+  legal_body:
+    range: LegalBody
+    required: true
+
+  relation:
+    range: RelatedObject
+    multivalued: true
+    inlined_as_list: true
+    slot_uri: skos:related
+
+  record_rights:
+    required: true
+    range: Right
+    multivalued: true
+    inlined_as_list: true
+
+  content:
+    recommended: true
+    range: string
+    description: >-
+      Narrative body content. In the Markdown adapter this corresponds to
+      the document body after YAML frontmatter.

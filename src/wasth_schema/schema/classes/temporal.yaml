@@ -1,0 +1,246 @@
+id: https://tradicional.arq.br/schema/temporal
+name: wasth-temporal
+title: WASTH events, subjects, and related objects
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  wasth: https://tradicional.arq.br/schema/
+  dcterms: http://purl.org/dc/terms/
+  lido: http://www.lido-schema.org/
+  ulan: http://vocab.getty.edu/ulan/
+  wd: http://www.wikidata.org/entity/
+
+default_prefix: wasth
+default_range: string
+
+imports:
+  - linkml:types
+  - resource
+  - shared
+  - spatial
+  - thing
+
+classes:
+  Event:
+    description: Event in the history or documentation of a Work.
+    slots:
+      - description
+      - href # Holdover from TimelineJS3, get rid of it?
+      - event_type
+      - actor_role
+      - event_start_date
+      - event_end_date
+      - periods
+      - cultures
+      - event_places
+      - event_place_type
+      - methods
+      - event_materials_tech
+      - event_measurements
+      - related
+      - things_present
+      - event_media
+
+  EventDate:
+    description: Exact or estimated date expression.
+
+    slots:
+      - display
+      - earliest_date
+      - latest_date
+      - date_type
+
+    rules:
+      - description: >-
+          If both dates are present, earliest_date must not be later than
+          latest_date.
+        preconditions:
+          slot_conditions:
+            earliest_date:
+              value_presence: PRESENT
+            latest_date:
+              value_presence: PRESENT
+        postconditions:
+          slot_conditions:
+            date_order_valid:
+              equals_expression: "{earliest_date} <= {latest_date}"
+
+  Actor:
+    description: Agent and role in an event.
+    slots:
+      - actor_type
+      - actor_name
+      - role_in_event
+      - actor_qualifier
+      - actor_extent
+      - bibliographic_citation
+
+  Topic:
+    description: Subject or iconographic topic.
+    slots:
+      - topic_display
+      - topic_type
+      - topic_extent
+      - topic_concept
+
+slots:
+  event_note:
+    alias: text
+    range: Note
+    inlined: true
+
+  event_type:
+    alias: type
+    required: true
+    range: EventType
+
+  actor_role:
+    range: Actor
+    multivalued: true
+    inlined_as_list: true
+
+  event_start_date:
+    alias: start_date
+    range: EventDate
+    inlined: true
+
+  event_end_date:
+    alias: end_date
+    range: EventDate
+    inlined: true
+
+  periods:
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+
+  cultures:
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+
+  event_places:
+    alias: places
+    range: Site
+    multivalued: true
+    inlined_as_list: true
+
+  event_place_type:
+    alias: place_type
+    range: uriorcurie
+    pattern: '^http://terminology\.lido-schema\.org/lido[0-9]{5}$'
+
+  methods:
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+
+  event_materials_tech:
+    alias: materials_tech
+    range: MaterialTech
+    multivalued: true
+    inlined_as_list: true
+
+  event_measurements:
+    alias: measurements
+    range: Size
+    multivalued: true
+    inlined_as_list: true
+
+  related:
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+
+  things_present:
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+
+  event_media:
+    alias: media
+    range: Media
+    multivalued: true
+    inlined_as_list: true
+
+  earliest_date:
+    range: date
+
+  latest_date:
+    range: date
+
+  date_type:
+    alias: type
+    required: true
+    range: DateQualifier
+
+  actor_type:
+    alias: type
+    range: AgentType
+    ifabsent: string(personal)
+
+  actor_name:
+    alias: name
+    range: TypedReference
+    inlined: true
+
+  role_in_event:
+    range: RoleType
+    inlined: true
+
+  actor_qualifier:
+    alias: qualifier
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+
+  actor_extent:
+    alias: extent
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+
+  topic_display:
+    alias: display
+    range: string
+
+  topic_type:
+    alias: type
+    required: true
+    range: TopicType
+
+  topic_extent:
+    alias: extent
+    range: TypedReference
+    inlined: true
+
+  topic_concept:
+    alias: concept
+    required: true
+    range: TypedReference
+    inlined: true
+
+  relation_type:
+    alias: type
+    range: RelationType
+    required: true
+
+  related_object:
+    alias: name
+    range: Thing
+    required: true
+    symmetric: true
+    inlined: false
+
+  resource:
+    range: Resource
+    multivalued: true
+    inlined_as_list: true
+
+  related_object_type:
+    alias: object_type
+    range: uriorcurie
+
+  related_object_note:
+    alias: object_note
+    range: Note

@@ -1,0 +1,156 @@
+id: https://tradicional.arq.br/schema/shared
+name: wasth-shared
+title: WASTH shared structures
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  wasth: https://tradicional.arq.br/schema/
+  lido: http://www.lido-schema.org/
+
+default_prefix: wasth
+default_range: string
+
+imports:
+  - linkml:types
+  - concept
+
+classes:
+
+  TypedReference:
+    description: >-
+      Reference to a local record, IRI, URI, or LIDO terminology term.
+    slots:
+      - reference_type
+      - term
+      - refid
+      - display
+      - bibliographic_citation
+      - source
+
+  Right:
+    description: Rights statement associated with a record, resource, or note.
+    slots:
+      - right_concept
+      - right_type
+      - right_temporal
+      - right_holder
+
+  LegalBody:
+    description: Personal, corporate, family, or other responsible body.
+    slots:
+      - legal_body_type
+      - legal_body_name
+
+  Header:
+    description: Presentation metadata for the WASTH interface.
+    slots:
+      - teaser
+      - overlay_image
+      - caption
+
+slots:
+
+  href:
+    description: Um hyperlink simples.
+    range: uriorcurie
+
+  refid:
+    key: true
+    range: uriorcurie
+    slot_uri: schema:identifier # dcterms:identifier
+    description: Local or external identifier.
+
+  id:
+    identifier: true
+    range: uriorcurie
+    slot_uri: dcterms:identifier
+    description: Unique identifier for this object.
+
+  description:
+    required: true
+    range: string
+    slot_uri: dcterms:description # schema:description
+    description: A human-readable description for a thing
+
+  bibliographic_citation:
+    recommended: true
+    range: BibliographicCitation
+    multivalued: true
+    inlined_as_list: true
+    slot_uri: dcterms:bibliographicCitation
+
+  concept:
+    alias: name
+    range: Concept
+    required: true
+
+  extent:
+    range: TypedReference
+
+  reference_type:
+    alias: type
+    range: ReferenceType
+    ifabsent: string(uri)
+
+  term:
+    range: uriorcurie
+    pattern: '^http://terminology\.lido-schema\.org/lido[0-9]{5}$'
+    description: LIDO terminology term.
+
+  display:
+    range: string
+    description: Human-readable display label.
+
+  source:
+    range: LegalBody
+    multivalued: true
+    inlined_as_list: true
+
+  note_headline:
+    alias: headline
+    range: string
+
+  rights:
+    range: Right
+    inlined: true
+
+  right_concept:
+    alias: concept
+    range: TypedReference
+    inlined: true
+
+  right_type:
+    alias: type
+    range: RightsType
+    ifabsent: string(generic)
+
+  right_temporal:
+    alias: temporal
+    range: EventDate
+    inlined: true
+
+  right_holder:
+    alias: holder
+    range: LegalBody
+    inlined: true
+
+  legal_body_type:
+    alias: type
+    range: RepositoryType
+    ifabsent: string(corporate)
+
+  legal_body_name:
+    alias: name
+    range: TypedReference
+    inlined: true
+
+  caption:
+    description: Legenda descritiva ou explicativa.
+    alias: caption
+    range: string
+
+  teaser:
+    range: uriorcurie
+
+  overlay_image:
+    range: uriorcurie

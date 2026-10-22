@@ -1,0 +1,98 @@
+id: https://tradicional.arq.br/schema/place
+name: wasth-place
+title: WASTH Place
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  wasth: https://tradicional.arq.br/schema/
+  schema: http://schema.org/
+  dcterms: http://purl.org/dc/terms/
+  lido: http://www.lido-schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  iso: http://purl.org/iso25964/skos-thes#
+  geo: http://www.opengis.net/ont/geosparql#
+
+default_prefix: wasth
+default_range: string
+
+imports:
+  - linkml:types
+  - shared
+  - thing
+  - spatial
+
+classes:
+  Place:
+    is_a: Thing
+    description: >-
+      A named place with optional geographic location, administrative
+      hierarchy, classification, and external identifiers.
+      A Place may be referenced as the spatial coverage of a Work.
+
+    slots:
+      - place_type
+      - place_function
+      - spatial
+
+    slot_usage:
+
+      id:
+        range: OlcPlusCode11
+
+      record_author:
+        required: true
+
+      record_date:
+        required: true
+
+      title:
+        description: Preferred or current name of the place.
+        slot_uri: skos:prefLabel
+
+      title_type:
+        description: >-
+          Type of the place name. For a Place record, this will often be
+          `geographic` when the name represents an administrative or
+          geographic entity.
+        range: RepositoryType
+
+      titles:
+        description: >-
+          Alternative, historical, or vernacular names for the place.
+        slot_uri: skos:altLabel
+
+      description:
+        description: >-
+          Short description of the place, its extent, or its significance.
+        slot_uri: skos:definition
+
+      content:
+        description: >-
+          Longer narrative or scope note about the place.
+        slot_uri: skos:scopeNote
+
+slots:
+  place_type:
+    description: >-
+      Classification of the kind of place, such as inhabited place, rural
+      agglomeration, town, city, or municipality.
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+    slot_uri: lido:objectWorkTypeWrap
+
+  place_function:
+    description: >-
+      Function or administrative role of the place, such as municipality
+      seat, state capital, or federal capital.
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+    slot_uri: lido:objectWorkTypeWrap
+
+  part_of:
+    description: >-
+      Parent place in an administrative, geographic, or historical hierarchy.
+    range: Place
+    inlined: false
+    slot_uri: iso:broaderPartitive

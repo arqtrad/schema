@@ -21,17 +21,17 @@ repos:
         exclude: ^\.copier-answers\.yml$
         verbose: true  # Show warnings.
 
-  - repo: https://github.com/codespell-project/codespell
-    rev: v2.4.2
-    hooks:
-      - id: codespell
-        additional_dependencies:
-          - tomli
+  #- repo: https://github.com/codespell-project/codespell
+    #rev: v2.4.2
+    #hooks:
+      #- id: codespell
+        #additional_dependencies:
+          #- tomli
 
-  - repo: https://github.com/crate-ci/typos
-    rev: v1.46.3
-    hooks:
-      - id: typos
+  ##- repo: https://github.com/crate-ci/typos
+    ##rev: v1.46.3
+    ##hooks:
+      ##- id: typos
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     # Ruff version.

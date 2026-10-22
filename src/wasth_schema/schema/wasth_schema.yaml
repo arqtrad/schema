@@ -1,98 +1,316 @@
 ---
-id: https://w3id.org/arqtrad/wasth_schema
+id: https://tradicional.arq.br/schema
 name: wasth_schema
 title: wasth_schema
 description: |-
   Esquemas LinkML para os Documentários da Arquitetura Tradicional.
 license: MIT
 see_also:
-  - https://arqtrad.github.io/wasth_schema
+  - https://tradicional.arq.br/schema
 
 prefixes:
-  wasth_schema: https://w3id.org/arqtrad/wasth_schema/
+  wasth: https://tradicional.arq.br/schema
   linkml: https://w3id.org/linkml/
-  biolink: https://w3id.org/biolink/vocab/
   schema: http://schema.org/
-  PATO: http://purl.obolibrary.org/obo/PATO_
-  example: http://www.example.org/rdf#
-default_prefix: wasth_schema
+  dcterms: http://purl.org/dc/terms/
+  la: https://linked.art/ns/terms/
+  lido: http://www.lido-schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  iso: http://purl.org/iso25964/skos-thes#
+  geo: http://www.opengis.net/ont/geosparql#
+  geonames: http://www.geonames.org/ontology#
+  aat: http://vocab.getty.edu/aat/
+  tgn: http://vocab.getty.edu/tgn/
+  ulan: http://vocab.getty.edu/ulan/
+  vra: http://purl.org/vra/
+  wd: http://www.wikidata.org/entity/
+default_prefix: wasth
 default_range: string
 
 imports:
   - linkml:types
-
-classes:
-
-  NamedThing:
-    description: >-
-      A generic grouping for any identifiable entity
-    slots:
-      - id
-      - name
-      - description
-    class_uri: schema:Thing
-
-  Person:
-    is_a: NamedThing
-    description: >-
-      Represents a Person
-    slots:
-      - primary_email
-      - birth_date
-      - age_in_years
-      - vital_status
-    slot_usage:
-      primary_email:
-        pattern: "^\\S+@[\\S+\\.]+\\S+"
-
-  PersonCollection:
-    tree_root: true
-    description: >-
-      A holder for Person objects
-    attributes:
-      people:
-        range: Person
-        multivalued: true
-        inlined_as_list: true
-
-slots:
-  id:
-    identifier: true
-    slot_uri: schema:identifier
-    range: uriorcurie
-    description: A unique identifier for a thing
-  name:
-    slot_uri: schema:name
-    description: A human-readable name for a thing
-  description:
-    slot_uri: schema:description
-    description: A human-readable description for a thing
-  primary_email:
-    slot_uri: schema:email
-    description: The main email address of a person
-  birth_date:
-    slot_uri: schema:birthDate
-    range: date
-    description: Date on which a person is born
-  age_in_years:
-    range: integer
-    description: Number of years since birth
-  vital_status:
-    range: PersonStatus
-    description: living or dead status
+  - classes/concept
+  - classes/place
+  - classes/resource
+  - classes/shared
+  - classes/spatial
+  - classes/temporal
+  - classes/thing
+  - classes/work
 
 enums:
-  PersonStatus:
-    description:
-      The vital status of a person
+
+  AgentType:
+    description: LIDO actor type.
     permissible_values:
-      ALIVE:
-        description: the person is living
-        meaning: PATO:0001421
-      DEAD:
-        description: the person is deceased
-        meaning: PATO:0001422
-      UNKNOWN:
-        description: the vital status is not known
-        todos:
-          - map this to an ontology
+      personal:
+        meaning: lido:lido00163
+      corporate:
+        meaning: lido:lido00413
+      family:
+        meaning: lido:lido00166
+      other:
+        meaning: lido:lido00165 # Other groups of persons
+
+  DateQualifier:
+    description: Exatidão da data indicada.
+    permissible_values:
+      estimated:
+      exact:
+
+  EventType:
+    description: Tipo de evento segundo o VRA Core.
+    reachable_from:
+      source_ontology: vra:Event
+      include_self: false
+
+  GeometryType:
+    description: geoJSON types of area geometry.
+    permissible_values:
+      Polygon:
+      MultiPolygon:
+
+  InscriptionType:
+    description: VRA Core types for inscriptions.
+    permissible_values:
+      signature:
+      mark:
+      caption:
+      date:
+      text:
+      translation:
+      other:
+
+  LabelType:
+    description: SKOS label types.
+    permissible_values:
+      alternative:
+        meaning: skos:altLabel # lido:lido00170
+        description: >-
+          Acronyms, abbreviations, spelling variants, and irregular
+          plural/singular forms may be included among the alternative labels
+          for a concept. Mis-spelled terms are normally included as hidden
+          labels (see skos:hiddenLabel).
+      display:
+        meaning: lido:lido00526
+        description: >-
+          A term, an appellation, or a title as the variant intended to be
+          displayed to the end user; most often used for personal names to
+          indicate a display in natural word order.
+      hidden:
+        meaning: skos:hiddenLabel # lido:lido00426
+        description: >-
+          A lexical label for a resource that should be hidden when generating
+          visual displays of the resource, but should still be accessible to
+          free text search operations.
+      index:
+        meaning: lido:lido00961
+        description: >-
+          A term, an appellation, a title, or an identifier as the term to be
+          used in indexes and other lists where inverted order is appropriate.
+          There may be only one term marked as an index label per record. For
+          names of persons, the preferred label is often also the index label.
+      preferred:
+        meaning: skos:prefLabel # lido:lido00169
+        description: >-
+          The preferred lexical label for a resource, in a given language.
+
+  MaterialTechType:
+    description: >-
+      Define se o material ou técnica se aplica à estrutura ou ao revestimento.
+    permissible_values:
+      medium:
+      support:
+      other:
+
+  ReferenceType:
+    description: Tipos de referências a objetos externos previstos no LIDO.
+    permissible_values:
+      uri:
+      iri:
+      local:
+
+  RelationType:
+    reachable_from:
+      source_ontology: vra:isRelatedTo
+      include_self: false
+      relationship_types:
+        - rdfs:subPropertyOf
+
+  RoleType:
+    description: Contribuições de um agente a um evento.
+    permissible_values:
+      author:
+        meaning: vra:author
+      builder:
+        meaning: vra:builder
+      collector:
+        meaning: vra:collector
+      commissioner:
+        meaning: vra:commissioner
+      composer:
+        meaning: vra:composer
+      contractor:
+        meaning: vra:contractor
+      creator:
+        meaning: vra:creator
+      dealer:
+        meaning: vra:dealer
+      decorator:
+        meaning: vra:decorator
+      designer:
+        meaning: vra:designer
+      developer:
+        meaning: vra:developer
+      director:
+        meaning: vra:director
+      donator:
+        meaning: vra:donator
+      drafter:
+        meaning: vra:drafter
+      drawer:
+        meaning: vra:drawer
+      editor:
+        meaning: vra:editor
+      engineer:
+        meaning: vra:engineer
+      financier:
+        meaning: vra:financier
+      formerOwner:
+        meaning: vra:formerOwner
+      manufacturer:
+        meaning: vra:manufacturer
+      owner:
+        meaning: vra:owner
+      painter:
+        meaning: vra:painter
+      partnerInSetWith:
+        meaning: vra:partnerInSetWith
+      performer:
+        meaning: vra:performer
+      photographer:
+        meaning: vra:photographer
+      printer:
+        meaning: vra:printer
+      producer:
+        meaning: vra:producer
+      programmer:
+        meaning: vra:programmer
+      restorer:
+        meaning: vra:restorer
+      writer:
+        meaning: vra:writer
+
+  RepositoryType:
+    description: Type of repository or legal body.
+    permissible_values:
+      corporate:
+      geographic:
+      personal:
+      other:
+
+  RightsType:
+    description: LIDO expressions for rights types.
+    permissible_values:
+      generic:
+        meaning: lido:lido00920
+      specific:
+        meaning: lido:lido00921
+
+  SkosMappingRelation:
+    description: SKOS mapping properties.
+    permissible_values:
+      close:
+        meaning: skos:closeMatch
+      exact:
+        meaning: skos:exactMatch
+      broad:
+        meaning: skos:broadMatch
+      narrow:
+        meaning: skos:narrowMatch
+      related:
+        meaning: skos:relatedMatch
+
+  SkosHierarchicalRelation:
+    description: SKOS-THES hierarchical relation type.
+    permissible_values:
+      broader:
+        meaning: skos:broader
+      transitive:
+        meaning: skos:broaderTransitive
+      generic:
+        meaning: skos:broaderGeneric
+      instantial:
+        meaning: skos:broaderInstantial
+      partitive:
+        meaning: skos:broaderPartitive
+
+  TitleType:
+    description: VRA Core title types.
+    permissible_values:
+      brandName:
+      cited:
+      creator:
+      descriptive:
+      former:
+      inscribed:
+      owner:
+      popular:
+      repository:
+      translated:
+      other:
+
+  TopicType:
+    description: VRA Core topic types.
+    permissible_values:
+      descriptive:
+        meaning: lido:lido00525
+      iconographic:
+        meaning: lido:lido00745
+      concept:
+        meaning: lido:lido00524
+      other:
+        meaning: lido:lido00136
+
+
+types:
+
+  CslCitekey:
+    description: Citation Style Language citekey, beginning with '@'
+    uri: xsd:str
+    base: str
+    pattern: '^@[a-zA-Z0-9_][\w:.#$%&\-+?<>~/]*$'
+
+  GeoJSONCoordinateArray:
+    description: >-
+      JSON array of GeoJSON positions. The valid nesting depends on the
+      associated geometry type.
+    uri: xsd:str
+    base: str
+
+  Latitude:
+    description: Latitude in decimal degrees.
+    uri: xsd:double
+    base: float
+    minimum_value: -90
+    maximum_value: 90
+
+  Longitude:
+    description: Longitude in decimal degrees.
+    uri: xsd:double
+    base: float
+    minimum_value: -180
+    maximum_value: 180
+
+  OrcidId:
+    description: >-
+      Bare ORCID iD, without the https://orcid.org/ prefix.
+    uri: xsd:str
+    base: str
+    pattern: '^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$'
+
+  OlcPlusCode11:
+    description: Open Location Code (Plus Code) with a resolution of 11 digits.
+    uri: xsd:str
+    base: str
+    pattern: '^([2-9CFGHJMPQRVWX]{8})\+([2-9CFGHJMPQRVWX]{3})$'

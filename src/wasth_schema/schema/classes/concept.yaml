@@ -1,0 +1,60 @@
+id: https://tradicional.arq.br/schema/concept
+name: wasth-concept
+title: WASTH SKOS-THES concept model
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  wasth: https://tradicional.arq.br/schema/
+  aat: http://vocab.getty.edu/aat/
+  skos: http://www.w3.org/2004/02/skos/core#
+  iso: http://purl.org/iso25964/skos-thes#
+  dcterms: http://purl.org/dc/terms/
+  vra: http://purl.org/vra/
+  unesco: http://vocabularies.unesco.org/thesaurus/
+
+default_prefix: wasth
+default_range: string
+
+imports:
+  - linkml:types
+  - resource
+  - shared
+  - thing
+
+classes:
+
+  Concept:
+    is_a: Thing
+    class_uri: skos:Concept
+    description: >-
+      A WASTH controlled-vocabulary concept, compatible with SKOS and
+      SKOS-THES.
+    slot_usage:
+      relation:
+        range: ConceptReference
+    slots:
+      - broader
+      - narrower
+
+  ConceptReference:
+    description: Atribuição de vocabulário controlado com citação de apoio.
+    slots:
+      - display
+      - concept
+      - extent
+      - bibliographic_citation
+
+slots:
+  broader:
+    range: ConceptReference
+    multivalued: true
+    inlined_as_list: true
+    slot_uri: skos:broader
+    inverse: narrower
+
+  narrower:
+    range: ConceptReference
+    multivalued: true
+    inlined_as_list: true
+    slot_uri: skos:narrower
+    inverse: broader

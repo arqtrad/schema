@@ -1,0 +1,299 @@
+id: https://tradicional.arq.br/schema/resource
+name: wasth-resource
+title: WASTH resources, media, and physical description
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  wasth: https://tradicional.arq.br/schema/
+  lido: http://www.lido-schema.org/
+
+default_prefix: wasth
+default_range: string
+
+imports:
+  - linkml:types
+  - shared
+  - concept
+  - temporal
+
+classes:
+
+  BibliographicCitation:
+    description: Bibliographic or documentary citation using a CSL citekey.
+    slots:
+      - citation_refid
+      - citation_note
+      - display
+
+  Note:
+    slots:
+      - note_headline
+      - description
+      - bibliographic_citation
+      - rights
+
+  Inscription:
+    is_a: Thing
+    slot_usage:
+      category:
+        alias: type
+        required: true
+        range: InscriptionType
+        ifabsent: string(text)
+      content:
+        alias: transcription
+
+  ExtentDescription:
+    slots:
+      - display
+      - measurements
+
+  MediumDescription:
+    slots:
+      - display
+      - material
+      - technique
+
+  Size:
+    description: Measurement of an object, resource, or component.
+    slots:
+      - size_type
+      - size_extent
+      - size_value
+      - size_unit
+      - size_qualifier
+      - size_format
+      - size_shape
+      - size_scale
+      - size_source
+
+  MaterialTech:
+    is_a: ConceptReference
+    slots:
+      - material_tech_type
+
+  Resource:
+    description: Digital or documentary resource associated with a Work.
+    slots:
+      - resource_id
+      - resource_author
+      - resource_rel_type
+      - preview_image
+      - provided_image
+      - provided_3d
+      - resource_service
+      - resource_description
+      - perspective
+      - resource_unit
+      - source
+      - bibliographic_citation
+      - credit
+      - resource_date
+      - resource_rights
+
+  Media:
+    description: Descrição e referência a um único arquivo de mídia.
+    slots:
+      - media_format
+      - href
+      - media_measurements
+      - media_alt
+
+slots:
+
+  citation_refid:
+    alias: refid
+    required: true
+    range: CslCitekey
+
+  citation_note:
+    alias: note
+    range: string
+
+  extent:
+    alias: extent
+    range: ExtentDescription
+    inlined: true
+
+  medium:
+    alias: medium
+    range: MediumDescription
+    inlined: true
+
+  measurements:
+    range: Size
+    multivalued: true
+    inlined_as_list: true
+
+  material_tech_type:
+    alias: type
+    range: MaterialTechType
+
+  material:
+    range: MaterialTech
+    multivalued: true
+    inlined_as_list: true
+
+  technique:
+    range: MaterialTech
+    multivalued: true
+    inlined_as_list: true
+
+  size_type:
+    alias: type
+    required: true
+    range: uriorcurie
+    pattern: '^http://terminology\.lido-schema\.org/lido[0-9]{5}$'
+
+  size_extent:
+    alias: extent
+    required: true
+    range: TypedReference
+    inlined: true
+
+  size_value:
+    alias: value
+    required: true
+    range: float
+    minimum_value: 0
+
+  size_unit:
+    alias: unit
+    required: true
+    range: TypedReference
+    inlined: true
+
+  size_qualifier:
+    alias: qualifier
+    range: string
+
+  size_format:
+    alias: format
+    range: string
+
+  size_shape:
+    alias: shape
+    range: string
+
+  size_scale:
+    alias: scale
+    range: float
+    minimum_value: 0
+
+  size_source:
+    alias: source
+    range: BibliographicCitation
+    inlined: true
+
+  material_tech_concept:
+    alias: concept
+    required: true
+    range: TypedReference
+    inlined: true
+
+  material_tech_extent:
+    alias: extent
+    range: TypedReference
+    inlined: true
+
+  material_tech_source:
+    alias: source
+    required: true
+    range: BibliographicCitation
+    inlined: true
+
+  resource_id:
+    alias: id
+    range: TypedReference
+    inlined: true
+
+  resource_rel_type:
+    alias: rel_type
+    range: RelationType
+    ifabsent: string(planFor)
+
+  preview_image:
+    range: Media
+    inlined: true
+
+  provided_image:
+    range: Media
+    multivalued: true
+    inlined_as_list: true
+
+  provided_3d:
+    range: Media
+    multivalued: true
+    inlined_as_list: true
+
+  resource_service:
+    alias: service
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+
+  resource_description:
+    alias: description
+    range: string
+
+  perspective:
+    required: true
+    range: integer
+    minimum_value: 0
+    maximum_value: 9
+
+  resource_unit:
+    alias: unit
+    range: TypedReference
+    inlined: true
+
+  resource_author:
+    alias: author
+    range: OrcidId
+
+  resource_date:
+    alias: date
+    required: true
+    range: EventDate
+    inlined: true
+
+  resource_rights:
+    alias: rights
+    required: true
+    range: Right
+    multivalued: true
+    inlined_as_list: true
+
+  media_format:
+    alias: format
+    required: true
+    range: TypedReference
+    inlined: true
+
+  media_measurements:
+    alias: measurements
+    range: Size
+    multivalued: true
+    inlined_as_list: true
+
+  media_alt:
+    description: >-
+      Texto alternativo para leitores de tela ou outras formas de
+      acessibilidade. Apenas texto sem formatação.
+    alias: alt
+    range: string
+
+  credit:
+    description: Informação sobre autoria ou responsabilidade.
+    range: string
+
+  classification_term:
+    alias: term
+    required: true
+    range: uriorcurie
+    pattern: '^http://terminology\.lido-schema\.org/lido[0-9]{5}$'
+
+  classification_source:
+    alias: source
+    range: BibliographicCitation
+    inlined: true
