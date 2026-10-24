@@ -148,9 +148,8 @@ slots:
   title_type:
     description: Indica se o título é um nome próprio, descritivo, etc.
     alias: type
-    slot_uri: lido:Appellation
     range: TitleType
-    ifabsent: string(descriptive)
+    # ifabsent: TitleType(descriptive)
 
   identifiers:
     range: TypedReference

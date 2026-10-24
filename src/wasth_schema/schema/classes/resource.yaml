@@ -34,9 +34,11 @@ classes:
 
   Inscription:
     is_a: Thing
-    slot_usage:
-      category:
-        alias: type
+    attributes:
+      # category:
+      #   alias: type
+      #   (The above requires a uriorcurie, not a string)
+      type:
         required: true
         range: InscriptionType
         ifabsent: string(text)
@@ -210,7 +212,8 @@ slots:
   resource_rel_type:
     alias: rel_type
     range: RelationType
-    ifabsent: string(planFor)
+    required: true
+    #ifabsent: RelationType(planFor)
 
   preview_image:
     range: Media
