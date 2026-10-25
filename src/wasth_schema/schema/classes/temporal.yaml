@@ -13,234 +13,240 @@ prefixes:
 default_prefix: wasth
 default_range: string
 
-imports:
-  - linkml:types
-  - resource
-  - shared
-  - spatial
-  - thing
-
 classes:
   Event:
-    description: Event in the history or documentation of a Work.
+    is_a: Thing
+    description: |
+      This class comprises distinct, delimited and coherent processes and
+      interactions of a material nature, in cultural, social or physical
+      systems, involving and affecting instances of E77 Persistent Item in a
+      way characteristic of the kind of process. Typical examples are meetings,
+      births, deaths, actions of decision taking, making or inventing things,
+      but also more complex and extended ones such as conferences, elections,
+      building of a castle, or battles.
+
+      While the continuous growth of a tree lacks the limits characteristic of
+      an event, its germination from a seed does qualify as an event.
+      Similarly, the blowing of the wind lacks the distinctness and limits of
+      an event, but a hurricane, flood or earthquake would qualify as an event.
+      Mental processes are considered as events, in cases where they are
+      connected with the material externalization of their results; for
+      example, the creation of a poem, a performance or a change of intention
+      that becomes obvious from subsequent actions or declarations.
+
+      The effects of an instance of E5 Event may not lead to relevant permanent
+      changes of properties or relations of the items involved in it, for
+      example an unrecorded performance. Of course, in order to be documented,
+      some kind of evidence for an event must exist, be it witnesses, traces or
+      products of the event.
+
+      While instances of E4 Period always require some form of coherence
+      between its constituent phenomena, in addition, the essential
+      constituents of instances of E5 Event should contribute to an overall
+      effect; for example, the statements made during a meeting and the
+      listening of the audience.
+
+      Viewed at a coarse level of detail, an instance of E5 Event may appear as
+      if it had an ‘instantaneous’ overall effect, but any process or
+      interaction of material nature in reality have an extent in time and
+      space. At a fine level, instances of E5 Event may be analysed into
+      component phenomena and phases within a space and timeframe, and as such
+      can be seen as a period, regardless of the size of the phenomena. The
+      reverse is not necessarily the case: not all instances of E4 Period give
+      rise to a noteworthy overall effect and are thus not instances of E5
+      Event.
+
+    attributes:
+
+      type:
+        range: EventType
+        ifabsent: EventType(lido:lido00031)
+
+      actor_role:
+        range: Actor
+        multivalued: true
+        inlined_as_list: true
+
+      event_date:
+        range: EventDate
+        required: true
+        inlined: true
+
+      start_date:
+        alias: start_date
+        range: EventDate
+        inlined: true
+
+      end_date:
+        alias: end_date
+        range: EventDate
+        inlined: true
+
+      style_period:
+        description: |
+          An index element for the period in which the event happened,
+          comprising information about geologic time scale, archaelogical,
+          historical, or artistic period, style, or art movement, whose
+          characteristics are represented by the object or work.
+
+          Note that "Period/Style" corresponds to "Style" in CDWA as shorthand
+          for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
+
+          Examples may be Neolithic for a period, Impressionist for a style, or
+          Cubism for a movement.
+        range: StylePeriod
+        multivalued: true
+        inlined_as_list: true
+
+      culture:
+        description: >-
+          An index element for the cultural context from which the object/work
+          in focus originated.
+          Used if the creator or producer is unknown, or if the cultural
+          context is of particular interest.
+          Examples may include the name of a culture, a nation, or an ethnic
+          group.
+        range: TypedReference
+        multivalued: true
+        inlined_as_list: true
+
+      place:
+        description: >-
+          A set of structured information indicating the place or location
+          where an object/work was associated with a particular event.
+        range: EventPlace
+        inlined: true
+
+      method:
+        description: >-
+          An index element for the method by which the event is or was carried
+          out. Examples may include an acquisition method or a field collection
+          method.
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: true
+
+      things_present:
+        description: >-
+          A set of structured information for a related object or work that is
+          or was present at the event in focus. Repeated if there are multiple
+          related objects or works.
+        range: RelatedWork
+        multivalued: true
+
+      related_events:
+        description: >-
+          A set of structured information about an event related to the event
+          in focus, indicating the type of relationship where applicable.
+        range: RelatedEvent
+        multivalued: true
+
     slots:
-      - description
-      - href # Holdover from TimelineJS3, get rid of it?
-      - event_type
-      - actor_role
-      - event_start_date
-      - event_end_date
-      - periods
-      - cultures
-      - event_places
-      - event_place_type
-      - methods
-      - event_materials_tech
-      - event_measurements
-      - related
-      - things_present
-      - event_media
+      - measurements
+      - material
+      - technique
+      - media
 
-  EventDate:
-    description: Exact or estimated date expression.
-
-    slots:
-      - display
-      - earliest_date
-      - latest_date
-      - date_type
-
-    rules:
-      - description: >-
-          If both dates are present, earliest_date must not be later than
-          latest_date.
-        preconditions:
-          slot_conditions:
-            earliest_date:
-              value_presence: PRESENT
-            latest_date:
-              value_presence: PRESENT
-        postconditions:
-          slot_conditions:
-            date_order_valid:
-              equals_expression: "{earliest_date} <= {latest_date}"
 
   Actor:
     description: Agent and role in an event.
+
+    attributes:
+
+      actor_type:
+        alias: type
+        range: AgentType
+        ifabsent: AgentType(personal)
+
+      actor_name:
+        alias: name
+        range: TypedReference
+        inlined: true
+
+      role_in_event:
+        range: RoleType
+
+      actor_qualifier:
+        description: |
+          For the Attribution Qualifier Actor element choose a concept URI from
+          the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264)
+          of the Art & Architecture Thesaurus, or another linked open
+          vocabulary.
+        alias: qualifier
+        range: TypedReference
+        multivalued: true
+        inlined_as_list: true
+
+      actor_extent:
+        alias: extent
+        range: TypedReference
+        multivalued: true
+        inlined_as_list: true
+
     slots:
-      - actor_type
-      - actor_name
-      - role_in_event
-      - actor_qualifier
-      - actor_extent
       - bibliographic_citation
 
-  Topic:
-    description: Subject or iconographic topic.
+  EventDate:
+    description: |
+      A wrapper for the expression of a date by providing a set of years as
+      earliest and latest date delimiting the respective span of time, usually
+      given in the proleptic Gregorian calendar.
+
+      If it is an exact date, possibly with time, repeat the same date (and
+      time) in Earliest Date and Latest Date elements.
+
+    attributes:
+
+      earliest_date:
+        range: DateRange
+
+      latest_date:
+        range: DateRange
+
     slots:
-      - topic_display
-      - topic_type
-      - topic_extent
-      - topic_concept
+      - description
 
-slots:
-  event_note:
-    alias: text
-    range: Note
-    inlined: true
+  DateRange:
+    attributes:
+      date_type:
+        alias: type
+        required: true
+        range: DateQualifier
+      date_value:
+        range: date
 
-  event_type:
-    alias: type
-    required: true
-    range: EventType
+  StylePeriod:
+    is_a: ConceptReference
+    attributes:
 
-  actor_role:
-    range: Actor
-    multivalued: true
-    inlined_as_list: true
+      type:
+        range: PeriodNameType
+        ifabsent: PeriodNameType(lido:lido00731)
 
-  event_start_date:
-    alias: start_date
-    range: EventDate
-    inlined: true
+  EventPlace:
+    attributes:
 
-  event_end_date:
-    alias: end_date
-    range: EventDate
-    inlined: true
+      type:
+        range: EventPlaceType
 
-  periods:
-    range: TypedReference
-    multivalued: true
-    inlined_as_list: true
+      places:
+        alias: places
+        range: Site
+        multivalued: true
+        inlined_as_list: true
 
-  cultures:
-    range: TypedReference
-    multivalued: true
-    inlined_as_list: true
+    slots:
+      - description
 
-  event_places:
-    alias: places
-    range: Site
-    multivalued: true
-    inlined_as_list: true
+  RelatedEvent:
+    attributes:
 
-  event_place_type:
-    alias: place_type
-    range: uriorcurie
-    pattern: '^http://terminology\.lido-schema\.org/lido[0-9]{5}$'
+      name:
+        range: Event
+        multivalued: true
+        required: true
+        symmetric: true
+        inlined: false
 
-  methods:
-    range: TypedReference
-    multivalued: true
-    inlined_as_list: true
-
-  event_materials_tech:
-    alias: materials_tech
-    range: MaterialTech
-    multivalued: true
-    inlined_as_list: true
-
-  event_measurements:
-    alias: measurements
-    range: Size
-    multivalued: true
-    inlined_as_list: true
-
-  related:
-    range: TypedReference
-    multivalued: true
-    inlined_as_list: true
-
-  things_present:
-    range: TypedReference
-    multivalued: true
-    inlined_as_list: true
-
-  event_media:
-    alias: media
-    range: Media
-    multivalued: true
-    inlined_as_list: true
-
-  earliest_date:
-    range: date
-
-  latest_date:
-    range: date
-
-  date_type:
-    alias: type
-    required: true
-    range: DateQualifier
-
-  actor_type:
-    alias: type
-    range: AgentType
-    ifabsent: string(personal)
-
-  actor_name:
-    alias: name
-    range: TypedReference
-    inlined: true
-
-  role_in_event:
-    range: RoleType
-    inlined: true
-
-  actor_qualifier:
-    alias: qualifier
-    range: TypedReference
-    multivalued: true
-    inlined_as_list: true
-
-  actor_extent:
-    alias: extent
-    range: TypedReference
-    multivalued: true
-    inlined_as_list: true
-
-  topic_display:
-    alias: display
-    range: string
-
-  topic_type:
-    alias: type
-    required: true
-    range: TopicType
-
-  topic_extent:
-    alias: extent
-    range: TypedReference
-    inlined: true
-
-  topic_concept:
-    alias: concept
-    required: true
-    range: TypedReference
-    inlined: true
-
-  relation_type:
-    alias: type
-    range: RelationType
-    required: true
-
-  related_object:
-    alias: name
-    range: Thing
-    required: true
-    symmetric: true
-    inlined: false
-
-  resource:
-    range: Resource
-    multivalued: true
-    inlined_as_list: true
-
-  related_object_type:
-    alias: object_type
-    range: uriorcurie
-
-  related_object_note:
-    alias: object_note
-    range: Note
+    slots:
+      - description

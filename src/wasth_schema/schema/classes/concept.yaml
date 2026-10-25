@@ -15,12 +15,6 @@ prefixes:
 default_prefix: wasth
 default_range: string
 
-imports:
-  - linkml:types
-  - resource
-  - shared
-  - thing
-
 classes:
 
   Concept:
@@ -30,31 +24,51 @@ classes:
       A WASTH controlled-vocabulary concept, compatible with SKOS and
       SKOS-THES.
     slot_usage:
-      relation:
+      category:
+        ifabsent: string(lido:lido01193)
+
+    attributes:
+
+      broader:
+        range: BroaderConceptReference
+        multivalued: true
+        inlined_as_list: true
+        slot_uri: skos:broader
+        #inverse: narrower
+
+      narrower:
         range: ConceptReference
-    slots:
-      - broader
-      - narrower
+        multivalued: true
+        inlined_as_list: true
+        slot_uri: skos:narrower
+        #inverse: broader
+
+      relation:
+        range: RelatedConceptReference
+        multivalued: true
+        inlined_as_list: true
+        slot_uri: skos:relation
 
   ConceptReference:
     description: Atribuição de vocabulário controlado com citação de apoio.
     slots:
-      - display
-      - concept
-      - extent
+      - description
+      - name
       - bibliographic_citation
 
-slots:
-  broader:
-    range: ConceptReference
-    multivalued: true
-    inlined_as_list: true
-    slot_uri: skos:broader
-    inverse: narrower
+  BroaderConceptReference:
+    description: Relações hierárquicas.
+    attributes:
+      match:
+        range: SkosHierarchicalRelation
 
-  narrower:
-    range: ConceptReference
-    multivalued: true
-    inlined_as_list: true
-    slot_uri: skos:narrower
-    inverse: broader
+  RelatedConceptReference:
+    description: Relações hierárquicas.
+    attributes:
+      match:
+        range: SkosMappingRelation
+
+slots:
+
+  name:
+    range: Concept

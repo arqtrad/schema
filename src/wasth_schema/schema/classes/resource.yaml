@@ -10,222 +10,146 @@ prefixes:
 default_prefix: wasth
 default_range: string
 
-imports:
-  - linkml:types
-  - shared
-  - concept
-  - temporal
-
 classes:
 
   BibliographicCitation:
     description: Bibliographic or documentary citation using a CSL citekey.
-    slots:
-      - citation_refid
-      - citation_note
-      - display
 
-  Note:
-    slots:
-      - note_headline
-      - description
-      - bibliographic_citation
-      - rights
-
-  Inscription:
-    is_a: Thing
     attributes:
-      # category:
-      #   alias: type
-      #   (The above requires a uriorcurie, not a string)
-      type:
+
+      citation_refid:
+        alias: refid
         required: true
-        range: InscriptionType
-        ifabsent: string(text)
-      content:
-        alias: transcription
+        range: CslCitekey
 
-  ExtentDescription:
-    slots:
-      - display
-      - measurements
+      note:
+        range: string
 
-  MediumDescription:
     slots:
-      - display
-      - material
-      - technique
+      - description
 
-  Size:
-    description: Measurement of an object, resource, or component.
-    slots:
-      - size_type
-      - size_extent
-      - size_value
-      - size_unit
-      - size_qualifier
-      - size_format
-      - size_shape
-      - size_scale
-      - size_source
+  RelatedObject:
+    description: |
+      As formas mais comuns de relação no nosso projeto são :
 
-  MaterialTech:
-    is_a: ConceptReference
+        - depicted in: A edificação é representada numa pintura ou desenho
+          artístico;
+
+        - documented by: Informações sobre a edificação estão publicadas numa
+          referência bibliográfica, processo administrativo ou outro documento
+          textual impresso, manuscrito ou eletrônico;
+
+        - has plan / has floor plan / has section / has elevation / has
+          rendering: Essas relações mostram a existência de desenhos técnicos
+          da edificação, sejam eles históricos ou recentes, compilados de
+          fontes externas a este projeto de pesquisa.
+
+        - has construction drawing / has design / has sketch: Essas relações se
+          referem a desenhos históricos (fontes primárias) que atestam o
+          processo de projeto da edificação.
+
+      ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER
+      CADASTRADOS NO GRUPO resource, MAIS ABAIXO.
+
+      O grupo relation é destinado unicamente a cadastrar relações desta
+      edificação com objetos autônomos, tais como outras edificações, conjuntos
+      urbanos, obras de artes visuais, referências bibliográficas ou acervos
+      arquivísticos.
+    attributes:
     slots:
-      - material_tech_type
+      - description
+      - relation_type
+      - related_object
+      - object_type
+      - resource
+      - media
+      - source
+      - bibliographic_citation
+
+  RelatedWork:
+    is_a: RelatedObject
+    description: >-
+      A wrapper for identifying information about an object or work, including
+      collections, related to the object/work in focus. May include a weblink.
+    slot_usage:
+      related_object:
+        range: Work
 
   Resource:
     description: Digital or documentary resource associated with a Work.
     slots:
       - resource_id
       - resource_author
-      - resource_rel_type
+      - resource_date
+      - relation_type
       - preview_image
       - provided_image
       - provided_3d
       - resource_service
-      - resource_description
       - perspective
       - resource_unit
+      - description
       - source
       - bibliographic_citation
       - credit
-      - resource_date
-      - resource_rights
+      - rights
 
   Media:
     description: Descrição e referência a um único arquivo de mídia.
     slots:
-      - media_format
-      - href
-      - media_measurements
+      - format
+      - preview_image
+      - provided_image
+      - provided_3d
+      - resource_service
+      - measurements
       - media_alt
+      - description
+      - source
+      - bibliographic_citation
+      - credit
+      - rights
 
 slots:
 
-  citation_refid:
-    alias: refid
-    required: true
-    range: CslCitekey
-
-  citation_note:
-    alias: note
-    range: string
-
-  extent:
-    alias: extent
-    range: ExtentDescription
-    inlined: true
-
-  medium:
-    alias: medium
-    range: MediumDescription
-    inlined: true
-
-  measurements:
-    range: Size
-    multivalued: true
-    inlined_as_list: true
-
-  material_tech_type:
-    alias: type
-    range: MaterialTechType
-
-  material:
-    range: MaterialTech
-    multivalued: true
-    inlined_as_list: true
-
-  technique:
-    range: MaterialTech
-    multivalued: true
-    inlined_as_list: true
-
-  size_type:
-    alias: type
-    required: true
-    range: uriorcurie
-    pattern: '^http://terminology\.lido-schema\.org/lido[0-9]{5}$'
-
-  size_extent:
-    alias: extent
-    required: true
-    range: TypedReference
-    inlined: true
-
-  size_value:
-    alias: value
-    required: true
-    range: float
-    minimum_value: 0
-
-  size_unit:
-    alias: unit
-    required: true
-    range: TypedReference
-    inlined: true
-
-  size_qualifier:
-    alias: qualifier
-    range: string
-
-  size_format:
-    alias: format
-    range: string
-
-  size_shape:
-    alias: shape
-    range: string
-
-  size_scale:
-    alias: scale
-    range: float
-    minimum_value: 0
-
-  size_source:
-    alias: source
-    range: BibliographicCitation
-    inlined: true
-
-  material_tech_concept:
-    alias: concept
-    required: true
-    range: TypedReference
-    inlined: true
-
-  material_tech_extent:
-    alias: extent
-    range: TypedReference
-    inlined: true
-
-  material_tech_source:
-    alias: source
-    required: true
-    range: BibliographicCitation
-    inlined: true
-
-  resource_id:
-    alias: id
-    range: TypedReference
-    inlined: true
-
-  resource_rel_type:
+  relation_type:
     alias: rel_type
     range: RelationType
     required: true
     #ifabsent: RelationType(planFor)
 
+  related_object:
+    range: Thing
+    required: true
+
+  object_type:
+    description: >-
+      An index element for the particular kind of object or work in focus.
+    range: ObjectType
+
+  resource:
+    range: Resource
+    multivalued: true
+    inlined: true
+    inlined_as_list: false
+
+  resource_id:
+    key: true
+    alias: id
+    range: TypedReference
+    inlined: true
+
   preview_image:
-    range: Media
+    range: uriorcurie
     inlined: true
 
   provided_image:
-    range: Media
+    range: uriorcurie
     multivalued: true
     inlined_as_list: true
 
   provided_3d:
-    range: Media
+    range: uriorcurie
     multivalued: true
     inlined_as_list: true
 
@@ -234,10 +158,6 @@ slots:
     range: TypedReference
     multivalued: true
     inlined_as_list: true
-
-  resource_description:
-    alias: description
-    range: string
 
   perspective:
     required: true
@@ -260,24 +180,15 @@ slots:
     range: EventDate
     inlined: true
 
-  resource_rights:
-    alias: rights
-    required: true
-    range: Right
+  media:
+    range: Media
     multivalued: true
     inlined_as_list: true
 
-  media_format:
-    alias: format
+  format:
     required: true
     range: TypedReference
     inlined: true
-
-  media_measurements:
-    alias: measurements
-    range: Size
-    multivalued: true
-    inlined_as_list: true
 
   media_alt:
     description: >-
@@ -289,14 +200,3 @@ slots:
   credit:
     description: Informação sobre autoria ou responsabilidade.
     range: string
-
-  classification_term:
-    alias: term
-    required: true
-    range: uriorcurie
-    pattern: '^http://terminology\.lido-schema\.org/lido[0-9]{5}$'
-
-  classification_source:
-    alias: source
-    range: BibliographicCitation
-    inlined: true

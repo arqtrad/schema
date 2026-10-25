@@ -15,12 +15,6 @@ prefixes:
 default_prefix: wasth
 default_range: string
 
-imports:
-  - linkml:types
-  - shared
-  - thing
-  - spatial
-
 classes:
   Place:
     is_a: Thing
@@ -39,16 +33,6 @@ classes:
       id:
         range: OlcPlusCode11
 
-      record_author:
-        required: true
-
-      record_date:
-        required: true
-
-      title:
-        description: Preferred or current name of the place.
-        slot_uri: skos:prefLabel
-
       title_type:
         description: >-
           Type of the place name. For a Place record, this will often be
@@ -56,20 +40,6 @@ classes:
           geographic entity.
         range: RepositoryType
 
-      titles:
-        description: >-
-          Alternative, historical, or vernacular names for the place.
-        slot_uri: skos:altLabel
-
-      description:
-        description: >-
-          Short description of the place, its extent, or its significance.
-        slot_uri: skos:definition
-
-      content:
-        description: >-
-          Longer narrative or scope note about the place.
-        slot_uri: skos:scopeNote
 
 slots:
   place_type:

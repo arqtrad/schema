@@ -13,18 +13,28 @@ prefixes:
 default_prefix: wasth
 default_range: string
 
-imports:
-  - linkml:types
-  - resource
-  - shared
-
 classes:
 
   Thing:
     abstract: true
-    description: >-
-      Common data and methods for WASTH objects: architectural works,
-      places, and vocabulary concepts.
+    description: |
+      This class comprises all things in the universe of discourse of the CIDOC
+      Conceptual Reference Model.
+
+      It is an abstract concept providing for three general properties:
+
+      - Identification by name or appellation, and in particular by a preferred
+      identifier
+
+      - Classification by type, allowing further refinement of the specific
+      subclass to which an instance belongs
+
+      - Attachment of free text and other unstructured data for the expression
+      of anything not captured by formal properties
+
+      All other classes within the CIDOC CRM are directly or indirectly
+      specialisations of E1 CRM Entity.
+
     attributes:
 
       id:
@@ -38,7 +48,7 @@ classes:
         slot_uri: dcterms:creator
         description: ORCID iD of the record author or maintainer.
 
-      date:
+      record_date:
         range: date
         slot_uri: dcterms:created
         description: Date the record was created or last substantively revised.
@@ -72,25 +82,31 @@ classes:
 
       category:
         description: >-
-          An index element for the broad category the object/work in focus
-          belongs to. Examples may include human-made object or natural object.
+          The LIDO Category Vocabulary is a structured controlled list of terms
+          recommended to use as values in the LIDO Category element.
+
+          Examples are human-made object or natural object.
         range: uriorcurie
         designates_type: true
         slot_uri: lido:lidoCategory
+        ifabsent: string(lido:lido00096)
+
+    slot_usage:
+      description:
+        required: true
 
     slots:
       - description
       - record_rights
       # Os campos abaixo são opcionais
       - title_type
-      - title_source
       - alt_name
       - bibliographic_citation
       - identifiers
+      - tags
       - temporal
       - repository
       - collection
-      - relation
       - content
 
   Appellation:
@@ -105,20 +121,8 @@ classes:
         ifabsent: string(alternative)
 
     slots:
-      - display
+      - description
       - title_type
-      - bibliographic_citation
-
-  RelatedObject:
-    description: Relation to another object or work.
-    attributes:
-    slots:
-      - display
-      - relation_type
-      - related_object
-      - resource
-      - related_object_type
-      - related_object_note
       - bibliographic_citation
 
   Repository:
@@ -131,13 +135,13 @@ classes:
 slots:
 
   alt_name:
-    description: >-
-      O bloco titles permite cadastrar outros nomes pelos quais a edificação
+    description: |
+      O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação
       será eventualmente conhecida. É uma lista opcional de itens, e se
       existir, os campos de cada item da lista devem ser preenchidos como os do
       título principal.
 
-      O campo display de cada item contém o texto do título (nome).
+      O campo `description` de cada item contém o texto do título (nome).
 
       Este bloco pode ser omitido por completo se não houver títulos
       alternativos.
@@ -156,6 +160,13 @@ slots:
     multivalued: true
     inlined_as_list: true
     description: Published or external identifiers for the object.
+
+  tags:
+    range: string
+    multivalued: true
+    description: >-
+      Provisional uncontrolled keywords. Prefer `classifications` or
+      `subject` for curated vocabulary terms.
 
   temporal:
     description: Temporalidade do objeto.
@@ -178,12 +189,6 @@ slots:
     range: LegalBody
     required: true
 
-  relation:
-    range: RelatedObject
-    multivalued: true
-    inlined_as_list: true
-    slot_uri: skos:related
-
   record_rights:
     required: true
     range: Right
@@ -193,6 +198,7 @@ slots:
   content:
     recommended: true
     range: string
+    slot_uri: skos:scopeNote
     description: >-
       Narrative body content. In the Markdown adapter this corresponds to
       the document body after YAML frontmatter.

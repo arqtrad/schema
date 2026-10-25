@@ -1,7 +1,8 @@
 """Data model package for wasth_schema."""
 
 from pathlib import Path
-from .wasth_schema import *  # noqa: F403
+
+from wasth_schema import *  # noqa: F403
 
 THIS_PATH = Path(__file__).parent
 

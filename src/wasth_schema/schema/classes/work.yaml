@@ -13,22 +13,247 @@ prefixes:
 default_prefix: wasth
 default_range: string
 
-imports:
-  - linkml:types
-  - thing
-  - shared
-  - concept
-  - spatial
-  - temporal
-  - resource
-
 classes:
 
   Work:
     is_a: Thing
-    description: >-
-      A WASTH record for an architectural work, aligned with the LIDO
-      object/work record model.
+    description: |
+      CIDOC–CRM E22 HUMAN-MADE OBJECT
+
+      This class comprises all persistent physical objects of any size that are
+      purposely created by human activity and have physical boundaries that
+      separate them completely in an objective way from other objects.
+
+      The class also includes all aggregates of objects made for functional
+      purposes of whatever kind, independent of physical coherence, such as a
+      set of chessmen.
+
+      Nos Documentários da Arquitetura Tradicional, esta ficha pode ser usada
+      para cadastrar uma edificação, um conjunto arquitetônico, ou ainda
+      uma parte significativa de uma edificação.
+
+    attributes:
+
+      work_type_condition:
+        slot_uri: lido:lido00937
+        recommended: true
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: false
+        description: >-
+          Descriptors for objects that are distinguishable by their overall state
+          such as appearance, level of damage, completeness, or quality. If an
+          object is identified by its prevailing physical state, then it is
+          qualified by condition.
+
+          Based on [AAT "conditions"](http://vocab.getty.edu/page/aat/300389724)
+          and
+          [CIDOC CRM "E3 Condition State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)
+
+          Atende aos campos do
+          [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.htmlhttps://sicg.iphan.gov.br/sicg/manual/manual.html)
+          "estado de preservação" e "estado de conservação".
+
+      work_type_form:
+        slot_uri: lido:lido00766
+        recommended: true
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: false
+        description: >-
+          Descriptors for objects that are distinguishable by their physical form
+          or by the manner in which they are presented. If an object is identified
+          by sight, then it is qualified by form.
+
+          Based on
+          [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+
+          Nos Documentários da Arquitetura Tradicional,
+          designa uma tipologia formal.
+
+      work_type_function:
+        slot_uri: lido:lido00767
+        recommended: true
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: false
+        description: >-
+          Objects that are distinguishable by the particular purpose for which they
+          are designed or used. If an object is identifiable by its intended use,
+          then it is qualified by function.
+
+          Based on
+          [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+
+          Nos Documentários da Arquitetura Tradicional, designa um dos sete tipos
+          de propósitos concebidos por C. William Westfall e Samir Younés em
+          *Architectural Type and Character*.
+
+      work_type_context:
+        slot_uri: lido:lido00934
+        recommended: true
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: false
+        description: >-
+          Descriptors for objects that are distinguishable by their use or
+          application within a particular physical location. If an object is
+          identifiable by association with specific surroundings, it is qualified
+          by location or context.
+
+          Based on
+          [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+
+          Nos Documentários da Arquitetura Tradicional, designa a situação de
+          implantação da edificação, por exemplo se está em contexto urbano ou
+          rural, isolada ou em correnteza...
+
+      work_type_material_tech:
+        slot_uri: lido:lido00789
+        recommended: true
+        range: MaterialTech
+        multivalued: true
+        inlined_as_list: false
+        description: >-
+          Descriptors for objects that are distinguishable by their materials
+          encorporated, or the techniques used to create the object or work.
+          If an object is identified by the substances detected and/or the
+          processes employed, then it is qualified by material or technique.
+
+          Nos Documentários da Arquitetura Tradicional, refere-se à caracterização
+          construtiva geral da edificação.
+
+      work_type_subject_type:
+        slot_uri: lido:lido00768
+        recommended: true
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: false
+        description: >-
+          Descriptors for objects that are distinguishable by their topics, themes,
+          or other content of the work. If an object is identified by what it is of
+          or about, then it is qualified by subject.
+
+          Based on [AAT "subjects"](http://vocab.getty.edu/page/aat/300404126)
+
+          Nos Documentários da Arquitetura Tradicional,
+          é o único bloco opcional desta seção : ele indica, se houver, uma
+          classificação iconográfica mais específica do que `form` ou `function`.
+
+      work_type_use:
+        slot_uri: lido:lido00938
+        recommended: true
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: false
+        description: >-
+          Descriptors for objects that are distinguishable by the way they are
+          employed, occupied, applied, or function. If an object is identifiable by
+          its particular mode of use, it is qualified by use.
+
+          Based on [AAT "use"](http://vocab.getty.edu/page/aat/300068844)
+
+          Nos Documentários da Arquitetura Tradicional, designa propriamente a(s)
+          classificação(ões) de usos do solo ou atividades predominante(s) na
+          edificação atualmente.
+
+      class_genre:
+        slot_uri: lido:lido00853
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: false
+        description: |
+          A broad category for grouping objects on the basis of shared intrinsic
+          characteristics. The relationship between an object/work and the object
+          genre is a generic is-a-relation rather than a membership based on
+          ascription to a subject group.
+
+          Note that the
+          [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711) hierarchy
+          differs in its scope from Object genre here in that the AAT includes more
+          specific terms grouped by various aspects. In general, AAT descriptors
+          are not intended to be used as indexing terms for classification.
+
+          ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+          Talvez ele não seja relevante para o documentário de arquitetura
+          doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
+          para arquitetura.
+
+      class_subject:
+        slot_uri: lido:lido00932
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: false
+        description: >-
+          A broad category for grouping objects or works on the basis of a topical
+          association, including thematic or systematic classification, or an
+          assignment by discipline. The relationship between an object/work and a
+          subject category is a kind of membership based on ascription rather than
+          a generic is-a relation.
+
+          ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+          Talvez ele não seja relevante para o documentário de arquitetura
+          doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
+          para arquitetura.
+
+      class_local:
+        slot_uri: lido:lido01135
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: false
+        description: >-
+          A classification scheme for grouping objects on the basis of locally
+          defined criteria, including categories corresponding to the curatorial
+          departments of the repository, such as "prints and drawings", "decorative
+          arts", "North America", "invertebrates", "Bronze Age" or "textiles".
+          [Based on CCO "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)
+
+          ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+          Talvez ele não seja relevante para o documentário de arquitetura
+          doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
+          para arquitetura.
+
+      class_special:
+        slot_uri: lido:lido01144
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: false
+        description: >-
+          A classification scheme for grouping objects on the basis of criteria
+          defined within specific academic disciplines or cultural domains, such as
+          the "Hornbostel-Sachs Classification of Musical Instruments", the
+          "Nickel-Strunz classification", biological taxonomies etc. Refers to
+          classification schemes that group objects on the basis of object
+          characteristics, not on the basis of themes or topics which the objects
+          or works are related to.
+
+          ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+          Talvez ele não seja relevante para o documentário de arquitetura
+          doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
+          para arquitetura.
+
+
+      inscriptions:
+        range: Inscription
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          Marcas, símbolos ou textos gravados na edificação, especialmente
+          aqueles referentes à estrutura como um todo e não específicos a
+          alguma de suas partes. Não usar para iconografia.
+
+
+      collection:
+        range: Thing
+        multivalued: true
+        inlined_as_list: false
+        slot_uri: lido:collection
+
+      work_rights:
+        range: Right
+        multivalued: true
+        inlined_as_list: true
+        slot_uri: lido:rightsWorkSet
 
     slot_usage:
 
@@ -40,10 +265,7 @@ classes:
           programa WASTH.
         range: OlcPlusCode11
 
-      record_author:
-        required: true
-
-      record_date:
+      author:
         required: true
 
       category:
@@ -54,129 +276,66 @@ classes:
         slot_uri: lido:relatedWorkSet
 
     slots:
-      - work_type_condition
-      - work_type_form
-      - work_type_function
-      - work_type_context
-      - work_type_material
-      - work_type_technique
-      - work_type_subject_type
-      - work_type_use
-      - measurements
-      - medium
       - spatial
-      - classification
-      - tags
       - location_historic
-      - inscriptions
-      - collection
+      - measurements
+      - material
+      - technique
       - repository
       - subject
-      - work_rights
-      - resources
+      - related_work
+      - resource
+      - media
+
+
+  Inscription:
+    description: >-
+      A descrição da inscrição informa local, dimensões e características. Os
+      tipos de descrição podem ser extraídos da hierarquia Getty:
+      <http://vocab.getty.edu/page/aat/300220469>.
+
+      Os itens das listas de `material` e `technique` DEVEM usar o nosso
+      [vocabulário controlado](https://vocabulario.tradicional.arq.br).
+
+      Essa distinção é especialmente relevante no caso de revestimentos, como
+      estuques, azulejos ou pinturas decorativas, por oposição à base sobre a
+      qual eles são aplicados.
+
+    attributes:
+      # category:
+      #   alias: type
+      #   (The above requires a uriorcurie, not a string)
+      type:
+        required: true
+        range: InscriptionType
+        ifabsent: string(text)
+
+    slots:
+      - format_extent
+      - description
+      - content
+      - bibliographic_citation
 
   Topic:
-    slots:
-      - topic_type
-      - topic_extent
-      - topic_concept
+    description: Subject or iconographic topic.
 
-  RelatedWork:
-    is_a: RelatedObject
+    attributes:
+
+      type:
+        required: true
+        range: SubjectType
+
     slot_usage:
-      related_object:
-        range: Work
-      relation_display:
-        slot_uri: lido:displayRelatedWork
-    description: |
-      As formas mais comuns de relação no nosso projeto são :
+      concept:
+        required: true
 
-        - depicted in: A edificação é representada numa pintura ou desenho
-          artístico;
+    slots:
+      - description
+      - format_extent
+      - concept
 
-        - documented by: Informações sobre a edificação estão publicadas numa
-          referência bibliográfica, processo administrativo ou outro documento
-          textual impresso, manuscrito ou eletrônico;
-
-        - has plan / has floor plan / has section / has elevation / has
-          rendering: Essas relações mostram a existência de desenhos técnicos
-          da edificação, sejam eles históricos ou recentes, compilados de
-          fontes externas a este projeto de pesquisa.
-
-        - has construction drawing / has design / has sketch: Essas relações se
-          referem a desenhos históricos (fontes primárias) que atestam o
-          processo de projeto da edificação.
-
-      ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER
-      CADASTRADOS NO GRUPO resource, MAIS ABAIXO.
-
-      O grupo relation é destinado unicamente a cadastrar relações desta
-      edificação com objetos autônomos, tais como outras edificações, conjuntos
-      urbanos, obras de artes visuais, referências bibliográficas ou acervos
-      arquivísticos.
 
 slots:
-
-  work_type_condition:
-    recommended: true
-    range: ConceptReference
-    multivalued: true
-    inlined_as_list: false
-
-  work_type_form:
-    recommended: true
-    range: ConceptReference
-    multivalued: true
-    inlined_as_list: false
-
-  work_type_function:
-    recommended: true
-    range: ConceptReference
-    multivalued: true
-    inlined_as_list: false
-
-  work_type_context:
-    recommended: true
-    range: ConceptReference
-    multivalued: true
-    inlined_as_list: false
-
-  work_type_material:
-    recommended: true
-    range: MaterialTech
-    multivalued: true
-    inlined_as_list: false
-
-  work_type_technique:
-    recommended: true
-    range: MaterialTech
-    multivalued: true
-    inlined_as_list: false
-
-  work_type_subject_type:
-    recommended: true
-    range: ConceptReference
-    multivalued: true
-    inlined_as_list: false
-
-  work_type_use:
-    recommended: true
-    range: ConceptReference
-    multivalued: true
-    inlined_as_list: false
-
-  classification:
-    range: ConceptReference
-    multivalued: true
-    inlined_as_list: false
-    slot_uri: lido:classification
-
-  tags:
-    range: string
-    multivalued: true
-    description: >-
-      Provisional uncontrolled keywords. Prefer `classifications` or
-      `subject` for curated vocabulary terms.
 
   location_historic:
     range: TypedReference
@@ -186,17 +345,6 @@ slots:
       Antigas jurisdições ou designações para o lugar onde o objeto se
       encontra. Para um sítio de onde o objeto foi fisicamente removido, usar
       `spatial: former_site:`.
-
-  inscriptions:
-    range: Inscription
-    multivalued: true
-    inlined_as_list: true
-
-  collection:
-    range: Thing
-    multivalued: true
-    inlined_as_list: false
-    slot_uri: lido:collection
 
   subject:
     range: Topic
@@ -218,25 +366,8 @@ slots:
       INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou
       político dos elementos, incluindo questões de status e estilo.
 
-  topic_type:
-    range: TopicType
-    description: Tipos de temas segundo o VRA Core.
-
-  topic_extent:
-    range: Thing
-    description: Parte do objeto à qual o tema pertence, se for o caso.
-
-  topic_concept:
-    range: Concept
-    slot_uri: skos:Concept
-
-  work_rights:
-    range: Right
+  related_work:
+    range: RelatedWork
     multivalued: true
     inlined_as_list: true
-    slot_uri: lido:rightsWorkSet
-
-  resources:
-    range: Resource
-    multivalued: true
-    inlined_as_list: true
+    slot_uri: skos:related

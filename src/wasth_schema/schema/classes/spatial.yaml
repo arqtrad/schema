@@ -15,11 +15,6 @@ prefixes:
 default_prefix: wasth
 default_range: string
 
-imports:
-  - linkml:types
-  - shared
-  - place
-
 classes:
   SpatialCoverage:
     description: Current, former, intended, and other spatial associations.
@@ -32,7 +27,7 @@ classes:
   Site:
     description: A place associated with a Work.
     slots:
-      - display
+      - description
       - site_name
       - location
       - extent
@@ -120,12 +115,6 @@ slots:
     recommended: true
     alias: srsName
     range: uriorcurie
-    inlined: true
-
-  site_source:
-    recommended: true
-    alias: source
-    range: SourceReference
     inlined: true
 
   zoom:

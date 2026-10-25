@@ -6,7 +6,7 @@ Esquemas LinkML para os Documentários da Arquitetura Tradicional.
 
 ## Documentation Website
 
-[https://arqtrad.github.io/wasth_schema](https://arqtrad.github.io/wasth_schema)
+<https://tradicional.arq.br/schema>
 
 ## Repository Structure
 
