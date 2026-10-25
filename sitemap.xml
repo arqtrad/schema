@@ -2,142 +2,838 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/about/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Actor/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/AgentType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Appellation/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/BibliographicCitation/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Boolean/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/BroaderConceptReference/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Concept/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/ConceptReference/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/CslCitekey/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Curie/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Date/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/DateOrDatetime/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/DateQualifier/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/DateRange/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Datetime/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Decimal/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Double/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Event/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/EventDate/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/EventPlace/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/EventPlaceType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/EventType/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Float/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/GeoJSONCoordinateArray/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/GeographicExtent/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/GeographicPoint/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/GeometryType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Header/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/HistoricPlace/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Inscription/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/InscriptionType/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Integer/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Jsonpath/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Jsonpointer/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
-         <loc>https://arqtrad.github.io/wasth_schema/elements/NamedThing/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/LabelType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Latitude/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/LegalBody/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Longitude/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/MaterialTech/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/MaterialTechType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/MeasurementType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Measurements/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Media/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Ncname/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Nodeidentifier/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/ObjectType/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Objectidentifier/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
-         <loc>https://arqtrad.github.io/wasth_schema/elements/Person/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/OlcPlusCode11/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
-         <loc>https://arqtrad.github.io/wasth_schema/elements/PersonCollection/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/OrcidId/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
-         <loc>https://arqtrad.github.io/wasth_schema/elements/PersonStatus/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/PeriodNameType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Place/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/ReferenceType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/RelatedConceptReference/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/RelatedEvent/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/RelatedObject/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/RelatedWork/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/RelationType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Repository/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/RepositoryType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Resource/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Right/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/RightsType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/RoleType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Site/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/SkosHierarchicalRelation/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/SkosMappingRelation/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Sparqlpath/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/SpatialCoverage/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/String/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/StylePeriod/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/SubjectType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Thing/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Time/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/TitleType/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Topic/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/TypedReference/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Uri/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/Uriorcurie/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
-         <loc>https://arqtrad.github.io/wasth_schema/elements/age_in_years/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/Work/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
-         <loc>https://arqtrad.github.io/wasth_schema/elements/birth_date/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/actor_extent/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/actor_name/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/actor_qualifier/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/actor_role/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/actor_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/alt/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/alt_name/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/author/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/bibliographic_citation/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/broader/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/caption/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/category/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/citation_refid/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/class_genre/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/class_local/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/class_special/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/class_subject/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/collection/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/concept/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/content/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/coordinates/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/credit/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/culture/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/date_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/date_value/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/description/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/earliest_date/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/end_date/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/event_date/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/extent/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/format/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/format_extent/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/former_site/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/geometry_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/historic_place_name/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/historic_place_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/href/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/id/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/identifiers/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/inscriptions/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/intended_site/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/lat/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/latest_date/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/legal_body/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/legal_body_name/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/legal_body_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/location/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/location_historic/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/lon/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/match/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/material/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/material_tech_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/measurements/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/media/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/media_alt/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/method/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/name/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
-         <loc>https://arqtrad.github.io/wasth_schema/elements/people/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/narrower/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
-         <loc>https://arqtrad.github.io/wasth_schema/elements/primary_email/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/note/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
-         <loc>https://arqtrad.github.io/wasth_schema/elements/vital_status/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/object_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/other_site/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/overlay_image/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/part_of/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/perspective/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/place/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/place_function/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/place_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/places/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/preview_image/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/provided_3d/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/provided_image/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/qualifier/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/record_date/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/record_rights/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/reference_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/refid/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/related_events/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/related_object/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/related_work/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/relation/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/relation_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/repository/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/resource/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/resource_author/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/resource_date/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/resource_id/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/resource_service/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/resource_unit/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/right_concept/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/right_holder/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/right_temporal/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/right_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/rights/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/role_in_event/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/scale/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/shape/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/site/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/site_name/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/source/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/spatial/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/srs_name/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/start_date/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/style_period/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/subject/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/tags/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/teaser/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/technique/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/temporal/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/term/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/things_present/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/title/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/title_preference/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/title_source/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/title_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/unit/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/value/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
          <loc>https://arqtrad.github.io/wasth_schema/elements/wasth_schema/</loc>
-         <lastmod>2026-10-21</lastmod>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/work_rights/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/work_type_condition/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/work_type_context/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/work_type_form/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/work_type_function/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/work_type_material_tech/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/work_type_subject_type/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/work_type_use/</loc>
+         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+         <loc>https://arqtrad.github.io/wasth_schema/elements/zoom/</loc>
+         <lastmod>2026-10-25</lastmod>
     </url>
 </urlset>
