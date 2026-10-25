@@ -60,7 +60,8 @@ classes:
 
       type:
         range: EventType
-        ifabsent: EventType(lido:lido00031)
+        required: true
+        #ifabsent: EventType(lido:lido00031)
 
       actor_role:
         range: Actor
