@@ -329,7 +329,6 @@ enums:
       source_ontology: http://terminology.lido-schema.org/objectType
       include_self: false
 
-
   ReferenceType:
     description: Tipos de referências a objetos externos previstos no LIDO.
     permissible_values:
@@ -494,6 +493,7 @@ enums:
         #meaning: lido:lido00524
       #other:
         #meaning: lido:lido00136
+
 
 types:
 
