@@ -3,7 +3,7 @@ description: "## Orienta\xE7\xF5es gerais\n\nTodas as fichas dos projetos dos Do
   rios da arquitetura tradicional s\xE3o\narquivos de texto sem formata\xE7\xE3o,\
   \ que podem ser criados e editados em\nprogramas como o Notepad++, Sublime Text,\
   \ ou Zettlr, entre muitos outros.\nElas podem, tamb\xE9m, ser criadas e editadas\
-  \ diretamente online no reposit\xF3rio\ndo GitHub.\n\n> :warning: As fichas **n\xE3\
+  \ diretamente online no reposit\xF3rio\ndo GitHub.\n\n> \u26A0\uFE0F As fichas **n\xE3\
   o** devem ser criadas nem editadas em processadores\n> de texto formatado, tais\
   \ como Microsoft Word, Google Docs, ou LibreOffice.\n\nA ficha se divide em dois\
   \ blocos\u2009:\num bloco de metadados delimitado por linhas contendo apenas tr\xEA\
@@ -4394,20 +4394,19 @@ classes:
     description: "An historical landmark or building.\nNos Document\xE1rios da Arquitetura\
       \ Tradicional, esta ficha \xE9 usada para cadastrar uma edifica\xE7\xE3o, um\
       \ conjunto arquitet\xF4nico, ou ainda uma parte significativa de uma edifica\xE7\
-      \xE3o.\n## Especifica\xE7\xE3o e modelo de preenchimento\nAs instru\xE7\xF5\
-      es de preeenchimento para cada elemento da ficha se encontram na se\xE7\xE3\
+      \xE3o.\n<h3>Especifica\xE7\xE3o e modelo de preenchimento</h3>\nAs instru\xE7\
+      \xF5es de preeenchimento para cada elemento da ficha se encontram na se\xE7\xE3\
       o [Slots](#slots).\nObserve como exemplo de ficha (quase) completamente preenchida\
-      \ a [Casa dos Sete Candeeiros].\nEm caso de d\xFAvidas quanto \xE0 formata\xE7\
-      \xE3o da ficha, observe as informa\xE7\xF5es acerca da especifica\xE7\xE3o [YAML].\n\
+      \ a [Casa dos Sete Candeeiros](https://github.com/arqtrad/casa/blob/main/br-ba-salvador-casa_7_candeeiros.md?plain=1).\n\
+      Em caso de d\xFAvidas quanto \xE0 formata\xE7\xE3o da ficha, observe as informa\xE7\
+      \xF5es acerca da especifica\xE7\xE3o [YAML](https://www.yaml.info/learn/index.html).\n\
       Todos os grupos que come\xE7am com um h\xEDfen `-` s\xE3o listas que podem conter\
       \ qualquer n\xFAmero de linhas ou blocos.\nA ordem dos blocos n\xE3o \xE9 importante,\
       \ mas a hierarquia dentro de cada bloco e a indenta\xE7\xE3o de dois espa\xE7\
       os por n\xEDvel hier\xE1rquico, sim.\nO caractere `#` indica o in\xEDcio de\
       \ um coment\xE1rio, que prossegue at\xE9 o final da linha. Os coment\xE1rios\
       \ e as linhas que cont\xEAm apenas coment\xE1rios devem ser apagados das fichas\
-      \ preenchidas.\nCampos n\xE3o preenchidos tamb\xE9m devem ser apagadas das fichas.\n\
-      [YAML]: https://www.yaml.info/learn/index.html\n[Casa dos Sete Candeeiros]:\
-      \ https://github.com/arqtrad/casa/blob/main/br-ba-salvador-casa_7_candeeiros.md?plain=1\n"
+      \ preenchidas.\nCampos n\xE3o preenchidos tamb\xE9m devem ser apagadas das fichas.\n"
     from_schema: https://tradicional.arq.br/schema/work
     exact_mappings:
     - schema:LandmarksOrHistoricalBuildings
@@ -4728,6 +4727,6 @@ classes:
     class_uri: wasth:HistoricPlace
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-10-26T19:36:14'
-source_file_size: 25491
+source_file_date: '2026-10-26T19:40:44'
+source_file_size: 25488
 
