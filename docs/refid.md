@@ -14,7 +14,7 @@ _Local or external identifier._
 
 
 
-URI: [dcterm:identifier](dcterm:identifier)
+URI: [dcterms:identifier](http://purl.org/dc/terms/identifier)
 <!-- no inheritance hierarchy -->
 
 
@@ -41,7 +41,7 @@ URI: [dcterm:identifier](dcterm:identifier)
 | --- | --- |
 | Range | [Uriorcurie](Uriorcurie.md) |
 | Domain Of | [BibliographicCitation](BibliographicCitation.md), [TypedReference](TypedReference.md) |
-| Slot URI | [dcterm:identifier](dcterm:identifier) |
+| Slot URI | [dcterms:identifier](http://purl.org/dc/terms/identifier) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -84,7 +84,7 @@ URI: [dcterm:identifier](dcterm:identifier)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | dcterm:identifier |
+| self | dcterms:identifier |
 | native | wasth:refid |
 | exact | schema:identifier |
 
@@ -101,7 +101,7 @@ from_schema: https://tradicional.arq.br/schema
 exact_mappings:
 - schema:identifier
 rank: 1000
-slot_uri: dcterm:identifier
+slot_uri: dcterms:identifier
 key: true
 domain_of:
 - BibliographicCitation

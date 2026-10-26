@@ -586,10 +586,6 @@ slot_usage:
   category:
     name: category
     ifabsent: string(http://terminology.lido-schema.org/lido00096)
-  relation:
-    name: relation
-    slot_uri: lido:relatedWorkSet
-    range: RelatedWork
   site:
     name: site
     required: false
@@ -865,10 +861,6 @@ slot_usage:
   category:
     name: category
     ifabsent: string(http://terminology.lido-schema.org/lido00096)
-  relation:
-    name: relation
-    slot_uri: lido:relatedWorkSet
-    range: RelatedWork
   site:
     name: site
     required: false

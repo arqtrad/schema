@@ -18,9 +18,9 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 
 | Property | Value |
 | --- | --- |
-| Base | `str` |
+| Base | `string` |
 | Type URI | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) |
-| Representation | `str` |
+| Representation | `string` |
 ## Value Constraints
 
 | Property | Value |

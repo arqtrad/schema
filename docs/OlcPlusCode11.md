@@ -12,14 +12,14 @@ _Open Location Code (Plus Code) com resolução de 11 dígitos._
 
 <div data-search-exclude markdown="1">
 
-URI: [xsd:str](http://www.w3.org/2001/XMLSchema#str)
+URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 ## Type Properties
 
 | Property | Value |
 | --- | --- |
-| Base | `str` |
-| Type URI | [xsd:str](http://www.w3.org/2001/XMLSchema#str) |
+| Base | `string` |
+| Type URI | [xsd:string](http://www.w3.org/2001/XMLSchema#string) |
 ## Value Constraints
 
 | Property | Value |
@@ -53,7 +53,7 @@ URI: [xsd:str](http://www.w3.org/2001/XMLSchema#str)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | xsd:str |
+| self | xsd:string |
 | native | wasth:OlcPlusCode11 |
 
 

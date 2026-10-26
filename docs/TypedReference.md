@@ -211,7 +211,7 @@ attributes:
     exact_mappings:
     - schema:identifier
     rank: 1000
-    slot_uri: dcterm:identifier
+    slot_uri: dcterms:identifier
     key: true
     owner: TypedReference
     domain_of:

@@ -140,7 +140,6 @@ attributes:
     - HistoricPlace
     range: RepositoryType
     required: true
-    inlined: true
   name:
     name: name
     from_schema: https://tradicional.arq.br/schema/work
@@ -185,7 +184,6 @@ attributes:
     - HistoricPlace
     range: RepositoryType
     required: true
-    inlined: true
   name:
     name: name
     from_schema: https://tradicional.arq.br/schema/work

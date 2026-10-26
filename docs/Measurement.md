@@ -22,7 +22,7 @@ __
 
 
 
-URI: [E16_Measurement](E16_Measurement)
+URI: [crm:E16_Measurement](http://www.cidoc-crm.org/cidoc-crm/E16_Measurement)
 
 
 
@@ -96,7 +96,7 @@ URI: [E16_Measurement](E16_Measurement)
 
 | Property | Value |
 | --- | --- |
-| Class URI | [E16_Measurement](E16_Measurement) |
+| Class URI | [crm:E16_Measurement](http://www.cidoc-crm.org/cidoc-crm/E16_Measurement) |
 
 
 ## Slots
@@ -153,7 +153,7 @@ URI: [E16_Measurement](E16_Measurement)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | E16_Measurement |
+| self | crm:E16_Measurement |
 | native | wasth:Measurement |
 | close | dcterms:format |
 
@@ -276,7 +276,7 @@ attributes:
     domain_of:
     - Measurement
     range: string
-class_uri: E16_Measurement
+class_uri: crm:E16_Measurement
 
 ```
 </details>
@@ -471,7 +471,7 @@ attributes:
     range: TypedReference
     required: true
     inlined: true
-class_uri: E16_Measurement
+class_uri: crm:E16_Measurement
 
 ```
 </details></div>
