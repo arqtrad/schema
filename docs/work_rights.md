@@ -6,7 +6,7 @@ search:
 # Slot: work_rights
 
 
-_> :warning: Este bloco se refere a eventuais direitos autorais sobre A > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre a > iconografia relacionada._
+_> ⚠️  Este bloco se refere a eventuais direitos autorais sobre A > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre > a iconografia relacionada._
 
 __
 
@@ -97,9 +97,8 @@ URI: [lido:rightsWorkSet](http://www.lido-schema.org/rightsWorkSet)
 <details>
 ```yaml
 name: work_rights
-description: '> :warning: Este bloco se refere a eventuais direitos autorais sobre
-  A > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre a > iconografia
-  relacionada.
+description: '> ⚠️  Este bloco se refere a eventuais direitos autorais sobre A > EDIFICAÇÃO
+  E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre > a iconografia relacionada.
 
   '
 from_schema: https://tradicional.arq.br/schema

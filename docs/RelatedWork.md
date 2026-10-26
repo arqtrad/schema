@@ -8,6 +8,46 @@ search:
 
 _A wrapper for identifying information about an object or work, including collections, related to the object/work in focus. May include a weblink._
 
+_As formas mais comuns de relação no nosso projeto são :_
+
+__
+
+_  - depicted in: A edificação é representada numa pintura ou desenho_
+
+_    artístico;_
+
+__
+
+_  - documented by: Informações sobre a edificação estão publicadas numa_
+
+_    referência bibliográfica, processo administrativo ou outro documento_
+
+_    textual impresso, manuscrito ou eletrônico;_
+
+__
+
+_  - has plan / has floor plan / has section / has elevation / has_
+
+_    rendering: Essas relações mostram a existência de desenhos técnicos_
+
+_    da edificação, sejam eles históricos ou recentes, compilados de_
+
+_    fontes externas a este projeto de pesquisa._
+
+__
+
+_  - has construction drawing / has design / has sketch: Essas relações se_
+
+_    referem a desenhos históricos (fontes primárias) que atestam o_
+
+_    processo de projeto da edificação._
+
+__
+
+_ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO resource, MAIS ABAIXO._
+
+_O grupo relation é destinado unicamente a cadastrar relações desta edificação com objetos autônomos, tais como outras edificações, conjuntos urbanos, obras de artes visuais, referências bibliográficas ou acervos arquivísticos._
+
 
 
 <div data-search-exclude markdown="1">
@@ -127,9 +167,9 @@ URI: [wasth:RelatedWork](https://tradicional.arq.br/schema/RelatedWork)
 | [related_object](related_object.md) | 1 <br/> [Work](Work.md) |  | [RelatedObject](RelatedObject.md) |
 | [object_type](object_type.md) | 0..1 <br/> [ObjectType](ObjectType.md) | Usar um vocabulário controlado para identificar o tipo de representação, por ... | [RelatedObject](RelatedObject.md) |
 | [resources](resources.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de imag... | [RelatedObject](RelatedObject.md) |
-| [media](media.md) | * <br/> [MediaObject](MediaObject.md) |  | [RelatedObject](RelatedObject.md) |
+| [media](media.md) | * <br/> [MediaObject](MediaObject.md) | Representações iconográficas deste objeto | [RelatedObject](RelatedObject.md) |
 | [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | [RelatedObject](RelatedObject.md) |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [RelatedObject](RelatedObject.md) |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | [RelatedObject](RelatedObject.md) |
 
 
 
@@ -188,8 +228,22 @@ URI: [wasth:RelatedWork](https://tradicional.arq.br/schema/RelatedWork)
 <details>
 ```yaml
 name: RelatedWork
-description: A wrapper for identifying information about an object or work, including
-  collections, related to the object/work in focus. May include a weblink.
+description: "A wrapper for identifying information about an object or work, including\
+  \ collections, related to the object/work in focus. May include a weblink.\nAs formas\
+  \ mais comuns de relação no nosso projeto são :\n\n  - depicted in: A edificação\
+  \ é representada numa pintura ou desenho\n    artístico;\n\n  - documented by: Informações\
+  \ sobre a edificação estão publicadas numa\n    referência bibliográfica, processo\
+  \ administrativo ou outro documento\n    textual impresso, manuscrito ou eletrônico;\n\
+  \n  - has plan / has floor plan / has section / has elevation / has\n    rendering:\
+  \ Essas relações mostram a existência de desenhos técnicos\n    da edificação, sejam\
+  \ eles históricos ou recentes, compilados de\n    fontes externas a este projeto\
+  \ de pesquisa.\n\n  - has construction drawing / has design / has sketch: Essas\
+  \ relações se\n    referem a desenhos históricos (fontes primárias) que atestam\
+  \ o\n    processo de projeto da edificação.\n\nATENÇÃO : OS DESENHOS PRODUZIDOS\
+  \ POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO resource, MAIS ABAIXO.\n\
+  O grupo relation é destinado unicamente a cadastrar relações desta edificação com\
+  \ objetos autônomos, tais como outras edificações, conjuntos urbanos, obras de artes\
+  \ visuais, referências bibliográficas ou acervos arquivísticos."
 from_schema: https://tradicional.arq.br/schema
 is_a: RelatedObject
 slot_usage:
@@ -205,8 +259,22 @@ slot_usage:
 <details>
 ```yaml
 name: RelatedWork
-description: A wrapper for identifying information about an object or work, including
-  collections, related to the object/work in focus. May include a weblink.
+description: "A wrapper for identifying information about an object or work, including\
+  \ collections, related to the object/work in focus. May include a weblink.\nAs formas\
+  \ mais comuns de relação no nosso projeto são :\n\n  - depicted in: A edificação\
+  \ é representada numa pintura ou desenho\n    artístico;\n\n  - documented by: Informações\
+  \ sobre a edificação estão publicadas numa\n    referência bibliográfica, processo\
+  \ administrativo ou outro documento\n    textual impresso, manuscrito ou eletrônico;\n\
+  \n  - has plan / has floor plan / has section / has elevation / has\n    rendering:\
+  \ Essas relações mostram a existência de desenhos técnicos\n    da edificação, sejam\
+  \ eles históricos ou recentes, compilados de\n    fontes externas a este projeto\
+  \ de pesquisa.\n\n  - has construction drawing / has design / has sketch: Essas\
+  \ relações se\n    referem a desenhos históricos (fontes primárias) que atestam\
+  \ o\n    processo de projeto da edificação.\n\nATENÇÃO : OS DESENHOS PRODUZIDOS\
+  \ POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO resource, MAIS ABAIXO.\n\
+  O grupo relation é destinado unicamente a cadastrar relações desta edificação com\
+  \ objetos autônomos, tais como outras edificações, conjuntos urbanos, obras de artes\
+  \ visuais, referências bibliográficas ou acervos arquivísticos."
 from_schema: https://tradicional.arq.br/schema
 is_a: RelatedObject
 slot_usage:
@@ -304,6 +372,16 @@ attributes:
     inlined_as_list: false
   media:
     name: media
+    description: 'Representações iconográficas deste objeto.
+
+      No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente
+      o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`,
+      o link deve remeter a uma página web que forneça a respetiva API ou as informações
+      acerca do modelo.
+
+      (A FAZER) Ver [Instruções para carregar imagens e desenhos].
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     owner: RelatedWork
@@ -332,6 +410,12 @@ attributes:
     inlined_as_list: true
   bibliographic_citation:
     name: bibliographic_citation
+    description: 'Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: dcterms:bibliographicCitation

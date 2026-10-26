@@ -167,9 +167,9 @@ URI: [wasth:RelatedObject](https://tradicional.arq.br/schema/RelatedObject)
 | [related_object](related_object.md) | 1 <br/> [Thing](Thing.md) |  | direct |
 | [object_type](object_type.md) | 0..1 <br/> [ObjectType](ObjectType.md) | Usar um vocabulário controlado para identificar o tipo de representação, por ... | direct |
 | [resources](resources.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de imag... | direct |
-| [media](media.md) | * <br/> [MediaObject](MediaObject.md) |  | direct |
+| [media](media.md) | * <br/> [MediaObject](MediaObject.md) | Representações iconográficas deste objeto | direct |
 | [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
 
 
 
@@ -361,6 +361,16 @@ attributes:
     inlined_as_list: false
   media:
     name: media
+    description: 'Representações iconográficas deste objeto.
+
+      No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente
+      o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`,
+      o link deve remeter a uma página web que forneça a respetiva API ou as informações
+      acerca do modelo.
+
+      (A FAZER) Ver [Instruções para carregar imagens e desenhos].
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     owner: RelatedObject
@@ -389,6 +399,12 @@ attributes:
     inlined_as_list: true
   bibliographic_citation:
     name: bibliographic_citation
+    description: 'Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: dcterms:bibliographicCitation

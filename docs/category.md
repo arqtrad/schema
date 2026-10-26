@@ -10,6 +10,8 @@ _The LIDO Category Vocabulary is a structured controlled list of terms recommend
 
 _Examples are human-made object or natural object._
 
+_Nos documentários de edificações, preencher este campo obrigatoriamente com `term:lido00096`_
+
 
 
 <div data-search-exclude markdown="1">
@@ -107,7 +109,9 @@ name: category
 description: 'The LIDO Category Vocabulary is a structured controlled list of terms
   recommended to use as values in the LIDO Category element.
 
-  Examples are human-made object or natural object.'
+  Examples are human-made object or natural object.
+
+  Nos documentários de edificações, preencher este campo obrigatoriamente com `term:lido00096`'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: term:lidoCategory

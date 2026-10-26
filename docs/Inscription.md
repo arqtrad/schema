@@ -80,7 +80,7 @@ URI: [wasth:Inscription](https://tradicional.arq.br/schema/Inscription)
 | [format_extent](format_extent.md) | 0..1 <br/> [TypedReference](TypedReference.md) | Indica a parte do objeto que está sendo medida — por exemplo, se a altura é a... | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
 | [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
 | [type](type.md) | 1 <br/> [InscriptionType](InscriptionType.md) |  | direct |
 
 
@@ -273,6 +273,12 @@ attributes:
     recommended: true
   bibliographic_citation:
     name: bibliographic_citation
+    description: 'Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: dcterms:bibliographicCitation

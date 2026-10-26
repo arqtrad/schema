@@ -76,7 +76,7 @@ URI: [wasth:TypedReference](https://tradicional.arq.br/schema/TypedReference)
 | [reference_type](reference_type.md) | 0..1 <br/> [ReferenceType](ReferenceType.md) |  | direct |
 | [term](term.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | LIDO terminology term | direct |
 | [refid](refid.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | Local or external identifier | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
 | [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | direct |
 
 
@@ -221,6 +221,12 @@ attributes:
     required: true
   bibliographic_citation:
     name: bibliographic_citation
+    description: 'Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: dcterms:bibliographicCitation

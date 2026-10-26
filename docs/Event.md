@@ -340,10 +340,10 @@ URI: [crm:E5_Event](http://www.cidoc-crm.org/cidoc-crm/E5_Event)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [measurements](measurements.md) | * <br/> [Measurement](Measurement.md) |  | direct |
+| [measurements](measurements.md) | * <br/> [Measurement](Measurement.md) | A wrapper for information about the dimensions, or other measurements, of the... | direct |
 | [material](material.md) | * <br/> [MaterialTech](MaterialTech.md) | This class is a specialization of E55 Type and comprises the concepts of mate... | direct |
 | [technique](technique.md) | * <br/> [MaterialTech](MaterialTech.md) | The production or manufacturing processes, techniques, and methods incorporat... | direct |
-| [media](media.md) | * <br/> [MediaObject](MediaObject.md) |  | direct |
+| [media](media.md) | * <br/> [MediaObject](MediaObject.md) | Representações iconográficas deste objeto | direct |
 | [type](type.md) | 1 <br/> [EventType](EventType.md) |  | direct |
 | [actor_role](actor_role.md) | * <br/> [Actor](Actor.md) | Identificação de um agente e do seu papel no evento | direct |
 | [event_date](event_date.md) | 1 <br/> [EventDate](EventDate.md) | Conjunto de datas em que decorreu o evento | direct |
@@ -357,7 +357,7 @@ URI: [crm:E5_Event](http://www.cidoc-crm.org/cidoc-crm/E5_Event)
 | [related_events](related_events.md) | * <br/> [RelatedEvent](RelatedEvent.md) | A set of structured information about an event related to the event in focus,... | direct |
 | [description](description.md) | 1 <br/> [String](String.md) | A human-readable description for a thing | [Thing](Thing.md) |
 | [title_type](title_type.md) | 1 <br/> [TitleType](TitleType.md) | Indica se o título é um nome próprio, descritivo, etc | [Thing](Thing.md) |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [Thing](Thing.md) |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | [Thing](Thing.md) |
 | [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... | [Thing](Thing.md) |
 | [id](id.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | Unique identifier for this object | [Thing](Thing.md) |
 | [author](author.md) | 0..1 <br/> [OrcidId](OrcidId.md) | ORCID iD of the record author or maintainer | [Thing](Thing.md) |
@@ -818,6 +818,11 @@ attributes:
     multivalued: true
   measurements:
     name: measurements
+    description: 'A wrapper for information about the dimensions, or other measurements,
+      of the object/work in focus. May also include extents of the parts of a complex
+      object or work.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     owner: Event
@@ -884,6 +889,16 @@ attributes:
     inlined_as_list: true
   media:
     name: media
+    description: 'Representações iconográficas deste objeto.
+
+      No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente
+      o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`,
+      o link deve remeter a uma página web que forneça a respetiva API ou as informações
+      acerca do modelo.
+
+      (A FAZER) Ver [Instruções para carregar imagens e desenhos].
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     owner: Event
@@ -934,6 +949,12 @@ attributes:
     required: true
   bibliographic_citation:
     name: bibliographic_citation
+    description: 'Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: dcterms:bibliographicCitation
@@ -1075,7 +1096,10 @@ attributes:
     description: 'The LIDO Category Vocabulary is a structured controlled list of
       terms recommended to use as values in the LIDO Category element.
 
-      Examples are human-made object or natural object.'
+      Examples are human-made object or natural object.
+
+      Nos documentários de edificações, preencher este campo obrigatoriamente com
+      `term:lido00096`'
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     slot_uri: term:lidoCategory

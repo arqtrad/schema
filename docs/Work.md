@@ -463,13 +463,13 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [measurements](measurements.md) | * <br/> [Measurement](Measurement.md) |  | direct |
+| [measurements](measurements.md) | * <br/> [Measurement](Measurement.md) | A wrapper for information about the dimensions, or other measurements, of the... | direct |
 | [material](material.md) | * <br/> [MaterialTech](MaterialTech.md) | This class is a specialization of E55 Type and comprises the concepts of mate... | direct |
 | [technique](technique.md) | * <br/> [MaterialTech](MaterialTech.md) | The production or manufacturing processes, techniques, and methods incorporat... | direct |
 | [subject](subject.md) | * <br/> [Topic](Topic.md) | Recomenda-se articular o tema em três níveis : descrição, identificação e int... | direct |
-| [related_works](related_works.md) | * <br/> [RelatedWork](RelatedWork.md) |  | direct |
+| [related_works](related_works.md) | * <br/> [RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... | direct |
 | [resources](resources.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de imag... | direct |
-| [media](media.md) | * <br/> [MediaObject](MediaObject.md) |  | direct |
+| [media](media.md) | * <br/> [MediaObject](MediaObject.md) | Representações iconográficas deste objeto | direct |
 | [work_type_condition](work_type_condition.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their overall state such ... | direct |
 | [work_type_form](work_type_form.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their physical form or by... | direct |
 | [work_type_material_tech](work_type_material_tech.md) | * _recommended_ <br/> [MaterialTech](MaterialTech.md) | Descriptors for objects that are distinguishable by their materials encorpora... | direct |
@@ -482,7 +482,7 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 | [inscriptions](inscriptions.md) | * <br/> [Inscription](Inscription.md) | Marcas, símbolos ou textos gravados na edificação, especialmente aqueles refe... | direct |
 | [location_historic](location_historic.md) | * <br/> [HistoricPlace](HistoricPlace.md) | Antigas jurisdições ou designações para o lugar onde o objeto se encontra | direct |
 | [collection](collection.md) | * <br/> [Thing](Thing.md) | A set of identifying and indexing information about the collection the object... | direct |
-| [work_rights](work_rights.md) | 1..* <br/> [Right](Right.md) | > :warning: Este bloco se refere a eventuais direitos autorais sobre A > EDIF... | direct |
+| [work_rights](work_rights.md) | 1..* <br/> [Right](Right.md) | > ⚠️  Este bloco se refere a eventuais direitos autorais sobre A > EDIFICAÇÃO... | direct |
 | [site](site.md) | 0..1 <br/> [Site](Site.md) | A localização real, atual da edificação — é o que será usado em quase todos o... | [Place](Place.md) |
 | [work_type_function](work_type_function.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Objects that are distinguishable by the particular purpose for which they are... | [Place](Place.md) |
 | [work_type_context](work_type_context.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their use or application ... | [Place](Place.md) |
@@ -492,7 +492,7 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 | [other_site](other_site.md) | * <br/> [Site](Site.md) | Para casos não contemplados em nenhuma das categorias acima | [Place](Place.md) |
 | [description](description.md) | 1 <br/> [String](String.md) | A human-readable description for a thing | [Thing](Thing.md) |
 | [title_type](title_type.md) | 1 <br/> [RepositoryType](RepositoryType.md) | Indica se o título é um nome próprio, descritivo, etc | [Thing](Thing.md) |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [Thing](Thing.md) |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | [Thing](Thing.md) |
 | [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... | [Thing](Thing.md) |
 | [id](id.md) | 1 <br/> [OlcPlusCode11](OlcPlusCode11.md) | Cada edificação terá um identificador gerado a partir do seu georreferenciame... | [Thing](Thing.md) |
 | [author](author.md) | 1 <br/> [OrcidId](OrcidId.md) | ORCID iD of the record author or maintainer | [Thing](Thing.md) |
@@ -851,8 +851,8 @@ attributes:
     inlined_as_list: false
   work_rights:
     name: work_rights
-    description: '> :warning: Este bloco se refere a eventuais direitos autorais sobre
-      A > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre a > iconografia
+    description: '> ⚠️  Este bloco se refere a eventuais direitos autorais sobre A
+      > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre > a iconografia
       relacionada.
 
       '
@@ -1163,8 +1163,8 @@ attributes:
     inlined_as_list: false
   work_rights:
     name: work_rights
-    description: '> :warning: Este bloco se refere a eventuais direitos autorais sobre
-      A > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre a > iconografia
+    description: '> ⚠️  Este bloco se refere a eventuais direitos autorais sobre A
+      > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre > a iconografia
       relacionada.
 
       '
@@ -1181,6 +1181,11 @@ attributes:
     inlined_as_list: true
   measurements:
     name: measurements
+    description: 'A wrapper for information about the dimensions, or other measurements,
+      of the object/work in focus. May also include extents of the parts of a complex
+      object or work.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     owner: Work
@@ -1274,6 +1279,23 @@ attributes:
     inlined_as_list: true
   related_works:
     name: related_works
+    description: "A wrapper for identifying information about an object or work, including\
+      \ collections, related to the object/work in focus. May include a weblink.\n\
+      As formas mais comuns de relação no nosso projeto são :\n\n  - depicted in:\
+      \ A edificação é representada numa pintura ou desenho\n    artístico;\n\n  -\
+      \ documented by: Informações sobre a edificação estão publicadas numa\n    referência\
+      \ bibliográfica, processo administrativo ou outro documento\n    textual impresso,\
+      \ manuscrito ou eletrônico;\n\n  - has plan / has floor plan / has section /\
+      \ has elevation / has\n    rendering: Essas relações mostram a existência de\
+      \ desenhos técnicos\n    da edificação, sejam eles históricos ou recentes, compilados\
+      \ de\n    fontes externas a este projeto de pesquisa.\n\n  - has construction\
+      \ drawing / has design / has sketch: Essas relações se\n    referem a desenhos\
+      \ históricos (fontes primárias) que atestam o\n    processo de projeto da edificação.\n\
+      \nATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS\
+      \ NO GRUPO resource, MAIS ABAIXO.\nO grupo relation é destinado unicamente a\
+      \ cadastrar relações desta edificação com objetos autônomos, tais como outras\
+      \ edificações, conjuntos urbanos, obras de artes visuais, referências bibliográficas\
+      \ ou acervos arquivísticos."
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: skos:related
@@ -1310,6 +1332,16 @@ attributes:
     inlined_as_list: false
   media:
     name: media
+    description: 'Representações iconográficas deste objeto.
+
+      No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente
+      o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`,
+      o link deve remeter a uma página web que forneça a respetiva API ou as informações
+      acerca do modelo.
+
+      (A FAZER) Ver [Instruções para carregar imagens e desenhos].
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     owner: Work
@@ -1473,6 +1505,12 @@ attributes:
     required: true
   bibliographic_citation:
     name: bibliographic_citation
+    description: 'Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: dcterms:bibliographicCitation
@@ -1617,7 +1655,10 @@ attributes:
     description: 'The LIDO Category Vocabulary is a structured controlled list of
       terms recommended to use as values in the LIDO Category element.
 
-      Examples are human-made object or natural object.'
+      Examples are human-made object or natural object.
+
+      Nos documentários de edificações, preencher este campo obrigatoriamente com
+      `term:lido00096`'
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: term:lidoCategory

@@ -5,6 +5,15 @@ search:
 
 # Slot: bibliographic_citation
 
+
+_Cadastro de uma referência bibliográfica._
+
+_Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -103,6 +112,12 @@ URI: [dcterms:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitat
 <details>
 ```yaml
 name: bibliographic_citation
+description: 'Cadastro de uma referência bibliográfica.
+
+  Usar o campo `description` para formatar a referência, caso a formatação automática
+  do Zotero não for satisfatória.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: dcterms:bibliographicCitation

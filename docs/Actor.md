@@ -102,7 +102,7 @@ URI: [wasth:Actor](https://tradicional.arq.br/schema/Actor)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
 | [actor_type](actor_type.md) | 0..1 <br/> [AgentType](AgentType.md) | Define se o agente é uma pessoa, uma organização ou corporação, uma oficina, ... | direct |
 | [actor_name](actor_name.md) | 0..1 <br/> [TypedReference](TypedReference.md) | Nome do agente extraído de um vocabulário controlado | direct |
 | [role_in_event](role_in_event.md) | 0..1 <br/> [RoleType](RoleType.md) | Ação desempenhada pelo agente no evento | direct |
@@ -305,6 +305,12 @@ attributes:
     inlined_as_list: true
   bibliographic_citation:
     name: bibliographic_citation
+    description: 'Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: dcterms:bibliographicCitation

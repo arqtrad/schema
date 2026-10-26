@@ -229,13 +229,6 @@ slots:
       - schema:description
     description: A human-readable description for a thing
 
-  bibliographic_citation:
-    recommended: true
-    range: BibliographicCitation
-    multivalued: true
-    inlined_as_list: true
-    slot_uri: dcterms:bibliographicCitation
-
   concept:
     alias: name
     range: Concept
@@ -256,6 +249,10 @@ slots:
     range: Measurement
     multivalued: true
     inlined_as_list: true
+    description: >
+      A wrapper for information about the dimensions, or other measurements, of
+      the object/work in focus. May also include extents of the parts of a
+      complex object or work.
 
   material:
     slot_uri: crm:E57_Material

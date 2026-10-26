@@ -5,6 +5,13 @@ search:
 
 # Slot: measurements
 
+
+_A wrapper for information about the dimensions, or other measurements, of the object/work in focus. May also include extents of the parts of a complex object or work._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -83,6 +90,11 @@ URI: [wasth:measurements](https://tradicional.arq.br/schema/measurements)
 <details>
 ```yaml
 name: measurements
+description: 'A wrapper for information about the dimensions, or other measurements,
+  of the object/work in focus. May also include extents of the parts of a complex
+  object or work.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 domain_of:

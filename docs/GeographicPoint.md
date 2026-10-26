@@ -100,7 +100,7 @@ URI: [wasth:GeographicPoint](https://tradicional.arq.br/schema/GeographicPoint)
 | ---  | --- | --- | --- |
 | [srs_name](srs_name.md) | 0..1 _recommended_ <br/> [Uriorcurie](Uriorcurie.md) | Names the coordinate reference system (CRS) that defines the semantics of the... | direct |
 | [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
 | [lat](lat.md) | 1 <br/> [Latitude](Latitude.md) | Latitude em graus decimais (separador decimal: ponto) | direct |
 | [lon](lon.md) | 1 <br/> [Longitude](Longitude.md) | Longitude em graus decimais (separador decimal: ponto) | direct |
 | [alt](alt.md) | 0..1 <br/> [Float](Float.md) | Altitude em metros (separador decimal: ponto) | direct |
@@ -328,6 +328,12 @@ attributes:
     inlined_as_list: true
   bibliographic_citation:
     name: bibliographic_citation
+    description: 'Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: dcterms:bibliographicCitation

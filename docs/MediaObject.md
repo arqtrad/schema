@@ -134,11 +134,11 @@ URI: [schema:MediaObject](http://schema.org/MediaObject)
 | [provided_image](provided_image.md) | * <br/> [Uriorcurie](Uriorcurie.md) | Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap | direct |
 | [provided_3d](provided_3d.md) | * <br/> [Uriorcurie](Uriorcurie.md) | Modelo tridimensional ou IFC da edificação | direct |
 | [resource_service](resource_service.md) | * <br/> [TypedReference](TypedReference.md) | Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal... | direct |
-| [measurements](measurements.md) | * <br/> [Measurement](Measurement.md) |  | direct |
+| [measurements](measurements.md) | * <br/> [Measurement](Measurement.md) | A wrapper for information about the dimensions, or other measurements, of the... | direct |
 | [media_alt](media_alt.md) | 0..1 <br/> [String](String.md) | Texto alternativo para leitores de tela ou outras formas de acessibilidade | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
 | [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
 | [credit](credit.md) | 0..1 <br/> [String](String.md) | Informação sobre autoria ou responsabilidade | direct |
 | [rights](rights.md) | * <br/> [Right](Right.md) |  | direct |
 
@@ -332,6 +332,11 @@ attributes:
     inlined_as_list: true
   measurements:
     name: measurements
+    description: 'A wrapper for information about the dimensions, or other measurements,
+      of the object/work in focus. May also include extents of the parts of a complex
+      object or work.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     owner: MediaObject
@@ -395,6 +400,12 @@ attributes:
     inlined_as_list: true
   bibliographic_citation:
     name: bibliographic_citation
+    description: 'Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: dcterms:bibliographicCitation

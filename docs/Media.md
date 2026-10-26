@@ -5,6 +5,17 @@ search:
 
 # Slot: media
 
+
+_Representações iconográficas deste objeto._
+
+_No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma página web que forneça a respetiva API ou as informações acerca do modelo._
+
+_(A FAZER) Ver [Instruções para carregar imagens e desenhos]._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -84,6 +95,16 @@ URI: [wasth:media](https://tradicional.arq.br/schema/media)
 <details>
 ```yaml
 name: media
+description: 'Representações iconográficas deste objeto.
+
+  No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente
+  o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`, o
+  link deve remeter a uma página web que forneça a respetiva API ou as informações
+  acerca do modelo.
+
+  (A FAZER) Ver [Instruções para carregar imagens e desenhos].
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 domain_of:

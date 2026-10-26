@@ -105,7 +105,7 @@ URI: [crm:E16_Measurement](http://www.cidoc-crm.org/cidoc-crm/E16_Measurement)
 | ---  | --- | --- | --- |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
 | [format_extent](format_extent.md) | 0..1 <br/> [TypedReference](TypedReference.md) | Indica a parte do objeto que está sendo medida — por exemplo, se a altura é a... | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
 | [unit](unit.md) | 1 <br/> [TypedReference](TypedReference.md) | Unidade de medida usada no dimensionamento da representação, por exemplo metr... | direct |
 | [type](type.md) | 0..1 <br/> [MeasurementType](MeasurementType.md) | designa a natureza da medida : largura, altura, área, etc | direct |
 | [value](value.md) | 1 <br/> [Float](Float.md) | Valor numérico, usar ponto como separador decimal | direct |
@@ -433,6 +433,12 @@ attributes:
     inlined: true
   bibliographic_citation:
     name: bibliographic_citation
+    description: 'Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: dcterms:bibliographicCitation

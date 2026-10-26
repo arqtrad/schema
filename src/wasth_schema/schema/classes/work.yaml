@@ -271,9 +271,9 @@ classes:
         inlined_as_list: true
         slot_uri: lido:rightsWorkSet
         description: >
-          > :warning: Este bloco se refere a eventuais direitos autorais sobre A
-          > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre a
-          > iconografia relacionada.
+          > ⚠️  Este bloco se refere a eventuais direitos autorais sobre A
+          > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre
+          > a iconografia relacionada.
 
     slot_usage:
 
@@ -398,3 +398,32 @@ slots:
     multivalued: true
     inlined_as_list: true
     slot_uri: skos:related
+    description: >-
+      A wrapper for identifying information about an object or work, including
+      collections, related to the object/work in focus. May include a weblink.
+
+      As formas mais comuns de relação no nosso projeto são :
+
+        - depicted in: A edificação é representada numa pintura ou desenho
+          artístico;
+
+        - documented by: Informações sobre a edificação estão publicadas numa
+          referência bibliográfica, processo administrativo ou outro documento
+          textual impresso, manuscrito ou eletrônico;
+
+        - has plan / has floor plan / has section / has elevation / has
+          rendering: Essas relações mostram a existência de desenhos técnicos
+          da edificação, sejam eles históricos ou recentes, compilados de
+          fontes externas a este projeto de pesquisa.
+
+        - has construction drawing / has design / has sketch: Essas relações se
+          referem a desenhos históricos (fontes primárias) que atestam o
+          processo de projeto da edificação.
+
+      ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER
+      CADASTRADOS NO GRUPO resource, MAIS ABAIXO.
+
+      O grupo relation é destinado unicamente a cadastrar relações desta
+      edificação com objetos autônomos, tais como outras edificações, conjuntos
+      urbanos, obras de artes visuais, referências bibliográficas ou acervos
+      arquivísticos.

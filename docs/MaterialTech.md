@@ -82,7 +82,7 @@ URI: [wasth:MaterialTech](https://tradicional.arq.br/schema/MaterialTech)
 | ---  | --- | --- | --- |
 | [material_tech_type](material_tech_type.md) | 1 <br/> [MaterialTechType](MaterialTechType.md) | Tipo da referência a um material ou técnica usado na obra: material de constr... | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | [ConceptReference](ConceptReference.md) |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [ConceptReference](ConceptReference.md) |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | [ConceptReference](ConceptReference.md) |
 | [name](name.md) | 0..1 <br/> [Concept](Concept.md) | Identificador do termo referido | [ConceptReference](ConceptReference.md) |
 
 
@@ -223,6 +223,12 @@ attributes:
     range: string
   bibliographic_citation:
     name: bibliographic_citation
+    description: 'Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: dcterms:bibliographicCitation

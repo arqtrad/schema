@@ -181,7 +181,7 @@ Name: wasth_schema
 | [alt](alt.md) | Altitude em metros (separador decimal: ponto) |
 | [alt_name](alt_name.md) | O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação se... |
 | [author](author.md) | ORCID iD of the record author or maintainer |
-| [bibliographic_citation](bibliographic_citation.md) |  |
+| [bibliographic_citation](bibliographic_citation.md) | Cadastro de uma referência bibliográfica |
 | [broader](broader.md) | Um conceito de significação mais genérica |
 | [caption](caption.md) | Legenda descritiva ou explicativa |
 | [category](category.md) | The LIDO Category Vocabulary is a structured controlled list of terms recomme... |
@@ -222,8 +222,8 @@ Name: wasth_schema
 | [match](match.md) | Tipo da relação |
 | [material](material.md) | This class is a specialization of E55 Type and comprises the concepts of mate... |
 | [material_tech_type](material_tech_type.md) | Tipo da referência a um material ou técnica usado na obra: material de constr... |
-| [measurements](measurements.md) |  |
-| [media](media.md) |  |
+| [measurements](measurements.md) | A wrapper for information about the dimensions, or other measurements, of the... |
+| [media](media.md) | Representações iconográficas deste objeto |
 | [media_alt](media_alt.md) | Texto alternativo para leitores de tela ou outras formas de acessibilidade |
 | [method](method.md) | An index element for the method by which the event is or was carried out |
 | [name](name.md) | Identificador do termo referido |
@@ -246,7 +246,7 @@ Name: wasth_schema
 | [refid](refid.md) | Local or external identifier |
 | [related_events](related_events.md) | A set of structured information about an event related to the event in focus,... |
 | [related_object](related_object.md) |  |
-| [related_works](related_works.md) |  |
+| [related_works](related_works.md) | A wrapper for identifying information about an object or work, including coll... |
 | [relation](relation.md) | Um conceito com o qual existe um relacionamento semântico associativo |
 | [relation_type](relation_type.md) | Usamos os tipos de relação previstos pelo [VRA Core] |
 | [repositories](repositories.md) | A set of elements for the identification, name and location of the repository... |
@@ -275,7 +275,7 @@ Name: wasth_schema
 | [type](type.md) | designa a natureza da medida : largura, altura, área, etc |
 | [unit](unit.md) | Unidade de medida usada no dimensionamento da representação, por exemplo metr... |
 | [value](value.md) | Valor numérico, usar ponto como separador decimal |
-| [work_rights](work_rights.md) | > :warning: Este bloco se refere a eventuais direitos autorais sobre A > EDIF... |
+| [work_rights](work_rights.md) | > ⚠️  Este bloco se refere a eventuais direitos autorais sobre A > EDIFICAÇÃO... |
 | [work_type_condition](work_type_condition.md) | Descriptors for objects that are distinguishable by their overall state such ... |
 | [work_type_context](work_type_context.md) | Descriptors for objects that are distinguishable by their use or application ... |
 | [work_type_form](work_type_form.md) | Descriptors for objects that are distinguishable by their physical form or by... |

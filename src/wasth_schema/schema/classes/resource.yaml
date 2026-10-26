@@ -93,6 +93,32 @@ classes:
     description: >-
       A wrapper for identifying information about an object or work, including
       collections, related to the object/work in focus. May include a weblink.
+
+      As formas mais comuns de relação no nosso projeto são :
+
+        - depicted in: A edificação é representada numa pintura ou desenho
+          artístico;
+
+        - documented by: Informações sobre a edificação estão publicadas numa
+          referência bibliográfica, processo administrativo ou outro documento
+          textual impresso, manuscrito ou eletrônico;
+
+        - has plan / has floor plan / has section / has elevation / has
+          rendering: Essas relações mostram a existência de desenhos técnicos
+          da edificação, sejam eles históricos ou recentes, compilados de
+          fontes externas a este projeto de pesquisa.
+
+        - has construction drawing / has design / has sketch: Essas relações se
+          referem a desenhos históricos (fontes primárias) que atestam o
+          processo de projeto da edificação.
+
+      ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER
+      CADASTRADOS NO GRUPO resource, MAIS ABAIXO.
+
+      O grupo relation é destinado unicamente a cadastrar relações desta
+      edificação com objetos autônomos, tais como outras edificações, conjuntos
+      urbanos, obras de artes visuais, referências bibliográficas ou acervos
+      arquivísticos.
     slot_usage:
       related_object:
         range: Work
@@ -184,6 +210,18 @@ classes:
 
 slots:
 
+  bibliographic_citation:
+    slot_uri: dcterms:bibliographicCitation
+    range: BibliographicCitation
+    recommended: true
+    multivalued: true
+    inlined_as_list: true
+    description: >
+      Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação
+      automática do Zotero não for satisfatória.
+
   relation_type:
     alias: rel_type
     range: RelationType
@@ -271,6 +309,15 @@ slots:
     range: MediaObject
     multivalued: true
     inlined_as_list: true
+    description: >
+      Representações iconográficas deste objeto.
+
+      No caso de `preview_image` ou `provided_image`, o link deve referenciar
+      diretamente o arquivo (ficheiro) da imagem.
+      Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma
+      página web que forneça a respetiva API ou as informações acerca do modelo.
+
+      (A FAZER) Ver [Instruções para carregar imagens e desenhos].
 
   format:
     slot_uri: dcterms:MediaType

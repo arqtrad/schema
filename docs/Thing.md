@@ -208,7 +208,7 @@ URI: [crm:E1_CRM_Entity](http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity)
 | ---  | --- | --- | --- |
 | [description](description.md) | 1 <br/> [String](String.md) | A human-readable description for a thing | direct |
 | [title_type](title_type.md) | 1 <br/> [TitleType](TitleType.md) | Indica se o título é um nome próprio, descritivo, etc | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
 | [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... | direct |
 | [id](id.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | Unique identifier for this object | direct |
 | [author](author.md) | 0..1 <br/> [OrcidId](OrcidId.md) | ORCID iD of the record author or maintainer | direct |
@@ -391,7 +391,10 @@ attributes:
     description: 'The LIDO Category Vocabulary is a structured controlled list of
       terms recommended to use as values in the LIDO Category element.
 
-      Examples are human-made object or natural object.'
+      Examples are human-made object or natural object.
+
+      Nos documentários de edificações, preencher este campo obrigatoriamente com
+      `term:lido00096`'
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     slot_uri: term:lidoCategory
@@ -607,7 +610,10 @@ attributes:
     description: 'The LIDO Category Vocabulary is a structured controlled list of
       terms recommended to use as values in the LIDO Category element.
 
-      Examples are human-made object or natural object.'
+      Examples are human-made object or natural object.
+
+      Nos documentários de edificações, preencher este campo obrigatoriamente com
+      `term:lido00096`'
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     slot_uri: term:lidoCategory
@@ -751,6 +757,12 @@ attributes:
     required: true
   bibliographic_citation:
     name: bibliographic_citation
+    description: 'Cadastro de uma referência bibliográfica.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: dcterms:bibliographicCitation
