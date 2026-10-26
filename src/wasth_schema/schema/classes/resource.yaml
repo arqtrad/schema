@@ -14,9 +14,6 @@ prefixes:
 default_prefix: wasth
 default_range: string
 
-imports:
-  - shared
-
 classes:
 
   BibliographicCitation:
