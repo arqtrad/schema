@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://arqtrad.github.io/wasth_schema/elements/wasth_schema/">
+        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/wasth_schema/">
       
       
       
@@ -93,7 +93,7 @@
     aria-label="header.title"
   >
     <a
-      href="https://arqtrad.github.io/wasth_schema/"
+      href="https://tradicional.arq.br/schema/"
       title="wasth_schema"
       class="md-header__button md-logo"
       aria-label="wasth_schema"
@@ -358,6 +358,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#orientacoes-gerais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orientações gerais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antes-de-comecar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes de começar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-onde-comeco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por onde começo ?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -378,7 +419,62 @@
 
 
 <h1 id="wasth_schema">wasth_schema</h1>
-<p>Esquemas LinkML para os Documentários da Arquitetura Tradicional.</p>
+<h2 id="orientacoes-gerais">Orientações gerais</h2>
+<p>Todas as fichas dos projetos dos Documentários da arquitetura tradicional são
+arquivos de texto sem formatação, que podem ser criados e editados em
+programas como o Notepad++, Sublime Text, ou Zettlr, entre muitos outros.
+Elas podem, também, ser criadas e editadas diretamente online no repositório
+do GitHub.</p>
+<blockquote>
+<p>:warning: As fichas <strong>não</strong> devem ser criadas nem editadas em processadores
+de texto formatado, tais como Microsoft Word, Google Docs, ou LibreOffice.</p>
+</blockquote>
+<p>A ficha se divide em dois blocos :
+um bloco de metadados delimitado por linhas contendo apenas três hífens <code>---</code> e
+um bloco de conteúdo com texto livre.</p>
+<p>Os metadados são formatados segundo a especificação <a href="https://www.yaml.info/learn/index.html">YAML</a>.
+O conteúdo é formatado segundo a especificação <a href="https://programminghistorian.org/pt/licoes/introducao-ao-markdown">Markdown</a>,
+e pode incluir formatação específica do <a href="https://programminghistorian.org/pt/licoes/autoria-sustentavel-texto-simples-pandoc-markdown">Pandoc</a>.</p>
+<p>Quanto às informações que devem ser inseridas na ficha,
+(quase) todos os campos são definidos pela especificação <a href="https://icom-documentation.mini.icom.museum/working-groups/lido/lido-overview/">LIDO</a> e,
+na medida do possível, têm uma equivalência com o <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DublinCore</a>.</p>
+<p>Na medida do possível, buscamos também adequar o conteúdo das fichas às
+normas de preenchimento das fichas de Cadastro (M301, M302) do
+Sistema Integrado de Conhecimento e Gestão (<a href="https://sicg.iphan.gov.br/sicg/manual/manual.html">SICG</a>) do
+Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN).</p>
+<h2 id="antes-de-comecar">Antes de começar</h2>
+<p>Para contribuir com os Documentários da Arquitetura Tradicional, você ou
+o seu grupo de pesquisa precisa ter sua própria versão dos repositórios.</p>
+<p>Comece aprendendo um pouco sobre como trabalhar com controle de versão no Git e
+no GitHub, estudando
+<a href="https://programminghistorian.org/pt/licoes/git-ferramenta-metodologica-projetos-historia-1">estes tutoriais em português</a>
+no site <a href="https://programminghistorian.org/pt/">Programming Historian</a>.
+Em Windows ou MacOS, o jeito mais fácil de trabalhar com repositórios de dados
+no GitHub é instalando o <a href="https://github.com/apps/desktop?locale=pt-br">GitHub Desktop</a>.
+No Linux, há outras opções, como o <a href="https://www.smartgit.dev/">SmartGit</a>
+(também disponível para Windows e MacOS).</p>
+<p>Em seguida, precisa <strong>bifurcar</strong> (fork) o repositório no qual vai trabalhar,
+provavelmente à partida o repositório da
+<a href="https://github.com/arqtrad/casa/">Casa tradicional</a>,
+usando o botão <code>Fork 🔽</code> como ilustrado abaixo :</p>
+<p><img alt="Captura de tela" src="https://github.com/user-attachments/assets/6c22dcec-b8e1-4688-a504-d9ea640bdc43" /></p>
+<p>A partir daí, pode trabalhar livremente na sua própria cópia do repositório,
+usando as ferramentas <code>🔄 Sync fork</code> e  <code>⤴️ Contribute</code> para, respectivamente,
+obter periodicamente atualizações <em>vindas do</em> repositório principal e
+propor as suas contribuições <em>para o</em> repositório principal.</p>
+<p><img alt="Captura de tela" src="https://github.com/user-attachments/assets/25905e40-99ef-4b23-b33e-cfe586c41001" /></p>
+<p><img alt="Captura de tela" src="https://github.com/user-attachments/assets/b5f6ef50-c122-4f01-8ec9-b16207a9b63d" /></p>
+<p>Poderá então abrir uma solicitação de integração das suas alterações
+ao repositório principal (<strong>pull request</strong>):</p>
+<p><img alt="Captura de tela" src="https://github.com/user-attachments/assets/56de1236-6fa0-47f3-9e94-06218dace0a8" /></p>
+<p>Se não estiver à vontade para manipular diretamente os repositórios do GitHub,
+sempre pode contribuir informações, sugestões ou desejos no
+<a href="https://github.com/orgs/arqtrad/discussions">Fórum de discussão</a> deste projeto de pesquisa.
+Se tiver contribuições pontuais sobre fichas específicas, formatos ou lacunas,
+pode também abrir uma <a href="https://github.com/arqtrad/casa/issues"><em>issue</em> no repositório da Casa</a>.</p>
+<h2 id="por-onde-comeco">Por onde começo ?</h2>
+<p>Leia a especificação da ficha <a href="Work/">Work</a> para saber como preencher as
+fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <p>URI: <a href="https://tradicional.arq.br/schema">https://tradicional.arq.br/schema</a></p>
 
 

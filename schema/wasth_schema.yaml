@@ -1,6 +1,66 @@
 name: wasth_schema
-description: "Esquemas LinkML para os Document\xE1rios da Arquitetura Tradicional."
-title: wasth_schema
+description: "## Orienta\xE7\xF5es gerais\n\nTodas as fichas dos projetos dos Document\xE1\
+  rios da arquitetura tradicional s\xE3o\narquivos de texto sem formata\xE7\xE3o,\
+  \ que podem ser criados e editados em\nprogramas como o Notepad++, Sublime Text,\
+  \ ou Zettlr, entre muitos outros.\nElas podem, tamb\xE9m, ser criadas e editadas\
+  \ diretamente online no reposit\xF3rio\ndo GitHub.\n\n> :warning: As fichas **n\xE3\
+  o** devem ser criadas nem editadas em processadores\n> de texto formatado, tais\
+  \ como Microsoft Word, Google Docs, ou LibreOffice.\n\nA ficha se divide em dois\
+  \ blocos\u2009:\num bloco de metadados delimitado por linhas contendo apenas tr\xEA\
+  s h\xEDfens `---` e\num bloco de conte\xFAdo com texto livre.\n\nOs metadados s\xE3\
+  o formatados segundo a especifica\xE7\xE3o [YAML].\nO conte\xFAdo \xE9 formatado\
+  \ segundo a especifica\xE7\xE3o [Markdown],\ne pode incluir formata\xE7\xE3o espec\xED\
+  fica do [Pandoc].\n\nQuanto \xE0s informa\xE7\xF5es que devem ser inseridas na ficha,\n\
+  (quase) todos os campos s\xE3o definidos pela especifica\xE7\xE3o [LIDO] e,\nna\
+  \ medida do poss\xEDvel, t\xEAm uma equival\xEAncia com o [DublinCore].\n\nNa medida\
+  \ do poss\xEDvel, buscamos tamb\xE9m adequar o conte\xFAdo das fichas \xE0s\nnormas\
+  \ de preenchimento das fichas de Cadastro (M301, M302) do\nSistema Integrado de\
+  \ Conhecimento e Gest\xE3o ([SICG]) do\nInstituto do Patrim\xF4nio Hist\xF3rico\
+  \ e Art\xEDstico Nacional (IPHAN).\n\n[YAML]: https://www.yaml.info/learn/index.html\n\
+  \n[Markdown]: https://programminghistorian.org/pt/licoes/introducao-ao-markdown\n\
+  \n[Pandoc]: https://programminghistorian.org/pt/licoes/autoria-sustentavel-texto-simples-pandoc-markdown\n\
+  \n[LIDO]: https://icom-documentation.mini.icom.museum/working-groups/lido/lido-overview/\n\
+  \n[DublinCore]: https://www.dublincore.org/specifications/dublin-core/dcmi-terms/\n\
+  \n[SICG]: https://sicg.iphan.gov.br/sicg/manual/manual.html\n\n\n## Antes de come\xE7\
+  ar\n\nPara contribuir com os Document\xE1rios da Arquitetura Tradicional, voc\xEA\
+  \ ou\no seu grupo de pesquisa precisa ter sua pr\xF3pria vers\xE3o dos reposit\xF3\
+  rios.\n\nComece aprendendo um pouco sobre como trabalhar com controle de vers\xE3\
+  o no Git e\nno GitHub, estudando\n[estes tutoriais em portugu\xEAs](https://programminghistorian.org/pt/licoes/git-ferramenta-metodologica-projetos-historia-1)\n\
+  no site [Programming Historian].\nEm Windows ou MacOS, o jeito mais f\xE1cil de\
+  \ trabalhar com reposit\xF3rios de dados\nno GitHub \xE9 instalando o [GitHub Desktop].\n\
+  No Linux, h\xE1 outras op\xE7\xF5es, como o [SmartGit]\n(tamb\xE9m dispon\xEDvel\
+  \ para Windows e MacOS).\n\nEm seguida, precisa **bifurcar** (fork) o reposit\xF3\
+  rio no qual vai trabalhar,\nprovavelmente \xE0 partida o reposit\xF3rio da\n[Casa\
+  \ tradicional](https://github.com/arqtrad/casa/),\nusando o bot\xE3o `Fork \U0001F53D\
+  ` como ilustrado abaixo\u2009:\n\n<img alt=\"Captura de tela\" src=\"https://github.com/user-attachments/assets/6c22dcec-b8e1-4688-a504-d9ea640bdc43\"\
+  \ />\n\nA partir da\xED, pode trabalhar livremente na sua pr\xF3pria c\xF3pia do\
+  \ reposit\xF3rio,\nusando as ferramentas `\U0001F504 Sync fork` e  `\u2934\uFE0F\
+  \ Contribute` para, respectivamente,\nobter periodicamente atualiza\xE7\xF5es *vindas\
+  \ do* reposit\xF3rio principal e\npropor as suas contribui\xE7\xF5es *para o* reposit\xF3\
+  rio principal.\n\n<img alt=\"Captura de tela\" src=\"https://github.com/user-attachments/assets/25905e40-99ef-4b23-b33e-cfe586c41001\"\
+  \ />\n\n<img alt=\"Captura de tela\" src=\"https://github.com/user-attachments/assets/b5f6ef50-c122-4f01-8ec9-b16207a9b63d\"\
+  \ />\n\nPoder\xE1 ent\xE3o abrir uma solicita\xE7\xE3o de integra\xE7\xE3o das suas\
+  \ altera\xE7\xF5es\nao reposit\xF3rio principal (**pull request**):\n\n<img alt=\"\
+  Captura de tela\" src=\"https://github.com/user-attachments/assets/56de1236-6fa0-47f3-9e94-06218dace0a8\"\
+  \ />\n\nSe n\xE3o estiver \xE0 vontade para manipular diretamente os reposit\xF3\
+  rios do GitHub,\nsempre pode contribuir informa\xE7\xF5es, sugest\xF5es ou desejos\
+  \ no\n[F\xF3rum de discuss\xE3o] deste projeto de pesquisa.\nSe tiver contribui\xE7\
+  \xF5es pontuais sobre fichas espec\xEDficas, formatos ou lacunas,\npode tamb\xE9\
+  m abrir uma [*issue* no reposit\xF3rio da Casa].\n\n\n## Por onde come\xE7o\u2009\
+  ?\n\nLeia a especifica\xE7\xE3o da ficha [Work](Work/) para saber como preencher\
+  \ as\nfichas de edifica\xE7\xF5es dos Document\xE1rios da Arquitetura Tradicional.\n\
+  \n\n[Programming Historian]: https://programminghistorian.org/pt/\n\n[GitHub Desktop]:\
+  \ https://github.com/apps/desktop?locale=pt-br\n\n[SmartGit]: https://www.smartgit.dev/\n\
+  \n[F\xF3rum de discuss\xE3o]: https://github.com/orgs/arqtrad/discussions\n\n[*issue*\
+  \ no reposit\xF3rio da Casa]: https://github.com/arqtrad/casa/issues\n\n[Zotero]:\
+  \ https://www.zotero.org/groups/2495935/arquitetura_tradicional_luso-brasileira/\n\
+  \n[Global Building Atlas]: https://github.com/zhu-xlab/GlobalBuildingAtlas\n\n[QGIS]:\
+  \ https://qgis.org/\n\n[ORCiD]: https://orcid.org/\n\n[SIPA]: https://monumentos.gov.pt/\n\
+  \n[HPIP]: https://hpip.org/\n\n[iPatrimonio]: https://ipatrimonio.org/\n\n[VRA Core]:\
+  \ https://www.loc.gov/standards/vracore/\n\n[ULAN]: https://www.getty.edu/research/tools/vocabularies/ulan\n\
+  \n[IIIF]: https://iiif.io/\n\n[lista de tipos de m\xEDdia IANA]: https://www.iana.org/assignments/media-types\n"
+title: "Esquema de dados do WASTH (Web App para S\xEDtios Tradicionais e Hist\xF3\
+  ricos)"
 see_also:
 - https://tradicional.arq.br/schema
 id: https://tradicional.arq.br/schema
@@ -4332,9 +4392,22 @@ classes:
     name: Work
     definition_uri: https://tradicional.arq.br/schema/Work
     description: "An historical landmark or building.\nNos Document\xE1rios da Arquitetura\
-      \ Tradicional, esta ficha pode ser usada para cadastrar uma edifica\xE7\xE3\
-      o, um conjunto arquitet\xF4nico, ou ainda uma parte significativa de uma edifica\xE7\
-      \xE3o.\n"
+      \ Tradicional, esta ficha \xE9 usada para cadastrar uma edifica\xE7\xE3o, um\
+      \ conjunto arquitet\xF4nico, ou ainda uma parte significativa de uma edifica\xE7\
+      \xE3o.\n## Especifica\xE7\xE3o e modelo de preenchimento\nAs instru\xE7\xF5\
+      es de preeenchimento para cada elemento da ficha se encontram na se\xE7\xE3\
+      o [Slots](#slots).\nObserve como exemplo de ficha (quase) completamente preenchida\
+      \ a [Casa dos Sete Candeeiros].\nEm caso de d\xFAvidas quanto \xE0 formata\xE7\
+      \xE3o da ficha, observe as informa\xE7\xF5es acerca da especifica\xE7\xE3o [YAML].\n\
+      Todos os grupos que come\xE7am com um h\xEDfen `-` s\xE3o listas que podem conter\
+      \ qualquer n\xFAmero de linhas ou blocos.\nA ordem dos blocos n\xE3o \xE9 importante,\
+      \ mas a hierarquia dentro de cada bloco e a indenta\xE7\xE3o de dois espa\xE7\
+      os por n\xEDvel hier\xE1rquico, sim.\nO caractere `#` indica o in\xEDcio de\
+      \ um coment\xE1rio, que prossegue at\xE9 o final da linha. Os coment\xE1rios\
+      \ e as linhas que cont\xEAm apenas coment\xE1rios devem ser apagados das fichas\
+      \ preenchidas.\nCampos n\xE3o preenchidos tamb\xE9m devem ser apagadas das fichas.\n\
+      [YAML]: https://www.yaml.info/learn/index.html\n[Casa dos Sete Candeeiros]:\
+      \ https://github.com/arqtrad/casa/blob/main/br-ba-salvador-casa_7_candeeiros.md?plain=1\n"
     from_schema: https://tradicional.arq.br/schema/work
     exact_mappings:
     - schema:LandmarksOrHistoricalBuildings
@@ -4655,6 +4728,6 @@ classes:
     class_uri: wasth:HistoricPlace
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-10-26T16:17:16'
-source_file_size: 20444
+source_file_date: '2026-10-26T19:36:14'
+source_file_size: 25491
 
