@@ -16,6 +16,7 @@ default_range: string
 classes:
   Event:
     is_a: Thing
+    class_uri: crm:E5_Event # schema:Event
     description: |
       This class comprises distinct, delimited and coherent processes and
       interactions of a material nature, in cultural, social or physical
@@ -61,7 +62,7 @@ classes:
       type:
         range: EventType
         required: true
-        #ifabsent: EventType(lido:lido00031)
+        #ifabsent: EventType(term:lido00031)
 
       actor_role:
         range: Actor
@@ -222,7 +223,8 @@ classes:
 
       type:
         range: PeriodNameType
-        ifabsent: PeriodNameType(lido:lido00731)
+        required: true
+        #ifabsent: PeriodNameType(term:lido00731)
 
   EventPlace:
     attributes:

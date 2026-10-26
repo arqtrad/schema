@@ -6,6 +6,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   wasth: https://tradicional.arq.br/schema/
   lido: http://www.lido-schema.org/
+  term: http://terminology.lido-schema.org/
   dcterms: http://purl.org/dc/terms/
   unit: http://qudt.org/vocab/unit/
   skos: http://www.w3.org/2004/02/skos/core#
@@ -16,9 +17,10 @@ default_range: string
 classes:
 
   Work:
-    is_a: Thing
+    is_a: Place
+    class_uri: schema:LandmarksOrHistoricalBuildings # crm:E22_Human-Made_Object
     description: |
-      CIDOC–CRM E22 HUMAN-MADE OBJECT
+      An historical landmark or building.
 
       This class comprises all persistent physical objects of any size that are
       purposely created by human activity and have physical boundaries that
@@ -35,7 +37,7 @@ classes:
     attributes:
 
       work_type_condition:
-        slot_uri: lido:lido00937
+        slot_uri: term:lido00937
         recommended: true
         range: ConceptReference
         multivalued: true
@@ -55,7 +57,7 @@ classes:
           "estado de preservação" e "estado de conservação".
 
       work_type_form:
-        slot_uri: lido:lido00766
+        slot_uri: term:lido00766
         recommended: true
         range: ConceptReference
         multivalued: true
@@ -71,36 +73,6 @@ classes:
           Nos Documentários da Arquitetura Tradicional,
           designa uma tipologia formal.
 
-      work_type_function:
-        slot_uri: lido:lido00767
-        recommended: true
-        range: ConceptReference
-        multivalued: true
-        inlined_as_list: false
-        description: >-
-          Objects that are distinguishable by the particular purpose for which they
-          are designed or used. If an object is identifiable by its intended use,
-          then it is qualified by function.
-
-          Based on
-          [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
-          Nos Documentários da Arquitetura Tradicional, designa um dos sete tipos
-          de propósitos concebidos por C. William Westfall e Samir Younés em
-          *Architectural Type and Character*.
-
-      work_type_context:
-        slot_uri: lido:lido00934
-        recommended: true
-        range: ConceptReference
-        multivalued: true
-        inlined_as_list: false
-        description: >-
-          Descriptors for objects that are distinguishable by their use or
-          application within a particular physical location. If an object is
-          identifiable by association with specific surroundings, it is qualified
-          by location or context.
-
           Based on
           [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
 
@@ -109,7 +81,7 @@ classes:
           rural, isolada ou em correnteza...
 
       work_type_material_tech:
-        slot_uri: lido:lido00789
+        slot_uri: term:lido00789
         recommended: true
         range: MaterialTech
         multivalued: true
@@ -124,7 +96,7 @@ classes:
           construtiva geral da edificação.
 
       work_type_subject_type:
-        slot_uri: lido:lido00768
+        slot_uri: term:lido00768
         recommended: true
         range: ConceptReference
         multivalued: true
@@ -141,7 +113,7 @@ classes:
           classificação iconográfica mais específica do que `form` ou `function`.
 
       work_type_use:
-        slot_uri: lido:lido00938
+        slot_uri: term:lido00938
         recommended: true
         range: ConceptReference
         multivalued: true
@@ -157,8 +129,8 @@ classes:
           classificação(ões) de usos do solo ou atividades predominante(s) na
           edificação atualmente.
 
-      class_genre:
-        slot_uri: lido:lido00853
+      classification_genre:
+        slot_uri: term:lido00853
         range: ConceptReference
         multivalued: true
         inlined_as_list: false
@@ -179,8 +151,8 @@ classes:
           doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
           para arquitetura.
 
-      class_subject:
-        slot_uri: lido:lido00932
+      classification_subject:
+        slot_uri: term:lido00932
         range: ConceptReference
         multivalued: true
         inlined_as_list: false
@@ -196,8 +168,8 @@ classes:
           doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
           para arquitetura.
 
-      class_local:
-        slot_uri: lido:lido01135
+      classification_local:
+        slot_uri: term:lido01135
         range: ConceptReference
         multivalued: true
         inlined_as_list: false
@@ -213,8 +185,8 @@ classes:
           doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
           para arquitetura.
 
-      class_special:
-        slot_uri: lido:lido01144
+      classification_special:
+        slot_uri: term:lido01144
         range: ConceptReference
         multivalued: true
         inlined_as_list: false
@@ -241,6 +213,15 @@ classes:
           Marcas, símbolos ou textos gravados na edificação, especialmente
           aqueles referentes à estrutura como um todo e não específicos a
           alguma de suas partes. Não usar para iconografia.
+
+      location_historic:
+        range: HistoricPlace
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          Antigas jurisdições ou designações para o lugar onde o objeto se
+          encontra. Para um sítio de onde o objeto foi fisicamente removido, usar
+          `former_site:`.
 
 
       collection:
@@ -275,9 +256,10 @@ classes:
         range: RelatedWork
         slot_uri: lido:relatedWorkSet
 
+      site:
+        required: false
+
     slots:
-      - spatial
-      - location_historic
       - measurements
       - material
       - technique
@@ -334,17 +316,29 @@ classes:
       - format_extent
       - concept
 
+  HistoricPlace:
+    description: >-
+      Designações alternativas ou jurisdições antigas para o mesmo local, NÃO a
+      localização original de uma construção fisicamente deslocada (para tanto,
+      cadastrar outra localização do tipo `former_site`). Preencher apenas caso
+      a nomenclatura seja relevante, por exemplo para nomear as antigas
+      províncias de Portugal ou o Oeste da Bahia, que originalmente pertencia a
+      Pernambuco, ou ainda se for relevante informar uma região física.
+
+    attributes:
+
+      type:
+        range: RepositoryType
+        required: true
+        inlined: true
+
+      name:
+        range: TypedReference
+        required: true
+        inlined: true
+
 
 slots:
-
-  location_historic:
-    range: TypedReference
-    multivalued: true
-    inlined_as_list: true
-    description: >-
-      Antigas jurisdições ou designações para o lugar onde o objeto se
-      encontra. Para um sítio de onde o objeto foi fisicamente removido, usar
-      `spatial: former_site:`.
 
   subject:
     range: Topic

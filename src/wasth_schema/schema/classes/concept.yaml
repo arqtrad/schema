@@ -19,38 +19,72 @@ classes:
 
   Concept:
     is_a: Thing
-    class_uri: skos:Concept
-    description: >-
-      A WASTH controlled-vocabulary concept, compatible with SKOS and
-      SKOS-THES.
-    slot_usage:
-      category:
-        ifabsent: string(lido:lido01193)
+    class_uri: skos:Concept # schema:DefinedTerm
+    description: |
+      A SKOS concept can be viewed as an idea or notion; a unit of thought.
+      However, what constitutes a unit of thought is subjective, and this
+      definition is meant to be suggestive, rather than restrictive.
+
+      The notion of a SKOS concept is useful when describing the conceptual
+      or intellectual structure of a knowledge organization system, and when
+      referring to specific ideas or meanings established within a KOS.
+
+      Note that, because SKOS is designed to be a vehicle for representing
+      semi-formal KOS, such as thesauri and classification schemes, a certain
+      amount of flexibility has been built in to the formal definition of this
+      class.
+#     A word, name, acronym, phrase, etc. with a formal definition. Often used
+#     in the context of category or subject classification, glossaries or
+#     dictionaries, product or creative work types, etc. Use the name property
+#     for the term being defined, use termCode if the term has an alpha-numeric
+#     code allocated, use description to provide the definition of the term.
+#     Use the about property to specify what the term is about.
 
     attributes:
 
       broader:
+        slot_uri: skos:broader
+        description: >-
+          Um conceito de significação mais genérica.
+          Conceitos genéricos são tipicamente representados como pais em
+          uma hierarquia de conceitos (árvore).
         range: BroaderConceptReference
         multivalued: true
         inlined_as_list: true
-        slot_uri: skos:broader
         #inverse: narrower
 
       narrower:
+        slot_uri: skos:narrower
+        description: >-
+          Um conceito de significação mais específica.
+          Conceitos específicos são tipicamente representados como descendentes
+          em uma hierarquia de conceitos (árvore).
         range: ConceptReference
         multivalued: true
         inlined_as_list: true
-        slot_uri: skos:narrower
         #inverse: broader
 
       relation:
+        description: >-
+          Um conceito com o qual existe um relacionamento semântico associativo.
+          Usar principalmente em referência a vocabulários externos, como o
+          Getty Art and Architecture Thesaurus.
         range: RelatedConceptReference
         multivalued: true
         inlined_as_list: true
         slot_uri: skos:relation
 
+#     category:
+#       ifabsent: string(term:lido01193)
+
   ConceptReference:
     description: Atribuição de vocabulário controlado com citação de apoio.
+    attributes:
+
+      name:
+        description: Identificador do termo referido.
+        range: Concept
+
     slots:
       - description
       - name
@@ -60,15 +94,12 @@ classes:
     description: Relações hierárquicas.
     attributes:
       match:
+        description: Tipo da relação.
         range: SkosHierarchicalRelation
 
   RelatedConceptReference:
     description: Relações hierárquicas.
     attributes:
       match:
+        description: Tipo da relação.
         range: SkosMappingRelation
-
-slots:
-
-  name:
-    range: Concept

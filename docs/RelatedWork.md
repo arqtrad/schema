@@ -1,0 +1,368 @@
+---
+search:
+  boost: 10.0
+---
+
+# Class: RelatedWork
+
+
+_A wrapper for identifying information about an object or work, including collections, related to the object/work in focus. May include a weblink._
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [wasth:RelatedWork](https://tradicional.arq.br/schema/RelatedWork)
+
+
+
+
+
+```mermaid
+ classDiagram
+    class RelatedWork
+    click RelatedWork href "../RelatedWork/"
+      RelatedObject <|-- RelatedWork
+        click RelatedObject href "../RelatedObject/"
+
+      RelatedWork : bibliographic_citation
+
+
+
+
+
+        RelatedWork --> "* _recommended_" BibliographicCitation : bibliographic_citation
+        click BibliographicCitation href "../BibliographicCitation/"
+
+
+
+      RelatedWork : description
+
+      RelatedWork : media
+
+
+
+
+
+        RelatedWork --> "*" Media : media
+        click Media href "../Media/"
+
+
+
+      RelatedWork : object_type
+
+
+
+
+
+        RelatedWork --> "0..1" ObjectType : object_type
+        click ObjectType href "../ObjectType/"
+
+
+
+      RelatedWork : related_object
+
+
+
+
+
+        RelatedWork --> "1" Work : related_object
+        click Work href "../Work/"
+
+
+
+      RelatedWork : relation_type
+
+
+
+
+
+        RelatedWork --> "1" RelationType : relation_type
+        click RelationType href "../RelationType/"
+
+
+
+      RelatedWork : resource
+
+
+
+
+
+        RelatedWork --> "*" Resource : resource
+        click Resource href "../Resource/"
+
+
+
+      RelatedWork : source
+
+
+
+
+
+        RelatedWork --> "*" LegalBody : source
+        click LegalBody href "../LegalBody/"
+
+
+
+
+```
+
+
+
+
+
+## Inheritance
+* [RelatedObject](RelatedObject.md)
+    * **RelatedWork**
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | [RelatedObject](RelatedObject.md) |
+| [relation_type](relation_type.md) | 1 <br/> [RelationType](RelationType.md) | Usamos os tipos de relação previstos pelo [VRA Core] | [RelatedObject](RelatedObject.md) |
+| [related_object](related_object.md) | 1 <br/> [Work](Work.md) |  | [RelatedObject](RelatedObject.md) |
+| [object_type](object_type.md) | 0..1 <br/> [ObjectType](ObjectType.md) | Usar um vocabulário controlado para identificar o tipo de representação, | [RelatedObject](RelatedObject.md) |
+| [resource](resource.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de | [RelatedObject](RelatedObject.md) |
+| [media](media.md) | * <br/> [Media](Media.md) |  | [RelatedObject](RelatedObject.md) |
+| [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | [RelatedObject](RelatedObject.md) |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [RelatedObject](RelatedObject.md) |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Event](Event.md) | [things_present](things_present.md) | range | [RelatedWork](RelatedWork.md) |
+| [Work](Work.md) | [related_work](related_work.md) | range | [RelatedWork](RelatedWork.md) |
+
+
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://tradicional.arq.br/schema
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | wasth:RelatedWork |
+| native | wasth:RelatedWork |
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: RelatedWork
+description: A wrapper for identifying information about an object or work, including
+  collections, related to the object/work in focus. May include a weblink.
+from_schema: https://tradicional.arq.br/schema
+is_a: RelatedObject
+slot_usage:
+  related_object:
+    name: related_object
+    range: Work
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: RelatedWork
+description: A wrapper for identifying information about an object or work, including
+  collections, related to the object/work in focus. May include a weblink.
+from_schema: https://tradicional.arq.br/schema
+is_a: RelatedObject
+slot_usage:
+  related_object:
+    name: related_object
+    range: Work
+attributes:
+  description:
+    name: description
+    description: A human-readable description for a thing
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    slot_uri: dcterms:description
+    alias: display
+    owner: RelatedWork
+    domain_of:
+    - ConceptReference
+    - Measurements
+    - BibliographicCitation
+    - RelatedObject
+    - Media
+    - EventDate
+    - EventPlace
+    - RelatedEvent
+    - Thing
+    - Appellation
+    - Inscription
+    - Topic
+    range: string
+  relation_type:
+    name: relation_type
+    description: "Usamos os tipos de relação previstos pelo [VRA Core].\nProvavelmente\
+      \ necessitamos apenas de :\n\n- `planFor` : desenho técnico bidimensional de\
+      \ levantamento\n  (padrão, pode ser omitido) ;\n\n- `modelFor` : modelo tridimensional,\
+      \ com ou sem informações construtivas\n  associadas (BIM) ;\n\n- `imageOf` :\
+      \ outras representações em duas dimensões da edificação ;\n\n- `preparatoryFor` :\
+      \ representação técnica de projeto para intervenções a\n  serem realizadas (ou\
+      \ já realizadas) na edificação.\n"
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    alias: rel_type
+    owner: RelatedWork
+    domain_of:
+    - RelatedObject
+    - Resource
+    range: RelationType
+    required: true
+  related_object:
+    name: related_object
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    owner: RelatedWork
+    domain_of:
+    - RelatedObject
+    range: Work
+    required: true
+  object_type:
+    name: object_type
+    description: 'Usar um vocabulário controlado para identificar o tipo de representação,
+
+      por exemplo as hierarquias do Getty AAT
+
+      [obras visuais](http://vocab.getty.edu/hier/aat/300191086).
+
+      ou [formatos de informação](http://vocab.getty.edu/hier/aat/300220751)
+
+      '
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    owner: RelatedWork
+    domain_of:
+    - RelatedObject
+    range: ObjectType
+  resource:
+    name: resource
+    description: 'Os desenhos ou modelos da edificação são apresentados online por
+      meio de
+
+      imagens vetoriais ou bitmap.
+
+
+      Cada desenho ou modelo pode ser apresentado sob várias representações,
+
+      como pré-visualização, imagem original, ou serviço [IIIF].
+
+      Essas imagens devem ser identificadas como segue :
+
+
+      As categorias de representação previstas no [LIDO] podem ser consultadas
+
+      em <http://terminology.lido-schema.org/resourceRepresentation_type>
+
+      e são inseridas na ficha como um mapa.
+
+      '
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    owner: RelatedWork
+    domain_of:
+    - RelatedObject
+    - Work
+    range: Resource
+    multivalued: true
+    inlined: true
+    inlined_as_list: false
+  media:
+    name: media
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    owner: RelatedWork
+    domain_of:
+    - RelatedObject
+    - Event
+    - Work
+    range: Media
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  source:
+    name: source
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    owner: RelatedWork
+    domain_of:
+    - GeographicPoint
+    - GeographicExtent
+    - TypedReference
+    - RelatedObject
+    - Media
+    range: LegalBody
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  bibliographic_citation:
+    name: bibliographic_citation
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    slot_uri: dcterms:bibliographicCitation
+    owner: RelatedWork
+    domain_of:
+    - ConceptReference
+    - GeographicPoint
+    - GeographicExtent
+    - TypedReference
+    - Measurements
+    - RelatedObject
+    - Media
+    - Actor
+    - Thing
+    - Appellation
+    - Inscription
+    range: BibliographicCitation
+    recommended: true
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+
+```
+</details></div>

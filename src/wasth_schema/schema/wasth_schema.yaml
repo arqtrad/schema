@@ -15,6 +15,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   la: https://linked.art/ns/terms/
   lido: http://www.lido-schema.org/
+  term: http://terminology.lido-schema.org/
   skos: http://www.w3.org/2004/02/skos/core#
   iso: http://purl.org/iso25964/skos-thes#
   geo: http://www.opengis.net/ont/geosparql#
@@ -24,6 +25,7 @@ prefixes:
   ulan: http://vocab.getty.edu/ulan/
   vra: http://purl.org/vra/
   wd: http://www.wikidata.org/entity/
+  EPSG: http://www.opengis.net/def/crs/EPSG/0/
 default_prefix: wasth
 default_range: string
 
@@ -33,10 +35,36 @@ imports:
   - classes/place
   - classes/resource
   - classes/shared
-  - classes/spatial
   - classes/temporal
   - classes/thing
   - classes/work
+
+
+classes:
+
+  Container:
+
+    description: Todos os elementos do documentário.
+
+    tree_root: true
+
+    attributes:
+
+      works:
+        multivalued: true
+        inlined_as_list: true
+        range: Work
+
+      places:
+        multivalued: true
+        inlined_as_list: true
+        range: Place
+
+      concepts:
+        multivalued: true
+        inlined_as_list: true
+        range: Concept
+
 
 enums:
 
@@ -44,21 +72,21 @@ enums:
     description: LIDO actor type.
     permissible_values:
       personal:
-        meaning: lido:lido00163
+        meaning: term:lido00163
       corporate:
-        meaning: lido:lido00413
+        meaning: term:lido00413
       family:
-        meaning: lido:lido00166
+        meaning: term:lido00166
       other:
-        meaning: lido:lido00165 # Other groups of persons
+        meaning: term:lido00165 # Other groups of persons
 
   DateQualifier:
     description: Exatidão da data indicada.
     permissible_values:
       estimated:
-        meaning: lido:lido00529
+        meaning: term:lido00529
       exact:
-        meaning: lido:lido00528
+        meaning: term:lido00528
 
   EventType:
     description: |
@@ -143,33 +171,33 @@ enums:
       include_self: false
     #permissible_values:
       #alternative:
-        #meaning: skos:altLabel # lido:lido00170
+        #meaning: skos:altLabel # term:lido00170
         #description: >-
           #Acronyms, abbreviations, spelling variants, and irregular
           #plural/singular forms may be included among the alternative labels
           #for a concept. Mis-spelled terms are normally included as hidden
           #labels (see skos:hiddenLabel).
       #display:
-        #meaning: lido:lido00526
+        #meaning: term:lido00526
         #description: >-
           #A term, an appellation, or a title as the variant intended to be
           #displayed to the end user; most often used for personal names to
           #indicate a display in natural word order.
       #hidden:
-        #meaning: skos:hiddenLabel # lido:lido00426
+        #meaning: skos:hiddenLabel # term:lido00426
         #description: >-
           #A lexical label for a resource that should be hidden when generating
           #visual displays of the resource, but should still be accessible to
           #free text search operations.
       #indexing:
-        #meaning: lido:lido00961
+        #meaning: term:lido00961
         #description: >-
           #A term, an appellation, a title, or an identifier as the term to be
           #used in indexes and other lists where inverted order is appropriate.
           #There may be only one term marked as an index label per record. For
           #names of persons, the preferred label is often also the index label.
       #preferred:
-        #meaning: skos:prefLabel # lido:lido00169
+        #meaning: skos:prefLabel # term:lido00169
         #description: >-
           #The preferred lexical label for a resource, in a given language.
 
@@ -293,19 +321,19 @@ enums:
 
     permissible_values:
       material:
-        meaning: lido:lido00132
+        meaning: term:lido00132
       medium:
-        meaning: lido:lido00513
+        meaning: term:lido00513
       support:
-        meaning: lido:lido00514
+        meaning: term:lido00514
       color_name:
-        meaning: lido:lido00479
+        meaning: term:lido00479
       implement:
-        meaning: lido:lido00248
+        meaning: term:lido00248
       technique:
-        meaning: lido:lido00131
+        meaning: term:lido00131
       watermark:
-        meaning: lido:lido00427
+        meaning: term:lido00427
       other:
 
   MeasurementType:
@@ -315,9 +343,9 @@ enums:
       instance, the maximum temperature variation.
     permissible_values:
       proper:
-        meaning: lido:lido00927
+        meaning: term:lido00927
       requirement:
-        meaning: lido:lido00923
+        meaning: term:lido00923
 
   ObjectType:
     description: >-
@@ -333,11 +361,11 @@ enums:
     description: Tipos de referências a objetos externos previstos no LIDO.
     permissible_values:
       uri:
-        meaning: lido:lido00099
+        meaning: term:lido00099
       iri:
-        meaning: lido:lido00510
+        meaning: term:lido00510
       local:
-        meaning: lido:lido00100
+        meaning: term:lido00100
 
   RelationType:
     description: >-
@@ -424,9 +452,9 @@ enums:
     description: LIDO expressions for rights types.
     permissible_values:
       generic:
-        meaning: lido:lido00920
+        meaning: term:lido00920
       specific:
-        meaning: lido:lido00921
+        meaning: term:lido00921
 
   SkosMappingRelation:
     description: SKOS mapping properties.
@@ -486,13 +514,13 @@ enums:
     #description: VRA Core topic types.
     #permissible_values:
       #descriptive:
-        #meaning: lido:lido00525
+        #meaning: term:lido00525
       #iconographic:
-        #meaning: lido:lido00745
+        #meaning: term:lido00745
       #concept:
-        #meaning: lido:lido00524
+        #meaning: term:lido00524
       #other:
-        #meaning: lido:lido00136
+        #meaning: term:lido00136
 
 
 types:

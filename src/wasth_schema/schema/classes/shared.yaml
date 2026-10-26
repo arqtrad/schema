@@ -28,58 +28,42 @@ classes:
       edificação, caso não seja possível cadastrar medidas individuais com
       precisão, ou seja preciso maior flexibilidade para explicar as dimensões.
 
-      O campo `measurements` admite uma lista de medidas com os campos :
-
-      * `type` (obrigatório) designa a natureza da medida : largura, altura,
-        área, etc. — usar um dos [tipos de dimensões](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300226820)
-        do Art and Architecture Thesaurus do Instituto Getty (AAT) ;
-      * `value` (obrigatório) valor numérico, usar ponto como separador decimal ;
-      * `unit` (obrigatório) uma `uri` remetendo a uma unidade na
-        [hierarquia de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096)
-        do AAT, ou do nosso próprio [vocabulário controlado] ;
-      * `extent` (opcional) indica a parte do objeto que está sendo medida — por
-        exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc. —
-        usar a `uri` de um vocabulário controlado ;
-      * `qualifier` (opcional) indica que as medidas são aproximadas : usar um
-        [qualificador do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720) ;
-      * `shape` (opcional) caso relevante, indicar a forma do elemento medido
-        usando a [lista de formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273) ;
-
     slots:
       - description
       - format_extent
       - bibliographic_citation
+      - unit
 
     attributes:
 
       type:
         range: MeasurementType
         ifabsent: MeasurementType(proper)
+        description: |
+          designa a natureza da medida : largura, altura,
+          área, etc. — usar um dos [tipos de dimensões](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300226820)
+          do Art and Architecture Thesaurus do Instituto Getty (AAT).
 
       value:
         alias: value
         required: true
         range: float
         minimum_value: 0
-
-      unit:
-        alias: unit
-        required: true
-        range: TypedReference
-        inlined: true
+        description: Valor numérico, usar ponto como separador decimal.
 
       qualifier:
         alias: qualifier
         range: string
+        description: |
+          Indica que as medidas são aproximadas : usar um
+          [qualificador do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720) ;
 
       shape:
         alias: shape
         range: string
-
-      scale:
-        alias: scale
-        range: float
-        minimum_value: 0
+        description: |
+          caso relevante, indicar a forma do elemento medido
+          usando a [lista de formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273).
 
   MaterialTech:
     is_a: ConceptReference
@@ -177,6 +161,22 @@ slots:
     alias: extent
     range: TypedReference
     inlined: true
+    description: |
+      Indica a parte do objeto que está sendo medida — por
+      exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc.
+      — usar a `uri` de um vocabulário controlado.
+
+  unit:
+    alias: unit
+    required: true
+    range: TypedReference
+    inlined: true
+    description: |
+      Unidade de medida usada no dimensionamento da representação,
+      por exemplo metros ou milímetros.
+      Usar a
+      [hierarquia de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096)
+      do AAT, ou do nosso próprio [vocabulário controlado].
 
 
   source:

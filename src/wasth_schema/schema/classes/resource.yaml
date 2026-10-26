@@ -10,20 +10,36 @@ prefixes:
 default_prefix: wasth
 default_range: string
 
+imports:
+  - shared
+
 classes:
 
   BibliographicCitation:
-    description: Bibliographic or documentary citation using a CSL citekey.
+    class_uri: schema:CreativeWork
+    description: |
+      Cadastro de uma referência bibliográfica.
+      Usar o campo `description` para formatar a referência, caso a formatação
+      automática não for satisfatória.
 
     attributes:
 
-      citation_refid:
-        alias: refid
+      refid:
         required: true
         range: CslCitekey
+        description: |
+          Se a fonte for cadastrada, o campo `refid` deve conter a chave de
+          citação (`citation key`) que consta do registro bibliográfico na
+          biblioteca do nosso projeto de pesquisa no [Zotero].
+          Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode
+          ser diferente.
 
       note:
         range: string
+        description: |
+          Se necessário, incluir no campo `note` uma especificação adicional,
+          como o número da página da referência bibliográfica de onde a
+          informação foi extraída.
 
     slots:
       - description
@@ -76,26 +92,72 @@ classes:
         range: Work
 
   Resource:
-    description: Digital or documentary resource associated with a Work.
+    is_a: Thing
+    class_uri: crm:E31_Document # schema:ArchiveComponent
+    description: |
+      This class comprises identifiable immaterial items that make propositions
+      about reality.
+
+      These propositions may be expressed in text, graphics, images,
+      audiograms, videograms, or by other similar means. Documentation
+      databases are regarded as instances of E31 Document. This class should
+      not be confused with the concept “document” in Information Technology,
+      which is compatible with E73 Information Object.
+
+    attributes:
+
+      scale:
+        alias: scale
+        range: float
+        minimum_value: 0
+        description: >-
+          Número inverso da escala da imagem, se ela tiver uma resolução ou
+          tamanho de página definidos.
+          Por exemplo, para um desenho na escala 1 : 100, `scale: 100`.
+
+      perspective:
+        range: integer
+        minimum_value: 0
+        maximum_value: 9
+        ifabsent: integer(1)
+        description: |
+          Tipo de vista do desenho. Usar a numeração da ISO 19650–2 :
+
+            - 0 = geral
+            - 1 = planta baixa (padrão, pode ser omitido)
+            - 2 = elevação
+            - 3 = corte
+            - 4 = mapa de elementos
+            - 5 = detalhe
+            - 6 = mapa de revestimentos
+            - 7 = planta de forro
+            - 8 = vista ou modelo 3D
+            - 9 = definido pelo agente
+
+
     slots:
-      - resource_id
-      - resource_author
-      - resource_date
       - relation_type
       - preview_image
       - provided_image
       - provided_3d
       - resource_service
-      - perspective
-      - resource_unit
-      - description
-      - source
-      - bibliographic_citation
+      - unit
       - credit
-      - rights
 
   Media:
-    description: Descrição e referência a um único arquivo de mídia.
+    class_uri: schema:MediaObject
+    description: |
+      Descrição e referência a um único arquivo de mídia.
+
+      Obrigatoriamente deve conter uma URI.
+
+      No caso de `preview_image` ou `provided_image`, o link deve referenciar
+      diretamente o arquivo (ficheiro) da imagem.
+      Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma
+      página web que forneça a respetiva API ou as informações acerca do modelo.
+
+      (A FAZER) Ver [Instruções para carregar imagens e desenhos].
+
     slots:
       - format
       - preview_image
@@ -117,68 +179,83 @@ slots:
     range: RelationType
     required: true
     #ifabsent: RelationType(planFor)
+    description: |
+      Usamos os tipos de relação previstos pelo [VRA Core].
+      Provavelmente necessitamos apenas de :
+
+      - `planFor` : desenho técnico bidimensional de levantamento
+        (padrão, pode ser omitido) ;
+
+      - `modelFor` : modelo tridimensional, com ou sem informações construtivas
+        associadas (BIM) ;
+
+      - `imageOf` : outras representações em duas dimensões da edificação ;
+
+      - `preparatoryFor` : representação técnica de projeto para intervenções a
+        serem realizadas (ou já realizadas) na edificação.
 
   related_object:
     range: Thing
     required: true
 
   object_type:
-    description: >-
-      An index element for the particular kind of object or work in focus.
     range: ObjectType
+    description: |
+      Usar um vocabulário controlado para identificar o tipo de representação,
+      por exemplo as hierarquias do Getty AAT
+      [obras visuais](http://vocab.getty.edu/hier/aat/300191086).
+      ou [formatos de informação](http://vocab.getty.edu/hier/aat/300220751)
 
   resource:
     range: Resource
     multivalued: true
     inlined: true
     inlined_as_list: false
+    description: |
+      Os desenhos ou modelos da edificação são apresentados online por meio de
+      imagens vetoriais ou bitmap.
 
-  resource_id:
-    key: true
-    alias: id
-    range: TypedReference
-    inlined: true
+      Cada desenho ou modelo pode ser apresentado sob várias representações,
+      como pré-visualização, imagem original, ou serviço [IIIF].
+      Essas imagens devem ser identificadas como segue :
+
+      As categorias de representação previstas no [LIDO] podem ser consultadas
+      em <http://terminology.lido-schema.org/resourceRepresentation_type>
+      e são inseridas na ficha como um mapa.
 
   preview_image:
     range: uriorcurie
     inlined: true
+    description: |
+      Uma única miniatura da imagem original.
+
+      Obs.: não usamos a opção `placeholder`, ela será preenchida
+      automaticamente em caso de ausência da miniatura, nem outros tipos de
+      miniaturas que não imagens.
+      A especificação LIDO admite listar mais de uma miniatura, mas tampouco
+      prevemos essa hipótese.
 
   provided_image:
     range: uriorcurie
     multivalued: true
     inlined_as_list: true
+    description: >-
+      Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap.
 
   provided_3d:
     range: uriorcurie
     multivalued: true
     inlined_as_list: true
+    description: Modelo tridimensional ou IFC da edificação.
 
   resource_service:
     alias: service
     range: TypedReference
     multivalued: true
     inlined_as_list: true
-
-  perspective:
-    required: true
-    range: integer
-    minimum_value: 0
-    maximum_value: 9
-
-  resource_unit:
-    alias: unit
-    range: TypedReference
-    inlined: true
-
-  resource_author:
-    alias: author
-    range: OrcidId
-
-  resource_date:
-    alias: date
-    required: true
-    range: EventDate
-    inlined: true
+    description: >-
+      Apenas no caso de a imagem ser fornecida como um serviço dinâmico
+      online, tal como a especificação [IIIF].
 
   media:
     range: Media
@@ -189,6 +266,10 @@ slots:
     required: true
     range: TypedReference
     inlined: true
+    description: |
+      Campo disciplinado pela especificação [DublinCore] no campo
+      [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).
+      Esta especificação sugere a [lista de tipos de mídia IANA].
 
   media_alt:
     description: >-

@@ -8,6 +8,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   schema: http://schema.org/
   lido: http://www.lido-schema.org/
+  term: http://terminology.lido-schema.org/
   skos: http://www.w3.org/2004/02/skos/core#
 
 default_prefix: wasth
@@ -17,6 +18,7 @@ classes:
 
   Thing:
     abstract: true
+    class_uri: crm:E1_CRM_Entity # schema:Thing
     description: |
       This class comprises all things in the universe of discourse of the CIDOC
       Conceptual Reference Model.
@@ -24,16 +26,17 @@ classes:
       It is an abstract concept providing for three general properties:
 
       - Identification by name or appellation, and in particular by a preferred
-      identifier
+        identifier.
 
       - Classification by type, allowing further refinement of the specific
-      subclass to which an instance belongs
+        subclass to which an instance belongs.
 
       - Attachment of free text and other unstructured data for the expression
-      of anything not captured by formal properties
+        of anything not captured by formal properties.
 
       All other classes within the CIDOC CRM are directly or indirectly
       specialisations of E1 CRM Entity.
+#     The most generic type of item.
 
     attributes:
 
@@ -88,8 +91,9 @@ classes:
           Examples are human-made object or natural object.
         range: uriorcurie
         designates_type: true
-        slot_uri: lido:lidoCategory
-        ifabsent: string(lido:lido00096)
+        slot_uri: term:lidoCategory
+        required: true
+        #ifabsent: string(term:lido00096)
 
     slot_usage:
       description:
@@ -118,7 +122,8 @@ classes:
           alternativa ou uma variante de grafia, etc.
         alias: label_type
         range: LabelType
-        ifabsent: string(alternative)
+        required: true
+        #ifabsent: string(alternative)
 
     slots:
       - description
@@ -127,9 +132,10 @@ classes:
 
   Repository:
     is_a: Thing
+    class_uri: schema:Organization
     description: Entidade com existência jurídica e espacial.
     slots:
-      - spatial
+      - site
       - legal_body
 
 slots:
@@ -199,6 +205,12 @@ slots:
     recommended: true
     range: string
     slot_uri: skos:scopeNote
-    description: >-
-      Narrative body content. In the Markdown adapter this corresponds to
-      the document body after YAML frontmatter.
+    description: |
+      Deixe uma linha em branco após o fechamento dos metadados e inclua aqui
+      uma descrição morfológica e histórica da edificação com texto livre,
+      usando formatação Markdown.
+
+      Poderá incluir um segundo bloco de metadados para indicar as referências
+      bibliográficas da descrição textual, no campo `nocite`.
+      O formato é uma lista de chaves de citação do Zotero
+      (cada uma começando com `@`) separadas por vírgulas.
