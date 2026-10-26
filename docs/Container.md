@@ -35,17 +35,6 @@ URI: [wasth:Container](https://tradicional.arq.br/schema/Container)
 
 
 
-      Container : places
-
-
-
-
-
-        Container --> "*" Place : places
-        click Place href "../Place/"
-
-
-
       Container : works
 
 
@@ -77,7 +66,6 @@ URI: [wasth:Container](https://tradicional.arq.br/schema/Container)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [works](works.md) | * <br/> [Work](Work.md) | Todas as edificações documentadas | direct |
-| [places](places.md) | * <br/> [Place](Place.md) | Todos os lugares cadastrados | direct |
 | [concepts](concepts.md) | * <br/> [Concept](Concept.md) | Todos os termos de vocabulário controlado | direct |
 
 
@@ -142,17 +130,6 @@ attributes:
     range: Work
     multivalued: true
     inlined_as_list: true
-  places:
-    name: places
-    description: Todos os lugares cadastrados.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    domain_of:
-    - Container
-    - EventPlace
-    range: Place
-    multivalued: true
-    inlined_as_list: true
   concepts:
     name: concepts
     description: Todos os termos de vocabulário controlado.
@@ -185,19 +162,6 @@ attributes:
     domain_of:
     - Container
     range: Work
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  places:
-    name: places
-    description: Todos os lugares cadastrados.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    owner: Container
-    domain_of:
-    - Container
-    - EventPlace
-    range: Place
     multivalued: true
     inlined: true
     inlined_as_list: true

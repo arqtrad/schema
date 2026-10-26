@@ -30,8 +30,6 @@ URI: [dcterms:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitat
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ConceptReference](ConceptReference.md) | Atribuição de vocabulário controlado com citação de apoio |  no  |
-| [GeographicPoint](GeographicPoint.md) | Coordenadas do ponto que situa o sítio na visualização do mapa |  no  |
-| [GeographicExtent](GeographicExtent.md) | Coordenadas do polígono que define o sítio |  no  |
 | [RelatedObject](RelatedObject.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
 | [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |  no  |
 | [TypedReference](TypedReference.md) | Reference to a local record, IRI, URI, or LIDO terminology term |  no  |
@@ -39,10 +37,10 @@ URI: [dcterms:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitat
 | [Actor](Actor.md) | Agent and role in an event |  no  |
 | [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
 | [Appellation](Appellation.md) |  |  no  |
+| [GeographicPoint](GeographicPoint.md) | Coordenadas do ponto que situa o sítio na visualização do mapa |  no  |
+| [GeographicExtent](GeographicExtent.md) | Coordenadas do polígono que define o sítio |  no  |
 | [Inscription](Inscription.md) | A descrição da inscrição informa local, dimensões e características |  no  |
 | [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
-| [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
 | [RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
 | [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
 | [MaterialTech](MaterialTech.md) | Usar discernimento para identificar sistemas, materiais e técnicas que intere... |  no  |
@@ -50,6 +48,7 @@ URI: [dcterms:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitat
 | [StylePeriod](StylePeriod.md) |  |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
+| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
 
 
 
@@ -63,7 +62,7 @@ URI: [dcterms:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitat
 | Property | Value |
 | --- | --- |
 | Range | [BibliographicCitation](BibliographicCitation.md) |
-| Domain Of | [ConceptReference](ConceptReference.md), [GeographicPoint](GeographicPoint.md), [GeographicExtent](GeographicExtent.md), [RelatedObject](RelatedObject.md), [MediaObject](MediaObject.md), [TypedReference](TypedReference.md), [Measurement](Measurement.md), [Actor](Actor.md), [Thing](Thing.md), [Appellation](Appellation.md), [Inscription](Inscription.md) |
+| Domain Of | [ConceptReference](ConceptReference.md), [RelatedObject](RelatedObject.md), [MediaObject](MediaObject.md), [TypedReference](TypedReference.md), [Measurement](Measurement.md), [Actor](Actor.md), [Thing](Thing.md), [Appellation](Appellation.md), [GeographicPoint](GeographicPoint.md), [GeographicExtent](GeographicExtent.md), [Inscription](Inscription.md) |
 | Slot URI | [dcterms:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitation) |
 ### Cardinality and Requirements
 
@@ -123,8 +122,6 @@ rank: 1000
 slot_uri: dcterms:bibliographicCitation
 domain_of:
 - ConceptReference
-- GeographicPoint
-- GeographicExtent
 - RelatedObject
 - MediaObject
 - TypedReference
@@ -132,6 +129,8 @@ domain_of:
 - Actor
 - Thing
 - Appellation
+- GeographicPoint
+- GeographicExtent
 - Inscription
 range: BibliographicCitation
 recommended: true

@@ -285,8 +285,6 @@ attributes:
     owner: Inscription
     domain_of:
     - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
@@ -294,6 +292,8 @@ attributes:
     - Actor
     - Thing
     - Appellation
+    - GeographicPoint
+    - GeographicExtent
     - Inscription
     range: BibliographicCitation
     recommended: true

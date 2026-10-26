@@ -216,13 +216,12 @@ URI: [schema:Organization](http://schema.org/Organization)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Concept](Concept.md) | [repositories](repositories.md) | range | [Repository](Repository.md) |
-| [Place](Place.md) | [repositories](repositories.md) | range | [Repository](Repository.md) |
-| [Site](Site.md) | [repositories](repositories.md) | range | [Repository](Repository.md) |
 | [Resource](Resource.md) | [repositories](repositories.md) | range | [Repository](Repository.md) |
 | [Event](Event.md) | [repositories](repositories.md) | range | [Repository](Repository.md) |
 | [Thing](Thing.md) | [repositories](repositories.md) | range | [Repository](Repository.md) |
 | [Repository](Repository.md) | [repositories](repositories.md) | range | [Repository](Repository.md) |
 | [Work](Work.md) | [repositories](repositories.md) | range | [Repository](Repository.md) |
+| [Site](Site.md) | [repositories](repositories.md) | range | [Repository](Repository.md) |
 
 
 
@@ -298,8 +297,8 @@ attributes:
     rank: 1000
     owner: Repository
     domain_of:
-    - Place
     - Repository
+    - Work
     range: Site
     required: true
     inlined: true
@@ -363,8 +362,6 @@ attributes:
     owner: Repository
     domain_of:
     - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
@@ -372,6 +369,8 @@ attributes:
     - Actor
     - Thing
     - Appellation
+    - GeographicPoint
+    - GeographicExtent
     - Inscription
     range: BibliographicCitation
     recommended: true

@@ -149,7 +149,7 @@ attributes:
   geometry_type:
     name: geometry_type
     description: Tipo da geometria descrita pelas coordenadas.
-    from_schema: https://tradicional.arq.br/schema/place
+    from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     alias: type
     domain_of:
@@ -163,7 +163,7 @@ attributes:
       ]]]` e os valores numéricos dentro deles.
 
       '
-    from_schema: https://tradicional.arq.br/schema/place
+    from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     domain_of:
     - GeographicExtent
@@ -186,7 +186,7 @@ attributes:
   geometry_type:
     name: geometry_type
     description: Tipo da geometria descrita pelas coordenadas.
-    from_schema: https://tradicional.arq.br/schema/place
+    from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     alias: type
     owner: GeographicExtent
@@ -201,7 +201,7 @@ attributes:
       ]]]` e os valores numéricos dentro deles.
 
       '
-    from_schema: https://tradicional.arq.br/schema/place
+    from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     owner: GeographicExtent
     domain_of:
@@ -228,11 +228,11 @@ attributes:
     rank: 1000
     owner: GeographicExtent
     domain_of:
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
+    - GeographicPoint
+    - GeographicExtent
     range: LegalBody
     multivalued: true
     inlined: true
@@ -251,8 +251,6 @@ attributes:
     owner: GeographicExtent
     domain_of:
     - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
@@ -260,6 +258,8 @@ attributes:
     - Actor
     - Thing
     - Appellation
+    - GeographicPoint
+    - GeographicExtent
     - Inscription
     range: BibliographicCitation
     recommended: true

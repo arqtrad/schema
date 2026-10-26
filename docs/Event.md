@@ -382,14 +382,13 @@ URI: [crm:E5_Event](http://www.cidoc-crm.org/cidoc-crm/E5_Event)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Concept](Concept.md) | [temporal](temporal.md) | range | [Event](Event.md) |
-| [Place](Place.md) | [temporal](temporal.md) | range | [Event](Event.md) |
-| [Site](Site.md) | [temporal](temporal.md) | range | [Event](Event.md) |
 | [Resource](Resource.md) | [temporal](temporal.md) | range | [Event](Event.md) |
 | [Event](Event.md) | [temporal](temporal.md) | range | [Event](Event.md) |
 | [RelatedEvent](RelatedEvent.md) | [name](name.md) | range | [Event](Event.md) |
 | [Thing](Thing.md) | [temporal](temporal.md) | range | [Event](Event.md) |
 | [Repository](Repository.md) | [temporal](temporal.md) | range | [Event](Event.md) |
 | [Work](Work.md) | [temporal](temporal.md) | range | [Event](Event.md) |
+| [Site](Site.md) | [temporal](temporal.md) | range | [Event](Event.md) |
 
 
 
@@ -961,8 +960,6 @@ attributes:
     owner: Event
     domain_of:
     - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
@@ -970,6 +967,8 @@ attributes:
     - Actor
     - Thing
     - Appellation
+    - GeographicPoint
+    - GeographicExtent
     - Inscription
     range: BibliographicCitation
     recommended: true

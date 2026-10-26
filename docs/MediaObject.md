@@ -389,11 +389,11 @@ attributes:
     rank: 1000
     owner: MediaObject
     domain_of:
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
+    - GeographicPoint
+    - GeographicExtent
     range: LegalBody
     multivalued: true
     inlined: true
@@ -412,8 +412,6 @@ attributes:
     owner: MediaObject
     domain_of:
     - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
@@ -421,6 +419,8 @@ attributes:
     - Actor
     - Thing
     - Appellation
+    - GeographicPoint
+    - GeographicExtent
     - Inscription
     range: BibliographicCitation
     recommended: true

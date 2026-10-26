@@ -83,19 +83,17 @@ URI: [wasth:ConceptReference](https://tradicional.arq.br/schema/ConceptReference
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Concept](Concept.md) | [narrower](narrower.md) | range | [ConceptReference](ConceptReference.md) |
-| [Place](Place.md) | [work_type_function](work_type_function.md) | range | [ConceptReference](ConceptReference.md) |
-| [Place](Place.md) | [work_type_context](work_type_context.md) | range | [ConceptReference](ConceptReference.md) |
 | [Event](Event.md) | [method](method.md) | range | [ConceptReference](ConceptReference.md) |
 | [Work](Work.md) | [work_type_condition](work_type_condition.md) | range | [ConceptReference](ConceptReference.md) |
 | [Work](Work.md) | [work_type_form](work_type_form.md) | range | [ConceptReference](ConceptReference.md) |
+| [Work](Work.md) | [work_type_function](work_type_function.md) | range | [ConceptReference](ConceptReference.md) |
+| [Work](Work.md) | [work_type_context](work_type_context.md) | range | [ConceptReference](ConceptReference.md) |
 | [Work](Work.md) | [work_type_subject_type](work_type_subject_type.md) | range | [ConceptReference](ConceptReference.md) |
 | [Work](Work.md) | [work_type_use](work_type_use.md) | range | [ConceptReference](ConceptReference.md) |
 | [Work](Work.md) | [classification_genre](classification_genre.md) | range | [ConceptReference](ConceptReference.md) |
 | [Work](Work.md) | [classification_subject](classification_subject.md) | range | [ConceptReference](ConceptReference.md) |
 | [Work](Work.md) | [classification_local](classification_local.md) | range | [ConceptReference](ConceptReference.md) |
 | [Work](Work.md) | [classification_special](classification_special.md) | range | [ConceptReference](ConceptReference.md) |
-| [Work](Work.md) | [work_type_function](work_type_function.md) | range | [ConceptReference](ConceptReference.md) |
-| [Work](Work.md) | [work_type_context](work_type_context.md) | range | [ConceptReference](ConceptReference.md) |
 
 
 
@@ -222,8 +220,6 @@ attributes:
     owner: ConceptReference
     domain_of:
     - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
@@ -231,6 +227,8 @@ attributes:
     - Actor
     - Thing
     - Appellation
+    - GeographicPoint
+    - GeographicExtent
     - Inscription
     range: BibliographicCitation
     recommended: true

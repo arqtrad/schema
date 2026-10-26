@@ -155,7 +155,6 @@ default_range: string
 imports:
   - linkml:types
   - classes/concept
-  - classes/place
   - classes/resource
   - classes/shared
   - classes/temporal
@@ -178,12 +177,6 @@ classes:
         multivalued: true
         inlined_as_list: true
         range: Work
-
-      places:
-        description: Todos os lugares cadastrados.
-        multivalued: true
-        inlined_as_list: true
-        range: Place
 
       concepts:
         description: Todos os termos de vocabulário controlado.

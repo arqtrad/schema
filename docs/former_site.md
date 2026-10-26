@@ -27,7 +27,6 @@ Alias: former
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
 
 
@@ -42,7 +41,7 @@ Alias: former
 | Property | Value |
 | --- | --- |
 | Range | [Site](Site.md) |
-| Domain Of | [Place](Place.md) |
+| Domain Of | [Work](Work.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -54,7 +53,7 @@ Alias: former
 
 | Property | Value |
 | --- | --- |
-| Owner | [Place](Place.md) |
+| Owner | [Work](Work.md) |
 
 
 
@@ -101,9 +100,9 @@ description: Indica que a edificação não se encontra mais no local indicado, 
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: former
-owner: Place
+owner: Work
 domain_of:
-- Place
+- Work
 range: Site
 multivalued: true
 inlined: true

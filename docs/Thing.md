@@ -52,16 +52,16 @@ URI: [crm:E1_CRM_Entity](http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity)
     click Thing href "../Thing/"
       Thing <|-- Concept
         click Concept href "../Concept/"
-      Thing <|-- Place
-        click Place href "../Place/"
-      Thing <|-- Site
-        click Site href "../Site/"
       Thing <|-- Resource
         click Resource href "../Resource/"
       Thing <|-- Event
         click Event href "../Event/"
       Thing <|-- Repository
         click Repository href "../Repository/"
+      Thing <|-- Work
+        click Work href "../Work/"
+      Thing <|-- Site
+        click Site href "../Site/"
 
       Thing : alt_name
 
@@ -188,11 +188,11 @@ URI: [crm:E1_CRM_Entity](http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity)
 ## Inheritance
 * **Thing**
     * [Concept](Concept.md)
-    * [Place](Place.md)
-    * [Site](Site.md)
     * [Resource](Resource.md)
     * [Event](Event.md)
     * [Repository](Repository.md)
+    * [Work](Work.md)
+    * [Site](Site.md)
 
 
 ## Class Properties
@@ -769,8 +769,6 @@ attributes:
     owner: Thing
     domain_of:
     - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
@@ -778,6 +776,8 @@ attributes:
     - Actor
     - Thing
     - Appellation
+    - GeographicPoint
+    - GeographicExtent
     - Inscription
     range: BibliographicCitation
     recommended: true

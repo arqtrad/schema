@@ -27,7 +27,6 @@ Alias: intended
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
 
 
@@ -42,7 +41,7 @@ Alias: intended
 | Property | Value |
 | --- | --- |
 | Range | [Site](Site.md) |
-| Domain Of | [Place](Place.md) |
+| Domain Of | [Work](Work.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -54,7 +53,7 @@ Alias: intended
 
 | Property | Value |
 | --- | --- |
-| Owner | [Place](Place.md) |
+| Owner | [Work](Work.md) |
 
 
 
@@ -101,9 +100,9 @@ description: Sinaliza que a edificação devia ocupar um certo local, mas não c
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: intended
-owner: Place
+owner: Work
 domain_of:
-- Place
+- Work
 range: Site
 multivalued: true
 inlined: true

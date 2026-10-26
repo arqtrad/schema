@@ -31,7 +31,6 @@ URI: [term:lido00767](http://terminology.lido-schema.org/lido00767)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
 
 
@@ -46,7 +45,7 @@ URI: [term:lido00767](http://terminology.lido-schema.org/lido00767)
 | Property | Value |
 | --- | --- |
 | Range | [ConceptReference](ConceptReference.md) |
-| Domain Of | [Place](Place.md) |
+| Domain Of | [Work](Work.md) |
 | Slot URI | [term:lido00767](http://terminology.lido-schema.org/lido00767) |
 ### Cardinality and Requirements
 
@@ -60,7 +59,7 @@ URI: [term:lido00767](http://terminology.lido-schema.org/lido00767)
 
 | Property | Value |
 | --- | --- |
-| Owner | [Place](Place.md) |
+| Owner | [Work](Work.md) |
 
 
 
@@ -116,9 +115,9 @@ description: 'Objects that are distinguishable by the particular purpose for whi
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: term:lido00767
-owner: Place
+owner: Work
 domain_of:
-- Place
+- Work
 range: ConceptReference
 recommended: true
 multivalued: true

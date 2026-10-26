@@ -89,10 +89,6 @@ URI: [wasth:TypedReference](https://tradicional.arq.br/schema/TypedReference)
 | ---  | --- | --- | --- |
 | [Concept](Concept.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
 | [Concept](Concept.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
-| [Place](Place.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
-| [Place](Place.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
-| [Site](Site.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
-| [Site](Site.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
 | [Resource](Resource.md) | [resource_service](resource_service.md) | range | [TypedReference](TypedReference.md) |
 | [Resource](Resource.md) | [unit](unit.md) | range | [TypedReference](TypedReference.md) |
 | [Resource](Resource.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
@@ -114,6 +110,8 @@ URI: [wasth:TypedReference](https://tradicional.arq.br/schema/TypedReference)
 | [Repository](Repository.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
 | [Repository](Repository.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
 | [Work](Work.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
+| [Site](Site.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
+| [Site](Site.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
 | [Inscription](Inscription.md) | [format_extent](format_extent.md) | range | [TypedReference](TypedReference.md) |
 | [Topic](Topic.md) | [format_extent](format_extent.md) | range | [TypedReference](TypedReference.md) |
 | [HistoricPlace](HistoricPlace.md) | [name](name.md) | range | [TypedReference](TypedReference.md) |
@@ -233,8 +231,6 @@ attributes:
     owner: TypedReference
     domain_of:
     - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
@@ -242,6 +238,8 @@ attributes:
     - Actor
     - Thing
     - Appellation
+    - GeographicPoint
+    - GeographicExtent
     - Inscription
     range: BibliographicCitation
     recommended: true
@@ -254,11 +252,11 @@ attributes:
     rank: 1000
     owner: TypedReference
     domain_of:
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
+    - GeographicPoint
+    - GeographicExtent
     range: LegalBody
     multivalued: true
     inlined: true

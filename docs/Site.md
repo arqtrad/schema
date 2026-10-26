@@ -25,7 +25,6 @@ URI: [wasth:site](https://tradicional.arq.br/schema/site)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
 | [Work](Work.md) | An historical landmark or building |  yes  |
 
@@ -41,7 +40,7 @@ URI: [wasth:site](https://tradicional.arq.br/schema/site)
 | Property | Value |
 | --- | --- |
 | Range | [Site](Site.md) |
-| Domain Of | [Place](Place.md), [Repository](Repository.md) |
+| Domain Of | [Repository](Repository.md), [Work](Work.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -93,8 +92,8 @@ description: A localização real, atual da edificação — é o que será usad
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 domain_of:
-- Place
 - Repository
+- Work
 range: Site
 required: true
 inlined: true

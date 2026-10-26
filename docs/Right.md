@@ -103,8 +103,6 @@ URI: [dcterms:rights](http://purl.org/dc/terms/rights)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Concept](Concept.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
-| [Place](Place.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
-| [Site](Site.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
 | [Resource](Resource.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
 | [MediaObject](MediaObject.md) | [rights](rights.md) | range | [Right](Right.md) |
 | [Event](Event.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
@@ -112,6 +110,7 @@ URI: [dcterms:rights](http://purl.org/dc/terms/rights)
 | [Repository](Repository.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
 | [Work](Work.md) | [work_rights](work_rights.md) | range | [Right](Right.md) |
 | [Work](Work.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
+| [Site](Site.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
 
 
 

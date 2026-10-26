@@ -159,11 +159,10 @@ Name: wasth_schema
 | [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Place](Place.md) | Entities that have a somewhat fixed, physical extension |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Work](Work.md) | An historical landmark or building |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Repository](Repository.md) | Entidade com existência jurídica e espacial |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Work](Work.md) | An historical landmark or building |
 | [Topic](Topic.md) | Subject or iconographic topic |
 | [TypedReference](TypedReference.md) | Reference to a local record, IRI, URI, or LIDO terminology term |
 
@@ -235,7 +234,7 @@ Name: wasth_schema
 | [part_of](part_of.md) | A set of structured information about a place that is the broader context for... |
 | [perspective](perspective.md) | Tipo de vista do desenho |
 | [place](place.md) | A set of structured information indicating the place or location where an obj... |
-| [places](places.md) | Todos os lugares cadastrados |
+| [places](places.md) | Lugares associados ao evento, sem incluir o próprio local no qual se situa a ... |
 | [preview_image](preview_image.md) | Uma única miniatura da imagem original |
 | [provided_3d](provided_3d.md) | Modelo tridimensional ou IFC da edificação |
 | [provided_image](provided_image.md) | Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap |

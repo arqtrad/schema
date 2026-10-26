@@ -186,7 +186,7 @@ attributes:
   lat:
     name: lat
     description: 'Latitude em graus decimais (separador decimal: ponto).'
-    from_schema: https://tradicional.arq.br/schema/place
+    from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     domain_of:
     - GeographicPoint
@@ -195,7 +195,7 @@ attributes:
   lon:
     name: lon
     description: 'Longitude em graus decimais (separador decimal: ponto).'
-    from_schema: https://tradicional.arq.br/schema/place
+    from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     domain_of:
     - GeographicPoint
@@ -204,7 +204,7 @@ attributes:
   alt:
     name: alt
     description: 'Altitude em metros (separador decimal: ponto)'
-    from_schema: https://tradicional.arq.br/schema/place
+    from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     domain_of:
     - GeographicPoint
@@ -217,7 +217,7 @@ attributes:
       for baixa.
 
       '
-    from_schema: https://tradicional.arq.br/schema/place
+    from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     ifabsent: integer(13)
     domain_of:
@@ -254,7 +254,7 @@ attributes:
   lat:
     name: lat
     description: 'Latitude em graus decimais (separador decimal: ponto).'
-    from_schema: https://tradicional.arq.br/schema/place
+    from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     owner: GeographicPoint
     domain_of:
@@ -264,7 +264,7 @@ attributes:
   lon:
     name: lon
     description: 'Longitude em graus decimais (separador decimal: ponto).'
-    from_schema: https://tradicional.arq.br/schema/place
+    from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     owner: GeographicPoint
     domain_of:
@@ -274,7 +274,7 @@ attributes:
   alt:
     name: alt
     description: 'Altitude em metros (separador decimal: ponto)'
-    from_schema: https://tradicional.arq.br/schema/place
+    from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     owner: GeographicPoint
     domain_of:
@@ -288,7 +288,7 @@ attributes:
       for baixa.
 
       '
-    from_schema: https://tradicional.arq.br/schema/place
+    from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     ifabsent: integer(13)
     owner: GeographicPoint
@@ -317,11 +317,11 @@ attributes:
     rank: 1000
     owner: GeographicPoint
     domain_of:
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
+    - GeographicPoint
+    - GeographicExtent
     range: LegalBody
     multivalued: true
     inlined: true
@@ -340,8 +340,6 @@ attributes:
     owner: GeographicPoint
     domain_of:
     - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
@@ -349,6 +347,8 @@ attributes:
     - Actor
     - Thing
     - Appellation
+    - GeographicPoint
+    - GeographicExtent
     - Inscription
     range: BibliographicCitation
     recommended: true

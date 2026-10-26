@@ -44,8 +44,8 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
  classDiagram
     class Work
     click Work href "../Work/"
-      Place <|-- Work
-        click Place href "../Place/"
+      Thing <|-- Work
+        click Thing href "../Thing/"
 
       Work : alt_name
 
@@ -448,8 +448,7 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 
 ## Inheritance
 * [Thing](Thing.md)
-    * [Place](Place.md)
-        * **Work**
+    * **Work**
 
 
 ## Class Properties
@@ -463,6 +462,7 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [site](site.md) | 0..1 <br/> [Site](Site.md) | A localização real, atual da edificação — é o que será usado em quase todos o... | direct |
 | [measurements](measurements.md) | * <br/> [Measurement](Measurement.md) | A wrapper for information about the dimensions, or other measurements, of the... | direct |
 | [material](material.md) | * <br/> [MaterialTech](MaterialTech.md) | This class is a specialization of E55 Type and comprises the concepts of mate... | direct |
 | [technique](technique.md) | * <br/> [MaterialTech](MaterialTech.md) | The production or manufacturing processes, techniques, and methods incorporat... | direct |
@@ -472,6 +472,8 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 | [media](media.md) | * <br/> [MediaObject](MediaObject.md) | Representações iconográficas deste objeto | direct |
 | [work_type_condition](work_type_condition.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their overall state such ... | direct |
 | [work_type_form](work_type_form.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their physical form or by... | direct |
+| [work_type_function](work_type_function.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Objects that are distinguishable by the particular purpose for which they are... | direct |
+| [work_type_context](work_type_context.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their use or application ... | direct |
 | [work_type_material_tech](work_type_material_tech.md) | * _recommended_ <br/> [MaterialTech](MaterialTech.md) | Descriptors for objects that are distinguishable by their materials encorpora... | direct |
 | [work_type_subject_type](work_type_subject_type.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their topics, themes, or ... | direct |
 | [work_type_use](work_type_use.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by the way they are employed... | direct |
@@ -479,17 +481,14 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 | [classification_subject](classification_subject.md) | * <br/> [ConceptReference](ConceptReference.md) | A broad category for grouping objects or works on the basis of a topical asso... | direct |
 | [classification_local](classification_local.md) | * <br/> [ConceptReference](ConceptReference.md) | A classification scheme for grouping objects on the basis of locally defined ... | direct |
 | [classification_special](classification_special.md) | * <br/> [ConceptReference](ConceptReference.md) | A classification scheme for grouping objects on the basis of criteria defined... | direct |
-| [inscriptions](inscriptions.md) | * <br/> [Inscription](Inscription.md) | Marcas, símbolos ou textos gravados na edificação, especialmente aqueles refe... | direct |
+| [part_of](part_of.md) | 0..1 <br/> [GeonamesId](GeonamesId.md) | A set of structured information about a place that is the broader context for... | direct |
+| [former_site](former_site.md) | * <br/> [Site](Site.md) | Indica que a edificação não se encontra mais no local indicado, seja porque f... | direct |
+| [intended_site](intended_site.md) | * <br/> [Site](Site.md) | Sinaliza que a edificação devia ocupar um certo local, mas não chegou a ser c... | direct |
+| [other_site](other_site.md) | * <br/> [Site](Site.md) | Para casos não contemplados em nenhuma das categorias acima | direct |
 | [location_historic](location_historic.md) | * <br/> [HistoricPlace](HistoricPlace.md) | Antigas jurisdições ou designações para o lugar onde o objeto se encontra | direct |
+| [inscriptions](inscriptions.md) | * <br/> [Inscription](Inscription.md) | Marcas, símbolos ou textos gravados na edificação, especialmente aqueles refe... | direct |
 | [collection](collection.md) | * <br/> [Thing](Thing.md) | A set of identifying and indexing information about the collection the object... | direct |
 | [work_rights](work_rights.md) | 1..* <br/> [Right](Right.md) | > ⚠️  Este bloco se refere a eventuais direitos autorais sobre A > EDIFICAÇÃO... | direct |
-| [site](site.md) | 0..1 <br/> [Site](Site.md) | A localização real, atual da edificação — é o que será usado em quase todos o... | [Place](Place.md) |
-| [work_type_function](work_type_function.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Objects that are distinguishable by the particular purpose for which they are... | [Place](Place.md) |
-| [work_type_context](work_type_context.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their use or application ... | [Place](Place.md) |
-| [part_of](part_of.md) | 0..1 <br/> [GeonamesId](GeonamesId.md) | A set of structured information about a place that is the broader context for... | [Place](Place.md) |
-| [former_site](former_site.md) | * <br/> [Site](Site.md) | Indica que a edificação não se encontra mais no local indicado, seja porque f... | [Place](Place.md) |
-| [intended_site](intended_site.md) | * <br/> [Site](Site.md) | Sinaliza que a edificação devia ocupar um certo local, mas não chegou a ser c... | [Place](Place.md) |
-| [other_site](other_site.md) | * <br/> [Site](Site.md) | Para casos não contemplados em nenhuma das categorias acima | [Place](Place.md) |
 | [description](description.md) | 1 <br/> [String](String.md) | A human-readable description for a thing | [Thing](Thing.md) |
 | [title_type](title_type.md) | 1 <br/> [RepositoryType](RepositoryType.md) | Indica se o título é um nome próprio, descritivo, etc | [Thing](Thing.md) |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | [Thing](Thing.md) |
@@ -603,8 +602,9 @@ from_schema: https://tradicional.arq.br/schema
 close_mappings:
 - crm:E22_Human-Made_Object
 rank: 0
-is_a: Place
+is_a: Thing
 slots:
+- site
 - measurements
 - material
 - technique
@@ -613,6 +613,9 @@ slots:
 - resources
 - media
 slot_usage:
+  title_type:
+    name: title_type
+    range: RepositoryType
   id:
     name: id
     description: Cada edificação terá um identificador gerado a partir do seu georreferenciamento
@@ -661,6 +664,50 @@ attributes:
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00766
+    domain_of:
+    - Work
+    range: ConceptReference
+    recommended: true
+    multivalued: true
+    inlined_as_list: false
+  work_type_function:
+    name: work_type_function
+    description: 'Objects that are distinguishable by the particular purpose for which
+      they are designed or used. If an object is identifiable by its intended use,
+      then it is qualified by function.
+
+      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+
+      Nos Documentários de edificações, designa um dos sete tipos de propósitos concebidos
+      por C. William Westfall e Samir Younés em *Architectural Type and Character*.
+
+      No Documentário de Lugares, designa o papel administrativo da localidade, por
+      exemplo freguesia, sede municipal, capital estadual ou nacional.'
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    slot_uri: term:lido00767
+    domain_of:
+    - Work
+    range: ConceptReference
+    recommended: true
+    multivalued: true
+    inlined_as_list: false
+  work_type_context:
+    name: work_type_context
+    description: 'Descriptors for objects that are distinguishable by their use or
+      application within a particular physical location. If an object is identifiable
+      by association with specific surroundings, it is qualified by location or context.
+
+      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+
+      No Documentário de Lugares Tradicionais, designa o tipo de núcleo populacional :
+      sítio isolado, povoação rural, vila ou cidade, por exemplo.
+
+      Nos Documentários de edificações, designa sobretudo o contexto imediato de implantação
+      de uma edificação : urbana, rural, isolada, em correnteza, etc.'
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    slot_uri: term:lido00934
     domain_of:
     - Work
     range: ConceptReference
@@ -806,16 +853,51 @@ attributes:
     range: ConceptReference
     multivalued: true
     inlined_as_list: false
-  inscriptions:
-    name: inscriptions
-    description: Marcas, símbolos ou textos gravados na edificação, especialmente
-      aqueles referentes à estrutura como um todo e não específicos a alguma de suas
-      partes. Não usar para iconografia.
+  part_of:
+    name: part_of
+    description: A set of structured information about a place that is the broader
+      context for the place in focus, such as the district, state, or nation to which
+      a city belongs.
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
+    slot_uri: lido:partOfPlace
     domain_of:
     - Work
-    range: Inscription
+    range: GeonamesId
+    inlined: true
+  former_site:
+    name: former_site
+    description: Indica que a edificação não se encontra mais no local indicado, seja
+      porque foi deslocada ou demolida.
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    alias: former
+    domain_of:
+    - Work
+    range: Site
+    multivalued: true
+    inlined_as_list: true
+  intended_site:
+    name: intended_site
+    description: Sinaliza que a edificação devia ocupar um certo local, mas não chegou
+      a ser construída.
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    alias: intended
+    domain_of:
+    - Work
+    range: Site
+    multivalued: true
+    inlined_as_list: true
+  other_site:
+    name: other_site
+    description: Para casos não contemplados em nenhuma das categorias acima.
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    alias: other
+    domain_of:
+    - Work
+    range: Site
     multivalued: true
     inlined_as_list: true
   location_historic:
@@ -827,6 +909,18 @@ attributes:
     domain_of:
     - Work
     range: HistoricPlace
+    multivalued: true
+    inlined_as_list: true
+  inscriptions:
+    name: inscriptions
+    description: Marcas, símbolos ou textos gravados na edificação, especialmente
+      aqueles referentes à estrutura como um todo e não específicos a alguma de suas
+      partes. Não usar para iconografia.
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    domain_of:
+    - Work
+    range: Inscription
     multivalued: true
     inlined_as_list: true
   collection:
@@ -909,8 +1003,11 @@ from_schema: https://tradicional.arq.br/schema
 close_mappings:
 - crm:E22_Human-Made_Object
 rank: 0
-is_a: Place
+is_a: Thing
 slot_usage:
+  title_type:
+    name: title_type
+    range: RepositoryType
   id:
     name: id
     description: Cada edificação terá um identificador gerado a partir do seu georreferenciamento
@@ -960,6 +1057,52 @@ attributes:
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00766
+    owner: Work
+    domain_of:
+    - Work
+    range: ConceptReference
+    recommended: true
+    multivalued: true
+    inlined_as_list: false
+  work_type_function:
+    name: work_type_function
+    description: 'Objects that are distinguishable by the particular purpose for which
+      they are designed or used. If an object is identifiable by its intended use,
+      then it is qualified by function.
+
+      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+
+      Nos Documentários de edificações, designa um dos sete tipos de propósitos concebidos
+      por C. William Westfall e Samir Younés em *Architectural Type and Character*.
+
+      No Documentário de Lugares, designa o papel administrativo da localidade, por
+      exemplo freguesia, sede municipal, capital estadual ou nacional.'
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    slot_uri: term:lido00767
+    owner: Work
+    domain_of:
+    - Work
+    range: ConceptReference
+    recommended: true
+    multivalued: true
+    inlined_as_list: false
+  work_type_context:
+    name: work_type_context
+    description: 'Descriptors for objects that are distinguishable by their use or
+      application within a particular physical location. If an object is identifiable
+      by association with specific surroundings, it is qualified by location or context.
+
+      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+
+      No Documentário de Lugares Tradicionais, designa o tipo de núcleo populacional :
+      sítio isolado, povoação rural, vila ou cidade, por exemplo.
+
+      Nos Documentários de edificações, designa sobretudo o contexto imediato de implantação
+      de uma edificação : urbana, rural, isolada, em correnteza, etc.'
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    slot_uri: term:lido00934
     owner: Work
     domain_of:
     - Work
@@ -1113,17 +1256,57 @@ attributes:
     range: ConceptReference
     multivalued: true
     inlined_as_list: false
-  inscriptions:
-    name: inscriptions
-    description: Marcas, símbolos ou textos gravados na edificação, especialmente
-      aqueles referentes à estrutura como um todo e não específicos a alguma de suas
-      partes. Não usar para iconografia.
+  part_of:
+    name: part_of
+    description: A set of structured information about a place that is the broader
+      context for the place in focus, such as the district, state, or nation to which
+      a city belongs.
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
+    slot_uri: lido:partOfPlace
     owner: Work
     domain_of:
     - Work
-    range: Inscription
+    range: GeonamesId
+    inlined: true
+  former_site:
+    name: former_site
+    description: Indica que a edificação não se encontra mais no local indicado, seja
+      porque foi deslocada ou demolida.
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    alias: former
+    owner: Work
+    domain_of:
+    - Work
+    range: Site
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  intended_site:
+    name: intended_site
+    description: Sinaliza que a edificação devia ocupar um certo local, mas não chegou
+      a ser construída.
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    alias: intended
+    owner: Work
+    domain_of:
+    - Work
+    range: Site
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  other_site:
+    name: other_site
+    description: Para casos não contemplados em nenhuma das categorias acima.
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    alias: other
+    owner: Work
+    domain_of:
+    - Work
+    range: Site
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -1137,6 +1320,20 @@ attributes:
     domain_of:
     - Work
     range: HistoricPlace
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  inscriptions:
+    name: inscriptions
+    description: Marcas, símbolos ou textos gravados na edificação, especialmente
+      aqueles referentes à estrutura como um todo e não específicos a alguma de suas
+      partes. Não usar para iconografia.
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    owner: Work
+    domain_of:
+    - Work
+    range: Inscription
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -1179,6 +1376,19 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  site:
+    name: site
+    description: A localização real, atual da edificação — é o que será usado em quase
+      todos os casos.
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    owner: Work
+    domain_of:
+    - Repository
+    - Work
+    range: Site
+    required: false
+    inlined: true
   measurements:
     name: measurements
     description: 'A wrapper for information about the dimensions, or other measurements,
@@ -1353,119 +1563,6 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  site:
-    name: site
-    description: A localização real, atual da edificação — é o que será usado em quase
-      todos os casos.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    owner: Work
-    domain_of:
-    - Place
-    - Repository
-    range: Site
-    required: false
-    inlined: true
-  work_type_function:
-    name: work_type_function
-    description: 'Objects that are distinguishable by the particular purpose for which
-      they are designed or used. If an object is identifiable by its intended use,
-      then it is qualified by function.
-
-      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
-      Nos Documentários de edificações, designa um dos sete tipos de propósitos concebidos
-      por C. William Westfall e Samir Younés em *Architectural Type and Character*.
-
-      No Documentário de Lugares, designa o papel administrativo da localidade, por
-      exemplo freguesia, sede municipal, capital estadual ou nacional.'
-    from_schema: https://tradicional.arq.br/schema/place
-    rank: 1000
-    slot_uri: term:lido00767
-    owner: Work
-    domain_of:
-    - Place
-    range: ConceptReference
-    recommended: true
-    multivalued: true
-    inlined_as_list: false
-  work_type_context:
-    name: work_type_context
-    description: 'Descriptors for objects that are distinguishable by their use or
-      application within a particular physical location. If an object is identifiable
-      by association with specific surroundings, it is qualified by location or context.
-
-      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
-      No Documentário de Lugares Tradicionais, designa o tipo de núcleo populacional :
-      sítio isolado, povoação rural, vila ou cidade, por exemplo.
-
-      Nos Documentários de edificações, designa sobretudo o contexto imediato de implantação
-      de uma edificação : urbana, rural, isolada, em correnteza, etc.'
-    from_schema: https://tradicional.arq.br/schema/place
-    rank: 1000
-    slot_uri: term:lido00934
-    owner: Work
-    domain_of:
-    - Place
-    range: ConceptReference
-    recommended: true
-    multivalued: true
-    inlined_as_list: false
-  part_of:
-    name: part_of
-    description: A set of structured information about a place that is the broader
-      context for the place in focus, such as the district, state, or nation to which
-      a city belongs.
-    from_schema: https://tradicional.arq.br/schema/place
-    rank: 1000
-    slot_uri: lido:partOfPlace
-    owner: Work
-    domain_of:
-    - Place
-    range: GeonamesId
-    inlined: true
-  former_site:
-    name: former_site
-    description: Indica que a edificação não se encontra mais no local indicado, seja
-      porque foi deslocada ou demolida.
-    from_schema: https://tradicional.arq.br/schema/place
-    rank: 1000
-    alias: former
-    owner: Work
-    domain_of:
-    - Place
-    range: Site
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  intended_site:
-    name: intended_site
-    description: Sinaliza que a edificação devia ocupar um certo local, mas não chegou
-      a ser construída.
-    from_schema: https://tradicional.arq.br/schema/place
-    rank: 1000
-    alias: intended
-    owner: Work
-    domain_of:
-    - Place
-    range: Site
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  other_site:
-    name: other_site
-    description: Para casos não contemplados em nenhuma das categorias acima.
-    from_schema: https://tradicional.arq.br/schema/place
-    rank: 1000
-    alias: other
-    owner: Work
-    domain_of:
-    - Place
-    range: Site
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   description:
     name: description
     description: A human-readable description for a thing
@@ -1517,8 +1614,6 @@ attributes:
     owner: Work
     domain_of:
     - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
@@ -1526,6 +1621,8 @@ attributes:
     - Actor
     - Thing
     - Appellation
+    - GeographicPoint
+    - GeographicExtent
     - Inscription
     range: BibliographicCitation
     recommended: true

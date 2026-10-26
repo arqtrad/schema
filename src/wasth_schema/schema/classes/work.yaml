@@ -19,7 +19,7 @@ classes:
 
   Work:
     rank: 0
-    is_a: Place
+    is_a: Thing
     class_uri: schema:LandmarksOrHistoricalBuildings
     close_mappings:
       - crm:E22_Human-Made_Object
@@ -102,6 +102,51 @@ classes:
 
           Nos Documentários da Arquitetura Tradicional,
           designa uma tipologia formal.
+
+      work_type_function:
+        slot_uri: term:lido00767
+        recommended: true
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: false
+        description: >-
+          Objects that are distinguishable by the particular purpose for which
+          they are designed or used. If an object is identifiable by its
+          intended use, then it is qualified by function.
+
+          Based on [AAT Guidelines "Types of Guide
+          Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+
+          Nos Documentários de edificações, designa um dos sete
+          tipos de propósitos concebidos por C. William Westfall e Samir Younés
+          em *Architectural Type and Character*.
+
+          No Documentário de Lugares, designa o papel administrativo da
+          localidade, por exemplo freguesia, sede municipal, capital estadual
+          ou nacional.
+
+      work_type_context:
+        slot_uri: term:lido00934
+        recommended: true
+        range: ConceptReference
+        multivalued: true
+        inlined_as_list: false
+        description: >-
+          Descriptors for objects that are distinguishable by their use or
+          application within a particular physical location. If an object is
+          identifiable by association with specific surroundings, it is
+          qualified by location or context.
+
+          Based on [AAT Guidelines "Types of Guide
+          Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+
+          No Documentário de Lugares Tradicionais, designa o tipo de núcleo
+          populacional : sítio isolado, povoação rural, vila ou cidade,
+          por exemplo.
+
+          Nos Documentários de edificações, designa sobretudo o contexto
+          imediato de implantação de uma edificação : urbana, rural, isolada,
+          em correnteza, etc.
 
       work_type_material_tech:
         slot_uri: term:lido00789
@@ -229,14 +274,40 @@ classes:
           aplicação para arquitetura.
 
 
-      inscriptions:
-        range: Inscription
+      part_of:
+        slot_uri: lido:partOfPlace
+        description: >-
+          A set of structured information about a place that is the broader
+          context for the place in focus, such as the district, state, or
+          nation to which a city belongs.
+        range: GeonamesId
+        inlined: true
+
+      former_site:
+        alias: former
+        range: Site
         multivalued: true
         inlined_as_list: true
         description: >-
-          Marcas, símbolos ou textos gravados na edificação, especialmente
-          aqueles referentes à estrutura como um todo e não específicos a
-          alguma de suas partes. Não usar para iconografia.
+          Indica que a edificação não se encontra mais no local indicado,
+          seja porque foi deslocada ou demolida.
+
+      intended_site:
+        alias: intended
+        range: Site
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          Sinaliza que a edificação devia ocupar um certo local, mas não
+          chegou a ser construída.
+
+      other_site:
+        alias: other
+        range: Site
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          Para casos não contemplados em nenhuma das categorias acima.
 
       location_historic:
         range: HistoricPlace
@@ -247,6 +318,15 @@ classes:
           encontra. Para um sítio de onde o objeto foi fisicamente removido, usar
           `former_site:`.
 
+
+      inscriptions:
+        range: Inscription
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          Marcas, símbolos ou textos gravados na edificação, especialmente
+          aqueles referentes à estrutura como um todo e não específicos a
+          alguma de suas partes. Não usar para iconografia.
 
       collection:
         description: >
@@ -277,6 +357,9 @@ classes:
 
     slot_usage:
 
+      title_type:
+        range: RepositoryType
+
       id:
         description: >-
           Cada edificação terá um identificador gerado a partir do seu
@@ -295,6 +378,7 @@ classes:
         required: false
 
     slots:
+      - site
       - measurements
       - material
       - technique
@@ -302,6 +386,155 @@ classes:
       - related_works
       - resources
       - media
+
+
+  Site:
+    abstract: true
+    is_a: Thing
+    class_uri: crm:E92_Spacetime_Volume
+    exact_mappings:
+      - schema:DefinedRegion
+
+    description: >
+      This class comprises 4-dimensional point sets (volumes) in physical
+      spacetime (in contrast to mathematical models of it) regardless of their
+      true geometric forms. They may derive their identity from being the
+      extent of a material phenomenon or from being the interpretation of an
+      expression defining an extent in spacetime. Intersections of instances of
+      E92 Spacetime Volume, E53 Place, and E52 Time-Span are also regarded as
+      instances of E92 Spacetime Volume. An instance of E92 Spacetime Volume is
+      either contiguous or composed of a finite number of contiguous subsets.
+      Its boundaries may be fuzzy due to the properties of the phenomena it
+      derives from or due to the limited precision up to which defining
+      expression can be identified with a real extent in spacetime. The
+      duration of existence of an instance of E92 Spacetime Volume is its
+      projection on time.
+
+      Este bloco corresponde à terminologia do [DublinCore] `coverage >
+      spatial`. Na especificação [LIDO], a localização física de um bem se
+      confunde com a sua inserção institucional (repositório).
+      Na formatação da nossa ficha, tentamos desfazer essa confusão separando o
+      georreferenciamento e o repositório em blocos diferentes.
+
+      Ele inclui informações de georreferenciamento, nomes históricos de
+      lugares e repositórios ou conjuntos aos quais pertence a edificação
+      (por exemplo, um conjunto urbano tombado / classificado).
+
+      As informações de localização, especialmente o georreferenciamento, são
+      indispensáveis para espacializar todos os demais atributos da ficha.
+
+    attributes:
+
+      location:
+        required: true
+        description: >-
+          Representative point location for the place, normally in EPSG:4326
+          (WGS 84).
+        slot_uri: geo:hasGeometry
+        range: GeographicPoint
+        inlined: true
+
+      extent:
+        description: >-
+          Polygonal, multipolygonal, or linear geographic extent associated
+          with the place.
+        slot_uri: geo:hasGeometry
+        range: GeographicExtent
+        inlined: true
+
+    slot_usage:
+      id:
+        range: GeonamesId
+        description: >
+          Incluir aqui um identificador da base geonames na forma
+          `geonames:1234`.
+
+  GeographicPoint:
+    description: >
+      Coordenadas do ponto que situa o sítio na visualização do mapa.
+
+      A fonte preferencial de autoridade para o georreferenciamento é um órgão
+      público, por exemplo o IPHAN no Brasil (usando as coordenadas informadas
+      no [SICG]) ou a DGMN em Portugal (usando as coordenadas informadas no
+      [SIPA]).
+
+      Caso não haja georreferenciamento oficial, usar uma planta cadastral
+      municipal georreferenciada ou, na falta desta, o [Global Building Atlas].
+      Nesses casos, para se obter as coordenadas de georreferenciamento,
+      é preciso usar um Sistema de Informações Geográficas da sua preferência.
+
+      Como exemplo, no [QGIS], isso pode ser feito seguindo as instruções
+      abaixo :
+
+      1. Sempre projetar o mapa usando EPSG:4326 (WGS84) ;
+
+      2. Selecionar o polígono da edificação na camada da planta cadastral ou
+         do Global Building Atlas ;
+
+      3. Rodar o comando do menu `Vector > Geometry Tools > Centroids` para
+        obter as coordenadas do ponto (`location`) — ele vai criar uma camada
+        temporária com o ponto no centróide do polígono selecionado ;
+
+      4. Usar novamente a ferramenta `Get WKT` para visualizar as coordenadas,
+        copiar os valores e colar na ficha com o grau de precisão (casas
+        decimais) desejado.
+
+    attributes:
+
+      lat:
+        description: "Latitude em graus decimais (separador decimal: ponto)."
+        required: true
+        range: Latitude
+
+      lon:
+        description: "Longitude em graus decimais (separador decimal: ponto)."
+        required: true
+        range: Longitude
+
+      alt:
+        description: "Altitude em metros (separador decimal: ponto)"
+        range: float
+        minimum_value: -1000  # Existem pontos emersos abaixo do nível do mar.
+        maximum_value: 10000
+
+      zoom:
+        range: integer
+        ifabsent: integer(13)
+        minimum_value: 0
+        maximum_value: 18
+        description: >
+          Usado para visualizar o mapa mais de longe se a precisão das
+          coordenadas for baixa.
+
+    slots:
+      - srs_name
+      - source
+      - bibliographic_citation
+
+  GeographicExtent:
+    description: >
+      Coordenadas do polígono que define o sítio.
+
+    attributes:
+
+      geometry_type:
+        description: Tipo da geometria descrita pelas coordenadas.
+        alias: type
+        required: true
+        range: GeometryType
+
+      coordinates:
+        description: >
+          No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do
+          polígono (`extent`) com a opção `Get JSON` — copiar apenas os
+          colchetes `[[[ ]]]` e os valores numéricos dentro deles.
+        required: true
+        range: GeoJSONCoordinateArray
+
+    slots:
+      - srs_name
+      - source
+      - bibliographic_citation
 
 
   Inscription:
@@ -372,6 +605,25 @@ classes:
 
 
 slots:
+
+  site:
+    required: true
+    range: Site
+    inlined: true
+    description: >-
+      A localização real, atual da edificação — é o que será usado em quase
+      todos os casos.
+
+  srs_name:
+    description: >-
+      Names the coordinate reference system (CRS) that defines the semantics of
+      the lat/long pair according to the ISO6709 standard.
+
+    recommended: true
+    alias: srsName
+    range: uriorcurie
+    inlined: true
+    # ifabsent: string('EPSG:4326')
 
   subject:
     range: Topic

@@ -140,9 +140,9 @@ attributes:
 
       '
     from_schema: https://tradicional.arq.br/schema/temporal
+    rank: 1000
     alias: places
     domain_of:
-    - Container
     - EventPlace
     range: Site
     multivalued: true
@@ -180,10 +180,10 @@ attributes:
 
       '
     from_schema: https://tradicional.arq.br/schema/temporal
+    rank: 1000
     alias: places
     owner: EventPlace
     domain_of:
-    - Container
     - EventPlace
     range: Site
     multivalued: true

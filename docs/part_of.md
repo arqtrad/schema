@@ -25,7 +25,6 @@ URI: [lido:partOfPlace](http://www.lido-schema.org/partOfPlace)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
 
 
@@ -40,13 +39,13 @@ URI: [lido:partOfPlace](http://www.lido-schema.org/partOfPlace)
 | Property | Value |
 | --- | --- |
 | Range | [GeonamesId](GeonamesId.md) |
-| Domain Of | [Place](Place.md) |
+| Domain Of | [Work](Work.md) |
 | Slot URI | [lido:partOfPlace](http://www.lido-schema.org/partOfPlace) |
 ### Slot Characteristics
 
 | Property | Value |
 | --- | --- |
-| Owner | [Place](Place.md) |
+| Owner | [Work](Work.md) |
 
 
 
@@ -93,9 +92,9 @@ description: A set of structured information about a place that is the broader c
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: lido:partOfPlace
-owner: Place
+owner: Work
 domain_of:
-- Place
+- Work
 range: GeonamesId
 inlined: true
 

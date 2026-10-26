@@ -5,11 +5,20 @@ search:
 
 # Slot: places
 
+
+_Lugares associados ao evento, sem incluir o próprio local no qual se situa a edificação._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
 
 URI: [wasth:places](https://tradicional.arq.br/schema/places)
+Alias: places
+
 <!-- no inheritance hierarchy -->
 
 
@@ -20,7 +29,6 @@ URI: [wasth:places](https://tradicional.arq.br/schema/places)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) | Todos os elementos do documentário |  no  |
 | [EventPlace](EventPlace.md) |  |  no  |
 
 
@@ -34,8 +42,22 @@ URI: [wasth:places](https://tradicional.arq.br/schema/places)
 
 | Property | Value |
 | --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Container](Container.md), [EventPlace](EventPlace.md) |
+| Range | [Site](Site.md) |
+| Domain Of | [EventPlace](EventPlace.md) |
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [EventPlace](EventPlace.md) |
+
+
 
 
 
@@ -49,6 +71,13 @@ URI: [wasth:places](https://tradicional.arq.br/schema/places)
 ## Identifier and Mapping Information
 
 
+
+
+
+### Schema Source
+
+
+* from schema: https://tradicional.arq.br/schema
 
 
 
@@ -68,10 +97,20 @@ URI: [wasth:places](https://tradicional.arq.br/schema/places)
 <details>
 ```yaml
 name: places
+description: 'Lugares associados ao evento, sem incluir o próprio local no qual se
+  situa a edificação.
+
+  '
+from_schema: https://tradicional.arq.br/schema
+rank: 1000
+alias: places
+owner: EventPlace
 domain_of:
-- Container
 - EventPlace
-range: string
+range: Site
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

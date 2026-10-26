@@ -68,12 +68,6 @@ URI: [dcterms:BibliographicCitation](http://purl.org/dc/terms/BibliographicCitat
 | [Concept](Concept.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [Concept](Concept.md) | [title_source](title_source.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [ConceptReference](ConceptReference.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
-| [Place](Place.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
-| [Place](Place.md) | [title_source](title_source.md) | range | [BibliographicCitation](BibliographicCitation.md) |
-| [Site](Site.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
-| [Site](Site.md) | [title_source](title_source.md) | range | [BibliographicCitation](BibliographicCitation.md) |
-| [GeographicPoint](GeographicPoint.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
-| [GeographicExtent](GeographicExtent.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [RelatedObject](RelatedObject.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [RelatedWork](RelatedWork.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [Resource](Resource.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
@@ -93,6 +87,10 @@ URI: [dcterms:BibliographicCitation](http://purl.org/dc/terms/BibliographicCitat
 | [Repository](Repository.md) | [title_source](title_source.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [Work](Work.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [Work](Work.md) | [title_source](title_source.md) | range | [BibliographicCitation](BibliographicCitation.md) |
+| [Site](Site.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
+| [Site](Site.md) | [title_source](title_source.md) | range | [BibliographicCitation](BibliographicCitation.md) |
+| [GeographicPoint](GeographicPoint.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
+| [GeographicExtent](GeographicExtent.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [Inscription](Inscription.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 
 

@@ -80,13 +80,12 @@ URI: [wasth:Appellation](https://tradicional.arq.br/schema/Appellation)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Concept](Concept.md) | [alt_name](alt_name.md) | range | [Appellation](Appellation.md) |
-| [Place](Place.md) | [alt_name](alt_name.md) | range | [Appellation](Appellation.md) |
-| [Site](Site.md) | [alt_name](alt_name.md) | range | [Appellation](Appellation.md) |
 | [Resource](Resource.md) | [alt_name](alt_name.md) | range | [Appellation](Appellation.md) |
 | [Event](Event.md) | [alt_name](alt_name.md) | range | [Appellation](Appellation.md) |
 | [Thing](Thing.md) | [alt_name](alt_name.md) | range | [Appellation](Appellation.md) |
 | [Repository](Repository.md) | [alt_name](alt_name.md) | range | [Appellation](Appellation.md) |
 | [Work](Work.md) | [alt_name](alt_name.md) | range | [Appellation](Appellation.md) |
+| [Site](Site.md) | [alt_name](alt_name.md) | range | [Appellation](Appellation.md) |
 
 
 
@@ -224,8 +223,6 @@ attributes:
     owner: Appellation
     domain_of:
     - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
     - RelatedObject
     - MediaObject
     - TypedReference
@@ -233,6 +230,8 @@ attributes:
     - Actor
     - Thing
     - Appellation
+    - GeographicPoint
+    - GeographicExtent
     - Inscription
     range: BibliographicCitation
     recommended: true
