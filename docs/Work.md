@@ -450,7 +450,6 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 | [measurements](measurements.md) | * <br/> [Measurement](Measurement.md) |  | direct |
 | [material](material.md) | * <br/> [MaterialTech](MaterialTech.md) | This class is a specialization of E55 Type and comprises the concepts of mate... | direct |
 | [technique](technique.md) | * <br/> [MaterialTech](MaterialTech.md) | The production or manufacturing processes, techniques, and methods incorporat... | direct |
-| [repositories](repositories.md) | * <br/> [Repository](Repository.md) | A set of elements for the identification, name and location of the repository... | direct |
 | [subject](subject.md) | * <br/> [Topic](Topic.md) | Recomenda-se articular o tema em três níveis : descrição, identificação e int... | direct |
 | [related_works](related_works.md) | * <br/> [RelatedWork](RelatedWork.md) |  | direct |
 | [resources](resources.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de imag... | direct |
@@ -489,6 +488,7 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 | [identifiers](identifiers.md) | * <br/> [TypedReference](TypedReference.md) | Published or external identifiers for the object | [Thing](Thing.md) |
 | [tags](tags.md) | * <br/> [String](String.md) | Provisional uncontrolled keywords | [Thing](Thing.md) |
 | [temporal](temporal.md) | * <br/> [Event](Event.md) | Temporalidade do objeto | [Thing](Thing.md) |
+| [repositories](repositories.md) | * <br/> [Repository](Repository.md) | A set of elements for the identification, name and location of the repository... | [Thing](Thing.md) |
 | [record_rights](record_rights.md) | 1..* <br/> [Right](Right.md) | A set of structured information about rights regarding the content provided i... | [Thing](Thing.md) |
 
 
@@ -569,7 +569,6 @@ slots:
 - measurements
 - material
 - technique
-- repositories
 - subject
 - related_works
 - resources
@@ -1192,33 +1191,6 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  repositories:
-    name: repositories
-    description: 'A set of elements for the identification, name and location of the
-      repository that is responsible for the object/work in focus.
-
-      Repeated if there are several designations known, or if former repositories
-      or geographic places should be listed.
-
-      ---------------------------------------------------------------------
-
-      Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar
-      a inclusão da edificação em perímetros de sítios do patrimônio cultural, etc.
-
-      Os repositórios devem ser cadastrados de modo semelhante às informações de georreferenciamento,
-      usando o tipo `other`.
-
-      '
-    from_schema: https://tradicional.arq.br/schema/thing
-    rank: 1000
-    owner: Work
-    domain_of:
-    - Thing
-    - Work
-    range: Repository
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   subject:
     name: subject
     description: 'Recomenda-se articular o tema em três níveis : descrição, identificação
@@ -1634,6 +1606,32 @@ attributes:
     - Right
     - Thing
     range: Event
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  repositories:
+    name: repositories
+    description: 'A set of elements for the identification, name and location of the
+      repository that is responsible for the object/work in focus.
+
+      Repeated if there are several designations known, or if former repositories
+      or geographic places should be listed.
+
+      ---------------------------------------------------------------------
+
+      Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar
+      a inclusão da edificação em perímetros de sítios do patrimônio cultural, etc.
+
+      Os repositórios devem ser cadastrados de modo semelhante às informações de georreferenciamento,
+      usando o tipo `other`.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
+    owner: Work
+    domain_of:
+    - Thing
+    range: Repository
     multivalued: true
     inlined: true
     inlined_as_list: true

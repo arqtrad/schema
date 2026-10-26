@@ -1155,7 +1155,6 @@ attributes:
     owner: Event
     domain_of:
     - Thing
-    - Work
     range: Repository
     multivalued: true
     inlined: true

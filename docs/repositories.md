@@ -35,7 +35,6 @@ URI: [wasth:repositories](https://tradicional.arq.br/schema/repositories)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
 | [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
 | [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  no  |
 | [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
@@ -43,6 +42,7 @@ URI: [wasth:repositories](https://tradicional.arq.br/schema/repositories)
 | [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 | [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
+| [Work](Work.md) | An historical landmark or building |  no  |
 
 
 
@@ -56,7 +56,7 @@ URI: [wasth:repositories](https://tradicional.arq.br/schema/repositories)
 | Property | Value |
 | --- | --- |
 | Range | [Repository](Repository.md) |
-| Domain Of | [Thing](Thing.md), [Work](Work.md) |
+| Domain Of | [Thing](Thing.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -130,7 +130,6 @@ rank: 1000
 owner: Thing
 domain_of:
 - Thing
-- Work
 range: Repository
 multivalued: true
 inlined: true

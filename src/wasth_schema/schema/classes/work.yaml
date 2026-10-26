@@ -276,7 +276,6 @@ classes:
       - measurements
       - material
       - technique
-      - repositories
       - subject
       - related_works
       - resources

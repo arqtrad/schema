@@ -462,7 +462,6 @@ attributes:
     rank: 1000
     domain_of:
     - Thing
-    - Work
     range: Repository
     multivalued: true
     inlined_as_list: true
@@ -688,7 +687,6 @@ attributes:
     owner: Thing
     domain_of:
     - Thing
-    - Work
     range: Repository
     multivalued: true
     inlined: true

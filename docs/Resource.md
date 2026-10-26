@@ -766,7 +766,6 @@ attributes:
     owner: Resource
     domain_of:
     - Thing
-    - Work
     range: Repository
     multivalued: true
     inlined: true
