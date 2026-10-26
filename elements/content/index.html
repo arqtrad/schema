@@ -475,7 +475,11 @@
 
 
 <h1 id="slot-content">Slot: content</h1>
-<p><em>Narrative body content. In the Markdown adapter this corresponds to the document body after YAML frontmatter.</em></p>
+<p><em>Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma descrição morfológica e histórica da edificação com texto livre, usando formatação Markdown.</em></p>
+<p><em>Poderá incluir um segundo bloco de metadados para indicar as referências bibliográficas da descrição textual, no campo <code>nocite</code>. O formato é uma lista de chaves de citação do Zotero (cada uma começando com <code>@</code>) separadas por vírgulas:</em></p>
+<p><em>```yaml Conteúdo textual em formato <em>Markdown</em> com citações [@citekey].</em></p>
+<p><em>--- nocite: "@*" --- ```</em></p>
+<p>__</p>
 <div>
 <p>URI: <a href="http://www.w3.org/2004/02/skos/core#scopeNote">skos:scopeNote</a></p>
 <!-- no inheritance hierarchy -->
@@ -491,7 +495,7 @@
 <tbody>
 <tr>
 <td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC</td>
+<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -501,17 +505,27 @@
 </tr>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A WASTH controlled-vocabulary concept, compatible with SKOS and SKOS-THES</td>
+<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Place/">Place</a></td>
-<td>A named place with optional geographic location, administrative hierarchy, cl...</td>
+<td>Entities that have a somewhat fixed, physical extension</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Resource/">Resource</a></td>
+<td>This class comprises identifiable immaterial items that make propositions abo...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and</td>
+<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -521,7 +535,7 @@
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>CIDOC–CRM E22 HUMAN-MADE OBJECT</td>
+<td>An historical landmark or building</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -595,8 +609,19 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Narrative body content. In the Markdown adapter this corresponds to the</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">document body after YAML frontmatter.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Deixe</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">linha</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">branco</span><span class="nv"> </span><span class="s">após</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">fechamento</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">metadados</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">inclua</span><span class="nv"> </span><span class="s">aqui</span>
+<span class="w">  </span><span class="s">uma</span><span class="nv"> </span><span class="s">descrição</span><span class="nv"> </span><span class="s">morfológica</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">histórica</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">texto</span><span class="nv"> </span><span class="s">livre,</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">formatação</span>
+<span class="w">  </span><span class="s">Markdown.</span>
+
+<span class="w">  </span><span class="s">Poderá</span><span class="nv"> </span><span class="s">incluir</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">segundo</span><span class="nv"> </span><span class="s">bloco</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">metadados</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">indicar</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">referências</span><span class="nv"> </span><span class="s">bibliográficas</span>
+<span class="w">  </span><span class="s">da</span><span class="nv"> </span><span class="s">descrição</span><span class="nv"> </span><span class="s">textual,</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`nocite`.</span><span class="nv"> </span><span class="s">O</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">chaves</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span>
+<span class="w">  </span><span class="s">do</span><span class="nv"> </span><span class="s">Zotero</span><span class="nv"> </span><span class="s">(cada</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">começando</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">`@`)</span><span class="nv"> </span><span class="s">separadas</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">vírgulas:</span>
+
+<span class="w">  </span><span class="s">```yaml</span><span class="nv"> </span><span class="s">Conteúdo</span><span class="nv"> </span><span class="s">textual</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">*Markdown*</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">citações</span><span class="nv"> </span><span class="s">[@citekey].</span>
+
+<span class="w">  </span><span class="s">---</span><span class="nv"> </span><span class="s">nocite:</span><span class="nv"> </span><span class="s">"@*"</span><span class="nv"> </span><span class="s">---</span><span class="nv"> </span><span class="s">```</span>
+
+<span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skos:scopeNote</span>

@@ -365,6 +365,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#applicable-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applicable Classes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#properties" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -464,10 +475,32 @@
 
 
 <h1 id="slot-part_of">Slot: part_of</h1>
-<p><em>Parent place in an administrative, geographic, or historical hierarchy.</em></p>
+<p><em>A set of structured information about a place that is the broader context for the place in focus, such as the district, state, or nation to which a city belongs.</em></p>
 <div>
-<p>URI: <a href="http://purl.org/iso25964/skos-thes#broaderPartitive">iso:broaderPartitive</a></p>
+<p>URI: <a href="http://www.lido-schema.org/partOfPlace">lido:partOfPlace</a></p>
 <!-- no inheritance hierarchy -->
+<h2 id="applicable-classes">Applicable Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Modifies Slot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Place/">Place</a></td>
+<td>Entities that have a somewhat fixed, physical extension</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Work/">Work</a></td>
+<td>An historical landmark or building</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -480,11 +513,33 @@
 <tbody>
 <tr>
 <td>Range</td>
+<td><a href="../GeonamesId/">GeonamesId</a></td>
+</tr>
+<tr>
+<td>Domain Of</td>
 <td><a href="../Place/">Place</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="http://purl.org/iso25964/skos-thes#broaderPartitive">iso:broaderPartitive</a></td>
+<td><a href="http://www.lido-schema.org/partOfPlace">lido:partOfPlace</a></td>
+</tr>
+<tr>
+<td>### Slot Characteristics</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td><a href="../Place/">Place</a></td>
 </tr>
 </tbody>
 </table>
@@ -504,7 +559,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>iso:broaderPartitive</td>
+<td>lido:partOfPlace</td>
 </tr>
 <tr>
 <td>native</td>
@@ -515,12 +570,16 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">part_of</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Parent place in an administrative, geographic, or historical hierarchy.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A set of structured information about a place that is the broader context</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">for the place in focus, such as the district, state, or nation to which a city belongs.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">iso:broaderPartitive</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Place</span>
-<span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:partOfPlace</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Place</span>
+<span class="nt">domain_of</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Place</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesId</span>
+<span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>

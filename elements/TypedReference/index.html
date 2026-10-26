@@ -390,18 +390,6 @@
 </tr>
 <tr>
 <td><a href="../Place/">Place</a></td>
-<td><a href="../place_type/">place_type</a></td>
-<td>range</td>
-<td><a href="./">TypedReference</a></td>
-</tr>
-<tr>
-<td><a href="../Place/">Place</a></td>
-<td><a href="../place_function/">place_function</a></td>
-<td>range</td>
-<td><a href="./">TypedReference</a></td>
-</tr>
-<tr>
-<td><a href="../Place/">Place</a></td>
 <td><a href="../identifiers/">identifiers</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
@@ -413,8 +401,14 @@
 <td><a href="./">TypedReference</a></td>
 </tr>
 <tr>
-<td><a href="../Resource/">Resource</a></td>
-<td><a href="../resource_id/">resource_id</a></td>
+<td><a href="../Site/">Site</a></td>
+<td><a href="../identifiers/">identifiers</a></td>
+<td>range</td>
+<td><a href="./">TypedReference</a></td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td><a href="../collection/">collection</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
 </tr>
@@ -426,49 +420,55 @@
 </tr>
 <tr>
 <td><a href="../Resource/">Resource</a></td>
-<td><a href="../resource_unit/">resource_unit</a></td>
+<td><a href="../unit/">unit</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
 </tr>
 <tr>
-<td><a href="../Media/">Media</a></td>
+<td><a href="../Resource/">Resource</a></td>
+<td><a href="../identifiers/">identifiers</a></td>
+<td>range</td>
+<td><a href="./">TypedReference</a></td>
+</tr>
+<tr>
+<td><a href="../Resource/">Resource</a></td>
+<td><a href="../collection/">collection</a></td>
+<td>range</td>
+<td><a href="./">TypedReference</a></td>
+</tr>
+<tr>
+<td><a href="../MediaObject/">MediaObject</a></td>
 <td><a href="../format/">format</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
 </tr>
 <tr>
-<td><a href="../Media/">Media</a></td>
+<td><a href="../MediaObject/">MediaObject</a></td>
 <td><a href="../resource_service/">resource_service</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
 </tr>
 <tr>
-<td><a href="../Measurements/">Measurements</a></td>
+<td><a href="../Measurement/">Measurement</a></td>
 <td><a href="../format_extent/">format_extent</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
 </tr>
 <tr>
-<td><a href="../Measurements/">Measurements</a></td>
+<td><a href="../Measurement/">Measurement</a></td>
 <td><a href="../unit/">unit</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
 </tr>
 <tr>
 <td><a href="../Right/">Right</a></td>
-<td><a href="../right_concept/">right_concept</a></td>
+<td><a href="../type/">type</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
 </tr>
 <tr>
 <td><a href="../LegalBody/">LegalBody</a></td>
-<td><a href="../legal_body_name/">legal_body_name</a></td>
-<td>range</td>
-<td><a href="./">TypedReference</a></td>
-</tr>
-<tr>
-<td><a href="../HistoricPlace/">HistoricPlace</a></td>
-<td><a href="../historic_place_name/">historic_place_name</a></td>
+<td><a href="../name/">name</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
 </tr>
@@ -534,12 +534,6 @@
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td><a href="../location_historic/">location_historic</a></td>
-<td>range</td>
-<td><a href="./">TypedReference</a></td>
-</tr>
-<tr>
-<td><a href="../Work/">Work</a></td>
 <td><a href="../identifiers/">identifiers</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
@@ -553,6 +547,12 @@
 <tr>
 <td><a href="../Topic/">Topic</a></td>
 <td><a href="../format_extent/">format_extent</a></td>
+<td>range</td>
+<td><a href="./">TypedReference</a></td>
+</tr>
+<tr>
+<td><a href="../HistoricPlace/">HistoricPlace</a></td>
+<td><a href="../name/">name</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
 </tr>
@@ -627,11 +627,14 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refid</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Local or external identifier.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:identifier</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:identifier</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:identifier</span>
 <span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -643,12 +646,12 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
@@ -664,13 +667,11 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

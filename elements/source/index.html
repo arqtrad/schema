@@ -489,38 +489,28 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../GeographicPoint/">GeographicPoint</a></td>
+<td>Coordenadas do ponto que situa o sítio na visualização do mapa</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeographicExtent/">GeographicExtent</a></td>
+<td>Coordenadas do polígono que define o sítio</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../RelatedObject/">RelatedObject</a></td>
 <td>As formas mais comuns de relação no nosso projeto são :</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Resource/">Resource</a></td>
-<td>Digital or documentary resource associated with a Work</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Media/">Media</a></td>
+<td><a href="../MediaObject/">MediaObject</a></td>
 <td>Descrição e referência a um único arquivo de mídia</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../TypedReference/">TypedReference</a></td>
 <td>Reference to a local record, IRI, URI, or LIDO terminology term</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Site/">Site</a></td>
-<td>A place associated with a Work</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../GeographicPoint/">GeographicPoint</a></td>
-<td>WGS84 geographic point</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../GeographicExtent/">GeographicExtent</a></td>
-<td>Geographic geometry, normally exported as GeoJSON</td>
 <td>no</td>
 </tr>
 <tr>
@@ -546,7 +536,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../RelatedObject/">RelatedObject</a>, <a href="../Resource/">Resource</a>, <a href="../Media/">Media</a>, <a href="../TypedReference/">TypedReference</a>, <a href="../Site/">Site</a>, <a href="../GeographicPoint/">GeographicPoint</a>, <a href="../GeographicExtent/">GeographicExtent</a></td>
+<td><a href="../GeographicPoint/">GeographicPoint</a>, <a href="../GeographicExtent/">GeographicExtent</a>, <a href="../RelatedObject/">RelatedObject</a>, <a href="../MediaObject/">MediaObject</a>, <a href="../TypedReference/">TypedReference</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -598,13 +588,11 @@
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

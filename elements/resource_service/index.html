@@ -475,6 +475,7 @@
 
 
 <h1 id="slot-resource_service">Slot: resource_service</h1>
+<p><em>Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal como a especificação [IIIF].</em></p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/resource_service">wasth:resource_service</a>
 Alias: service</p>
@@ -491,11 +492,11 @@ Alias: service</p>
 <tbody>
 <tr>
 <td><a href="../Resource/">Resource</a></td>
-<td>Digital or documentary resource associated with a Work</td>
+<td>This class comprises identifiable immaterial items that make propositions abo...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Media/">Media</a></td>
+<td><a href="../MediaObject/">MediaObject</a></td>
 <td>Descrição e referência a um único arquivo de mídia</td>
 <td>no</td>
 </tr>
@@ -517,7 +518,7 @@ Alias: service</p>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Resource/">Resource</a>, <a href="../Media/">Media</a></td>
+<td><a href="../Resource/">Resource</a>, <a href="../MediaObject/">MediaObject</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -566,12 +567,14 @@ Alias: service</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resource_service</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Apenas no caso de a imagem ser fornecida como um serviço dinâmico online,</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">tal como a especificação [IIIF].</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

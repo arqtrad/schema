@@ -311,13 +311,13 @@
 <tr>
 <td><a href="../date_type/">date_type</a></td>
 <td>1 <br/> <a href="../DateQualifier/">DateQualifier</a></td>
-<td></td>
+<td>An attribute for the kind of latest date, whether it is, for instance, exact ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../date_value/">date_value</a></td>
 <td>0..1 <br/> <a href="../Date/">Date</a></td>
-<td></td>
+<td>Usar o formato ISO-8601 (por exemplo, 2026-03-17)</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -380,6 +380,10 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">date_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">attribute</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">kind</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">latest</span><span class="nv"> </span><span class="s">date,</span><span class="nv"> </span><span class="s">whether</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is,</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">instance,</span>
+<span class="w">      </span><span class="s">exact</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">estimated.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
@@ -389,6 +393,11 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">date_value</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date_value</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">ISO-8601</span><span class="nv"> </span><span class="s">(por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">2026-03-17).</span><span class="nv"> </span><span class="s">Para</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">imprecisas,</span>
+<span class="w">      </span><span class="s">usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">primeiro</span><span class="nv"> </span><span class="s">dia,</span><span class="nv"> </span><span class="s">mês</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ano</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">período</span><span class="nv"> </span><span class="s">delimitado,</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">descrever</span><span class="nv"> </span><span class="s">verbalmente</span>
+<span class="w">      </span><span class="s">o</span><span class="nv"> </span><span class="s">período</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
@@ -403,6 +412,10 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">date_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">attribute</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">kind</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">latest</span><span class="nv"> </span><span class="s">date,</span><span class="nv"> </span><span class="s">whether</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is,</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">instance,</span>
+<span class="w">      </span><span class="s">exact</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">estimated.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
@@ -413,6 +426,11 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">date_value</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date_value</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">ISO-8601</span><span class="nv"> </span><span class="s">(por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">2026-03-17).</span><span class="nv"> </span><span class="s">Para</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">imprecisas,</span>
+<span class="w">      </span><span class="s">usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">primeiro</span><span class="nv"> </span><span class="s">dia,</span><span class="nv"> </span><span class="s">mês</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ano</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">período</span><span class="nv"> </span><span class="s">delimitado,</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">descrever</span><span class="nv"> </span><span class="s">verbalmente</span>
+<span class="w">      </span><span class="s">o</span><span class="nv"> </span><span class="s">período</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateRange</span>

@@ -398,6 +398,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -475,6 +486,8 @@
 
 
 <h1 id="slot-coordinates">Slot: coordinates</h1>
+<p><em>No QGIS, usar a ferramenta <code>Get WKT</code> para obter as coordenadas do polígono (<code>extent</code>) com a opção <code>Get JSON</code> — copiar apenas os colchetes <code>[[[ ]]]</code> e os valores numéricos dentro deles.</em></p>
+<p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/coordinates">wasth:coordinates</a></p>
 <!-- no inheritance hierarchy -->
@@ -490,7 +503,7 @@
 <tbody>
 <tr>
 <td><a href="../GeographicExtent/">GeographicExtent</a></td>
-<td>Geographic geometry, normally exported as GeoJSON</td>
+<td>Coordenadas do polígono que define o sítio</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -533,6 +546,21 @@
 </tr>
 </tbody>
 </table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td><a href="../GeographicExtent/">GeographicExtent</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -560,8 +588,14 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinates</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'No</span><span class="nv"> </span><span class="s">QGIS,</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ferramenta</span><span class="nv"> </span><span class="s">`Get</span><span class="nv"> </span><span class="s">WKT`</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">obter</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">polígono</span>
+<span class="w">  </span><span class="s">(`extent`)</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">opção</span><span class="nv"> </span><span class="s">`Get</span><span class="nv"> </span><span class="s">JSON`</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">copiar</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">colchetes</span><span class="nv"> </span><span class="s">`[[[</span><span class="nv"> </span><span class="s">]]]`</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">valores</span>
+<span class="w">  </span><span class="s">numéricos</span><span class="nv"> </span><span class="s">dentro</span><span class="nv"> </span><span class="s">deles.</span>
+
+<span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeoJSONCoordinateArray</span>

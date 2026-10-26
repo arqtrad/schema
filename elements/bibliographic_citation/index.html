@@ -494,17 +494,22 @@
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../GeographicPoint/">GeographicPoint</a></td>
+<td>Coordenadas do ponto que situa o sítio na visualização do mapa</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeographicExtent/">GeographicExtent</a></td>
+<td>Coordenadas do polígono que define o sítio</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../RelatedObject/">RelatedObject</a></td>
 <td>As formas mais comuns de relação no nosso projeto são :</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Resource/">Resource</a></td>
-<td>Digital or documentary resource associated with a Work</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Media/">Media</a></td>
+<td><a href="../MediaObject/">MediaObject</a></td>
 <td>Descrição e referência a um único arquivo de mídia</td>
 <td>no</td>
 </tr>
@@ -514,13 +519,8 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Measurements/">Measurements</a></td>
-<td>O campo <code>description</code> permite uma representação textual das medidas da</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Site/">Site</a></td>
-<td>A place associated with a Work</td>
+<td><a href="../Measurement/">Measurement</a></td>
+<td>This class comprises actions measuring physical properties and other values t...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -530,7 +530,7 @@
 </tr>
 <tr>
 <td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC</td>
+<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -545,12 +545,17 @@
 </tr>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A WASTH controlled-vocabulary concept, compatible with SKOS and SKOS-THES</td>
+<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Place/">Place</a></td>
-<td>A named place with optional geographic location, administrative hierarchy, cl...</td>
+<td>Entities that have a somewhat fixed, physical extension</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -559,13 +564,18 @@
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../Resource/">Resource</a></td>
+<td>This class comprises identifiable immaterial items that make propositions abo...</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../MaterialTech/">MaterialTech</a></td>
-<td>Usar discernimento para identificar sistemas, materiais e técnicas que</td>
+<td>Usar discernimento para identificar sistemas, materiais e técnicas que intere...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and</td>
+<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -580,7 +590,7 @@
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>CIDOC–CRM E22 HUMAN-MADE OBJECT</td>
+<td>An historical landmark or building</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -601,7 +611,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../ConceptReference/">ConceptReference</a>, <a href="../RelatedObject/">RelatedObject</a>, <a href="../Resource/">Resource</a>, <a href="../Media/">Media</a>, <a href="../TypedReference/">TypedReference</a>, <a href="../Measurements/">Measurements</a>, <a href="../Site/">Site</a>, <a href="../Actor/">Actor</a>, <a href="../Thing/">Thing</a>, <a href="../Appellation/">Appellation</a>, <a href="../Inscription/">Inscription</a></td>
+<td><a href="../ConceptReference/">ConceptReference</a>, <a href="../GeographicPoint/">GeographicPoint</a>, <a href="../GeographicExtent/">GeographicExtent</a>, <a href="../RelatedObject/">RelatedObject</a>, <a href="../MediaObject/">MediaObject</a>, <a href="../TypedReference/">TypedReference</a>, <a href="../Measurement/">Measurement</a>, <a href="../Actor/">Actor</a>, <a href="../Thing/">Thing</a>, <a href="../Appellation/">Appellation</a>, <a href="../Inscription/">Inscription</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
@@ -663,12 +673,12 @@
 <span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:bibliographicCitation</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>

@@ -10,7 +10,6 @@ imports:
 - classes/place
 - classes/resource
 - classes/shared
-- classes/spatial
 - classes/temporal
 - classes/thing
 - classes/work
@@ -22,18 +21,24 @@ prefixes:
   wasth:
     prefix_prefix: wasth
     prefix_reference: https://tradicional.arq.br/schema/
-  schema:
-    prefix_prefix: schema
-    prefix_reference: http://schema.org/
+  crm:
+    prefix_prefix: crm
+    prefix_reference: http://www.cidoc-crm.org/cidoc-crm/
   dcterms:
     prefix_prefix: dcterms
     prefix_reference: http://purl.org/dc/terms/
-  la:
-    prefix_prefix: la
-    prefix_reference: https://linked.art/ns/terms/
+  dcmit:
+    prefix_prefix: dcmit
+    prefix_reference: http://purl.org/dc/dcmitype/
+  schema:
+    prefix_prefix: schema
+    prefix_reference: http://schema.org/
   lido:
     prefix_prefix: lido
     prefix_reference: http://www.lido-schema.org/
+  term:
+    prefix_prefix: term
+    prefix_reference: http://terminology.lido-schema.org/
   skos:
     prefix_prefix: skos
     prefix_reference: http://www.w3.org/2004/02/skos/core#
@@ -46,6 +51,9 @@ prefixes:
   geonames:
     prefix_prefix: geonames
     prefix_reference: http://www.geonames.org/ontology#
+  la:
+    prefix_prefix: la
+    prefix_reference: https://linked.art/ns/terms/
   aat:
     prefix_prefix: aat
     prefix_reference: http://vocab.getty.edu/aat/
@@ -61,16 +69,21 @@ prefixes:
   wd:
     prefix_prefix: wd
     prefix_reference: http://www.wikidata.org/entity/
+  EPSG:
+    prefix_prefix: EPSG
+    prefix_reference: http://www.opengis.net/def/crs/EPSG/0/
 default_prefix: wasth
 default_range: string
 types:
   CslCitekey:
     name: CslCitekey
     definition_uri: https://tradicional.arq.br/schema/CslCitekey
-    description: Citation Style Language citekey, beginning with '@'
+    description: "Chave de cita\xE7\xE3o compat\xEDvel com o Citation Style Language,\
+      \ come\xE7ando com '@'. Obter as chaves de cita\xE7\xE3o das refer\xEAncias\
+      \ bibliogr\xE1ficas consultando a nossa biblioteca compartilhada no Zotero.\n"
     from_schema: https://tradicional.arq.br/schema
-    base: str
-    uri: xsd:str
+    base: string
+    uri: xsd:string
     pattern: ^@[a-zA-Z0-9_][\w:.#$%&\-+?<>~/]*$
   GeoJSONCoordinateArray:
     name: GeoJSONCoordinateArray
@@ -78,12 +91,12 @@ types:
     description: JSON array of GeoJSON positions. The valid nesting depends on the
       associated geometry type.
     from_schema: https://tradicional.arq.br/schema
-    base: str
-    uri: xsd:str
+    base: string
+    uri: xsd:string
   Latitude:
     name: Latitude
     definition_uri: https://tradicional.arq.br/schema/Latitude
-    description: Latitude in decimal degrees.
+    description: 'Latitude em graus decimais (separador: ponto).'
     from_schema: https://tradicional.arq.br/schema
     base: float
     uri: xsd:double
@@ -92,7 +105,7 @@ types:
   Longitude:
     name: Longitude
     definition_uri: https://tradicional.arq.br/schema/Longitude
-    description: Longitude in decimal degrees.
+    description: 'Longitude em graus decimais (separador: ponto).'
     from_schema: https://tradicional.arq.br/schema
     base: float
     uri: xsd:double
@@ -101,19 +114,28 @@ types:
   OrcidId:
     name: OrcidId
     definition_uri: https://tradicional.arq.br/schema/OrcidId
-    description: Bare ORCID iD, without the https://orcid.org/ prefix.
+    description: ORCID iD, sem o prefixo https://orcid.org/.
     from_schema: https://tradicional.arq.br/schema
-    base: str
-    uri: xsd:str
+    base: string
+    uri: xsd:string
     pattern: ^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$
   OlcPlusCode11:
     name: OlcPlusCode11
     definition_uri: https://tradicional.arq.br/schema/OlcPlusCode11
-    description: Open Location Code (Plus Code) with a resolution of 11 digits.
+    description: "Open Location Code (Plus Code) com resolu\xE7\xE3o de 11 d\xEDgitos."
     from_schema: https://tradicional.arq.br/schema
-    base: str
-    uri: xsd:str
+    base: string
+    uri: xsd:string
     pattern: ^([2-9CFGHJMPQRVWX]{8})\+([2-9CFGHJMPQRVWX]{3})$
+  GeonamesId:
+    name: GeonamesId
+    definition_uri: https://tradicional.arq.br/schema/GeonamesId
+    description: Identificador de lugar no GeoNames, na forma de um CURIE `geonames:1234`.
+    from_schema: https://tradicional.arq.br/schema
+    base: string
+    uri: xsd:anyURI
+    repr: string
+    pattern: ^geonames:[0-9]+$
   string:
     name: string
     definition_uri: https://w3id.org/linkml/String
@@ -391,35 +413,33 @@ enums:
     permissible_values:
       personal:
         text: personal
-        meaning: lido:lido00163
+        meaning: term:lido00163
       corporate:
         text: corporate
-        meaning: lido:lido00413
+        meaning: term:lido00413
       family:
         text: family
-        meaning: lido:lido00166
+        meaning: term:lido00166
       other:
         text: other
-        meaning: lido:lido00165
+        meaning: term:lido00165
   DateQualifier:
     name: DateQualifier
     definition_uri: https://tradicional.arq.br/schema/DateQualifier
-    description: "Exatid\xE3o da data indicada."
+    description: "Exatid\xE3o da data conhecida."
     from_schema: https://tradicional.arq.br/schema
     permissible_values:
       estimated:
         text: estimated
-        meaning: lido:lido00529
+        meaning: term:lido00529
       exact:
         text: exact
-        meaning: lido:lido00528
+        meaning: term:lido00528
   EventType:
     name: EventType
     definition_uri: https://tradicional.arq.br/schema/EventType
     description: 'The particular kind of event the object/work participated in or
-      was
-
-      present at.
+      was present at.
 
       '
     from_schema: https://tradicional.arq.br/schema
@@ -440,20 +460,11 @@ enums:
     name: PeriodNameType
     definition_uri: https://tradicional.arq.br/schema/PeriodNameType
     description: 'The LIDO Period/Style Type-Vocabulary is a controlled list of terms
+      recommended to use as values for the type attribute of the Period/Style element.
 
-      recommended to use as values for the type attribute of the Period/Style
-
-      element.
-
-
-      The type attribute qualifies the particular kind of period/style
-
-      information, such as style, period, or movement. Examples may be
-
-      neolithic for a period, impressionist for a style, or cubism for a
-
-      movement.
-
+      The type attribute qualifies the particular kind of period/style information,
+      such as style, period, or movement. Examples may be neolithic for a period,
+      impressionist for a style, or cubism for a movement.
 
       Based on [CDWA "Styles/Periods/Groups/Movements"](http://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html)
 
@@ -504,237 +515,134 @@ enums:
     name: MaterialTechType
     definition_uri: https://tradicional.arq.br/schema/MaterialTechType
     description: 'The physical matter or substance from which an object is made, including
-
-      any tangible substances, either naturally or synthetically derived,
-
-      ranging from specific materials to types of material designated by their
-
-      function. The term comprises both the media that are incorporated in an
-
-      object and any support to which the media are applied.
-
+      any tangible substances, either naturally or synthetically derived, ranging
+      from specific materials to types of material designated by their function. The
+      term comprises both the media that are incorporated in an object and any support
+      to which the media are applied.
 
       Based on [AAT "materials (matter)"](http://vocab.getty.edu/page/aat/300010358);
-
       [CDWA "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#RTFToC2)
 
-
-      Use the most specific term for the material that is appropriate. It is
-
-      strongly recommended to take the indexing term from a published
-
-      controlled vocabulary, preferably a Linked Open Vocabulary, for example
-
-      the Art & Architecture Thesaurus, specifically its
-
-      [Materials hierarchy](http://www.getty.edu/vow/AATFullDisplay?find=materials&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300010357).
-
+      Use the most specific term for the material that is appropriate. It is strongly
+      recommended to take the indexing term from a published controlled vocabulary,
+      preferably a Linked Open Vocabulary, for example the Art & Architecture Thesaurus,
+      specifically its [Materials hierarchy](http://www.getty.edu/vow/AATFullDisplay?find=materials&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300010357).
 
       -------------------------------------------------------------------------
 
-
-      Medium, as a value for the type attribute of the LIDO Term
-
-      Materials/Techniques element, designates the material that is applied to
-
-      a support in the making of an object or a work of art, such as ink on
-
-      paper or oil paint on canvas; often a particular technique or techniques
-
-      are closely associated with the media.
-
+      Medium, as a value for the type attribute of the LIDO Term Materials/Techniques
+      element, designates the material that is applied to a support in the making
+      of an object or a work of art, such as ink on paper or oil paint on canvas;
+      often a particular technique or techniques are closely associated with the media.
       Based on [AAT "media (artists'' materials)"](http://vocab.getty.edu/page/aat/300163343);
-
       [CDWA Materials/Techniques](https://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#implement).
 
-
-      In many forms of art, a distinction is made between materials used as the
-
-      media, and materials used as the support. Medium is the material applied
-
-      to the support. For example, for a drawing described as pen and brown ink
-
-      and black chalk on paper, pen is the instrument, ink and black chalk are
-
-      the media, and paper is the support. [Cited from Categories for the
-
-      Description of Works of Art (CDWA) "Materials/Techniques"]
-
+      In many forms of art, a distinction is made between materials used as the media,
+      and materials used as the support. Medium is the material applied to the support.
+      For example, for a drawing described as pen and brown ink and black chalk on
+      paper, pen is the instrument, ink and black chalk are the media, and paper is
+      the support. [Cited from Categories for the Description of Works of Art (CDWA)
+      "Materials/Techniques"]
 
       -------------------------------------------------------------------------
 
+      Support, as a value for the type attribute of the LIDO Term Materials/Techniques
+      element, designates the surface material to which media are applied or a work
+      is mounted, for example canvas, oak panel, laid paper, wood, copper, glass,
+      or marble. For example, with paintings, drawings, prints, or photographs, the
+      media would be applied to the surface of a support such as paper, wood panel,
+      canvas, or glass in order to create the image. Used typically for two-dimensional
+      works, although the concept may apply to any work.
 
-      Support, as a value for the type attribute of the LIDO Term
-
-      Materials/Techniques element, designates the surface material to which
-
-      media are applied or a work is mounted, for example canvas, oak panel,
-
-      laid paper, wood, copper, glass, or marble. For example, with paintings,
-
-      drawings, prints, or photographs, the media would be applied to the
-
-      surface of a support such as paper, wood panel, canvas, or glass in order
-
-      to create the image. Used typically for two-dimensional works, although
-
-      the concept may apply to any work.
-
-
-      Based on [AAT "supports"](http://vocab.getty.edu/page/aat/300014844);
-
-      [CDWA "Materials/Techniques"](https://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#implement)
-
+      Based on [AAT "supports"](http://vocab.getty.edu/page/aat/300014844); [CDWA
+      "Materials/Techniques"](https://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#implement)
 
       -------------------------------------------------------------------------
 
+      Record a term specifying the color, tint, or hue of the material, particularly
+      if color is an unusual or important characteristic of the object. [All colored
+      impressions of materials of an object are meant, not just parts treated with
+      dyestuff. The information refers to the overall effect of color, not only as
+      cause of, e.g., dyeing or painting.]
 
-      Record a term specifying the color, tint, or hue of the material,
-
-      particularly if color is an unusual or important characteristic of the
-
-      object. [All colored impressions of materials of an object are meant, not
-
-      just parts treated with dyestuff. The information refers to the overall
-
-      effect of color, not only as cause of, e.g., dyeing or painting.]
-
-
-      It is recommended to use internationally approved standard color charts,
-
-      codes and terminology such as the Universal Color Language (UCL). Use
-
-      preferably [color names as specified by the Art & Architecture Thesaurus](http://vocab.getty.edu/aat/300080438)
-
-      (AAT). Centroid color numbers, which refer to the appropriate
-
-      color-blocks on the
-
-      [Inter-Society Color Council and National Bureau of Standards (ISCC-NBS) color
-      name charts](https://en.wikipedia.org/wiki/ISCC%E2%80%93NBS_system),
-
-      are also provided by the AAT.
-
+      It is recommended to use internationally approved standard color charts, codes
+      and terminology such as the Universal Color Language (UCL). Use preferably [color
+      names as specified by the Art & Architecture Thesaurus](http://vocab.getty.edu/aat/300080438)
+      (AAT). Centroid color numbers, which refer to the appropriate color-blocks on
+      the [Inter-Society Color Council and National Bureau of Standards (ISCC-NBS)
+      color name charts](https://en.wikipedia.org/wiki/ISCC%E2%80%93NBS_system), are
+      also provided by the AAT.
 
       -------------------------------------------------------------------------
 
+      Implement, as a value for the type attribute of the LIDO Term Materials/Techniques
+      element, designates any object used to carry out the technique in order to create
+      or modify an object, including equipment, tools, apparatus, utensils, instruments,
+      and other things employed in any trade or used in executing a task or work.
 
-      Implement, as a value for the type attribute of the LIDO Term
-
-      Materials/Techniques element, designates any object used to carry out the
-
-      technique in order to create or modify an object, including equipment,
-
-      tools, apparatus, utensils, instruments, and other things employed in any
-
-      trade or used in executing a task or work.
-
-
-      Based on
-
-      [CDWA "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#RTFToC2);
-
+      Based on [CDWA "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#RTFToC2);
       [AAT "implements"](http://vocab.getty.edu/page/aat/300404585)
 
-
       -------------------------------------------------------------------------
 
-
-      Technique, as a value for the type attribute of the LIDO Term
-
-      Materials/Techniques element, designates the manner, method, or process
-
-      applied in the creation, design, or modification of an object.
-
+      Technique, as a value for the type attribute of the LIDO Term Materials/Techniques
+      element, designates the manner, method, or process applied in the creation,
+      design, or modification of an object.
 
       Based on [CDWA "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#RTFToC2).
 
+      Use the most specific term for indexing that is appropriate. It is strongly
+      recommended to take the indexing term from a published controlled vocabulary,
+      preferably a [Linked Open Vocabulary](http://lov.okfn.org/dataset/lov/), for
+      example the Art & Architecture Thesaurus, specifically its [Processes and Techniques
+      hierarchy](http://www.getty.edu/vow/AATHierarchy?find=techniques&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300053001).
 
-      Use the most specific term for indexing that is appropriate. It is
-
-      strongly recommended to take the indexing term from a published
-
-      controlled vocabulary, preferably a
-
-      [Linked Open Vocabulary](http://lov.okfn.org/dataset/lov/), for example
-
-      the Art & Architecture Thesaurus, specifically its
-
-      [Processes and Techniques hierarchy](http://www.getty.edu/vow/AATHierarchy?find=techniques&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300053001).
-
-
-      For information about scientific methods by which an object was found or
-
-      collected, such as field collection methods in archaeology, use the LIDO
-
-      Event Method element.
-
+      For information about scientific methods by which an object was found or collected,
+      such as field collection methods in archaeology, use the LIDO Event Method element.
 
       -------------------------------------------------------------------------
 
-
-      Watermark, as a value for the type attribute of the LIDO Term
-
-      Materials/Techniques element, designates an identification of the
-
-      watermark type or name. A watermark is a design incorporated into paper
-
-      as it is made, typically a sign of the manufacturer, or a proof of
-
-      authenticity for documents and banknotes. The mark is visible through
-
-      transmitted light, appearing as translucent or shaded area.
-
+      Watermark, as a value for the type attribute of the LIDO Term Materials/Techniques
+      element, designates an identification of the watermark type or name. A watermark
+      is a design incorporated into paper as it is made, typically a sign of the manufacturer,
+      or a proof of authenticity for documents and banknotes. The mark is visible
+      through transmitted light, appearing as translucent or shaded area.
 
       Based on [CDWA "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#WatermarkIdentification);
-
       [AAT "watermarks"](http://vocab.getty.edu/aat/300028749)
 
-
-      It is recommended to use as indexing terms descriptors of internationally
-
-      or nationally approved classifications, such as the
-
-      [Watermark Information System](http://www.wasserzeichen-online.de/wzis/index.php),
-
+      It is recommended to use as indexing terms descriptors of internationally or
+      nationally approved classifications, such as the [Watermark Information System](http://www.wasserzeichen-online.de/wzis/index.php),
       the [Index of watermark classes and subclasses](http://www.paperhistory.org/Standards/IPHN2.1.1_en.pdf),
-
-      provided as a
-
-      [Registration Standard](http://www.paperhistory.org/Standards/) of the
-
-      [International Association of Paper Historians (IPH)](http://www.paperhistory.org/index.php),
-
+      provided as a [Registration Standard](http://www.paperhistory.org/Standards/)
+      of the [International Association of Paper Historians (IPH)](http://www.paperhistory.org/index.php),
       or the [Watermark Descriptor Tables](http://www.gravell.org/descriptors.php?&amp;&amp;offset=&amp;rectotal=&amp;query=),
-
-      provided by the
-
-      [Thomas L. Gravell Watermark Archive](http://www.gravell.org/).
+      provided by the [Thomas L. Gravell Watermark Archive](http://www.gravell.org/).
 
       '
     from_schema: https://tradicional.arq.br/schema
     permissible_values:
       material:
         text: material
-        meaning: lido:lido00132
+        meaning: term:lido00132
       medium:
         text: medium
-        meaning: lido:lido00513
+        meaning: term:lido00513
       support:
         text: support
-        meaning: lido:lido00514
+        meaning: term:lido00514
       color_name:
         text: color_name
-        meaning: lido:lido00479
+        meaning: term:lido00479
       implement:
         text: implement
-        meaning: lido:lido00248
+        meaning: term:lido00248
       technique:
         text: technique
-        meaning: lido:lido00131
+        meaning: term:lido00131
       watermark:
         text: watermark
-        meaning: lido:lido00427
+        meaning: term:lido00427
       other:
         text: other
   MeasurementType:
@@ -747,10 +655,10 @@ enums:
     permissible_values:
       proper:
         text: proper
-        meaning: lido:lido00927
+        meaning: term:lido00927
       requirement:
         text: requirement
-        meaning: lido:lido00923
+        meaning: term:lido00923
   ObjectType:
     name: ObjectType
     definition_uri: https://tradicional.arq.br/schema/ObjectType
@@ -770,13 +678,13 @@ enums:
     permissible_values:
       uri:
         text: uri
-        meaning: lido:lido00099
+        meaning: term:lido00099
       iri:
         text: iri
-        meaning: lido:lido00510
+        meaning: term:lido00510
       local:
         text: local
-        meaning: lido:lido00100
+        meaning: term:lido00100
   RelationType:
     name: RelationType
     definition_uri: https://tradicional.arq.br/schema/RelationType
@@ -787,6 +695,28 @@ enums:
       source_ontology: vra:isRelatedTo
       relationship_types:
       - rdfs:subPropertyOf
+      include_self: false
+  RepositoryType:
+    name: RepositoryType
+    definition_uri: https://tradicional.arq.br/schema/RepositoryType
+    description: Type of repository or legal body.
+    from_schema: https://tradicional.arq.br/schema
+    permissible_values:
+      corporate:
+        text: corporate
+      geographic:
+        text: geographic
+      personal:
+        text: personal
+      other:
+        text: other
+  RightsType:
+    name: RightsType
+    definition_uri: https://tradicional.arq.br/schema/RightsType
+    description: LIDO expressions for rights types.
+    from_schema: https://tradicional.arq.br/schema
+    reachable_from:
+      source_ontology: http://terminology.lido-schema.org/rightsType_type
       include_self: false
   RoleType:
     name: RoleType
@@ -884,32 +814,6 @@ enums:
       writer:
         text: writer
         meaning: vra:writer
-  RepositoryType:
-    name: RepositoryType
-    definition_uri: https://tradicional.arq.br/schema/RepositoryType
-    description: Type of repository or legal body.
-    from_schema: https://tradicional.arq.br/schema
-    permissible_values:
-      corporate:
-        text: corporate
-      geographic:
-        text: geographic
-      personal:
-        text: personal
-      other:
-        text: other
-  RightsType:
-    name: RightsType
-    definition_uri: https://tradicional.arq.br/schema/RightsType
-    description: LIDO expressions for rights types.
-    from_schema: https://tradicional.arq.br/schema
-    permissible_values:
-      generic:
-        text: generic
-        meaning: lido:lido00920
-      specific:
-        text: specific
-        meaning: lido:lido00921
   SkosMappingRelation:
     name: SkosMappingRelation
     definition_uri: https://tradicional.arq.br/schema/SkosMappingRelation
@@ -984,18 +888,12 @@ enums:
     name: SubjectType
     definition_uri: https://tradicional.arq.br/schema/SubjectType
     description: 'The type attribute indicates the kind of subject information, whether
-      it
+      it is, for instance, a description of a generic subject, an identification of
+      a named individual, or an interpretation of the theme.
 
-      is, for instance, a description of a generic subject, an identification
-
-      of a named individual, or an interpretation of the theme.
-
-
-      Note that "Iconclass notations" are distinguished from other index terms
-
-      for subject type in order to consider the impact of the type of indexing
-
-      vocabulary with respect to information retrieval facilities.
+      Note that "Iconclass notations" are distinguished from other index terms for
+      subject type in order to consider the impact of the type of indexing vocabulary
+      with respect to information retrieval facilities.
 
       '
     from_schema: https://tradicional.arq.br/schema
@@ -1003,60 +901,47 @@ enums:
       source_ontology: http://terminology.lido-schema.org/subject_type
       include_self: false
 slots:
-  name:
-    name: name
-    definition_uri: https://tradicional.arq.br/schema/name
-    from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: wasth:name
-    owner: ConceptReference
-    domain_of:
-    - ConceptReference
-    range: Concept
-  place_type:
-    name: place_type
-    definition_uri: https://tradicional.arq.br/schema/place_type
-    description: Classification of the kind of place, such as inhabited place, rural
-      agglomeration, town, city, or municipality.
+  site:
+    name: site
+    definition_uri: https://tradicional.arq.br/schema/site
+    description: "A localiza\xE7\xE3o real, atual da edifica\xE7\xE3o \u2014 \xE9\
+      \ o que ser\xE1 usado em quase todos os casos."
     from_schema: https://tradicional.arq.br/schema/place
-    mappings:
-    - lido:objectWorkTypeWrap
-    slot_uri: lido:objectWorkTypeWrap
-    owner: Place
+    slot_uri: wasth:site
+    owner: Repository
     domain_of:
     - Place
-    range: TypedReference
-    multivalued: true
+    - Repository
+    range: Site
+    required: true
     inlined: true
-    inlined_as_list: true
-  place_function:
-    name: place_function
-    definition_uri: https://tradicional.arq.br/schema/place_function
-    description: Function or administrative role of the place, such as municipality
-      seat, state capital, or federal capital.
+    inlined_as_list: false
+  srs_name:
+    name: srs_name
+    definition_uri: https://tradicional.arq.br/schema/srs_name
+    description: Names the coordinate reference system (CRS) that defines the semantics
+      of the lat/long pair according to the ISO6709 standard.
     from_schema: https://tradicional.arq.br/schema/place
-    mappings:
-    - lido:objectWorkTypeWrap
-    slot_uri: lido:objectWorkTypeWrap
-    owner: Place
+    slot_uri: wasth:srsName
+    alias: srsName
+    owner: GeographicExtent
     domain_of:
-    - Place
-    range: TypedReference
-    multivalued: true
+    - GeographicPoint
+    - GeographicExtent
+    range: uriorcurie
+    recommended: true
     inlined: true
-    inlined_as_list: true
-  part_of:
-    name: part_of
-    definition_uri: https://tradicional.arq.br/schema/part_of
-    description: Parent place in an administrative, geographic, or historical hierarchy.
-    from_schema: https://tradicional.arq.br/schema/place
-    mappings:
-    - iso:broaderPartitive
-    slot_uri: iso:broaderPartitive
-    range: Place
-    inlined: false
   relation_type:
     name: relation_type
     definition_uri: https://tradicional.arq.br/schema/relation_type
+    description: "Usamos os tipos de rela\xE7\xE3o previstos pelo [VRA Core]. Provavelmente\
+      \ necessitamos apenas de\u2009:\n- `planFor`\u2009: desenho t\xE9cnico bidimensional\
+      \ de levantamento\n  (padr\xE3o, pode ser omitido)\u2009;\n\n- `modelFor`\u2009\
+      : modelo tridimensional, com ou sem informa\xE7\xF5es construtivas\n  associadas\
+      \ (BIM)\u2009;\n\n- `imageOf`\u2009: outras representa\xE7\xF5es em duas dimens\xF5\
+      es da edifica\xE7\xE3o\u2009;\n- `preparatoryFor`\u2009: representa\xE7\xE3\
+      o t\xE9cnica de projeto para interven\xE7\xF5es a\n  serem realizadas (ou j\xE1\
+      \ realizadas) na edifica\xE7\xE3o.\n"
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:rel_type
     alias: rel_type
@@ -1079,18 +964,27 @@ slots:
   object_type:
     name: object_type
     definition_uri: https://tradicional.arq.br/schema/object_type
-    description: An index element for the particular kind of object or work in focus.
+    description: "Usar um vocabul\xE1rio controlado para identificar o tipo de representa\xE7\
+      \xE3o, por exemplo as hierarquias do Getty AAT [obras visuais](http://vocab.getty.edu/hier/aat/300191086).\
+      \ ou [formatos de informa\xE7\xE3o](http://vocab.getty.edu/hier/aat/300220751)\n"
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:object_type
     owner: RelatedObject
     domain_of:
     - RelatedObject
     range: ObjectType
-  resource:
-    name: resource
-    definition_uri: https://tradicional.arq.br/schema/resource
+  resources:
+    name: resources
+    definition_uri: https://tradicional.arq.br/schema/resources
+    description: "Os desenhos ou modelos da edifica\xE7\xE3o s\xE3o apresentados online\
+      \ por meio de imagens vetoriais ou bitmap.\nCada desenho ou modelo pode ser\
+      \ apresentado sob v\xE1rias representa\xE7\xF5es, como pr\xE9-visualiza\xE7\xE3\
+      o, imagem original, ou servi\xE7o [IIIF]. Essas imagens devem ser identificadas\
+      \ como segue\u2009:\nAs categorias de representa\xE7\xE3o previstas no [LIDO]\
+      \ podem ser consultadas em <http://terminology.lido-schema.org/resourceRepresentation_type>\
+      \ e s\xE3o inseridas na ficha como um mapa.\n"
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:resource
+    slot_uri: wasth:resources
     owner: Work
     domain_of:
     - RelatedObject
@@ -1099,114 +993,63 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: false
-  resource_id:
-    name: resource_id
-    definition_uri: https://tradicional.arq.br/schema/resource_id
-    from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:id
-    key: true
-    alias: id
-    owner: Resource
-    domain_of:
-    - Resource
-    range: TypedReference
-    required: true
-    inlined: true
-    inlined_as_list: false
   preview_image:
     name: preview_image
     definition_uri: https://tradicional.arq.br/schema/preview_image
+    description: "Uma \xFAnica miniatura da imagem original.\nObs.: n\xE3o usamos\
+      \ a op\xE7\xE3o `placeholder`, ela ser\xE1 preenchida automaticamente em caso\
+      \ de aus\xEAncia da miniatura, nem outros tipos de miniaturas que n\xE3o imagens.\
+      \ A especifica\xE7\xE3o LIDO admite listar mais de uma miniatura, mas tampouco\
+      \ prevemos essa hip\xF3tese.\n"
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:preview_image
-    owner: Media
+    owner: MediaObject
     domain_of:
     - Resource
-    - Media
+    - MediaObject
     range: uriorcurie
     inlined: true
   provided_image:
     name: provided_image
     definition_uri: https://tradicional.arq.br/schema/provided_image
+    description: "Lista de vers\xF5es ampliadas ou originais da imagem, vetorial ou\
+      \ bitmap."
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:provided_image
-    owner: Media
+    owner: MediaObject
     domain_of:
     - Resource
-    - Media
+    - MediaObject
     range: uriorcurie
     multivalued: true
     inlined_as_list: true
   provided_3d:
     name: provided_3d
     definition_uri: https://tradicional.arq.br/schema/provided_3d
+    description: "Modelo tridimensional ou IFC da edifica\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:provided_3d
-    owner: Media
+    owner: MediaObject
     domain_of:
     - Resource
-    - Media
+    - MediaObject
     range: uriorcurie
     multivalued: true
     inlined_as_list: true
   resource_service:
     name: resource_service
     definition_uri: https://tradicional.arq.br/schema/resource_service
+    description: "Apenas no caso de a imagem ser fornecida como um servi\xE7o din\xE2\
+      mico online, tal como a especifica\xE7\xE3o [IIIF]."
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:service
     alias: service
-    owner: Media
+    owner: MediaObject
     domain_of:
     - Resource
-    - Media
+    - MediaObject
     range: TypedReference
     multivalued: true
-    inlined: true
-    inlined_as_list: true
-  perspective:
-    name: perspective
-    definition_uri: https://tradicional.arq.br/schema/perspective
-    from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:perspective
-    owner: Resource
-    domain_of:
-    - Resource
-    range: integer
-    required: true
-    minimum_value: 0
-    maximum_value: 9
-  resource_unit:
-    name: resource_unit
-    definition_uri: https://tradicional.arq.br/schema/resource_unit
-    from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:unit
-    alias: unit
-    owner: Resource
-    domain_of:
-    - Resource
-    range: TypedReference
-    inlined: true
-    inlined_as_list: false
-  resource_author:
-    name: resource_author
-    definition_uri: https://tradicional.arq.br/schema/resource_author
-    from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:author
-    alias: author
-    owner: Resource
-    domain_of:
-    - Resource
-    range: OrcidId
-  resource_date:
-    name: resource_date
-    definition_uri: https://tradicional.arq.br/schema/resource_date
-    from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:date
-    alias: date
-    owner: Resource
-    domain_of:
-    - Resource
-    range: EventDate
-    required: true
     inlined: true
     inlined_as_list: true
   media:
@@ -1219,18 +1062,23 @@ slots:
     - RelatedObject
     - Event
     - Work
-    range: Media
+    range: MediaObject
     multivalued: true
     inlined: true
     inlined_as_list: true
   format:
     name: format
     definition_uri: https://tradicional.arq.br/schema/format
+    description: "Campo disciplinado pela especifica\xE7\xE3o [DublinCore] no campo\
+      \ [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).\
+      \ Esta especifica\xE7\xE3o sugere a [lista de tipos de m\xEDdia IANA].\n"
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:format
-    owner: Media
+    mappings:
+    - dcterms:MediaType
+    slot_uri: dcterms:MediaType
+    owner: MediaObject
     domain_of:
-    - Media
+    - MediaObject
     range: TypedReference
     required: true
     inlined: true
@@ -1243,9 +1091,9 @@ slots:
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:alt
     alias: alt
-    owner: Media
+    owner: MediaObject
     domain_of:
-    - Media
+    - MediaObject
     range: string
   credit:
     name: credit
@@ -1253,10 +1101,10 @@ slots:
     description: "Informa\xE7\xE3o sobre autoria ou responsabilidade."
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:credit
-    owner: Media
+    owner: MediaObject
     domain_of:
     - Resource
-    - Media
+    - MediaObject
     range: string
   href:
     name: href
@@ -1271,8 +1119,10 @@ slots:
     description: Local or external identifier.
     from_schema: https://tradicional.arq.br/schema/shared
     mappings:
+    - dcterms:identifier
+    exact_mappings:
     - schema:identifier
-    slot_uri: schema:identifier
+    slot_uri: dcterms:identifier
     key: true
     owner: TypedReference
     domain_of:
@@ -1286,6 +1136,8 @@ slots:
     from_schema: https://tradicional.arq.br/schema/shared
     mappings:
     - dcterms:description
+    exact_mappings:
+    - schema:description
     slot_uri: dcterms:description
     alias: display
     owner: Topic
@@ -1293,10 +1145,8 @@ slots:
     - ConceptReference
     - BibliographicCitation
     - RelatedObject
-    - Resource
-    - Media
-    - Measurements
-    - Site
+    - MediaObject
+    - Measurement
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -1315,12 +1165,12 @@ slots:
     owner: Inscription
     domain_of:
     - ConceptReference
+    - GeographicPoint
+    - GeographicExtent
     - RelatedObject
-    - Resource
-    - Media
+    - MediaObject
     - TypedReference
-    - Measurements
-    - Site
+    - Measurement
     - Actor
     - Thing
     - Appellation
@@ -1370,18 +1220,34 @@ slots:
     slot_uri: wasth:measurements
     owner: Work
     domain_of:
-    - Media
+    - MediaObject
     - Event
     - Work
-    range: Measurements
+    range: Measurement
     multivalued: true
     inlined: true
     inlined_as_list: true
   material:
     name: material
     definition_uri: https://tradicional.arq.br/schema/material
+    description: "This class is a specialization of E55 Type and comprises the concepts\
+      \ of materials.\nInstances of E57 Material may denote properties of matter before\
+      \ its use, during its use, and as incorporated in an object, such as ultramarine\
+      \ powder, tempera paste, reinforced concrete. Discrete pieces of raw-materials\
+      \ kept in museums, such as bricks, sheets of fabric, pieces of metal, should\
+      \ be modelled individually in the same way as other objects. Discrete used or\
+      \ processed pieces, such as the stones from Nefer Titi's temple, should be modelled\
+      \ as parts (cf. P46 is composed of (forms part of): E18 Physical Thing).\nThis\
+      \ type is used categorically in the model without reference to instances of\
+      \ it, i.e. the Model does not foresee the description of instances of instances\
+      \ of E57 Material, e.g. \u201Cinstances of gold\u201D.\nIt is recommended that\
+      \ internationally or nationally agreed codes and terminology should be used.\n"
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:material
+    mappings:
+    - crm:E57_Material
+    exact_mappings:
+    - vra:Material
+    slot_uri: crm:E57_Material
     owner: Work
     domain_of:
     - Event
@@ -1393,8 +1259,16 @@ slots:
   technique:
     name: technique
     definition_uri: https://tradicional.arq.br/schema/technique
+    description: 'The production or manufacturing processes, techniques, and methods
+      incorporated in the fabrication or alteration of the work or image.
+
+      '
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:technique
+    mappings:
+    - vra:Technique
+    close_mappings:
+    - crm:E55_Type
+    slot_uri: vra:Technique
     owner: Work
     domain_of:
     - Event
@@ -1406,15 +1280,35 @@ slots:
   format_extent:
     name: format_extent
     definition_uri: https://tradicional.arq.br/schema/format_extent
+    description: "Indica a parte do objeto que est\xE1 sendo medida \u2014 por exemplo,\
+      \ se a altura \xE9 at\xE9 a linha de coroamento ou at\xE9 a cumeeira, etc. \u2014\
+      \ usar a `uri` de um vocabul\xE1rio controlado.\n"
     from_schema: https://tradicional.arq.br/schema/shared
     slot_uri: wasth:extent
     alias: extent
     owner: Topic
     domain_of:
-    - Measurements
+    - Measurement
     - Inscription
     - Topic
     range: TypedReference
+    inlined: true
+    inlined_as_list: false
+  unit:
+    name: unit
+    definition_uri: https://tradicional.arq.br/schema/unit
+    description: "Unidade de medida usada no dimensionamento da representa\xE7\xE3\
+      o, por exemplo metros ou mil\xEDmetros. Usar a [hierarquia de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096)\
+      \ do AAT, ou do nosso pr\xF3prio [vocabul\xE1rio controlado].\n"
+    from_schema: https://tradicional.arq.br/schema/shared
+    slot_uri: wasth:unit
+    alias: unit
+    owner: Measurement
+    domain_of:
+    - Resource
+    - Measurement
+    range: TypedReference
+    required: true
     inlined: true
     inlined_as_list: false
   source:
@@ -1422,15 +1316,13 @@ slots:
     definition_uri: https://tradicional.arq.br/schema/source
     from_schema: https://tradicional.arq.br/schema/shared
     slot_uri: wasth:source
-    owner: GeographicExtent
+    owner: TypedReference
     domain_of:
-    - RelatedObject
-    - Resource
-    - Media
-    - TypedReference
-    - Site
     - GeographicPoint
     - GeographicExtent
+    - RelatedObject
+    - MediaObject
+    - TypedReference
     range: LegalBody
     multivalued: true
     inlined: true
@@ -1440,83 +1332,13 @@ slots:
     definition_uri: https://tradicional.arq.br/schema/rights
     from_schema: https://tradicional.arq.br/schema/shared
     slot_uri: wasth:rights
-    owner: Media
+    owner: MediaObject
     domain_of:
-    - Resource
-    - Media
+    - MediaObject
     range: Right
+    multivalued: true
     inlined: true
     inlined_as_list: true
-  right_concept:
-    name: right_concept
-    definition_uri: https://tradicional.arq.br/schema/right_concept
-    from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:concept
-    alias: concept
-    owner: Right
-    domain_of:
-    - Right
-    range: TypedReference
-    inlined: true
-    inlined_as_list: false
-  right_type:
-    name: right_type
-    definition_uri: https://tradicional.arq.br/schema/right_type
-    from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:type
-    ifabsent: string(generic)
-    alias: type
-    owner: Right
-    domain_of:
-    - Right
-    range: RightsType
-  right_temporal:
-    name: right_temporal
-    definition_uri: https://tradicional.arq.br/schema/right_temporal
-    from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:temporal
-    alias: temporal
-    owner: Right
-    domain_of:
-    - Right
-    range: EventDate
-    inlined: true
-    inlined_as_list: true
-  right_holder:
-    name: right_holder
-    definition_uri: https://tradicional.arq.br/schema/right_holder
-    from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:holder
-    alias: holder
-    owner: Right
-    domain_of:
-    - Right
-    range: LegalBody
-    inlined: true
-    inlined_as_list: true
-  legal_body_type:
-    name: legal_body_type
-    definition_uri: https://tradicional.arq.br/schema/legal_body_type
-    from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:type
-    ifabsent: string(corporate)
-    alias: type
-    owner: LegalBody
-    domain_of:
-    - LegalBody
-    range: RepositoryType
-  legal_body_name:
-    name: legal_body_name
-    definition_uri: https://tradicional.arq.br/schema/legal_body_name
-    from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:name
-    alias: name
-    owner: LegalBody
-    domain_of:
-    - LegalBody
-    range: TypedReference
-    inlined: true
-    inlined_as_list: false
   caption:
     name: caption
     definition_uri: https://tradicional.arq.br/schema/caption
@@ -1546,234 +1368,6 @@ slots:
     domain_of:
     - Header
     range: uriorcurie
-  spatial:
-    name: spatial
-    definition_uri: https://tradicional.arq.br/schema/spatial
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:spatial
-    owner: Work
-    domain_of:
-    - Place
-    - Repository
-    - Work
-    range: SpatialCoverage
-    required: true
-    inlined: true
-    inlined_as_list: true
-  site:
-    name: site
-    definition_uri: https://tradicional.arq.br/schema/site
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:site
-    owner: SpatialCoverage
-    domain_of:
-    - SpatialCoverage
-    range: Site
-    required: true
-    inlined: true
-    inlined_as_list: true
-  former_site:
-    name: former_site
-    definition_uri: https://tradicional.arq.br/schema/former_site
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:former
-    alias: former
-    owner: SpatialCoverage
-    domain_of:
-    - SpatialCoverage
-    range: Site
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  intended_site:
-    name: intended_site
-    definition_uri: https://tradicional.arq.br/schema/intended_site
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:intended
-    alias: intended
-    owner: SpatialCoverage
-    domain_of:
-    - SpatialCoverage
-    range: Site
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  other_site:
-    name: other_site
-    definition_uri: https://tradicional.arq.br/schema/other_site
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:other
-    alias: other
-    owner: SpatialCoverage
-    domain_of:
-    - SpatialCoverage
-    range: Site
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  site_name:
-    name: site_name
-    definition_uri: https://tradicional.arq.br/schema/site_name
-    from_schema: https://tradicional.arq.br/schema/spatial
-    mappings:
-    - schema:location
-    slot_uri: schema:location
-    alias: name
-    owner: Site
-    domain_of:
-    - Site
-    range: Place
-    inlined: false
-  location:
-    name: location
-    definition_uri: https://tradicional.arq.br/schema/location
-    description: Representative point location for the place, normally in EPSG:4326
-      (WGS 84).
-    from_schema: https://tradicional.arq.br/schema/spatial
-    mappings:
-    - geo:hasGeometry
-    slot_uri: geo:hasGeometry
-    owner: Site
-    domain_of:
-    - Site
-    range: GeographicPoint
-    required: true
-    inlined: true
-    inlined_as_list: true
-  extent:
-    name: extent
-    definition_uri: https://tradicional.arq.br/schema/extent
-    description: Polygonal, multipolygonal, or linear geographic extent associated
-      with the place.
-    from_schema: https://tradicional.arq.br/schema/spatial
-    mappings:
-    - geo:hasGeometry
-    slot_uri: geo:hasGeometry
-    owner: Site
-    domain_of:
-    - Site
-    range: GeographicExtent
-    inlined: true
-    inlined_as_list: true
-  srs_name:
-    name: srs_name
-    definition_uri: https://tradicional.arq.br/schema/srs_name
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:srsName
-    alias: srsName
-    owner: GeographicExtent
-    domain_of:
-    - GeographicPoint
-    - GeographicExtent
-    range: uriorcurie
-    recommended: true
-    inlined: true
-  zoom:
-    name: zoom
-    definition_uri: https://tradicional.arq.br/schema/zoom
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:zoom
-    ifabsent: integer(13)
-    owner: Site
-    domain_of:
-    - Site
-    range: integer
-    minimum_value: 1
-    maximum_value: 19
-  lat:
-    name: lat
-    definition_uri: https://tradicional.arq.br/schema/lat
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:lat
-    owner: GeographicPoint
-    domain_of:
-    - GeographicPoint
-    range: Latitude
-    required: true
-  lon:
-    name: lon
-    definition_uri: https://tradicional.arq.br/schema/lon
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:lon
-    owner: GeographicPoint
-    domain_of:
-    - GeographicPoint
-    range: Longitude
-    required: true
-  alt:
-    name: alt
-    definition_uri: https://tradicional.arq.br/schema/alt
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:alt
-    owner: GeographicPoint
-    domain_of:
-    - GeographicPoint
-    range: float
-    minimum_value: -1000
-    maximum_value: 10000
-  geometry_type:
-    name: geometry_type
-    definition_uri: https://tradicional.arq.br/schema/geometry_type
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:type
-    alias: type
-    owner: GeographicExtent
-    domain_of:
-    - GeographicExtent
-    range: GeometryType
-    required: true
-  coordinates:
-    name: coordinates
-    definition_uri: https://tradicional.arq.br/schema/coordinates
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:coordinates
-    owner: GeographicExtent
-    domain_of:
-    - GeographicExtent
-    range: GeoJSONCoordinateArray
-    required: true
-  historic_place_type:
-    name: historic_place_type
-    definition_uri: https://tradicional.arq.br/schema/historic_place_type
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:type
-    ifabsent: string(geographic)
-    alias: type
-    owner: HistoricPlace
-    domain_of:
-    - HistoricPlace
-    range: RepositoryType
-    required: true
-  historic_place_name:
-    name: historic_place_name
-    definition_uri: https://tradicional.arq.br/schema/historic_place_name
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slot_uri: wasth:name
-    alias: name
-    owner: HistoricPlace
-    domain_of:
-    - HistoricPlace
-    range: TypedReference
-    inlined: true
-    inlined_as_list: false
-  alt_name:
-    name: alt_name
-    definition_uri: https://tradicional.arq.br/schema/alt_name
-    description: "O bloco `alt_name` permite cadastrar outros nomes pelos quais a\
-      \ edifica\xE7\xE3o\nser\xE1 eventualmente conhecida. \xC9 uma lista opcional\
-      \ de itens, e se\nexistir, os campos de cada item da lista devem ser preenchidos\
-      \ como os do\nt\xEDtulo principal.\n\nO campo `description` de cada item cont\xE9\
-      m o texto do t\xEDtulo (nome).\n\nEste bloco pode ser omitido por completo se\
-      \ n\xE3o houver t\xEDtulos\nalternativos.\n"
-    from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:alt_name
-    owner: Thing
-    domain_of:
-    - Thing
-    range: Appellation
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   title_type:
     name: title_type
     definition_uri: https://tradicional.arq.br/schema/title_type
@@ -1786,70 +1380,7 @@ slots:
     - Thing
     - Appellation
     range: TitleType
-  identifiers:
-    name: identifiers
-    definition_uri: https://tradicional.arq.br/schema/identifiers
-    description: Published or external identifiers for the object.
-    from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:identifiers
-    owner: Thing
-    domain_of:
-    - Thing
-    range: TypedReference
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  tags:
-    name: tags
-    definition_uri: https://tradicional.arq.br/schema/tags
-    description: Provisional uncontrolled keywords. Prefer `classifications` or `subject`
-      for curated vocabulary terms.
-    from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:tags
-    owner: Thing
-    domain_of:
-    - Thing
-    range: string
-    multivalued: true
-  temporal:
-    name: temporal
-    definition_uri: https://tradicional.arq.br/schema/temporal
-    description: Temporalidade do objeto.
-    from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:temporal
-    owner: Thing
-    domain_of:
-    - Thing
-    range: Event
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  collection:
-    name: collection
-    definition_uri: https://tradicional.arq.br/schema/collection
-    description: Collections or aggregations to which the object belongs.
-    from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:collection
-    owner: Thing
-    domain_of:
-    - Thing
-    range: TypedReference
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  repository:
-    name: repository
-    definition_uri: https://tradicional.arq.br/schema/repository
-    from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:repository
-    owner: Work
-    domain_of:
-    - Thing
-    - Work
-    range: Repository
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
+    required: true
   legal_body:
     name: legal_body
     definition_uri: https://tradicional.arq.br/schema/legal_body
@@ -1862,24 +1393,17 @@ slots:
     required: true
     inlined: true
     inlined_as_list: true
-  record_rights:
-    name: record_rights
-    definition_uri: https://tradicional.arq.br/schema/record_rights
-    from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:record_rights
-    owner: Thing
-    domain_of:
-    - Thing
-    range: Right
-    required: true
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   content:
     name: content
     definition_uri: https://tradicional.arq.br/schema/content
-    description: Narrative body content. In the Markdown adapter this corresponds
-      to the document body after YAML frontmatter.
+    description: "Deixe uma linha em branco ap\xF3s o fechamento dos metadados e inclua\
+      \ aqui uma descri\xE7\xE3o morfol\xF3gica e hist\xF3rica da edifica\xE7\xE3\
+      o com texto livre, usando formata\xE7\xE3o Markdown.\nPoder\xE1 incluir um segundo\
+      \ bloco de metadados para indicar as refer\xEAncias bibliogr\xE1ficas da descri\xE7\
+      \xE3o textual, no campo `nocite`. O formato \xE9 uma lista de chaves de cita\xE7\
+      \xE3o do Zotero (cada uma come\xE7ando com `@`) separadas por v\xEDrgulas:\n\
+      ```yaml Conte\xFAdo textual em formato *Markdown* com cita\xE7\xF5es [@citekey].\n\
+      --- nocite: \"@*\" --- ```\n"
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - skos:scopeNote
@@ -1890,34 +1414,18 @@ slots:
     - Inscription
     range: string
     recommended: true
-  location_historic:
-    name: location_historic
-    definition_uri: https://tradicional.arq.br/schema/location_historic
-    description: "Antigas jurisdi\xE7\xF5es ou designa\xE7\xF5es para o lugar onde\
-      \ o objeto se encontra. Para um s\xEDtio de onde o objeto foi fisicamente removido,\
-      \ usar `spatial: former_site:`."
-    from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:location_historic
-    owner: Work
-    domain_of:
-    - Work
-    range: TypedReference
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   subject:
     name: subject
     definition_uri: https://tradicional.arq.br/schema/subject
     description: "Recomenda-se articular o tema em tr\xEAs n\xEDveis : descri\xE7\xE3\
-      o, identifica\xE7\xE3o e\ninterpreta\xE7\xE3o.\n\nDESCRI\xC7\xC3O se refere\
-      \ a elementos imediatamente reconhec\xEDveis sem\nnecessidade de conhecimento\
-      \ especializado : coluna(ta)s, arcadas,\nbras\xF5es, cunhais, ornamentos em\
-      \ geral.\n\nIDENTIFICA\xC7\xC3O se refere ao reconhecimento das particularidades\n\
-      arquitet\xF4nicas ou iconogr\xE1ficas dos elementos : p. ex. as colunas s\xE3\
-      o da\nordem toscana, a ab\xF3bada \xE9 de aresta, o bras\xE3o pertence a tal\
-      \ fam\xEDlia...\n\nINTERPRETA\xC7\xC3O diz respeito ao significado iconol\xF3\
-      gico, aleg\xF3rico ou\npol\xEDtico dos elementos, incluindo quest\xF5es de status\
-      \ e estilo.\n"
+      o, identifica\xE7\xE3o e interpreta\xE7\xE3o.\nDESCRI\xC7\xC3O se refere a elementos\
+      \ imediatamente reconhec\xEDveis sem necessidade de conhecimento especializado\
+      \ : coluna(ta)s, arcadas, bras\xF5es, cunhais, ornamentos em geral.\nIDENTIFICA\xC7\
+      \xC3O se refere ao reconhecimento das particularidades arquitet\xF4nicas ou\
+      \ iconogr\xE1ficas dos elementos : p. ex. as colunas s\xE3o da ordem toscana,\
+      \ a ab\xF3bada \xE9 de aresta, o bras\xE3o pertence a tal fam\xEDlia...\nINTERPRETA\xC7\
+      \xC3O diz respeito ao significado iconol\xF3gico, aleg\xF3rico ou pol\xEDtico\
+      \ dos elementos, incluindo quest\xF5es de status e estilo.\n"
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
     - lido:subjectSet
@@ -1929,9 +1437,9 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  related_work:
-    name: related_work
-    definition_uri: https://tradicional.arq.br/schema/related_work
+  related_works:
+    name: related_works
+    definition_uri: https://tradicional.arq.br/schema/related_works
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
     - skos:related
@@ -1943,8 +1451,50 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  container__works:
+    name: container__works
+    description: "Todas as edifica\xE7\xF5es documentadas."
+    from_schema: https://tradicional.arq.br/schema
+    slot_uri: wasth:works
+    alias: works
+    owner: Container
+    domain_of:
+    - Container
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  container__places:
+    name: container__places
+    description: Todos os lugares cadastrados.
+    from_schema: https://tradicional.arq.br/schema
+    slot_uri: wasth:places
+    alias: places
+    owner: Container
+    domain_of:
+    - Container
+    range: Place
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  container__concepts:
+    name: container__concepts
+    description: "Todos os termos de vocabul\xE1rio controlado."
+    from_schema: https://tradicional.arq.br/schema
+    slot_uri: wasth:concepts
+    alias: concepts
+    owner: Container
+    domain_of:
+    - Container
+    range: Concept
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   concept__broader:
     name: concept__broader
+    description: "Um conceito de significa\xE7\xE3o mais gen\xE9rica. Conceitos gen\xE9\
+      ricos s\xE3o tipicamente representados como pais em uma hierarquia de conceitos\
+      \ (\xE1rvore)."
     from_schema: https://tradicional.arq.br/schema/concept
     mappings:
     - skos:broader
@@ -1959,6 +1509,9 @@ slots:
     inlined_as_list: true
   concept__narrower:
     name: concept__narrower
+    description: "Um conceito de significa\xE7\xE3o mais espec\xEDfica. Conceitos\
+      \ espec\xEDficos s\xE3o tipicamente representados como descendentes em uma hierarquia\
+      \ de conceitos (\xE1rvore)."
     from_schema: https://tradicional.arq.br/schema/concept
     mappings:
     - skos:narrower
@@ -1973,6 +1526,9 @@ slots:
     inlined_as_list: true
   concept__relation:
     name: concept__relation
+    description: "Um conceito com o qual existe um relacionamento sem\xE2ntico associativo.\
+      \ Usar principalmente em refer\xEAncia a vocabul\xE1rios externos, como o Getty\
+      \ Art and Architecture Thesaurus."
     from_schema: https://tradicional.arq.br/schema/concept
     mappings:
     - skos:relation
@@ -1985,8 +1541,19 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  conceptReference__name:
+    name: conceptReference__name
+    description: Identificador do termo referido.
+    from_schema: https://tradicional.arq.br/schema/concept
+    slot_uri: wasth:name
+    alias: name
+    owner: ConceptReference
+    domain_of:
+    - ConceptReference
+    range: Concept
   broaderConceptReference__match:
     name: broaderConceptReference__match
+    description: "Tipo da rela\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/concept
     slot_uri: wasth:match
     alias: match
@@ -1996,6 +1563,7 @@ slots:
     range: SkosHierarchicalRelation
   relatedConceptReference__match:
     name: relatedConceptReference__match
+    description: "Tipo da rela\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/concept
     slot_uri: wasth:match
     alias: match
@@ -2003,8 +1571,219 @@ slots:
     domain_of:
     - RelatedConceptReference
     range: SkosMappingRelation
-  bibliographicCitation__citation_refid:
-    name: bibliographicCitation__citation_refid
+  place__work_type_function:
+    name: place__work_type_function
+    description: "Objects that are distinguishable by the particular purpose for which\
+      \ they are designed or used. If an object is identifiable by its intended use,\
+      \ then it is qualified by function.\nBased on [AAT Guidelines \"Types of Guide\
+      \ Terms\"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)\n\
+      Nos Document\xE1rios de edifica\xE7\xF5es, designa um dos sete tipos de prop\xF3\
+      sitos concebidos por C. William Westfall e Samir Youn\xE9s em *Architectural\
+      \ Type and Character*.\nNo Document\xE1rio de Lugares, designa o papel administrativo\
+      \ da localidade, por exemplo freguesia, sede municipal, capital estadual ou\
+      \ nacional."
+    from_schema: https://tradicional.arq.br/schema/place
+    mappings:
+    - term:lido00767
+    slot_uri: term:lido00767
+    alias: work_type_function
+    owner: Place
+    domain_of:
+    - Place
+    range: ConceptReference
+    recommended: true
+    multivalued: true
+    inlined: true
+    inlined_as_list: false
+  place__work_type_context:
+    name: place__work_type_context
+    description: "Descriptors for objects that are distinguishable by their use or\
+      \ application within a particular physical location. If an object is identifiable\
+      \ by association with specific surroundings, it is qualified by location or\
+      \ context.\nBased on [AAT Guidelines \"Types of Guide Terms\"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)\n\
+      No Document\xE1rio de Lugares Tradicionais, designa o tipo de n\xFAcleo populacional\u2009\
+      : s\xEDtio isolado, povoa\xE7\xE3o rural, vila ou cidade, por exemplo.\nNos\
+      \ Document\xE1rios de edifica\xE7\xF5es, designa sobretudo o contexto imediato\
+      \ de implanta\xE7\xE3o de uma edifica\xE7\xE3o\u2009: urbana, rural, isolada,\
+      \ em correnteza, etc."
+    from_schema: https://tradicional.arq.br/schema/place
+    mappings:
+    - term:lido00934
+    slot_uri: term:lido00934
+    alias: work_type_context
+    owner: Place
+    domain_of:
+    - Place
+    range: ConceptReference
+    recommended: true
+    multivalued: true
+    inlined: true
+    inlined_as_list: false
+  place__part_of:
+    name: place__part_of
+    description: A set of structured information about a place that is the broader
+      context for the place in focus, such as the district, state, or nation to which
+      a city belongs.
+    from_schema: https://tradicional.arq.br/schema/place
+    mappings:
+    - lido:partOfPlace
+    slot_uri: lido:partOfPlace
+    alias: part_of
+    owner: Place
+    domain_of:
+    - Place
+    range: GeonamesId
+    inlined: true
+  place__former_site:
+    name: place__former_site
+    description: "Indica que a edifica\xE7\xE3o n\xE3o se encontra mais no local indicado,\
+      \ seja porque foi deslocada ou demolida."
+    from_schema: https://tradicional.arq.br/schema/place
+    slot_uri: wasth:former
+    alias: former
+    owner: Place
+    domain_of:
+    - Place
+    range: Site
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  place__intended_site:
+    name: place__intended_site
+    description: "Sinaliza que a edifica\xE7\xE3o devia ocupar um certo local, mas\
+      \ n\xE3o chegou a ser constru\xEDda."
+    from_schema: https://tradicional.arq.br/schema/place
+    slot_uri: wasth:intended
+    alias: intended
+    owner: Place
+    domain_of:
+    - Place
+    range: Site
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  place__other_site:
+    name: place__other_site
+    description: "Para casos n\xE3o contemplados em nenhuma das categorias acima."
+    from_schema: https://tradicional.arq.br/schema/place
+    slot_uri: wasth:other
+    alias: other
+    owner: Place
+    domain_of:
+    - Place
+    range: Site
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  site__location:
+    name: site__location
+    description: Representative point location for the place, normally in EPSG:4326
+      (WGS 84).
+    from_schema: https://tradicional.arq.br/schema/place
+    mappings:
+    - geo:hasGeometry
+    slot_uri: geo:hasGeometry
+    alias: location
+    owner: Site
+    domain_of:
+    - Site
+    range: GeographicPoint
+    required: true
+    inlined: true
+    inlined_as_list: true
+  site__extent:
+    name: site__extent
+    description: Polygonal, multipolygonal, or linear geographic extent associated
+      with the place.
+    from_schema: https://tradicional.arq.br/schema/place
+    mappings:
+    - geo:hasGeometry
+    slot_uri: geo:hasGeometry
+    alias: extent
+    owner: Site
+    domain_of:
+    - Site
+    range: GeographicExtent
+    inlined: true
+    inlined_as_list: true
+  geographicPoint__lat:
+    name: geographicPoint__lat
+    description: 'Latitude em graus decimais (separador decimal: ponto).'
+    from_schema: https://tradicional.arq.br/schema/place
+    slot_uri: wasth:lat
+    alias: lat
+    owner: GeographicPoint
+    domain_of:
+    - GeographicPoint
+    range: Latitude
+    required: true
+  geographicPoint__lon:
+    name: geographicPoint__lon
+    description: 'Longitude em graus decimais (separador decimal: ponto).'
+    from_schema: https://tradicional.arq.br/schema/place
+    slot_uri: wasth:lon
+    alias: lon
+    owner: GeographicPoint
+    domain_of:
+    - GeographicPoint
+    range: Longitude
+    required: true
+  geographicPoint__alt:
+    name: geographicPoint__alt
+    description: 'Altitude em metros (separador decimal: ponto)'
+    from_schema: https://tradicional.arq.br/schema/place
+    slot_uri: wasth:alt
+    alias: alt
+    owner: GeographicPoint
+    domain_of:
+    - GeographicPoint
+    range: float
+    minimum_value: -1000
+    maximum_value: 10000
+  geographicPoint__zoom:
+    name: geographicPoint__zoom
+    description: "Usado para visualizar o mapa mais de longe se a precis\xE3o das\
+      \ coordenadas for baixa.\n"
+    from_schema: https://tradicional.arq.br/schema/place
+    slot_uri: wasth:zoom
+    ifabsent: integer(13)
+    alias: zoom
+    owner: GeographicPoint
+    domain_of:
+    - GeographicPoint
+    range: integer
+    minimum_value: 0
+    maximum_value: 18
+  geographicExtent__geometry_type:
+    name: geographicExtent__geometry_type
+    description: Tipo da geometria descrita pelas coordenadas.
+    from_schema: https://tradicional.arq.br/schema/place
+    slot_uri: wasth:type
+    alias: type
+    owner: GeographicExtent
+    domain_of:
+    - GeographicExtent
+    range: GeometryType
+    required: true
+  geographicExtent__coordinates:
+    name: geographicExtent__coordinates
+    description: "No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do\
+      \ pol\xEDgono (`extent`) com a op\xE7\xE3o `Get JSON` \u2014 copiar apenas os\
+      \ colchetes `[[[ ]]]` e os valores num\xE9ricos dentro deles.\n"
+    from_schema: https://tradicional.arq.br/schema/place
+    slot_uri: wasth:coordinates
+    alias: coordinates
+    owner: GeographicExtent
+    domain_of:
+    - GeographicExtent
+    range: GeoJSONCoordinateArray
+    required: true
+  bibliographicCitation__refid:
+    name: bibliographicCitation__refid
+    description: "Se a fonte for cadastrada, o campo `refid` deve conter a chave de\
+      \ cita\xE7\xE3o (`citation key`) que consta do registro bibliogr\xE1fico na\
+      \ biblioteca do nosso projeto de pesquisa no [Zotero]. Em geral, a chave de\
+      \ cita\xE7\xE3o \xE9 o DOI ou ISBN da publica\xE7\xE3o, mas pode ser diferente.\n"
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:refid
     alias: refid
@@ -2015,6 +1794,9 @@ slots:
     required: true
   bibliographicCitation__note:
     name: bibliographicCitation__note
+    description: "Se necess\xE1rio, incluir no campo `note` uma especifica\xE7\xE3\
+      o adicional, como o n\xFAmero da p\xE1gina da refer\xEAncia bibliogr\xE1fica\
+      \ de onde a informa\xE7\xE3o foi extra\xEDda.\n"
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:note
     alias: note
@@ -2022,69 +1804,91 @@ slots:
     domain_of:
     - BibliographicCitation
     range: string
-  measurements__type:
-    name: measurements__type
+  resource__scale:
+    name: resource__scale
+    description: "N\xFAmero inverso da escala da imagem, se ela tiver uma resolu\xE7\
+      \xE3o ou tamanho de p\xE1gina definidos. Por exemplo, para um desenho na escala\
+      \ 1\u2009:\u2009100, `scale: 100`."
+    from_schema: https://tradicional.arq.br/schema/resource
+    slot_uri: wasth:scale
+    alias: scale
+    owner: Resource
+    domain_of:
+    - Resource
+    range: float
+    minimum_value: 0
+  resource__perspective:
+    name: resource__perspective
+    description: "Tipo de vista do desenho. Usar a numera\xE7\xE3o da ISO\u200919650\u2013\
+      2\u2009:\n\n  - 0 = geral\n  - 1 = planta baixa (padr\xE3o, pode ser omitido)\n\
+      \  - 2 = eleva\xE7\xE3o\n  - 3 = corte\n  - 4 = mapa de elementos\n  - 5 = detalhe\n\
+      \  - 6 = mapa de revestimentos\n  - 7 = planta de forro\n  - 8 = vista ou modelo\
+      \ 3D\n  - 9 = definido pelo agente\n"
+    from_schema: https://tradicional.arq.br/schema/resource
+    slot_uri: wasth:perspective
+    ifabsent: integer(1)
+    alias: perspective
+    owner: Resource
+    domain_of:
+    - Resource
+    range: integer
+    minimum_value: 0
+    maximum_value: 9
+  measurement__type:
+    name: measurement__type
+    description: "designa a natureza da medida\u2009: largura, altura, \xE1rea, etc.\
+      \ \u2014 usar um dos [tipos de dimens\xF5es ](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300226820)\
+      \ do Art and Architecture Thesaurus do Instituto Getty (AAT).\n"
     from_schema: https://tradicional.arq.br/schema/shared
     slot_uri: wasth:type
     ifabsent: MeasurementType(proper)
     alias: type
-    owner: Measurements
+    owner: Measurement
     domain_of:
-    - Measurements
+    - Measurement
     range: MeasurementType
-  measurements__value:
-    name: measurements__value
+  measurement__value:
+    name: measurement__value
+    description: "Valor num\xE9rico, usar ponto como separador decimal."
     from_schema: https://tradicional.arq.br/schema/shared
     slot_uri: wasth:value
     alias: value
-    owner: Measurements
+    owner: Measurement
     domain_of:
-    - Measurements
+    - Measurement
     range: float
     required: true
     minimum_value: 0
-  measurements__unit:
-    name: measurements__unit
-    from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:unit
-    alias: unit
-    owner: Measurements
-    domain_of:
-    - Measurements
-    range: TypedReference
-    required: true
-    inlined: true
-    inlined_as_list: false
-  measurements__qualifier:
-    name: measurements__qualifier
+  measurement__qualifier:
+    name: measurement__qualifier
+    description: "Indica que as medidas s\xE3o aproximadas\u2009: usar um [qualificador\
+      \ do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720)\u2009\
+      ;\n"
     from_schema: https://tradicional.arq.br/schema/shared
     slot_uri: wasth:qualifier
     alias: qualifier
-    owner: Measurements
+    owner: Measurement
     domain_of:
-    - Measurements
+    - Measurement
     range: string
-  measurements__shape:
-    name: measurements__shape
+  measurement__shape:
+    name: measurement__shape
+    description: 'caso relevante, indicar a forma do elemento medido usando a [lista
+      de formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273).
+
+      '
     from_schema: https://tradicional.arq.br/schema/shared
     slot_uri: wasth:shape
     alias: shape
-    owner: Measurements
+    owner: Measurement
     domain_of:
-    - Measurements
+    - Measurement
     range: string
-  measurements__scale:
-    name: measurements__scale
-    from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:scale
-    alias: scale
-    owner: Measurements
-    domain_of:
-    - Measurements
-    range: float
-    minimum_value: 0
   materialTech__material_tech_type:
     name: materialTech__material_tech_type
+    description: "Tipo da refer\xEAncia a um material ou t\xE9cnica usado na obra:\
+      \ material de constru\xE7\xE3o (support), revestimento (medium), t\xE9cnica,\
+      \ instrumento, cor, etc.\n"
     from_schema: https://tradicional.arq.br/schema/shared
     slot_uri: wasth:type
     alias: type
@@ -2093,6 +1897,91 @@ slots:
     - MaterialTech
     range: MaterialTechType
     required: true
+  right__concept:
+    name: right__concept
+    description: 'Qualifies the kind of rights type, whether it refers to a generic
+      kind of right, like copyright or performance rights, or is a specific rights
+      or license statement, for instance, Rights Statements or Creative Commons Licenses.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/shared
+    slot_uri: wasth:concept
+    alias: concept
+    owner: Right
+    domain_of:
+    - Right
+    range: RightsType
+    required: true
+  right__type:
+    name: right__type
+    description: "An index element for rights information being recorded. This can\
+      \ refer to a generic kind of right, such as copyright or a related right, but\
+      \ also be a specific rights or license statement like a standardized statement\
+      \ on copyright, usage, or access rights.\nPor padr\xE3o, as casas tradicionais\
+      \ pertencem ao dom\xEDnio p\xFAblico at\xE9 prova em contr\xE1rio. Essa informa\xE7\
+      \xE3o e a declara\xE7\xE3o de direitos NKC (Sem direito autoral conhecido) N\xC3\
+      O PODE ser omitida da ficha. Para o dom\xEDnio p\xFAblico, indicar a refer\xEA\
+      ncia: <https://rightsstatements.org/vocab/NKC/1.0/>.\n"
+    from_schema: https://tradicional.arq.br/schema/shared
+    slot_uri: wasth:type
+    alias: type
+    owner: Right
+    domain_of:
+    - Right
+    range: TypedReference
+    required: true
+    inlined: true
+    inlined_as_list: false
+  right__temporal:
+    name: right__temporal
+    description: Date on which a right is or was current.
+    from_schema: https://tradicional.arq.br/schema/shared
+    slot_uri: wasth:temporal
+    alias: temporal
+    owner: Right
+    domain_of:
+    - Right
+    range: EventDate
+    inlined: true
+    inlined_as_list: true
+  right__holder:
+    name: right__holder
+    description: 'A set of elements identifying the person or the group of persons
+      holding the rights referenced in Rights Type. Often refers to copyright and
+      related rights, such as the right to reproduce, distribute, exhibit or use the
+      entity in focus, for example, the object/work, resource or metadata record.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/shared
+    slot_uri: wasth:holder
+    alias: holder
+    owner: Right
+    domain_of:
+    - Right
+    range: LegalBody
+    inlined: true
+    inlined_as_list: true
+  legalBody__type:
+    name: legalBody__type
+    from_schema: https://tradicional.arq.br/schema/shared
+    slot_uri: wasth:type
+    ifabsent: string(corporate)
+    alias: type
+    owner: LegalBody
+    domain_of:
+    - LegalBody
+    range: RepositoryType
+  legalBody__name:
+    name: legalBody__name
+    from_schema: https://tradicional.arq.br/schema/shared
+    slot_uri: wasth:name
+    alias: name
+    owner: LegalBody
+    domain_of:
+    - LegalBody
+    range: TypedReference
+    inlined: true
+    inlined_as_list: false
   event__type:
     name: event__type
     from_schema: https://tradicional.arq.br/schema/temporal
@@ -2105,6 +1994,7 @@ slots:
     required: true
   event__actor_role:
     name: event__actor_role
+    description: "Identifica\xE7\xE3o de um agente e do seu papel no evento."
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:actor_role
     alias: actor_role
@@ -2117,6 +2007,7 @@ slots:
     inlined_as_list: true
   event__event_date:
     name: event__event_date
+    description: Conjunto de datas em que decorreu o evento.
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:event_date
     alias: event_date
@@ -2129,6 +2020,10 @@ slots:
     inlined_as_list: true
   event__start_date:
     name: event__start_date
+    description: 'Data inicial do evento ou mais antiga data presumida para o seu
+      decurso.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:start_date
     alias: start_date
@@ -2140,6 +2035,9 @@ slots:
     inlined_as_list: true
   event__end_date:
     name: event__end_date
+    description: 'Data final do evento ou mais tardia data presumida para o seu decurso.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:end_date
     alias: end_date
@@ -2151,23 +2049,15 @@ slots:
     inlined_as_list: true
   event__style_period:
     name: event__style_period
-    description: 'An index element for the period in which the event happened,
+    description: 'An index element for the period in which the event happened, comprising
+      information about geologic time scale, archaelogical, historical, or artistic
+      period, style, or art movement, whose characteristics are represented by the
+      object or work.
 
-      comprising information about geologic time scale, archaelogical,
+      Note that "Period/Style" corresponds to "Style" in CDWA as shorthand for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
 
-      historical, or artistic period, style, or art movement, whose
-
-      characteristics are represented by the object or work.
-
-
-      Note that "Period/Style" corresponds to "Style" in CDWA as shorthand
-
-      for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
-
-
-      Examples may be Neolithic for a period, Impressionist for a style, or
-
-      Cubism for a movement.
+      Examples may be Neolithic for a period, Impressionist for a style, or Cubism
+      for a movement.
 
       '
     from_schema: https://tradicional.arq.br/schema/temporal
@@ -2254,6 +2144,8 @@ slots:
     inlined_as_list: true
   actor__actor_type:
     name: actor__actor_type
+    description: "Define se o agente \xE9 uma pessoa, uma organiza\xE7\xE3o ou corpora\xE7\
+      \xE3o, uma oficina, uma fam\xEDlia, etc.\n"
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:type
     ifabsent: AgentType(personal)
@@ -2264,6 +2156,7 @@ slots:
     range: AgentType
   actor__actor_name:
     name: actor__actor_name
+    description: "Nome do agente extra\xEDdo de um vocabul\xE1rio controlado."
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:name
     alias: name
@@ -2275,6 +2168,7 @@ slots:
     inlined_as_list: false
   actor__role_in_event:
     name: actor__role_in_event
+    description: "A\xE7\xE3o desempenhada pelo agente no evento."
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:role_in_event
     alias: role_in_event
@@ -2285,13 +2179,8 @@ slots:
   actor__actor_qualifier:
     name: actor__actor_qualifier
     description: 'For the Attribution Qualifier Actor element choose a concept URI
-      from
-
-      the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264)
-
-      of the Art & Architecture Thesaurus, or another linked open
-
-      vocabulary.
+      from the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264)
+      of the Art & Architecture Thesaurus, or another linked open vocabulary.
 
       '
     from_schema: https://tradicional.arq.br/schema/temporal
@@ -2306,6 +2195,7 @@ slots:
     inlined_as_list: true
   actor__actor_extent:
     name: actor__actor_extent
+    description: Parte da obra sobre a qual o agente interveio.
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:extent
     alias: extent
@@ -2318,6 +2208,11 @@ slots:
     inlined_as_list: true
   eventDate__earliest_date:
     name: eventDate__earliest_date
+    description: 'An index element for the expression of an exact or estimated date,
+      for instance a year or calendar date, that delimits the beginning of a date
+      span.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:earliest_date
     alias: earliest_date
@@ -2329,6 +2224,11 @@ slots:
     inlined_as_list: true
   eventDate__latest_date:
     name: eventDate__latest_date
+    description: 'An index element for the expression of the exact or approximate
+      date, for instance a year or calendar date, that delimits the end of a date
+      span.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:latest_date
     alias: latest_date
@@ -2340,6 +2240,10 @@ slots:
     inlined_as_list: true
   dateRange__date_type:
     name: dateRange__date_type
+    description: 'An attribute for the kind of latest date, whether it is, for instance,
+      exact or estimated.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:type
     alias: type
@@ -2350,6 +2254,9 @@ slots:
     required: true
   dateRange__date_value:
     name: dateRange__date_value
+    description: "Usar o formato ISO-8601 (por exemplo, 2026-03-17). Para datas imprecisas,\
+      \ usar o primeiro dia, m\xEAs ou ano do per\xEDodo delimitado, e descrever verbalmente\
+      \ o per\xEDodo no campo `description`.\n"
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:date_value
     alias: date_value
@@ -2361,12 +2268,12 @@ slots:
     name: stylePeriod__type
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:type
-    ifabsent: PeriodNameType(lido:lido00731)
     alias: type
     owner: StylePeriod
     domain_of:
     - StylePeriod
     range: PeriodNameType
+    required: true
   eventPlace__type:
     name: eventPlace__type
     from_schema: https://tradicional.arq.br/schema/temporal
@@ -2378,6 +2285,8 @@ slots:
     range: EventPlaceType
   eventPlace__places:
     name: eventPlace__places
+    description: "Lugares associados ao evento, sem incluir o pr\xF3prio local no\
+      \ qual se situa a edifica\xE7\xE3o.\n"
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:places
     alias: places
@@ -2445,6 +2354,8 @@ slots:
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - dcterms:title
+    exact_mappings:
+    - schema:name
     slot_uri: dcterms:title
     alias: title
     owner: Thing
@@ -2475,6 +2386,24 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  thing__alt_name:
+    name: thing__alt_name
+    description: "O bloco `alt_name` permite cadastrar outros nomes pelos quais a\
+      \ edifica\xE7\xE3o ser\xE1 eventualmente conhecida. \xC9 uma lista opcional\
+      \ de itens, e se existir, os campos de cada item da lista devem ser preenchidos\
+      \ como os do t\xEDtulo principal.\nO campo `description` de cada item cont\xE9\
+      m o texto do t\xEDtulo (nome).\nEste bloco pode ser omitido por completo se\
+      \ n\xE3o houver t\xEDtulos alternativos.\n"
+    from_schema: https://tradicional.arq.br/schema/thing
+    slot_uri: wasth:alt_name
+    alias: alt_name
+    owner: Thing
+    domain_of:
+    - Thing
+    range: Appellation
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   thing__category:
     name: thing__category
     description: 'The LIDO Category Vocabulary is a structured controlled list of
@@ -2483,27 +2412,116 @@ slots:
       Examples are human-made object or natural object.'
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
-    - lido:lidoCategory
-    slot_uri: lido:lidoCategory
-    ifabsent: string(lido:lido00096)
+    - term:lidoCategory
+    slot_uri: term:lidoCategory
     designates_type: true
     alias: category
     owner: Thing
     domain_of:
     - Thing
     range: uriorcurie
+    required: true
+  thing__identifiers:
+    name: thing__identifiers
+    description: Published or external identifiers for the object.
+    from_schema: https://tradicional.arq.br/schema/thing
+    slot_uri: wasth:identifiers
+    alias: identifiers
+    owner: Thing
+    domain_of:
+    - Thing
+    range: TypedReference
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  thing__tags:
+    name: thing__tags
+    description: Provisional uncontrolled keywords. Prefer `classifications` or `subject`
+      for curated vocabulary terms.
+    from_schema: https://tradicional.arq.br/schema/thing
+    slot_uri: wasth:tags
+    alias: tags
+    owner: Thing
+    domain_of:
+    - Thing
+    range: string
+    multivalued: true
+  thing__temporal:
+    name: thing__temporal
+    description: Temporalidade do objeto.
+    from_schema: https://tradicional.arq.br/schema/thing
+    slot_uri: wasth:temporal
+    alias: temporal
+    owner: Thing
+    domain_of:
+    - Thing
+    range: Event
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  thing__collection:
+    name: thing__collection
+    description: Collections or aggregations to which the object belongs.
+    from_schema: https://tradicional.arq.br/schema/thing
+    slot_uri: wasth:collection
+    alias: collection
+    owner: Thing
+    domain_of:
+    - Thing
+    range: TypedReference
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  thing__repositories:
+    name: thing__repositories
+    description: "A set of elements for the identification, name and location of the\
+      \ repository that is responsible for the object/work in focus.\nRepeated if\
+      \ there are several designations known, or if former repositories or geographic\
+      \ places should be listed.\n---------------------------------------------------------------------\n\
+      Nos Document\xE1rios da Arquitetura Tradicional, usamos reposit\xF3rios para\
+      \ indicar a inclus\xE3o da edifica\xE7\xE3o em per\xEDmetros de s\xEDtios do\
+      \ patrim\xF4nio cultural, etc.\nOs reposit\xF3rios devem ser cadastrados de\
+      \ modo semelhante \xE0s informa\xE7\xF5es de georreferenciamento, usando o tipo\
+      \ `other`.\n"
+    from_schema: https://tradicional.arq.br/schema/thing
+    slot_uri: wasth:repositories
+    alias: repositories
+    owner: Thing
+    domain_of:
+    - Thing
+    range: Repository
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  thing__record_rights:
+    name: thing__record_rights
+    description: "A set of structured information about rights regarding the content\
+      \ provided in this LIDO record.\n---------------------------------------------------------------------\n\
+      :warning: Este grupo se refere aos direitos sobre o CONTE\xDADO da ficha, n\xE3\
+      o sobre os direitos incidentes sobre o objeto descrito.\n"
+    from_schema: https://tradicional.arq.br/schema/thing
+    slot_uri: wasth:record_rights
+    alias: record_rights
+    owner: Thing
+    domain_of:
+    - Thing
+    range: Right
+    required: true
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   appellation__title_preference:
     name: appellation__title_preference
     description: "Indica se o nome em quest\xE3o deve ser oculto ou n\xE3o, se \xE9\
       \ uma vers\xE3o alternativa ou uma variante de grafia, etc."
     from_schema: https://tradicional.arq.br/schema/thing
     slot_uri: wasth:label_type
-    ifabsent: string(alternative)
     alias: label_type
     owner: Appellation
     domain_of:
     - Appellation
     range: LabelType
+    required: true
   work__work_type_condition:
     name: work__work_type_condition
     description: "Descriptors for objects that are distinguishable by their overall\
@@ -2515,8 +2533,8 @@ slots:
       \ \"estado de preserva\xE7\xE3o\" e \"estado de conserva\xE7\xE3o\"."
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
-    - lido:lido00937
-    slot_uri: lido:lido00937
+    - term:lido00937
+    slot_uri: term:lido00937
     alias: work_type_condition
     owner: Work
     domain_of:
@@ -2535,53 +2553,9 @@ slots:
       Nos Document\xE1rios da Arquitetura Tradicional, designa uma tipologia formal."
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
-    - lido:lido00766
-    slot_uri: lido:lido00766
+    - term:lido00766
+    slot_uri: term:lido00766
     alias: work_type_form
-    owner: Work
-    domain_of:
-    - Work
-    range: ConceptReference
-    recommended: true
-    multivalued: true
-    inlined: true
-    inlined_as_list: false
-  work__work_type_function:
-    name: work__work_type_function
-    description: "Objects that are distinguishable by the particular purpose for which\
-      \ they are designed or used. If an object is identifiable by its intended use,\
-      \ then it is qualified by function.\nBased on [AAT Guidelines \"Types of Guide\
-      \ Terms\"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)\n\
-      Nos Document\xE1rios da Arquitetura Tradicional, designa um dos sete tipos de\
-      \ prop\xF3sitos concebidos por C. William Westfall e Samir Youn\xE9s em *Architectural\
-      \ Type and Character*."
-    from_schema: https://tradicional.arq.br/schema/work
-    mappings:
-    - lido:lido00767
-    slot_uri: lido:lido00767
-    alias: work_type_function
-    owner: Work
-    domain_of:
-    - Work
-    range: ConceptReference
-    recommended: true
-    multivalued: true
-    inlined: true
-    inlined_as_list: false
-  work__work_type_context:
-    name: work__work_type_context
-    description: "Descriptors for objects that are distinguishable by their use or\
-      \ application within a particular physical location. If an object is identifiable\
-      \ by association with specific surroundings, it is qualified by location or\
-      \ context.\nBased on [AAT Guidelines \"Types of Guide Terms\"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)\n\
-      Nos Document\xE1rios da Arquitetura Tradicional, designa a situa\xE7\xE3o de\
-      \ implanta\xE7\xE3o da edifica\xE7\xE3o, por exemplo se est\xE1 em contexto\
-      \ urbano ou rural, isolada ou em correnteza..."
-    from_schema: https://tradicional.arq.br/schema/work
-    mappings:
-    - lido:lido00934
-    slot_uri: lido:lido00934
-    alias: work_type_context
     owner: Work
     domain_of:
     - Work
@@ -2600,8 +2574,8 @@ slots:
       \xE3o."
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
-    - lido:lido00789
-    slot_uri: lido:lido00789
+    - term:lido00789
+    slot_uri: term:lido00789
     alias: work_type_material_tech
     owner: Work
     domain_of:
@@ -2622,8 +2596,8 @@ slots:
       \ `form` ou `function`."
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
-    - lido:lido00768
-    slot_uri: lido:lido00768
+    - term:lido00768
+    slot_uri: term:lido00768
     alias: work_type_subject_type
     owner: Work
     domain_of:
@@ -2643,8 +2617,8 @@ slots:
       \ do solo ou atividades predominante(s) na edifica\xE7\xE3o atualmente."
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
-    - lido:lido00938
-    slot_uri: lido:lido00938
+    - term:lido00938
+    slot_uri: term:lido00938
     alias: work_type_use
     owner: Work
     domain_of:
@@ -2654,24 +2628,24 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: false
-  work__class_genre:
-    name: work__class_genre
-    description: "A broad category for grouping objects on the basis of shared intrinsic\n\
-      characteristics. The relationship between an object/work and the object\ngenre\
-      \ is a generic is-a-relation rather than a membership based on\nascription to\
-      \ a subject group.\n\nNote that the\n[AAT Object Genres](http://vocab.getty.edu/page/aat/300185711)\
-      \ hierarchy\ndiffers in its scope from Object genre here in that the AAT includes\
-      \ more\nspecific terms grouped by various aspects. In general, AAT descriptors\n\
-      are not intended to be used as indexing terms for classification.\n\n\u2753\
-      \ Ainda n\xE3o implementamos o bloco `objectClassification` do LIDO.\nTalvez\
-      \ ele n\xE3o seja relevante para o document\xE1rio de arquitetura\ndom\xE9stica,\
+  work__classification_genre:
+    name: work__classification_genre
+    description: "A broad category for grouping objects on the basis of shared intrinsic\
+      \ characteristics. The relationship between an object/work and the object genre\
+      \ is a generic is-a-relation rather than a membership based on ascription to\
+      \ a subject group.\nNote that the [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711)\
+      \ hierarchy differs in its scope from Object genre here in that the AAT includes\
+      \ more specific terms grouped by various aspects. In general, AAT descriptors\
+      \ are not intended to be used as indexing terms for classification.\n\u2753\
+      \ Ainda n\xE3o implementamos o bloco `objectClassification` do LIDO. Talvez\
+      \ ele n\xE3o seja relevante para o document\xE1rio de arquitetura dom\xE9stica,\
       \ e n\xE3o \xE9 obrigat\xF3rio no padr\xE3o LIDO nem no perfil de aplica\xE7\
-      \xE3o\npara arquitetura.\n"
+      \xE3o para arquitetura.\n"
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
-    - lido:lido00853
-    slot_uri: lido:lido00853
-    alias: class_genre
+    - term:lido00853
+    slot_uri: term:lido00853
+    alias: classification_genre
     owner: Work
     domain_of:
     - Work
@@ -2679,8 +2653,8 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: false
-  work__class_subject:
-    name: work__class_subject
+  work__classification_subject:
+    name: work__classification_subject
     description: "A broad category for grouping objects or works on the basis of a\
       \ topical association, including thematic or systematic classification, or an\
       \ assignment by discipline. The relationship between an object/work and a subject\
@@ -2691,9 +2665,9 @@ slots:
       \ de aplica\xE7\xE3o para arquitetura."
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
-    - lido:lido00932
-    slot_uri: lido:lido00932
-    alias: class_subject
+    - term:lido00932
+    slot_uri: term:lido00932
+    alias: classification_subject
     owner: Work
     domain_of:
     - Work
@@ -2701,8 +2675,8 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: false
-  work__class_local:
-    name: work__class_local
+  work__classification_local:
+    name: work__classification_local
     description: "A classification scheme for grouping objects on the basis of locally\
       \ defined criteria, including categories corresponding to the curatorial departments\
       \ of the repository, such as \"prints and drawings\", \"decorative arts\", \"\
@@ -2714,9 +2688,9 @@ slots:
       \xE3o para arquitetura."
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
-    - lido:lido01135
-    slot_uri: lido:lido01135
-    alias: class_local
+    - term:lido01135
+    slot_uri: term:lido01135
+    alias: classification_local
     owner: Work
     domain_of:
     - Work
@@ -2724,8 +2698,8 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: false
-  work__class_special:
-    name: work__class_special
+  work__classification_special:
+    name: work__classification_special
     description: "A classification scheme for grouping objects on the basis of criteria\
       \ defined within specific academic disciplines or cultural domains, such as\
       \ the \"Hornbostel-Sachs Classification of Musical Instruments\", the \"Nickel-Strunz\
@@ -2738,9 +2712,9 @@ slots:
       \ arquitetura."
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
-    - lido:lido01144
-    slot_uri: lido:lido01144
-    alias: class_special
+    - term:lido01144
+    slot_uri: term:lido01144
+    alias: classification_special
     owner: Work
     domain_of:
     - Work
@@ -2763,8 +2737,33 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  work__location_historic:
+    name: work__location_historic
+    description: "Antigas jurisdi\xE7\xF5es ou designa\xE7\xF5es para o lugar onde\
+      \ o objeto se encontra. Para um s\xEDtio de onde o objeto foi fisicamente removido,\
+      \ usar `former_site:`."
+    from_schema: https://tradicional.arq.br/schema/work
+    slot_uri: wasth:location_historic
+    alias: location_historic
+    owner: Work
+    domain_of:
+    - Work
+    range: HistoricPlace
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   work__collection:
     name: work__collection
+    description: 'A set of identifying and indexing information about the collection
+      the object/work in focus is gathered into or is a member of.
+
+      Collection applies to any accumulated group of physical or digital items, conceptually
+      or physically brought together on the basis of a focal characteristic. Use cases
+      for grouping items into a collection are various and may span curated holdings
+      in museums, departmental collections, sets of items to be displayed in an exhibition,
+      or aggregations bound informally for cataloging and retrieval purposes.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
     - lido:collection
@@ -2778,6 +2777,9 @@ slots:
     inlined_as_list: false
   work__work_rights:
     name: work__work_rights
+    description: "> :warning: Este bloco se refere a eventuais direitos autorais sobre\
+      \ A > EDIFICA\xC7\xC3O E O SEU PROJETO, n\xE3o sobre o conte\xFAdo da ficha\
+      \ ou sobre a > iconografia relacionada.\n"
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
     - lido:rightsWorkSet
@@ -2787,6 +2789,7 @@ slots:
     domain_of:
     - Work
     range: Right
+    required: true
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -2811,30 +2814,40 @@ slots:
     - Topic
     range: SubjectType
     required: true
-  relation:
-    name: relation
-    from_schema: https://tradicional.arq.br/schema
-    mappings: &id001
-    - lido:relatedWorkSet
-    slot_uri: lido:relatedWorkSet
-    range: RelatedWork
-    inlined: true
-    inlined_as_list: true
-  Concept_category:
-    name: Concept_category
-    from_schema: https://tradicional.arq.br/schema
-    is_a: thing__category
-    domain: Concept
-    slot_uri: wasth:category
-    ifabsent: string(lido:lido01193)
-    designates_type: true
-    alias: category
-    owner: Concept
+  historicPlace__type:
+    name: historicPlace__type
+    from_schema: https://tradicional.arq.br/schema/work
+    slot_uri: wasth:type
+    alias: type
+    owner: HistoricPlace
     domain_of:
-    - Concept
-    is_usage_slot: true
-    usage_slot_name: category
-    range: uriorcurie
+    - HistoricPlace
+    range: RepositoryType
+    required: true
+  historicPlace__name:
+    name: historicPlace__name
+    from_schema: https://tradicional.arq.br/schema/work
+    slot_uri: wasth:name
+    alias: name
+    owner: HistoricPlace
+    domain_of:
+    - HistoricPlace
+    range: TypedReference
+    required: true
+    inlined: true
+    inlined_as_list: false
+  author:
+    name: author
+    from_schema: https://tradicional.arq.br/schema
+    slot_uri: wasth:author
+    range: string
+    required: true
+  category:
+    name: category
+    from_schema: https://tradicional.arq.br/schema
+    slot_uri: wasth:category
+    ifabsent: string(http://terminology.lido-schema.org/lido00096)
+    range: string
   Place_id:
     name: Place_id
     from_schema: https://tradicional.arq.br/schema
@@ -2853,8 +2866,7 @@ slots:
   Place_title_type:
     name: Place_title_type
     definition_uri: https://tradicional.arq.br/schema/title_type
-    description: Type of the place name. For a Place record, this will often be `geographic`
-      when the name represents an administrative or geographic entity.
+    description: "Indica se o t\xEDtulo \xE9 um nome pr\xF3prio, descritivo, etc."
     from_schema: https://tradicional.arq.br/schema/thing
     is_a: title_type
     domain: Place
@@ -2866,6 +2878,25 @@ slots:
     is_usage_slot: true
     usage_slot_name: title_type
     range: RepositoryType
+    required: true
+  Site_id:
+    name: Site_id
+    description: 'Incluir aqui um identificador da base geonames na forma `geonames:1234`.
+
+      '
+    from_schema: https://tradicional.arq.br/schema
+    is_a: thing__id
+    domain: Site
+    slot_uri: wasth:id
+    identifier: true
+    alias: id
+    owner: Site
+    domain_of:
+    - Site
+    is_usage_slot: true
+    usage_slot_name: id
+    range: GeonamesId
+    required: true
   RelatedWork_related_object:
     name: RelatedWork_related_object
     definition_uri: https://tradicional.arq.br/schema/related_object
@@ -2888,6 +2919,8 @@ slots:
     from_schema: https://tradicional.arq.br/schema/shared
     mappings:
     - dcterms:description
+    exact_mappings:
+    - schema:description
     is_a: description
     domain: Thing
     slot_uri: dcterms:description
@@ -2905,7 +2938,7 @@ slots:
       \ seu georreferenciamento usando Open Location Code (\"PlusCode\"). Este identificador\
       \ usa o campo `id`, que ser\xE1 gerado automaticamente pelo programa WASTH."
     from_schema: https://tradicional.arq.br/schema
-    is_a: thing__id
+    is_a: Place_id
     domain: Work
     slot_uri: wasth:id
     identifier: true
@@ -2920,7 +2953,7 @@ slots:
   Work_author:
     name: Work_author
     from_schema: https://tradicional.arq.br/schema
-    is_a: thing__author
+    is_a: author
     domain: Work
     slot_uri: wasth:author
     alias: author
@@ -2929,40 +2962,41 @@ slots:
     - Work
     is_usage_slot: true
     usage_slot_name: author
-    range: OrcidId
+    range: string
     required: true
   Work_category:
     name: Work_category
     from_schema: https://tradicional.arq.br/schema
-    is_a: thing__category
+    is_a: category
     domain: Work
     slot_uri: wasth:category
     ifabsent: string(http://terminology.lido-schema.org/lido00096)
-    designates_type: true
     alias: category
     owner: Work
     domain_of:
     - Work
     is_usage_slot: true
     usage_slot_name: category
-    range: uriorcurie
-  Work_relation:
-    name: Work_relation
-    from_schema: https://tradicional.arq.br/schema
-    mappings:
-    - lido:relatedWorkSet
-    is_a: relation
+    range: string
+  Work_site:
+    name: Work_site
+    definition_uri: https://tradicional.arq.br/schema/site
+    description: "A localiza\xE7\xE3o real, atual da edifica\xE7\xE3o \u2014 \xE9\
+      \ o que ser\xE1 usado em quase todos os casos."
+    from_schema: https://tradicional.arq.br/schema/place
+    is_a: site
     domain: Work
-    slot_uri: lido:relatedWorkSet
-    alias: relation
+    slot_uri: wasth:site
+    alias: site
     owner: Work
     domain_of:
     - Work
     is_usage_slot: true
-    usage_slot_name: relation
-    range: RelatedWork
+    usage_slot_name: site
+    range: Site
+    required: true
     inlined: true
-    inlined_as_list: true
+    inlined_as_list: false
   Topic_concept:
     name: Topic_concept
     definition_uri: https://tradicional.arq.br/schema/concept
@@ -2979,55 +3013,102 @@ slots:
     range: Concept
     required: true
 classes:
+  Container:
+    name: Container
+    definition_uri: https://tradicional.arq.br/schema/Container
+    description: "Todos os elementos do document\xE1rio."
+    from_schema: https://tradicional.arq.br/schema
+    slots:
+    - container__works
+    - container__places
+    - container__concepts
+    attributes:
+      works:
+        name: works
+        description: "Todas as edifica\xE7\xF5es documentadas."
+        range: Work
+        multivalued: true
+        inlined_as_list: true
+      places:
+        name: places
+        description: Todos os lugares cadastrados.
+        range: Place
+        multivalued: true
+        inlined_as_list: true
+      concepts:
+        name: concepts
+        description: "Todos os termos de vocabul\xE1rio controlado."
+        range: Concept
+        multivalued: true
+        inlined_as_list: true
+    class_uri: wasth:Container
+    tree_root: true
   Concept:
     name: Concept
     definition_uri: https://tradicional.arq.br/schema/Concept
-    description: A WASTH controlled-vocabulary concept, compatible with SKOS and SKOS-THES.
+    description: 'A SKOS concept can be viewed as an idea or notion; a unit of thought.
+      However, what constitutes a unit of thought is subjective, and this definition
+      is meant to be suggestive, rather than restrictive.
+
+      The notion of a SKOS concept is useful when describing the conceptual or intellectual
+      structure of a knowledge organization system, and when referring to specific
+      ideas or meanings established within a KOS.
+
+      Note that, because SKOS is designed to be a vehicle for representing semi-formal
+      KOS, such as thesauri and classification schemes, a certain amount of flexibility
+      has been built in to the formal definition of this class.
+
+      '
     from_schema: https://tradicional.arq.br/schema/concept
     exact_mappings:
     - skos:Concept
+    - schema:DefinedTerm
     is_a: Thing
     slots:
     - Thing_description
-    - record_rights
     - title_type
-    - alt_name
     - bibliographic_citation
-    - identifiers
-    - tags
-    - temporal
-    - repository
-    - collection
     - content
     - thing__id
     - thing__author
     - thing__record_date
     - thing__title
     - thing__title_source
+    - thing__alt_name
+    - thing__category
+    - thing__identifiers
+    - thing__tags
+    - thing__temporal
+    - thing__collection
+    - thing__repositories
+    - thing__record_rights
     - concept__broader
     - concept__narrower
     - concept__relation
-    - Concept_category
-    slot_usage:
-      category:
-        name: category
-        is_a: thing__category
-        ifabsent: string(lido:lido01193)
     attributes:
       broader:
         name: broader
+        description: "Um conceito de significa\xE7\xE3o mais gen\xE9rica. Conceitos\
+          \ gen\xE9ricos s\xE3o tipicamente representados como pais em uma hierarquia\
+          \ de conceitos (\xE1rvore)."
         slot_uri: skos:broader
         range: BroaderConceptReference
         multivalued: true
         inlined_as_list: true
       narrower:
         name: narrower
+        description: "Um conceito de significa\xE7\xE3o mais espec\xEDfica. Conceitos\
+          \ espec\xEDficos s\xE3o tipicamente representados como descendentes em uma\
+          \ hierarquia de conceitos (\xE1rvore)."
         slot_uri: skos:narrower
         range: ConceptReference
         multivalued: true
         inlined_as_list: true
       relation:
         name: relation
+        description: "Um conceito com o qual existe um relacionamento sem\xE2ntico\
+          \ associativo. Usar principalmente em refer\xEAncia a vocabul\xE1rios externos,\
+          \ como o Getty Art and Architecture Thesaurus."
         slot_uri: skos:relation
         range: RelatedConceptReference
         multivalued: true
@@ -3041,8 +3122,13 @@ classes:
     from_schema: https://tradicional.arq.br/schema/concept
     slots:
     - description
-    - name
     - bibliographic_citation
+    - conceptReference__name
+    attributes:
+      name:
+        name: name
+        description: Identificador do termo referido.
+        range: Concept
     class_uri: wasth:ConceptReference
   BroaderConceptReference:
     name: BroaderConceptReference
@@ -3054,6 +3140,7 @@ classes:
     attributes:
       match:
         name: match
+        description: "Tipo da rela\xE7\xE3o."
         range: SkosHierarchicalRelation
     class_uri: wasth:BroaderConceptReference
   RelatedConceptReference:
@@ -3066,35 +3153,55 @@ classes:
     attributes:
       match:
         name: match
+        description: "Tipo da rela\xE7\xE3o."
         range: SkosMappingRelation
     class_uri: wasth:RelatedConceptReference
   Place:
     name: Place
     definition_uri: https://tradicional.arq.br/schema/Place
-    description: A named place with optional geographic location, administrative hierarchy,
-      classification, and external identifiers. A Place may be referenced as the spatial
-      coverage of a Work.
+    description: "Entities that have a somewhat fixed, physical extension.\nThis class\
+      \ comprises all persistent physical items with a relatively stable form, human-made\
+      \ or natural.\nNos Document\xE1rios da Arquitetura Tradicional, um lugar \xE9\
+      \ um s\xEDtio f\xEDsico com localiza\xE7\xE3o fixa que se caracteriza por conter\
+      \ uma ou mais constru\xE7\xF5es.\nVeja o [Tutorial de georreferenciamento] para\
+      \ maiores detalhes sobre como obter e usar dados de georreferenciamento.\nA\
+      \ edifica\xE7\xE3o DEVE ser georreferenciada segundo um ponto e, opcionalmente,\
+      \ PODE ser georreferenciada segundo o pol\xEDgono da sua proje\xE7\xE3o.\n`former_site`,\
+      \ `intended` e `other` recebem uma lista de lugares formatados do mesmo modo\
+      \ que o grupo `site`.\n:mailbox_with_no_mail: O campo `description` deve ser\
+      \ usado para cadastrar o endere\xE7o postal completo da edifica\xE7\xE3o. Para\
+      \ quebra de linha, deixe uma linha em branco.\n:link: O campo `part_of` cont\xE9\
+      m uma \xFAnica refer\xEAncia ao nosso [vocabul\xE1rio de lugares]. As instru\xE7\
+      \xF5es de preenchimento s\xE3o as mesmas que para os [tipos de obra](#work_types)\
+      \ mas, em geral, n\xE3o precisa de bibliografia.\n"
     from_schema: https://tradicional.arq.br/schema/place
+    exact_mappings:
+    - schema:Place
+    - crm:E18_Physical_Thing
     is_a: Thing
     slots:
     - Thing_description
-    - record_rights
-    - alt_name
     - bibliographic_citation
-    - identifiers
-    - tags
-    - temporal
-    - repository
-    - collection
     - content
     - thing__author
     - thing__record_date
     - thing__title
     - thing__title_source
+    - thing__alt_name
     - thing__category
-    - place_type
-    - place_function
-    - spatial
+    - thing__identifiers
+    - thing__tags
+    - thing__temporal
+    - thing__collection
+    - thing__repositories
+    - thing__record_rights
+    - site
+    - place__work_type_function
+    - place__work_type_context
+    - place__part_of
+    - place__former_site
+    - place__intended_site
+    - place__other_site
     - Place_id
     - Place_title_type
     slot_usage:
@@ -3104,29 +3211,262 @@ classes:
         range: OlcPlusCode11
       title_type:
         name: title_type
-        description: Type of the place name. For a Place record, this will often be
-          `geographic` when the name represents an administrative or geographic entity.
         range: RepositoryType
-    class_uri: wasth:Place
+    attributes:
+      work_type_function:
+        name: work_type_function
+        description: "Objects that are distinguishable by the particular purpose for\
+          \ which they are designed or used. If an object is identifiable by its intended\
+          \ use, then it is qualified by function.\nBased on [AAT Guidelines \"Types\
+          \ of Guide Terms\"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)\n\
+          Nos Document\xE1rios de edifica\xE7\xF5es, designa um dos sete tipos de\
+          \ prop\xF3sitos concebidos por C. William Westfall e Samir Youn\xE9s em\
+          \ *Architectural Type and Character*.\nNo Document\xE1rio de Lugares, designa\
+          \ o papel administrativo da localidade, por exemplo freguesia, sede municipal,\
+          \ capital estadual ou nacional."
+        slot_uri: term:lido00767
+        range: ConceptReference
+        recommended: true
+        multivalued: true
+        inlined_as_list: false
+      work_type_context:
+        name: work_type_context
+        description: "Descriptors for objects that are distinguishable by their use\
+          \ or application within a particular physical location. If an object is\
+          \ identifiable by association with specific surroundings, it is qualified\
+          \ by location or context.\nBased on [AAT Guidelines \"Types of Guide Terms\"\
+          ](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)\n\
+          No Document\xE1rio de Lugares Tradicionais, designa o tipo de n\xFAcleo\
+          \ populacional\u2009: s\xEDtio isolado, povoa\xE7\xE3o rural, vila ou cidade,\
+          \ por exemplo.\nNos Document\xE1rios de edifica\xE7\xF5es, designa sobretudo\
+          \ o contexto imediato de implanta\xE7\xE3o de uma edifica\xE7\xE3o\u2009\
+          : urbana, rural, isolada, em correnteza, etc."
+        slot_uri: term:lido00934
+        range: ConceptReference
+        recommended: true
+        multivalued: true
+        inlined_as_list: false
+      part_of:
+        name: part_of
+        description: A set of structured information about a place that is the broader
+          context for the place in focus, such as the district, state, or nation to
+          which a city belongs.
+        slot_uri: lido:partOfPlace
+        range: GeonamesId
+        inlined: true
+      former_site:
+        name: former_site
+        description: "Indica que a edifica\xE7\xE3o n\xE3o se encontra mais no local\
+          \ indicado, seja porque foi deslocada ou demolida."
+        alias: former
+        range: Site
+        multivalued: true
+        inlined_as_list: true
+      intended_site:
+        name: intended_site
+        description: "Sinaliza que a edifica\xE7\xE3o devia ocupar um certo local,\
+          \ mas n\xE3o chegou a ser constru\xEDda."
+        alias: intended
+        range: Site
+        multivalued: true
+        inlined_as_list: true
+      other_site:
+        name: other_site
+        description: "Para casos n\xE3o contemplados em nenhuma das categorias acima."
+        alias: other
+        range: Site
+        multivalued: true
+        inlined_as_list: true
+    class_uri: schema:Place
+  Site:
+    name: Site
+    definition_uri: https://tradicional.arq.br/schema/Site
+    description: "This class comprises 4-dimensional point sets (volumes) in physical\
+      \ spacetime (in contrast to mathematical models of it) regardless of their true\
+      \ geometric forms. They may derive their identity from being the extent of a\
+      \ material phenomenon or from being the interpretation of an expression defining\
+      \ an extent in spacetime. Intersections of instances of E92 Spacetime Volume,\
+      \ E53 Place, and E52 Time-Span are also regarded as instances of E92 Spacetime\
+      \ Volume. An instance of E92 Spacetime Volume is either contiguous or composed\
+      \ of a finite number of contiguous subsets. Its boundaries may be fuzzy due\
+      \ to the properties of the phenomena it derives from or due to the limited precision\
+      \ up to which defining expression can be identified with a real extent in spacetime.\
+      \ The duration of existence of an instance of E92 Spacetime Volume is its projection\
+      \ on time.\nEste bloco corresponde \xE0 terminologia do [DublinCore] `coverage\
+      \ > spatial`. Na especifica\xE7\xE3o [LIDO], a localiza\xE7\xE3o f\xEDsica de\
+      \ um bem se confunde com a sua inser\xE7\xE3o institucional (reposit\xF3rio).\
+      \ Na formata\xE7\xE3o da nossa ficha, tentamos desfazer essa confus\xE3o separando\
+      \ o georreferenciamento e o reposit\xF3rio em blocos diferentes.\nEle inclui\
+      \ informa\xE7\xF5es de georreferenciamento, nomes hist\xF3ricos de lugares e\
+      \ reposit\xF3rios ou conjuntos aos quais pertence a edifica\xE7\xE3o (por exemplo,\
+      \ um conjunto urbano tombado / classificado).\nAs informa\xE7\xF5es de localiza\xE7\
+      \xE3o, especialmente o georreferenciamento, s\xE3o indispens\xE1veis para espacializar\
+      \ todos os demais atributos da ficha.\n"
+    from_schema: https://tradicional.arq.br/schema/place
+    exact_mappings:
+    - crm:E92_Spacetime_Volume
+    - schema:DefinedRegion
+    is_a: Thing
+    abstract: true
+    slots:
+    - Thing_description
+    - title_type
+    - bibliographic_citation
+    - content
+    - thing__author
+    - thing__record_date
+    - thing__title
+    - thing__title_source
+    - thing__alt_name
+    - thing__category
+    - thing__identifiers
+    - thing__tags
+    - thing__temporal
+    - thing__collection
+    - thing__repositories
+    - thing__record_rights
+    - site__location
+    - site__extent
+    - Site_id
+    slot_usage:
+      id:
+        name: id
+        description: 'Incluir aqui um identificador da base geonames na forma `geonames:1234`.
+
+          '
+        is_a: thing__id
+        range: GeonamesId
+    attributes:
+      location:
+        name: location
+        description: Representative point location for the place, normally in EPSG:4326
+          (WGS 84).
+        slot_uri: geo:hasGeometry
+        range: GeographicPoint
+        required: true
+        inlined: true
+      extent:
+        name: extent
+        description: Polygonal, multipolygonal, or linear geographic extent associated
+          with the place.
+        slot_uri: geo:hasGeometry
+        range: GeographicExtent
+        inlined: true
+    class_uri: crm:E92_Spacetime_Volume
+  GeographicPoint:
+    name: GeographicPoint
+    definition_uri: https://tradicional.arq.br/schema/GeographicPoint
+    description: "Coordenadas do ponto que situa o s\xEDtio na visualiza\xE7\xE3o\
+      \ do mapa.\nA fonte preferencial de autoridade para o georreferenciamento \xE9\
+      \ um \xF3rg\xE3o p\xFAblico, por exemplo o IPHAN no Brasil (usando as coordenadas\
+      \ informadas no [SICG]) ou a DGMN em Portugal (usando as coordenadas informadas\
+      \ no [SIPA]).\nCaso n\xE3o haja georreferenciamento oficial, usar uma planta\
+      \ cadastral municipal georreferenciada ou, na falta desta, o [Global Building\
+      \ Atlas]. Nesses casos, para se obter as coordenadas de georreferenciamento,\
+      \ \xE9 preciso usar um Sistema de Informa\xE7\xF5es Geogr\xE1ficas da sua prefer\xEA\
+      ncia.\nComo exemplo, no [QGIS], isso pode ser feito seguindo as instru\xE7\xF5\
+      es abaixo\u2009:\n1. Sempre projetar o mapa usando EPSG:4326 (WGS84)\u2009;\n\
+      2. Selecionar o pol\xEDgono da edifica\xE7\xE3o na camada da planta cadastral\
+      \ ou\n   do Global Building Atlas\u2009;\n\n3. Rodar o comando do menu `Vector\
+      \ > Geometry Tools > Centroids` para\n  obter as coordenadas do ponto (`location`)\
+      \ \u2014 ele vai criar uma camada\n  tempor\xE1ria com o ponto no centr\xF3\
+      ide do pol\xEDgono selecionado\u2009;\n\n4. Usar novamente a ferramenta `Get\
+      \ WKT` para visualizar as coordenadas,\n  copiar os valores e colar na ficha\
+      \ com o grau de precis\xE3o (casas\n  decimais) desejado.\n"
+    from_schema: https://tradicional.arq.br/schema/place
+    slots:
+    - srs_name
+    - source
+    - bibliographic_citation
+    - geographicPoint__lat
+    - geographicPoint__lon
+    - geographicPoint__alt
+    - geographicPoint__zoom
+    attributes:
+      lat:
+        name: lat
+        description: 'Latitude em graus decimais (separador decimal: ponto).'
+        range: Latitude
+        required: true
+      lon:
+        name: lon
+        description: 'Longitude em graus decimais (separador decimal: ponto).'
+        range: Longitude
+        required: true
+      alt:
+        name: alt
+        description: 'Altitude em metros (separador decimal: ponto)'
+        range: float
+        minimum_value: -1000
+        maximum_value: 10000
+      zoom:
+        name: zoom
+        description: "Usado para visualizar o mapa mais de longe se a precis\xE3o\
+          \ das coordenadas for baixa.\n"
+        ifabsent: integer(13)
+        range: integer
+        minimum_value: 0
+        maximum_value: 18
+    class_uri: wasth:GeographicPoint
+  GeographicExtent:
+    name: GeographicExtent
+    definition_uri: https://tradicional.arq.br/schema/GeographicExtent
+    description: "Coordenadas do pol\xEDgono que define o s\xEDtio.\n"
+    from_schema: https://tradicional.arq.br/schema/place
+    slots:
+    - srs_name
+    - source
+    - bibliographic_citation
+    - geographicExtent__geometry_type
+    - geographicExtent__coordinates
+    attributes:
+      geometry_type:
+        name: geometry_type
+        description: Tipo da geometria descrita pelas coordenadas.
+        alias: type
+        range: GeometryType
+        required: true
+      coordinates:
+        name: coordinates
+        description: "No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas\
+          \ do pol\xEDgono (`extent`) com a op\xE7\xE3o `Get JSON` \u2014 copiar apenas\
+          \ os colchetes `[[[ ]]]` e os valores num\xE9ricos dentro deles.\n"
+        range: GeoJSONCoordinateArray
+        required: true
+    class_uri: wasth:GeographicExtent
   BibliographicCitation:
     name: BibliographicCitation
     definition_uri: https://tradicional.arq.br/schema/BibliographicCitation
-    description: Bibliographic or documentary citation using a CSL citekey.
+    description: "Cadastro de uma refer\xEAncia bibliogr\xE1fica.\nUsar o campo `description`\
+      \ para formatar a refer\xEAncia, caso a formata\xE7\xE3o autom\xE1tica do Zotero\
+      \ n\xE3o for satisfat\xF3ria.\n"
     from_schema: https://tradicional.arq.br/schema/resource
+    exact_mappings:
+    - dcterms:BibliographicCitation
+    close_mappings:
+    - crm:E31_Document
+    - schema:CreativeWork
     slots:
     - description
-    - bibliographicCitation__citation_refid
+    - bibliographicCitation__refid
     - bibliographicCitation__note
     attributes:
-      citation_refid:
-        name: citation_refid
-        alias: refid
+      refid:
+        name: refid
+        description: "Se a fonte for cadastrada, o campo `refid` deve conter a chave\
+          \ de cita\xE7\xE3o (`citation key`) que consta do registro bibliogr\xE1\
+          fico na biblioteca do nosso projeto de pesquisa no [Zotero]. Em geral, a\
+          \ chave de cita\xE7\xE3o \xE9 o DOI ou ISBN da publica\xE7\xE3o, mas pode\
+          \ ser diferente.\n"
         range: CslCitekey
         required: true
       note:
         name: note
+        description: "Se necess\xE1rio, incluir no campo `note` uma especifica\xE7\
+          \xE3o adicional, como o n\xFAmero da p\xE1gina da refer\xEAncia bibliogr\xE1\
+          fica de onde a informa\xE7\xE3o foi extra\xEDda.\n"
         range: string
-    class_uri: wasth:BibliographicCitation
+    class_uri: dcterms:BibliographicCitation
   RelatedObject:
     name: RelatedObject
     definition_uri: https://tradicional.arq.br/schema/RelatedObject
@@ -3142,18 +3482,18 @@ classes:
       \ drawing / has design / has sketch: Essas rela\xE7\xF5es se\n    referem a\
       \ desenhos hist\xF3ricos (fontes prim\xE1rias) que atestam o\n    processo de\
       \ projeto da edifica\xE7\xE3o.\n\nATEN\xC7\xC3O : OS DESENHOS PRODUZIDOS POR\
-      \ ESTE PROJETO DE PESQUISA DEVEM SER\nCADASTRADOS NO GRUPO resource, MAIS ABAIXO.\n\
-      \nO grupo relation \xE9 destinado unicamente a cadastrar rela\xE7\xF5es desta\n\
-      edifica\xE7\xE3o com objetos aut\xF4nomos, tais como outras edifica\xE7\xF5\
-      es, conjuntos\nurbanos, obras de artes visuais, refer\xEAncias bibliogr\xE1\
-      ficas ou acervos\narquiv\xEDsticos.\n"
+      \ ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO resource, MAIS ABAIXO.\n\
+      O grupo relation \xE9 destinado unicamente a cadastrar rela\xE7\xF5es desta\
+      \ edifica\xE7\xE3o com objetos aut\xF4nomos, tais como outras edifica\xE7\xF5\
+      es, conjuntos urbanos, obras de artes visuais, refer\xEAncias bibliogr\xE1ficas\
+      \ ou acervos arquiv\xEDsticos.\n"
     from_schema: https://tradicional.arq.br/schema/resource
     slots:
     - description
     - relation_type
     - related_object
     - object_type
-    - resource
+    - resources
     - media
     - source
     - bibliographic_citation
@@ -3169,7 +3509,7 @@ classes:
     - description
     - relation_type
     - object_type
-    - resource
+    - resources
     - media
     - source
     - bibliographic_citation
@@ -3182,30 +3522,78 @@ classes:
   Resource:
     name: Resource
     definition_uri: https://tradicional.arq.br/schema/Resource
-    description: Digital or documentary resource associated with a Work.
+    description: "This class comprises identifiable immaterial items that make propositions\
+      \ about reality.\nThese propositions may be expressed in text, graphics, images,\
+      \ audiograms, videograms, or by other similar means. Documentation databases\
+      \ are regarded as instances of E31 Document. This class should not be confused\
+      \ with the concept \u201Cdocument\u201D in Information Technology, which is\
+      \ compatible with E73 Information Object.\n"
     from_schema: https://tradicional.arq.br/schema/resource
+    exact_mappings:
+    - crm:E31_Document
+    - schema:ArchiveComponent
+    is_a: Thing
     slots:
-    - resource_id
-    - resource_author
-    - resource_date
+    - Thing_description
+    - title_type
+    - bibliographic_citation
+    - content
+    - thing__id
+    - thing__author
+    - thing__record_date
+    - thing__title
+    - thing__title_source
+    - thing__alt_name
+    - thing__category
+    - thing__identifiers
+    - thing__tags
+    - thing__temporal
+    - thing__collection
+    - thing__repositories
+    - thing__record_rights
     - relation_type
     - preview_image
     - provided_image
     - provided_3d
     - resource_service
-    - perspective
-    - resource_unit
-    - description
-    - source
-    - bibliographic_citation
+    - unit
     - credit
-    - rights
-    class_uri: wasth:Resource
-  Media:
-    name: Media
-    definition_uri: https://tradicional.arq.br/schema/Media
-    description: "Descri\xE7\xE3o e refer\xEAncia a um \xFAnico arquivo de m\xEDdia."
+    - resource__scale
+    - resource__perspective
+    attributes:
+      scale:
+        name: scale
+        description: "N\xFAmero inverso da escala da imagem, se ela tiver uma resolu\xE7\
+          \xE3o ou tamanho de p\xE1gina definidos. Por exemplo, para um desenho na\
+          \ escala 1\u2009:\u2009100, `scale: 100`."
+        alias: scale
+        range: float
+        minimum_value: 0
+      perspective:
+        name: perspective
+        description: "Tipo de vista do desenho. Usar a numera\xE7\xE3o da ISO\u2009\
+          19650\u20132\u2009:\n\n  - 0 = geral\n  - 1 = planta baixa (padr\xE3o, pode\
+          \ ser omitido)\n  - 2 = eleva\xE7\xE3o\n  - 3 = corte\n  - 4 = mapa de elementos\n\
+          \  - 5 = detalhe\n  - 6 = mapa de revestimentos\n  - 7 = planta de forro\n\
+          \  - 8 = vista ou modelo 3D\n  - 9 = definido pelo agente\n"
+        ifabsent: integer(1)
+        range: integer
+        minimum_value: 0
+        maximum_value: 9
+    class_uri: crm:E31_Document
+  MediaObject:
+    name: MediaObject
+    definition_uri: https://tradicional.arq.br/schema/MediaObject
+    description: "Descri\xE7\xE3o e refer\xEAncia a um \xFAnico arquivo de m\xEDdia.\n\
+      Obrigatoriamente deve conter uma URI.\nNo caso de `preview_image` ou `provided_image`,\
+      \ o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se\
+      \ tratando de `provided_3d` ou `service`, o link deve remeter a uma p\xE1gina\
+      \ web que forne\xE7a a respetiva API ou as informa\xE7\xF5es acerca do modelo.\n\
+      (A FAZER) Ver [Instru\xE7\xF5es para carregar imagens e desenhos].\n"
     from_schema: https://tradicional.arq.br/schema/resource
+    exact_mappings:
+    - schema:MediaObject
+    - dctypes:Image
     slots:
     - format
     - preview_image
@@ -3219,7 +3607,7 @@ classes:
     - bibliographic_citation
     - credit
     - rights
-    class_uri: wasth:Media
+    class_uri: schema:MediaObject
   TypedReference:
     name: TypedReference
     definition_uri: https://tradicional.arq.br/schema/TypedReference
@@ -3232,87 +3620,109 @@ classes:
     - bibliographic_citation
     - source
     class_uri: wasth:TypedReference
-  Measurements:
-    name: Measurements
-    definition_uri: https://tradicional.arq.br/schema/Measurements
-    description: "O campo `description` permite uma representa\xE7\xE3o textual das\
-      \ medidas da\nedifica\xE7\xE3o, caso n\xE3o seja poss\xEDvel cadastrar medidas\
-      \ individuais com\nprecis\xE3o, ou seja preciso maior flexibilidade para explicar\
-      \ as dimens\xF5es.\n\nO campo `measurements` admite uma lista de medidas com\
-      \ os campos\u2009:\n\n* `type` (obrigat\xF3rio) designa a natureza da medida\u2009\
-      : largura, altura,\n  \xE1rea, etc. \u2014 usar um dos [tipos de dimens\xF5\
-      es](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300226820)\n\
-      \  do Art and Architecture Thesaurus do Instituto Getty (AAT)\u2009;\n* `value`\
-      \ (obrigat\xF3rio) valor num\xE9rico, usar ponto como separador decimal\u2009\
-      ;\n* `unit` (obrigat\xF3rio) uma `uri` remetendo a uma unidade na\n  [hierarquia\
-      \ de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096)\n\
-      \  do AAT, ou do nosso pr\xF3prio [vocabul\xE1rio controlado]\u2009;\n* `extent`\
-      \ (opcional) indica a parte do objeto que est\xE1 sendo medida \u2014 por\n\
-      \  exemplo, se a altura \xE9 at\xE9 a linha de coroamento ou at\xE9 a cumeeira,\
-      \ etc. \u2014\n  usar a `uri` de um vocabul\xE1rio controlado\u2009;\n* `qualifier`\
-      \ (opcional) indica que as medidas s\xE3o aproximadas\u2009: usar um\n  [qualificador\
-      \ do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720)\u2009\
-      ;\n* `shape` (opcional) caso relevante, indicar a forma do elemento medido\n\
-      \  usando a [lista de formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273)\u2009\
-      ;\n"
+  Measurement:
+    name: Measurement
+    definition_uri: https://tradicional.arq.br/schema/Measurement
+    description: "This class comprises actions measuring physical properties and other\
+      \ values that can be determined by a systematic, objective procedure of direct\
+      \ observation of particular states of physical reality.\nAn instance of E16\
+      \ Measurement may use simple counting or tools, such as yardsticks or radiation\
+      \ detection devices. The interest is in the method and care applied, so that\
+      \ the reliability of the result may be judged at a later stage, or research\
+      \ continued on the associated documents. The date of the event is important\
+      \ for dimensions, which may change value over time, such as the length of an\
+      \ object subject to shrinkage. Methods and devices employed should be associated\
+      \ with instances of E16 Measurement by properties such as: *P33 used specific\
+      \ technique*: E29 Design or Procedure, *P125 used object of type*: E55 Type,\
+      \ *P16 used specific object (was used for)*: E70 Thing, whereas basic techniques\
+      \ such as \"carbon-14 dating\" should be encoded using *P2 has type (is type\
+      \ of)*: E55 Type. Details of methods and devices reused or reusable in other\
+      \ instances of E16 Measurement should be documented for these entities rather\
+      \ than the measurements themselves, whereas details of particular execution\
+      \ may be documented by free text or by instantiating adequate sub-activities,\
+      \ if the detail may be of interest for an overarching query.\nRegardless whether\
+      \ a measurement is made by an instrument or by human senses, it represents the\
+      \ initial transition from physical reality to information without any other\
+      \ documented information object in between within the reasoning chain that would\
+      \ represent the result of the interaction of the observer or device with reality.\
+      \ Therefore, determining properties of an instance of E90 Symbolic Object is\
+      \ regarded as an instance of E13 Attribute Assignment, which may be inferred\
+      \ from observing and measuring representative carriers. In the case that the\
+      \ carrier can be named, the property *P16 used specific object (was used for)*\
+      \ should be used to indicate the instance(s) of E18 Physical Thing that was\
+      \ used as the empirical basis for the attribute assignment. For instance, inferring\
+      \ properties of depicted items using image material, such as satellite images,\
+      \ is not regarded as an instance of E16 Measurement, but as a subsequent instance\
+      \ of E13 Attribute Assignment. Rather, only the production of the images, understood\
+      \ as arrays of radiation intensities, is regarded as an instance of E16 Measurement.\
+      \ The same reasoning holds for other sensor data.\nO campo `description` permite\
+      \ uma representa\xE7\xE3o textual das medidas da edifica\xE7\xE3o, caso n\xE3\
+      o seja poss\xEDvel cadastrar medidas individuais com precis\xE3o, ou seja preciso\
+      \ maior flexibilidade para explicar as dimens\xF5es.\n"
     from_schema: https://tradicional.arq.br/schema/shared
+    exact_mappings:
+    - crm:E16_Measurement
+    close_mappings:
+    - dcterms:format
     slots:
     - description
     - format_extent
     - bibliographic_citation
-    - measurements__type
-    - measurements__value
-    - measurements__unit
-    - measurements__qualifier
-    - measurements__shape
-    - measurements__scale
+    - unit
+    - measurement__type
+    - measurement__value
+    - measurement__qualifier
+    - measurement__shape
     attributes:
       type:
         name: type
+        description: "designa a natureza da medida\u2009: largura, altura, \xE1rea,\
+          \ etc. \u2014 usar um dos [tipos de dimens\xF5es ](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300226820)\
+          \ do Art and Architecture Thesaurus do Instituto Getty (AAT).\n"
         ifabsent: MeasurementType(proper)
         range: MeasurementType
       value:
         name: value
+        description: "Valor num\xE9rico, usar ponto como separador decimal."
         alias: value
         range: float
         required: true
         minimum_value: 0
-      unit:
-        name: unit
-        alias: unit
-        range: TypedReference
-        required: true
-        inlined: true
       qualifier:
         name: qualifier
+        description: "Indica que as medidas s\xE3o aproximadas\u2009: usar um [qualificador\
+          \ do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720)\u2009\
+          ;\n"
         alias: qualifier
         range: string
       shape:
         name: shape
+        description: 'caso relevante, indicar a forma do elemento medido usando a
+          [lista de formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273).
+
+          '
         alias: shape
         range: string
-      scale:
-        name: scale
-        alias: scale
-        range: float
-        minimum_value: 0
-    class_uri: wasth:Measurements
+    class_uri: crm:E16_Measurement
   MaterialTech:
     name: MaterialTech
     definition_uri: https://tradicional.arq.br/schema/MaterialTech
     description: "Usar discernimento para identificar sistemas, materiais e t\xE9\
-      cnicas que\ninteressam ao conhecimento da edifica\xE7\xE3o no seu conjunto,\
-      \ n\xE3o a partes\nmenos extensas ou pouco importantes.\n"
+      cnicas que interessam ao conhecimento da edifica\xE7\xE3o no seu conjunto, n\xE3\
+      o a partes menos extensas ou pouco importantes.\n"
     from_schema: https://tradicional.arq.br/schema/shared
     is_a: ConceptReference
     slots:
     - description
-    - name
     - bibliographic_citation
+    - conceptReference__name
     - materialTech__material_tech_type
     attributes:
       material_tech_type:
         name: material_tech_type
+        description: "Tipo da refer\xEAncia a um material ou t\xE9cnica usado na obra:\
+          \ material de constru\xE7\xE3o (support), revestimento (medium), t\xE9cnica,\
+          \ instrumento, cor, etc.\n"
         alias: type
         range: MaterialTechType
         required: true
@@ -3320,22 +3730,80 @@ classes:
   Right:
     name: Right
     definition_uri: https://tradicional.arq.br/schema/Right
-    description: Rights statement associated with a record, resource, or note.
+    description: "* Preencher `earliest_date` com a data de in\xEDcio da vig\xEAncia\
+      \ dos direitos ou a data do preenchimento da ficha. * `latest_date` pode ser\
+      \ omitido se n\xE3o houver fim da vig\xEAncia. * `holder` pode ser omitido se\
+      \ a obra estiver no dom\xEDnio p\xFAblico.\n"
     from_schema: https://tradicional.arq.br/schema/shared
+    exact_mappings:
+    - dcterms:rights
     slots:
-    - right_concept
-    - right_type
-    - right_temporal
-    - right_holder
-    class_uri: wasth:Right
+    - right__concept
+    - right__type
+    - right__temporal
+    - right__holder
+    attributes:
+      concept:
+        name: concept
+        description: 'Qualifies the kind of rights type, whether it refers to a generic
+          kind of right, like copyright or performance rights, or is a specific rights
+          or license statement, for instance, Rights Statements or Creative Commons
+          Licenses.
+
+          '
+        range: RightsType
+        required: true
+      type:
+        name: type
+        description: "An index element for rights information being recorded. This\
+          \ can refer to a generic kind of right, such as copyright or a related right,\
+          \ but also be a specific rights or license statement like a standardized\
+          \ statement on copyright, usage, or access rights.\nPor padr\xE3o, as casas\
+          \ tradicionais pertencem ao dom\xEDnio p\xFAblico at\xE9 prova em contr\xE1\
+          rio. Essa informa\xE7\xE3o e a declara\xE7\xE3o de direitos NKC (Sem direito\
+          \ autoral conhecido) N\xC3O PODE ser omitida da ficha. Para o dom\xEDnio\
+          \ p\xFAblico, indicar a refer\xEAncia: <https://rightsstatements.org/vocab/NKC/1.0/>.\n"
+        range: TypedReference
+        required: true
+        inlined: true
+      temporal:
+        name: temporal
+        description: Date on which a right is or was current.
+        alias: temporal
+        range: EventDate
+        inlined: true
+      holder:
+        name: holder
+        description: 'A set of elements identifying the person or the group of persons
+          holding the rights referenced in Rights Type. Often refers to copyright
+          and related rights, such as the right to reproduce, distribute, exhibit
+          or use the entity in focus, for example, the object/work, resource or metadata
+          record.
+
+          '
+        alias: holder
+        range: LegalBody
+        inlined: true
+    class_uri: dcterms:rights
   LegalBody:
     name: LegalBody
     definition_uri: https://tradicional.arq.br/schema/LegalBody
     description: Personal, corporate, family, or other responsible body.
     from_schema: https://tradicional.arq.br/schema/shared
     slots:
-    - legal_body_type
-    - legal_body_name
+    - legalBody__type
+    - legalBody__name
+    attributes:
+      type:
+        name: type
+        ifabsent: string(corporate)
+        alias: type
+        range: RepositoryType
+      name:
+        name: name
+        alias: name
+        range: TypedReference
+        inlined: true
     class_uri: wasth:LegalBody
   Header:
     name: Header
@@ -3347,114 +3815,59 @@ classes:
     - overlay_image
     - caption
     class_uri: wasth:Header
-  SpatialCoverage:
-    name: SpatialCoverage
-    definition_uri: https://tradicional.arq.br/schema/SpatialCoverage
-    description: Current, former, intended, and other spatial associations.
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slots:
-    - site
-    - former_site
-    - intended_site
-    - other_site
-    class_uri: wasth:SpatialCoverage
-  Site:
-    name: Site
-    definition_uri: https://tradicional.arq.br/schema/Site
-    description: A place associated with a Work.
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slots:
-    - description
-    - site_name
-    - location
-    - extent
-    - source
-    - bibliographic_citation
-    - zoom
-    class_uri: wasth:Site
-  GeographicPoint:
-    name: GeographicPoint
-    definition_uri: https://tradicional.arq.br/schema/GeographicPoint
-    description: WGS84 geographic point.
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slots:
-    - lat
-    - lon
-    - alt
-    - srs_name
-    - source
-    class_uri: wasth:GeographicPoint
-  GeographicExtent:
-    name: GeographicExtent
-    definition_uri: https://tradicional.arq.br/schema/GeographicExtent
-    description: Geographic geometry, normally exported as GeoJSON.
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slots:
-    - geometry_type
-    - coordinates
-    - srs_name
-    - source
-    class_uri: wasth:GeographicExtent
-  HistoricPlace:
-    name: HistoricPlace
-    definition_uri: https://tradicional.arq.br/schema/HistoricPlace
-    description: Historical geographic or administrative context.
-    from_schema: https://tradicional.arq.br/schema/spatial
-    slots:
-    - historic_place_type
-    - historic_place_name
-    class_uri: wasth:HistoricPlace
   Event:
     name: Event
     definition_uri: https://tradicional.arq.br/schema/Event
     description: "This class comprises distinct, delimited and coherent processes\
-      \ and\ninteractions of a material nature, in cultural, social or physical\n\
-      systems, involving and affecting instances of E77 Persistent Item in a\nway\
-      \ characteristic of the kind of process. Typical examples are meetings,\nbirths,\
-      \ deaths, actions of decision taking, making or inventing things,\nbut also\
-      \ more complex and extended ones such as conferences, elections,\nbuilding of\
-      \ a castle, or battles.\n\nWhile the continuous growth of a tree lacks the limits\
-      \ characteristic of\nan event, its germination from a seed does qualify as an\
-      \ event.\nSimilarly, the blowing of the wind lacks the distinctness and limits\
-      \ of\nan event, but a hurricane, flood or earthquake would qualify as an event.\n\
-      Mental processes are considered as events, in cases where they are\nconnected\
-      \ with the material externalization of their results; for\nexample, the creation\
-      \ of a poem, a performance or a change of intention\nthat becomes obvious from\
-      \ subsequent actions or declarations.\n\nThe effects of an instance of E5 Event\
-      \ may not lead to relevant permanent\nchanges of properties or relations of\
-      \ the items involved in it, for\nexample an unrecorded performance. Of course,\
-      \ in order to be documented,\nsome kind of evidence for an event must exist,\
-      \ be it witnesses, traces or\nproducts of the event.\n\nWhile instances of E4\
-      \ Period always require some form of coherence\nbetween its constituent phenomena,\
-      \ in addition, the essential\nconstituents of instances of E5 Event should contribute\
-      \ to an overall\neffect; for example, the statements made during a meeting and\
-      \ the\nlistening of the audience.\n\nViewed at a coarse level of detail, an\
-      \ instance of E5 Event may appear as\nif it had an \u2018instantaneous\u2019\
-      \ overall effect, but any process or\ninteraction of material nature in reality\
-      \ have an extent in time and\nspace. At a fine level, instances of E5 Event\
-      \ may be analysed into\ncomponent phenomena and phases within a space and timeframe,\
-      \ and as such\ncan be seen as a period, regardless of the size of the phenomena.\
-      \ The\nreverse is not necessarily the case: not all instances of E4 Period give\n\
-      rise to a noteworthy overall effect and are thus not instances of E5\nEvent.\n"
+      \ and interactions of a material nature, in cultural, social or physical systems,\
+      \ involving and affecting instances of E77 Persistent Item in a way characteristic\
+      \ of the kind of process. Typical examples are meetings, births, deaths, actions\
+      \ of decision taking, making or inventing things, but also more complex and\
+      \ extended ones such as conferences, elections, building of a castle, or battles.\n\
+      While the continuous growth of a tree lacks the limits characteristic of an\
+      \ event, its germination from a seed does qualify as an event. Similarly, the\
+      \ blowing of the wind lacks the distinctness and limits of an event, but a hurricane,\
+      \ flood or earthquake would qualify as an event. Mental processes are considered\
+      \ as events, in cases where they are connected with the material externalization\
+      \ of their results; for example, the creation of a poem, a performance or a\
+      \ change of intention that becomes obvious from subsequent actions or declarations.\n\
+      The effects of an instance of E5 Event may not lead to relevant permanent changes\
+      \ of properties or relations of the items involved in it, for example an unrecorded\
+      \ performance. Of course, in order to be documented, some kind of evidence for\
+      \ an event must exist, be it witnesses, traces or products of the event.\nWhile\
+      \ instances of E4 Period always require some form of coherence between its constituent\
+      \ phenomena, in addition, the essential constituents of instances of E5 Event\
+      \ should contribute to an overall effect; for example, the statements made during\
+      \ a meeting and the listening of the audience.\nViewed at a coarse level of\
+      \ detail, an instance of E5 Event may appear as if it had an \u2018instantaneous\u2019\
+      \ overall effect, but any process or interaction of material nature in reality\
+      \ have an extent in time and space. At a fine level, instances of E5 Event may\
+      \ be analysed into component phenomena and phases within a space and timeframe,\
+      \ and as such can be seen as a period, regardless of the size of the phenomena.\
+      \ The reverse is not necessarily the case: not all instances of E4 Period give\
+      \ rise to a noteworthy overall effect and are thus not instances of E5 Event.\n"
     from_schema: https://tradicional.arq.br/schema/temporal
+    exact_mappings:
+    - crm:E5_Event
+    - schema:Event
     is_a: Thing
     slots:
     - Thing_description
-    - record_rights
-    - alt_name
     - bibliographic_citation
-    - identifiers
-    - tags
-    - temporal
-    - repository
-    - collection
     - content
     - thing__id
     - thing__author
     - thing__record_date
     - thing__title
     - thing__title_source
+    - thing__alt_name
     - thing__category
+    - thing__identifiers
+    - thing__tags
+    - thing__temporal
+    - thing__collection
+    - thing__repositories
+    - thing__record_rights
     - measurements
     - material
     - technique
@@ -3477,43 +3890,46 @@ classes:
         required: true
       actor_role:
         name: actor_role
+        description: "Identifica\xE7\xE3o de um agente e do seu papel no evento."
         range: Actor
         multivalued: true
         inlined_as_list: true
       event_date:
         name: event_date
+        description: Conjunto de datas em que decorreu o evento.
         range: EventDate
         required: true
         inlined: true
       start_date:
         name: start_date
+        description: 'Data inicial do evento ou mais antiga data presumida para o
+          seu decurso.
+
+          '
         alias: start_date
         range: EventDate
         inlined: true
       end_date:
         name: end_date
+        description: 'Data final do evento ou mais tardia data presumida para o seu
+          decurso.
+
+          '
         alias: end_date
         range: EventDate
         inlined: true
       style_period:
         name: style_period
         description: 'An index element for the period in which the event happened,
+          comprising information about geologic time scale, archaelogical, historical,
+          or artistic period, style, or art movement, whose characteristics are represented
+          by the object or work.
 
-          comprising information about geologic time scale, archaelogical,
+          Note that "Period/Style" corresponds to "Style" in CDWA as shorthand for
+          [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
 
-          historical, or artistic period, style, or art movement, whose
-
-          characteristics are represented by the object or work.
-
-
-          Note that "Period/Style" corresponds to "Style" in CDWA as shorthand
-
-          for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
-
-
-          Examples may be Neolithic for a period, Impressionist for a style, or
-
-          Cubism for a movement.
+          Examples may be Neolithic for a period, Impressionist for a style, or Cubism
+          for a movement.
 
           '
         range: StylePeriod
@@ -3555,7 +3971,7 @@ classes:
           event in focus, indicating the type of relationship where applicable.
         range: RelatedEvent
         multivalued: true
-    class_uri: wasth:Event
+    class_uri: crm:E5_Event
   Actor:
     name: Actor
     definition_uri: https://tradicional.arq.br/schema/Actor
@@ -3571,27 +3987,26 @@ classes:
     attributes:
       actor_type:
         name: actor_type
+        description: "Define se o agente \xE9 uma pessoa, uma organiza\xE7\xE3o ou\
+          \ corpora\xE7\xE3o, uma oficina, uma fam\xEDlia, etc.\n"
         ifabsent: AgentType(personal)
         alias: type
         range: AgentType
       actor_name:
         name: actor_name
+        description: "Nome do agente extra\xEDdo de um vocabul\xE1rio controlado."
         alias: name
         range: TypedReference
         inlined: true
       role_in_event:
         name: role_in_event
+        description: "A\xE7\xE3o desempenhada pelo agente no evento."
         range: RoleType
       actor_qualifier:
         name: actor_qualifier
         description: 'For the Attribution Qualifier Actor element choose a concept
-          URI from
-
-          the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264)
-
-          of the Art & Architecture Thesaurus, or another linked open
-
-          vocabulary.
+          URI from the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264)
+          of the Art & Architecture Thesaurus, or another linked open vocabulary.
 
           '
         alias: qualifier
@@ -3600,6 +4015,7 @@ classes:
         inlined_as_list: true
       actor_extent:
         name: actor_extent
+        description: Parte da obra sobre a qual o agente interveio.
         alias: extent
         range: TypedReference
         multivalued: true
@@ -3609,16 +4025,11 @@ classes:
     name: EventDate
     definition_uri: https://tradicional.arq.br/schema/EventDate
     description: 'A wrapper for the expression of a date by providing a set of years
-      as
-
-      earliest and latest date delimiting the respective span of time, usually
-
+      as earliest and latest date delimiting the respective span of time, usually
       given in the proleptic Gregorian calendar.
 
-
-      If it is an exact date, possibly with time, repeat the same date (and
-
-      time) in Earliest Date and Latest Date elements.
+      If it is an exact date, possibly with time, repeat the same date (and time)
+      in Earliest Date and Latest Date elements.
 
       '
     from_schema: https://tradicional.arq.br/schema/temporal
@@ -3629,9 +4040,19 @@ classes:
     attributes:
       earliest_date:
         name: earliest_date
+        description: 'An index element for the expression of an exact or estimated
+          date, for instance a year or calendar date, that delimits the beginning
+          of a date span.
+
+          '
         range: DateRange
       latest_date:
         name: latest_date
+        description: 'An index element for the expression of the exact or approximate
+          date, for instance a year or calendar date, that delimits the end of a date
+          span.
+
+          '
         range: DateRange
     class_uri: wasth:EventDate
   DateRange:
@@ -3644,11 +4065,18 @@ classes:
     attributes:
       date_type:
         name: date_type
+        description: 'An attribute for the kind of latest date, whether it is, for
+          instance, exact or estimated.
+
+          '
         alias: type
         range: DateQualifier
         required: true
       date_value:
         name: date_value
+        description: "Usar o formato ISO-8601 (por exemplo, 2026-03-17). Para datas\
+          \ imprecisas, usar o primeiro dia, m\xEAs ou ano do per\xEDodo delimitado,\
+          \ e descrever verbalmente o per\xEDodo no campo `description`.\n"
         range: date
     class_uri: wasth:DateRange
   StylePeriod:
@@ -3658,14 +4086,14 @@ classes:
     is_a: ConceptReference
     slots:
     - description
-    - name
     - bibliographic_citation
+    - conceptReference__name
     - stylePeriod__type
     attributes:
       type:
         name: type
-        ifabsent: PeriodNameType(lido:lido00731)
         range: PeriodNameType
+        required: true
     class_uri: wasth:StylePeriod
   EventPlace:
     name: EventPlace
@@ -3681,6 +4109,8 @@ classes:
         range: EventPlaceType
       places:
         name: places
+        description: "Lugares associados ao evento, sem incluir o pr\xF3prio local\
+          \ no qual se situa a edifica\xE7\xE3o.\n"
         alias: places
         range: Site
         multivalued: true
@@ -3705,55 +4135,37 @@ classes:
   Thing:
     name: Thing
     definition_uri: https://tradicional.arq.br/schema/Thing
-    description: 'This class comprises all things in the universe of discourse of
-      the CIDOC
-
-      Conceptual Reference Model.
-
-
-      It is an abstract concept providing for three general properties:
-
-
-      - Identification by name or appellation, and in particular by a preferred
-
-      identifier
-
-
-      - Classification by type, allowing further refinement of the specific
-
-      subclass to which an instance belongs
-
-
-      - Attachment of free text and other unstructured data for the expression
-
-      of anything not captured by formal properties
-
-
-      All other classes within the CIDOC CRM are directly or indirectly
-
-      specialisations of E1 CRM Entity.
-
-      '
+    description: "This class comprises all things in the universe of discourse of\
+      \ the CIDOC Conceptual Reference Model.\nIt is an abstract concept providing\
+      \ for three general properties:\n- Identification by name or appellation, and\
+      \ in particular by a preferred\n  identifier.\n\n- Classification by type, allowing\
+      \ further refinement of the specific\n  subclass to which an instance belongs.\n\
+      \n- Attachment of free text and other unstructured data for the expression\n\
+      \  of anything not captured by formal properties.\n\nAll other classes within\
+      \ the CIDOC CRM are directly or indirectly specialisations of E1 CRM Entity.\n"
     from_schema: https://tradicional.arq.br/schema/thing
+    exact_mappings:
+    - crm:E1_CRM_Entity
+    - schema:Thing
     abstract: true
     slots:
     - Thing_description
-    - record_rights
     - title_type
-    - alt_name
     - bibliographic_citation
-    - identifiers
-    - tags
-    - temporal
-    - repository
-    - collection
     - content
     - thing__id
     - thing__author
     - thing__record_date
     - thing__title
     - thing__title_source
+    - thing__alt_name
     - thing__category
+    - thing__identifiers
+    - thing__tags
+    - thing__temporal
+    - thing__collection
+    - thing__repositories
+    - thing__record_rights
     slot_usage:
       description:
         name: description
@@ -3778,6 +4190,8 @@ classes:
       title:
         name: title
         description: The preferred human-readable label for a Thing.
+        exact_mappings:
+        - schema:name
         slot_uri: dcterms:title
         range: string
         required: true
@@ -3797,17 +4211,76 @@ classes:
         range: BibliographicCitation
         multivalued: true
         inlined_as_list: true
+      alt_name:
+        name: alt_name
+        description: "O bloco `alt_name` permite cadastrar outros nomes pelos quais\
+          \ a edifica\xE7\xE3o ser\xE1 eventualmente conhecida. \xC9 uma lista opcional\
+          \ de itens, e se existir, os campos de cada item da lista devem ser preenchidos\
+          \ como os do t\xEDtulo principal.\nO campo `description` de cada item cont\xE9\
+          m o texto do t\xEDtulo (nome).\nEste bloco pode ser omitido por completo\
+          \ se n\xE3o houver t\xEDtulos alternativos.\n"
+        range: Appellation
+        multivalued: true
+        inlined_as_list: true
       category:
         name: category
         description: 'The LIDO Category Vocabulary is a structured controlled list
           of terms recommended to use as values in the LIDO Category element.
 
           Examples are human-made object or natural object.'
-        slot_uri: lido:lidoCategory
-        ifabsent: string(lido:lido00096)
+        slot_uri: term:lidoCategory
         designates_type: true
         range: uriorcurie
-    class_uri: wasth:Thing
+        required: true
+      identifiers:
+        name: identifiers
+        description: Published or external identifiers for the object.
+        range: TypedReference
+        multivalued: true
+        inlined_as_list: true
+      tags:
+        name: tags
+        description: Provisional uncontrolled keywords. Prefer `classifications` or
+          `subject` for curated vocabulary terms.
+        range: string
+        multivalued: true
+      temporal:
+        name: temporal
+        description: Temporalidade do objeto.
+        range: Event
+        multivalued: true
+        inlined_as_list: true
+      collection:
+        name: collection
+        description: Collections or aggregations to which the object belongs.
+        range: TypedReference
+        multivalued: true
+        inlined_as_list: true
+      repositories:
+        name: repositories
+        description: "A set of elements for the identification, name and location\
+          \ of the repository that is responsible for the object/work in focus.\n\
+          Repeated if there are several designations known, or if former repositories\
+          \ or geographic places should be listed.\n---------------------------------------------------------------------\n\
+          Nos Document\xE1rios da Arquitetura Tradicional, usamos reposit\xF3rios\
+          \ para indicar a inclus\xE3o da edifica\xE7\xE3o em per\xEDmetros de s\xED\
+          tios do patrim\xF4nio cultural, etc.\nOs reposit\xF3rios devem ser cadastrados\
+          \ de modo semelhante \xE0s informa\xE7\xF5es de georreferenciamento, usando\
+          \ o tipo `other`.\n"
+        range: Repository
+        multivalued: true
+        inlined_as_list: true
+      record_rights:
+        name: record_rights
+        description: "A set of structured information about rights regarding the content\
+          \ provided in this LIDO record.\n---------------------------------------------------------------------\n\
+          :warning: Este grupo se refere aos direitos sobre o CONTE\xDADO da ficha,\
+          \ n\xE3o sobre os direitos incidentes sobre o objeto descrito.\n"
+        range: Right
+        required: true
+        multivalued: true
+        inlined_as_list: true
+    class_uri: crm:E1_CRM_Entity
   Appellation:
     name: Appellation
     definition_uri: https://tradicional.arq.br/schema/Appellation
@@ -3822,92 +4295,97 @@ classes:
         name: title_preference
         description: "Indica se o nome em quest\xE3o deve ser oculto ou n\xE3o, se\
           \ \xE9 uma vers\xE3o alternativa ou uma variante de grafia, etc."
-        ifabsent: string(alternative)
         alias: label_type
         range: LabelType
+        required: true
     class_uri: wasth:Appellation
   Repository:
     name: Repository
     definition_uri: https://tradicional.arq.br/schema/Repository
     description: "Entidade com exist\xEAncia jur\xEDdica e espacial."
     from_schema: https://tradicional.arq.br/schema/thing
+    exact_mappings:
+    - schema:Organization
     is_a: Thing
     slots:
     - Thing_description
-    - record_rights
     - title_type
-    - alt_name
     - bibliographic_citation
-    - identifiers
-    - tags
-    - temporal
-    - repository
-    - collection
     - content
     - thing__id
     - thing__author
     - thing__record_date
     - thing__title
     - thing__title_source
+    - thing__alt_name
     - thing__category
-    - spatial
+    - thing__identifiers
+    - thing__tags
+    - thing__temporal
+    - thing__collection
+    - thing__repositories
+    - thing__record_rights
+    - site
     - legal_body
-    class_uri: wasth:Repository
+    class_uri: schema:Organization
   Work:
     name: Work
     definition_uri: https://tradicional.arq.br/schema/Work
-    description: "CIDOC\u2013CRM E22 HUMAN-MADE OBJECT\n\nThis class comprises all\
-      \ persistent physical objects of any size that are\npurposely created by human\
-      \ activity and have physical boundaries that\nseparate them completely in an\
-      \ objective way from other objects.\n\nThe class also includes all aggregates\
-      \ of objects made for functional\npurposes of whatever kind, independent of\
-      \ physical coherence, such as a\nset of chessmen.\n\nNos Document\xE1rios da\
-      \ Arquitetura Tradicional, esta ficha pode ser usada\npara cadastrar uma edifica\xE7\
-      \xE3o, um conjunto arquitet\xF4nico, ou ainda\numa parte significativa de uma\
-      \ edifica\xE7\xE3o.\n"
+    description: "An historical landmark or building.\nNos Document\xE1rios da Arquitetura\
+      \ Tradicional, esta ficha pode ser usada para cadastrar uma edifica\xE7\xE3\
+      o, um conjunto arquitet\xF4nico, ou ainda uma parte significativa de uma edifica\xE7\
+      \xE3o.\n"
     from_schema: https://tradicional.arq.br/schema/work
-    is_a: Thing
+    exact_mappings:
+    - schema:LandmarksOrHistoricalBuildings
+    close_mappings:
+    - crm:E22_Human-Made_Object
+    rank: 0
+    is_a: Place
     slots:
     - Thing_description
-    - record_rights
-    - title_type
-    - alt_name
     - bibliographic_citation
-    - identifiers
-    - tags
-    - temporal
     - content
     - thing__record_date
     - thing__title
     - thing__title_source
-    - spatial
-    - location_historic
+    - thing__alt_name
+    - thing__identifiers
+    - thing__tags
+    - thing__temporal
+    - thing__repositories
+    - thing__record_rights
+    - place__work_type_function
+    - place__work_type_context
+    - place__part_of
+    - place__former_site
+    - place__intended_site
+    - place__other_site
+    - Place_title_type
     - measurements
     - material
     - technique
-    - repository
     - subject
-    - related_work
-    - resource
+    - related_works
+    - resources
     - media
     - work__work_type_condition
     - work__work_type_form
-    - work__work_type_function
-    - work__work_type_context
     - work__work_type_material_tech
     - work__work_type_subject_type
     - work__work_type_use
-    - work__class_genre
-    - work__class_subject
-    - work__class_local
-    - work__class_special
+    - work__classification_genre
+    - work__classification_subject
+    - work__classification_local
+    - work__classification_special
     - work__inscriptions
+    - work__location_historic
     - work__collection
     - work__work_rights
     - Work_id
     - Work_author
     - Work_category
-    - Work_relation
+    - Work_site
     slot_usage:
       id:
         name: id
@@ -3915,24 +4393,23 @@ classes:
           \ do seu georreferenciamento usando Open Location Code (\"PlusCode\"). Este\
           \ identificador usa o campo `id`, que ser\xE1 gerado automaticamente pelo\
           \ programa WASTH."
-        is_a: thing__id
+        is_a: place__id
         range: OlcPlusCode11
       author:
         name: author
-        is_a: thing__author
+        from_schema: https://tradicional.arq.br/schema
+        slot_uri: wasth:author
+        range: string
         required: true
       category:
         name: category
-        is_a: thing__category
-        ifabsent: string(http://terminology.lido-schema.org/lido00096)
-      relation:
-        name: relation
         from_schema: https://tradicional.arq.br/schema
-        mappings: *id001
-        slot_uri: lido:relatedWorkSet
-        range: RelatedWork
-        inlined: true
-        inlined_as_list: true
+        slot_uri: wasth:category
+        ifabsent: string(http://terminology.lido-schema.org/lido00096)
+        range: string
+      site:
+        name: site
+        required: false
     attributes:
       work_type_condition:
         name: work_type_condition
@@ -3943,7 +4420,7 @@ classes:
           \ and [CIDOC CRM \"E3 Condition State\"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)\n\
           Atende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.htmlhttps://sicg.iphan.gov.br/sicg/manual/manual.html)\
           \ \"estado de preserva\xE7\xE3o\" e \"estado de conserva\xE7\xE3o\"."
-        slot_uri: lido:lido00937
+        slot_uri: term:lido00937
         range: ConceptReference
         recommended: true
         multivalued: true
@@ -3955,36 +4432,7 @@ classes:
           \ by sight, then it is qualified by form.\nBased on [AAT Guidelines \"Types\
           \ of Guide Terms\"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)\n\
           Nos Document\xE1rios da Arquitetura Tradicional, designa uma tipologia formal."
-        slot_uri: lido:lido00766
-        range: ConceptReference
-        recommended: true
-        multivalued: true
-        inlined_as_list: false
-      work_type_function:
-        name: work_type_function
-        description: "Objects that are distinguishable by the particular purpose for\
-          \ which they are designed or used. If an object is identifiable by its intended\
-          \ use, then it is qualified by function.\nBased on [AAT Guidelines \"Types\
-          \ of Guide Terms\"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)\n\
-          Nos Document\xE1rios da Arquitetura Tradicional, designa um dos sete tipos\
-          \ de prop\xF3sitos concebidos por C. William Westfall e Samir Youn\xE9s\
-          \ em *Architectural Type and Character*."
-        slot_uri: lido:lido00767
-        range: ConceptReference
-        recommended: true
-        multivalued: true
-        inlined_as_list: false
-      work_type_context:
-        name: work_type_context
-        description: "Descriptors for objects that are distinguishable by their use\
-          \ or application within a particular physical location. If an object is\
-          \ identifiable by association with specific surroundings, it is qualified\
-          \ by location or context.\nBased on [AAT Guidelines \"Types of Guide Terms\"\
-          ](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)\n\
-          Nos Document\xE1rios da Arquitetura Tradicional, designa a situa\xE7\xE3\
-          o de implanta\xE7\xE3o da edifica\xE7\xE3o, por exemplo se est\xE1 em contexto\
-          \ urbano ou rural, isolada ou em correnteza..."
-        slot_uri: lido:lido00934
+        slot_uri: term:lido00766
         range: ConceptReference
         recommended: true
         multivalued: true
@@ -3997,7 +4445,7 @@ classes:
           \ employed, then it is qualified by material or technique.\nNos Document\xE1\
           rios da Arquitetura Tradicional, refere-se \xE0 caracteriza\xE7\xE3o construtiva\
           \ geral da edifica\xE7\xE3o."
-        slot_uri: lido:lido00789
+        slot_uri: term:lido00789
         range: MaterialTech
         recommended: true
         multivalued: true
@@ -4011,7 +4459,7 @@ classes:
           rios da Arquitetura Tradicional, \xE9 o \xFAnico bloco opcional desta se\xE7\
           \xE3o\u2009: ele indica, se houver, uma classifica\xE7\xE3o iconogr\xE1\
           fica mais espec\xEDfica do que `form` ou `function`."
-        slot_uri: lido:lido00768
+        slot_uri: term:lido00768
         range: ConceptReference
         recommended: true
         multivalued: true
@@ -4025,31 +4473,30 @@ classes:
           rios da Arquitetura Tradicional, designa propriamente a(s) classifica\xE7\
           \xE3o(\xF5es) de usos do solo ou atividades predominante(s) na edifica\xE7\
           \xE3o atualmente."
-        slot_uri: lido:lido00938
+        slot_uri: term:lido00938
         range: ConceptReference
         recommended: true
         multivalued: true
         inlined_as_list: false
-      class_genre:
-        name: class_genre
+      classification_genre:
+        name: classification_genre
         description: "A broad category for grouping objects on the basis of shared\
-          \ intrinsic\ncharacteristics. The relationship between an object/work and\
-          \ the object\ngenre is a generic is-a-relation rather than a membership\
-          \ based on\nascription to a subject group.\n\nNote that the\n[AAT Object\
-          \ Genres](http://vocab.getty.edu/page/aat/300185711) hierarchy\ndiffers\
-          \ in its scope from Object genre here in that the AAT includes more\nspecific\
-          \ terms grouped by various aspects. In general, AAT descriptors\nare not\
-          \ intended to be used as indexing terms for classification.\n\n\u2753 Ainda\
-          \ n\xE3o implementamos o bloco `objectClassification` do LIDO.\nTalvez ele\
-          \ n\xE3o seja relevante para o document\xE1rio de arquitetura\ndom\xE9stica,\
-          \ e n\xE3o \xE9 obrigat\xF3rio no padr\xE3o LIDO nem no perfil de aplica\xE7\
-          \xE3o\npara arquitetura.\n"
-        slot_uri: lido:lido00853
+          \ intrinsic characteristics. The relationship between an object/work and\
+          \ the object genre is a generic is-a-relation rather than a membership based\
+          \ on ascription to a subject group.\nNote that the [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711)\
+          \ hierarchy differs in its scope from Object genre here in that the AAT\
+          \ includes more specific terms grouped by various aspects. In general, AAT\
+          \ descriptors are not intended to be used as indexing terms for classification.\n\
+          \u2753 Ainda n\xE3o implementamos o bloco `objectClassification` do LIDO.\
+          \ Talvez ele n\xE3o seja relevante para o document\xE1rio de arquitetura\
+          \ dom\xE9stica, e n\xE3o \xE9 obrigat\xF3rio no padr\xE3o LIDO nem no perfil\
+          \ de aplica\xE7\xE3o para arquitetura.\n"
+        slot_uri: term:lido00853
         range: ConceptReference
         multivalued: true
         inlined_as_list: false
-      class_subject:
-        name: class_subject
+      classification_subject:
+        name: classification_subject
         description: "A broad category for grouping objects or works on the basis\
           \ of a topical association, including thematic or systematic classification,\
           \ or an assignment by discipline. The relationship between an object/work\
@@ -4058,12 +4505,12 @@ classes:
           \ `objectClassification` do LIDO. Talvez ele n\xE3o seja relevante para\
           \ o document\xE1rio de arquitetura dom\xE9stica, e n\xE3o \xE9 obrigat\xF3\
           rio no padr\xE3o LIDO nem no perfil de aplica\xE7\xE3o para arquitetura."
-        slot_uri: lido:lido00932
+        slot_uri: term:lido00932
         range: ConceptReference
         multivalued: true
         inlined_as_list: false
-      class_local:
-        name: class_local
+      classification_local:
+        name: classification_local
         description: "A classification scheme for grouping objects on the basis of\
           \ locally defined criteria, including categories corresponding to the curatorial\
           \ departments of the repository, such as \"prints and drawings\", \"decorative\
@@ -4073,12 +4520,12 @@ classes:
           \ Talvez ele n\xE3o seja relevante para o document\xE1rio de arquitetura\
           \ dom\xE9stica, e n\xE3o \xE9 obrigat\xF3rio no padr\xE3o LIDO nem no perfil\
           \ de aplica\xE7\xE3o para arquitetura."
-        slot_uri: lido:lido01135
+        slot_uri: term:lido01135
         range: ConceptReference
         multivalued: true
         inlined_as_list: false
-      class_special:
-        name: class_special
+      classification_special:
+        name: classification_special
         description: "A classification scheme for grouping objects on the basis of\
           \ criteria defined within specific academic disciplines or cultural domains,\
           \ such as the \"Hornbostel-Sachs Classification of Musical Instruments\"\
@@ -4089,7 +4536,7 @@ classes:
           \ do LIDO. Talvez ele n\xE3o seja relevante para o document\xE1rio de arquitetura\
           \ dom\xE9stica, e n\xE3o \xE9 obrigat\xF3rio no padr\xE3o LIDO nem no perfil\
           \ de aplica\xE7\xE3o para arquitetura."
-        slot_uri: lido:lido01144
+        slot_uri: term:lido01144
         range: ConceptReference
         multivalued: true
         inlined_as_list: false
@@ -4101,19 +4548,42 @@ classes:
         range: Inscription
         multivalued: true
         inlined_as_list: true
+      location_historic:
+        name: location_historic
+        description: "Antigas jurisdi\xE7\xF5es ou designa\xE7\xF5es para o lugar\
+          \ onde o objeto se encontra. Para um s\xEDtio de onde o objeto foi fisicamente\
+          \ removido, usar `former_site:`."
+        range: HistoricPlace
+        multivalued: true
+        inlined_as_list: true
       collection:
         name: collection
+        description: 'A set of identifying and indexing information about the collection
+          the object/work in focus is gathered into or is a member of.
+
+          Collection applies to any accumulated group of physical or digital items,
+          conceptually or physically brought together on the basis of a focal characteristic.
+          Use cases for grouping items into a collection are various and may span
+          curated holdings in museums, departmental collections, sets of items to
+          be displayed in an exhibition, or aggregations bound informally for cataloging
+          and retrieval purposes.
+
+          '
         slot_uri: lido:collection
         range: Thing
         multivalued: true
         inlined_as_list: false
       work_rights:
         name: work_rights
+        description: "> :warning: Este bloco se refere a eventuais direitos autorais\
+          \ sobre A > EDIFICA\xC7\xC3O E O SEU PROJETO, n\xE3o sobre o conte\xFAdo\
+          \ da ficha ou sobre a > iconografia relacionada.\n"
         slot_uri: lido:rightsWorkSet
         range: Right
+        required: true
         multivalued: true
         inlined_as_list: true
-    class_uri: wasth:Work
+    class_uri: schema:LandmarksOrHistoricalBuildings
   Inscription:
     name: Inscription
     definition_uri: https://tradicional.arq.br/schema/Inscription
@@ -4158,8 +4628,33 @@ classes:
         range: SubjectType
         required: true
     class_uri: wasth:Topic
+  HistoricPlace:
+    name: HistoricPlace
+    definition_uri: https://tradicional.arq.br/schema/HistoricPlace
+    description: "Designa\xE7\xF5es alternativas ou jurisdi\xE7\xF5es antigas para\
+      \ o mesmo local, N\xC3O a localiza\xE7\xE3o original de uma constru\xE7\xE3\
+      o fisicamente deslocada (para tanto, cadastrar outra localiza\xE7\xE3o do tipo\
+      \ `former_site`). Preencher apenas caso a nomenclatura seja relevante, por exemplo\
+      \ para nomear as antigas prov\xEDncias de Portugal ou o Oeste da Bahia, que\
+      \ originalmente pertencia a Pernambuco, ou ainda se for relevante informar uma\
+      \ regi\xE3o f\xEDsica."
+    from_schema: https://tradicional.arq.br/schema/work
+    slots:
+    - historicPlace__type
+    - historicPlace__name
+    attributes:
+      type:
+        name: type
+        range: RepositoryType
+        required: true
+      name:
+        name: name
+        range: TypedReference
+        required: true
+        inlined: true
+    class_uri: wasth:HistoricPlace
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-10-25T00:15:59'
-source_file_size: 19177
+source_file_date: '2026-10-26T16:14:19'
+source_file_size: 20462
 

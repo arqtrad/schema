@@ -488,7 +488,7 @@
 <h1 id="slot-refid">Slot: refid</h1>
 <p><em>Local or external identifier.</em></p>
 <div>
-<p>URI: <a href="http://schema.org/identifier">schema:identifier</a></p>
+<p>URI: <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -503,6 +503,11 @@
 <tr>
 <td><a href="../TypedReference/">TypedReference</a></td>
 <td>Reference to a local record, IRI, URI, or LIDO terminology term</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../BibliographicCitation/">BibliographicCitation</a></td>
+<td>Cadastro de uma referência bibliográfica</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -523,11 +528,11 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../TypedReference/">TypedReference</a></td>
+<td><a href="../BibliographicCitation/">BibliographicCitation</a>, <a href="../TypedReference/">TypedReference</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="http://schema.org/identifier">schema:identifier</a></td>
+<td><a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -580,11 +585,15 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>schema:identifier</td>
+<td>dcterms:identifier</td>
 </tr>
 <tr>
 <td>native</td>
 <td>wasth:refid</td>
+</tr>
+<tr>
+<td>exact</td>
+<td>schema:identifier</td>
 </tr>
 </tbody>
 </table>
@@ -593,10 +602,13 @@
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refid</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Local or external identifier.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:identifier</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:identifier</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:identifier</span>
 <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">domain_of</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
 <span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

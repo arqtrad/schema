@@ -475,6 +475,9 @@
 
 
 <h1 id="slot-preview_image">Slot: preview_image</h1>
+<p><em>Uma única miniatura da imagem original.</em></p>
+<p><em>Obs.: não usamos a opção <code>placeholder</code>, ela será preenchida automaticamente em caso de ausência da miniatura, nem outros tipos de miniaturas que não imagens. A especificação LIDO admite listar mais de uma miniatura, mas tampouco prevemos essa hipótese.</em></p>
+<p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/preview_image">wasth:preview_image</a></p>
 <!-- no inheritance hierarchy -->
@@ -490,11 +493,11 @@
 <tbody>
 <tr>
 <td><a href="../Resource/">Resource</a></td>
-<td>Digital or documentary resource associated with a Work</td>
+<td>This class comprises identifiable immaterial items that make propositions abo...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Media/">Media</a></td>
+<td><a href="../MediaObject/">MediaObject</a></td>
 <td>Descrição e referência a um único arquivo de mídia</td>
 <td>no</td>
 </tr>
@@ -516,7 +519,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Resource/">Resource</a>, <a href="../Media/">Media</a></td>
+<td><a href="../Resource/">Resource</a>, <a href="../MediaObject/">MediaObject</a></td>
 </tr>
 </tbody>
 </table>
@@ -547,11 +550,18 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">preview_image</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Uma</span><span class="nv"> </span><span class="s">única</span><span class="nv"> </span><span class="s">miniatura</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">imagem</span><span class="nv"> </span><span class="s">original.</span>
+
+<span class="w">  </span><span class="s">Obs.:</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">usamos</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">opção</span><span class="nv"> </span><span class="s">`placeholder`,</span><span class="nv"> </span><span class="s">ela</span><span class="nv"> </span><span class="s">será</span><span class="nv"> </span><span class="s">preenchida</span><span class="nv"> </span><span class="s">automaticamente</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">caso</span>
+<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">ausência</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">miniatura,</span><span class="nv"> </span><span class="s">nem</span><span class="nv"> </span><span class="s">outros</span><span class="nv"> </span><span class="s">tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">miniaturas</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">imagens.</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">especificação</span>
+<span class="w">  </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">admite</span><span class="nv"> </span><span class="s">listar</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">miniatura,</span><span class="nv"> </span><span class="s">mas</span><span class="nv"> </span><span class="s">tampouco</span><span class="nv"> </span><span class="s">prevemos</span><span class="nv"> </span><span class="s">essa</span><span class="nv"> </span><span class="s">hipótese.</span>
+
+<span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>

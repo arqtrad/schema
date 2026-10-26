@@ -486,6 +486,19 @@
 
 
 <h1 id="slot-perspective">Slot: perspective</h1>
+<p><em>Tipo de vista do desenho. Usar a numeração da ISO 19650–2 :</em></p>
+<p>__</p>
+<p>_  - 0 = geral_</p>
+<p>_  - 1 = planta baixa (padrão, pode ser omitido)_</p>
+<p>_  - 2 = elevação_</p>
+<p>_  - 3 = corte_</p>
+<p>_  - 4 = mapa de elementos_</p>
+<p>_  - 5 = detalhe_</p>
+<p>_  - 6 = mapa de revestimentos_</p>
+<p>_  - 7 = planta de forro_</p>
+<p>_  - 8 = vista ou modelo 3D_</p>
+<p>_  - 9 = definido pelo agente_</p>
+<p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/perspective">wasth:perspective</a></p>
 <!-- no inheritance hierarchy -->
@@ -501,7 +514,7 @@
 <tbody>
 <tr>
 <td><a href="../Resource/">Resource</a></td>
-<td>Digital or documentary resource associated with a Work</td>
+<td>This class comprises identifiable immaterial items that make propositions abo...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -525,7 +538,7 @@
 <td><a href="../Resource/">Resource</a></td>
 </tr>
 <tr>
-<td>### Cardinality and Requirements</td>
+<td>### Slot Characteristics</td>
 <td></td>
 </tr>
 </tbody>
@@ -539,8 +552,12 @@
 </thead>
 <tbody>
 <tr>
-<td>Required</td>
-<td>Yes</td>
+<td>If Absent</td>
+<td><code>integer(1)</code></td>
+</tr>
+<tr>
+<td>Owner</td>
+<td><a href="../Resource/">Resource</a></td>
 </tr>
 </tbody>
 </table>
@@ -590,12 +607,17 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">perspective</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Tipo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">vista</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">desenho.</span><span class="nv"> </span><span class="s">Usar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">numeração</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ISO</span><span class="err"> </span><span class="s">19650–2</span><span class="err"> </span><span class="s">:\n\n</span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">0\</span>
+<span class="w">  </span><span class="s">\ =</span><span class="nv"> </span><span class="s">geral\n</span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">planta</span><span class="nv"> </span><span class="s">baixa</span><span class="nv"> </span><span class="s">(padrão,</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">omitido)\n</span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">elevação\n</span><span class="nv"> </span><span class="s">\</span>
+<span class="w">  </span><span class="s">\ -</span><span class="nv"> </span><span class="s">3</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">corte\n</span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">4</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">mapa</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">elementos\n</span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">5</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">detalhe\n</span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">6</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">mapa</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">revestimentos\n\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">7</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">planta</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">forro\n</span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">8</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">vista</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">modelo</span><span class="nv"> </span><span class="s">3D\n</span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">9</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">definido</span><span class="nv"> </span><span class="s">pelo</span><span class="nv"> </span><span class="s">agente\n"</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer(1)</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
-<span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 <span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9</span>
 </code></pre></div>

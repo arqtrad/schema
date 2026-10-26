@@ -412,23 +412,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Schema Source
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -475,7 +458,6 @@
 
 
 <h1 id="slot-collection">Slot: collection</h1>
-<p><em>Collections or aggregations to which the object belongs.</em></p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/collection">wasth:collection</a></p>
 <!-- no inheritance hierarchy -->
@@ -490,23 +472,33 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A WASTH controlled-vocabulary concept, compatible with SKOS and SKOS-THES</td>
+<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Place/">Place</a></td>
-<td>A named place with optional geographic location, administrative hierarchy, cl...</td>
+<td>Entities that have a somewhat fixed, physical extension</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Resource/">Resource</a></td>
+<td>This class comprises identifiable immaterial items that make propositions abo...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and</td>
+<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Thing/">Thing</a></td>
+<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -516,7 +508,7 @@
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>CIDOC–CRM E22 HUMAN-MADE OBJECT</td>
+<td>An historical landmark or building</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -533,37 +525,15 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../TypedReference/">TypedReference</a></td>
+<td><a href="../String/">String</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
 <td><a href="../Thing/">Thing</a>, <a href="../Work/">Work</a></td>
 </tr>
-<tr>
-<td>### Cardinality and Requirements</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Multivalued</td>
-<td>Yes</td>
-</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: <a href="https://tradicional.arq.br/schema">https://tradicional.arq.br/schema</a></li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -586,16 +556,10 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">collection</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Collections or aggregations to which the object belongs.</span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </code></pre></div>
 </details>
 </div>

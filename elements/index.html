@@ -569,7 +569,7 @@
 </tr>
 <tr>
 <td><a href="BibliographicCitation/">BibliographicCitation</a></td>
-<td>Bibliographic or documentary citation using a CSL citekey</td>
+<td>Cadastro de uma referência bibliográfica</td>
 </tr>
 <tr>
 <td><a href="BroaderConceptReference/">BroaderConceptReference</a></td>
@@ -581,11 +581,15 @@
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MaterialTech/">MaterialTech</a></td>
-<td>Usar discernimento para identificar sistemas, materiais e técnicas que</td>
+<td>Usar discernimento para identificar sistemas, materiais e técnicas que intere...</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="StylePeriod/">StylePeriod</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="Container/">Container</a></td>
+<td>Todos os elementos do documentário</td>
 </tr>
 <tr>
 <td><a href="DateRange/">DateRange</a></td>
@@ -593,7 +597,7 @@
 </tr>
 <tr>
 <td><a href="EventDate/">EventDate</a></td>
-<td>A wrapper for the expression of a date by providing a set of years as</td>
+<td>A wrapper for the expression of a date by providing a set of years as earlies...</td>
 </tr>
 <tr>
 <td><a href="EventPlace/">EventPlace</a></td>
@@ -601,11 +605,11 @@
 </tr>
 <tr>
 <td><a href="GeographicExtent/">GeographicExtent</a></td>
-<td>Geographic geometry, normally exported as GeoJSON</td>
+<td>Coordenadas do polígono que define o sítio</td>
 </tr>
 <tr>
 <td><a href="GeographicPoint/">GeographicPoint</a></td>
-<td>WGS84 geographic point</td>
+<td>Coordenadas do ponto que situa o sítio na visualização do mapa</td>
 </tr>
 <tr>
 <td><a href="Header/">Header</a></td>
@@ -613,7 +617,7 @@
 </tr>
 <tr>
 <td><a href="HistoricPlace/">HistoricPlace</a></td>
-<td>Historical geographic or administrative context</td>
+<td>Designações alternativas ou jurisdições antigas para o mesmo local, NÃO a loc...</td>
 </tr>
 <tr>
 <td><a href="Inscription/">Inscription</a></td>
@@ -624,11 +628,11 @@
 <td>Personal, corporate, family, or other responsible body</td>
 </tr>
 <tr>
-<td><a href="Measurements/">Measurements</a></td>
-<td>O campo <code>description</code> permite uma representação textual das medidas da</td>
+<td><a href="Measurement/">Measurement</a></td>
+<td>This class comprises actions measuring physical properties and other values t...</td>
 </tr>
 <tr>
-<td><a href="Media/">Media</a></td>
+<td><a href="MediaObject/">MediaObject</a></td>
 <td>Descrição e referência a um único arquivo de mídia</td>
 </tr>
 <tr>
@@ -648,44 +652,40 @@
 <td>A wrapper for identifying information about an object or work, including coll...</td>
 </tr>
 <tr>
-<td><a href="Resource/">Resource</a></td>
-<td>Digital or documentary resource associated with a Work</td>
-</tr>
-<tr>
 <td><a href="Right/">Right</a></td>
-<td>Rights statement associated with a record, resource, or note</td>
-</tr>
-<tr>
-<td><a href="Site/">Site</a></td>
-<td>A place associated with a Work</td>
-</tr>
-<tr>
-<td><a href="SpatialCoverage/">SpatialCoverage</a></td>
-<td>Current, former, intended, and other spatial associations</td>
+<td>* Preencher <code>earliest_date</code> com a data de início da vigência dos direitos ou ...</td>
 </tr>
 <tr>
 <td><a href="Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC</td>
+<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Concept/">Concept</a></td>
-<td>A WASTH controlled-vocabulary concept, compatible with SKOS and SKOS-THES</td>
+<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and</td>
+<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Place/">Place</a></td>
-<td>A named place with optional geographic location, administrative hierarchy, cl...</td>
+<td>Entities that have a somewhat fixed, physical extension</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Work/">Work</a></td>
+<td>An historical landmark or building</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Repository/">Repository</a></td>
 <td>Entidade com existência jurídica e espacial</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Work/">Work</a></td>
-<td>CIDOC–CRM E22 HUMAN-MADE OBJECT</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Resource/">Resource</a></td>
+<td>This class comprises identifiable immaterial items that make propositions abo...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Site/">Site</a></td>
+<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
 </tr>
 <tr>
 <td><a href="Topic/">Topic</a></td>
@@ -708,31 +708,31 @@
 <tbody>
 <tr>
 <td><a href="actor_extent/">actor_extent</a></td>
-<td></td>
+<td>Parte da obra sobre a qual o agente interveio</td>
 </tr>
 <tr>
 <td><a href="actor_name/">actor_name</a></td>
-<td></td>
+<td>Nome do agente extraído de um vocabulário controlado</td>
 </tr>
 <tr>
 <td><a href="actor_qualifier/">actor_qualifier</a></td>
-<td>For the Attribution Qualifier Actor element choose a concept URI from</td>
+<td>For the Attribution Qualifier Actor element choose a concept URI from the [at...</td>
 </tr>
 <tr>
 <td><a href="actor_role/">actor_role</a></td>
-<td></td>
+<td>Identificação de um agente e do seu papel no evento</td>
 </tr>
 <tr>
 <td><a href="actor_type/">actor_type</a></td>
-<td></td>
+<td>Define se o agente é uma pessoa, uma organização ou corporação, uma oficina, ...</td>
 </tr>
 <tr>
 <td><a href="alt/">alt</a></td>
-<td></td>
+<td>Altitude em metros (separador decimal: ponto)</td>
 </tr>
 <tr>
 <td><a href="alt_name/">alt_name</a></td>
-<td>O bloco <code>alt_name</code> permite cadastrar outros nomes pelos quais a edificação</td>
+<td>O bloco <code>alt_name</code> permite cadastrar outros nomes pelos quais a edificação se...</td>
 </tr>
 <tr>
 <td><a href="author/">author</a></td>
@@ -744,7 +744,7 @@
 </tr>
 <tr>
 <td><a href="broader/">broader</a></td>
-<td></td>
+<td>Um conceito de significação mais genérica</td>
 </tr>
 <tr>
 <td><a href="caption/">caption</a></td>
@@ -755,23 +755,19 @@
 <td>The LIDO Category Vocabulary is a structured controlled list of terms recomme...</td>
 </tr>
 <tr>
-<td><a href="citation_refid/">citation_refid</a></td>
-<td></td>
+<td><a href="classification_genre/">classification_genre</a></td>
+<td>A broad category for grouping objects on the basis of shared intrinsic charac...</td>
 </tr>
 <tr>
-<td><a href="class_genre/">class_genre</a></td>
-<td>A broad category for grouping objects on the basis of shared intrinsic</td>
-</tr>
-<tr>
-<td><a href="class_local/">class_local</a></td>
+<td><a href="classification_local/">classification_local</a></td>
 <td>A classification scheme for grouping objects on the basis of locally defined ...</td>
 </tr>
 <tr>
-<td><a href="class_special/">class_special</a></td>
+<td><a href="classification_special/">classification_special</a></td>
 <td>A classification scheme for grouping objects on the basis of criteria defined...</td>
 </tr>
 <tr>
-<td><a href="class_subject/">class_subject</a></td>
+<td><a href="classification_subject/">classification_subject</a></td>
 <td>A broad category for grouping objects or works on the basis of a topical asso...</td>
 </tr>
 <tr>
@@ -783,12 +779,16 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="concepts/">concepts</a></td>
+<td>Todos os termos de vocabulário controlado</td>
+</tr>
+<tr>
 <td><a href="content/">content</a></td>
-<td>Narrative body content</td>
+<td>Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d...</td>
 </tr>
 <tr>
 <td><a href="coordinates/">coordinates</a></td>
-<td></td>
+<td>No QGIS, usar a ferramenta <code>Get WKT</code> para obter as coordenadas do polígono (`...</td>
 </tr>
 <tr>
 <td><a href="credit/">credit</a></td>
@@ -800,11 +800,11 @@
 </tr>
 <tr>
 <td><a href="date_type/">date_type</a></td>
-<td></td>
+<td>An attribute for the kind of latest date, whether it is, for instance, exact ...</td>
 </tr>
 <tr>
 <td><a href="date_value/">date_value</a></td>
-<td></td>
+<td>Usar o formato ISO-8601 (por exemplo, 2026-03-17)</td>
 </tr>
 <tr>
 <td><a href="description/">description</a></td>
@@ -812,15 +812,15 @@
 </tr>
 <tr>
 <td><a href="earliest_date/">earliest_date</a></td>
-<td></td>
+<td>An index element for the expression of an exact or estimated date, for instan...</td>
 </tr>
 <tr>
 <td><a href="end_date/">end_date</a></td>
-<td></td>
+<td>Data final do evento ou mais tardia data presumida para o seu decurso</td>
 </tr>
 <tr>
 <td><a href="event_date/">event_date</a></td>
-<td></td>
+<td>Conjunto de datas em que decorreu o evento</td>
 </tr>
 <tr>
 <td><a href="extent/">extent</a></td>
@@ -828,27 +828,23 @@
 </tr>
 <tr>
 <td><a href="format/">format</a></td>
-<td></td>
+<td>Campo disciplinado pela especificação [DublinCore] no campo [format](https://...</td>
 </tr>
 <tr>
 <td><a href="format_extent/">format_extent</a></td>
-<td></td>
+<td>Indica a parte do objeto que está sendo medida — por exemplo, se a altura é a...</td>
 </tr>
 <tr>
 <td><a href="former_site/">former_site</a></td>
-<td></td>
+<td>Indica que a edificação não se encontra mais no local indicado, seja porque f...</td>
 </tr>
 <tr>
 <td><a href="geometry_type/">geometry_type</a></td>
-<td></td>
+<td>Tipo da geometria descrita pelas coordenadas</td>
 </tr>
 <tr>
-<td><a href="historic_place_name/">historic_place_name</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="historic_place_type/">historic_place_type</a></td>
-<td></td>
+<td><a href="holder/">holder</a></td>
+<td>A set of elements identifying the person or the group of persons holding the ...</td>
 </tr>
 <tr>
 <td><a href="href/">href</a></td>
@@ -868,26 +864,18 @@
 </tr>
 <tr>
 <td><a href="intended_site/">intended_site</a></td>
-<td></td>
+<td>Sinaliza que a edificação devia ocupar um certo local, mas não chegou a ser c...</td>
 </tr>
 <tr>
 <td><a href="lat/">lat</a></td>
-<td></td>
+<td>Latitude em graus decimais (separador decimal: ponto)</td>
 </tr>
 <tr>
 <td><a href="latest_date/">latest_date</a></td>
-<td></td>
+<td>An index element for the expression of the exact or approximate date, for ins...</td>
 </tr>
 <tr>
 <td><a href="legal_body/">legal_body</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="legal_body_name/">legal_body_name</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="legal_body_type/">legal_body_type</a></td>
 <td></td>
 </tr>
 <tr>
@@ -900,19 +888,19 @@
 </tr>
 <tr>
 <td><a href="lon/">lon</a></td>
-<td></td>
+<td>Longitude em graus decimais (separador decimal: ponto)</td>
 </tr>
 <tr>
 <td><a href="match/">match</a></td>
-<td></td>
+<td>Tipo da relação</td>
 </tr>
 <tr>
 <td><a href="material/">material</a></td>
-<td></td>
+<td>This class is a specialization of E55 Type and comprises the concepts of mate...</td>
 </tr>
 <tr>
 <td><a href="material_tech_type/">material_tech_type</a></td>
-<td></td>
+<td>Tipo da referência a um material ou técnica usado na obra: material de constr...</td>
 </tr>
 <tr>
 <td><a href="measurements/">measurements</a></td>
@@ -932,23 +920,23 @@
 </tr>
 <tr>
 <td><a href="name/">name</a></td>
-<td></td>
+<td>Identificador do termo referido</td>
 </tr>
 <tr>
 <td><a href="narrower/">narrower</a></td>
-<td></td>
+<td>Um conceito de significação mais específica</td>
 </tr>
 <tr>
 <td><a href="note/">note</a></td>
-<td></td>
+<td>Se necessário, incluir no campo <code>note</code> uma especificação adicional, como o nú...</td>
 </tr>
 <tr>
 <td><a href="object_type/">object_type</a></td>
-<td>An index element for the particular kind of object or work in focus</td>
+<td>Usar um vocabulário controlado para identificar o tipo de representação, por ...</td>
 </tr>
 <tr>
 <td><a href="other_site/">other_site</a></td>
-<td></td>
+<td>Para casos não contemplados em nenhuma das categorias acima</td>
 </tr>
 <tr>
 <td><a href="overlay_image/">overlay_image</a></td>
@@ -956,43 +944,35 @@
 </tr>
 <tr>
 <td><a href="part_of/">part_of</a></td>
-<td>Parent place in an administrative, geographic, or historical hierarchy</td>
+<td>A set of structured information about a place that is the broader context for...</td>
 </tr>
 <tr>
 <td><a href="perspective/">perspective</a></td>
-<td></td>
+<td>Tipo de vista do desenho</td>
 </tr>
 <tr>
 <td><a href="place/">place</a></td>
 <td>A set of structured information indicating the place or location where an obj...</td>
 </tr>
 <tr>
-<td><a href="place_function/">place_function</a></td>
-<td>Function or administrative role of the place, such as municipality seat, stat...</td>
-</tr>
-<tr>
-<td><a href="place_type/">place_type</a></td>
-<td>Classification of the kind of place, such as inhabited place, rural agglomera...</td>
-</tr>
-<tr>
 <td><a href="places/">places</a></td>
-<td></td>
+<td>Todos os lugares cadastrados</td>
 </tr>
 <tr>
 <td><a href="preview_image/">preview_image</a></td>
-<td></td>
+<td>Uma única miniatura da imagem original</td>
 </tr>
 <tr>
 <td><a href="provided_3d/">provided_3d</a></td>
-<td></td>
+<td>Modelo tridimensional ou IFC da edificação</td>
 </tr>
 <tr>
 <td><a href="provided_image/">provided_image</a></td>
-<td></td>
+<td>Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap</td>
 </tr>
 <tr>
 <td><a href="qualifier/">qualifier</a></td>
-<td></td>
+<td>Indica que as medidas são aproximadas : usar um [qualificador do AAT](https:/...</td>
 </tr>
 <tr>
 <td><a href="record_date/">record_date</a></td>
@@ -1000,7 +980,7 @@
 </tr>
 <tr>
 <td><a href="record_rights/">record_rights</a></td>
-<td></td>
+<td>A set of structured information about rights regarding the content provided i...</td>
 </tr>
 <tr>
 <td><a href="reference_type/">reference_type</a></td>
@@ -1019,60 +999,28 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="related_work/">related_work</a></td>
+<td><a href="related_works/">related_works</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="relation/">relation</a></td>
-<td></td>
+<td>Um conceito com o qual existe um relacionamento semântico associativo</td>
 </tr>
 <tr>
 <td><a href="relation_type/">relation_type</a></td>
-<td></td>
+<td>Usamos os tipos de relação previstos pelo [VRA Core]</td>
 </tr>
 <tr>
-<td><a href="repository/">repository</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="resource/">resource</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="resource_author/">resource_author</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="resource_date/">resource_date</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="resource_id/">resource_id</a></td>
-<td></td>
+<td><a href="repositories/">repositories</a></td>
+<td>A set of elements for the identification, name and location of the repository...</td>
 </tr>
 <tr>
 <td><a href="resource_service/">resource_service</a></td>
-<td></td>
+<td>Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal...</td>
 </tr>
 <tr>
-<td><a href="resource_unit/">resource_unit</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="right_concept/">right_concept</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="right_holder/">right_holder</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="right_temporal/">right_temporal</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="right_type/">right_type</a></td>
-<td></td>
+<td><a href="resources/">resources</a></td>
+<td>Os desenhos ou modelos da edificação são apresentados online por meio de imag...</td>
 </tr>
 <tr>
 <td><a href="rights/">rights</a></td>
@@ -1080,47 +1028,39 @@
 </tr>
 <tr>
 <td><a href="role_in_event/">role_in_event</a></td>
-<td></td>
+<td>Ação desempenhada pelo agente no evento</td>
 </tr>
 <tr>
 <td><a href="scale/">scale</a></td>
-<td></td>
+<td>Número inverso da escala da imagem, se ela tiver uma resolução ou tamanho de ...</td>
 </tr>
 <tr>
 <td><a href="shape/">shape</a></td>
-<td></td>
+<td>caso relevante, indicar a forma do elemento medido usando a [lista de formas ...</td>
 </tr>
 <tr>
 <td><a href="site/">site</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="site_name/">site_name</a></td>
-<td></td>
+<td>A localização real, atual da edificação — é o que será usado em quase todos o...</td>
 </tr>
 <tr>
 <td><a href="source/">source</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="spatial/">spatial</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="srs_name/">srs_name</a></td>
-<td></td>
+<td>Names the coordinate reference system (CRS) that defines the semantics of the...</td>
 </tr>
 <tr>
 <td><a href="start_date/">start_date</a></td>
-<td></td>
+<td>Data inicial do evento ou mais antiga data presumida para o seu decurso</td>
 </tr>
 <tr>
 <td><a href="style_period/">style_period</a></td>
-<td>An index element for the period in which the event happened,</td>
+<td>An index element for the period in which the event happened, comprising infor...</td>
 </tr>
 <tr>
 <td><a href="subject/">subject</a></td>
-<td>Recomenda-se articular o tema em três níveis : descrição, identificação e</td>
+<td>Recomenda-se articular o tema em três níveis : descrição, identificação e int...</td>
 </tr>
 <tr>
 <td><a href="tags/">tags</a></td>
@@ -1132,11 +1072,11 @@
 </tr>
 <tr>
 <td><a href="technique/">technique</a></td>
-<td></td>
+<td>The production or manufacturing processes, techniques, and methods incorporat...</td>
 </tr>
 <tr>
 <td><a href="temporal/">temporal</a></td>
-<td>Temporalidade do objeto</td>
+<td>Date on which a right is or was current</td>
 </tr>
 <tr>
 <td><a href="term/">term</a></td>
@@ -1164,19 +1104,19 @@
 </tr>
 <tr>
 <td><a href="type/">type</a></td>
-<td></td>
+<td>designa a natureza da medida : largura, altura, área, etc</td>
 </tr>
 <tr>
 <td><a href="unit/">unit</a></td>
-<td></td>
+<td>Unidade de medida usada no dimensionamento da representação, por exemplo metr...</td>
 </tr>
 <tr>
 <td><a href="value/">value</a></td>
-<td></td>
+<td>Valor numérico, usar ponto como separador decimal</td>
 </tr>
 <tr>
 <td><a href="work_rights/">work_rights</a></td>
-<td></td>
+<td>&gt; :warning: Este bloco se refere a eventuais direitos autorais sobre A &gt; EDIF...</td>
 </tr>
 <tr>
 <td><a href="work_type_condition/">work_type_condition</a></td>
@@ -1207,8 +1147,12 @@
 <td>Descriptors for objects that are distinguishable by the way they are employed...</td>
 </tr>
 <tr>
+<td><a href="works/">works</a></td>
+<td>Todas as edificações documentadas</td>
+</tr>
+<tr>
 <td><a href="zoom/">zoom</a></td>
-<td></td>
+<td>Usado para visualizar o mapa mais de longe se a precisão das coordenadas for ...</td>
 </tr>
 </tbody>
 </table>
@@ -1227,7 +1171,7 @@
 </tr>
 <tr>
 <td><a href="DateQualifier/">DateQualifier</a></td>
-<td>Exatidão da data indicada</td>
+<td>Exatidão da data conhecida</td>
 </tr>
 <tr>
 <td><a href="EventPlaceType/">EventPlaceType</a></td>
@@ -1235,7 +1179,7 @@
 </tr>
 <tr>
 <td><a href="EventType/">EventType</a></td>
-<td>The particular kind of event the object/work participated in or was</td>
+<td>The particular kind of event the object/work participated in or was present a...</td>
 </tr>
 <tr>
 <td><a href="GeometryType/">GeometryType</a></td>
@@ -1251,7 +1195,7 @@
 </tr>
 <tr>
 <td><a href="MaterialTechType/">MaterialTechType</a></td>
-<td>The physical matter or substance from which an object is made, including</td>
+<td>The physical matter or substance from which an object is made, including any ...</td>
 </tr>
 <tr>
 <td><a href="MeasurementType/">MeasurementType</a></td>
@@ -1263,7 +1207,7 @@
 </tr>
 <tr>
 <td><a href="PeriodNameType/">PeriodNameType</a></td>
-<td>The LIDO Period/Style Type-Vocabulary is a controlled list of terms</td>
+<td>The LIDO Period/Style Type-Vocabulary is a controlled list of terms recommend...</td>
 </tr>
 <tr>
 <td><a href="ReferenceType/">ReferenceType</a></td>
@@ -1295,7 +1239,7 @@
 </tr>
 <tr>
 <td><a href="SubjectType/">SubjectType</a></td>
-<td>The type attribute indicates the kind of subject information, whether it</td>
+<td>The type attribute indicates the kind of subject information, whether it is, ...</td>
 </tr>
 <tr>
 <td><a href="TitleType/">TitleType</a></td>
@@ -1318,7 +1262,7 @@
 </tr>
 <tr>
 <td><a href="CslCitekey/">CslCitekey</a></td>
-<td>Citation Style Language citekey, beginning with '@'</td>
+<td>Chave de citação compatível com o Citation Style Language, começando com '@'</td>
 </tr>
 <tr>
 <td><a href="Curie/">Curie</a></td>
@@ -1353,6 +1297,10 @@
 <td>JSON array of GeoJSON positions</td>
 </tr>
 <tr>
+<td><a href="GeonamesId/">GeonamesId</a></td>
+<td>Identificador de lugar no GeoNames, na forma de um CURIE <code>geonames:1234</code></td>
+</tr>
+<tr>
 <td><a href="Integer/">Integer</a></td>
 <td>An integer</td>
 </tr>
@@ -1366,11 +1314,11 @@
 </tr>
 <tr>
 <td><a href="Latitude/">Latitude</a></td>
-<td>Latitude in decimal degrees</td>
+<td>Latitude em graus decimais (separador: ponto)</td>
 </tr>
 <tr>
 <td><a href="Longitude/">Longitude</a></td>
-<td>Longitude in decimal degrees</td>
+<td>Longitude em graus decimais (separador: ponto)</td>
 </tr>
 <tr>
 <td><a href="Ncname/">Ncname</a></td>
@@ -1386,11 +1334,11 @@
 </tr>
 <tr>
 <td><a href="OlcPlusCode11/">OlcPlusCode11</a></td>
-<td>Open Location Code (Plus Code) with a resolution of 11 digits</td>
+<td>Open Location Code (Plus Code) com resolução de 11 dígitos</td>
 </tr>
 <tr>
 <td><a href="OrcidId/">OrcidId</a></td>
-<td>Bare ORCID iD, without the <a href="https://orcid">https://orcid</a></td>
+<td>ORCID iD, sem o prefixo <a href="https://orcid">https://orcid</a></td>
 </tr>
 <tr>
 <td><a href="Sparqlpath/">Sparqlpath</a></td>

@@ -286,9 +286,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-materialtech">Class: MaterialTech</h1>
-<p><em>Usar discernimento para identificar sistemas, materiais e técnicas que</em></p>
-<p><em>interessam ao conhecimento da edificação no seu conjunto, não a partes</em></p>
-<p><em>menos extensas ou pouco importantes.</em></p>
+<p><em>Usar discernimento para identificar sistemas, materiais e técnicas que interessam ao conhecimento da edificação no seu conjunto, não a partes menos extensas ou pouco importantes.</em></p>
 <p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/MaterialTech">wasth:MaterialTech</a></p>
@@ -355,7 +353,7 @@
 <tr>
 <td><a href="../material_tech_type/">material_tech_type</a></td>
 <td>1 <br/> <a href="../MaterialTechType/">MaterialTechType</a></td>
-<td></td>
+<td>Tipo da referência a um material ou técnica usado na obra: material de constr...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -365,15 +363,15 @@
 <td><a href="../ConceptReference/">ConceptReference</a></td>
 </tr>
 <tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../Concept/">Concept</a></td>
+<td><a href="../bibliographic_citation/">bibliographic_citation</a></td>
+<td>* <em>recommended</em> <br/> <a href="../BibliographicCitation/">BibliographicCitation</a></td>
 <td></td>
 <td><a href="../ConceptReference/">ConceptReference</a></td>
 </tr>
 <tr>
-<td><a href="../bibliographic_citation/">bibliographic_citation</a></td>
-<td>* <em>recommended</em> <br/> <a href="../BibliographicCitation/">BibliographicCitation</a></td>
-<td></td>
+<td><a href="../name/">name</a></td>
+<td>0..1 <br/> <a href="../Concept/">Concept</a></td>
+<td>Identificador do termo referido</td>
 <td><a href="../ConceptReference/">ConceptReference</a></td>
 </tr>
 </tbody>
@@ -451,10 +449,8 @@
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MaterialTech</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Usar</span><span class="nv"> </span><span class="s">discernimento</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">sistemas,</span><span class="nv"> </span><span class="s">materiais</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">técnicas</span><span class="nv"> </span><span class="s">que</span>
-
-<span class="w">  </span><span class="s">interessam</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">conhecimento</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">seu</span><span class="nv"> </span><span class="s">conjunto,</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">partes</span>
-
-<span class="w">  </span><span class="s">menos</span><span class="nv"> </span><span class="s">extensas</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">pouco</span><span class="nv"> </span><span class="s">importantes.</span>
+<span class="w">  </span><span class="s">interessam</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">conhecimento</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">seu</span><span class="nv"> </span><span class="s">conjunto,</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">partes</span><span class="nv"> </span><span class="s">menos</span><span class="nv"> </span><span class="s">extensas</span>
+<span class="w">  </span><span class="s">ou</span><span class="nv"> </span><span class="s">pouco</span><span class="nv"> </span><span class="s">importantes.</span>
 
 <span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
@@ -462,6 +458,10 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">material_tech_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material_tech_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Tipo</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">técnica</span><span class="nv"> </span><span class="s">usado</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">obra:</span><span class="nv"> </span><span class="s">material</span>
+<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">construção</span><span class="nv"> </span><span class="s">(support),</span><span class="nv"> </span><span class="s">revestimento</span><span class="nv"> </span><span class="s">(medium),</span><span class="nv"> </span><span class="s">técnica,</span><span class="nv"> </span><span class="s">instrumento,</span><span class="nv"> </span><span class="s">cor,</span><span class="nv"> </span><span class="s">etc.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
@@ -475,10 +475,8 @@
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MaterialTech</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Usar</span><span class="nv"> </span><span class="s">discernimento</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">sistemas,</span><span class="nv"> </span><span class="s">materiais</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">técnicas</span><span class="nv"> </span><span class="s">que</span>
-
-<span class="w">  </span><span class="s">interessam</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">conhecimento</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">seu</span><span class="nv"> </span><span class="s">conjunto,</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">partes</span>
-
-<span class="w">  </span><span class="s">menos</span><span class="nv"> </span><span class="s">extensas</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">pouco</span><span class="nv"> </span><span class="s">importantes.</span>
+<span class="w">  </span><span class="s">interessam</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">conhecimento</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">seu</span><span class="nv"> </span><span class="s">conjunto,</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">partes</span><span class="nv"> </span><span class="s">menos</span><span class="nv"> </span><span class="s">extensas</span>
+<span class="w">  </span><span class="s">ou</span><span class="nv"> </span><span class="s">pouco</span><span class="nv"> </span><span class="s">importantes.</span>
 
 <span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
@@ -486,6 +484,10 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">material_tech_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material_tech_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Tipo</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">técnica</span><span class="nv"> </span><span class="s">usado</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">obra:</span><span class="nv"> </span><span class="s">material</span>
+<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">construção</span><span class="nv"> </span><span class="s">(support),</span><span class="nv"> </span><span class="s">revestimento</span><span class="nv"> </span><span class="s">(medium),</span><span class="nv"> </span><span class="s">técnica,</span><span class="nv"> </span><span class="s">instrumento,</span><span class="nv"> </span><span class="s">cor,</span><span class="nv"> </span><span class="s">etc.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
@@ -498,6 +500,8 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A human-readable description for a thing</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:description</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:description</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">display</span>
@@ -506,10 +510,8 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
@@ -518,15 +520,6 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MaterialTech</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
 <span class="w">  </span><span class="nt">bibliographic_citation</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
@@ -535,12 +528,12 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MaterialTech</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
@@ -550,6 +543,18 @@
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Identificador do termo referido.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/concept</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MaterialTech</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HistoricPlace</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
 </code></pre></div>
 </details>
 </div>

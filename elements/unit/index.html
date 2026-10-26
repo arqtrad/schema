@@ -398,17 +398,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#slot-characteristics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slot Characteristics
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -486,6 +475,8 @@
 
 
 <h1 id="slot-unit">Slot: unit</h1>
+<p><em>Unidade de medida usada no dimensionamento da representação, por exemplo metros ou milímetros. Usar a <a href="https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300379096">hierarquia de unidades de medida</a> do AAT, ou do nosso próprio [vocabulário controlado].</em></p>
+<p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/unit">wasth:unit</a>
 Alias: unit</p>
@@ -501,8 +492,13 @@ Alias: unit</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Measurements/">Measurements</a></td>
-<td>O campo <code>description</code> permite uma representação textual das medidas da</td>
+<td><a href="../Resource/">Resource</a></td>
+<td>This class comprises identifiable immaterial items that make propositions abo...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Measurement/">Measurement</a></td>
+<td>This class comprises actions measuring physical properties and other values t...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -523,7 +519,7 @@ Alias: unit</p>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Measurements/">Measurements</a></td>
+<td><a href="../Resource/">Resource</a>, <a href="../Measurement/">Measurement</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -542,21 +538,6 @@ Alias: unit</p>
 <tr>
 <td>Required</td>
 <td>Yes</td>
-</tr>
-</tbody>
-</table>
-<h3 id="slot-characteristics">Slot Characteristics</h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Owner</td>
-<td><a href="../Measurements/">Measurements</a></td>
 </tr>
 </tbody>
 </table>
@@ -587,12 +568,17 @@ Alias: unit</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Unidade</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">medida</span><span class="nv"> </span><span class="s">usada</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">dimensionamento</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">representação,</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">exemplo</span>
+<span class="w">  </span><span class="s">metros</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">milímetros.</span><span class="nv"> </span><span class="s">Usar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">[hierarquia</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">unidades</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">medida](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300379096)</span>
+<span class="w">  </span><span class="s">do</span><span class="nv"> </span><span class="s">AAT,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">nosso</span><span class="nv"> </span><span class="s">próprio</span><span class="nv"> </span><span class="s">[vocabulário</span><span class="nv"> </span><span class="s">controlado].</span>
+
+<span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

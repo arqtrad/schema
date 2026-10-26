@@ -371,31 +371,31 @@
 <tr>
 <td><a href="../actor_type/">actor_type</a></td>
 <td>0..1 <br/> <a href="../AgentType/">AgentType</a></td>
-<td></td>
+<td>Define se o agente é uma pessoa, uma organização ou corporação, uma oficina, ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../actor_name/">actor_name</a></td>
 <td>0..1 <br/> <a href="../TypedReference/">TypedReference</a></td>
-<td></td>
+<td>Nome do agente extraído de um vocabulário controlado</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../role_in_event/">role_in_event</a></td>
 <td>0..1 <br/> <a href="../RoleType/">RoleType</a></td>
-<td></td>
+<td>Ação desempenhada pelo agente no evento</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../actor_qualifier/">actor_qualifier</a></td>
 <td>* <br/> <a href="../TypedReference/">TypedReference</a></td>
-<td>For the Attribution Qualifier Actor element choose a concept URI from</td>
+<td>For the Attribution Qualifier Actor element choose a concept URI from the [at...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../actor_extent/">actor_extent</a></td>
 <td>* <br/> <a href="../TypedReference/">TypedReference</a></td>
-<td></td>
+<td>Parte da obra sobre a qual o agente interveio</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -455,6 +455,10 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">actor_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actor_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Define</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">agente</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">pessoa,</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">organização</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">corporação,</span>
+<span class="w">      </span><span class="s">uma</span><span class="nv"> </span><span class="s">oficina,</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">família,</span><span class="nv"> </span><span class="s">etc.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentType(personal)</span>
@@ -464,6 +468,7 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentType</span>
 <span class="w">  </span><span class="nt">actor_name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actor_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nome do agente extraído de um vocabulário controlado.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
@@ -473,6 +478,7 @@
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">role_in_event</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">role_in_event</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ação desempenhada pelo agente no evento.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
@@ -481,13 +487,8 @@
 <span class="w">  </span><span class="nt">actor_qualifier</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actor_qualifier</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'For</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Attribution</span><span class="nv"> </span><span class="s">Qualifier</span><span class="nv"> </span><span class="s">Actor</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">choose</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">concept</span><span class="nv"> </span><span class="s">URI</span>
-<span class="w">      </span><span class="s">from</span>
-
-<span class="w">      </span><span class="s">the</span><span class="nv"> </span><span class="s">[attribution</span><span class="nv"> </span><span class="s">qualifiers</span><span class="nv"> </span><span class="s">hierarchy](http://vocab.getty.edu/hier/aat/300404264)</span>
-
-<span class="w">      </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Architecture</span><span class="nv"> </span><span class="s">Thesaurus,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">another</span><span class="nv"> </span><span class="s">linked</span><span class="nv"> </span><span class="s">open</span>
-
-<span class="w">      </span><span class="s">vocabulary.</span>
+<span class="w">      </span><span class="s">from</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">[attribution</span><span class="nv"> </span><span class="s">qualifiers</span><span class="nv"> </span><span class="s">hierarchy](http://vocab.getty.edu/hier/aat/300404264)</span>
+<span class="w">      </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Architecture</span><span class="nv"> </span><span class="s">Thesaurus,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">another</span><span class="nv"> </span><span class="s">linked</span><span class="nv"> </span><span class="s">open</span><span class="nv"> </span><span class="s">vocabulary.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
@@ -500,6 +501,7 @@
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">actor_extent</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actor_extent</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Parte da obra sobre a qual o agente interveio.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">extent</span>
@@ -518,6 +520,10 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">actor_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actor_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Define</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">agente</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">pessoa,</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">organização</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">corporação,</span>
+<span class="w">      </span><span class="s">uma</span><span class="nv"> </span><span class="s">oficina,</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">família,</span><span class="nv"> </span><span class="s">etc.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentType(personal)</span>
@@ -528,6 +534,7 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentType</span>
 <span class="w">  </span><span class="nt">actor_name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actor_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nome do agente extraído de um vocabulário controlado.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
@@ -538,6 +545,7 @@
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">role_in_event</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">role_in_event</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ação desempenhada pelo agente no evento.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
@@ -547,13 +555,8 @@
 <span class="w">  </span><span class="nt">actor_qualifier</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actor_qualifier</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'For</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Attribution</span><span class="nv"> </span><span class="s">Qualifier</span><span class="nv"> </span><span class="s">Actor</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">choose</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">concept</span><span class="nv"> </span><span class="s">URI</span>
-<span class="w">      </span><span class="s">from</span>
-
-<span class="w">      </span><span class="s">the</span><span class="nv"> </span><span class="s">[attribution</span><span class="nv"> </span><span class="s">qualifiers</span><span class="nv"> </span><span class="s">hierarchy](http://vocab.getty.edu/hier/aat/300404264)</span>
-
-<span class="w">      </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Architecture</span><span class="nv"> </span><span class="s">Thesaurus,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">another</span><span class="nv"> </span><span class="s">linked</span><span class="nv"> </span><span class="s">open</span>
-
-<span class="w">      </span><span class="s">vocabulary.</span>
+<span class="w">      </span><span class="s">from</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">[attribution</span><span class="nv"> </span><span class="s">qualifiers</span><span class="nv"> </span><span class="s">hierarchy](http://vocab.getty.edu/hier/aat/300404264)</span>
+<span class="w">      </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Architecture</span><span class="nv"> </span><span class="s">Thesaurus,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">another</span><span class="nv"> </span><span class="s">linked</span><span class="nv"> </span><span class="s">open</span><span class="nv"> </span><span class="s">vocabulary.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
@@ -568,6 +571,7 @@
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">actor_extent</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actor_extent</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Parte da obra sobre a qual o agente interveio.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">extent</span>
@@ -586,12 +590,12 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>

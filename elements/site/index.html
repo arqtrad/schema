@@ -475,6 +475,7 @@
 
 
 <h1 id="slot-site">Slot: site</h1>
+<p><em>A localização real, atual da edificação — é o que será usado em quase todos os casos.</em></p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/site">wasth:site</a></p>
 <!-- no inheritance hierarchy -->
@@ -489,9 +490,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../SpatialCoverage/">SpatialCoverage</a></td>
-<td>Current, former, intended, and other spatial associations</td>
+<td><a href="../Place/">Place</a></td>
+<td>Entities that have a somewhat fixed, physical extension</td>
 <td>no</td>
+</tr>
+<tr>
+<td><a href="../Repository/">Repository</a></td>
+<td>Entidade com existência jurídica e espacial</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Work/">Work</a></td>
+<td>An historical landmark or building</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -511,7 +522,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../SpatialCoverage/">SpatialCoverage</a></td>
+<td><a href="../Place/">Place</a>, <a href="../Repository/">Repository</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -560,10 +571,13 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A localização real, atual da edificação — é o que será usado em quase</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">todos os casos.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SpatialCoverage</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Place</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Repository</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

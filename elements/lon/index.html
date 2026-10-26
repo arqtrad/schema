@@ -398,6 +398,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -475,6 +486,7 @@
 
 
 <h1 id="slot-lon">Slot: lon</h1>
+<p><em>Longitude em graus decimais (separador decimal: ponto).</em></p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/lon">wasth:lon</a></p>
 <!-- no inheritance hierarchy -->
@@ -490,7 +502,7 @@
 <tbody>
 <tr>
 <td><a href="../GeographicPoint/">GeographicPoint</a></td>
-<td>WGS84 geographic point</td>
+<td>Coordenadas do ponto que situa o sítio na visualização do mapa</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -533,6 +545,21 @@
 </tr>
 </tbody>
 </table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td><a href="../GeographicPoint/">GeographicPoint</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -560,8 +587,10 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lon</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Longitude</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">graus</span><span class="nv"> </span><span class="s">decimais</span><span class="nv"> </span><span class="s">(separador</span><span class="nv"> </span><span class="s">decimal:</span><span class="nv"> </span><span class="s">ponto).'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Longitude</span>

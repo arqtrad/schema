@@ -486,6 +486,8 @@
 
 
 <h1 id="slot-zoom">Slot: zoom</h1>
+<p><em>Usado para visualizar o mapa mais de longe se a precisão das coordenadas for baixa.</em></p>
+<p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/zoom">wasth:zoom</a></p>
 <!-- no inheritance hierarchy -->
@@ -500,8 +502,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Site/">Site</a></td>
-<td>A place associated with a Work</td>
+<td><a href="../GeographicPoint/">GeographicPoint</a></td>
+<td>Coordenadas do ponto que situa o sítio na visualização do mapa</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -522,7 +524,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Site/">Site</a></td>
+<td><a href="../GeographicPoint/">GeographicPoint</a></td>
 </tr>
 <tr>
 <td>### Slot Characteristics</td>
@@ -542,6 +544,10 @@
 <td>If Absent</td>
 <td><code>integer(13)</code></td>
 </tr>
+<tr>
+<td>Owner</td>
+<td><a href="../GeographicPoint/">GeographicPoint</a></td>
+</tr>
 </tbody>
 </table>
 <h3 id="value-constraints">Value Constraints</h3>
@@ -555,11 +561,11 @@
 <tbody>
 <tr>
 <td>Minimum Value</td>
-<td>1</td>
+<td>0</td>
 </tr>
 <tr>
 <td>Maximum Value</td>
-<td>19</td>
+<td>18</td>
 </tr>
 </tbody>
 </table>
@@ -590,14 +596,19 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zoom</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Usado</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">visualizar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">mapa</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">longe</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">precisão</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">coordenadas</span>
+<span class="w">  </span><span class="s">for</span><span class="nv"> </span><span class="s">baixa.</span>
+
+<span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer(13)</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
-<span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">19</span>
+<span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">18</span>
 </code></pre></div>
 </details>
 </div>

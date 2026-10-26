@@ -398,6 +398,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#value-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -475,6 +486,7 @@
 
 
 <h1 id="slot-alt">Slot: alt</h1>
+<p><em>Altitude em metros (separador decimal: ponto)</em></p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/alt">wasth:alt</a></p>
 <!-- no inheritance hierarchy -->
@@ -490,7 +502,7 @@
 <tbody>
 <tr>
 <td><a href="../GeographicPoint/">GeographicPoint</a></td>
-<td>WGS84 geographic point</td>
+<td>Coordenadas do ponto que situa o sítio na visualização do mapa</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -514,11 +526,26 @@
 <td><a href="../GeographicPoint/">GeographicPoint</a></td>
 </tr>
 <tr>
-<td>### Value Constraints</td>
+<td>### Slot Characteristics</td>
 <td></td>
 </tr>
 </tbody>
 </table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td><a href="../GeographicPoint/">GeographicPoint</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="value-constraints">Value Constraints</h3>
 <table>
 <thead>
 <tr>
@@ -564,8 +591,10 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alt</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Altitude</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">metros</span><span class="nv"> </span><span class="s">(separador</span><span class="nv"> </span><span class="s">decimal:</span><span class="nv"> </span><span class="s">ponto)'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>

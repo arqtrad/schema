@@ -488,9 +488,10 @@
 <h1 id="slot-work_type_context">Slot: work_type_context</h1>
 <p><em>Descriptors for objects that are distinguishable by their use or application within a particular physical location. If an object is identifiable by association with specific surroundings, it is qualified by location or context.</em></p>
 <p><em>Based on <a href="https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html">AAT Guidelines "Types of Guide Terms"</a></em></p>
-<p><em>Nos Documentários da Arquitetura Tradicional, designa a situação de implantação da edificação, por exemplo se está em contexto urbano ou rural, isolada ou em correnteza...</em></p>
+<p><em>No Documentário de Lugares Tradicionais, designa o tipo de núcleo populacional : sítio isolado, povoação rural, vila ou cidade, por exemplo.</em></p>
+<p><em>Nos Documentários de edificações, designa sobretudo o contexto imediato de implantação de uma edificação : urbana, rural, isolada, em correnteza, etc.</em></p>
 <div>
-<p>URI: <a href="http://www.lido-schema.org/lido00934">lido:lido00934</a></p>
+<p>URI: <a href="http://terminology.lido-schema.org/lido00934">term:lido00934</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -503,8 +504,13 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../Place/">Place</a></td>
+<td>Entities that have a somewhat fixed, physical extension</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Work/">Work</a></td>
-<td>CIDOC–CRM E22 HUMAN-MADE OBJECT</td>
+<td>An historical landmark or building</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -525,11 +531,11 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Work/">Work</a></td>
+<td><a href="../Place/">Place</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="http://www.lido-schema.org/lido00934">lido:lido00934</a></td>
+<td><a href="http://terminology.lido-schema.org/lido00934">term:lido00934</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -566,7 +572,7 @@
 <tbody>
 <tr>
 <td>Owner</td>
-<td><a href="../Work/">Work</a></td>
+<td><a href="../Place/">Place</a></td>
 </tr>
 </tbody>
 </table>
@@ -586,7 +592,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>lido:lido00934</td>
+<td>term:lido00934</td>
 </tr>
 <tr>
 <td>native</td>
@@ -603,14 +609,17 @@
 
 <span class="w">  </span><span class="s">Based</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">[AAT</span><span class="nv"> </span><span class="s">Guidelines</span><span class="nv"> </span><span class="s">"Types</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Guide</span><span class="nv"> </span><span class="s">Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)</span>
 
-<span class="w">  </span><span class="s">Nos</span><span class="nv"> </span><span class="s">Documentários</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">Arquitetura</span><span class="nv"> </span><span class="s">Tradicional,</span><span class="nv"> </span><span class="s">designa</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">situação</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">implantação</span>
-<span class="w">  </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação,</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">exemplo</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">está</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">urbano</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">rural,</span><span class="nv"> </span><span class="s">isolada</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">correnteza...'</span>
+<span class="w">  </span><span class="s">No</span><span class="nv"> </span><span class="s">Documentário</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">Lugares</span><span class="nv"> </span><span class="s">Tradicionais,</span><span class="nv"> </span><span class="s">designa</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">tipo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">núcleo</span><span class="nv"> </span><span class="s">populacional</span><span class="err"> </span><span class="s">:</span>
+<span class="w">  </span><span class="s">sítio</span><span class="nv"> </span><span class="s">isolado,</span><span class="nv"> </span><span class="s">povoação</span><span class="nv"> </span><span class="s">rural,</span><span class="nv"> </span><span class="s">vila</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">cidade,</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">exemplo.</span>
+
+<span class="w">  </span><span class="s">Nos</span><span class="nv"> </span><span class="s">Documentários</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">edificações,</span><span class="nv"> </span><span class="s">designa</span><span class="nv"> </span><span class="s">sobretudo</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">imediato</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">implantação</span>
+<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">edificação</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">urbana,</span><span class="nv"> </span><span class="s">rural,</span><span class="nv"> </span><span class="s">isolada,</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">correnteza,</span><span class="nv"> </span><span class="s">etc.'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:lido00934</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00934</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Place</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Place</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
 <span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

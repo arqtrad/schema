@@ -277,12 +277,24 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-geographicextent">Class: GeographicExtent</h1>
-<p><em>Geographic geometry, normally exported as GeoJSON.</em></p>
+<p><em>Coordenadas do polígono que define o sítio.</em></p>
+<p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/GeographicExtent">wasth:GeographicExtent</a></p>
 <pre class="mermaid"><code> classDiagram
     class GeographicExtent
     click GeographicExtent href "../GeographicExtent/"
+      GeographicExtent : bibliographic_citation
+
+
+
+
+
+        GeographicExtent --&gt; "* _recommended_" BibliographicCitation : bibliographic_citation
+        click BibliographicCitation href "../BibliographicCitation/"
+
+
+
       GeographicExtent : coordinates
 
       GeographicExtent : geometry_type
@@ -323,27 +335,33 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../geometry_type/">geometry_type</a></td>
-<td>1 <br/> <a href="../GeometryType/">GeometryType</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../coordinates/">coordinates</a></td>
-<td>1 <br/> <a href="../GeoJSONCoordinateArray/">GeoJSONCoordinateArray</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../srs_name/">srs_name</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td></td>
+<td>Names the coordinate reference system (CRS) that defines the semantics of the...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../source/">source</a></td>
 <td>* <br/> <a href="../LegalBody/">LegalBody</a></td>
 <td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../bibliographic_citation/">bibliographic_citation</a></td>
+<td>* <em>recommended</em> <br/> <a href="../BibliographicCitation/">BibliographicCitation</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../geometry_type/">geometry_type</a></td>
+<td>1 <br/> <a href="../GeometryType/">GeometryType</a></td>
+<td>Tipo da geometria descrita pelas coordenadas</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../coordinates/">coordinates</a></td>
+<td>1 <br/> <a href="../GeoJSONCoordinateArray/">GeoJSONCoordinateArray</a></td>
+<td>No QGIS, usar a ferramenta <code>Get WKT</code> para obter as coordenadas do polígono (`...</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -396,24 +414,52 @@
 <h3 id="direct">Direct</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Geographic geometry, normally exported as GeoJSON.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Coordenadas</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">polígono</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">define</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">sítio.</span>
+
+<span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">slots</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geometry_type</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinates</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">srs_name</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">geometry_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geometry_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tipo da geometria descrita pelas coordenadas.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/place</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeometryType</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">coordinates</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinates</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'No</span><span class="nv"> </span><span class="s">QGIS,</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ferramenta</span><span class="nv"> </span><span class="s">`Get</span><span class="nv"> </span><span class="s">WKT`</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">obter</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas</span><span class="nv"> </span><span class="s">do</span>
+<span class="w">      </span><span class="s">polígono</span><span class="nv"> </span><span class="s">(`extent`)</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">opção</span><span class="nv"> </span><span class="s">`Get</span><span class="nv"> </span><span class="s">JSON`</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">copiar</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">colchetes</span><span class="nv"> </span><span class="s">`[[[</span>
+<span class="w">      </span><span class="s">]]]`</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">valores</span><span class="nv"> </span><span class="s">numéricos</span><span class="nv"> </span><span class="s">dentro</span><span class="nv"> </span><span class="s">deles.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/place</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeoJSONCoordinateArray</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Geographic geometry, normally exported as GeoJSON.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Coordenadas</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">polígono</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">define</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">sítio.</span>
+
+<span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">geometry_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geometry_type</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tipo da geometria descrita pelas coordenadas.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/place</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
@@ -423,7 +469,12 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">coordinates</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coordinates</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'No</span><span class="nv"> </span><span class="s">QGIS,</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ferramenta</span><span class="nv"> </span><span class="s">`Get</span><span class="nv"> </span><span class="s">WKT`</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">obter</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas</span><span class="nv"> </span><span class="s">do</span>
+<span class="w">      </span><span class="s">polígono</span><span class="nv"> </span><span class="s">(`extent`)</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">opção</span><span class="nv"> </span><span class="s">`Get</span><span class="nv"> </span><span class="s">JSON`</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">copiar</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">colchetes</span><span class="nv"> </span><span class="s">`[[[</span>
+<span class="w">      </span><span class="s">]]]`</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">valores</span><span class="nv"> </span><span class="s">numéricos</span><span class="nv"> </span><span class="s">dentro</span><span class="nv"> </span><span class="s">deles.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/place</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
@@ -432,6 +483,8 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">srs_name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">srs_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Names the coordinate reference system (CRS) that defines the semantics</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">of the lat/long pair according to the ISO6709 standard.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">srsName</span>
@@ -448,14 +501,35 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">bibliographic_citation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:bibliographicCitation</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
+<span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

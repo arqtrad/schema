@@ -412,23 +412,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Schema Source
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -495,7 +478,12 @@
 </tr>
 <tr>
 <td><a href="../MaterialTech/">MaterialTech</a></td>
-<td>Usar discernimento para identificar sistemas, materiais e técnicas que</td>
+<td>Usar discernimento para identificar sistemas, materiais e técnicas que intere...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../LegalBody/">LegalBody</a></td>
+<td>Personal, corporate, family, or other responsible body</td>
 <td>no</td>
 </tr>
 <tr>
@@ -506,6 +494,11 @@
 <tr>
 <td><a href="../RelatedEvent/">RelatedEvent</a></td>
 <td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../HistoricPlace/">HistoricPlace</a></td>
+<td>Designações alternativas ou jurisdições antigas para o mesmo local, NÃO a loc...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -522,19 +515,15 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../Concept/">Concept</a></td>
+<td><a href="../String/">String</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../ConceptReference/">ConceptReference</a>, <a href="../RelatedEvent/">RelatedEvent</a></td>
+<td><a href="../ConceptReference/">ConceptReference</a>, <a href="../LegalBody/">LegalBody</a>, <a href="../RelatedEvent/">RelatedEvent</a>, <a href="../HistoricPlace/">HistoricPlace</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: <a href="https://tradicional.arq.br/schema">https://tradicional.arq.br/schema</a></li>
-</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -557,12 +546,12 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HistoricPlace</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </code></pre></div>
 </details>
 </div>

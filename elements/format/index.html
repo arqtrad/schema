@@ -475,8 +475,10 @@
 
 
 <h1 id="slot-format">Slot: format</h1>
+<p><em>Campo disciplinado pela especificação [DublinCore] no campo <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/">format</a>. Esta especificação sugere a [lista de tipos de mídia IANA].</em></p>
+<p>__</p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/format">wasth:format</a></p>
+<p>URI: <a href="http://purl.org/dc/terms/MediaType">dcterms:MediaType</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -489,7 +491,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Media/">Media</a></td>
+<td><a href="../MediaObject/">MediaObject</a></td>
 <td>Descrição e referência a um único arquivo de mídia</td>
 <td>no</td>
 </tr>
@@ -511,7 +513,11 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Media/">Media</a></td>
+<td><a href="../MediaObject/">MediaObject</a></td>
+</tr>
+<tr>
+<td>Slot URI</td>
+<td><a href="http://purl.org/dc/terms/MediaType">dcterms:MediaType</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -549,7 +555,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:format</td>
+<td>dcterms:MediaType</td>
 </tr>
 <tr>
 <td>native</td>
@@ -560,10 +566,15 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">format</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Campo</span><span class="nv"> </span><span class="s">disciplinado</span><span class="nv"> </span><span class="s">pela</span><span class="nv"> </span><span class="s">especificação</span><span class="nv"> </span><span class="s">[DublinCore]</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">[format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).</span>
+<span class="w">  </span><span class="s">Esta</span><span class="nv"> </span><span class="s">especificação</span><span class="nv"> </span><span class="s">sugere</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">[lista</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">mídia</span><span class="nv"> </span><span class="s">IANA].</span>
+
+<span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:MediaType</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

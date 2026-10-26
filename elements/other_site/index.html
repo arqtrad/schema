@@ -398,6 +398,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -475,6 +486,7 @@
 
 
 <h1 id="slot-other_site">Slot: other_site</h1>
+<p><em>Para casos não contemplados em nenhuma das categorias acima.</em></p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/other_site">wasth:other_site</a>
 Alias: other</p>
@@ -490,8 +502,13 @@ Alias: other</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../SpatialCoverage/">SpatialCoverage</a></td>
-<td>Current, former, intended, and other spatial associations</td>
+<td><a href="../Place/">Place</a></td>
+<td>Entities that have a somewhat fixed, physical extension</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Work/">Work</a></td>
+<td>An historical landmark or building</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -512,7 +529,7 @@ Alias: other</p>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../SpatialCoverage/">SpatialCoverage</a></td>
+<td><a href="../Place/">Place</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -531,6 +548,21 @@ Alias: other</p>
 <tr>
 <td>Multivalued</td>
 <td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td><a href="../Place/">Place</a></td>
 </tr>
 </tbody>
 </table>
@@ -561,11 +593,13 @@ Alias: other</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other_site</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Para casos não contemplados em nenhuma das categorias acima.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Place</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SpatialCoverage</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Place</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

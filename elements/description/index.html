@@ -497,7 +497,7 @@ Alias: display</p>
 </tr>
 <tr>
 <td><a href="../BibliographicCitation/">BibliographicCitation</a></td>
-<td>Bibliographic or documentary citation using a CSL citekey</td>
+<td>Cadastro de uma referência bibliográfica</td>
 <td>no</td>
 </tr>
 <tr>
@@ -506,28 +506,18 @@ Alias: display</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Resource/">Resource</a></td>
-<td>Digital or documentary resource associated with a Work</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Media/">Media</a></td>
+<td><a href="../MediaObject/">MediaObject</a></td>
 <td>Descrição e referência a um único arquivo de mídia</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Measurements/">Measurements</a></td>
-<td>O campo <code>description</code> permite uma representação textual das medidas da</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Site/">Site</a></td>
-<td>A place associated with a Work</td>
+<td><a href="../Measurement/">Measurement</a></td>
+<td>This class comprises actions measuring physical properties and other values t...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../EventDate/">EventDate</a></td>
-<td>A wrapper for the expression of a date by providing a set of years as</td>
+<td>A wrapper for the expression of a date by providing a set of years as earlies...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -542,7 +532,7 @@ Alias: display</p>
 </tr>
 <tr>
 <td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC</td>
+<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -562,12 +552,17 @@ Alias: display</p>
 </tr>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A WASTH controlled-vocabulary concept, compatible with SKOS and SKOS-THES</td>
+<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Place/">Place</a></td>
-<td>A named place with optional geographic location, administrative hierarchy, cl...</td>
+<td>Entities that have a somewhat fixed, physical extension</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -576,13 +571,18 @@ Alias: display</p>
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../Resource/">Resource</a></td>
+<td>This class comprises identifiable immaterial items that make propositions abo...</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../MaterialTech/">MaterialTech</a></td>
-<td>Usar discernimento para identificar sistemas, materiais e técnicas que</td>
+<td>Usar discernimento para identificar sistemas, materiais e técnicas que intere...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and</td>
+<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -597,7 +597,7 @@ Alias: display</p>
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>CIDOC–CRM E22 HUMAN-MADE OBJECT</td>
+<td>An historical landmark or building</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -618,7 +618,7 @@ Alias: display</p>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../ConceptReference/">ConceptReference</a>, <a href="../BibliographicCitation/">BibliographicCitation</a>, <a href="../RelatedObject/">RelatedObject</a>, <a href="../Resource/">Resource</a>, <a href="../Media/">Media</a>, <a href="../Measurements/">Measurements</a>, <a href="../Site/">Site</a>, <a href="../EventDate/">EventDate</a>, <a href="../EventPlace/">EventPlace</a>, <a href="../RelatedEvent/">RelatedEvent</a>, <a href="../Thing/">Thing</a>, <a href="../Appellation/">Appellation</a>, <a href="../Inscription/">Inscription</a>, <a href="../Topic/">Topic</a></td>
+<td><a href="../ConceptReference/">ConceptReference</a>, <a href="../BibliographicCitation/">BibliographicCitation</a>, <a href="../RelatedObject/">RelatedObject</a>, <a href="../MediaObject/">MediaObject</a>, <a href="../Measurement/">Measurement</a>, <a href="../EventDate/">EventDate</a>, <a href="../EventPlace/">EventPlace</a>, <a href="../RelatedEvent/">RelatedEvent</a>, <a href="../Thing/">Thing</a>, <a href="../Appellation/">Appellation</a>, <a href="../Inscription/">Inscription</a>, <a href="../Topic/">Topic</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
@@ -648,6 +648,10 @@ Alias: display</p>
 <td>native</td>
 <td>wasth:description</td>
 </tr>
+<tr>
+<td>exact</td>
+<td>schema:description</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -655,6 +659,8 @@ Alias: display</p>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A human-readable description for a thing</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:description</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:description</span>
 <span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">display</span>
@@ -662,10 +668,8 @@ Alias: display</p>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>

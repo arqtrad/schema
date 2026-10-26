@@ -199,6 +199,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#class-properties">
+<span class="md-ellipsis">
+      
+        Class Properties
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
 <span class="md-ellipsis">
       
@@ -286,47 +295,14 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-event">Class: Event</h1>
-<p><em>This class comprises distinct, delimited and coherent processes and</em></p>
-<p><em>interactions of a material nature, in cultural, social or physical</em></p>
-<p><em>systems, involving and affecting instances of E77 Persistent Item in a</em></p>
-<p><em>way characteristic of the kind of process. Typical examples are meetings,</em></p>
-<p><em>births, deaths, actions of decision taking, making or inventing things,</em></p>
-<p><em>but also more complex and extended ones such as conferences, elections,</em></p>
-<p><em>building of a castle, or battles.</em></p>
-<p>__</p>
-<p><em>While the continuous growth of a tree lacks the limits characteristic of</em></p>
-<p><em>an event, its germination from a seed does qualify as an event.</em></p>
-<p><em>Similarly, the blowing of the wind lacks the distinctness and limits of</em></p>
-<p><em>an event, but a hurricane, flood or earthquake would qualify as an event.</em></p>
-<p><em>Mental processes are considered as events, in cases where they are</em></p>
-<p><em>connected with the material externalization of their results; for</em></p>
-<p><em>example, the creation of a poem, a performance or a change of intention</em></p>
-<p><em>that becomes obvious from subsequent actions or declarations.</em></p>
-<p>__</p>
-<p><em>The effects of an instance of E5 Event may not lead to relevant permanent</em></p>
-<p><em>changes of properties or relations of the items involved in it, for</em></p>
-<p><em>example an unrecorded performance. Of course, in order to be documented,</em></p>
-<p><em>some kind of evidence for an event must exist, be it witnesses, traces or</em></p>
-<p><em>products of the event.</em></p>
-<p>__</p>
-<p><em>While instances of E4 Period always require some form of coherence</em></p>
-<p><em>between its constituent phenomena, in addition, the essential</em></p>
-<p><em>constituents of instances of E5 Event should contribute to an overall</em></p>
-<p><em>effect; for example, the statements made during a meeting and the</em></p>
-<p><em>listening of the audience.</em></p>
-<p>__</p>
-<p><em>Viewed at a coarse level of detail, an instance of E5 Event may appear as</em></p>
-<p><em>if it had an ‘instantaneous’ overall effect, but any process or</em></p>
-<p><em>interaction of material nature in reality have an extent in time and</em></p>
-<p><em>space. At a fine level, instances of E5 Event may be analysed into</em></p>
-<p><em>component phenomena and phases within a space and timeframe, and as such</em></p>
-<p><em>can be seen as a period, regardless of the size of the phenomena. The</em></p>
-<p><em>reverse is not necessarily the case: not all instances of E4 Period give</em></p>
-<p><em>rise to a noteworthy overall effect and are thus not instances of E5</em></p>
-<p><em>Event.</em></p>
+<p><em>This class comprises distinct, delimited and coherent processes and interactions of a material nature, in cultural, social or physical systems, involving and affecting instances of E77 Persistent Item in a way characteristic of the kind of process. Typical examples are meetings, births, deaths, actions of decision taking, making or inventing things, but also more complex and extended ones such as conferences, elections, building of a castle, or battles.</em></p>
+<p><em>While the continuous growth of a tree lacks the limits characteristic of an event, its germination from a seed does qualify as an event. Similarly, the blowing of the wind lacks the distinctness and limits of an event, but a hurricane, flood or earthquake would qualify as an event. Mental processes are considered as events, in cases where they are connected with the material externalization of their results; for example, the creation of a poem, a performance or a change of intention that becomes obvious from subsequent actions or declarations.</em></p>
+<p><em>The effects of an instance of E5 Event may not lead to relevant permanent changes of properties or relations of the items involved in it, for example an unrecorded performance. Of course, in order to be documented, some kind of evidence for an event must exist, be it witnesses, traces or products of the event.</em></p>
+<p><em>While instances of E4 Period always require some form of coherence between its constituent phenomena, in addition, the essential constituents of instances of E5 Event should contribute to an overall effect; for example, the statements made during a meeting and the listening of the audience.</em></p>
+<p><em>Viewed at a coarse level of detail, an instance of E5 Event may appear as if it had an ‘instantaneous’ overall effect, but any process or interaction of material nature in reality have an extent in time and space. At a fine level, instances of E5 Event may be analysed into component phenomena and phases within a space and timeframe, and as such can be seen as a period, regardless of the size of the phenomena. The reverse is not necessarily the case: not all instances of E4 Period give rise to a noteworthy overall effect and are thus not instances of E5 Event.</em></p>
 <p>__</p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/Event">wasth:Event</a></p>
+<p>URI: <a href="http://www.cidoc-crm.org/cidoc-crm/E5_Event">crm:E5_Event</a></p>
 <pre class="mermaid"><code> classDiagram
     class Event
     click Event href "../Event/"
@@ -448,8 +424,8 @@
 
 
 
-        Event --&gt; "*" Measurements : measurements
-        click Measurements href "../Measurements/"
+        Event --&gt; "*" Measurement : measurements
+        click Measurement href "../Measurement/"
 
 
 
@@ -459,8 +435,8 @@
 
 
 
-        Event --&gt; "*" Media : media
-        click Media href "../Media/"
+        Event --&gt; "*" MediaObject : media
+        click MediaObject href "../MediaObject/"
 
 
 
@@ -510,13 +486,13 @@
 
 
 
-      Event : repository
+      Event : repositories
 
 
 
 
 
-        Event --&gt; "*" Repository : repository
+        Event --&gt; "*" Repository : repositories
         click Repository href "../Repository/"
 
 
@@ -597,7 +573,7 @@
 
 
 
-        Event --&gt; "0..1" TitleType : title_type
+        Event --&gt; "1" TitleType : title_type
         click TitleType href "../TitleType/"
 
 
@@ -621,6 +597,21 @@
 </ul>
 </li>
 </ul>
+<h2 id="class-properties">Class Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Class URI</td>
+<td><a href="http://www.cidoc-crm.org/cidoc-crm/E5_Event">crm:E5_Event</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -634,25 +625,25 @@
 <tbody>
 <tr>
 <td><a href="../measurements/">measurements</a></td>
-<td>* <br/> <a href="../Measurements/">Measurements</a></td>
+<td>* <br/> <a href="../Measurement/">Measurement</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../material/">material</a></td>
 <td>* <br/> <a href="../MaterialTech/">MaterialTech</a></td>
-<td></td>
+<td>This class is a specialization of E55 Type and comprises the concepts of mate...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../technique/">technique</a></td>
 <td>* <br/> <a href="../MaterialTech/">MaterialTech</a></td>
-<td></td>
+<td>The production or manufacturing processes, techniques, and methods incorporat...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../media/">media</a></td>
-<td>* <br/> <a href="../Media/">Media</a></td>
+<td>* <br/> <a href="../MediaObject/">MediaObject</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -665,31 +656,31 @@
 <tr>
 <td><a href="../actor_role/">actor_role</a></td>
 <td>* <br/> <a href="../Actor/">Actor</a></td>
-<td></td>
+<td>Identificação de um agente e do seu papel no evento</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../event_date/">event_date</a></td>
 <td>1 <br/> <a href="../EventDate/">EventDate</a></td>
-<td></td>
+<td>Conjunto de datas em que decorreu o evento</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../start_date/">start_date</a></td>
 <td>0..1 <br/> <a href="../EventDate/">EventDate</a></td>
-<td></td>
+<td>Data inicial do evento ou mais antiga data presumida para o seu decurso</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../end_date/">end_date</a></td>
 <td>0..1 <br/> <a href="../EventDate/">EventDate</a></td>
-<td></td>
+<td>Data final do evento ou mais tardia data presumida para o seu decurso</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../style_period/">style_period</a></td>
 <td>* <br/> <a href="../StylePeriod/">StylePeriod</a></td>
-<td>An index element for the period in which the event happened,</td>
+<td>An index element for the period in which the event happened, comprising infor...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -729,21 +720,9 @@
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
-<td><a href="../record_rights/">record_rights</a></td>
-<td>1..* <br/> <a href="../Right/">Right</a></td>
-<td></td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
 <td><a href="../title_type/">title_type</a></td>
-<td>0..1 <br/> <a href="../TitleType/">TitleType</a></td>
+<td>1 <br/> <a href="../TitleType/">TitleType</a></td>
 <td>Indica se o título é um nome próprio, descritivo, etc</td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
-<td><a href="../alt_name/">alt_name</a></td>
-<td>* <br/> <a href="../Appellation/">Appellation</a></td>
-<td>O bloco <code>alt_name</code> permite cadastrar outros nomes pelos quais a edificação</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -753,39 +732,9 @@
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
-<td><a href="../identifiers/">identifiers</a></td>
-<td>* <br/> <a href="../TypedReference/">TypedReference</a></td>
-<td>Published or external identifiers for the object</td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
-<td><a href="../tags/">tags</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Provisional uncontrolled keywords</td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
-<td><a href="../temporal/">temporal</a></td>
-<td>* <br/> <a href="./">Event</a></td>
-<td>Temporalidade do objeto</td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
-<td><a href="../repository/">repository</a></td>
-<td>* <br/> <a href="../Repository/">Repository</a></td>
-<td></td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
-<td><a href="../collection/">collection</a></td>
-<td>* <br/> <a href="../TypedReference/">TypedReference</a></td>
-<td>Collections or aggregations to which the object belongs</td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
 <td><a href="../content/">content</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
-<td>Narrative body content</td>
+<td>Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d...</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -819,9 +768,51 @@
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
+<td><a href="../alt_name/">alt_name</a></td>
+<td>* <br/> <a href="../Appellation/">Appellation</a></td>
+<td>O bloco <code>alt_name</code> permite cadastrar outros nomes pelos quais a edificação se...</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
 <td><a href="../category/">category</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>The LIDO Category Vocabulary is a structured controlled list of terms recomme...</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
+<td><a href="../identifiers/">identifiers</a></td>
+<td>* <br/> <a href="../TypedReference/">TypedReference</a></td>
+<td>Published or external identifiers for the object</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
+<td><a href="../tags/">tags</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Provisional uncontrolled keywords</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
+<td><a href="../temporal/">temporal</a></td>
+<td>* <br/> <a href="./">Event</a></td>
+<td>Temporalidade do objeto</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
+<td><a href="../collection/">collection</a></td>
+<td>* <br/> <a href="../TypedReference/">TypedReference</a></td>
+<td>Collections or aggregations to which the object belongs</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
+<td><a href="../repositories/">repositories</a></td>
+<td>* <br/> <a href="../Repository/">Repository</a></td>
+<td>A set of elements for the identification, name and location of the repository...</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
+<td><a href="../record_rights/">record_rights</a></td>
+<td>1..* <br/> <a href="../Right/">Right</a></td>
+<td>A set of structured information about rights regarding the content provided i...</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 </tbody>
@@ -845,6 +836,18 @@
 </tr>
 <tr>
 <td><a href="../Place/">Place</a></td>
+<td><a href="../temporal/">temporal</a></td>
+<td>range</td>
+<td><a href="./">Event</a></td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td><a href="../temporal/">temporal</a></td>
+<td>range</td>
+<td><a href="./">Event</a></td>
+</tr>
+<tr>
+<td><a href="../Resource/">Resource</a></td>
 <td><a href="../temporal/">temporal</a></td>
 <td>range</td>
 <td><a href="./">Event</a></td>
@@ -897,11 +900,15 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:Event</td>
+<td>crm:E5_Event</td>
 </tr>
 <tr>
 <td>native</td>
 <td>wasth:Event</td>
+</tr>
+<tr>
+<td>exact</td>
+<td>schema:Event</td>
 </tr>
 </tbody>
 </table>
@@ -911,79 +918,42 @@
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'This</span><span class="nv"> </span><span class="s">class</span><span class="nv"> </span><span class="s">comprises</span><span class="nv"> </span><span class="s">distinct,</span><span class="nv"> </span><span class="s">delimited</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">coherent</span><span class="nv"> </span><span class="s">processes</span><span class="nv"> </span><span class="s">and</span>
+<span class="w">  </span><span class="s">interactions</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">nature,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">cultural,</span><span class="nv"> </span><span class="s">social</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">physical</span><span class="nv"> </span><span class="s">systems,</span><span class="nv"> </span><span class="s">involving</span>
+<span class="w">  </span><span class="s">and</span><span class="nv"> </span><span class="s">affecting</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E77</span><span class="nv"> </span><span class="s">Persistent</span><span class="nv"> </span><span class="s">Item</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">way</span><span class="nv"> </span><span class="s">characteristic</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">kind</span>
+<span class="w">  </span><span class="s">of</span><span class="nv"> </span><span class="s">process.</span><span class="nv"> </span><span class="s">Typical</span><span class="nv"> </span><span class="s">examples</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">meetings,</span><span class="nv"> </span><span class="s">births,</span><span class="nv"> </span><span class="s">deaths,</span><span class="nv"> </span><span class="s">actions</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">decision</span><span class="nv"> </span><span class="s">taking,</span>
+<span class="w">  </span><span class="s">making</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">inventing</span><span class="nv"> </span><span class="s">things,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">also</span><span class="nv"> </span><span class="s">more</span><span class="nv"> </span><span class="s">complex</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">extended</span><span class="nv"> </span><span class="s">ones</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">conferences,</span>
+<span class="w">  </span><span class="s">elections,</span><span class="nv"> </span><span class="s">building</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">castle,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">battles.</span>
 
-<span class="w">  </span><span class="s">interactions</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">nature,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">cultural,</span><span class="nv"> </span><span class="s">social</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">physical</span>
+<span class="w">  </span><span class="s">While</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">continuous</span><span class="nv"> </span><span class="s">growth</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">tree</span><span class="nv"> </span><span class="s">lacks</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">limits</span><span class="nv"> </span><span class="s">characteristic</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event,</span>
+<span class="w">  </span><span class="s">its</span><span class="nv"> </span><span class="s">germination</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">seed</span><span class="nv"> </span><span class="s">does</span><span class="nv"> </span><span class="s">qualify</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event.</span><span class="nv"> </span><span class="s">Similarly,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">blowing</span><span class="nv"> </span><span class="s">of</span>
+<span class="w">  </span><span class="s">the</span><span class="nv"> </span><span class="s">wind</span><span class="nv"> </span><span class="s">lacks</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">distinctness</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">limits</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">hurricane,</span><span class="nv"> </span><span class="s">flood</span><span class="nv"> </span><span class="s">or</span>
+<span class="w">  </span><span class="s">earthquake</span><span class="nv"> </span><span class="s">would</span><span class="nv"> </span><span class="s">qualify</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event.</span><span class="nv"> </span><span class="s">Mental</span><span class="nv"> </span><span class="s">processes</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">considered</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">events,</span>
+<span class="w">  </span><span class="s">in</span><span class="nv"> </span><span class="s">cases</span><span class="nv"> </span><span class="s">where</span><span class="nv"> </span><span class="s">they</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">connected</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">externalization</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">their</span><span class="nv"> </span><span class="s">results;</span>
+<span class="w">  </span><span class="s">for</span><span class="nv"> </span><span class="s">example,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">creation</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">poem,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">performance</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">change</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">intention</span><span class="nv"> </span><span class="s">that</span>
+<span class="w">  </span><span class="s">becomes</span><span class="nv"> </span><span class="s">obvious</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">subsequent</span><span class="nv"> </span><span class="s">actions</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">declarations.</span>
 
-<span class="w">  </span><span class="s">systems,</span><span class="nv"> </span><span class="s">involving</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">affecting</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E77</span><span class="nv"> </span><span class="s">Persistent</span><span class="nv"> </span><span class="s">Item</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">a</span>
+<span class="w">  </span><span class="s">The</span><span class="nv"> </span><span class="s">effects</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">lead</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">relevant</span><span class="nv"> </span><span class="s">permanent</span><span class="nv"> </span><span class="s">changes</span>
+<span class="w">  </span><span class="s">of</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">relations</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">items</span><span class="nv"> </span><span class="s">involved</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">it,</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">example</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">unrecorded</span>
+<span class="w">  </span><span class="s">performance.</span><span class="nv"> </span><span class="s">Of</span><span class="nv"> </span><span class="s">course,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">order</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">documented,</span><span class="nv"> </span><span class="s">some</span><span class="nv"> </span><span class="s">kind</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">evidence</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">an</span>
+<span class="w">  </span><span class="s">event</span><span class="nv"> </span><span class="s">must</span><span class="nv"> </span><span class="s">exist,</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">witnesses,</span><span class="nv"> </span><span class="s">traces</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">products</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">event.</span>
 
-<span class="w">  </span><span class="s">way</span><span class="nv"> </span><span class="s">characteristic</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">kind</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">process.</span><span class="nv"> </span><span class="s">Typical</span><span class="nv"> </span><span class="s">examples</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">meetings,</span>
+<span class="w">  </span><span class="s">While</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E4</span><span class="nv"> </span><span class="s">Period</span><span class="nv"> </span><span class="s">always</span><span class="nv"> </span><span class="s">require</span><span class="nv"> </span><span class="s">some</span><span class="nv"> </span><span class="s">form</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">coherence</span><span class="nv"> </span><span class="s">between</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">constituent</span>
+<span class="w">  </span><span class="s">phenomena,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">addition,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">essential</span><span class="nv"> </span><span class="s">constituents</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">should</span>
+<span class="w">  </span><span class="s">contribute</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">overall</span><span class="nv"> </span><span class="s">effect;</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">example,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">statements</span><span class="nv"> </span><span class="s">made</span><span class="nv"> </span><span class="s">during</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">meeting</span>
+<span class="w">  </span><span class="s">and</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">listening</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">audience.</span>
 
-<span class="w">  </span><span class="s">births,</span><span class="nv"> </span><span class="s">deaths,</span><span class="nv"> </span><span class="s">actions</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">decision</span><span class="nv"> </span><span class="s">taking,</span><span class="nv"> </span><span class="s">making</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">inventing</span><span class="nv"> </span><span class="s">things,</span>
-
-<span class="w">  </span><span class="s">but</span><span class="nv"> </span><span class="s">also</span><span class="nv"> </span><span class="s">more</span><span class="nv"> </span><span class="s">complex</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">extended</span><span class="nv"> </span><span class="s">ones</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">conferences,</span><span class="nv"> </span><span class="s">elections,</span>
-
-<span class="w">  </span><span class="s">building</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">castle,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">battles.</span>
-
-
-<span class="w">  </span><span class="s">While</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">continuous</span><span class="nv"> </span><span class="s">growth</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">tree</span><span class="nv"> </span><span class="s">lacks</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">limits</span><span class="nv"> </span><span class="s">characteristic</span><span class="nv"> </span><span class="s">of</span>
-
-<span class="w">  </span><span class="s">an</span><span class="nv"> </span><span class="s">event,</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">germination</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">seed</span><span class="nv"> </span><span class="s">does</span><span class="nv"> </span><span class="s">qualify</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event.</span>
-
-<span class="w">  </span><span class="s">Similarly,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">blowing</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">wind</span><span class="nv"> </span><span class="s">lacks</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">distinctness</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">limits</span><span class="nv"> </span><span class="s">of</span>
-
-<span class="w">  </span><span class="s">an</span><span class="nv"> </span><span class="s">event,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">hurricane,</span><span class="nv"> </span><span class="s">flood</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">earthquake</span><span class="nv"> </span><span class="s">would</span><span class="nv"> </span><span class="s">qualify</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event.</span>
-
-<span class="w">  </span><span class="s">Mental</span><span class="nv"> </span><span class="s">processes</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">considered</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">events,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">cases</span><span class="nv"> </span><span class="s">where</span><span class="nv"> </span><span class="s">they</span><span class="nv"> </span><span class="s">are</span>
-
-<span class="w">  </span><span class="s">connected</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">externalization</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">their</span><span class="nv"> </span><span class="s">results;</span><span class="nv"> </span><span class="s">for</span>
-
-<span class="w">  </span><span class="s">example,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">creation</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">poem,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">performance</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">change</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">intention</span>
-
-<span class="w">  </span><span class="s">that</span><span class="nv"> </span><span class="s">becomes</span><span class="nv"> </span><span class="s">obvious</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">subsequent</span><span class="nv"> </span><span class="s">actions</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">declarations.</span>
-
-
-<span class="w">  </span><span class="s">The</span><span class="nv"> </span><span class="s">effects</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">lead</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">relevant</span><span class="nv"> </span><span class="s">permanent</span>
-
-<span class="w">  </span><span class="s">changes</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">relations</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">items</span><span class="nv"> </span><span class="s">involved</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">it,</span><span class="nv"> </span><span class="s">for</span>
-
-<span class="w">  </span><span class="s">example</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">unrecorded</span><span class="nv"> </span><span class="s">performance.</span><span class="nv"> </span><span class="s">Of</span><span class="nv"> </span><span class="s">course,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">order</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">documented,</span>
-
-<span class="w">  </span><span class="s">some</span><span class="nv"> </span><span class="s">kind</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">evidence</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event</span><span class="nv"> </span><span class="s">must</span><span class="nv"> </span><span class="s">exist,</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">witnesses,</span><span class="nv"> </span><span class="s">traces</span><span class="nv"> </span><span class="s">or</span>
-
-<span class="w">  </span><span class="s">products</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">event.</span>
-
-
-<span class="w">  </span><span class="s">While</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E4</span><span class="nv"> </span><span class="s">Period</span><span class="nv"> </span><span class="s">always</span><span class="nv"> </span><span class="s">require</span><span class="nv"> </span><span class="s">some</span><span class="nv"> </span><span class="s">form</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">coherence</span>
-
-<span class="w">  </span><span class="s">between</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">constituent</span><span class="nv"> </span><span class="s">phenomena,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">addition,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">essential</span>
-
-<span class="w">  </span><span class="s">constituents</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">contribute</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">overall</span>
-
-<span class="w">  </span><span class="s">effect;</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">example,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">statements</span><span class="nv"> </span><span class="s">made</span><span class="nv"> </span><span class="s">during</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">meeting</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">the</span>
-
-<span class="w">  </span><span class="s">listening</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">audience.</span>
-
-
-<span class="w">  </span><span class="s">Viewed</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">coarse</span><span class="nv"> </span><span class="s">level</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">detail,</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">appear</span><span class="nv"> </span><span class="s">as</span>
-
-<span class="w">  </span><span class="s">if</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">had</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">‘instantaneous’</span><span class="nv"> </span><span class="s">overall</span><span class="nv"> </span><span class="s">effect,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">any</span><span class="nv"> </span><span class="s">process</span><span class="nv"> </span><span class="s">or</span>
-
-<span class="w">  </span><span class="s">interaction</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">nature</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">reality</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">extent</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">and</span>
-
-<span class="w">  </span><span class="s">space.</span><span class="nv"> </span><span class="s">At</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">fine</span><span class="nv"> </span><span class="s">level,</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">analysed</span><span class="nv"> </span><span class="s">into</span>
-
-<span class="w">  </span><span class="s">component</span><span class="nv"> </span><span class="s">phenomena</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">phases</span><span class="nv"> </span><span class="s">within</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">space</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">timeframe,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">such</span>
-
-<span class="w">  </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">seen</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">regardless</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">size</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">phenomena.</span><span class="nv"> </span><span class="s">The</span>
-
-<span class="w">  </span><span class="s">reverse</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">necessarily</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">case:</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">all</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E4</span><span class="nv"> </span><span class="s">Period</span><span class="nv"> </span><span class="s">give</span>
-
-<span class="w">  </span><span class="s">rise</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">noteworthy</span><span class="nv"> </span><span class="s">overall</span><span class="nv"> </span><span class="s">effect</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">thus</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span>
-
-<span class="w">  </span><span class="s">Event.</span>
+<span class="w">  </span><span class="s">Viewed</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">coarse</span><span class="nv"> </span><span class="s">level</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">detail,</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">appear</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">it</span>
+<span class="w">  </span><span class="s">had</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">‘instantaneous’</span><span class="nv"> </span><span class="s">overall</span><span class="nv"> </span><span class="s">effect,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">any</span><span class="nv"> </span><span class="s">process</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">interaction</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">material</span>
+<span class="w">  </span><span class="s">nature</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">reality</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">extent</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">space.</span><span class="nv"> </span><span class="s">At</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">fine</span><span class="nv"> </span><span class="s">level,</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span>
+<span class="w">  </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">analysed</span><span class="nv"> </span><span class="s">into</span><span class="nv"> </span><span class="s">component</span><span class="nv"> </span><span class="s">phenomena</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">phases</span><span class="nv"> </span><span class="s">within</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">space</span><span class="nv"> </span><span class="s">and</span>
+<span class="w">  </span><span class="s">timeframe,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">seen</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">regardless</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">size</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">phenomena.</span>
+<span class="w">  </span><span class="s">The</span><span class="nv"> </span><span class="s">reverse</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">necessarily</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">case:</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">all</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E4</span><span class="nv"> </span><span class="s">Period</span><span class="nv"> </span><span class="s">give</span><span class="nv"> </span><span class="s">rise</span>
+<span class="w">  </span><span class="s">to</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">noteworthy</span><span class="nv"> </span><span class="s">overall</span><span class="nv"> </span><span class="s">effect</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">thus</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event.</span>
 
 <span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:Event</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">slots</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurements</span>
@@ -995,16 +965,20 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StylePeriod</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HistoricPlace</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventType</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">actor_role</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actor_role</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Identificação de um agente e do seu papel no evento.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
@@ -1014,6 +988,7 @@
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">event_date</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Conjunto de datas em que decorreu o evento.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
@@ -1023,6 +998,10 @@
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">start_date</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Data</span><span class="nv"> </span><span class="s">inicial</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">antiga</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">presumida</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">seu</span>
+<span class="w">      </span><span class="s">decurso.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start_date</span>
@@ -1032,6 +1011,9 @@
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">end_date</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Data</span><span class="nv"> </span><span class="s">final</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">tardia</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">presumida</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">seu</span><span class="nv"> </span><span class="s">decurso.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end_date</span>
@@ -1041,23 +1023,15 @@
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">style_period</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">style_period</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">event</span><span class="nv"> </span><span class="s">happened,</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">event</span><span class="nv"> </span><span class="s">happened,</span><span class="nv"> </span><span class="s">comprising</span>
+<span class="w">      </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">geologic</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">scale,</span><span class="nv"> </span><span class="s">archaelogical,</span><span class="nv"> </span><span class="s">historical,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">artistic</span>
+<span class="w">      </span><span class="s">period,</span><span class="nv"> </span><span class="s">style,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">art</span><span class="nv"> </span><span class="s">movement,</span><span class="nv"> </span><span class="s">whose</span><span class="nv"> </span><span class="s">characteristics</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">represented</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the</span>
+<span class="w">      </span><span class="s">object</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">work.</span>
 
-<span class="w">      </span><span class="s">comprising</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">geologic</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">scale,</span><span class="nv"> </span><span class="s">archaelogical,</span>
+<span class="w">      </span><span class="s">Note</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">"Period/Style"</span><span class="nv"> </span><span class="s">corresponds</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">"Style"</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">CDWA</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">shorthand</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">[Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).</span>
 
-<span class="w">      </span><span class="s">historical,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">artistic</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">style,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">art</span><span class="nv"> </span><span class="s">movement,</span><span class="nv"> </span><span class="s">whose</span>
-
-<span class="w">      </span><span class="s">characteristics</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">represented</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">work.</span>
-
-
-<span class="w">      </span><span class="s">Note</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">"Period/Style"</span><span class="nv"> </span><span class="s">corresponds</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">"Style"</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">CDWA</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">shorthand</span>
-
-<span class="w">      </span><span class="s">for</span><span class="nv"> </span><span class="s">[Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).</span>
-
-
-<span class="w">      </span><span class="s">Examples</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">Neolithic</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">Impressionist</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">style,</span><span class="nv"> </span><span class="s">or</span>
-
-<span class="w">      </span><span class="s">Cubism</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">movement.</span>
+<span class="w">      </span><span class="s">Examples</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">Neolithic</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">Impressionist</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">style,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">Cubism</span>
+<span class="w">      </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">movement.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
@@ -1122,85 +1096,49 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E5_Event</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'This</span><span class="nv"> </span><span class="s">class</span><span class="nv"> </span><span class="s">comprises</span><span class="nv"> </span><span class="s">distinct,</span><span class="nv"> </span><span class="s">delimited</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">coherent</span><span class="nv"> </span><span class="s">processes</span><span class="nv"> </span><span class="s">and</span>
+<span class="w">  </span><span class="s">interactions</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">nature,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">cultural,</span><span class="nv"> </span><span class="s">social</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">physical</span><span class="nv"> </span><span class="s">systems,</span><span class="nv"> </span><span class="s">involving</span>
+<span class="w">  </span><span class="s">and</span><span class="nv"> </span><span class="s">affecting</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E77</span><span class="nv"> </span><span class="s">Persistent</span><span class="nv"> </span><span class="s">Item</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">way</span><span class="nv"> </span><span class="s">characteristic</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">kind</span>
+<span class="w">  </span><span class="s">of</span><span class="nv"> </span><span class="s">process.</span><span class="nv"> </span><span class="s">Typical</span><span class="nv"> </span><span class="s">examples</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">meetings,</span><span class="nv"> </span><span class="s">births,</span><span class="nv"> </span><span class="s">deaths,</span><span class="nv"> </span><span class="s">actions</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">decision</span><span class="nv"> </span><span class="s">taking,</span>
+<span class="w">  </span><span class="s">making</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">inventing</span><span class="nv"> </span><span class="s">things,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">also</span><span class="nv"> </span><span class="s">more</span><span class="nv"> </span><span class="s">complex</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">extended</span><span class="nv"> </span><span class="s">ones</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">conferences,</span>
+<span class="w">  </span><span class="s">elections,</span><span class="nv"> </span><span class="s">building</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">castle,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">battles.</span>
 
-<span class="w">  </span><span class="s">interactions</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">nature,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">cultural,</span><span class="nv"> </span><span class="s">social</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">physical</span>
+<span class="w">  </span><span class="s">While</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">continuous</span><span class="nv"> </span><span class="s">growth</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">tree</span><span class="nv"> </span><span class="s">lacks</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">limits</span><span class="nv"> </span><span class="s">characteristic</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event,</span>
+<span class="w">  </span><span class="s">its</span><span class="nv"> </span><span class="s">germination</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">seed</span><span class="nv"> </span><span class="s">does</span><span class="nv"> </span><span class="s">qualify</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event.</span><span class="nv"> </span><span class="s">Similarly,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">blowing</span><span class="nv"> </span><span class="s">of</span>
+<span class="w">  </span><span class="s">the</span><span class="nv"> </span><span class="s">wind</span><span class="nv"> </span><span class="s">lacks</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">distinctness</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">limits</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">hurricane,</span><span class="nv"> </span><span class="s">flood</span><span class="nv"> </span><span class="s">or</span>
+<span class="w">  </span><span class="s">earthquake</span><span class="nv"> </span><span class="s">would</span><span class="nv"> </span><span class="s">qualify</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event.</span><span class="nv"> </span><span class="s">Mental</span><span class="nv"> </span><span class="s">processes</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">considered</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">events,</span>
+<span class="w">  </span><span class="s">in</span><span class="nv"> </span><span class="s">cases</span><span class="nv"> </span><span class="s">where</span><span class="nv"> </span><span class="s">they</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">connected</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">externalization</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">their</span><span class="nv"> </span><span class="s">results;</span>
+<span class="w">  </span><span class="s">for</span><span class="nv"> </span><span class="s">example,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">creation</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">poem,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">performance</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">change</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">intention</span><span class="nv"> </span><span class="s">that</span>
+<span class="w">  </span><span class="s">becomes</span><span class="nv"> </span><span class="s">obvious</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">subsequent</span><span class="nv"> </span><span class="s">actions</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">declarations.</span>
 
-<span class="w">  </span><span class="s">systems,</span><span class="nv"> </span><span class="s">involving</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">affecting</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E77</span><span class="nv"> </span><span class="s">Persistent</span><span class="nv"> </span><span class="s">Item</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">a</span>
+<span class="w">  </span><span class="s">The</span><span class="nv"> </span><span class="s">effects</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">lead</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">relevant</span><span class="nv"> </span><span class="s">permanent</span><span class="nv"> </span><span class="s">changes</span>
+<span class="w">  </span><span class="s">of</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">relations</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">items</span><span class="nv"> </span><span class="s">involved</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">it,</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">example</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">unrecorded</span>
+<span class="w">  </span><span class="s">performance.</span><span class="nv"> </span><span class="s">Of</span><span class="nv"> </span><span class="s">course,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">order</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">documented,</span><span class="nv"> </span><span class="s">some</span><span class="nv"> </span><span class="s">kind</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">evidence</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">an</span>
+<span class="w">  </span><span class="s">event</span><span class="nv"> </span><span class="s">must</span><span class="nv"> </span><span class="s">exist,</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">witnesses,</span><span class="nv"> </span><span class="s">traces</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">products</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">event.</span>
 
-<span class="w">  </span><span class="s">way</span><span class="nv"> </span><span class="s">characteristic</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">kind</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">process.</span><span class="nv"> </span><span class="s">Typical</span><span class="nv"> </span><span class="s">examples</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">meetings,</span>
+<span class="w">  </span><span class="s">While</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E4</span><span class="nv"> </span><span class="s">Period</span><span class="nv"> </span><span class="s">always</span><span class="nv"> </span><span class="s">require</span><span class="nv"> </span><span class="s">some</span><span class="nv"> </span><span class="s">form</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">coherence</span><span class="nv"> </span><span class="s">between</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">constituent</span>
+<span class="w">  </span><span class="s">phenomena,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">addition,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">essential</span><span class="nv"> </span><span class="s">constituents</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">should</span>
+<span class="w">  </span><span class="s">contribute</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">overall</span><span class="nv"> </span><span class="s">effect;</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">example,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">statements</span><span class="nv"> </span><span class="s">made</span><span class="nv"> </span><span class="s">during</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">meeting</span>
+<span class="w">  </span><span class="s">and</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">listening</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">audience.</span>
 
-<span class="w">  </span><span class="s">births,</span><span class="nv"> </span><span class="s">deaths,</span><span class="nv"> </span><span class="s">actions</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">decision</span><span class="nv"> </span><span class="s">taking,</span><span class="nv"> </span><span class="s">making</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">inventing</span><span class="nv"> </span><span class="s">things,</span>
-
-<span class="w">  </span><span class="s">but</span><span class="nv"> </span><span class="s">also</span><span class="nv"> </span><span class="s">more</span><span class="nv"> </span><span class="s">complex</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">extended</span><span class="nv"> </span><span class="s">ones</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">conferences,</span><span class="nv"> </span><span class="s">elections,</span>
-
-<span class="w">  </span><span class="s">building</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">castle,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">battles.</span>
-
-
-<span class="w">  </span><span class="s">While</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">continuous</span><span class="nv"> </span><span class="s">growth</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">tree</span><span class="nv"> </span><span class="s">lacks</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">limits</span><span class="nv"> </span><span class="s">characteristic</span><span class="nv"> </span><span class="s">of</span>
-
-<span class="w">  </span><span class="s">an</span><span class="nv"> </span><span class="s">event,</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">germination</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">seed</span><span class="nv"> </span><span class="s">does</span><span class="nv"> </span><span class="s">qualify</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event.</span>
-
-<span class="w">  </span><span class="s">Similarly,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">blowing</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">wind</span><span class="nv"> </span><span class="s">lacks</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">distinctness</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">limits</span><span class="nv"> </span><span class="s">of</span>
-
-<span class="w">  </span><span class="s">an</span><span class="nv"> </span><span class="s">event,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">hurricane,</span><span class="nv"> </span><span class="s">flood</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">earthquake</span><span class="nv"> </span><span class="s">would</span><span class="nv"> </span><span class="s">qualify</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event.</span>
-
-<span class="w">  </span><span class="s">Mental</span><span class="nv"> </span><span class="s">processes</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">considered</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">events,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">cases</span><span class="nv"> </span><span class="s">where</span><span class="nv"> </span><span class="s">they</span><span class="nv"> </span><span class="s">are</span>
-
-<span class="w">  </span><span class="s">connected</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">externalization</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">their</span><span class="nv"> </span><span class="s">results;</span><span class="nv"> </span><span class="s">for</span>
-
-<span class="w">  </span><span class="s">example,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">creation</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">poem,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">performance</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">change</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">intention</span>
-
-<span class="w">  </span><span class="s">that</span><span class="nv"> </span><span class="s">becomes</span><span class="nv"> </span><span class="s">obvious</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">subsequent</span><span class="nv"> </span><span class="s">actions</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">declarations.</span>
-
-
-<span class="w">  </span><span class="s">The</span><span class="nv"> </span><span class="s">effects</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">lead</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">relevant</span><span class="nv"> </span><span class="s">permanent</span>
-
-<span class="w">  </span><span class="s">changes</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">relations</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">items</span><span class="nv"> </span><span class="s">involved</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">it,</span><span class="nv"> </span><span class="s">for</span>
-
-<span class="w">  </span><span class="s">example</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">unrecorded</span><span class="nv"> </span><span class="s">performance.</span><span class="nv"> </span><span class="s">Of</span><span class="nv"> </span><span class="s">course,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">order</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">documented,</span>
-
-<span class="w">  </span><span class="s">some</span><span class="nv"> </span><span class="s">kind</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">evidence</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">event</span><span class="nv"> </span><span class="s">must</span><span class="nv"> </span><span class="s">exist,</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">witnesses,</span><span class="nv"> </span><span class="s">traces</span><span class="nv"> </span><span class="s">or</span>
-
-<span class="w">  </span><span class="s">products</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">event.</span>
-
-
-<span class="w">  </span><span class="s">While</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E4</span><span class="nv"> </span><span class="s">Period</span><span class="nv"> </span><span class="s">always</span><span class="nv"> </span><span class="s">require</span><span class="nv"> </span><span class="s">some</span><span class="nv"> </span><span class="s">form</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">coherence</span>
-
-<span class="w">  </span><span class="s">between</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">constituent</span><span class="nv"> </span><span class="s">phenomena,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">addition,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">essential</span>
-
-<span class="w">  </span><span class="s">constituents</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">contribute</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">overall</span>
-
-<span class="w">  </span><span class="s">effect;</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">example,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">statements</span><span class="nv"> </span><span class="s">made</span><span class="nv"> </span><span class="s">during</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">meeting</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">the</span>
-
-<span class="w">  </span><span class="s">listening</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">audience.</span>
-
-
-<span class="w">  </span><span class="s">Viewed</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">coarse</span><span class="nv"> </span><span class="s">level</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">detail,</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">appear</span><span class="nv"> </span><span class="s">as</span>
-
-<span class="w">  </span><span class="s">if</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">had</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">‘instantaneous’</span><span class="nv"> </span><span class="s">overall</span><span class="nv"> </span><span class="s">effect,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">any</span><span class="nv"> </span><span class="s">process</span><span class="nv"> </span><span class="s">or</span>
-
-<span class="w">  </span><span class="s">interaction</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">nature</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">reality</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">extent</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">and</span>
-
-<span class="w">  </span><span class="s">space.</span><span class="nv"> </span><span class="s">At</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">fine</span><span class="nv"> </span><span class="s">level,</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">analysed</span><span class="nv"> </span><span class="s">into</span>
-
-<span class="w">  </span><span class="s">component</span><span class="nv"> </span><span class="s">phenomena</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">phases</span><span class="nv"> </span><span class="s">within</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">space</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">timeframe,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">such</span>
-
-<span class="w">  </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">seen</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">regardless</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">size</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">phenomena.</span><span class="nv"> </span><span class="s">The</span>
-
-<span class="w">  </span><span class="s">reverse</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">necessarily</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">case:</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">all</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E4</span><span class="nv"> </span><span class="s">Period</span><span class="nv"> </span><span class="s">give</span>
-
-<span class="w">  </span><span class="s">rise</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">noteworthy</span><span class="nv"> </span><span class="s">overall</span><span class="nv"> </span><span class="s">effect</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">thus</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span>
-
-<span class="w">  </span><span class="s">Event.</span>
+<span class="w">  </span><span class="s">Viewed</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">coarse</span><span class="nv"> </span><span class="s">level</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">detail,</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">appear</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">it</span>
+<span class="w">  </span><span class="s">had</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">‘instantaneous’</span><span class="nv"> </span><span class="s">overall</span><span class="nv"> </span><span class="s">effect,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">any</span><span class="nv"> </span><span class="s">process</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">interaction</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">material</span>
+<span class="w">  </span><span class="s">nature</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">reality</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">extent</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">space.</span><span class="nv"> </span><span class="s">At</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">fine</span><span class="nv"> </span><span class="s">level,</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span>
+<span class="w">  </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">analysed</span><span class="nv"> </span><span class="s">into</span><span class="nv"> </span><span class="s">component</span><span class="nv"> </span><span class="s">phenomena</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">phases</span><span class="nv"> </span><span class="s">within</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">space</span><span class="nv"> </span><span class="s">and</span>
+<span class="w">  </span><span class="s">timeframe,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">seen</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">regardless</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">size</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">phenomena.</span>
+<span class="w">  </span><span class="s">The</span><span class="nv"> </span><span class="s">reverse</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">necessarily</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">case:</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">all</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E4</span><span class="nv"> </span><span class="s">Period</span><span class="nv"> </span><span class="s">give</span><span class="nv"> </span><span class="s">rise</span>
+<span class="w">  </span><span class="s">to</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">noteworthy</span><span class="nv"> </span><span class="s">overall</span><span class="nv"> </span><span class="s">effect</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">thus</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E5</span><span class="nv"> </span><span class="s">Event.</span>
 
 <span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:Event</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span>
@@ -1208,16 +1146,20 @@
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StylePeriod</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HistoricPlace</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventType</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">actor_role</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actor_role</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Identificação de um agente e do seu papel no evento.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
@@ -1229,6 +1171,7 @@
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">event_date</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Conjunto de datas em que decorreu o evento.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
@@ -1239,6 +1182,10 @@
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">start_date</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Data</span><span class="nv"> </span><span class="s">inicial</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">antiga</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">presumida</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">seu</span>
+<span class="w">      </span><span class="s">decurso.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start_date</span>
@@ -1249,6 +1196,9 @@
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">end_date</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Data</span><span class="nv"> </span><span class="s">final</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">tardia</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">presumida</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">seu</span><span class="nv"> </span><span class="s">decurso.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end_date</span>
@@ -1259,23 +1209,15 @@
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">style_period</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">style_period</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">event</span><span class="nv"> </span><span class="s">happened,</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">event</span><span class="nv"> </span><span class="s">happened,</span><span class="nv"> </span><span class="s">comprising</span>
+<span class="w">      </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">geologic</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">scale,</span><span class="nv"> </span><span class="s">archaelogical,</span><span class="nv"> </span><span class="s">historical,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">artistic</span>
+<span class="w">      </span><span class="s">period,</span><span class="nv"> </span><span class="s">style,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">art</span><span class="nv"> </span><span class="s">movement,</span><span class="nv"> </span><span class="s">whose</span><span class="nv"> </span><span class="s">characteristics</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">represented</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the</span>
+<span class="w">      </span><span class="s">object</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">work.</span>
 
-<span class="w">      </span><span class="s">comprising</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">geologic</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">scale,</span><span class="nv"> </span><span class="s">archaelogical,</span>
+<span class="w">      </span><span class="s">Note</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">"Period/Style"</span><span class="nv"> </span><span class="s">corresponds</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">"Style"</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">CDWA</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">shorthand</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">[Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).</span>
 
-<span class="w">      </span><span class="s">historical,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">artistic</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">style,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">art</span><span class="nv"> </span><span class="s">movement,</span><span class="nv"> </span><span class="s">whose</span>
-
-<span class="w">      </span><span class="s">characteristics</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">represented</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">work.</span>
-
-
-<span class="w">      </span><span class="s">Note</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">"Period/Style"</span><span class="nv"> </span><span class="s">corresponds</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">"Style"</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">CDWA</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">shorthand</span>
-
-<span class="w">      </span><span class="s">for</span><span class="nv"> </span><span class="s">[Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).</span>
-
-
-<span class="w">      </span><span class="s">Examples</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">Neolithic</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">Impressionist</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">style,</span><span class="nv"> </span><span class="s">or</span>
-
-<span class="w">      </span><span class="s">Cubism</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">movement.</span>
+<span class="w">      </span><span class="s">Examples</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">Neolithic</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">Impressionist</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">style,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">Cubism</span>
+<span class="w">      </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">movement.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
@@ -1355,17 +1297,39 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">material</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'This</span><span class="nv"> </span><span class="s">class</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">specialization</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E55</span><span class="nv"> </span><span class="s">Type</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">comprises</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">concepts</span>
+<span class="w">      </span><span class="s">of</span><span class="nv"> </span><span class="s">materials.</span>
+
+<span class="w">      </span><span class="s">Instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E57</span><span class="nv"> </span><span class="s">Material</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">denote</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">matter</span><span class="nv"> </span><span class="s">before</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">use,</span><span class="nv"> </span><span class="s">during</span>
+<span class="w">      </span><span class="s">its</span><span class="nv"> </span><span class="s">use,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">incorporated</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">object,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">ultramarine</span><span class="nv"> </span><span class="s">powder,</span><span class="nv"> </span><span class="s">tempera</span>
+<span class="w">      </span><span class="s">paste,</span><span class="nv"> </span><span class="s">reinforced</span><span class="nv"> </span><span class="s">concrete.</span><span class="nv"> </span><span class="s">Discrete</span><span class="nv"> </span><span class="s">pieces</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">raw-materials</span><span class="nv"> </span><span class="s">kept</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">museums,</span>
+<span class="w">      </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">bricks,</span><span class="nv"> </span><span class="s">sheets</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">fabric,</span><span class="nv"> </span><span class="s">pieces</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">metal,</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">modelled</span><span class="nv"> </span><span class="s">individually</span>
+<span class="w">      </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">way</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">objects.</span><span class="nv"> </span><span class="s">Discrete</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">processed</span><span class="nv"> </span><span class="s">pieces,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span>
+<span class="w">      </span><span class="s">the</span><span class="nv"> </span><span class="s">stones</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">Nefer</span><span class="nv"> </span><span class="s">Titi</span><span class="se">''</span><span class="s">s</span><span class="nv"> </span><span class="s">temple,</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">modelled</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">parts</span><span class="nv"> </span><span class="s">(cf.</span><span class="nv"> </span><span class="s">P46</span><span class="nv"> </span><span class="s">is</span>
+<span class="w">      </span><span class="s">composed</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">(forms</span><span class="nv"> </span><span class="s">part</span><span class="nv"> </span><span class="s">of):</span><span class="nv"> </span><span class="s">E18</span><span class="nv"> </span><span class="s">Physical</span><span class="nv"> </span><span class="s">Thing).</span>
+
+<span class="w">      </span><span class="s">This</span><span class="nv"> </span><span class="s">type</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">categorically</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">model</span><span class="nv"> </span><span class="s">without</span><span class="nv"> </span><span class="s">reference</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">instances</span>
+<span class="w">      </span><span class="s">of</span><span class="nv"> </span><span class="s">it,</span><span class="nv"> </span><span class="s">i.e.</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Model</span><span class="nv"> </span><span class="s">does</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">foresee</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">description</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">instances</span>
+<span class="w">      </span><span class="s">of</span><span class="nv"> </span><span class="s">E57</span><span class="nv"> </span><span class="s">Material,</span><span class="nv"> </span><span class="s">e.g.</span><span class="nv"> </span><span class="s">“instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">gold”.</span>
+
+<span class="w">      </span><span class="s">It</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">recommended</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">internationally</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">nationally</span><span class="nv"> </span><span class="s">agreed</span><span class="nv"> </span><span class="s">codes</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">terminology</span>
+<span class="w">      </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">used.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:Material</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E57_Material</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
@@ -1376,8 +1340,15 @@
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">technique</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">technique</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">production</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">manufacturing</span><span class="nv"> </span><span class="s">processes,</span><span class="nv"> </span><span class="s">techniques,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">methods</span>
+<span class="w">      </span><span class="s">incorporated</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">fabrication</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">alteration</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">work</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">image.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E55_Type</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:Technique</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
@@ -1395,7 +1366,7 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -1403,6 +1374,8 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A human-readable description for a thing</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:description</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:description</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">display</span>
@@ -1411,10 +1384,8 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
@@ -1424,18 +1395,6 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">record_rights</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_rights</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">title_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title_type</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Indica se o título é um nome próprio, descritivo, etc.</span>
@@ -1447,35 +1406,7 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TitleType</span>
-<span class="w">  </span><span class="nt">alt_name</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alt_name</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'O</span><span class="nv"> </span><span class="s">bloco</span><span class="nv"> </span><span class="s">`alt_name`</span><span class="nv"> </span><span class="s">permite</span><span class="nv"> </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">outros</span><span class="nv"> </span><span class="s">nomes</span><span class="nv"> </span><span class="s">pelos</span><span class="nv"> </span><span class="s">quais</span><span class="nv"> </span><span class="s">a</span>
-<span class="w">      </span><span class="s">edificação</span>
-
-<span class="w">      </span><span class="s">será</span><span class="nv"> </span><span class="s">eventualmente</span><span class="nv"> </span><span class="s">conhecida.</span><span class="nv"> </span><span class="s">É</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">opcional</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">itens,</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">se</span>
-
-<span class="w">      </span><span class="s">existir,</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">campos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">devem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">preenchidos</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">do</span>
-
-<span class="w">      </span><span class="s">título</span><span class="nv"> </span><span class="s">principal.</span>
-
-
-<span class="w">      </span><span class="s">O</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">contém</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">texto</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">título</span><span class="nv"> </span><span class="s">(nome).</span>
-
-
-<span class="w">      </span><span class="s">Este</span><span class="nv"> </span><span class="s">bloco</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">omitido</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">completo</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">houver</span><span class="nv"> </span><span class="s">títulos</span>
-
-<span class="w">      </span><span class="s">alternativos.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">bibliographic_citation</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
@@ -1484,12 +1415,12 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
@@ -1499,70 +1430,21 @@
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">identifiers</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">identifiers</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Published or external identifiers for the object.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tags</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provisional uncontrolled keywords. Prefer `classifications` or `subject`</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for curated vocabulary terms.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">temporal</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temporal</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Temporalidade do objeto.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">repository</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repository</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Repository</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">collection</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">collection</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Collections or aggregations to which the object belongs.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">content</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Narrative body content. In the Markdown adapter this corresponds</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">to the document body after YAML frontmatter.</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Deixe</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">linha</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">branco</span><span class="nv"> </span><span class="s">após</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">fechamento</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">metadados</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">inclua</span>
+<span class="w">      </span><span class="s">aqui</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">descrição</span><span class="nv"> </span><span class="s">morfológica</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">histórica</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">texto</span><span class="nv"> </span><span class="s">livre,</span><span class="nv"> </span><span class="s">usando</span>
+<span class="w">      </span><span class="s">formatação</span><span class="nv"> </span><span class="s">Markdown.</span>
+
+<span class="w">      </span><span class="s">Poderá</span><span class="nv"> </span><span class="s">incluir</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">segundo</span><span class="nv"> </span><span class="s">bloco</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">metadados</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">indicar</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">referências</span><span class="nv"> </span><span class="s">bibliográficas</span>
+<span class="w">      </span><span class="s">da</span><span class="nv"> </span><span class="s">descrição</span><span class="nv"> </span><span class="s">textual,</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`nocite`.</span><span class="nv"> </span><span class="s">O</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">chaves</span><span class="nv"> </span><span class="s">de</span>
+<span class="w">      </span><span class="s">citação</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">Zotero</span><span class="nv"> </span><span class="s">(cada</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">começando</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">`@`)</span><span class="nv"> </span><span class="s">separadas</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">vírgulas:</span>
+
+<span class="w">      </span><span class="s">```yaml</span><span class="nv"> </span><span class="s">Conteúdo</span><span class="nv"> </span><span class="s">textual</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">*Markdown*</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">citações</span><span class="nv"> </span><span class="s">[@citekey].</span>
+
+<span class="w">      </span><span class="s">---</span><span class="nv"> </span><span class="s">nocite:</span><span class="nv"> </span><span class="s">"@*"</span><span class="nv"> </span><span class="s">---</span><span class="nv"> </span><span class="s">```</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skos:scopeNote</span>
@@ -1608,6 +1490,8 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The preferred human-readable label for a Thing.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:name</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:title</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
@@ -1640,6 +1524,27 @@
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">alt_name</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alt_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'O</span><span class="nv"> </span><span class="s">bloco</span><span class="nv"> </span><span class="s">`alt_name`</span><span class="nv"> </span><span class="s">permite</span><span class="nv"> </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">outros</span><span class="nv"> </span><span class="s">nomes</span><span class="nv"> </span><span class="s">pelos</span><span class="nv"> </span><span class="s">quais</span><span class="nv"> </span><span class="s">a</span>
+<span class="w">      </span><span class="s">edificação</span><span class="nv"> </span><span class="s">será</span><span class="nv"> </span><span class="s">eventualmente</span><span class="nv"> </span><span class="s">conhecida.</span><span class="nv"> </span><span class="s">É</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">opcional</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">itens,</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">se</span>
+<span class="w">      </span><span class="s">existir,</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">campos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">devem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">preenchidos</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">título</span>
+<span class="w">      </span><span class="s">principal.</span>
+
+<span class="w">      </span><span class="s">O</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">contém</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">texto</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">título</span><span class="nv"> </span><span class="s">(nome).</span>
+
+<span class="w">      </span><span class="s">Este</span><span class="nv"> </span><span class="s">bloco</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">omitido</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">completo</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">houver</span><span class="nv"> </span><span class="s">títulos</span><span class="nv"> </span><span class="s">alternativos.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">category</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">category</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">Category</span><span class="nv"> </span><span class="s">Vocabulary</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">controlled</span><span class="nv"> </span><span class="s">list</span><span class="nv"> </span><span class="s">of</span>
@@ -1648,13 +1553,109 @@
 <span class="w">      </span><span class="s">Examples</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">human-made</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">natural</span><span class="nv"> </span><span class="s">object.'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:lidoCategory</span>
-<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string(lido:lido00096)</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lidoCategory</span>
 <span class="w">    </span><span class="nt">designates_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">identifiers</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">identifiers</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Published or external identifiers for the object.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tags</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provisional uncontrolled keywords. Prefer `classifications` or `subject`</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for curated vocabulary terms.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">temporal</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temporal</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Temporalidade do objeto.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">collection</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">collection</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Collections or aggregations to which the object belongs.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">repositories</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repositories</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">elements</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">identification,</span><span class="nv"> </span><span class="s">name</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">location</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span>
+<span class="w">      </span><span class="s">repository</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">responsible</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">object/work</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">focus.</span>
+
+<span class="w">      </span><span class="s">Repeated</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">there</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">several</span><span class="nv"> </span><span class="s">designations</span><span class="nv"> </span><span class="s">known,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">former</span><span class="nv"> </span><span class="s">repositories</span>
+<span class="w">      </span><span class="s">or</span><span class="nv"> </span><span class="s">geographic</span><span class="nv"> </span><span class="s">places</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">listed.</span>
+
+<span class="w">      </span><span class="s">---------------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="s">Nos</span><span class="nv"> </span><span class="s">Documentários</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">Arquitetura</span><span class="nv"> </span><span class="s">Tradicional,</span><span class="nv"> </span><span class="s">usamos</span><span class="nv"> </span><span class="s">repositórios</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">indicar</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">inclusão</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">perímetros</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">sítios</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">patrimônio</span><span class="nv"> </span><span class="s">cultural,</span><span class="nv"> </span><span class="s">etc.</span>
+
+<span class="w">      </span><span class="s">Os</span><span class="nv"> </span><span class="s">repositórios</span><span class="nv"> </span><span class="s">devem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">cadastrados</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">modo</span><span class="nv"> </span><span class="s">semelhante</span><span class="nv"> </span><span class="s">às</span><span class="nv"> </span><span class="s">informações</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">georreferenciamento,</span>
+<span class="w">      </span><span class="s">usando</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">tipo</span><span class="nv"> </span><span class="s">`other`.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Repository</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">record_rights</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_rights</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">rights</span><span class="nv"> </span><span class="s">regarding</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">content</span>
+<span class="w">      </span><span class="s">provided</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">record.</span>
+
+<span class="w">      </span><span class="s">---------------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="s">:warning:</span><span class="nv"> </span><span class="s">Este</span><span class="nv"> </span><span class="s">grupo</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">refere</span><span class="nv"> </span><span class="s">aos</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">CONTEÚDO</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha,</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">sobre</span>
+<span class="w">      </span><span class="s">os</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">incidentes</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">descrito.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E5_Event</span>
 </code></pre></div>
 </details>
 </div>

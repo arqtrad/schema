@@ -475,8 +475,10 @@
 
 
 <h1 id="slot-technique">Slot: technique</h1>
+<p><em>The production or manufacturing processes, techniques, and methods incorporated in the fabrication or alteration of the work or image.</em></p>
+<p>__</p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/technique">wasth:technique</a></p>
+<p>URI: <a href="http://purl.org/vra/Technique">vra:Technique</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -490,12 +492,12 @@
 <tbody>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and</td>
+<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>CIDOC–CRM E22 HUMAN-MADE OBJECT</td>
+<td>An historical landmark or building</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -517,6 +519,10 @@
 <tr>
 <td>Domain Of</td>
 <td><a href="../Event/">Event</a>, <a href="../Work/">Work</a></td>
+</tr>
+<tr>
+<td>Slot URI</td>
+<td><a href="http://purl.org/vra/Technique">vra:Technique</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -554,19 +560,30 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:technique</td>
+<td>vra:Technique</td>
 </tr>
 <tr>
 <td>native</td>
 <td>wasth:technique</td>
+</tr>
+<tr>
+<td>close</td>
+<td>crm:E55_Type</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">technique</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">production</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">manufacturing</span><span class="nv"> </span><span class="s">processes,</span><span class="nv"> </span><span class="s">techniques,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">methods</span><span class="nv"> </span><span class="s">incorporated</span>
+<span class="w">  </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">fabrication</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">alteration</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">work</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">image.</span>
+
+<span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">close_mappings</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E55_Type</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:Technique</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>

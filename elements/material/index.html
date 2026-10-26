@@ -475,8 +475,13 @@
 
 
 <h1 id="slot-material">Slot: material</h1>
+<p><em>This class is a specialization of E55 Type and comprises the concepts of materials.</em></p>
+<p><em>Instances of E57 Material may denote properties of matter before its use, during its use, and as incorporated in an object, such as ultramarine powder, tempera paste, reinforced concrete. Discrete pieces of raw-materials kept in museums, such as bricks, sheets of fabric, pieces of metal, should be modelled individually in the same way as other objects. Discrete used or processed pieces, such as the stones from Nefer Titi's temple, should be modelled as parts (cf. P46 is composed of (forms part of): E18 Physical Thing).</em></p>
+<p><em>This type is used categorically in the model without reference to instances of it, i.e. the Model does not foresee the description of instances of instances of E57 Material, e.g. “instances of gold”.</em></p>
+<p><em>It is recommended that internationally or nationally agreed codes and terminology should be used.</em></p>
+<p>__</p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/material">wasth:material</a></p>
+<p>URI: <a href="http://www.cidoc-crm.org/cidoc-crm/E57_Material">crm:E57_Material</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -490,12 +495,12 @@
 <tbody>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and</td>
+<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>CIDOC–CRM E22 HUMAN-MADE OBJECT</td>
+<td>An historical landmark or building</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -517,6 +522,10 @@
 <tr>
 <td>Domain Of</td>
 <td><a href="../Event/">Event</a>, <a href="../Work/">Work</a></td>
+</tr>
+<tr>
+<td>Slot URI</td>
+<td><a href="http://www.cidoc-crm.org/cidoc-crm/E57_Material">crm:E57_Material</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -554,19 +563,45 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:material</td>
+<td>crm:E57_Material</td>
 </tr>
 <tr>
 <td>native</td>
 <td>wasth:material</td>
+</tr>
+<tr>
+<td>exact</td>
+<td>vra:Material</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'This</span><span class="nv"> </span><span class="s">class</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">specialization</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E55</span><span class="nv"> </span><span class="s">Type</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">comprises</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">concepts</span>
+<span class="w">  </span><span class="s">of</span><span class="nv"> </span><span class="s">materials.</span>
+
+<span class="w">  </span><span class="s">Instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E57</span><span class="nv"> </span><span class="s">Material</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">denote</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">matter</span><span class="nv"> </span><span class="s">before</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">use,</span><span class="nv"> </span><span class="s">during</span>
+<span class="w">  </span><span class="s">its</span><span class="nv"> </span><span class="s">use,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">incorporated</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">object,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">ultramarine</span><span class="nv"> </span><span class="s">powder,</span><span class="nv"> </span><span class="s">tempera</span><span class="nv"> </span><span class="s">paste,</span>
+<span class="w">  </span><span class="s">reinforced</span><span class="nv"> </span><span class="s">concrete.</span><span class="nv"> </span><span class="s">Discrete</span><span class="nv"> </span><span class="s">pieces</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">raw-materials</span><span class="nv"> </span><span class="s">kept</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">museums,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">bricks,</span>
+<span class="w">  </span><span class="s">sheets</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">fabric,</span><span class="nv"> </span><span class="s">pieces</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">metal,</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">modelled</span><span class="nv"> </span><span class="s">individually</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">way</span>
+<span class="w">  </span><span class="s">as</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">objects.</span><span class="nv"> </span><span class="s">Discrete</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">processed</span><span class="nv"> </span><span class="s">pieces,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">stones</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">Nefer</span>
+<span class="w">  </span><span class="s">Titi</span><span class="se">''</span><span class="s">s</span><span class="nv"> </span><span class="s">temple,</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">modelled</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">parts</span><span class="nv"> </span><span class="s">(cf.</span><span class="nv"> </span><span class="s">P46</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">composed</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">(forms</span><span class="nv"> </span><span class="s">part</span>
+<span class="w">  </span><span class="s">of):</span><span class="nv"> </span><span class="s">E18</span><span class="nv"> </span><span class="s">Physical</span><span class="nv"> </span><span class="s">Thing).</span>
+
+<span class="w">  </span><span class="s">This</span><span class="nv"> </span><span class="s">type</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">categorically</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">model</span><span class="nv"> </span><span class="s">without</span><span class="nv"> </span><span class="s">reference</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">it,</span>
+<span class="w">  </span><span class="s">i.e.</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Model</span><span class="nv"> </span><span class="s">does</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">foresee</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">description</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E57</span>
+<span class="w">  </span><span class="s">Material,</span><span class="nv"> </span><span class="s">e.g.</span><span class="nv"> </span><span class="s">“instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">gold”.</span>
+
+<span class="w">  </span><span class="s">It</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">recommended</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">internationally</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">nationally</span><span class="nv"> </span><span class="s">agreed</span><span class="nv"> </span><span class="s">codes</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">terminology</span>
+<span class="w">  </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">used.</span>
+
+<span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:Material</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E57_Material</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>

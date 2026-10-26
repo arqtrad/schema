@@ -295,13 +295,8 @@
 <p>_    referem a desenhos históricos (fontes primárias) que atestam o_</p>
 <p>_    processo de projeto da edificação._</p>
 <p>__</p>
-<p><em>ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER</em></p>
-<p><em>CADASTRADOS NO GRUPO resource, MAIS ABAIXO.</em></p>
-<p>__</p>
-<p><em>O grupo relation é destinado unicamente a cadastrar relações desta</em></p>
-<p><em>edificação com objetos autônomos, tais como outras edificações, conjuntos</em></p>
-<p><em>urbanos, obras de artes visuais, referências bibliográficas ou acervos</em></p>
-<p><em>arquivísticos.</em></p>
+<p><em>ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO resource, MAIS ABAIXO.</em></p>
+<p><em>O grupo relation é destinado unicamente a cadastrar relações desta edificação com objetos autônomos, tais como outras edificações, conjuntos urbanos, obras de artes visuais, referências bibliográficas ou acervos arquivísticos.</em></p>
 <p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/RelatedObject">wasth:RelatedObject</a></p>
@@ -330,8 +325,8 @@
 
 
 
-        RelatedObject --&gt; "*" Media : media
-        click Media href "../Media/"
+        RelatedObject --&gt; "*" MediaObject : media
+        click MediaObject href "../MediaObject/"
 
 
 
@@ -368,13 +363,13 @@
 
 
 
-      RelatedObject : resource
+      RelatedObject : resources
 
 
 
 
 
-        RelatedObject --&gt; "*" Resource : resource
+        RelatedObject --&gt; "*" Resource : resources
         click Resource href "../Resource/"
 
 
@@ -418,7 +413,7 @@
 <tr>
 <td><a href="../relation_type/">relation_type</a></td>
 <td>1 <br/> <a href="../RelationType/">RelationType</a></td>
-<td></td>
+<td>Usamos os tipos de relação previstos pelo [VRA Core]</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -430,18 +425,18 @@
 <tr>
 <td><a href="../object_type/">object_type</a></td>
 <td>0..1 <br/> <a href="../ObjectType/">ObjectType</a></td>
-<td>An index element for the particular kind of object or work in focus</td>
+<td>Usar um vocabulário controlado para identificar o tipo de representação, por ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../resource/">resource</a></td>
+<td><a href="../resources/">resources</a></td>
 <td>* <br/> <a href="../Resource/">Resource</a></td>
-<td></td>
+<td>Os desenhos ou modelos da edificação são apresentados online por meio de imag...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../media/">media</a></td>
-<td>* <br/> <a href="../Media/">Media</a></td>
+<td>* <br/> <a href="../MediaObject/">MediaObject</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -498,18 +493,18 @@
 <span class="w">  </span><span class="s">\ </span><span class="nv">   </span><span class="s">fontes</span><span class="nv"> </span><span class="s">externas</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">pesquisa.\n\n</span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">construction</span><span class="nv"> </span><span class="s">drawing\</span>
 <span class="w">  </span><span class="s">\ /</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">design</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">sketch:</span><span class="nv"> </span><span class="s">Essas</span><span class="nv"> </span><span class="s">relações</span><span class="nv"> </span><span class="s">se\n</span><span class="nv">    </span><span class="s">referem</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">desenhos</span><span class="nv"> </span><span class="s">históricos\</span>
 <span class="w">  </span><span class="s">\ (fontes</span><span class="nv"> </span><span class="s">primárias)</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">atestam</span><span class="nv"> </span><span class="s">o\n</span><span class="nv">    </span><span class="s">processo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação.\n\nATENÇÃO\</span>
-<span class="w">  </span><span class="s">\ :</span><span class="nv"> </span><span class="s">OS</span><span class="nv"> </span><span class="s">DESENHOS</span><span class="nv"> </span><span class="s">PRODUZIDOS</span><span class="nv"> </span><span class="s">POR</span><span class="nv"> </span><span class="s">ESTE</span><span class="nv"> </span><span class="s">PROJETO</span><span class="nv"> </span><span class="s">DE</span><span class="nv"> </span><span class="s">PESQUISA</span><span class="nv"> </span><span class="s">DEVEM</span><span class="nv"> </span><span class="s">SER\nCADASTRADOS</span><span class="nv"> </span><span class="s">NO\</span>
-<span class="w">  </span><span class="s">\ GRUPO</span><span class="nv"> </span><span class="s">resource,</span><span class="nv"> </span><span class="s">MAIS</span><span class="nv"> </span><span class="s">ABAIXO.\n\nO</span><span class="nv"> </span><span class="s">grupo</span><span class="nv"> </span><span class="s">relation</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">destinado</span><span class="nv"> </span><span class="s">unicamente</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">cadastrar\</span>
-<span class="w">  </span><span class="s">\ relações</span><span class="nv"> </span><span class="s">desta\nedificação</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">objetos</span><span class="nv"> </span><span class="s">autônomos,</span><span class="nv"> </span><span class="s">tais</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">edificações,\</span>
-<span class="w">  </span><span class="s">\ conjuntos\nurbanos,</span><span class="nv"> </span><span class="s">obras</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">artes</span><span class="nv"> </span><span class="s">visuais,</span><span class="nv"> </span><span class="s">referências</span><span class="nv"> </span><span class="s">bibliográficas</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">acervos\n\</span>
-<span class="w">  </span><span class="s">arquivísticos.\n"</span>
+<span class="w">  </span><span class="s">\ :</span><span class="nv"> </span><span class="s">OS</span><span class="nv"> </span><span class="s">DESENHOS</span><span class="nv"> </span><span class="s">PRODUZIDOS</span><span class="nv"> </span><span class="s">POR</span><span class="nv"> </span><span class="s">ESTE</span><span class="nv"> </span><span class="s">PROJETO</span><span class="nv"> </span><span class="s">DE</span><span class="nv"> </span><span class="s">PESQUISA</span><span class="nv"> </span><span class="s">DEVEM</span><span class="nv"> </span><span class="s">SER</span><span class="nv"> </span><span class="s">CADASTRADOS</span><span class="nv"> </span><span class="s">NO\</span>
+<span class="w">  </span><span class="s">\ GRUPO</span><span class="nv"> </span><span class="s">resource,</span><span class="nv"> </span><span class="s">MAIS</span><span class="nv"> </span><span class="s">ABAIXO.\nO</span><span class="nv"> </span><span class="s">grupo</span><span class="nv"> </span><span class="s">relation</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">destinado</span><span class="nv"> </span><span class="s">unicamente</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">cadastrar\</span>
+<span class="w">  </span><span class="s">\ relações</span><span class="nv"> </span><span class="s">desta</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">objetos</span><span class="nv"> </span><span class="s">autônomos,</span><span class="nv"> </span><span class="s">tais</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">edificações,\</span>
+<span class="w">  </span><span class="s">\ conjuntos</span><span class="nv"> </span><span class="s">urbanos,</span><span class="nv"> </span><span class="s">obras</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">artes</span><span class="nv"> </span><span class="s">visuais,</span><span class="nv"> </span><span class="s">referências</span><span class="nv"> </span><span class="s">bibliográficas</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">acervos\</span>
+<span class="w">  </span><span class="s">\ arquivísticos.\n"</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">slots</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">relation_type</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">related_object</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object_type</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resource</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resources</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
@@ -528,17 +523,19 @@
 <span class="w">  </span><span class="s">\ </span><span class="nv">   </span><span class="s">fontes</span><span class="nv"> </span><span class="s">externas</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">pesquisa.\n\n</span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">construction</span><span class="nv"> </span><span class="s">drawing\</span>
 <span class="w">  </span><span class="s">\ /</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">design</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">sketch:</span><span class="nv"> </span><span class="s">Essas</span><span class="nv"> </span><span class="s">relações</span><span class="nv"> </span><span class="s">se\n</span><span class="nv">    </span><span class="s">referem</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">desenhos</span><span class="nv"> </span><span class="s">históricos\</span>
 <span class="w">  </span><span class="s">\ (fontes</span><span class="nv"> </span><span class="s">primárias)</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">atestam</span><span class="nv"> </span><span class="s">o\n</span><span class="nv">    </span><span class="s">processo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação.\n\nATENÇÃO\</span>
-<span class="w">  </span><span class="s">\ :</span><span class="nv"> </span><span class="s">OS</span><span class="nv"> </span><span class="s">DESENHOS</span><span class="nv"> </span><span class="s">PRODUZIDOS</span><span class="nv"> </span><span class="s">POR</span><span class="nv"> </span><span class="s">ESTE</span><span class="nv"> </span><span class="s">PROJETO</span><span class="nv"> </span><span class="s">DE</span><span class="nv"> </span><span class="s">PESQUISA</span><span class="nv"> </span><span class="s">DEVEM</span><span class="nv"> </span><span class="s">SER\nCADASTRADOS</span><span class="nv"> </span><span class="s">NO\</span>
-<span class="w">  </span><span class="s">\ GRUPO</span><span class="nv"> </span><span class="s">resource,</span><span class="nv"> </span><span class="s">MAIS</span><span class="nv"> </span><span class="s">ABAIXO.\n\nO</span><span class="nv"> </span><span class="s">grupo</span><span class="nv"> </span><span class="s">relation</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">destinado</span><span class="nv"> </span><span class="s">unicamente</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">cadastrar\</span>
-<span class="w">  </span><span class="s">\ relações</span><span class="nv"> </span><span class="s">desta\nedificação</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">objetos</span><span class="nv"> </span><span class="s">autônomos,</span><span class="nv"> </span><span class="s">tais</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">edificações,\</span>
-<span class="w">  </span><span class="s">\ conjuntos\nurbanos,</span><span class="nv"> </span><span class="s">obras</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">artes</span><span class="nv"> </span><span class="s">visuais,</span><span class="nv"> </span><span class="s">referências</span><span class="nv"> </span><span class="s">bibliográficas</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">acervos\n\</span>
-<span class="w">  </span><span class="s">arquivísticos.\n"</span>
+<span class="w">  </span><span class="s">\ :</span><span class="nv"> </span><span class="s">OS</span><span class="nv"> </span><span class="s">DESENHOS</span><span class="nv"> </span><span class="s">PRODUZIDOS</span><span class="nv"> </span><span class="s">POR</span><span class="nv"> </span><span class="s">ESTE</span><span class="nv"> </span><span class="s">PROJETO</span><span class="nv"> </span><span class="s">DE</span><span class="nv"> </span><span class="s">PESQUISA</span><span class="nv"> </span><span class="s">DEVEM</span><span class="nv"> </span><span class="s">SER</span><span class="nv"> </span><span class="s">CADASTRADOS</span><span class="nv"> </span><span class="s">NO\</span>
+<span class="w">  </span><span class="s">\ GRUPO</span><span class="nv"> </span><span class="s">resource,</span><span class="nv"> </span><span class="s">MAIS</span><span class="nv"> </span><span class="s">ABAIXO.\nO</span><span class="nv"> </span><span class="s">grupo</span><span class="nv"> </span><span class="s">relation</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">destinado</span><span class="nv"> </span><span class="s">unicamente</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">cadastrar\</span>
+<span class="w">  </span><span class="s">\ relações</span><span class="nv"> </span><span class="s">desta</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">objetos</span><span class="nv"> </span><span class="s">autônomos,</span><span class="nv"> </span><span class="s">tais</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">edificações,\</span>
+<span class="w">  </span><span class="s">\ conjuntos</span><span class="nv"> </span><span class="s">urbanos,</span><span class="nv"> </span><span class="s">obras</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">artes</span><span class="nv"> </span><span class="s">visuais,</span><span class="nv"> </span><span class="s">referências</span><span class="nv"> </span><span class="s">bibliográficas</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">acervos\</span>
+<span class="w">  </span><span class="s">\ arquivísticos.\n"</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A human-readable description for a thing</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:description</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:description</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">display</span>
@@ -547,10 +544,8 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
@@ -561,6 +556,13 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">  </span><span class="nt">relation_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">relation_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Usamos</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">relação</span><span class="nv"> </span><span class="s">previstos</span><span class="nv"> </span><span class="s">pelo</span><span class="nv"> </span><span class="s">[VRA</span><span class="nv"> </span><span class="s">Core].</span><span class="nv"> </span><span class="s">Provavelmente\</span>
+<span class="w">      </span><span class="s">\ necessitamos</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">de</span><span class="err"> </span><span class="s">:\n-</span><span class="nv"> </span><span class="s">`planFor`</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">desenho</span><span class="nv"> </span><span class="s">técnico</span><span class="nv"> </span><span class="s">bidimensional</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">levantamento\n\</span>
+<span class="w">      </span><span class="s">\ </span><span class="nv"> </span><span class="s">(padrão,</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">omitido)</span><span class="err"> </span><span class="s">;\n\n-</span><span class="nv"> </span><span class="s">`modelFor`</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">modelo</span><span class="nv"> </span><span class="s">tridimensional,</span><span class="nv"> </span><span class="s">com\</span>
+<span class="w">      </span><span class="s">\ ou</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">informações</span><span class="nv"> </span><span class="s">construtivas\n</span><span class="nv">  </span><span class="s">associadas</span><span class="nv"> </span><span class="s">(BIM)</span><span class="err"> </span><span class="s">;\n\n-</span><span class="nv"> </span><span class="s">`imageOf`</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">outras\</span>
+<span class="w">      </span><span class="s">\ representações</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">duas</span><span class="nv"> </span><span class="s">dimensões</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="err"> </span><span class="s">;\n-</span><span class="nv"> </span><span class="s">`preparatoryFor`</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">representação\</span>
+<span class="w">      </span><span class="s">\ técnica</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">intervenções</span><span class="nv"> </span><span class="s">a\n</span><span class="nv">  </span><span class="s">serem</span><span class="nv"> </span><span class="s">realizadas</span><span class="nv"> </span><span class="s">(ou</span><span class="nv"> </span><span class="s">já</span><span class="nv"> </span><span class="s">realizadas)\</span>
+<span class="w">      </span><span class="s">\ na</span><span class="nv"> </span><span class="s">edificação.\n"</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rel_type</span>
@@ -581,15 +583,31 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">object_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object_type</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An index element for the particular kind of object or work in focus.</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Usar</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">vocabulário</span><span class="nv"> </span><span class="s">controlado</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">tipo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">representação,</span>
+<span class="w">      </span><span class="s">por</span><span class="nv"> </span><span class="s">exemplo</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">hierarquias</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">Getty</span><span class="nv"> </span><span class="s">AAT</span><span class="nv"> </span><span class="s">[obras</span><span class="nv"> </span><span class="s">visuais](http://vocab.getty.edu/hier/aat/300191086).</span>
+<span class="w">      </span><span class="s">ou</span><span class="nv"> </span><span class="s">[formatos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">informação](http://vocab.getty.edu/hier/aat/300220751)</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ObjectType</span>
-<span class="w">  </span><span class="nt">resource</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resource</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resources</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Os</span><span class="nv"> </span><span class="s">desenhos</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">modelos</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">são</span><span class="nv"> </span><span class="s">apresentados</span><span class="nv"> </span><span class="s">online</span><span class="nv"> </span><span class="s">por</span>
+<span class="w">      </span><span class="s">meio</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">imagens</span><span class="nv"> </span><span class="s">vetoriais</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">bitmap.</span>
+
+<span class="w">      </span><span class="s">Cada</span><span class="nv"> </span><span class="s">desenho</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">modelo</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">apresentado</span><span class="nv"> </span><span class="s">sob</span><span class="nv"> </span><span class="s">várias</span><span class="nv"> </span><span class="s">representações,</span><span class="nv"> </span><span class="s">como</span>
+<span class="w">      </span><span class="s">pré-visualização,</span><span class="nv"> </span><span class="s">imagem</span><span class="nv"> </span><span class="s">original,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">serviço</span><span class="nv"> </span><span class="s">[IIIF].</span><span class="nv"> </span><span class="s">Essas</span><span class="nv"> </span><span class="s">imagens</span><span class="nv"> </span><span class="s">devem</span><span class="nv"> </span><span class="s">ser</span>
+<span class="w">      </span><span class="s">identificadas</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">segue</span><span class="err"> </span><span class="s">:</span>
+
+<span class="w">      </span><span class="s">As</span><span class="nv"> </span><span class="s">categorias</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">representação</span><span class="nv"> </span><span class="s">previstas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">[LIDO]</span><span class="nv"> </span><span class="s">podem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">consultadas</span><span class="nv"> </span><span class="s">em</span>
+<span class="w">      </span><span class="s">&lt;http://terminology.lido-schema.org/resourceRepresentation_type&gt;</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">são</span><span class="nv"> </span><span class="s">inseridas</span>
+<span class="w">      </span><span class="s">na</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">mapa.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
@@ -609,7 +627,7 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -619,13 +637,11 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -638,12 +654,12 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurements</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>

@@ -277,13 +277,39 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-geographicpoint">Class: GeographicPoint</h1>
-<p><em>WGS84 geographic point.</em></p>
+<p><em>Coordenadas do ponto que situa o sítio na visualização do mapa.</em></p>
+<p><em>A fonte preferencial de autoridade para o georreferenciamento é um órgão público, por exemplo o IPHAN no Brasil (usando as coordenadas informadas no [SICG]) ou a DGMN em Portugal (usando as coordenadas informadas no [SIPA]).</em></p>
+<p><em>Caso não haja georreferenciamento oficial, usar uma planta cadastral municipal georreferenciada ou, na falta desta, o [Global Building Atlas]. Nesses casos, para se obter as coordenadas de georreferenciamento, é preciso usar um Sistema de Informações Geográficas da sua preferência.</em></p>
+<p><em>Como exemplo, no [QGIS], isso pode ser feito seguindo as instruções abaixo :</em></p>
+<p><em>1. Sempre projetar o mapa usando EPSG:4326 (WGS84) ;</em></p>
+<p><em>2. Selecionar o polígono da edificação na camada da planta cadastral ou</em></p>
+<p>_   do Global Building Atlas ;_</p>
+<p>__</p>
+<p><em>3. Rodar o comando do menu <code>Vector &gt; Geometry Tools &gt; Centroids</code> para</em></p>
+<p>_  obter as coordenadas do ponto (<code>location</code>) — ele vai criar uma camada_</p>
+<p>_  temporária com o ponto no centróide do polígono selecionado ;_</p>
+<p>__</p>
+<p><em>4. Usar novamente a ferramenta <code>Get WKT</code> para visualizar as coordenadas,</em></p>
+<p>_  copiar os valores e colar na ficha com o grau de precisão (casas_</p>
+<p>_  decimais) desejado._</p>
+<p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/GeographicPoint">wasth:GeographicPoint</a></p>
 <pre class="mermaid"><code> classDiagram
     class GeographicPoint
     click GeographicPoint href "../GeographicPoint/"
       GeographicPoint : alt
+
+      GeographicPoint : bibliographic_citation
+
+
+
+
+
+        GeographicPoint --&gt; "* _recommended_" BibliographicCitation : bibliographic_citation
+        click BibliographicCitation href "../BibliographicCitation/"
+
+
 
       GeographicPoint : lat
 
@@ -302,6 +328,8 @@
 
       GeographicPoint : srs_name
 
+      GeographicPoint : zoom
+
 </code></pre>
 <!-- no inheritance hierarchy -->
 <h2 id="slots">Slots</h2>
@@ -316,33 +344,45 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../lat/">lat</a></td>
-<td>1 <br/> <a href="../Latitude/">Latitude</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../lon/">lon</a></td>
-<td>1 <br/> <a href="../Longitude/">Longitude</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../alt/">alt</a></td>
-<td>0..1 <br/> <a href="../Float/">Float</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../srs_name/">srs_name</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td></td>
+<td>Names the coordinate reference system (CRS) that defines the semantics of the...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../source/">source</a></td>
 <td>* <br/> <a href="../LegalBody/">LegalBody</a></td>
 <td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../bibliographic_citation/">bibliographic_citation</a></td>
+<td>* <em>recommended</em> <br/> <a href="../BibliographicCitation/">BibliographicCitation</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../lat/">lat</a></td>
+<td>1 <br/> <a href="../Latitude/">Latitude</a></td>
+<td>Latitude em graus decimais (separador decimal: ponto)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../lon/">lon</a></td>
+<td>1 <br/> <a href="../Longitude/">Longitude</a></td>
+<td>Longitude em graus decimais (separador decimal: ponto)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../alt/">alt</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Altitude em metros (separador decimal: ponto)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../zoom/">zoom</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Usado para visualizar o mapa mais de longe se a precisão das coordenadas for ...</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -395,25 +435,95 @@
 <h3 id="direct">Direct</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WGS84 geographic point.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Coordenadas</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">ponto</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">situa</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">sítio</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">visualização</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">mapa.\nA</span><span class="nv"> </span><span class="s">fonte\</span>
+<span class="w">  </span><span class="s">\ preferencial</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">autoridade</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">georreferenciamento</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">órgão</span><span class="nv"> </span><span class="s">público,</span><span class="nv"> </span><span class="s">por\</span>
+<span class="w">  </span><span class="s">\ exemplo</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">IPHAN</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">Brasil</span><span class="nv"> </span><span class="s">(usando</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas</span><span class="nv"> </span><span class="s">informadas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">[SICG])</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">DGMN\</span>
+<span class="w">  </span><span class="s">\ em</span><span class="nv"> </span><span class="s">Portugal</span><span class="nv"> </span><span class="s">(usando</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas</span><span class="nv"> </span><span class="s">informadas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">[SIPA]).\nCaso</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">haja</span><span class="nv"> </span><span class="s">georreferenciamento\</span>
+<span class="w">  </span><span class="s">\ oficial,</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">planta</span><span class="nv"> </span><span class="s">cadastral</span><span class="nv"> </span><span class="s">municipal</span><span class="nv"> </span><span class="s">georreferenciada</span><span class="nv"> </span><span class="s">ou,</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">falta</span><span class="nv"> </span><span class="s">desta,\</span>
+<span class="w">  </span><span class="s">\ o</span><span class="nv"> </span><span class="s">[Global</span><span class="nv"> </span><span class="s">Building</span><span class="nv"> </span><span class="s">Atlas].</span><span class="nv"> </span><span class="s">Nesses</span><span class="nv"> </span><span class="s">casos,</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">obter</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">georreferenciamento,\</span>
+<span class="w">  </span><span class="s">\ é</span><span class="nv"> </span><span class="s">preciso</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">Sistema</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">Informações</span><span class="nv"> </span><span class="s">Geográficas</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">sua</span><span class="nv"> </span><span class="s">preferência.\nComo\</span>
+<span class="w">  </span><span class="s">\ exemplo,</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">[QGIS],</span><span class="nv"> </span><span class="s">isso</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">feito</span><span class="nv"> </span><span class="s">seguindo</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">instruções</span><span class="nv"> </span><span class="s">abaixo</span><span class="err"> </span><span class="s">:\n1.</span><span class="nv"> </span><span class="s">Sempre\</span>
+<span class="w">  </span><span class="s">\ projetar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">mapa</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">EPSG:4326</span><span class="nv"> </span><span class="s">(WGS84)</span><span class="err"> </span><span class="s">;\n2.</span><span class="nv"> </span><span class="s">Selecionar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">polígono</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação\</span>
+<span class="w">  </span><span class="s">\ na</span><span class="nv"> </span><span class="s">camada</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">planta</span><span class="nv"> </span><span class="s">cadastral</span><span class="nv"> </span><span class="s">ou\n</span><span class="nv">   </span><span class="s">do</span><span class="nv"> </span><span class="s">Global</span><span class="nv"> </span><span class="s">Building</span><span class="nv"> </span><span class="s">Atlas</span><span class="err"> </span><span class="s">;\n\n3.</span><span class="nv"> </span><span class="s">Rodar</span><span class="nv"> </span><span class="s">o\</span>
+<span class="w">  </span><span class="s">\ comando</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">menu</span><span class="nv"> </span><span class="s">`Vector</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">Geometry</span><span class="nv"> </span><span class="s">Tools</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">Centroids`</span><span class="nv"> </span><span class="s">para\n</span><span class="nv">  </span><span class="s">obter</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas\</span>
+<span class="w">  </span><span class="s">\ do</span><span class="nv"> </span><span class="s">ponto</span><span class="nv"> </span><span class="s">(`location`)</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">ele</span><span class="nv"> </span><span class="s">vai</span><span class="nv"> </span><span class="s">criar</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">camada\n</span><span class="nv">  </span><span class="s">temporária</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">ponto</span><span class="nv"> </span><span class="s">no\</span>
+<span class="w">  </span><span class="s">\ centróide</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">polígono</span><span class="nv"> </span><span class="s">selecionado</span><span class="err"> </span><span class="s">;\n\n4.</span><span class="nv"> </span><span class="s">Usar</span><span class="nv"> </span><span class="s">novamente</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ferramenta</span><span class="nv"> </span><span class="s">`Get</span><span class="nv"> </span><span class="s">WKT`\</span>
+<span class="w">  </span><span class="s">\ para</span><span class="nv"> </span><span class="s">visualizar</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas,\n</span><span class="nv">  </span><span class="s">copiar</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">valores</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">colar</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">grau\</span>
+<span class="w">  </span><span class="s">\ de</span><span class="nv"> </span><span class="s">precisão</span><span class="nv"> </span><span class="s">(casas\n</span><span class="nv">  </span><span class="s">decimais)</span><span class="nv"> </span><span class="s">desejado.\n"</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">slots</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lat</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lon</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alt</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">srs_name</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">lat</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lat</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Latitude</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">graus</span><span class="nv"> </span><span class="s">decimais</span><span class="nv"> </span><span class="s">(separador</span><span class="nv"> </span><span class="s">decimal:</span><span class="nv"> </span><span class="s">ponto).'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/place</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Latitude</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">lon</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lon</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Longitude</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">graus</span><span class="nv"> </span><span class="s">decimais</span><span class="nv"> </span><span class="s">(separador</span><span class="nv"> </span><span class="s">decimal:</span><span class="nv"> </span><span class="s">ponto).'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/place</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Longitude</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">alt</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alt</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Altitude</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">metros</span><span class="nv"> </span><span class="s">(separador</span><span class="nv"> </span><span class="s">decimal:</span><span class="nv"> </span><span class="s">ponto)'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/place</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1000</span>
+<span class="w">    </span><span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+<span class="w">  </span><span class="nt">zoom</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zoom</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Usado</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">visualizar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">mapa</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">longe</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">precisão</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">coordenadas</span>
+<span class="w">      </span><span class="s">for</span><span class="nv"> </span><span class="s">baixa.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/place</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer(13)</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">    </span><span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">18</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WGS84 geographic point.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Coordenadas</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">ponto</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">situa</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">sítio</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">visualização</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">mapa.\nA</span><span class="nv"> </span><span class="s">fonte\</span>
+<span class="w">  </span><span class="s">\ preferencial</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">autoridade</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">georreferenciamento</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">órgão</span><span class="nv"> </span><span class="s">público,</span><span class="nv"> </span><span class="s">por\</span>
+<span class="w">  </span><span class="s">\ exemplo</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">IPHAN</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">Brasil</span><span class="nv"> </span><span class="s">(usando</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas</span><span class="nv"> </span><span class="s">informadas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">[SICG])</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">DGMN\</span>
+<span class="w">  </span><span class="s">\ em</span><span class="nv"> </span><span class="s">Portugal</span><span class="nv"> </span><span class="s">(usando</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas</span><span class="nv"> </span><span class="s">informadas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">[SIPA]).\nCaso</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">haja</span><span class="nv"> </span><span class="s">georreferenciamento\</span>
+<span class="w">  </span><span class="s">\ oficial,</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">planta</span><span class="nv"> </span><span class="s">cadastral</span><span class="nv"> </span><span class="s">municipal</span><span class="nv"> </span><span class="s">georreferenciada</span><span class="nv"> </span><span class="s">ou,</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">falta</span><span class="nv"> </span><span class="s">desta,\</span>
+<span class="w">  </span><span class="s">\ o</span><span class="nv"> </span><span class="s">[Global</span><span class="nv"> </span><span class="s">Building</span><span class="nv"> </span><span class="s">Atlas].</span><span class="nv"> </span><span class="s">Nesses</span><span class="nv"> </span><span class="s">casos,</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">obter</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">georreferenciamento,\</span>
+<span class="w">  </span><span class="s">\ é</span><span class="nv"> </span><span class="s">preciso</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">Sistema</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">Informações</span><span class="nv"> </span><span class="s">Geográficas</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">sua</span><span class="nv"> </span><span class="s">preferência.\nComo\</span>
+<span class="w">  </span><span class="s">\ exemplo,</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">[QGIS],</span><span class="nv"> </span><span class="s">isso</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">feito</span><span class="nv"> </span><span class="s">seguindo</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">instruções</span><span class="nv"> </span><span class="s">abaixo</span><span class="err"> </span><span class="s">:\n1.</span><span class="nv"> </span><span class="s">Sempre\</span>
+<span class="w">  </span><span class="s">\ projetar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">mapa</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">EPSG:4326</span><span class="nv"> </span><span class="s">(WGS84)</span><span class="err"> </span><span class="s">;\n2.</span><span class="nv"> </span><span class="s">Selecionar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">polígono</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação\</span>
+<span class="w">  </span><span class="s">\ na</span><span class="nv"> </span><span class="s">camada</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">planta</span><span class="nv"> </span><span class="s">cadastral</span><span class="nv"> </span><span class="s">ou\n</span><span class="nv">   </span><span class="s">do</span><span class="nv"> </span><span class="s">Global</span><span class="nv"> </span><span class="s">Building</span><span class="nv"> </span><span class="s">Atlas</span><span class="err"> </span><span class="s">;\n\n3.</span><span class="nv"> </span><span class="s">Rodar</span><span class="nv"> </span><span class="s">o\</span>
+<span class="w">  </span><span class="s">\ comando</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">menu</span><span class="nv"> </span><span class="s">`Vector</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">Geometry</span><span class="nv"> </span><span class="s">Tools</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">Centroids`</span><span class="nv"> </span><span class="s">para\n</span><span class="nv">  </span><span class="s">obter</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas\</span>
+<span class="w">  </span><span class="s">\ do</span><span class="nv"> </span><span class="s">ponto</span><span class="nv"> </span><span class="s">(`location`)</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">ele</span><span class="nv"> </span><span class="s">vai</span><span class="nv"> </span><span class="s">criar</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">camada\n</span><span class="nv">  </span><span class="s">temporária</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">ponto</span><span class="nv"> </span><span class="s">no\</span>
+<span class="w">  </span><span class="s">\ centróide</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">polígono</span><span class="nv"> </span><span class="s">selecionado</span><span class="err"> </span><span class="s">;\n\n4.</span><span class="nv"> </span><span class="s">Usar</span><span class="nv"> </span><span class="s">novamente</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ferramenta</span><span class="nv"> </span><span class="s">`Get</span><span class="nv"> </span><span class="s">WKT`\</span>
+<span class="w">  </span><span class="s">\ para</span><span class="nv"> </span><span class="s">visualizar</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">coordenadas,\n</span><span class="nv">  </span><span class="s">copiar</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">valores</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">colar</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">grau\</span>
+<span class="w">  </span><span class="s">\ de</span><span class="nv"> </span><span class="s">precisão</span><span class="nv"> </span><span class="s">(casas\n</span><span class="nv">  </span><span class="s">decimais)</span><span class="nv"> </span><span class="s">desejado.\n"</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">lat</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lat</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Latitude</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">graus</span><span class="nv"> </span><span class="s">decimais</span><span class="nv"> </span><span class="s">(separador</span><span class="nv"> </span><span class="s">decimal:</span><span class="nv"> </span><span class="s">ponto).'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/place</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
@@ -422,7 +532,8 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">lon</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lon</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Longitude</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">graus</span><span class="nv"> </span><span class="s">decimais</span><span class="nv"> </span><span class="s">(separador</span><span class="nv"> </span><span class="s">decimal:</span><span class="nv"> </span><span class="s">ponto).'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/place</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
@@ -431,7 +542,8 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">alt</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alt</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Altitude</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">metros</span><span class="nv"> </span><span class="s">(separador</span><span class="nv"> </span><span class="s">decimal:</span><span class="nv"> </span><span class="s">ponto)'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/place</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
@@ -439,8 +551,25 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
 <span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1000</span>
 <span class="w">    </span><span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+<span class="w">  </span><span class="nt">zoom</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zoom</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Usado</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">visualizar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">mapa</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">longe</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">precisão</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">coordenadas</span>
+<span class="w">      </span><span class="s">for</span><span class="nv"> </span><span class="s">baixa.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/place</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer(13)</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">    </span><span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">18</span>
 <span class="w">  </span><span class="nt">srs_name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">srs_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Names the coordinate reference system (CRS) that defines the semantics</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">of the lat/long pair according to the ISO6709 standard.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">srsName</span>
@@ -457,14 +586,35 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Media</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">bibliographic_citation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:bibliographicCitation</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
+<span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
