@@ -539,16 +539,16 @@ types:
       começando com '@'.
       Obter as chaves de citação das referências bibliográficas consultando
       a nossa biblioteca compartilhada no Zotero.
-    uri: xsd:str
-    base: str
+    uri: xsd:string
+    base: string
     pattern: '^@[a-zA-Z0-9_][\w:.#$%&\-+?<>~/]*$'
 
   GeoJSONCoordinateArray:
     description: >-
       JSON array of GeoJSON positions. The valid nesting depends on the
       associated geometry type.
-    uri: xsd:str
-    base: str
+    uri: xsd:string
+    base: string
 
   Latitude:
     description: "Latitude em graus decimais (separador: ponto)."
@@ -567,14 +567,14 @@ types:
   OrcidId:
     description: >-
       ORCID iD, sem o prefixo https://orcid.org/.
-    uri: xsd:str
-    base: str
+    uri: xsd:string
+    base: string
     pattern: '^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$'
 
   OlcPlusCode11:
     description: Open Location Code (Plus Code) com resolução de 11 dígitos.
-    uri: xsd:str
-    base: str
+    uri: xsd:string
+    base: string
     pattern: '^([2-9CFGHJMPQRVWX]{8})\+([2-9CFGHJMPQRVWX]{3})$'
 
   GeonamesId:
@@ -582,6 +582,6 @@ types:
       Identificador de lugar no GeoNames, na forma de um CURIE
       `geonames:1234`.
     uri: xsd:anyURI
-    base: str
+    base: string
     pattern: '^geonames:[0-9]+$'
-    repr: str
+    repr: string

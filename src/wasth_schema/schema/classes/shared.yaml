@@ -23,7 +23,7 @@ classes:
       - source
 
   Measurement:
-    class_uri: E16_Measurement
+    class_uri: crm:E16_Measurement
     close_mappings:
       - dcterms:format
 
@@ -216,7 +216,7 @@ slots:
   refid:
     key: true
     range: uriorcurie
-    slot_uri: dcterm:identifier
+    slot_uri: dcterms:identifier
     exact_mappings:
       - schema:identifier
     description: Local or external identifier.

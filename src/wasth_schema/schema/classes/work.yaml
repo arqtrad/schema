@@ -265,10 +265,6 @@ classes:
       category:
         ifabsent: string(http://terminology.lido-schema.org/lido00096)
 
-      relation:
-        range: RelatedWork
-        slot_uri: lido:relatedWorkSet
-
       site:
         required: false
 
