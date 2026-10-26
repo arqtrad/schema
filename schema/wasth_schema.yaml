@@ -82,7 +82,7 @@ types:
       \ come\xE7ando com '@'. Obter as chaves de cita\xE7\xE3o das refer\xEAncias\
       \ bibliogr\xE1ficas consultando a nossa biblioteca compartilhada no Zotero.\n"
     from_schema: https://tradicional.arq.br/schema
-    base: string
+    base: str
     uri: xsd:string
     pattern: ^@[a-zA-Z0-9_][\w:.#$%&\-+?<>~/]*$
   GeoJSONCoordinateArray:
@@ -91,7 +91,7 @@ types:
     description: JSON array of GeoJSON positions. The valid nesting depends on the
       associated geometry type.
     from_schema: https://tradicional.arq.br/schema
-    base: string
+    base: str
     uri: xsd:string
   Latitude:
     name: Latitude
@@ -116,7 +116,7 @@ types:
     definition_uri: https://tradicional.arq.br/schema/OrcidId
     description: ORCID iD, sem o prefixo https://orcid.org/.
     from_schema: https://tradicional.arq.br/schema
-    base: string
+    base: str
     uri: xsd:string
     pattern: ^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$
   OlcPlusCode11:
@@ -124,7 +124,7 @@ types:
     definition_uri: https://tradicional.arq.br/schema/OlcPlusCode11
     description: "Open Location Code (Plus Code) com resolu\xE7\xE3o de 11 d\xEDgitos."
     from_schema: https://tradicional.arq.br/schema
-    base: string
+    base: str
     uri: xsd:string
     pattern: ^([2-9CFGHJMPQRVWX]{8})\+([2-9CFGHJMPQRVWX]{3})$
   GeonamesId:
@@ -132,9 +132,9 @@ types:
     definition_uri: https://tradicional.arq.br/schema/GeonamesId
     description: Identificador de lugar no GeoNames, na forma de um CURIE `geonames:1234`.
     from_schema: https://tradicional.arq.br/schema
-    base: string
+    base: str
     uri: xsd:anyURI
-    repr: string
+    repr: str
     pattern: ^geonames:[0-9]+$
   string:
     name: string
@@ -4655,6 +4655,6 @@ classes:
     class_uri: wasth:HistoricPlace
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-10-26T16:14:19'
-source_file_size: 20462
+source_file_date: '2026-10-26T16:17:16'
+source_file_size: 20444
 
