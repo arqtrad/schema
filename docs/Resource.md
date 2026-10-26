@@ -224,7 +224,6 @@ URI: [crm:E31_Document](http://www.cidoc-crm.org/cidoc-crm/E31_Document)
 | [scale](scale.md) | 0..1 <br/> [Float](Float.md) | Número inverso da escala da imagem, se ela tiver uma resolução ou tamanho de ... | direct |
 | [perspective](perspective.md) | 0..1 <br/> [Integer](Integer.md) | Tipo de vista do desenho | direct |
 | [description](description.md) | 1 <br/> [String](String.md) | A human-readable description for a thing | [Thing](Thing.md) |
-| [record_rights](record_rights.md) | 1..* <br/> [Right](Right.md) | A set of structured information about rights regarding the content provided i... | [Thing](Thing.md) |
 | [title_type](title_type.md) | 1 <br/> [TitleType](TitleType.md) | Indica se o título é um nome próprio, descritivo, etc | [Thing](Thing.md) |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [Thing](Thing.md) |
 | [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... | [Thing](Thing.md) |
@@ -240,6 +239,7 @@ URI: [crm:E31_Document](http://www.cidoc-crm.org/cidoc-crm/E31_Document)
 | [temporal](temporal.md) | * <br/> [Event](Event.md) | Temporalidade do objeto | [Thing](Thing.md) |
 | [collection](collection.md) | * <br/> [TypedReference](TypedReference.md) | Collections or aggregations to which the object belongs | [Thing](Thing.md) |
 | [repositories](repositories.md) | * <br/> [Repository](Repository.md) | A set of elements for the identification, name and location of the repository... | [Thing](Thing.md) |
+| [record_rights](record_rights.md) | 1..* <br/> [Right](Right.md) | A set of structured information about rights regarding the content provided i... | [Thing](Thing.md) |
 
 
 
@@ -531,27 +531,6 @@ attributes:
     - Topic
     range: string
     required: true
-  record_rights:
-    name: record_rights
-    description: 'A set of structured information about rights regarding the content
-      provided in this LIDO record.
-
-      ---------------------------------------------------------------------
-
-      :warning: Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre
-      os direitos incidentes sobre o objeto descrito.
-
-      '
-    from_schema: https://tradicional.arq.br/schema/thing
-    rank: 1000
-    owner: Resource
-    domain_of:
-    - Thing
-    range: Right
-    required: true
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   title_type:
     name: title_type
     description: Indica se o título é um nome próprio, descritivo, etc.
@@ -789,6 +768,27 @@ attributes:
     - Thing
     - Work
     range: Repository
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  record_rights:
+    name: record_rights
+    description: 'A set of structured information about rights regarding the content
+      provided in this LIDO record.
+
+      ---------------------------------------------------------------------
+
+      :warning: Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre
+      os direitos incidentes sobre o objeto descrito.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
+    owner: Resource
+    domain_of:
+    - Thing
+    range: Right
+    required: true
     multivalued: true
     inlined: true
     inlined_as_list: true

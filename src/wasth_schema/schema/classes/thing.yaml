@@ -179,7 +179,6 @@ classes:
 
     slots:
       - description
-      - record_rights
       # Os campos abaixo são opcionais
       - title_type
       - bibliographic_citation

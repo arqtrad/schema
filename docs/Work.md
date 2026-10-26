@@ -476,7 +476,6 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 | [intended_site](intended_site.md) | * <br/> [Site](Site.md) | Sinaliza que a edificação devia ocupar um certo local, mas não chegou a ser c... | [Place](Place.md) |
 | [other_site](other_site.md) | * <br/> [Site](Site.md) | Para casos não contemplados em nenhuma das categorias acima | [Place](Place.md) |
 | [description](description.md) | 1 <br/> [String](String.md) | A human-readable description for a thing | [Thing](Thing.md) |
-| [record_rights](record_rights.md) | 1..* <br/> [Right](Right.md) | A set of structured information about rights regarding the content provided i... | [Thing](Thing.md) |
 | [title_type](title_type.md) | 1 <br/> [RepositoryType](RepositoryType.md) | Indica se o título é um nome próprio, descritivo, etc | [Thing](Thing.md) |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [Thing](Thing.md) |
 | [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... | [Thing](Thing.md) |
@@ -490,6 +489,7 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 | [identifiers](identifiers.md) | * <br/> [TypedReference](TypedReference.md) | Published or external identifiers for the object | [Thing](Thing.md) |
 | [tags](tags.md) | * <br/> [String](String.md) | Provisional uncontrolled keywords | [Thing](Thing.md) |
 | [temporal](temporal.md) | * <br/> [Event](Event.md) | Temporalidade do objeto | [Thing](Thing.md) |
+| [record_rights](record_rights.md) | 1..* <br/> [Right](Right.md) | A set of structured information about rights regarding the content provided i... | [Thing](Thing.md) |
 
 
 
@@ -1433,27 +1433,6 @@ attributes:
     - Topic
     range: string
     required: true
-  record_rights:
-    name: record_rights
-    description: 'A set of structured information about rights regarding the content
-      provided in this LIDO record.
-
-      ---------------------------------------------------------------------
-
-      :warning: Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre
-      os direitos incidentes sobre o objeto descrito.
-
-      '
-    from_schema: https://tradicional.arq.br/schema/thing
-    rank: 1000
-    owner: Work
-    domain_of:
-    - Thing
-    range: Right
-    required: true
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   title_type:
     name: title_type
     description: Indica se o título é um nome próprio, descritivo, etc.
@@ -1655,6 +1634,27 @@ attributes:
     - Right
     - Thing
     range: Event
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  record_rights:
+    name: record_rights
+    description: 'A set of structured information about rights regarding the content
+      provided in this LIDO record.
+
+      ---------------------------------------------------------------------
+
+      :warning: Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre
+      os direitos incidentes sobre o objeto descrito.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
+    owner: Work
+    domain_of:
+    - Thing
+    range: Right
+    required: true
     multivalued: true
     inlined: true
     inlined_as_list: true
