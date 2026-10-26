@@ -1,6 +1,28 @@
 name: wasth_schema
-description: "Esquemas LinkML para os Document\xE1rios da Arquitetura Tradicional."
-title: wasth_schema
+description: "Todas as fichas dos projetos dos Document\xE1rios da arquitetura tradicional\
+  \ s\xE3o arquivos de texto sem formata\xE7\xE3o, que podem ser criados e editados\
+  \ em programas como o Notepad++, Sublime Text, ou Zettlr, entre muitos outros. Elas\
+  \ podem, tamb\xE9m, ser criadas e editadas diretamente online no reposit\xF3rio\
+  \ do GitHub.\n> :warning: As fichas **n\xE3o** devem ser criadas nem editadas em\
+  \ processadores > de texto formatado, tais como Microsoft Word, Google Docs, ou\
+  \ LibreOffice.\nA ficha se divide em dois blocos\u2009: um bloco de metadados delimitado\
+  \ por linhas contendo apenas tr\xEAs h\xEDfens `---` e um bloco de conte\xFAdo com\
+  \ texto livre.\nOs metadados s\xE3o formatados segundo a especifica\xE7\xE3o [YAML].\
+  \ O conte\xFAdo \xE9 formatado segundo a especifica\xE7\xE3o [Markdown], e pode\
+  \ incluir formata\xE7\xE3o espec\xEDfica do [Pandoc].\nQuanto \xE0s informa\xE7\xF5\
+  es que devem ser inseridas na ficha, (quase) todos os campos s\xE3o definidos pela\
+  \ especifica\xE7\xE3o [LIDO] e, na medida do poss\xEDvel, t\xEAm uma equival\xEA\
+  ncia com o [DublinCore].\nNa medida do poss\xEDvel, buscamos tamb\xE9m adequar o\
+  \ conte\xFAdo das fichas \xE0s normas de preenchimento das fichas de Cadastro (M301,\
+  \ M302) do Sistema Integrado de Conhecimento e Gest\xE3o ([SICG]) do Instituto do\
+  \ Patrim\xF4nio Hist\xF3rico e Art\xEDstico Nacional (IPHAN).\n[YAML]: https://www.yaml.info/learn/index.html\n\
+  [Markdown]: https://programminghistorian.org/pt/licoes/introducao-ao-markdown\n\
+  [Pandoc]: https://programminghistorian.org/pt/licoes/autoria-sustentavel-texto-simples-pandoc-markdown\n\
+  [LIDO]: https://icom-documentation.mini.icom.museum/working-groups/lido/lido-overview/\n\
+  [DublinCore]: https://www.dublincore.org/specifications/dublin-core/dcmi-terms/\n\
+  [SICG]: https://sicg.iphan.gov.br/sicg/manual/manual.html\n"
+title: "Esquema de dados do WASTH (Web App para S\xEDtios Tradicionais e Hist\xF3\
+  ricos)"
 see_also:
 - https://tradicional.arq.br/schema
 id: https://tradicional.arq.br/schema
@@ -82,7 +104,7 @@ types:
       \ come\xE7ando com '@'. Obter as chaves de cita\xE7\xE3o das refer\xEAncias\
       \ bibliogr\xE1ficas consultando a nossa biblioteca compartilhada no Zotero.\n"
     from_schema: https://tradicional.arq.br/schema
-    base: string
+    base: str
     uri: xsd:string
     pattern: ^@[a-zA-Z0-9_][\w:.#$%&\-+?<>~/]*$
   GeoJSONCoordinateArray:
@@ -91,7 +113,7 @@ types:
     description: JSON array of GeoJSON positions. The valid nesting depends on the
       associated geometry type.
     from_schema: https://tradicional.arq.br/schema
-    base: string
+    base: str
     uri: xsd:string
   Latitude:
     name: Latitude
@@ -116,7 +138,7 @@ types:
     definition_uri: https://tradicional.arq.br/schema/OrcidId
     description: ORCID iD, sem o prefixo https://orcid.org/.
     from_schema: https://tradicional.arq.br/schema
-    base: string
+    base: str
     uri: xsd:string
     pattern: ^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$
   OlcPlusCode11:
@@ -124,7 +146,7 @@ types:
     definition_uri: https://tradicional.arq.br/schema/OlcPlusCode11
     description: "Open Location Code (Plus Code) com resolu\xE7\xE3o de 11 d\xEDgitos."
     from_schema: https://tradicional.arq.br/schema
-    base: string
+    base: str
     uri: xsd:string
     pattern: ^([2-9CFGHJMPQRVWX]{8})\+([2-9CFGHJMPQRVWX]{3})$
   GeonamesId:
@@ -132,9 +154,9 @@ types:
     definition_uri: https://tradicional.arq.br/schema/GeonamesId
     description: Identificador de lugar no GeoNames, na forma de um CURIE `geonames:1234`.
     from_schema: https://tradicional.arq.br/schema
-    base: string
+    base: str
     uri: xsd:anyURI
-    repr: string
+    repr: str
     pattern: ^geonames:[0-9]+$
   string:
     name: string
@@ -4655,5 +4677,5 @@ classes:
     class_uri: wasth:HistoricPlace
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-10-26T13:10:54'
-source_file_size: 20462
+source_file_date: '2026-10-26T15:58:37'
+source_file_size: 22221

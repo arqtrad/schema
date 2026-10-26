@@ -67,7 +67,7 @@ nav:
 exclude_docs: |
   /templates-linkml/
 
-site_url: https://arqtrad.github.io/wasth_schema
+site_url: https://tradicional.arq.br/schema
 repo_url: https://github.com/arqtrad/wasth_schema
 
 # Uncomment this block to enable use of Google Analytics.

@@ -23,20 +23,49 @@ classes:
     class_uri: schema:LandmarksOrHistoricalBuildings
     close_mappings:
       - crm:E22_Human-Made_Object
+
     description: >
       An historical landmark or building.
 
-      Nos Documentários da Arquitetura Tradicional, esta ficha pode ser usada
+      Nos Documentários da Arquitetura Tradicional, esta ficha é usada
       para cadastrar uma edificação, um conjunto arquitetônico, ou ainda
       uma parte significativa de uma edificação.
 
-#     This class comprises all persistent physical objects of any size that are
-#     purposely created by human activity and have physical boundaries that
-#     separate them completely in an objective way from other objects.
+      ## Especificação e modelo de preenchimento
 
-#     The class also includes all aggregates of objects made for functional
-#     purposes of whatever kind, independent of physical coherence, such as a
-#     set of chessmen.
+      As instruções de preeenchimento para cada elemento da ficha se encontram
+      na seção [Slots](#slots).
+
+      Observe como exemplo de ficha (quase) completamente preenchida a
+      [Casa dos Sete Candeeiros].
+
+      Em caso de dúvidas quanto à formatação da ficha, observe as informações
+      acerca da especificação [YAML].
+
+      Todos os grupos que começam com um hífen `-` são listas que podem
+      conter qualquer número de linhas ou blocos.
+
+      A ordem dos blocos não é importante, mas a hierarquia dentro de cada
+      bloco e a indentação de dois espaços por nível hierárquico, sim.
+
+      O caractere `#` indica o início de um comentário, que prossegue
+      até o final da linha.
+      Os comentários e as linhas que contêm apenas comentários
+      devem ser apagados das fichas preenchidas.
+
+      Campos não preenchidos também devem ser apagadas das fichas.
+
+      [YAML]: https://www.yaml.info/learn/index.html
+
+      [Casa dos Sete Candeeiros]: https://github.com/arqtrad/casa/blob/main/br-ba-salvador-casa_7_candeeiros.md?plain=1
+
+    # This class comprises all persistent physical objects of any size that are
+    # purposely created by human activity and have physical boundaries that
+    # separate them completely in an objective way from other objects.
+
+    # The class also includes all aggregates of objects made for functional
+    # purposes of whatever kind, independent of physical coherence, such as a
+    # set of chessmen.
 
     attributes:
 

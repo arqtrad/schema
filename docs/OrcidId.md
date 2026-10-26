@@ -18,7 +18,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 | Property | Value |
 | --- | --- |
-| Base | `string` |
+| Base | `str` |
 | Type URI | [xsd:string](http://www.w3.org/2001/XMLSchema#string) |
 ## Value Constraints
 
