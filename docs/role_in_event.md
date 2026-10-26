@@ -5,6 +5,11 @@ search:
 
 # Slot: role_in_event
 
+
+_Ação desempenhada pelo agente no evento._
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -81,6 +86,7 @@ URI: [wasth:role_in_event](https://tradicional.arq.br/schema/role_in_event)
 <details>
 ```yaml
 name: role_in_event
+description: Ação desempenhada pelo agente no evento.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 owner: Actor

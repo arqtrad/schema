@@ -5,6 +5,13 @@ search:
 
 # Slot: end_date
 
+
+_Data final do evento ou mais tardia data presumida para o seu decurso._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -22,7 +29,7 @@ Alias: end_date
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 
 
 
@@ -83,6 +90,9 @@ Alias: end_date
 <details>
 ```yaml
 name: end_date
+description: 'Data final do evento ou mais tardia data presumida para o seu decurso.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: end_date

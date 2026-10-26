@@ -5,6 +5,11 @@ search:
 
 # Slot: actor_name
 
+
+_Nome do agente extraído de um vocabulário controlado._
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -83,6 +88,7 @@ Alias: name
 <details>
 ```yaml
 name: actor_name
+description: Nome do agente extraído de um vocabulário controlado.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: name

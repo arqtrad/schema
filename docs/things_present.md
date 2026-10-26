@@ -25,7 +25,7 @@ URI: [wasth:things_present](https://tradicional.arq.br/schema/things_present)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 
 
 

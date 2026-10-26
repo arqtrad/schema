@@ -20,8 +20,8 @@ URI: [wasth:measurements](https://tradicional.arq.br/schema/measurements)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Media](Media.md) | Descrição e referência a um único arquivo de mídia |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
 
 
@@ -35,8 +35,8 @@ URI: [wasth:measurements](https://tradicional.arq.br/schema/measurements)
 
 | Property | Value |
 | --- | --- |
-| Range | [Measurements](Measurements.md) |
-| Domain Of | [Media](Media.md), [Event](Event.md), [Work](Work.md) |
+| Range | [Measurement](Measurement.md) |
+| Domain Of | [MediaObject](MediaObject.md), [Event](Event.md), [Work](Work.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -86,10 +86,10 @@ name: measurements
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 domain_of:
-- Media
+- MediaObject
 - Event
 - Work
-range: Measurements
+range: Measurement
 multivalued: true
 inlined: true
 inlined_as_list: true

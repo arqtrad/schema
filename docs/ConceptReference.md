@@ -158,6 +158,7 @@ attributes:
     rank: 1000
     domain_of:
     - ConceptReference
+    - LegalBody
     - RelatedEvent
     - HistoricPlace
     range: Concept
@@ -181,6 +182,7 @@ attributes:
     owner: ConceptReference
     domain_of:
     - ConceptReference
+    - LegalBody
     - RelatedEvent
     - HistoricPlace
     range: Concept
@@ -194,10 +196,10 @@ attributes:
     owner: ConceptReference
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -217,9 +219,9 @@ attributes:
     - GeographicPoint
     - GeographicExtent
     - TypedReference
-    - Measurements
+    - Measurement
     - RelatedObject
-    - Media
+    - MediaObject
     - Actor
     - Thing
     - Appellation

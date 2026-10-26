@@ -6,7 +6,9 @@ search:
 # Class: Right
 
 
-_Rights statement associated with a record, resource, or note._
+_* Preencher `earliest_date` com a data de início da vigência dos direitos ou a data do preenchimento da ficha. * `latest_date` pode ser omitido se não houver fim da vigência. * `holder` pode ser omitido se a obra estiver no domínio público._
+
+__
 
 
 
@@ -14,7 +16,7 @@ _Rights statement associated with a record, resource, or note._
 
 
 
-URI: [wasth:Right](https://tradicional.arq.br/schema/Right)
+URI: [dcterms:rights](http://purl.org/dc/terms/rights)
 
 
 
@@ -24,47 +26,47 @@ URI: [wasth:Right](https://tradicional.arq.br/schema/Right)
  classDiagram
     class Right
     click Right href "../Right/"
-      Right : right_concept
+      Right : concept
 
 
 
 
 
-        Right --> "0..1" TypedReference : right_concept
-        click TypedReference href "../TypedReference/"
+        Right --> "1" RightsType : concept
+        click RightsType href "../RightsType/"
 
 
 
-      Right : right_holder
+      Right : holder
 
 
 
 
 
-        Right --> "0..1" LegalBody : right_holder
+        Right --> "0..1" LegalBody : holder
         click LegalBody href "../LegalBody/"
 
 
 
-      Right : right_temporal
+      Right : temporal
 
 
 
 
 
-        Right --> "0..1" EventDate : right_temporal
+        Right --> "0..1" EventDate : temporal
         click EventDate href "../EventDate/"
 
 
 
-      Right : right_type
+      Right : type
 
 
 
 
 
-        Right --> "0..1" RightsType : right_type
-        click RightsType href "../RightsType/"
+        Right --> "1" TypedReference : type
+        click TypedReference href "../TypedReference/"
 
 
 
@@ -76,14 +78,21 @@ URI: [wasth:Right](https://tradicional.arq.br/schema/Right)
 
 <!-- no inheritance hierarchy -->
 
+## Class Properties
+
+| Property | Value |
+| --- | --- |
+| Class URI | [dcterms:rights](http://purl.org/dc/terms/rights) |
+
+
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [right_concept](right_concept.md) | 0..1 <br/> [TypedReference](TypedReference.md) |  | direct |
-| [right_type](right_type.md) | 0..1 <br/> [RightsType](RightsType.md) |  | direct |
-| [right_temporal](right_temporal.md) | 0..1 <br/> [EventDate](EventDate.md) |  | direct |
-| [right_holder](right_holder.md) | 0..1 <br/> [LegalBody](LegalBody.md) |  | direct |
+| [concept](concept.md) | 1 <br/> [RightsType](RightsType.md) | Qualifies the kind of rights type, whether it refers to a generic kind of rig... | direct |
+| [type](type.md) | 1 <br/> [TypedReference](TypedReference.md) | An index element for rights information being recorded | direct |
+| [temporal](temporal.md) | 0..1 <br/> [EventDate](EventDate.md) | Date on which a right is or was current | direct |
+| [holder](holder.md) | 0..1 <br/> [LegalBody](LegalBody.md) | A set of elements identifying the person or the group of persons holding the ... | direct |
 
 
 
@@ -97,7 +106,7 @@ URI: [wasth:Right](https://tradicional.arq.br/schema/Right)
 | [Place](Place.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
 | [Site](Site.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
 | [Resource](Resource.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
-| [Media](Media.md) | [rights](rights.md) | range | [Right](Right.md) |
+| [MediaObject](MediaObject.md) | [rights](rights.md) | range | [Right](Right.md) |
 | [Event](Event.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
 | [Thing](Thing.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
 | [Repository](Repository.md) | [record_rights](record_rights.md) | range | [Right](Right.md) |
@@ -133,7 +142,7 @@ URI: [wasth:Right](https://tradicional.arq.br/schema/Right)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | wasth:Right |
+| self | dcterms:rights |
 | native | wasth:Right |
 
 
@@ -150,13 +159,80 @@ URI: [wasth:Right](https://tradicional.arq.br/schema/Right)
 <details>
 ```yaml
 name: Right
-description: Rights statement associated with a record, resource, or note.
+description: '* Preencher `earliest_date` com a data de início da vigência dos direitos
+  ou a data do preenchimento da ficha. * `latest_date` pode ser omitido se não houver
+  fim da vigência. * `holder` pode ser omitido se a obra estiver no domínio público.
+
+  '
 from_schema: https://tradicional.arq.br/schema
-slots:
-- right_concept
-- right_type
-- right_temporal
-- right_holder
+attributes:
+  concept:
+    name: concept
+    description: 'Qualifies the kind of rights type, whether it refers to a generic
+      kind of right, like copyright or performance rights, or is a specific rights
+      or license statement, for instance, Rights Statements or Creative Commons Licenses.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/shared
+    domain_of:
+    - Right
+    - Topic
+    range: RightsType
+    required: true
+  type:
+    name: type
+    description: 'An index element for rights information being recorded. This can
+      refer to a generic kind of right, such as copyright or a related right, but
+      also be a specific rights or license statement like a standardized statement
+      on copyright, usage, or access rights.
+
+      Por padrão, as casas tradicionais pertencem ao domínio público até prova em
+      contrário. Essa informação e a declaração de direitos NKC (Sem direito autoral
+      conhecido) NÃO PODE ser omitida da ficha. Para o domínio público, indicar a
+      referência: <https://rightsstatements.org/vocab/NKC/1.0/>.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/shared
+    domain_of:
+    - Measurement
+    - Right
+    - LegalBody
+    - Event
+    - StylePeriod
+    - EventPlace
+    - Inscription
+    - Topic
+    - HistoricPlace
+    range: TypedReference
+    required: true
+    inlined: true
+  temporal:
+    name: temporal
+    description: Date on which a right is or was current.
+    from_schema: https://tradicional.arq.br/schema/shared
+    rank: 1000
+    alias: temporal
+    domain_of:
+    - Right
+    - Thing
+    range: EventDate
+    inlined: true
+  holder:
+    name: holder
+    description: 'A set of elements identifying the person or the group of persons
+      holding the rights referenced in Rights Type. Often refers to copyright and
+      related rights, such as the right to reproduce, distribute, exhibit or use the
+      entity in focus, for example, the object/work, resource or metadata record.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/shared
+    rank: 1000
+    alias: holder
+    domain_of:
+    - Right
+    range: LegalBody
+    inlined: true
+class_uri: dcterms:rights
 
 ```
 </details>
@@ -166,42 +242,76 @@ slots:
 <details>
 ```yaml
 name: Right
-description: Rights statement associated with a record, resource, or note.
+description: '* Preencher `earliest_date` com a data de início da vigência dos direitos
+  ou a data do preenchimento da ficha. * `latest_date` pode ser omitido se não houver
+  fim da vigência. * `holder` pode ser omitido se a obra estiver no domínio público.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 attributes:
-  right_concept:
-    name: right_concept
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    alias: concept
+  concept:
+    name: concept
+    description: 'Qualifies the kind of rights type, whether it refers to a generic
+      kind of right, like copyright or performance rights, or is a specific rights
+      or license statement, for instance, Rights Statements or Creative Commons Licenses.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/shared
     owner: Right
     domain_of:
     - Right
-    range: TypedReference
-    inlined: true
-  right_type:
-    name: right_type
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    ifabsent: string(generic)
-    alias: type
-    owner: Right
-    domain_of:
-    - Right
+    - Topic
     range: RightsType
-  right_temporal:
-    name: right_temporal
-    from_schema: https://tradicional.arq.br/schema
+    required: true
+  type:
+    name: type
+    description: 'An index element for rights information being recorded. This can
+      refer to a generic kind of right, such as copyright or a related right, but
+      also be a specific rights or license statement like a standardized statement
+      on copyright, usage, or access rights.
+
+      Por padrão, as casas tradicionais pertencem ao domínio público até prova em
+      contrário. Essa informação e a declaração de direitos NKC (Sem direito autoral
+      conhecido) NÃO PODE ser omitida da ficha. Para o domínio público, indicar a
+      referência: <https://rightsstatements.org/vocab/NKC/1.0/>.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/shared
+    owner: Right
+    domain_of:
+    - Measurement
+    - Right
+    - LegalBody
+    - Event
+    - StylePeriod
+    - EventPlace
+    - Inscription
+    - Topic
+    - HistoricPlace
+    range: TypedReference
+    required: true
+    inlined: true
+  temporal:
+    name: temporal
+    description: Date on which a right is or was current.
+    from_schema: https://tradicional.arq.br/schema/shared
     rank: 1000
     alias: temporal
     owner: Right
     domain_of:
     - Right
+    - Thing
     range: EventDate
     inlined: true
-  right_holder:
-    name: right_holder
-    from_schema: https://tradicional.arq.br/schema
+  holder:
+    name: holder
+    description: 'A set of elements identifying the person or the group of persons
+      holding the rights referenced in Rights Type. Often refers to copyright and
+      related rights, such as the right to reproduce, distribute, exhibit or use the
+      entity in focus, for example, the object/work, resource or metadata record.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/shared
     rank: 1000
     alias: holder
     owner: Right
@@ -209,6 +319,7 @@ attributes:
     - Right
     range: LegalBody
     inlined: true
+class_uri: dcterms:rights
 
 ```
 </details></div>

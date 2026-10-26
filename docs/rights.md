@@ -20,7 +20,7 @@ URI: [wasth:rights](https://tradicional.arq.br/schema/rights)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Media](Media.md) | Descrição e referência a um único arquivo de mídia |  no  |
+| [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |  no  |
 
 
 
@@ -34,7 +34,14 @@ URI: [wasth:rights](https://tradicional.arq.br/schema/rights)
 | Property | Value |
 | --- | --- |
 | Range | [Right](Right.md) |
-| Domain Of | [Media](Media.md) |
+| Domain Of | [MediaObject](MediaObject.md) |
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
 
 
 
@@ -77,9 +84,11 @@ name: rights
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 domain_of:
-- Media
+- MediaObject
 range: Right
+multivalued: true
 inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

@@ -6,31 +6,13 @@ search:
 # Slot: subject
 
 
-_Recomenda-se articular o tema em três níveis : descrição, identificação e_
+_Recomenda-se articular o tema em três níveis : descrição, identificação e interpretação._
 
-_interpretação._
+_DESCRIÇÃO se refere a elementos imediatamente reconhecíveis sem necessidade de conhecimento especializado : coluna(ta)s, arcadas, brasões, cunhais, ornamentos em geral._
 
-__
+_IDENTIFICAÇÃO se refere ao reconhecimento das particularidades arquitetônicas ou iconográficas dos elementos : p. ex. as colunas são da ordem toscana, a abóbada é de aresta, o brasão pertence a tal família..._
 
-_DESCRIÇÃO se refere a elementos imediatamente reconhecíveis sem_
-
-_necessidade de conhecimento especializado : coluna(ta)s, arcadas,_
-
-_brasões, cunhais, ornamentos em geral._
-
-__
-
-_IDENTIFICAÇÃO se refere ao reconhecimento das particularidades_
-
-_arquitetônicas ou iconográficas dos elementos : p. ex. as colunas são da_
-
-_ordem toscana, a abóbada é de aresta, o brasão pertence a tal família..._
-
-__
-
-_INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou_
-
-_político dos elementos, incluindo questões de status e estilo._
+_INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou político dos elementos, incluindo questões de status e estilo._
 
 __
 
@@ -114,28 +96,17 @@ URI: [lido:subjectSet](http://www.lido-schema.org/subjectSet)
 ```yaml
 name: subject
 description: 'Recomenda-se articular o tema em três níveis : descrição, identificação
-  e
+  e interpretação.
 
-  interpretação.
+  DESCRIÇÃO se refere a elementos imediatamente reconhecíveis sem necessidade de conhecimento
+  especializado : coluna(ta)s, arcadas, brasões, cunhais, ornamentos em geral.
 
+  IDENTIFICAÇÃO se refere ao reconhecimento das particularidades arquitetônicas ou
+  iconográficas dos elementos : p. ex. as colunas são da ordem toscana, a abóbada
+  é de aresta, o brasão pertence a tal família...
 
-  DESCRIÇÃO se refere a elementos imediatamente reconhecíveis sem
-
-  necessidade de conhecimento especializado : coluna(ta)s, arcadas,
-
-  brasões, cunhais, ornamentos em geral.
-
-
-  IDENTIFICAÇÃO se refere ao reconhecimento das particularidades
-
-  arquitetônicas ou iconográficas dos elementos : p. ex. as colunas são da
-
-  ordem toscana, a abóbada é de aresta, o brasão pertence a tal família...
-
-
-  INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou
-
-  político dos elementos, incluindo questões de status e estilo.
+  INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou político dos
+  elementos, incluindo questões de status e estilo.
 
   '
 from_schema: https://tradicional.arq.br/schema

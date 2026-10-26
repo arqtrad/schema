@@ -6,9 +6,7 @@ search:
 # Slot: qualifier
 
 
-_Indica que as medidas são aproximadas : usar um_
-
-_[qualificador do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720) ;_
+_Indica que as medidas são aproximadas : usar um [qualificador do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720) ;_
 
 __
 
@@ -31,7 +29,7 @@ Alias: qualifier
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Measurements](Measurements.md) | O campo `description` permite uma representação textual das medidas da |  no  |
+| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
 
 
 
@@ -45,12 +43,12 @@ Alias: qualifier
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Measurements](Measurements.md) |
+| Domain Of | [Measurement](Measurement.md) |
 ### Slot Characteristics
 
 | Property | Value |
 | --- | --- |
-| Owner | [Measurements](Measurements.md) |
+| Owner | [Measurement](Measurement.md) |
 
 
 
@@ -92,17 +90,15 @@ Alias: qualifier
 <details>
 ```yaml
 name: qualifier
-description: 'Indica que as medidas são aproximadas : usar um
-
-  [qualificador do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720) ;
+description: 'Indica que as medidas são aproximadas : usar um [qualificador do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720) ;
 
   '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: qualifier
-owner: Measurements
+owner: Measurement
 domain_of:
-- Measurements
+- Measurement
 range: string
 
 ```

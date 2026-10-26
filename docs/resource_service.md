@@ -27,8 +27,8 @@ Alias: service
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions |  no  |
-| [Media](Media.md) | Descrição e referência a um único arquivo de mídia |  no  |
+| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
+| [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |  no  |
 
 
 
@@ -42,7 +42,7 @@ Alias: service
 | Property | Value |
 | --- | --- |
 | Range | [TypedReference](TypedReference.md) |
-| Domain Of | [Resource](Resource.md), [Media](Media.md) |
+| Domain Of | [Resource](Resource.md), [MediaObject](MediaObject.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -96,7 +96,7 @@ rank: 1000
 alias: service
 domain_of:
 - Resource
-- Media
+- MediaObject
 range: TypedReference
 multivalued: true
 inlined: true

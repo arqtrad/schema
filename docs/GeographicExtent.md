@@ -79,7 +79,7 @@ URI: [wasth:GeographicExtent](https://tradicional.arq.br/schema/GeographicExtent
 | [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | direct |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
 | [geometry_type](geometry_type.md) | 1 <br/> [GeometryType](GeometryType.md) | Tipo da geometria descrita pelas coordenadas | direct |
-| [coordinates](coordinates.md) | 1 <br/> [GeoJSONCoordinateArray](GeoJSONCoordinateArray.md) | No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do | direct |
+| [coordinates](coordinates.md) | 1 <br/> [GeoJSONCoordinateArray](GeoJSONCoordinateArray.md) | No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do polígono (`... | direct |
 
 
 
@@ -159,10 +159,8 @@ attributes:
   coordinates:
     name: coordinates
     description: 'No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do
-
-      polígono (`extent`) com a opção `Get JSON` — copiar apenas os
-
-      colchetes `[[[ ]]]` e os valores numéricos dentro deles.
+      polígono (`extent`) com a opção `Get JSON` — copiar apenas os colchetes `[[[
+      ]]]` e os valores numéricos dentro deles.
 
       '
     from_schema: https://tradicional.arq.br/schema/place
@@ -199,10 +197,8 @@ attributes:
   coordinates:
     name: coordinates
     description: 'No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do
-
-      polígono (`extent`) com a opção `Get JSON` — copiar apenas os
-
-      colchetes `[[[ ]]]` e os valores numéricos dentro deles.
+      polígono (`extent`) com a opção `Get JSON` — copiar apenas os colchetes `[[[
+      ]]]` e os valores numéricos dentro deles.
 
       '
     from_schema: https://tradicional.arq.br/schema/place
@@ -218,7 +214,6 @@ attributes:
       of the lat/long pair according to the ISO6709 standard.
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
-    ifabsent: string(EPSG:4326)
     alias: srsName
     owner: GeographicExtent
     domain_of:
@@ -237,7 +232,7 @@ attributes:
     - GeographicExtent
     - TypedReference
     - RelatedObject
-    - Media
+    - MediaObject
     range: LegalBody
     multivalued: true
     inlined: true
@@ -253,9 +248,9 @@ attributes:
     - GeographicPoint
     - GeographicExtent
     - TypedReference
-    - Measurements
+    - Measurement
     - RelatedObject
-    - Media
+    - MediaObject
     - Actor
     - Thing
     - Appellation

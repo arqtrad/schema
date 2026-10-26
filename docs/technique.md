@@ -5,11 +5,18 @@ search:
 
 # Slot: technique
 
+
+_The production or manufacturing processes, techniques, and methods incorporated in the fabrication or alteration of the work or image._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
 
-URI: [wasth:technique](https://tradicional.arq.br/schema/technique)
+URI: [vra:Technique](http://purl.org/vra/Technique)
 <!-- no inheritance hierarchy -->
 
 
@@ -20,7 +27,7 @@ URI: [wasth:technique](https://tradicional.arq.br/schema/technique)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
 
 
@@ -36,6 +43,7 @@ URI: [wasth:technique](https://tradicional.arq.br/schema/technique)
 | --- | --- |
 | Range | [MaterialTech](MaterialTech.md) |
 | Domain Of | [Event](Event.md), [Work](Work.md) |
+| Slot URI | [vra:Technique](http://purl.org/vra/Technique) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -71,8 +79,9 @@ URI: [wasth:technique](https://tradicional.arq.br/schema/technique)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | wasth:technique |
+| self | vra:Technique |
 | native | wasth:technique |
+| close | crm:E55_Type |
 
 
 
@@ -82,8 +91,15 @@ URI: [wasth:technique](https://tradicional.arq.br/schema/technique)
 <details>
 ```yaml
 name: technique
+description: 'The production or manufacturing processes, techniques, and methods incorporated
+  in the fabrication or alteration of the work or image.
+
+  '
 from_schema: https://tradicional.arq.br/schema
+close_mappings:
+- crm:E55_Type
 rank: 1000
+slot_uri: vra:Technique
 domain_of:
 - Event
 - Work

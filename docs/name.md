@@ -21,7 +21,8 @@ URI: [wasth:name](https://tradicional.arq.br/schema/name)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ConceptReference](ConceptReference.md) | Atribuição de vocabulário controlado com citação de apoio |  no  |
-| [MaterialTech](MaterialTech.md) | Usar discernimento para identificar sistemas, materiais e técnicas que |  no  |
+| [MaterialTech](MaterialTech.md) | Usar discernimento para identificar sistemas, materiais e técnicas que intere... |  no  |
+| [LegalBody](LegalBody.md) | Personal, corporate, family, or other responsible body |  no  |
 | [StylePeriod](StylePeriod.md) |  |  no  |
 | [RelatedEvent](RelatedEvent.md) |  |  no  |
 | [HistoricPlace](HistoricPlace.md) | Designações alternativas ou jurisdições antigas para o mesmo local, NÃO a loc... |  no  |
@@ -38,7 +39,7 @@ URI: [wasth:name](https://tradicional.arq.br/schema/name)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [ConceptReference](ConceptReference.md), [RelatedEvent](RelatedEvent.md), [HistoricPlace](HistoricPlace.md) |
+| Domain Of | [ConceptReference](ConceptReference.md), [LegalBody](LegalBody.md), [RelatedEvent](RelatedEvent.md), [HistoricPlace](HistoricPlace.md) |
 
 
 
@@ -73,6 +74,7 @@ URI: [wasth:name](https://tradicional.arq.br/schema/name)
 name: name
 domain_of:
 - ConceptReference
+- LegalBody
 - RelatedEvent
 - HistoricPlace
 range: string

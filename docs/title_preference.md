@@ -42,11 +42,17 @@ Alias: label_type
 | --- | --- |
 | Range | [LabelType](LabelType.md) |
 | Domain Of | [Appellation](Appellation.md) |
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Required | Yes |
+
+
 ### Slot Characteristics
 
 | Property | Value |
 | --- | --- |
-| If Absent | `string(alternative)` |
 | Owner | [Appellation](Appellation.md) |
 
 
@@ -93,12 +99,12 @@ description: Indica se o nome em questão deve ser oculto ou não, se é uma ver
   ou uma variante de grafia, etc.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-ifabsent: string(alternative)
 alias: label_type
 owner: Appellation
 domain_of:
 - Appellation
 range: LabelType
+required: true
 
 ```
 </details></div>

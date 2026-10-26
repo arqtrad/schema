@@ -27,13 +27,13 @@ Alias: type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC |  no  |
+| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
 | [Appellation](Appellation.md) |  |  no  |
 | [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
 | [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  yes  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical |  no  |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
 
@@ -50,6 +50,13 @@ Alias: type
 | --- | --- |
 | Range | [TitleType](TitleType.md) |
 | Domain Of | [Thing](Thing.md), [Appellation](Appellation.md) |
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Required | Yes |
+
+
 
 
 
@@ -97,6 +104,7 @@ domain_of:
 - Thing
 - Appellation
 range: TitleType
+required: true
 
 ```
 </details></div>

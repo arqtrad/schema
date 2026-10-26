@@ -6,7 +6,7 @@ search:
 
 
 
-_Longitude in decimal degrees._
+_Longitude em graus decimais (separador: ponto)._
 
 
 

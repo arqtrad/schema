@@ -5,6 +5,13 @@ search:
 
 # Slot: material_tech_type
 
+
+_Tipo da referência a um material ou técnica usado na obra: material de construção (support), revestimento (medium), técnica, instrumento, cor, etc._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -22,7 +29,7 @@ Alias: type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MaterialTech](MaterialTech.md) | Usar discernimento para identificar sistemas, materiais e técnicas que |  no  |
+| [MaterialTech](MaterialTech.md) | Usar discernimento para identificar sistemas, materiais e técnicas que intere... |  no  |
 
 
 
@@ -90,6 +97,10 @@ Alias: type
 <details>
 ```yaml
 name: material_tech_type
+description: 'Tipo da referência a um material ou técnica usado na obra: material
+  de construção (support), revestimento (medium), técnica, instrumento, cor, etc.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: type

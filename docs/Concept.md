@@ -23,6 +23,7 @@ Alias: name
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Topic](Topic.md) | Subject or iconographic topic |  yes  |
+| [Right](Right.md) | * Preencher `earliest_date` com a data de início da vigência dos direitos ou ... |  no  |
 
 
 
@@ -36,7 +37,7 @@ Alias: name
 | Property | Value |
 | --- | --- |
 | Range | [Concept](Concept.md) |
-| Domain Of | [Topic](Topic.md) |
+| Domain Of | [Right](Right.md), [Topic](Topic.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -87,6 +88,7 @@ from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: name
 domain_of:
+- Right
 - Topic
 range: Concept
 required: true

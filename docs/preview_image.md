@@ -8,17 +8,7 @@ search:
 
 _Uma única miniatura da imagem original._
 
-__
-
-_Obs.: não usamos a opção `placeholder`, ela será preenchida_
-
-_automaticamente em caso de ausência da miniatura, nem outros tipos de_
-
-_miniaturas que não imagens._
-
-_A especificação LIDO admite listar mais de uma miniatura, mas tampouco_
-
-_prevemos essa hipótese._
+_Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente em caso de ausência da miniatura, nem outros tipos de miniaturas que não imagens. A especificação LIDO admite listar mais de uma miniatura, mas tampouco prevemos essa hipótese._
 
 __
 
@@ -39,8 +29,8 @@ URI: [wasth:preview_image](https://tradicional.arq.br/schema/preview_image)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions |  no  |
-| [Media](Media.md) | Descrição e referência a um único arquivo de mídia |  no  |
+| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
+| [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |  no  |
 
 
 
@@ -54,7 +44,7 @@ URI: [wasth:preview_image](https://tradicional.arq.br/schema/preview_image)
 | Property | Value |
 | --- | --- |
 | Range | [Uriorcurie](Uriorcurie.md) |
-| Domain Of | [Resource](Resource.md), [Media](Media.md) |
+| Domain Of | [Resource](Resource.md), [MediaObject](MediaObject.md) |
 
 
 
@@ -96,23 +86,16 @@ URI: [wasth:preview_image](https://tradicional.arq.br/schema/preview_image)
 name: preview_image
 description: 'Uma única miniatura da imagem original.
 
-
-  Obs.: não usamos a opção `placeholder`, ela será preenchida
-
-  automaticamente em caso de ausência da miniatura, nem outros tipos de
-
-  miniaturas que não imagens.
-
-  A especificação LIDO admite listar mais de uma miniatura, mas tampouco
-
-  prevemos essa hipótese.
+  Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente em caso
+  de ausência da miniatura, nem outros tipos de miniaturas que não imagens. A especificação
+  LIDO admite listar mais de uma miniatura, mas tampouco prevemos essa hipótese.
 
   '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 domain_of:
 - Resource
-- Media
+- MediaObject
 range: uriorcurie
 inlined: true
 

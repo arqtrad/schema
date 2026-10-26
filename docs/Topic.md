@@ -72,7 +72,7 @@ URI: [wasth:Topic](https://tradicional.arq.br/schema/Topic)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
-| [format_extent](format_extent.md) | 0..1 <br/> [TypedReference](TypedReference.md) | Indica a parte do objeto que está sendo medida — por | direct |
+| [format_extent](format_extent.md) | 0..1 <br/> [TypedReference](TypedReference.md) | Indica a parte do objeto que está sendo medida — por exemplo, se a altura é a... | direct |
 | [concept](concept.md) | 1 <br/> [Concept](Concept.md) |  | direct |
 | [type](type.md) | 1 <br/> [SubjectType](SubjectType.md) |  | direct |
 
@@ -147,7 +147,9 @@ attributes:
     name: type
     from_schema: https://tradicional.arq.br/schema/work
     domain_of:
-    - Measurements
+    - Measurement
+    - Right
+    - LegalBody
     - Event
     - StylePeriod
     - EventPlace
@@ -177,7 +179,9 @@ attributes:
     from_schema: https://tradicional.arq.br/schema/work
     owner: Topic
     domain_of:
-    - Measurements
+    - Measurement
+    - Right
+    - LegalBody
     - Event
     - StylePeriod
     - EventPlace
@@ -196,10 +200,10 @@ attributes:
     owner: Topic
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -210,11 +214,9 @@ attributes:
     range: string
   format_extent:
     name: format_extent
-    description: 'Indica a parte do objeto que está sendo medida — por
-
-      exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc.
-
-      — usar a `uri` de um vocabulário controlado.
+    description: 'Indica a parte do objeto que está sendo medida — por exemplo, se
+      a altura é até a linha de coroamento ou até a cumeeira, etc. — usar a `uri`
+      de um vocabulário controlado.
 
       '
     from_schema: https://tradicional.arq.br/schema
@@ -222,7 +224,7 @@ attributes:
     alias: extent
     owner: Topic
     domain_of:
-    - Measurements
+    - Measurement
     - Inscription
     - Topic
     range: TypedReference
@@ -234,6 +236,7 @@ attributes:
     alias: name
     owner: Topic
     domain_of:
+    - Right
     - Topic
     range: Concept
     required: true

@@ -5,11 +5,6 @@ search:
 
 # Slot: collection
 
-
-_Collections or aggregations to which the object belongs._
-
-
-
 <div data-search-exclude markdown="1">
 
 
@@ -25,12 +20,12 @@ URI: [wasth:collection](https://tradicional.arq.br/schema/collection)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC |  no  |
 | [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
 | [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical |  no  |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
 
@@ -45,15 +40,8 @@ URI: [wasth:collection](https://tradicional.arq.br/schema/collection)
 
 | Property | Value |
 | --- | --- |
-| Range | [TypedReference](TypedReference.md) |
+| Range | [String](String.md) |
 | Domain Of | [Thing](Thing.md), [Work](Work.md) |
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
-
-
 
 
 
@@ -67,13 +55,6 @@ URI: [wasth:collection](https://tradicional.arq.br/schema/collection)
 ## Identifier and Mapping Information
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://tradicional.arq.br/schema
 
 
 
@@ -93,16 +74,10 @@ URI: [wasth:collection](https://tradicional.arq.br/schema/collection)
 <details>
 ```yaml
 name: collection
-description: Collections or aggregations to which the object belongs.
-from_schema: https://tradicional.arq.br/schema
-rank: 1000
 domain_of:
 - Thing
 - Work
-range: TypedReference
-multivalued: true
-inlined: true
-inlined_as_list: true
+range: string
 
 ```
 </details></div>

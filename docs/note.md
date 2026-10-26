@@ -6,11 +6,7 @@ search:
 # Slot: note
 
 
-_Se necessário, incluir no campo `note` uma especificação adicional,_
-
-_como o número da página da referência bibliográfica de onde a_
-
-_informação foi extraída._
+_Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída._
 
 __
 
@@ -93,10 +89,7 @@ URI: [wasth:note](https://tradicional.arq.br/schema/note)
 ```yaml
 name: note
 description: 'Se necessário, incluir no campo `note` uma especificação adicional,
-
-  como o número da página da referência bibliográfica de onde a
-
-  informação foi extraída.
+  como o número da página da referência bibliográfica de onde a informação foi extraída.
 
   '
 from_schema: https://tradicional.arq.br/schema

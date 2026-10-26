@@ -52,7 +52,7 @@ URI: [wasth:StylePeriod](https://tradicional.arq.br/schema/StylePeriod)
 
 
 
-        StylePeriod --> "0..1" PeriodNameType : type
+        StylePeriod --> "1" PeriodNameType : type
         click PeriodNameType href "../PeriodNameType/"
 
 
@@ -73,7 +73,7 @@ URI: [wasth:StylePeriod](https://tradicional.arq.br/schema/StylePeriod)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [type](type.md) | 0..1 <br/> [PeriodNameType](PeriodNameType.md) |  | direct |
+| [type](type.md) | 1 <br/> [PeriodNameType](PeriodNameType.md) |  | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | [ConceptReference](ConceptReference.md) |
 | [name](name.md) | 0..1 <br/> [Concept](Concept.md) | Identificador do termo referido | [ConceptReference](ConceptReference.md) |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [ConceptReference](ConceptReference.md) |
@@ -140,9 +140,10 @@ attributes:
   type:
     name: type
     from_schema: https://tradicional.arq.br/schema/temporal
-    ifabsent: PeriodNameType(term:lido00731)
     domain_of:
-    - Measurements
+    - Measurement
+    - Right
+    - LegalBody
     - Event
     - StylePeriod
     - EventPlace
@@ -150,6 +151,7 @@ attributes:
     - Topic
     - HistoricPlace
     range: PeriodNameType
+    required: true
 
 ```
 </details>
@@ -165,10 +167,11 @@ attributes:
   type:
     name: type
     from_schema: https://tradicional.arq.br/schema/temporal
-    ifabsent: PeriodNameType(term:lido00731)
     owner: StylePeriod
     domain_of:
-    - Measurements
+    - Measurement
+    - Right
+    - LegalBody
     - Event
     - StylePeriod
     - EventPlace
@@ -176,6 +179,7 @@ attributes:
     - Topic
     - HistoricPlace
     range: PeriodNameType
+    required: true
   description:
     name: description
     description: A human-readable description for a thing
@@ -186,10 +190,10 @@ attributes:
     owner: StylePeriod
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -206,6 +210,7 @@ attributes:
     owner: StylePeriod
     domain_of:
     - ConceptReference
+    - LegalBody
     - RelatedEvent
     - HistoricPlace
     range: Concept
@@ -220,9 +225,9 @@ attributes:
     - GeographicPoint
     - GeographicExtent
     - TypedReference
-    - Measurements
+    - Measurement
     - RelatedObject
-    - Media
+    - MediaObject
     - Actor
     - Thing
     - Appellation

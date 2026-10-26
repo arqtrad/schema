@@ -32,7 +32,6 @@ URI: [wasth:RepositoryType](https://tradicional.arq.br/schema/RepositoryType)
 
 | Name | Description |
 | ---  | --- |
-| [legal_body_type](legal_body_type.md) |  |
 | [title_type](title_type.md) |  |
 
 

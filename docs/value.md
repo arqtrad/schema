@@ -27,7 +27,7 @@ Alias: value
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Measurements](Measurements.md) | O campo `description` permite uma representação textual das medidas da |  no  |
+| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
 
 
 
@@ -41,7 +41,7 @@ Alias: value
 | Property | Value |
 | --- | --- |
 | Range | [Float](Float.md) |
-| Domain Of | [Measurements](Measurements.md) |
+| Domain Of | [Measurement](Measurement.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -53,7 +53,7 @@ Alias: value
 
 | Property | Value |
 | --- | --- |
-| Owner | [Measurements](Measurements.md) |
+| Owner | [Measurement](Measurement.md) |
 
 
 ### Value Constraints
@@ -106,9 +106,9 @@ description: Valor numérico, usar ponto como separador decimal.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: value
-owner: Measurements
+owner: Measurement
 domain_of:
-- Measurements
+- Measurement
 range: float
 required: true
 minimum_value: 0

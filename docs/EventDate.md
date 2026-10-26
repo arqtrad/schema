@@ -6,17 +6,9 @@ search:
 # Class: EventDate
 
 
-_A wrapper for the expression of a date by providing a set of years as_
+_A wrapper for the expression of a date by providing a set of years as earliest and latest date delimiting the respective span of time, usually given in the proleptic Gregorian calendar._
 
-_earliest and latest date delimiting the respective span of time, usually_
-
-_given in the proleptic Gregorian calendar._
-
-__
-
-_If it is an exact date, possibly with time, repeat the same date (and_
-
-_time) in Earliest Date and Latest Date elements._
+_If it is an exact date, possibly with time, repeat the same date (and time) in Earliest Date and Latest Date elements._
 
 __
 
@@ -73,8 +65,8 @@ URI: [wasth:EventDate](https://tradicional.arq.br/schema/EventDate)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
-| [earliest_date](earliest_date.md) | 0..1 <br/> [DateRange](DateRange.md) |  | direct |
-| [latest_date](latest_date.md) | 0..1 <br/> [DateRange](DateRange.md) |  | direct |
+| [earliest_date](earliest_date.md) | 0..1 <br/> [DateRange](DateRange.md) | An index element for the expression of an exact or estimated date, for instan... | direct |
+| [latest_date](latest_date.md) | 0..1 <br/> [DateRange](DateRange.md) | An index element for the expression of the exact or approximate date, for ins... | direct |
 
 
 
@@ -84,7 +76,7 @@ URI: [wasth:EventDate](https://tradicional.arq.br/schema/EventDate)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Right](Right.md) | [right_temporal](right_temporal.md) | range | [EventDate](EventDate.md) |
+| [Right](Right.md) | [temporal](temporal.md) | range | [EventDate](EventDate.md) |
 | [Event](Event.md) | [event_date](event_date.md) | range | [EventDate](EventDate.md) |
 | [Event](Event.md) | [start_date](start_date.md) | range | [EventDate](EventDate.md) |
 | [Event](Event.md) | [end_date](end_date.md) | range | [EventDate](EventDate.md) |
@@ -136,15 +128,11 @@ URI: [wasth:EventDate](https://tradicional.arq.br/schema/EventDate)
 ```yaml
 name: EventDate
 description: 'A wrapper for the expression of a date by providing a set of years as
+  earliest and latest date delimiting the respective span of time, usually given in
+  the proleptic Gregorian calendar.
 
-  earliest and latest date delimiting the respective span of time, usually
-
-  given in the proleptic Gregorian calendar.
-
-
-  If it is an exact date, possibly with time, repeat the same date (and
-
-  time) in Earliest Date and Latest Date elements.
+  If it is an exact date, possibly with time, repeat the same date (and time) in Earliest
+  Date and Latest Date elements.
 
   '
 from_schema: https://tradicional.arq.br/schema
@@ -153,6 +141,11 @@ slots:
 attributes:
   earliest_date:
     name: earliest_date
+    description: 'An index element for the expression of an exact or estimated date,
+      for instance a year or calendar date, that delimits the beginning of a date
+      span.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     domain_of:
@@ -160,6 +153,11 @@ attributes:
     range: DateRange
   latest_date:
     name: latest_date
+    description: 'An index element for the expression of the exact or approximate
+      date, for instance a year or calendar date, that delimits the end of a date
+      span.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     domain_of:
@@ -175,21 +173,22 @@ attributes:
 ```yaml
 name: EventDate
 description: 'A wrapper for the expression of a date by providing a set of years as
+  earliest and latest date delimiting the respective span of time, usually given in
+  the proleptic Gregorian calendar.
 
-  earliest and latest date delimiting the respective span of time, usually
-
-  given in the proleptic Gregorian calendar.
-
-
-  If it is an exact date, possibly with time, repeat the same date (and
-
-  time) in Earliest Date and Latest Date elements.
+  If it is an exact date, possibly with time, repeat the same date (and time) in Earliest
+  Date and Latest Date elements.
 
   '
 from_schema: https://tradicional.arq.br/schema
 attributes:
   earliest_date:
     name: earliest_date
+    description: 'An index element for the expression of an exact or estimated date,
+      for instance a year or calendar date, that delimits the beginning of a date
+      span.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     owner: EventDate
@@ -198,6 +197,11 @@ attributes:
     range: DateRange
   latest_date:
     name: latest_date
+    description: 'An index element for the expression of the exact or approximate
+      date, for instance a year or calendar date, that delimits the end of a date
+      span.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     owner: EventDate
@@ -214,10 +218,10 @@ attributes:
     owner: EventDate
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent

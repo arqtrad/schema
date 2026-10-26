@@ -6,11 +6,7 @@ search:
 # Class: MaterialTech
 
 
-_Usar discernimento para identificar sistemas, materiais e técnicas que_
-
-_interessam ao conhecimento da edificação no seu conjunto, não a partes_
-
-_menos extensas ou pouco importantes._
+_Usar discernimento para identificar sistemas, materiais e técnicas que interessam ao conhecimento da edificação no seu conjunto, não a partes menos extensas ou pouco importantes._
 
 __
 
@@ -84,7 +80,7 @@ URI: [wasth:MaterialTech](https://tradicional.arq.br/schema/MaterialTech)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [material_tech_type](material_tech_type.md) | 1 <br/> [MaterialTechType](MaterialTechType.md) |  | direct |
+| [material_tech_type](material_tech_type.md) | 1 <br/> [MaterialTechType](MaterialTechType.md) | Tipo da referência a um material ou técnica usado na obra: material de constr... | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | [ConceptReference](ConceptReference.md) |
 | [name](name.md) | 0..1 <br/> [Concept](Concept.md) | Identificador do termo referido | [ConceptReference](ConceptReference.md) |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [ConceptReference](ConceptReference.md) |
@@ -150,10 +146,8 @@ URI: [wasth:MaterialTech](https://tradicional.arq.br/schema/MaterialTech)
 ```yaml
 name: MaterialTech
 description: 'Usar discernimento para identificar sistemas, materiais e técnicas que
-
-  interessam ao conhecimento da edificação no seu conjunto, não a partes
-
-  menos extensas ou pouco importantes.
+  interessam ao conhecimento da edificação no seu conjunto, não a partes menos extensas
+  ou pouco importantes.
 
   '
 from_schema: https://tradicional.arq.br/schema
@@ -161,6 +155,10 @@ is_a: ConceptReference
 attributes:
   material_tech_type:
     name: material_tech_type
+    description: 'Tipo da referência a um material ou técnica usado na obra: material
+      de construção (support), revestimento (medium), técnica, instrumento, cor, etc.
+
+      '
     from_schema: https://tradicional.arq.br/schema/shared
     rank: 1000
     alias: type
@@ -178,10 +176,8 @@ attributes:
 ```yaml
 name: MaterialTech
 description: 'Usar discernimento para identificar sistemas, materiais e técnicas que
-
-  interessam ao conhecimento da edificação no seu conjunto, não a partes
-
-  menos extensas ou pouco importantes.
+  interessam ao conhecimento da edificação no seu conjunto, não a partes menos extensas
+  ou pouco importantes.
 
   '
 from_schema: https://tradicional.arq.br/schema
@@ -189,6 +185,10 @@ is_a: ConceptReference
 attributes:
   material_tech_type:
     name: material_tech_type
+    description: 'Tipo da referência a um material ou técnica usado na obra: material
+      de construção (support), revestimento (medium), técnica, instrumento, cor, etc.
+
+      '
     from_schema: https://tradicional.arq.br/schema/shared
     rank: 1000
     alias: type
@@ -207,10 +207,10 @@ attributes:
     owner: MaterialTech
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -227,6 +227,7 @@ attributes:
     owner: MaterialTech
     domain_of:
     - ConceptReference
+    - LegalBody
     - RelatedEvent
     - HistoricPlace
     range: Concept
@@ -241,9 +242,9 @@ attributes:
     - GeographicPoint
     - GeographicExtent
     - TypedReference
-    - Measurements
+    - Measurement
     - RelatedObject
-    - Media
+    - MediaObject
     - Actor
     - Thing
     - Appellation

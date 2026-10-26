@@ -5,6 +5,11 @@ search:
 
 # Slot: event_date
 
+
+_Conjunto de datas em que decorreu o evento._
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -20,7 +25,7 @@ URI: [wasth:event_date](https://tradicional.arq.br/schema/event_date)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 
 
 
@@ -88,6 +93,7 @@ URI: [wasth:event_date](https://tradicional.arq.br/schema/event_date)
 <details>
 ```yaml
 name: event_date
+description: Conjunto de datas em que decorreu o evento.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 owner: Event

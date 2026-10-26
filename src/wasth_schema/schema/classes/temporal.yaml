@@ -16,8 +16,10 @@ default_range: string
 classes:
   Event:
     is_a: Thing
-    class_uri: crm:E5_Event # schema:Event
-    description: |
+    class_uri: crm:E5_Event
+    exact_mappings:
+      - schema:Event
+    description: >
       This class comprises distinct, delimited and coherent processes and
       interactions of a material nature, in cultural, social or physical
       systems, involving and affecting instances of E77 Persistent Item in a
@@ -62,37 +64,45 @@ classes:
       type:
         range: EventType
         required: true
-        #ifabsent: EventType(term:lido00031)
+        # ifabsent: EventType(term:lido00031)
 
       actor_role:
+        description: Identificação de um agente e do seu papel no evento.
         range: Actor
         multivalued: true
         inlined_as_list: true
 
       event_date:
+        description: Conjunto de datas em que decorreu o evento.
         range: EventDate
         required: true
         inlined: true
 
       start_date:
+        description: >
+          Data inicial do evento ou mais antiga data presumida para o seu
+          decurso.
         alias: start_date
         range: EventDate
         inlined: true
 
       end_date:
+        description: >
+          Data final do evento ou mais tardia data presumida para o seu
+          decurso.
         alias: end_date
         range: EventDate
         inlined: true
 
       style_period:
-        description: |
+        description: >
           An index element for the period in which the event happened,
           comprising information about geologic time scale, archaelogical,
           historical, or artistic period, style, or art movement, whose
           characteristics are represented by the object or work.
 
-          Note that "Period/Style" corresponds to "Style" in CDWA as shorthand
-          for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
+          Note that "Period/Style" corresponds to "Style" in CDWA as shorthand for
+          [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
 
           Examples may be Neolithic for a period, Impressionist for a style, or
           Cubism for a movement.
@@ -156,30 +166,36 @@ classes:
     attributes:
 
       actor_type:
+        description: >
+          Define se o agente é uma pessoa, uma organização ou corporação,
+          uma oficina, uma família, etc.
         alias: type
         range: AgentType
         ifabsent: AgentType(personal)
 
       actor_name:
+        description: Nome do agente extraído de um vocabulário controlado.
         alias: name
         range: TypedReference
         inlined: true
 
       role_in_event:
+        description: Ação desempenhada pelo agente no evento.
         range: RoleType
 
       actor_qualifier:
-        description: |
+        description: >
           For the Attribution Qualifier Actor element choose a concept URI from
-          the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264)
-          of the Art & Architecture Thesaurus, or another linked open
-          vocabulary.
+          the [attribution qualifiers
+          hierarchy](http://vocab.getty.edu/hier/aat/300404264) of the Art &
+          Architecture Thesaurus, or another linked open vocabulary.
         alias: qualifier
         range: TypedReference
         multivalued: true
         inlined_as_list: true
 
       actor_extent:
+        description: Parte da obra sobre a qual o agente interveio.
         alias: extent
         range: TypedReference
         multivalued: true
@@ -189,7 +205,7 @@ classes:
       - bibliographic_citation
 
   EventDate:
-    description: |
+    description: >
       A wrapper for the expression of a date by providing a set of years as
       earliest and latest date delimiting the respective span of time, usually
       given in the proleptic Gregorian calendar.
@@ -200,9 +216,17 @@ classes:
     attributes:
 
       earliest_date:
+        description: >
+          An index element for the expression of an exact or estimated date,
+          for instance a year or calendar date, that delimits the beginning of
+          a date span.
         range: DateRange
 
       latest_date:
+        description: >
+          An index element for the expression of the exact or approximate date,
+          for instance a year or calendar date, that delimits the end of
+          a date span.
         range: DateRange
 
     slots:
@@ -211,10 +235,17 @@ classes:
   DateRange:
     attributes:
       date_type:
+        description: >
+          An attribute for the kind of latest date, whether it is, for
+          instance, exact or estimated.
         alias: type
         required: true
         range: DateQualifier
       date_value:
+        description: >
+          Usar o formato ISO-8601 (por exemplo, 2026-03-17).
+          Para datas imprecisas, usar o primeiro dia, mês ou ano do período
+          delimitado, e descrever verbalmente o período no campo `description`.
         range: date
 
   StylePeriod:
@@ -224,7 +255,7 @@ classes:
       type:
         range: PeriodNameType
         required: true
-        #ifabsent: PeriodNameType(term:lido00731)
+        # ifabsent: PeriodNameType(term:lido00731)
 
   EventPlace:
     attributes:
@@ -233,6 +264,9 @@ classes:
         range: EventPlaceType
 
       places:
+        description: >
+          Lugares associados ao evento, sem incluir o próprio local no qual
+          se situa a edificação.
         alias: places
         range: Site
         multivalued: true

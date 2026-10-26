@@ -38,7 +38,7 @@ URI: [wasth:Appellation](https://tradicional.arq.br/schema/Appellation)
 
 
 
-        Appellation --> "0..1" LabelType : title_preference
+        Appellation --> "1" LabelType : title_preference
         click LabelType href "../LabelType/"
 
 
@@ -49,7 +49,7 @@ URI: [wasth:Appellation](https://tradicional.arq.br/schema/Appellation)
 
 
 
-        Appellation --> "0..1" TitleType : title_type
+        Appellation --> "1" TitleType : title_type
         click TitleType href "../TitleType/"
 
 
@@ -67,9 +67,9 @@ URI: [wasth:Appellation](https://tradicional.arq.br/schema/Appellation)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
-| [title_type](title_type.md) | 0..1 <br/> [TitleType](TitleType.md) | Indica se o título é um nome próprio, descritivo, etc | direct |
+| [title_type](title_type.md) | 1 <br/> [TitleType](TitleType.md) | Indica se o título é um nome próprio, descritivo, etc | direct |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
-| [title_preference](title_preference.md) | 0..1 <br/> [LabelType](LabelType.md) | Indica se o nome em questão deve ser oculto ou não, se é uma versão alternati... | direct |
+| [title_preference](title_preference.md) | 1 <br/> [LabelType](LabelType.md) | Indica se o nome em questão deve ser oculto ou não, se é uma versão alternati... | direct |
 
 
 
@@ -146,11 +146,11 @@ attributes:
       alternativa ou uma variante de grafia, etc.
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
-    ifabsent: string(alternative)
     alias: label_type
     domain_of:
     - Appellation
     range: LabelType
+    required: true
 
 ```
 </details>
@@ -168,12 +168,12 @@ attributes:
       alternativa ou uma variante de grafia, etc.
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
-    ifabsent: string(alternative)
     alias: label_type
     owner: Appellation
     domain_of:
     - Appellation
     range: LabelType
+    required: true
   description:
     name: description
     description: A human-readable description for a thing
@@ -184,10 +184,10 @@ attributes:
     owner: Appellation
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -207,6 +207,7 @@ attributes:
     - Thing
     - Appellation
     range: TitleType
+    required: true
   bibliographic_citation:
     name: bibliographic_citation
     from_schema: https://tradicional.arq.br/schema
@@ -218,9 +219,9 @@ attributes:
     - GeographicPoint
     - GeographicExtent
     - TypedReference
-    - Measurements
+    - Measurement
     - RelatedObject
-    - Media
+    - MediaObject
     - Actor
     - Thing
     - Appellation

@@ -20,8 +20,10 @@ URI: [wasth:type](https://tradicional.arq.br/schema/type)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Measurements](Measurements.md) | O campo `description` permite uma representação textual das medidas da |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
+| [Right](Right.md) | * Preencher `earliest_date` com a data de início da vigência dos direitos ou ... |  no  |
+| [LegalBody](LegalBody.md) | Personal, corporate, family, or other responsible body |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 | [StylePeriod](StylePeriod.md) |  |  no  |
 | [EventPlace](EventPlace.md) |  |  no  |
 | [Inscription](Inscription.md) | A descrição da inscrição informa local, dimensões e características |  no  |
@@ -40,7 +42,7 @@ URI: [wasth:type](https://tradicional.arq.br/schema/type)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Measurements](Measurements.md), [Event](Event.md), [StylePeriod](StylePeriod.md), [EventPlace](EventPlace.md), [Inscription](Inscription.md), [Topic](Topic.md), [HistoricPlace](HistoricPlace.md) |
+| Domain Of | [Measurement](Measurement.md), [Right](Right.md), [LegalBody](LegalBody.md), [Event](Event.md), [StylePeriod](StylePeriod.md), [EventPlace](EventPlace.md), [Inscription](Inscription.md), [Topic](Topic.md), [HistoricPlace](HistoricPlace.md) |
 
 
 
@@ -74,7 +76,9 @@ URI: [wasth:type](https://tradicional.arq.br/schema/type)
 ```yaml
 name: type
 domain_of:
-- Measurements
+- Measurement
+- Right
+- LegalBody
 - Event
 - StylePeriod
 - EventPlace

@@ -24,24 +24,24 @@ URI: [wasth:LegalBody](https://tradicional.arq.br/schema/LegalBody)
  classDiagram
     class LegalBody
     click LegalBody href "../LegalBody/"
-      LegalBody : legal_body_name
+      LegalBody : name
 
 
 
 
 
-        LegalBody --> "0..1" TypedReference : legal_body_name
+        LegalBody --> "0..1" TypedReference : name
         click TypedReference href "../TypedReference/"
 
 
 
-      LegalBody : legal_body_type
+      LegalBody : type
 
 
 
 
 
-        LegalBody --> "0..1" RepositoryType : legal_body_type
+        LegalBody --> "0..1" RepositoryType : type
         click RepositoryType href "../RepositoryType/"
 
 
@@ -58,8 +58,8 @@ URI: [wasth:LegalBody](https://tradicional.arq.br/schema/LegalBody)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [legal_body_type](legal_body_type.md) | 0..1 <br/> [RepositoryType](RepositoryType.md) |  | direct |
-| [legal_body_name](legal_body_name.md) | 0..1 <br/> [TypedReference](TypedReference.md) |  | direct |
+| [type](type.md) | 0..1 <br/> [RepositoryType](RepositoryType.md) |  | direct |
+| [name](name.md) | 0..1 <br/> [TypedReference](TypedReference.md) |  | direct |
 
 
 
@@ -72,10 +72,10 @@ URI: [wasth:LegalBody](https://tradicional.arq.br/schema/LegalBody)
 | [GeographicPoint](GeographicPoint.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
 | [GeographicExtent](GeographicExtent.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
 | [TypedReference](TypedReference.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
-| [Right](Right.md) | [right_holder](right_holder.md) | range | [LegalBody](LegalBody.md) |
+| [Right](Right.md) | [holder](holder.md) | range | [LegalBody](LegalBody.md) |
 | [RelatedObject](RelatedObject.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
 | [RelatedWork](RelatedWork.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
-| [Media](Media.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
+| [MediaObject](MediaObject.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
 | [Repository](Repository.md) | [legal_body](legal_body.md) | range | [LegalBody](LegalBody.md) |
 
 
@@ -126,9 +126,34 @@ URI: [wasth:LegalBody](https://tradicional.arq.br/schema/LegalBody)
 name: LegalBody
 description: Personal, corporate, family, or other responsible body.
 from_schema: https://tradicional.arq.br/schema
-slots:
-- legal_body_type
-- legal_body_name
+attributes:
+  type:
+    name: type
+    from_schema: https://tradicional.arq.br/schema/shared
+    ifabsent: string(corporate)
+    alias: type
+    domain_of:
+    - Measurement
+    - Right
+    - LegalBody
+    - Event
+    - StylePeriod
+    - EventPlace
+    - Inscription
+    - Topic
+    - HistoricPlace
+    range: RepositoryType
+  name:
+    name: name
+    from_schema: https://tradicional.arq.br/schema/shared
+    alias: name
+    domain_of:
+    - ConceptReference
+    - LegalBody
+    - RelatedEvent
+    - HistoricPlace
+    range: TypedReference
+    inlined: true
 
 ```
 </details>
@@ -141,24 +166,33 @@ name: LegalBody
 description: Personal, corporate, family, or other responsible body.
 from_schema: https://tradicional.arq.br/schema
 attributes:
-  legal_body_type:
-    name: legal_body_type
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
+  type:
+    name: type
+    from_schema: https://tradicional.arq.br/schema/shared
     ifabsent: string(corporate)
     alias: type
     owner: LegalBody
     domain_of:
+    - Measurement
+    - Right
     - LegalBody
+    - Event
+    - StylePeriod
+    - EventPlace
+    - Inscription
+    - Topic
+    - HistoricPlace
     range: RepositoryType
-  legal_body_name:
-    name: legal_body_name
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
+  name:
+    name: name
+    from_schema: https://tradicional.arq.br/schema/shared
     alias: name
     owner: LegalBody
     domain_of:
+    - ConceptReference
     - LegalBody
+    - RelatedEvent
+    - HistoricPlace
     range: TypedReference
     inlined: true
 

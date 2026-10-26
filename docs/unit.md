@@ -6,15 +6,7 @@ search:
 # Slot: unit
 
 
-_Unidade de medida usada no dimensionamento da representação,_
-
-_por exemplo metros ou milímetros._
-
-_Usar a_
-
-_[hierarquia de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096)_
-
-_do AAT, ou do nosso próprio [vocabulário controlado]._
+_Unidade de medida usada no dimensionamento da representação, por exemplo metros ou milímetros. Usar a [hierarquia de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096) do AAT, ou do nosso próprio [vocabulário controlado]._
 
 __
 
@@ -37,8 +29,8 @@ Alias: unit
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Measurements](Measurements.md) | O campo `description` permite uma representação textual das medidas da |  no  |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions |  no  |
+| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
+| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
 
 
 
@@ -52,7 +44,7 @@ Alias: unit
 | Property | Value |
 | --- | --- |
 | Range | [TypedReference](TypedReference.md) |
-| Domain Of | [Measurements](Measurements.md), [Resource](Resource.md) |
+| Domain Of | [Measurement](Measurement.md), [Resource](Resource.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -99,14 +91,8 @@ Alias: unit
 <details>
 ```yaml
 name: unit
-description: 'Unidade de medida usada no dimensionamento da representação,
-
-  por exemplo metros ou milímetros.
-
-  Usar a
-
-  [hierarquia de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096)
-
+description: 'Unidade de medida usada no dimensionamento da representação, por exemplo
+  metros ou milímetros. Usar a [hierarquia de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096)
   do AAT, ou do nosso próprio [vocabulário controlado].
 
   '
@@ -114,7 +100,7 @@ from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: unit
 domain_of:
-- Measurements
+- Measurement
 - Resource
 range: TypedReference
 required: true

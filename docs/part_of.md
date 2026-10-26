@@ -39,7 +39,7 @@ URI: [lido:partOfPlace](http://www.lido-schema.org/partOfPlace)
 
 | Property | Value |
 | --- | --- |
-| Range | [Place](Place.md) |
+| Range | [GeonamesId](GeonamesId.md) |
 | Domain Of | [Place](Place.md) |
 | Slot URI | [lido:partOfPlace](http://www.lido-schema.org/partOfPlace) |
 ### Slot Characteristics
@@ -96,8 +96,8 @@ slot_uri: lido:partOfPlace
 owner: Place
 domain_of:
 - Place
-range: Place
-inlined: false
+range: GeonamesId
+inlined: true
 
 ```
 </details></div>

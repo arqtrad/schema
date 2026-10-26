@@ -5,6 +5,13 @@ search:
 
 # Slot: date_value
 
+
+_Usar o formato ISO-8601 (por exemplo, 2026-03-17). Para datas imprecisas, usar o primeiro dia, mês ou ano do período delimitado, e descrever verbalmente o período no campo `description`._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -81,6 +88,11 @@ URI: [wasth:date_value](https://tradicional.arq.br/schema/date_value)
 <details>
 ```yaml
 name: date_value
+description: 'Usar o formato ISO-8601 (por exemplo, 2026-03-17). Para datas imprecisas,
+  usar o primeiro dia, mês ou ano do período delimitado, e descrever verbalmente o
+  período no campo `description`.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 owner: DateRange

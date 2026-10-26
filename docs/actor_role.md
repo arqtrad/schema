@@ -5,6 +5,11 @@ search:
 
 # Slot: actor_role
 
+
+_Identificação de um agente e do seu papel no evento._
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -20,7 +25,7 @@ URI: [wasth:actor_role](https://tradicional.arq.br/schema/actor_role)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 
 
 
@@ -88,6 +93,7 @@ URI: [wasth:actor_role](https://tradicional.arq.br/schema/actor_role)
 <details>
 ```yaml
 name: actor_role
+description: Identificação de um agente e do seu papel no evento.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 owner: Event

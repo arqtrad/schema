@@ -5,6 +5,13 @@ search:
 
 # Slot: work_rights
 
+
+_> :warning: Este bloco se refere a eventuais direitos autorais sobre A > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre a > iconografia relacionada._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -40,6 +47,7 @@ URI: [lido:rightsWorkSet](http://www.lido-schema.org/rightsWorkSet)
 
 | Property | Value |
 | --- | --- |
+| Required | Yes |
 | Multivalued | Yes |
 
 
@@ -89,6 +97,11 @@ URI: [lido:rightsWorkSet](http://www.lido-schema.org/rightsWorkSet)
 <details>
 ```yaml
 name: work_rights
+description: '> :warning: Este bloco se refere a eventuais direitos autorais sobre
+  A > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre a > iconografia
+  relacionada.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: lido:rightsWorkSet
@@ -96,6 +109,7 @@ owner: Work
 domain_of:
 - Work
 range: Right
+required: true
 multivalued: true
 inlined: true
 inlined_as_list: true

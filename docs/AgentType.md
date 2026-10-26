@@ -32,7 +32,7 @@ URI: [wasth:AgentType](https://tradicional.arq.br/schema/AgentType)
 
 | Name | Description |
 | ---  | --- |
-| [actor_type](actor_type.md) |  |
+| [actor_type](actor_type.md) | Define se o agente é uma pessoa, uma organização ou corporação, uma oficina, ... |
 
 
 

@@ -6,35 +6,11 @@ search:
 # Slot: classification_genre
 
 
-_A broad category for grouping objects on the basis of shared intrinsic_
+_A broad category for grouping objects on the basis of shared intrinsic characteristics. The relationship between an object/work and the object genre is a generic is-a-relation rather than a membership based on ascription to a subject group._
 
-_characteristics. The relationship between an object/work and the object_
+_Note that the [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711) hierarchy differs in its scope from Object genre here in that the AAT includes more specific terms grouped by various aspects. In general, AAT descriptors are not intended to be used as indexing terms for classification._
 
-_genre is a generic is-a-relation rather than a membership based on_
-
-_ascription to a subject group._
-
-__
-
-_Note that the_
-
-_[AAT Object Genres](http://vocab.getty.edu/page/aat/300185711) hierarchy_
-
-_differs in its scope from Object genre here in that the AAT includes more_
-
-_specific terms grouped by various aspects. In general, AAT descriptors_
-
-_are not intended to be used as indexing terms for classification._
-
-__
-
-_❓ Ainda não implementamos o bloco `objectClassification` do LIDO._
-
-_Talvez ele não seja relevante para o documentário de arquitetura_
-
-_doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação_
-
-_para arquitetura._
+_❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura._
 
 __
 
@@ -125,32 +101,18 @@ URI: [term:lido00853](http://terminology.lido-schema.org/lido00853)
 ```yaml
 name: classification_genre
 description: 'A broad category for grouping objects on the basis of shared intrinsic
+  characteristics. The relationship between an object/work and the object genre is
+  a generic is-a-relation rather than a membership based on ascription to a subject
+  group.
 
-  characteristics. The relationship between an object/work and the object
+  Note that the [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711) hierarchy
+  differs in its scope from Object genre here in that the AAT includes more specific
+  terms grouped by various aspects. In general, AAT descriptors are not intended to
+  be used as indexing terms for classification.
 
-  genre is a generic is-a-relation rather than a membership based on
-
-  ascription to a subject group.
-
-
-  Note that the
-
-  [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711) hierarchy
-
-  differs in its scope from Object genre here in that the AAT includes more
-
-  specific terms grouped by various aspects. In general, AAT descriptors
-
-  are not intended to be used as indexing terms for classification.
-
-
-  ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
-
-  Talvez ele não seja relevante para o documentário de arquitetura
-
-  doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
-
-  para arquitetura.
+  ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele não
+  seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
+  no padrão LIDO nem no perfil de aplicação para arquitetura.
 
   '
 from_schema: https://tradicional.arq.br/schema

@@ -50,13 +50,6 @@ Alias: srsName
 | Recommended | Yes |
 
 
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| If Absent | `string(EPSG:4326)` |
-
-
 
 
 
@@ -100,7 +93,6 @@ description: Names the coordinate reference system (CRS) that defines the semant
   of the lat/long pair according to the ISO6709 standard.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-ifabsent: string(EPSG:4326)
 alias: srsName
 domain_of:
 - GeographicPoint

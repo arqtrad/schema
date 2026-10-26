@@ -46,8 +46,8 @@ URI: [wasth:RelatedWork](https://tradicional.arq.br/schema/RelatedWork)
 
 
 
-        RelatedWork --> "*" Media : media
-        click Media href "../Media/"
+        RelatedWork --> "*" MediaObject : media
+        click MediaObject href "../MediaObject/"
 
 
 
@@ -84,13 +84,13 @@ URI: [wasth:RelatedWork](https://tradicional.arq.br/schema/RelatedWork)
 
 
 
-      RelatedWork : resource
+      RelatedWork : resources
 
 
 
 
 
-        RelatedWork --> "*" Resource : resource
+        RelatedWork --> "*" Resource : resources
         click Resource href "../Resource/"
 
 
@@ -125,9 +125,9 @@ URI: [wasth:RelatedWork](https://tradicional.arq.br/schema/RelatedWork)
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | [RelatedObject](RelatedObject.md) |
 | [relation_type](relation_type.md) | 1 <br/> [RelationType](RelationType.md) | Usamos os tipos de relação previstos pelo [VRA Core] | [RelatedObject](RelatedObject.md) |
 | [related_object](related_object.md) | 1 <br/> [Work](Work.md) |  | [RelatedObject](RelatedObject.md) |
-| [object_type](object_type.md) | 0..1 <br/> [ObjectType](ObjectType.md) | Usar um vocabulário controlado para identificar o tipo de representação, | [RelatedObject](RelatedObject.md) |
-| [resource](resource.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de | [RelatedObject](RelatedObject.md) |
-| [media](media.md) | * <br/> [Media](Media.md) |  | [RelatedObject](RelatedObject.md) |
+| [object_type](object_type.md) | 0..1 <br/> [ObjectType](ObjectType.md) | Usar um vocabulário controlado para identificar o tipo de representação, por ... | [RelatedObject](RelatedObject.md) |
+| [resources](resources.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de imag... | [RelatedObject](RelatedObject.md) |
+| [media](media.md) | * <br/> [MediaObject](MediaObject.md) |  | [RelatedObject](RelatedObject.md) |
 | [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | [RelatedObject](RelatedObject.md) |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [RelatedObject](RelatedObject.md) |
 
@@ -140,7 +140,7 @@ URI: [wasth:RelatedWork](https://tradicional.arq.br/schema/RelatedWork)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Event](Event.md) | [things_present](things_present.md) | range | [RelatedWork](RelatedWork.md) |
-| [Work](Work.md) | [related_work](related_work.md) | range | [RelatedWork](RelatedWork.md) |
+| [Work](Work.md) | [related_works](related_works.md) | range | [RelatedWork](RelatedWork.md) |
 
 
 
@@ -224,10 +224,10 @@ attributes:
     owner: RelatedWork
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -238,13 +238,13 @@ attributes:
     range: string
   relation_type:
     name: relation_type
-    description: "Usamos os tipos de relação previstos pelo [VRA Core].\nProvavelmente\
-      \ necessitamos apenas de :\n\n- `planFor` : desenho técnico bidimensional de\
-      \ levantamento\n  (padrão, pode ser omitido) ;\n\n- `modelFor` : modelo tridimensional,\
-      \ com ou sem informações construtivas\n  associadas (BIM) ;\n\n- `imageOf` :\
-      \ outras representações em duas dimensões da edificação ;\n\n- `preparatoryFor` :\
-      \ representação técnica de projeto para intervenções a\n  serem realizadas (ou\
-      \ já realizadas) na edificação.\n"
+    description: "Usamos os tipos de relação previstos pelo [VRA Core]. Provavelmente\
+      \ necessitamos apenas de :\n- `planFor` : desenho técnico bidimensional de levantamento\n\
+      \  (padrão, pode ser omitido) ;\n\n- `modelFor` : modelo tridimensional, com\
+      \ ou sem informações construtivas\n  associadas (BIM) ;\n\n- `imageOf` : outras\
+      \ representações em duas dimensões da edificação ;\n- `preparatoryFor` : representação\
+      \ técnica de projeto para intervenções a\n  serem realizadas (ou já realizadas)\
+      \ na edificação.\n"
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     alias: rel_type
@@ -266,11 +266,7 @@ attributes:
   object_type:
     name: object_type
     description: 'Usar um vocabulário controlado para identificar o tipo de representação,
-
-      por exemplo as hierarquias do Getty AAT
-
-      [obras visuais](http://vocab.getty.edu/hier/aat/300191086).
-
+      por exemplo as hierarquias do Getty AAT [obras visuais](http://vocab.getty.edu/hier/aat/300191086).
       ou [formatos de informação](http://vocab.getty.edu/hier/aat/300220751)
 
       '
@@ -280,26 +276,18 @@ attributes:
     domain_of:
     - RelatedObject
     range: ObjectType
-  resource:
-    name: resource
+  resources:
+    name: resources
     description: 'Os desenhos ou modelos da edificação são apresentados online por
-      meio de
+      meio de imagens vetoriais ou bitmap.
 
-      imagens vetoriais ou bitmap.
+      Cada desenho ou modelo pode ser apresentado sob várias representações, como
+      pré-visualização, imagem original, ou serviço [IIIF]. Essas imagens devem ser
+      identificadas como segue :
 
-
-      Cada desenho ou modelo pode ser apresentado sob várias representações,
-
-      como pré-visualização, imagem original, ou serviço [IIIF].
-
-      Essas imagens devem ser identificadas como segue :
-
-
-      As categorias de representação previstas no [LIDO] podem ser consultadas
-
-      em <http://terminology.lido-schema.org/resourceRepresentation_type>
-
-      e são inseridas na ficha como um mapa.
+      As categorias de representação previstas no [LIDO] podem ser consultadas em
+      <http://terminology.lido-schema.org/resourceRepresentation_type> e são inseridas
+      na ficha como um mapa.
 
       '
     from_schema: https://tradicional.arq.br/schema
@@ -321,7 +309,7 @@ attributes:
     - RelatedObject
     - Event
     - Work
-    range: Media
+    range: MediaObject
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -335,7 +323,7 @@ attributes:
     - GeographicExtent
     - TypedReference
     - RelatedObject
-    - Media
+    - MediaObject
     range: LegalBody
     multivalued: true
     inlined: true
@@ -351,9 +339,9 @@ attributes:
     - GeographicPoint
     - GeographicExtent
     - TypedReference
-    - Measurements
+    - Measurement
     - RelatedObject
-    - Media
+    - MediaObject
     - Actor
     - Thing
     - Appellation

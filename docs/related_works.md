@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: related_work
+# Slot: related_works
 
 <div data-search-exclude markdown="1">
 
@@ -72,7 +72,7 @@ URI: [skos:related](http://www.w3.org/2004/02/skos/core#related)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | skos:related |
-| native | wasth:related_work |
+| native | wasth:related_works |
 
 
 
@@ -81,7 +81,7 @@ URI: [skos:related](http://www.w3.org/2004/02/skos/core#related)
 
 <details>
 ```yaml
-name: related_work
+name: related_works
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: skos:related

@@ -8,29 +8,7 @@ search:
 
 _An historical landmark or building._
 
-__
-
-_This class comprises all persistent physical objects of any size that are_
-
-_purposely created by human activity and have physical boundaries that_
-
-_separate them completely in an objective way from other objects._
-
-__
-
-_The class also includes all aggregates of objects made for functional_
-
-_purposes of whatever kind, independent of physical coherence, such as a_
-
-_set of chessmen._
-
-__
-
-_Nos Documentários da Arquitetura Tradicional, esta ficha pode ser usada_
-
-_para cadastrar uma edificação, um conjunto arquitetônico, ou ainda_
-
-_uma parte significativa de uma edificação._
+_Nos Documentários da Arquitetura Tradicional, esta ficha pode ser usada para cadastrar uma edificação, um conjunto arquitetônico, ou ainda uma parte significativa de uma edificação._
 
 __
 
@@ -212,8 +190,8 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 
 
 
-        Work --> "*" Measurements : measurements
-        click Measurements href "../Measurements/"
+        Work --> "*" Measurement : measurements
+        click Measurement href "../Measurement/"
 
 
 
@@ -223,8 +201,8 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 
 
 
-        Work --> "*" Media : media
-        click Media href "../Media/"
+        Work --> "*" MediaObject : media
+        click MediaObject href "../MediaObject/"
 
 
 
@@ -241,15 +219,6 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 
       Work : part_of
 
-
-
-
-
-        Work --> "0..1" Place : part_of
-        click Place href "../Place/"
-
-
-
       Work : record_date
 
       Work : record_rights
@@ -263,35 +232,35 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 
 
 
-      Work : related_work
+      Work : related_works
 
 
 
 
 
-        Work --> "*" RelatedWork : related_work
+        Work --> "*" RelatedWork : related_works
         click RelatedWork href "../RelatedWork/"
 
 
 
-      Work : repository
+      Work : repositories
 
 
 
 
 
-        Work --> "*" Repository : repository
+        Work --> "*" Repository : repositories
         click Repository href "../Repository/"
 
 
 
-      Work : resource
+      Work : resources
 
 
 
 
 
-        Work --> "*" Resource : resource
+        Work --> "*" Resource : resources
         click Resource href "../Resource/"
 
 
@@ -361,7 +330,7 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 
 
 
-        Work --> "0..1" RepositoryType : title_type
+        Work --> "1" RepositoryType : title_type
         click RepositoryType href "../RepositoryType/"
 
 
@@ -372,7 +341,7 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 
 
 
-        Work --> "*" Right : work_rights
+        Work --> "1..*" Right : work_rights
         click Right href "../Right/"
 
 
@@ -478,49 +447,49 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [measurements](measurements.md) | * <br/> [Measurements](Measurements.md) |  | direct |
-| [material](material.md) | * <br/> [MaterialTech](MaterialTech.md) |  | direct |
-| [technique](technique.md) | * <br/> [MaterialTech](MaterialTech.md) |  | direct |
-| [repository](repository.md) | * <br/> [Repository](Repository.md) |  | direct |
-| [subject](subject.md) | * <br/> [Topic](Topic.md) | Recomenda-se articular o tema em três níveis : descrição, identificação e | direct |
-| [related_work](related_work.md) | * <br/> [RelatedWork](RelatedWork.md) |  | direct |
-| [resource](resource.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de | direct |
-| [media](media.md) | * <br/> [Media](Media.md) |  | direct |
+| [measurements](measurements.md) | * <br/> [Measurement](Measurement.md) |  | direct |
+| [material](material.md) | * <br/> [MaterialTech](MaterialTech.md) | This class is a specialization of E55 Type and comprises the concepts of mate... | direct |
+| [technique](technique.md) | * <br/> [MaterialTech](MaterialTech.md) | The production or manufacturing processes, techniques, and methods incorporat... | direct |
+| [repositories](repositories.md) | * <br/> [Repository](Repository.md) | A set of elements for the identification, name and location of the repository... | direct |
+| [subject](subject.md) | * <br/> [Topic](Topic.md) | Recomenda-se articular o tema em três níveis : descrição, identificação e int... | direct |
+| [related_works](related_works.md) | * <br/> [RelatedWork](RelatedWork.md) |  | direct |
+| [resources](resources.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de imag... | direct |
+| [media](media.md) | * <br/> [MediaObject](MediaObject.md) |  | direct |
 | [work_type_condition](work_type_condition.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their overall state such ... | direct |
 | [work_type_form](work_type_form.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their physical form or by... | direct |
 | [work_type_material_tech](work_type_material_tech.md) | * _recommended_ <br/> [MaterialTech](MaterialTech.md) | Descriptors for objects that are distinguishable by their materials encorpora... | direct |
 | [work_type_subject_type](work_type_subject_type.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their topics, themes, or ... | direct |
 | [work_type_use](work_type_use.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by the way they are employed... | direct |
-| [classification_genre](classification_genre.md) | * <br/> [ConceptReference](ConceptReference.md) | A broad category for grouping objects on the basis of shared intrinsic | direct |
+| [classification_genre](classification_genre.md) | * <br/> [ConceptReference](ConceptReference.md) | A broad category for grouping objects on the basis of shared intrinsic charac... | direct |
 | [classification_subject](classification_subject.md) | * <br/> [ConceptReference](ConceptReference.md) | A broad category for grouping objects or works on the basis of a topical asso... | direct |
 | [classification_local](classification_local.md) | * <br/> [ConceptReference](ConceptReference.md) | A classification scheme for grouping objects on the basis of locally defined ... | direct |
 | [classification_special](classification_special.md) | * <br/> [ConceptReference](ConceptReference.md) | A classification scheme for grouping objects on the basis of criteria defined... | direct |
 | [inscriptions](inscriptions.md) | * <br/> [Inscription](Inscription.md) | Marcas, símbolos ou textos gravados na edificação, especialmente aqueles refe... | direct |
 | [location_historic](location_historic.md) | * <br/> [HistoricPlace](HistoricPlace.md) | Antigas jurisdições ou designações para o lugar onde o objeto se encontra | direct |
-| [collection](collection.md) | * <br/> [Thing](Thing.md) |  | direct |
-| [work_rights](work_rights.md) | * <br/> [Right](Right.md) |  | direct |
+| [collection](collection.md) | * <br/> [Thing](Thing.md) | A set of identifying and indexing information about the collection the object... | direct |
+| [work_rights](work_rights.md) | 1..* <br/> [Right](Right.md) | > :warning: Este bloco se refere a eventuais direitos autorais sobre A > EDIF... | direct |
 | [site](site.md) | 0..1 <br/> [Site](Site.md) | A localização real, atual da edificação — é o que será usado em quase todos o... | [Place](Place.md) |
 | [work_type_function](work_type_function.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Objects that are distinguishable by the particular purpose for which they are... | [Place](Place.md) |
 | [work_type_context](work_type_context.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their use or application ... | [Place](Place.md) |
-| [part_of](part_of.md) | 0..1 <br/> [Place](Place.md) | A set of structured information about a place that is the broader context for... | [Place](Place.md) |
+| [part_of](part_of.md) | 0..1 <br/> [GeonamesId](GeonamesId.md) | A set of structured information about a place that is the broader context for... | [Place](Place.md) |
 | [former_site](former_site.md) | * <br/> [Site](Site.md) | Indica que a edificação não se encontra mais no local indicado, seja porque f... | [Place](Place.md) |
 | [intended_site](intended_site.md) | * <br/> [Site](Site.md) | Sinaliza que a edificação devia ocupar um certo local, mas não chegou a ser c... | [Place](Place.md) |
 | [other_site](other_site.md) | * <br/> [Site](Site.md) | Para casos não contemplados em nenhuma das categorias acima | [Place](Place.md) |
 | [description](description.md) | 1 <br/> [String](String.md) | A human-readable description for a thing | [Thing](Thing.md) |
-| [record_rights](record_rights.md) | 1..* <br/> [Right](Right.md) |  | [Thing](Thing.md) |
-| [title_type](title_type.md) | 0..1 <br/> [RepositoryType](RepositoryType.md) | Indica se o título é um nome próprio, descritivo, etc | [Thing](Thing.md) |
-| [alt_name](alt_name.md) | * <br/> [Appellation](Appellation.md) | O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação | [Thing](Thing.md) |
+| [record_rights](record_rights.md) | 1..* <br/> [Right](Right.md) | A set of structured information about rights regarding the content provided i... | [Thing](Thing.md) |
+| [title_type](title_type.md) | 1 <br/> [RepositoryType](RepositoryType.md) | Indica se o título é um nome próprio, descritivo, etc | [Thing](Thing.md) |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [Thing](Thing.md) |
-| [identifiers](identifiers.md) | * <br/> [TypedReference](TypedReference.md) | Published or external identifiers for the object | [Thing](Thing.md) |
-| [tags](tags.md) | * <br/> [String](String.md) | Provisional uncontrolled keywords | [Thing](Thing.md) |
-| [temporal](temporal.md) | * <br/> [Event](Event.md) | Temporalidade do objeto | [Thing](Thing.md) |
-| [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui | [Thing](Thing.md) |
+| [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... | [Thing](Thing.md) |
 | [id](id.md) | 1 <br/> [OlcPlusCode11](OlcPlusCode11.md) | Cada edificação terá um identificador gerado a partir do seu georreferenciame... | [Thing](Thing.md) |
 | [author](author.md) | 1 <br/> [OrcidId](OrcidId.md) | ORCID iD of the record author or maintainer | [Thing](Thing.md) |
 | [record_date](record_date.md) | 0..1 <br/> [Date](Date.md) | Date the record was created or last substantively revised | [Thing](Thing.md) |
 | [title](title.md) | 1 <br/> [String](String.md) | The preferred human-readable label for a Thing | [Thing](Thing.md) |
 | [title_source](title_source.md) | * <br/> [BibliographicCitation](BibliographicCitation.md) | 📚 A fonte do título title_source é opcional ; um título pode ser atestado em ... | [Thing](Thing.md) |
+| [alt_name](alt_name.md) | * <br/> [Appellation](Appellation.md) | O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação se... | [Thing](Thing.md) |
 | [category](category.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | The LIDO Category Vocabulary is a structured controlled list of terms recomme... | [Thing](Thing.md) |
+| [identifiers](identifiers.md) | * <br/> [TypedReference](TypedReference.md) | Published or external identifiers for the object | [Thing](Thing.md) |
+| [tags](tags.md) | * <br/> [String](String.md) | Provisional uncontrolled keywords | [Thing](Thing.md) |
+| [temporal](temporal.md) | * <br/> [Event](Event.md) | Temporalidade do objeto | [Thing](Thing.md) |
 
 
 
@@ -545,6 +514,10 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 
 
 ## Identifier and Mapping Information
+### Administrative Metadata
+
+**Rank:** 0
+
 
 
 
@@ -564,6 +537,7 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 | ---  | ---  |
 | self | schema:LandmarksOrHistoricalBuildings |
 | native | wasth:Work |
+| close | crm:E22_Human-Made_Object |
 
 
 
@@ -581,38 +555,24 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 name: Work
 description: 'An historical landmark or building.
 
-
-  This class comprises all persistent physical objects of any size that are
-
-  purposely created by human activity and have physical boundaries that
-
-  separate them completely in an objective way from other objects.
-
-
-  The class also includes all aggregates of objects made for functional
-
-  purposes of whatever kind, independent of physical coherence, such as a
-
-  set of chessmen.
-
-
-  Nos Documentários da Arquitetura Tradicional, esta ficha pode ser usada
-
-  para cadastrar uma edificação, um conjunto arquitetônico, ou ainda
-
-  uma parte significativa de uma edificação.
+  Nos Documentários da Arquitetura Tradicional, esta ficha pode ser usada para cadastrar
+  uma edificação, um conjunto arquitetônico, ou ainda uma parte significativa de uma
+  edificação.
 
   '
 from_schema: https://tradicional.arq.br/schema
+close_mappings:
+- crm:E22_Human-Made_Object
+rank: 0
 is_a: Place
 slots:
 - measurements
 - material
 - technique
-- repository
+- repositories
 - subject
-- related_work
-- resource
+- related_works
+- resources
 - media
 slot_usage:
   id:
@@ -739,32 +699,18 @@ attributes:
   classification_genre:
     name: classification_genre
     description: 'A broad category for grouping objects on the basis of shared intrinsic
+      characteristics. The relationship between an object/work and the object genre
+      is a generic is-a-relation rather than a membership based on ascription to a
+      subject group.
 
-      characteristics. The relationship between an object/work and the object
-
-      genre is a generic is-a-relation rather than a membership based on
-
-      ascription to a subject group.
-
-
-      Note that the
-
-      [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711) hierarchy
-
-      differs in its scope from Object genre here in that the AAT includes more
-
-      specific terms grouped by various aspects. In general, AAT descriptors
-
+      Note that the [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711)
+      hierarchy differs in its scope from Object genre here in that the AAT includes
+      more specific terms grouped by various aspects. In general, AAT descriptors
       are not intended to be used as indexing terms for classification.
 
-
-      ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
-
-      Talvez ele não seja relevante para o documentário de arquitetura
-
-      doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
-
-      para arquitetura.
+      ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele
+      não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
+      no padrão LIDO nem no perfil de aplicação para arquitetura.
 
       '
     from_schema: https://tradicional.arq.br/schema/work
@@ -857,6 +803,16 @@ attributes:
     inlined_as_list: true
   collection:
     name: collection
+    description: 'A set of identifying and indexing information about the collection
+      the object/work in focus is gathered into or is a member of.
+
+      Collection applies to any accumulated group of physical or digital items, conceptually
+      or physically brought together on the basis of a focal characteristic. Use cases
+      for grouping items into a collection are various and may span curated holdings
+      in museums, departmental collections, sets of items to be displayed in an exhibition,
+      or aggregations bound informally for cataloging and retrieval purposes.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
     slot_uri: lido:collection
     domain_of:
@@ -867,12 +823,18 @@ attributes:
     inlined_as_list: false
   work_rights:
     name: work_rights
+    description: '> :warning: Este bloco se refere a eventuais direitos autorais sobre
+      A > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre a > iconografia
+      relacionada.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: lido:rightsWorkSet
     domain_of:
     - Work
     range: Right
+    required: true
     multivalued: true
     inlined_as_list: true
 class_uri: schema:LandmarksOrHistoricalBuildings
@@ -887,29 +849,15 @@ class_uri: schema:LandmarksOrHistoricalBuildings
 name: Work
 description: 'An historical landmark or building.
 
-
-  This class comprises all persistent physical objects of any size that are
-
-  purposely created by human activity and have physical boundaries that
-
-  separate them completely in an objective way from other objects.
-
-
-  The class also includes all aggregates of objects made for functional
-
-  purposes of whatever kind, independent of physical coherence, such as a
-
-  set of chessmen.
-
-
-  Nos Documentários da Arquitetura Tradicional, esta ficha pode ser usada
-
-  para cadastrar uma edificação, um conjunto arquitetônico, ou ainda
-
-  uma parte significativa de uma edificação.
+  Nos Documentários da Arquitetura Tradicional, esta ficha pode ser usada para cadastrar
+  uma edificação, um conjunto arquitetônico, ou ainda uma parte significativa de uma
+  edificação.
 
   '
 from_schema: https://tradicional.arq.br/schema
+close_mappings:
+- crm:E22_Human-Made_Object
+rank: 0
 is_a: Place
 slot_usage:
   id:
@@ -1041,32 +989,18 @@ attributes:
   classification_genre:
     name: classification_genre
     description: 'A broad category for grouping objects on the basis of shared intrinsic
+      characteristics. The relationship between an object/work and the object genre
+      is a generic is-a-relation rather than a membership based on ascription to a
+      subject group.
 
-      characteristics. The relationship between an object/work and the object
-
-      genre is a generic is-a-relation rather than a membership based on
-
-      ascription to a subject group.
-
-
-      Note that the
-
-      [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711) hierarchy
-
-      differs in its scope from Object genre here in that the AAT includes more
-
-      specific terms grouped by various aspects. In general, AAT descriptors
-
+      Note that the [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711)
+      hierarchy differs in its scope from Object genre here in that the AAT includes
+      more specific terms grouped by various aspects. In general, AAT descriptors
       are not intended to be used as indexing terms for classification.
 
-
-      ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
-
-      Talvez ele não seja relevante para o documentário de arquitetura
-
-      doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
-
-      para arquitetura.
+      ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele
+      não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
+      no padrão LIDO nem no perfil de aplicação para arquitetura.
 
       '
     from_schema: https://tradicional.arq.br/schema/work
@@ -1167,6 +1101,16 @@ attributes:
     inlined_as_list: true
   collection:
     name: collection
+    description: 'A set of identifying and indexing information about the collection
+      the object/work in focus is gathered into or is a member of.
+
+      Collection applies to any accumulated group of physical or digital items, conceptually
+      or physically brought together on the basis of a focal characteristic. Use cases
+      for grouping items into a collection are various and may span curated holdings
+      in museums, departmental collections, sets of items to be displayed in an exhibition,
+      or aggregations bound informally for cataloging and retrieval purposes.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
     slot_uri: lido:collection
     owner: Work
@@ -1178,6 +1122,11 @@ attributes:
     inlined_as_list: false
   work_rights:
     name: work_rights
+    description: '> :warning: Este bloco se refere a eventuais direitos autorais sobre
+      A > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre a > iconografia
+      relacionada.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: lido:rightsWorkSet
@@ -1185,6 +1134,7 @@ attributes:
     domain_of:
     - Work
     range: Right
+    required: true
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -1194,17 +1144,39 @@ attributes:
     rank: 1000
     owner: Work
     domain_of:
-    - Media
+    - MediaObject
     - Event
     - Work
-    range: Measurements
+    range: Measurement
     multivalued: true
     inlined: true
     inlined_as_list: true
   material:
     name: material
+    description: 'This class is a specialization of E55 Type and comprises the concepts
+      of materials.
+
+      Instances of E57 Material may denote properties of matter before its use, during
+      its use, and as incorporated in an object, such as ultramarine powder, tempera
+      paste, reinforced concrete. Discrete pieces of raw-materials kept in museums,
+      such as bricks, sheets of fabric, pieces of metal, should be modelled individually
+      in the same way as other objects. Discrete used or processed pieces, such as
+      the stones from Nefer Titi''s temple, should be modelled as parts (cf. P46 is
+      composed of (forms part of): E18 Physical Thing).
+
+      This type is used categorically in the model without reference to instances
+      of it, i.e. the Model does not foresee the description of instances of instances
+      of E57 Material, e.g. “instances of gold”.
+
+      It is recommended that internationally or nationally agreed codes and terminology
+      should be used.
+
+      '
     from_schema: https://tradicional.arq.br/schema
+    exact_mappings:
+    - vra:Material
     rank: 1000
+    slot_uri: crm:E57_Material
     owner: Work
     domain_of:
     - Event
@@ -1215,8 +1187,15 @@ attributes:
     inlined_as_list: true
   technique:
     name: technique
+    description: 'The production or manufacturing processes, techniques, and methods
+      incorporated in the fabrication or alteration of the work or image.
+
+      '
     from_schema: https://tradicional.arq.br/schema
+    close_mappings:
+    - crm:E55_Type
     rank: 1000
+    slot_uri: vra:Technique
     owner: Work
     domain_of:
     - Event
@@ -1225,9 +1204,24 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  repository:
-    name: repository
-    from_schema: https://tradicional.arq.br/schema
+  repositories:
+    name: repositories
+    description: 'A set of elements for the identification, name and location of the
+      repository that is responsible for the object/work in focus.
+
+      Repeated if there are several designations known, or if former repositories
+      or geographic places should be listed.
+
+      ---------------------------------------------------------------------
+
+      Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar
+      a inclusão da edificação em perímetros de sítios do patrimônio cultural, etc.
+
+      Os repositórios devem ser cadastrados de modo semelhante às informações de georreferenciamento,
+      usando o tipo `other`.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     owner: Work
     domain_of:
@@ -1240,28 +1234,18 @@ attributes:
   subject:
     name: subject
     description: 'Recomenda-se articular o tema em três níveis : descrição, identificação
-      e
+      e interpretação.
 
-      interpretação.
+      DESCRIÇÃO se refere a elementos imediatamente reconhecíveis sem necessidade
+      de conhecimento especializado : coluna(ta)s, arcadas, brasões, cunhais, ornamentos
+      em geral.
 
+      IDENTIFICAÇÃO se refere ao reconhecimento das particularidades arquitetônicas
+      ou iconográficas dos elementos : p. ex. as colunas são da ordem toscana, a abóbada
+      é de aresta, o brasão pertence a tal família...
 
-      DESCRIÇÃO se refere a elementos imediatamente reconhecíveis sem
-
-      necessidade de conhecimento especializado : coluna(ta)s, arcadas,
-
-      brasões, cunhais, ornamentos em geral.
-
-
-      IDENTIFICAÇÃO se refere ao reconhecimento das particularidades
-
-      arquitetônicas ou iconográficas dos elementos : p. ex. as colunas são da
-
-      ordem toscana, a abóbada é de aresta, o brasão pertence a tal família...
-
-
-      INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou
-
-      político dos elementos, incluindo questões de status e estilo.
+      INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou político
+      dos elementos, incluindo questões de status e estilo.
 
       '
     from_schema: https://tradicional.arq.br/schema
@@ -1274,8 +1258,8 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  related_work:
-    name: related_work
+  related_works:
+    name: related_works
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: skos:related
@@ -1286,26 +1270,18 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  resource:
-    name: resource
+  resources:
+    name: resources
     description: 'Os desenhos ou modelos da edificação são apresentados online por
-      meio de
+      meio de imagens vetoriais ou bitmap.
 
-      imagens vetoriais ou bitmap.
+      Cada desenho ou modelo pode ser apresentado sob várias representações, como
+      pré-visualização, imagem original, ou serviço [IIIF]. Essas imagens devem ser
+      identificadas como segue :
 
-
-      Cada desenho ou modelo pode ser apresentado sob várias representações,
-
-      como pré-visualização, imagem original, ou serviço [IIIF].
-
-      Essas imagens devem ser identificadas como segue :
-
-
-      As categorias de representação previstas no [LIDO] podem ser consultadas
-
-      em <http://terminology.lido-schema.org/resourceRepresentation_type>
-
-      e são inseridas na ficha como um mapa.
+      As categorias de representação previstas no [LIDO] podem ser consultadas em
+      <http://terminology.lido-schema.org/resourceRepresentation_type> e são inseridas
+      na ficha como um mapa.
 
       '
     from_schema: https://tradicional.arq.br/schema
@@ -1327,7 +1303,7 @@ attributes:
     - RelatedObject
     - Event
     - Work
-    range: Media
+    range: MediaObject
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -1399,8 +1375,8 @@ attributes:
     owner: Work
     domain_of:
     - Place
-    range: Place
-    inlined: false
+    range: GeonamesId
+    inlined: true
   former_site:
     name: former_site
     description: Indica que a edificação não se encontra mais no local indicado, seja
@@ -1452,10 +1428,10 @@ attributes:
     owner: Work
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -1467,7 +1443,16 @@ attributes:
     required: true
   record_rights:
     name: record_rights
-    from_schema: https://tradicional.arq.br/schema
+    description: 'A set of structured information about rights regarding the content
+      provided in this LIDO record.
+
+      ---------------------------------------------------------------------
+
+      :warning: Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre
+      os direitos incidentes sobre o objeto descrito.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     owner: Work
     domain_of:
@@ -1488,35 +1473,7 @@ attributes:
     - Thing
     - Appellation
     range: RepositoryType
-  alt_name:
-    name: alt_name
-    description: 'O bloco `alt_name` permite cadastrar outros nomes pelos quais a
-      edificação
-
-      será eventualmente conhecida. É uma lista opcional de itens, e se
-
-      existir, os campos de cada item da lista devem ser preenchidos como os do
-
-      título principal.
-
-
-      O campo `description` de cada item contém o texto do título (nome).
-
-
-      Este bloco pode ser omitido por completo se não houver títulos
-
-      alternativos.
-
-      '
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    owner: Work
-    domain_of:
-    - Thing
-    range: Appellation
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
+    required: true
   bibliographic_citation:
     name: bibliographic_citation
     from_schema: https://tradicional.arq.br/schema
@@ -1528,9 +1485,9 @@ attributes:
     - GeographicPoint
     - GeographicExtent
     - TypedReference
-    - Measurements
+    - Measurement
     - RelatedObject
-    - Media
+    - MediaObject
     - Actor
     - Thing
     - Appellation
@@ -1540,58 +1497,19 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  identifiers:
-    name: identifiers
-    description: Published or external identifiers for the object.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    owner: Work
-    domain_of:
-    - Thing
-    range: TypedReference
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  tags:
-    name: tags
-    description: Provisional uncontrolled keywords. Prefer `classifications` or `subject`
-      for curated vocabulary terms.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    owner: Work
-    domain_of:
-    - Thing
-    range: string
-    multivalued: true
-  temporal:
-    name: temporal
-    description: Temporalidade do objeto.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    owner: Work
-    domain_of:
-    - Thing
-    range: Event
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   content:
     name: content
     description: 'Deixe uma linha em branco após o fechamento dos metadados e inclua
-      aqui
+      aqui uma descrição morfológica e histórica da edificação com texto livre, usando
+      formatação Markdown.
 
-      uma descrição morfológica e histórica da edificação com texto livre,
+      Poderá incluir um segundo bloco de metadados para indicar as referências bibliográficas
+      da descrição textual, no campo `nocite`. O formato é uma lista de chaves de
+      citação do Zotero (cada uma começando com `@`) separadas por vírgulas:
 
-      usando formatação Markdown.
+      ```yaml Conteúdo textual em formato *Markdown* com citações [@citekey].
 
-
-      Poderá incluir um segundo bloco de metadados para indicar as referências
-
-      bibliográficas da descrição textual, no campo `nocite`.
-
-      O formato é uma lista de chaves de citação do Zotero
-
-      (cada uma começando com `@`) separadas por vírgulas.
+      --- nocite: "@*" --- ```
 
       '
     from_schema: https://tradicional.arq.br/schema
@@ -1674,6 +1592,27 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  alt_name:
+    name: alt_name
+    description: 'O bloco `alt_name` permite cadastrar outros nomes pelos quais a
+      edificação será eventualmente conhecida. É uma lista opcional de itens, e se
+      existir, os campos de cada item da lista devem ser preenchidos como os do título
+      principal.
+
+      O campo `description` de cada item contém o texto do título (nome).
+
+      Este bloco pode ser omitido por completo se não houver títulos alternativos.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
+    owner: Work
+    domain_of:
+    - Thing
+    range: Appellation
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   category:
     name: category
     description: 'The LIDO Category Vocabulary is a structured controlled list of
@@ -1690,6 +1629,41 @@ attributes:
     - Thing
     range: uriorcurie
     required: true
+  identifiers:
+    name: identifiers
+    description: Published or external identifiers for the object.
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
+    owner: Work
+    domain_of:
+    - Thing
+    range: TypedReference
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  tags:
+    name: tags
+    description: Provisional uncontrolled keywords. Prefer `classifications` or `subject`
+      for curated vocabulary terms.
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
+    owner: Work
+    domain_of:
+    - Thing
+    range: string
+    multivalued: true
+  temporal:
+    name: temporal
+    description: Temporalidade do objeto.
+    from_schema: https://tradicional.arq.br/schema/thing
+    owner: Work
+    domain_of:
+    - Right
+    - Thing
+    range: Event
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
 class_uri: schema:LandmarksOrHistoricalBuildings
 
 ```

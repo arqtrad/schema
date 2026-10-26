@@ -18,8 +18,10 @@ classes:
 
   Thing:
     abstract: true
-    class_uri: crm:E1_CRM_Entity # schema:Thing
-    description: |
+    class_uri: crm:E1_CRM_Entity
+    exact_mappings:
+      - schema:Thing
+    description: >
       This class comprises all things in the universe of discourse of the CIDOC
       Conceptual Reference Model.
 
@@ -60,7 +62,9 @@ classes:
         description: The preferred human-readable label for a Thing.
         required: true
         range: string
-        slot_uri: dcterms:title # schema:name
+        slot_uri: dcterms:title
+        exact_mappings:
+          - schema:name
 
       title_source:
         description: >-
@@ -83,6 +87,21 @@ classes:
         multivalued: true
         inlined_as_list: true
 
+      alt_name:
+        description: >
+          O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação
+          será eventualmente conhecida. É uma lista opcional de itens, e se
+          existir, os campos de cada item da lista devem ser preenchidos como os do
+          título principal.
+
+          O campo `description` de cada item contém o texto do título (nome).
+
+          Este bloco pode ser omitido por completo se não houver títulos
+          alternativos.
+        range: Appellation
+        multivalued: true
+        inlined_as_list: true
+
       category:
         description: >-
           The LIDO Category Vocabulary is a structured controlled list of terms
@@ -93,7 +112,66 @@ classes:
         designates_type: true
         slot_uri: term:lidoCategory
         required: true
-        #ifabsent: string(term:lido00096)
+        # ifabsent: string(term:lido00096)
+
+      identifiers:
+        range: TypedReference
+        multivalued: true
+        inlined_as_list: true
+        description: Published or external identifiers for the object.
+
+      tags:
+        range: string
+        multivalued: true
+        description: >-
+          Provisional uncontrolled keywords. Prefer `classifications` or
+          `subject` for curated vocabulary terms.
+
+      temporal:
+        description: Temporalidade do objeto.
+        range: Event
+        multivalued: true
+        inlined_as_list: true
+
+      collection:
+        range: TypedReference
+        multivalued: true
+        inlined_as_list: true
+        description: Collections or aggregations to which the object belongs.
+
+      repositories:
+        range: Repository
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          A set of elements for the identification, name and location of the
+          repository that is responsible for the object/work in focus.
+
+          Repeated if there are several designations known, or if former
+          repositories or geographic places should be listed.
+
+          ---------------------------------------------------------------------
+
+          Nos Documentários da Arquitetura Tradicional, usamos repositórios
+          para indicar a inclusão da edificação em perímetros de sítios do
+          patrimônio cultural, etc.
+
+          Os repositórios devem ser cadastrados de modo semelhante às
+          informações de georreferenciamento, usando o tipo `other`.
+
+      record_rights:
+        required: true
+        range: Right
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          A set of structured information about rights regarding the content
+          provided in this LIDO record.
+
+          ---------------------------------------------------------------------
+
+          :warning: Este grupo se refere aos direitos sobre o CONTEÚDO da
+          ficha, não sobre os direitos incidentes sobre o objeto descrito.
 
     slot_usage:
       description:
@@ -104,14 +182,9 @@ classes:
       - record_rights
       # Os campos abaixo são opcionais
       - title_type
-      - alt_name
       - bibliographic_citation
-      - identifiers
-      - tags
-      - temporal
-      - repository
-      - collection
       - content
+
 
   Appellation:
     attributes:
@@ -123,7 +196,7 @@ classes:
         alias: label_type
         range: LabelType
         required: true
-        #ifabsent: string(alternative)
+        # ifabsent: string(alternative)
 
     slots:
       - description
@@ -138,79 +211,38 @@ classes:
       - site
       - legal_body
 
+
 slots:
-
-  alt_name:
-    description: |
-      O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação
-      será eventualmente conhecida. É uma lista opcional de itens, e se
-      existir, os campos de cada item da lista devem ser preenchidos como os do
-      título principal.
-
-      O campo `description` de cada item contém o texto do título (nome).
-
-      Este bloco pode ser omitido por completo se não houver títulos
-      alternativos.
-    range: Appellation
-    multivalued: true
-    inlined_as_list: true
 
   title_type:
     description: Indica se o título é um nome próprio, descritivo, etc.
     alias: type
     range: TitleType
+    required: true
     # ifabsent: TitleType(descriptive)
-
-  identifiers:
-    range: TypedReference
-    multivalued: true
-    inlined_as_list: true
-    description: Published or external identifiers for the object.
-
-  tags:
-    range: string
-    multivalued: true
-    description: >-
-      Provisional uncontrolled keywords. Prefer `classifications` or
-      `subject` for curated vocabulary terms.
-
-  temporal:
-    description: Temporalidade do objeto.
-    range: Event
-    multivalued: true
-    inlined_as_list: true
-
-  collection:
-    range: TypedReference
-    multivalued: true
-    inlined_as_list: true
-    description: Collections or aggregations to which the object belongs.
-
-  repository:
-    range: Repository
-    multivalued: true
-    inlined_as_list: true
 
   legal_body:
     range: LegalBody
     required: true
 
-  record_rights:
-    required: true
-    range: Right
-    multivalued: true
-    inlined_as_list: true
-
   content:
     recommended: true
     range: string
     slot_uri: skos:scopeNote
-    description: |
-      Deixe uma linha em branco após o fechamento dos metadados e inclua aqui
-      uma descrição morfológica e histórica da edificação com texto livre,
-      usando formatação Markdown.
+    description: >
+      Deixe uma linha em branco após o fechamento dos metadados e inclua
+      aqui uma descrição morfológica e histórica da edificação com texto
+      livre, usando formatação Markdown.
 
-      Poderá incluir um segundo bloco de metadados para indicar as referências
-      bibliográficas da descrição textual, no campo `nocite`.
+      Poderá incluir um segundo bloco de metadados para indicar as
+      referências bibliográficas da descrição textual, no campo `nocite`.
       O formato é uma lista de chaves de citação do Zotero
-      (cada uma começando com `@`) separadas por vírgulas.
+      (cada uma começando com `@`) separadas por vírgulas:
+
+      ```yaml
+      Conteúdo textual em formato *Markdown* com citações [@citekey].
+
+      ---
+      nocite: "@*"
+      ---
+      ```

@@ -112,6 +112,7 @@ attributes:
     from_schema: https://tradicional.arq.br/schema/temporal
     domain_of:
     - ConceptReference
+    - LegalBody
     - RelatedEvent
     - HistoricPlace
     symmetric: true
@@ -136,6 +137,7 @@ attributes:
     owner: RelatedEvent
     domain_of:
     - ConceptReference
+    - LegalBody
     - RelatedEvent
     - HistoricPlace
     symmetric: true
@@ -153,10 +155,10 @@ attributes:
     owner: RelatedEvent
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent

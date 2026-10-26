@@ -22,8 +22,54 @@ classes:
       - bibliographic_citation
       - source
 
-  Measurements:
-    description: |
+  Measurement:
+    class_uri: E16_Measurement
+    close_mappings:
+      - dcterms:format
+
+    description: >
+      This class comprises actions measuring physical properties and other
+      values that can be determined by a systematic, objective procedure of
+      direct observation of particular states of physical reality.
+
+      An instance of E16 Measurement may use simple counting or tools, such as
+      yardsticks or radiation detection devices. The interest is in the method
+      and care applied, so that the reliability of the result may be judged at
+      a later stage, or research continued on the associated documents. The
+      date of the event is important for dimensions, which may change value
+      over time, such as the length of an object subject to shrinkage. Methods
+      and devices employed should be associated with instances of E16
+      Measurement by properties such as:
+      *P33 used specific technique*: E29 Design or Procedure,
+      *P125 used object of type*: E55 Type,
+      *P16 used specific object (was used for)*: E70 Thing,
+      whereas basic techniques such as "carbon-14 dating" should be encoded
+      using *P2 has type (is type of)*: E55 Type.
+      Details of methods and devices reused or reusable in other instances of
+      E16 Measurement should be documented for these entities rather than the
+      measurements themselves, whereas details of particular execution may be
+      documented by free text or by instantiating adequate sub-activities, if
+      the detail may be of interest for an overarching query.
+
+      Regardless whether a measurement is made by an instrument or by human
+      senses, it represents the initial transition from physical reality to
+      information without any other documented information object in between
+      within the reasoning chain that would represent the result of the
+      interaction of the observer or device with reality. Therefore,
+      determining properties of an instance of E90 Symbolic Object is regarded
+      as an instance of E13 Attribute Assignment, which may be inferred from
+      observing and measuring representative carriers. In the case that the
+      carrier can be named, the property
+      *P16 used specific object (was used for)*
+      should be used to indicate the instance(s) of E18 Physical Thing
+      that was used as the empirical basis for the attribute assignment. For
+      instance, inferring properties of depicted items using image material,
+      such as satellite images, is not regarded as an instance of E16
+      Measurement, but as a subsequent instance of E13 Attribute Assignment.
+      Rather, only the production of the images, understood as arrays of
+      radiation intensities, is regarded as an instance of E16 Measurement.
+      The same reasoning holds for other sensor data.
+
       O campo `description` permite uma representação textual das medidas da
       edificação, caso não seja possível cadastrar medidas individuais com
       precisão, ou seja preciso maior flexibilidade para explicar as dimensões.
@@ -39,9 +85,10 @@ classes:
       type:
         range: MeasurementType
         ifabsent: MeasurementType(proper)
-        description: |
+        description: >
           designa a natureza da medida : largura, altura,
-          área, etc. — usar um dos [tipos de dimensões](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300226820)
+          área, etc. — usar um dos [tipos de dimensões
+          ](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300226820)
           do Art and Architecture Thesaurus do Instituto Getty (AAT).
 
       value:
@@ -54,20 +101,22 @@ classes:
       qualifier:
         alias: qualifier
         range: string
-        description: |
+        description: >
           Indica que as medidas são aproximadas : usar um
-          [qualificador do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720) ;
+          [qualificador do
+          AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720) ;
 
       shape:
         alias: shape
         range: string
-        description: |
+        description: >
           caso relevante, indicar a forma do elemento medido
-          usando a [lista de formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273).
+          usando a [lista de formas do
+          AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273).
 
   MaterialTech:
     is_a: ConceptReference
-    description: |
+    description: >
       Usar discernimento para identificar sistemas, materiais e técnicas que
       interessam ao conhecimento da edificação no seu conjunto, não a partes
       menos extensas ou pouco importantes.
@@ -75,23 +124,80 @@ classes:
     attributes:
 
       material_tech_type:
+        description: >
+          Tipo da referência a um material ou técnica usado na obra:
+          material de construção (support), revestimento (medium), técnica,
+          instrumento, cor, etc.
         alias: type
         range: MaterialTechType
         required: true
 
   Right:
-    description: Rights statement associated with a record, resource, or note.
-    slots:
-      - right_concept
-      - right_type
-      - right_temporal
-      - right_holder
+    class_uri: dcterms:rights
+    description: >
+      * Preencher `earliest_date` com a data de início da vigência dos
+      direitos ou a data do preenchimento da ficha.
+      * `latest_date` pode ser omitido se não houver fim da vigência.
+      * `holder` pode ser omitido se a obra estiver no domínio público.
+
+    attributes:
+
+      concept:
+        description: >
+          Qualifies the kind of rights type, whether it refers to a generic
+          kind of right, like copyright or performance rights, or is a specific
+          rights or license statement, for instance, Rights Statements or
+          Creative Commons Licenses.
+        required: true
+        range: RightsType
+
+      type:
+        description: >
+          An index element for rights information being recorded. This can
+          refer to a generic kind of right, such as copyright or a related
+          right, but also be a specific rights or license statement like a
+          standardized statement on copyright, usage, or access rights.
+
+          Por padrão, as casas tradicionais pertencem ao domínio público até
+          prova em contrário.
+          Essa informação e a declaração de direitos NKC (Sem direito autoral
+          conhecido) NÃO PODE ser omitida da ficha.
+          Para o domínio público, indicar a referência:
+          <https://rightsstatements.org/vocab/NKC/1.0/>.
+        required: true
+        range: TypedReference
+        inlined: true
+
+      temporal:
+        description: Date on which a right is or was current.
+        alias: temporal
+        range: EventDate
+        inlined: true
+
+      holder:
+        description: >
+          A set of elements identifying the person or the group of persons
+          holding the rights referenced in Rights Type. Often refers to
+          copyright and related rights, such as the right to reproduce,
+          distribute, exhibit or use the entity in focus, for example, the
+          object/work, resource or metadata record.
+        alias: holder
+        range: LegalBody
+        inlined: true
 
   LegalBody:
     description: Personal, corporate, family, or other responsible body.
-    slots:
-      - legal_body_type
-      - legal_body_name
+    attributes:
+
+      type:
+        alias: type
+        range: RepositoryType
+        ifabsent: string(corporate)
+
+      name:
+        alias: name
+        range: TypedReference
+        inlined: true
 
   Header:
     description: Presentation metadata for the WASTH interface.
@@ -110,13 +216,17 @@ slots:
   refid:
     key: true
     range: uriorcurie
-    slot_uri: schema:identifier # dcterms:identifier
+    slot_uri: dcterm:identifier
+    exact_mappings:
+      - schema:identifier
     description: Local or external identifier.
 
   description:
     alias: display
     range: string
-    slot_uri: dcterms:description # schema:description
+    slot_uri: dcterms:description
+    exact_mappings:
+      - schema:description
     description: A human-readable description for a thing
 
   bibliographic_citation:
@@ -143,25 +253,53 @@ slots:
 
 
   measurements:
-    range: Measurements
+    range: Measurement
     multivalued: true
     inlined_as_list: true
 
   material:
+    slot_uri: crm:E57_Material
+    exact_mappings:
+      - vra:Material
     range: MaterialTech
     multivalued: true
     inlined_as_list: true
+    description: >
+      This class is a specialization of E55 Type and comprises the concepts of
+      materials.
+
+      Instances of E57 Material may denote properties of matter before its use,
+      during its use, and as incorporated in an object, such as ultramarine
+      powder, tempera paste, reinforced concrete. Discrete pieces of
+      raw-materials kept in museums, such as bricks, sheets of fabric, pieces
+      of metal, should be modelled individually in the same way as other
+      objects. Discrete used or processed pieces, such as the stones from Nefer
+      Titi's temple, should be modelled as parts (cf. P46 is composed of (forms
+      part of): E18 Physical Thing).
+
+      This type is used categorically in the model without reference to
+      instances of it, i.e. the Model does not foresee the description of
+      instances of instances of E57 Material, e.g. “instances of gold”.
+
+      It is recommended that internationally or nationally agreed codes and
+      terminology should be used.
 
   technique:
+    slot_uri: vra:Technique
+    close_mappings:
+      - crm:E55_Type
     range: MaterialTech
     multivalued: true
     inlined_as_list: true
+    description: >
+      The production or manufacturing processes, techniques, and methods
+      incorporated in the fabrication or alteration of the work or image.
 
   format_extent:
     alias: extent
     range: TypedReference
     inlined: true
-    description: |
+    description: >
       Indica a parte do objeto que está sendo medida — por
       exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc.
       — usar a `uri` de um vocabulário controlado.
@@ -171,11 +309,11 @@ slots:
     required: true
     range: TypedReference
     inlined: true
-    description: |
+    description: >
       Unidade de medida usada no dimensionamento da representação,
       por exemplo metros ou milímetros.
-      Usar a
-      [hierarquia de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096)
+      Usar a [hierarquia de unidades de
+      medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096)
       do AAT, ou do nosso próprio [vocabulário controlado].
 
 
@@ -186,37 +324,8 @@ slots:
 
   rights:
     range: Right
-    inlined: true
-
-  right_concept:
-    alias: concept
-    range: TypedReference
-    inlined: true
-
-  right_type:
-    alias: type
-    range: RightsType
-    ifabsent: string(generic)
-
-  right_temporal:
-    alias: temporal
-    range: EventDate
-    inlined: true
-
-  right_holder:
-    alias: holder
-    range: LegalBody
-    inlined: true
-
-  legal_body_type:
-    alias: type
-    range: RepositoryType
-    ifabsent: string(corporate)
-
-  legal_body_name:
-    alias: name
-    range: TypedReference
-    inlined: true
+    multivalued: true
+    inlined_as_list: true
 
   caption:
     description: Legenda descritiva ou explicativa.

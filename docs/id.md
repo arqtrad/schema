@@ -27,10 +27,10 @@ URI: [dcterms:identifier](http://purl.org/dc/terms/identifier)
 | --- | --- | --- |
 | [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
 | [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  yes  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical |  no  |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC |  no  |
+| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  yes  |
+| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
 | [Work](Work.md) | An historical landmark or building |  yes  |
 

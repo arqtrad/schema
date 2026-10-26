@@ -9,7 +9,7 @@ search:
 
 
 
-_Exatidão da data indicada._
+_Exatidão da data conhecida._
 
 
 
@@ -30,7 +30,7 @@ URI: [wasth:DateQualifier](https://tradicional.arq.br/schema/DateQualifier)
 
 | Name | Description |
 | ---  | --- |
-| [date_type](date_type.md) |  |
+| [date_type](date_type.md) | An attribute for the kind of latest date, whether it is, for instance, exact ... |
 
 
 
@@ -62,7 +62,7 @@ URI: [wasth:DateQualifier](https://tradicional.arq.br/schema/DateQualifier)
 <details>
 ```yaml
 name: DateQualifier
-description: Exatidão da data indicada.
+description: Exatidão da data conhecida.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 permissible_values:

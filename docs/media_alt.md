@@ -27,7 +27,7 @@ Alias: alt
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Media](Media.md) | Descrição e referência a um único arquivo de mídia |  no  |
+| [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |  no  |
 
 
 
@@ -41,7 +41,7 @@ Alias: alt
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Media](Media.md) |
+| Domain Of | [MediaObject](MediaObject.md) |
 
 
 
@@ -87,7 +87,7 @@ from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: alt
 domain_of:
-- Media
+- MediaObject
 range: string
 
 ```

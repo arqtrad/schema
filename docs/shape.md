@@ -6,9 +6,7 @@ search:
 # Slot: shape
 
 
-_caso relevante, indicar a forma do elemento medido_
-
-_usando a [lista de formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273)._
+_caso relevante, indicar a forma do elemento medido usando a [lista de formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273)._
 
 __
 
@@ -31,7 +29,7 @@ Alias: shape
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Measurements](Measurements.md) | O campo `description` permite uma representação textual das medidas da |  no  |
+| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
 
 
 
@@ -45,12 +43,12 @@ Alias: shape
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Measurements](Measurements.md) |
+| Domain Of | [Measurement](Measurement.md) |
 ### Slot Characteristics
 
 | Property | Value |
 | --- | --- |
-| Owner | [Measurements](Measurements.md) |
+| Owner | [Measurement](Measurement.md) |
 
 
 
@@ -92,17 +90,16 @@ Alias: shape
 <details>
 ```yaml
 name: shape
-description: 'caso relevante, indicar a forma do elemento medido
-
-  usando a [lista de formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273).
+description: 'caso relevante, indicar a forma do elemento medido usando a [lista de
+  formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273).
 
   '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: shape
-owner: Measurements
+owner: Measurement
 domain_of:
-- Measurements
+- Measurement
 range: string
 
 ```

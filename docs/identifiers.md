@@ -25,12 +25,12 @@ URI: [wasth:identifiers](https://tradicional.arq.br/schema/identifiers)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC |  no  |
 | [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
 | [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical |  no  |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
 
@@ -52,6 +52,13 @@ URI: [wasth:identifiers](https://tradicional.arq.br/schema/identifiers)
 | Property | Value |
 | --- | --- |
 | Multivalued | Yes |
+
+
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [Thing](Thing.md) |
 
 
 
@@ -96,6 +103,7 @@ name: identifiers
 description: Published or external identifiers for the object.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
+owner: Thing
 domain_of:
 - Thing
 range: TypedReference

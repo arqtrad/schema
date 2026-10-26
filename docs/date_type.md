@@ -5,6 +5,13 @@ search:
 
 # Slot: date_type
 
+
+_An attribute for the kind of latest date, whether it is, for instance, exact or estimated._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -90,6 +97,10 @@ Alias: type
 <details>
 ```yaml
 name: date_type
+description: 'An attribute for the kind of latest date, whether it is, for instance,
+  exact or estimated.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: type

@@ -93,16 +93,16 @@ URI: [wasth:TypedReference](https://tradicional.arq.br/schema/TypedReference)
 | [Place](Place.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
 | [Site](Site.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
 | [Site](Site.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
-| [Measurements](Measurements.md) | [format_extent](format_extent.md) | range | [TypedReference](TypedReference.md) |
-| [Measurements](Measurements.md) | [unit](unit.md) | range | [TypedReference](TypedReference.md) |
-| [Right](Right.md) | [right_concept](right_concept.md) | range | [TypedReference](TypedReference.md) |
-| [LegalBody](LegalBody.md) | [legal_body_name](legal_body_name.md) | range | [TypedReference](TypedReference.md) |
+| [Measurement](Measurement.md) | [format_extent](format_extent.md) | range | [TypedReference](TypedReference.md) |
+| [Measurement](Measurement.md) | [unit](unit.md) | range | [TypedReference](TypedReference.md) |
+| [Right](Right.md) | [type](type.md) | range | [TypedReference](TypedReference.md) |
+| [LegalBody](LegalBody.md) | [name](name.md) | range | [TypedReference](TypedReference.md) |
 | [Resource](Resource.md) | [resource_service](resource_service.md) | range | [TypedReference](TypedReference.md) |
 | [Resource](Resource.md) | [unit](unit.md) | range | [TypedReference](TypedReference.md) |
 | [Resource](Resource.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
 | [Resource](Resource.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
-| [Media](Media.md) | [format](format.md) | range | [TypedReference](TypedReference.md) |
-| [Media](Media.md) | [resource_service](resource_service.md) | range | [TypedReference](TypedReference.md) |
+| [MediaObject](MediaObject.md) | [format](format.md) | range | [TypedReference](TypedReference.md) |
+| [MediaObject](MediaObject.md) | [resource_service](resource_service.md) | range | [TypedReference](TypedReference.md) |
 | [Event](Event.md) | [culture](culture.md) | range | [TypedReference](TypedReference.md) |
 | [Event](Event.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
 | [Event](Event.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
@@ -228,9 +228,9 @@ attributes:
     - GeographicPoint
     - GeographicExtent
     - TypedReference
-    - Measurements
+    - Measurement
     - RelatedObject
-    - Media
+    - MediaObject
     - Actor
     - Thing
     - Appellation
@@ -250,7 +250,7 @@ attributes:
     - GeographicExtent
     - TypedReference
     - RelatedObject
-    - Media
+    - MediaObject
     range: LegalBody
     multivalued: true
     inlined: true

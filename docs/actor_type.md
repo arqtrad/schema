@@ -5,6 +5,13 @@ search:
 
 # Slot: actor_type
 
+
+_Define se o agente é uma pessoa, uma organização ou corporação, uma oficina, uma família, etc._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -84,6 +91,10 @@ Alias: type
 <details>
 ```yaml
 name: actor_type
+description: 'Define se o agente é uma pessoa, uma organização ou corporação, uma
+  oficina, uma família, etc.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 ifabsent: AgentType(personal)

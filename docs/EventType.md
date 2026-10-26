@@ -9,9 +9,7 @@ search:
 
 
 
-_The particular kind of event the object/work participated in or was_
-
-_present at._
+_The particular kind of event the object/work participated in or was present at._
 
 __
 
@@ -62,7 +60,6 @@ _This is a dynamic enum_
 ```yaml
 name: EventType
 description: 'The particular kind of event the object/work participated in or was
-
   present at.
 
   '

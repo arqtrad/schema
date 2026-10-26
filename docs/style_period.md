@@ -6,25 +6,11 @@ search:
 # Slot: style_period
 
 
-_An index element for the period in which the event happened,_
+_An index element for the period in which the event happened, comprising information about geologic time scale, archaelogical, historical, or artistic period, style, or art movement, whose characteristics are represented by the object or work._
 
-_comprising information about geologic time scale, archaelogical,_
+_Note that "Period/Style" corresponds to "Style" in CDWA as shorthand for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html)._
 
-_historical, or artistic period, style, or art movement, whose_
-
-_characteristics are represented by the object or work._
-
-__
-
-_Note that "Period/Style" corresponds to "Style" in CDWA as shorthand_
-
-_for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html)._
-
-__
-
-_Examples may be Neolithic for a period, Impressionist for a style, or_
-
-_Cubism for a movement._
+_Examples may be Neolithic for a period, Impressionist for a style, or Cubism for a movement._
 
 __
 
@@ -45,7 +31,7 @@ URI: [wasth:style_period](https://tradicional.arq.br/schema/style_period)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 
 
 
@@ -113,23 +99,14 @@ URI: [wasth:style_period](https://tradicional.arq.br/schema/style_period)
 <details>
 ```yaml
 name: style_period
-description: 'An index element for the period in which the event happened,
+description: 'An index element for the period in which the event happened, comprising
+  information about geologic time scale, archaelogical, historical, or artistic period,
+  style, or art movement, whose characteristics are represented by the object or work.
 
-  comprising information about geologic time scale, archaelogical,
+  Note that "Period/Style" corresponds to "Style" in CDWA as shorthand for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
 
-  historical, or artistic period, style, or art movement, whose
-
-  characteristics are represented by the object or work.
-
-
-  Note that "Period/Style" corresponds to "Style" in CDWA as shorthand
-
-  for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
-
-
-  Examples may be Neolithic for a period, Impressionist for a style, or
-
-  Cubism for a movement.
+  Examples may be Neolithic for a period, Impressionist for a style, or Cubism for
+  a movement.
 
   '
 from_schema: https://tradicional.arq.br/schema

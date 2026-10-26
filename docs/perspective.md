@@ -49,7 +49,7 @@ URI: [wasth:perspective](https://tradicional.arq.br/schema/perspective)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions |  no  |
+| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
 
 
 

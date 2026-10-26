@@ -58,7 +58,7 @@ URI: [wasth:RoleType](https://tradicional.arq.br/schema/RoleType)
 
 | Name | Description |
 | ---  | --- |
-| [role_in_event](role_in_event.md) |  |
+| [role_in_event](role_in_event.md) | Ação desempenhada pelo agente no evento |
 
 
 

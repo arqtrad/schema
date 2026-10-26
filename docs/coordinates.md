@@ -6,11 +6,7 @@ search:
 # Slot: coordinates
 
 
-_No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do_
-
-_polígono (`extent`) com a opção `Get JSON` — copiar apenas os_
-
-_colchetes `[[[ ]]]` e os valores numéricos dentro deles._
+_No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do polígono (`extent`) com a opção `Get JSON` — copiar apenas os colchetes `[[[ ]]]` e os valores numéricos dentro deles._
 
 __
 
@@ -99,11 +95,9 @@ URI: [wasth:coordinates](https://tradicional.arq.br/schema/coordinates)
 <details>
 ```yaml
 name: coordinates
-description: 'No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do
-
-  polígono (`extent`) com a opção `Get JSON` — copiar apenas os
-
-  colchetes `[[[ ]]]` e os valores numéricos dentro deles.
+description: 'No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do polígono
+  (`extent`) com a opção `Get JSON` — copiar apenas os colchetes `[[[ ]]]` e os valores
+  numéricos dentro deles.
 
   '
 from_schema: https://tradicional.arq.br/schema

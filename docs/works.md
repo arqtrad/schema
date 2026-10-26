@@ -5,6 +5,11 @@ search:
 
 # Slot: works
 
+
+_Todas as edificações documentadas._
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -88,6 +93,7 @@ URI: [wasth:works](https://tradicional.arq.br/schema/works)
 <details>
 ```yaml
 name: works
+description: Todas as edificações documentadas.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 owner: Container

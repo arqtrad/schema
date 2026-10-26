@@ -77,9 +77,9 @@ URI: [wasth:Inscription](https://tradicional.arq.br/schema/Inscription)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [format_extent](format_extent.md) | 0..1 <br/> [TypedReference](TypedReference.md) | Indica a parte do objeto que está sendo medida — por | direct |
+| [format_extent](format_extent.md) | 0..1 <br/> [TypedReference](TypedReference.md) | Indica a parte do objeto que está sendo medida — por exemplo, se a altura é a... | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
-| [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui | direct |
+| [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... | direct |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
 | [type](type.md) | 1 <br/> [InscriptionType](InscriptionType.md) |  | direct |
 
@@ -159,7 +159,9 @@ attributes:
     from_schema: https://tradicional.arq.br/schema/work
     ifabsent: string(text)
     domain_of:
-    - Measurements
+    - Measurement
+    - Right
+    - LegalBody
     - Event
     - StylePeriod
     - EventPlace
@@ -193,7 +195,9 @@ attributes:
     ifabsent: string(text)
     owner: Inscription
     domain_of:
-    - Measurements
+    - Measurement
+    - Right
+    - LegalBody
     - Event
     - StylePeriod
     - EventPlace
@@ -204,11 +208,9 @@ attributes:
     required: true
   format_extent:
     name: format_extent
-    description: 'Indica a parte do objeto que está sendo medida — por
-
-      exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc.
-
-      — usar a `uri` de um vocabulário controlado.
+    description: 'Indica a parte do objeto que está sendo medida — por exemplo, se
+      a altura é até a linha de coroamento ou até a cumeeira, etc. — usar a `uri`
+      de um vocabulário controlado.
 
       '
     from_schema: https://tradicional.arq.br/schema
@@ -216,7 +218,7 @@ attributes:
     alias: extent
     owner: Inscription
     domain_of:
-    - Measurements
+    - Measurement
     - Inscription
     - Topic
     range: TypedReference
@@ -231,10 +233,10 @@ attributes:
     owner: Inscription
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -246,20 +248,16 @@ attributes:
   content:
     name: content
     description: 'Deixe uma linha em branco após o fechamento dos metadados e inclua
-      aqui
+      aqui uma descrição morfológica e histórica da edificação com texto livre, usando
+      formatação Markdown.
 
-      uma descrição morfológica e histórica da edificação com texto livre,
+      Poderá incluir um segundo bloco de metadados para indicar as referências bibliográficas
+      da descrição textual, no campo `nocite`. O formato é uma lista de chaves de
+      citação do Zotero (cada uma começando com `@`) separadas por vírgulas:
 
-      usando formatação Markdown.
+      ```yaml Conteúdo textual em formato *Markdown* com citações [@citekey].
 
-
-      Poderá incluir um segundo bloco de metadados para indicar as referências
-
-      bibliográficas da descrição textual, no campo `nocite`.
-
-      O formato é uma lista de chaves de citação do Zotero
-
-      (cada uma começando com `@`) separadas por vírgulas.
+      --- nocite: "@*" --- ```
 
       '
     from_schema: https://tradicional.arq.br/schema
@@ -282,9 +280,9 @@ attributes:
     - GeographicPoint
     - GeographicExtent
     - TypedReference
-    - Measurements
+    - Measurement
     - RelatedObject
-    - Media
+    - MediaObject
     - Actor
     - Thing
     - Appellation

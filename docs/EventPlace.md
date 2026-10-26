@@ -57,7 +57,7 @@ URI: [wasth:EventPlace](https://tradicional.arq.br/schema/EventPlace)
 | ---  | --- | --- | --- |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
 | [type](type.md) | 0..1 <br/> [EventPlaceType](EventPlaceType.md) |  | direct |
-| [places](places.md) | * <br/> [Site](Site.md) |  | direct |
+| [places](places.md) | * <br/> [Site](Site.md) | Lugares associados ao evento, sem incluir o próprio local no qual se situa a ... | direct |
 
 
 
@@ -123,7 +123,9 @@ attributes:
     name: type
     from_schema: https://tradicional.arq.br/schema/temporal
     domain_of:
-    - Measurements
+    - Measurement
+    - Right
+    - LegalBody
     - Event
     - StylePeriod
     - EventPlace
@@ -133,6 +135,10 @@ attributes:
     range: EventPlaceType
   places:
     name: places
+    description: 'Lugares associados ao evento, sem incluir o próprio local no qual
+      se situa a edificação.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     alias: places
     domain_of:
@@ -157,7 +163,9 @@ attributes:
     from_schema: https://tradicional.arq.br/schema/temporal
     owner: EventPlace
     domain_of:
-    - Measurements
+    - Measurement
+    - Right
+    - LegalBody
     - Event
     - StylePeriod
     - EventPlace
@@ -167,6 +175,10 @@ attributes:
     range: EventPlaceType
   places:
     name: places
+    description: 'Lugares associados ao evento, sem incluir o próprio local no qual
+      se situa a edificação.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     alias: places
     owner: EventPlace
@@ -187,10 +199,10 @@ attributes:
     owner: EventPlace
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent

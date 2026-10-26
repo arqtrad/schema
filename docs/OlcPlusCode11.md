@@ -6,7 +6,7 @@ search:
 
 
 
-_Open Location Code (Plus Code) with a resolution of 11 digits._
+_Open Location Code (Plus Code) com resolução de 11 dígitos._
 
 
 

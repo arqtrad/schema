@@ -9,23 +9,9 @@ search:
 
 
 
-_The LIDO Period/Style Type-Vocabulary is a controlled list of terms_
+_The LIDO Period/Style Type-Vocabulary is a controlled list of terms recommended to use as values for the type attribute of the Period/Style element._
 
-_recommended to use as values for the type attribute of the Period/Style_
-
-_element._
-
-__
-
-_The type attribute qualifies the particular kind of period/style_
-
-_information, such as style, period, or movement. Examples may be_
-
-_neolithic for a period, impressionist for a style, or cubism for a_
-
-_movement._
-
-__
+_The type attribute qualifies the particular kind of period/style information, such as style, period, or movement. Examples may be neolithic for a period, impressionist for a style, or cubism for a movement._
 
 _Based on [CDWA "Styles/Periods/Groups/Movements"](http://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html)_
 
@@ -78,20 +64,11 @@ _This is a dynamic enum_
 ```yaml
 name: PeriodNameType
 description: 'The LIDO Period/Style Type-Vocabulary is a controlled list of terms
+  recommended to use as values for the type attribute of the Period/Style element.
 
-  recommended to use as values for the type attribute of the Period/Style
-
-  element.
-
-
-  The type attribute qualifies the particular kind of period/style
-
-  information, such as style, period, or movement. Examples may be
-
-  neolithic for a period, impressionist for a style, or cubism for a
-
-  movement.
-
+  The type attribute qualifies the particular kind of period/style information, such
+  as style, period, or movement. Examples may be neolithic for a period, impressionist
+  for a style, or cubism for a movement.
 
   Based on [CDWA "Styles/Periods/Groups/Movements"](http://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html)
 

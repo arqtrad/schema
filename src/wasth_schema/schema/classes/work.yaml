@@ -5,6 +5,7 @@ title: WASTH Work
 prefixes:
   linkml: https://w3id.org/linkml/
   wasth: https://tradicional.arq.br/schema/
+  schema: http://schema.org/
   lido: http://www.lido-schema.org/
   term: http://terminology.lido-schema.org/
   dcterms: http://purl.org/dc/terms/
@@ -17,22 +18,25 @@ default_range: string
 classes:
 
   Work:
+    rank: 0
     is_a: Place
-    class_uri: schema:LandmarksOrHistoricalBuildings # crm:E22_Human-Made_Object
-    description: |
+    class_uri: schema:LandmarksOrHistoricalBuildings
+    close_mappings:
+      - crm:E22_Human-Made_Object
+    description: >
       An historical landmark or building.
-
-      This class comprises all persistent physical objects of any size that are
-      purposely created by human activity and have physical boundaries that
-      separate them completely in an objective way from other objects.
-
-      The class also includes all aggregates of objects made for functional
-      purposes of whatever kind, independent of physical coherence, such as a
-      set of chessmen.
 
       Nos Documentários da Arquitetura Tradicional, esta ficha pode ser usada
       para cadastrar uma edificação, um conjunto arquitetônico, ou ainda
       uma parte significativa de uma edificação.
+
+#     This class comprises all persistent physical objects of any size that are
+#     purposely created by human activity and have physical boundaries that
+#     separate them completely in an objective way from other objects.
+
+#     The class also includes all aggregates of objects made for functional
+#     purposes of whatever kind, independent of physical coherence, such as a
+#     set of chessmen.
 
     attributes:
 
@@ -49,8 +53,8 @@ classes:
           qualified by condition.
 
           Based on [AAT "conditions"](http://vocab.getty.edu/page/aat/300389724)
-          and
-          [CIDOC CRM "E3 Condition State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)
+          and [CIDOC CRM "E3 Condition
+          State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)
 
           Atende aos campos do
           [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.htmlhttps://sicg.iphan.gov.br/sicg/manual/manual.html)
@@ -67,18 +71,11 @@ classes:
           or by the manner in which they are presented. If an object is identified
           by sight, then it is qualified by form.
 
-          Based on
-          [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+          Based on [AAT Guidelines "Types of Guide
+          Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
 
           Nos Documentários da Arquitetura Tradicional,
           designa uma tipologia formal.
-
-          Based on
-          [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
-          Nos Documentários da Arquitetura Tradicional, designa a situação de
-          implantação da edificação, por exemplo se está em contexto urbano ou
-          rural, isolada ou em correnteza...
 
       work_type_material_tech:
         slot_uri: term:lido00789
@@ -134,11 +131,11 @@ classes:
         range: ConceptReference
         multivalued: true
         inlined_as_list: false
-        description: |
-          A broad category for grouping objects on the basis of shared intrinsic
-          characteristics. The relationship between an object/work and the object
-          genre is a generic is-a-relation rather than a membership based on
-          ascription to a subject group.
+        description: >
+          A broad category for grouping objects on the basis of shared
+          intrinsic characteristics. The relationship between an object/work
+          and the object genre is a generic is-a-relation rather than a
+          membership based on ascription to a subject group.
 
           Note that the
           [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711) hierarchy
@@ -157,16 +154,16 @@ classes:
         multivalued: true
         inlined_as_list: false
         description: >-
-          A broad category for grouping objects or works on the basis of a topical
-          association, including thematic or systematic classification, or an
-          assignment by discipline. The relationship between an object/work and a
-          subject category is a kind of membership based on ascription rather than
-          a generic is-a relation.
+          A broad category for grouping objects or works on the basis of a
+          topical association, including thematic or systematic classification,
+          or an assignment by discipline. The relationship between an
+          object/work and a subject category is a kind of membership based on
+          ascription rather than a generic is-a relation.
 
           ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
           Talvez ele não seja relevante para o documentário de arquitetura
-          doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
-          para arquitetura.
+          doméstica, e não é obrigatório no padrão LIDO nem no perfil de
+          aplicação para arquitetura.
 
       classification_local:
         slot_uri: term:lido01135
@@ -175,15 +172,16 @@ classes:
         inlined_as_list: false
         description: >-
           A classification scheme for grouping objects on the basis of locally
-          defined criteria, including categories corresponding to the curatorial
-          departments of the repository, such as "prints and drawings", "decorative
-          arts", "North America", "invertebrates", "Bronze Age" or "textiles".
-          [Based on CCO "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)
+          defined criteria, including categories corresponding to the
+          curatorial departments of the repository, such as "prints and
+          drawings", "decorative arts", "North America", "invertebrates",
+          "Bronze Age" or "textiles". [Based on CCO
+          "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)
 
           ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
           Talvez ele não seja relevante para o documentário de arquitetura
-          doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
-          para arquitetura.
+          doméstica, e não é obrigatório no padrão LIDO nem no perfil de
+          aplicação para arquitetura.
 
       classification_special:
         slot_uri: term:lido01144
@@ -192,17 +190,17 @@ classes:
         inlined_as_list: false
         description: >-
           A classification scheme for grouping objects on the basis of criteria
-          defined within specific academic disciplines or cultural domains, such as
-          the "Hornbostel-Sachs Classification of Musical Instruments", the
-          "Nickel-Strunz classification", biological taxonomies etc. Refers to
-          classification schemes that group objects on the basis of object
-          characteristics, not on the basis of themes or topics which the objects
-          or works are related to.
+          defined within specific academic disciplines or cultural domains,
+          such as the "Hornbostel-Sachs Classification of Musical Instruments",
+          the "Nickel-Strunz classification", biological taxonomies etc. Refers
+          to classification schemes that group objects on the basis of object
+          characteristics, not on the basis of themes or topics which the
+          objects or works are related to.
 
           ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
           Talvez ele não seja relevante para o documentário de arquitetura
-          doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
-          para arquitetura.
+          doméstica, e não é obrigatório no padrão LIDO nem no perfil de
+          aplicação para arquitetura.
 
 
       inscriptions:
@@ -225,16 +223,31 @@ classes:
 
 
       collection:
+        description: >
+          A set of identifying and indexing information about the collection
+          the object/work in focus is gathered into or is a member of.
+
+          Collection applies to any accumulated group of physical or digital
+          items, conceptually or physically brought together on the basis of a
+          focal characteristic. Use cases for grouping items into a collection
+          are various and may span curated holdings in museums, departmental
+          collections, sets of items to be displayed in an exhibition, or
+          aggregations bound informally for cataloging and retrieval purposes.
         range: Thing
         multivalued: true
         inlined_as_list: false
         slot_uri: lido:collection
 
       work_rights:
+        required: true
         range: Right
         multivalued: true
         inlined_as_list: true
         slot_uri: lido:rightsWorkSet
+        description: >
+          > :warning: Este bloco se refere a eventuais direitos autorais sobre A
+          > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre a
+          > iconografia relacionada.
 
     slot_usage:
 
@@ -263,10 +276,10 @@ classes:
       - measurements
       - material
       - technique
-      - repository
+      - repositories
       - subject
-      - related_work
-      - resource
+      - related_works
+      - resources
       - media
 
 
@@ -345,7 +358,7 @@ slots:
     multivalued: true
     inlined_as_list: true
     slot_uri: lido:subjectSet
-    description: |
+    description: >
       Recomenda-se articular o tema em três níveis : descrição, identificação e
       interpretação.
 
@@ -360,7 +373,7 @@ slots:
       INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou
       político dos elementos, incluindo questões de status e estilo.
 
-  related_work:
+  related_works:
     range: RelatedWork
     multivalued: true
     inlined_as_list: true

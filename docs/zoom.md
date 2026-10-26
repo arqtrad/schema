@@ -6,9 +6,7 @@ search:
 # Slot: zoom
 
 
-_Usado para visualizar o mapa mais de longe se a precisão das_
-
-_coordenadas for baixa._
+_Usado para visualizar o mapa mais de longe se a precisão das coordenadas for baixa._
 
 __
 
@@ -99,9 +97,8 @@ URI: [wasth:zoom](https://tradicional.arq.br/schema/zoom)
 <details>
 ```yaml
 name: zoom
-description: 'Usado para visualizar o mapa mais de longe se a precisão das
-
-  coordenadas for baixa.
+description: 'Usado para visualizar o mapa mais de longe se a precisão das coordenadas
+  for baixa.
 
   '
 from_schema: https://tradicional.arq.br/schema

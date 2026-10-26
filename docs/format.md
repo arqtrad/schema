@@ -6,11 +6,7 @@ search:
 # Slot: format
 
 
-_Campo disciplinado pela especificação [DublinCore] no campo_
-
-_[format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/)._
-
-_Esta especificação sugere a [lista de tipos de mídia IANA]._
+_Campo disciplinado pela especificação [DublinCore] no campo [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/). Esta especificação sugere a [lista de tipos de mídia IANA]._
 
 __
 
@@ -20,7 +16,7 @@ __
 
 
 
-URI: [wasth:format](https://tradicional.arq.br/schema/format)
+URI: [dcterms:MediaType](http://purl.org/dc/terms/MediaType)
 <!-- no inheritance hierarchy -->
 
 
@@ -31,7 +27,7 @@ URI: [wasth:format](https://tradicional.arq.br/schema/format)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Media](Media.md) | Descrição e referência a um único arquivo de mídia |  no  |
+| [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |  no  |
 
 
 
@@ -45,7 +41,8 @@ URI: [wasth:format](https://tradicional.arq.br/schema/format)
 | Property | Value |
 | --- | --- |
 | Range | [TypedReference](TypedReference.md) |
-| Domain Of | [Media](Media.md) |
+| Domain Of | [MediaObject](MediaObject.md) |
+| Slot URI | [dcterms:MediaType](http://purl.org/dc/terms/MediaType) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -81,7 +78,7 @@ URI: [wasth:format](https://tradicional.arq.br/schema/format)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | wasth:format |
+| self | dcterms:MediaType |
 | native | wasth:format |
 
 
@@ -92,17 +89,15 @@ URI: [wasth:format](https://tradicional.arq.br/schema/format)
 <details>
 ```yaml
 name: format
-description: 'Campo disciplinado pela especificação [DublinCore] no campo
-
-  [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).
-
+description: 'Campo disciplinado pela especificação [DublinCore] no campo [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).
   Esta especificação sugere a [lista de tipos de mídia IANA].
 
   '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
+slot_uri: dcterms:MediaType
 domain_of:
-- Media
+- MediaObject
 range: TypedReference
 required: true
 inlined: true

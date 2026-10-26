@@ -76,9 +76,9 @@ URI: [wasth:Container](https://tradicional.arq.br/schema/Container)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [works](works.md) | * <br/> [Work](Work.md) |  | direct |
-| [places](places.md) | * <br/> [Place](Place.md) |  | direct |
-| [concepts](concepts.md) | * <br/> [Concept](Concept.md) |  | direct |
+| [works](works.md) | * <br/> [Work](Work.md) | Todas as edificações documentadas | direct |
+| [places](places.md) | * <br/> [Place](Place.md) | Todos os lugares cadastrados | direct |
+| [concepts](concepts.md) | * <br/> [Concept](Concept.md) | Todos os termos de vocabulário controlado | direct |
 
 
 
@@ -134,6 +134,7 @@ from_schema: https://tradicional.arq.br/schema
 attributes:
   works:
     name: works
+    description: Todas as edificações documentadas.
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     domain_of:
@@ -143,6 +144,7 @@ attributes:
     inlined_as_list: true
   places:
     name: places
+    description: Todos os lugares cadastrados.
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     domain_of:
@@ -153,6 +155,7 @@ attributes:
     inlined_as_list: true
   concepts:
     name: concepts
+    description: Todos os termos de vocabulário controlado.
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     domain_of:
@@ -175,6 +178,7 @@ from_schema: https://tradicional.arq.br/schema
 attributes:
   works:
     name: works
+    description: Todas as edificações documentadas.
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     owner: Container
@@ -186,6 +190,7 @@ attributes:
     inlined_as_list: true
   places:
     name: places
+    description: Todos os lugares cadastrados.
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     owner: Container
@@ -198,6 +203,7 @@ attributes:
     inlined_as_list: true
   concepts:
     name: concepts
+    description: Todos os termos de vocabulário controlado.
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     owner: Container

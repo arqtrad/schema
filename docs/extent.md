@@ -25,7 +25,7 @@ URI: [geo:hasGeometry](http://www.opengis.net/ont/geosparql#hasGeometry)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical |  no  |
+| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
 
 
 

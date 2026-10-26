@@ -24,9 +24,11 @@ classes:
 
   Place:
     is_a: Thing
-    class_uri: schema:Place # or schema:DefinedRegion # crm:E18_Physical_Thing
+    class_uri: schema:Place
+    exact_mappings:
+      - crm:E18_Physical_Thing
 
-    description: |
+    description: >
       Entities that have a somewhat fixed, physical extension.
 
       This class comprises all persistent physical items with a relatively
@@ -69,8 +71,8 @@ classes:
           they are designed or used. If an object is identifiable by its
           intended use, then it is qualified by function.
 
-          Based on
-          [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+          Based on [AAT Guidelines "Types of Guide
+          Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
 
           Nos Documentários de edificações, designa um dos sete
           tipos de propósitos concebidos por C. William Westfall e Samir Younés
@@ -92,6 +94,9 @@ classes:
           identifiable by association with specific surroundings, it is
           qualified by location or context.
 
+          Based on [AAT Guidelines "Types of Guide
+          Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+
           No Documentário de Lugares Tradicionais, designa o tipo de núcleo
           populacional : sítio isolado, povoação rural, vila ou cidade,
           por exemplo.
@@ -106,8 +111,8 @@ classes:
           A set of structured information about a place that is the broader
           context for the place in focus, such as the district, state, or
           nation to which a city belongs.
-        range: Place
-        inlined: false
+        range: GeonamesId
+        inlined: true
 
       former_site:
         alias: former
@@ -148,10 +153,13 @@ classes:
 
 
   Site:
+    abstract: true
     is_a: Thing
     class_uri: crm:E92_Spacetime_Volume
+    exact_mappings:
+      - schema:DefinedRegion
 
-    description: |
+    description: >
       This class comprises 4-dimensional point sets (volumes) in physical
       spacetime (in contrast to mathematical models of it) regardless of their
       true geometric forms. They may derive their identity from being the
@@ -198,9 +206,16 @@ classes:
         range: GeographicExtent
         inlined: true
 
+    slot_usage:
+      id:
+        range: GeonamesId
+        description: >
+          Incluir aqui um identificador da base geonames na forma
+          `geonames:1234`.
+
 
   GeographicPoint:
-    description: |
+    description: >
       Coordenadas do ponto que situa o sítio na visualização do mapa.
 
       A fonte preferencial de autoridade para o georreferenciamento é um órgão
@@ -244,7 +259,7 @@ classes:
       alt:
         description: "Altitude em metros (separador decimal: ponto)"
         range: float
-        minimum_value: -1000 # Existem pontos emersos abaixo do nível do mar.
+        minimum_value: -1000  # Existem pontos emersos abaixo do nível do mar.
         maximum_value: 10000
 
       zoom:
@@ -252,7 +267,7 @@ classes:
         ifabsent: integer(13)
         minimum_value: 0
         maximum_value: 18
-        description: |
+        description: >
           Usado para visualizar o mapa mais de longe se a precisão das
           coordenadas for baixa.
 
@@ -262,7 +277,7 @@ classes:
       - bibliographic_citation
 
   GeographicExtent:
-    description: |
+    description: >
       Coordenadas do polígono que define o sítio.
 
     attributes:
@@ -274,7 +289,7 @@ classes:
         range: GeometryType
 
       coordinates:
-        description: |
+        description: >
           No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do
           polígono (`extent`) com a opção `Get JSON` — copiar apenas os
           colchetes `[[[ ]]]` e os valores numéricos dentro deles.
@@ -306,4 +321,4 @@ slots:
     alias: srsName
     range: uriorcurie
     inlined: true
-    ifabsent: string(EPSG:4326)
+    # ifabsent: string('EPSG:4326')

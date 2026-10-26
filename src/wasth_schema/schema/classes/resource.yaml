@@ -5,6 +5,10 @@ title: WASTH resources, media, and physical description
 prefixes:
   linkml: https://w3id.org/linkml/
   wasth: https://tradicional.arq.br/schema/
+  schema: http://schema.org/
+  crm: http://www.cidoc-crm.org/cidoc-crm/
+  dcterms: http://purl.org/dc/terms/
+  dctypes: http://purl.org/dc/dcmitype/
   lido: http://www.lido-schema.org/
 
 default_prefix: wasth
@@ -16,18 +20,23 @@ imports:
 classes:
 
   BibliographicCitation:
-    class_uri: schema:CreativeWork
-    description: |
+    class_uri: dcterms:BibliographicCitation
+    close_mappings:
+      - crm:E31_Document
+      - schema:CreativeWork
+
+    description: >
       Cadastro de uma referência bibliográfica.
+
       Usar o campo `description` para formatar a referência, caso a formatação
-      automática não for satisfatória.
+      automática do Zotero não for satisfatória.
 
     attributes:
 
       refid:
         required: true
         range: CslCitekey
-        description: |
+        description: >
           Se a fonte for cadastrada, o campo `refid` deve conter a chave de
           citação (`citation key`) que consta do registro bibliográfico na
           biblioteca do nosso projeto de pesquisa no [Zotero].
@@ -36,7 +45,7 @@ classes:
 
       note:
         range: string
-        description: |
+        description: >
           Se necessário, incluir no campo `note` uma especificação adicional,
           como o número da página da referência bibliográfica de onde a
           informação foi extraída.
@@ -45,7 +54,7 @@ classes:
       - description
 
   RelatedObject:
-    description: |
+    description: >
       As formas mais comuns de relação no nosso projeto são :
 
         - depicted in: A edificação é representada numa pintura ou desenho
@@ -77,7 +86,7 @@ classes:
       - relation_type
       - related_object
       - object_type
-      - resource
+      - resources
       - media
       - source
       - bibliographic_citation
@@ -93,8 +102,10 @@ classes:
 
   Resource:
     is_a: Thing
-    class_uri: crm:E31_Document # schema:ArchiveComponent
-    description: |
+    class_uri: crm:E31_Document
+    exact_mappings:
+      - schema:ArchiveComponent
+    description: >
       This class comprises identifiable immaterial items that make propositions
       about reality.
 
@@ -120,7 +131,7 @@ classes:
         minimum_value: 0
         maximum_value: 9
         ifabsent: integer(1)
-        description: |
+        description: >
           Tipo de vista do desenho. Usar a numeração da ISO 19650–2 :
 
             - 0 = geral
@@ -144,9 +155,11 @@ classes:
       - unit
       - credit
 
-  Media:
+  MediaObject:
     class_uri: schema:MediaObject
-    description: |
+    exact_mappings:
+      - dctypes:Image
+    description: >
       Descrição e referência a um único arquivo de mídia.
 
       Obrigatoriamente deve conter uma URI.
@@ -178,8 +191,8 @@ slots:
     alias: rel_type
     range: RelationType
     required: true
-    #ifabsent: RelationType(planFor)
-    description: |
+    # ifabsent: RelationType(planFor)
+    description: >
       Usamos os tipos de relação previstos pelo [VRA Core].
       Provavelmente necessitamos apenas de :
 
@@ -200,18 +213,18 @@ slots:
 
   object_type:
     range: ObjectType
-    description: |
+    description: >
       Usar um vocabulário controlado para identificar o tipo de representação,
       por exemplo as hierarquias do Getty AAT
       [obras visuais](http://vocab.getty.edu/hier/aat/300191086).
       ou [formatos de informação](http://vocab.getty.edu/hier/aat/300220751)
 
-  resource:
+  resources:
     range: Resource
     multivalued: true
     inlined: true
     inlined_as_list: false
-    description: |
+    description: >
       Os desenhos ou modelos da edificação são apresentados online por meio de
       imagens vetoriais ou bitmap.
 
@@ -226,7 +239,7 @@ slots:
   preview_image:
     range: uriorcurie
     inlined: true
-    description: |
+    description: >
       Uma única miniatura da imagem original.
 
       Obs.: não usamos a opção `placeholder`, ela será preenchida
@@ -258,15 +271,16 @@ slots:
       online, tal como a especificação [IIIF].
 
   media:
-    range: Media
+    range: MediaObject
     multivalued: true
     inlined_as_list: true
 
   format:
+    slot_uri: dcterms:MediaType
     required: true
     range: TypedReference
     inlined: true
-    description: |
+    description: >
       Campo disciplinado pela especificação [DublinCore] no campo
       [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).
       Esta especificação sugere a [lista de tipos de mídia IANA].

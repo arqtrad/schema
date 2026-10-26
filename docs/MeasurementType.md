@@ -30,7 +30,7 @@ URI: [wasth:MeasurementType](https://tradicional.arq.br/schema/MeasurementType)
 
 | Name | Description |
 | ---  | --- |
-| [type](type.md) | designa a natureza da medida : largura, altura, |
+| [type](type.md) | designa a natureza da medida : largura, altura, área, etc |
 
 
 

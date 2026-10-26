@@ -5,6 +5,13 @@ search:
 
 # Slot: latest_date
 
+
+_An index element for the expression of the exact or approximate date, for instance a year or calendar date, that delimits the end of a date span._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -20,7 +27,7 @@ URI: [wasth:latest_date](https://tradicional.arq.br/schema/latest_date)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EventDate](EventDate.md) | A wrapper for the expression of a date by providing a set of years as |  no  |
+| [EventDate](EventDate.md) | A wrapper for the expression of a date by providing a set of years as earlies... |  no  |
 
 
 
@@ -81,6 +88,10 @@ URI: [wasth:latest_date](https://tradicional.arq.br/schema/latest_date)
 <details>
 ```yaml
 name: latest_date
+description: 'An index element for the expression of the exact or approximate date,
+  for instance a year or calendar date, that delimits the end of a date span.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 owner: EventDate

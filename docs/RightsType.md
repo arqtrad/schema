@@ -16,21 +16,16 @@ _LIDO expressions for rights types._
 <div data-search-exclude markdown="1">
 
 URI: [wasth:RightsType](https://tradicional.arq.br/schema/RightsType)
-
-## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| generic | term:lido00920 |  |
-| specific | term:lido00921 |  |
+## Enumeration Source
+**Reachable From:**
+- **Source:** NONE
 
 
 
 
-## Slots
+_This is a dynamic enum_
 
-| Name | Description |
-| ---  | --- |
-| [right_type](right_type.md) |  |
+
 
 
 
@@ -65,13 +60,9 @@ name: RightsType
 description: LIDO expressions for rights types.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-permissible_values:
-  generic:
-    text: generic
-    meaning: term:lido00920
-  specific:
-    text: specific
-    meaning: term:lido00921
+reachable_from:
+  source_ontology: http://terminology.lido-schema.org/rightsType_type
+  include_self: false
 
 ```
 </details>

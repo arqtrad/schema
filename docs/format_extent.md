@@ -6,11 +6,7 @@ search:
 # Slot: format_extent
 
 
-_Indica a parte do objeto que está sendo medida — por_
-
-_exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc._
-
-_— usar a `uri` de um vocabulário controlado._
+_Indica a parte do objeto que está sendo medida — por exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc. — usar a `uri` de um vocabulário controlado._
 
 __
 
@@ -33,7 +29,7 @@ Alias: extent
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Measurements](Measurements.md) | O campo `description` permite uma representação textual das medidas da |  no  |
+| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
 | [Inscription](Inscription.md) | A descrição da inscrição informa local, dimensões e características |  no  |
 | [Topic](Topic.md) | Subject or iconographic topic |  no  |
 
@@ -49,7 +45,7 @@ Alias: extent
 | Property | Value |
 | --- | --- |
 | Range | [TypedReference](TypedReference.md) |
-| Domain Of | [Measurements](Measurements.md), [Inscription](Inscription.md), [Topic](Topic.md) |
+| Domain Of | [Measurement](Measurement.md), [Inscription](Inscription.md), [Topic](Topic.md) |
 
 
 
@@ -89,18 +85,16 @@ Alias: extent
 <details>
 ```yaml
 name: format_extent
-description: 'Indica a parte do objeto que está sendo medida — por
-
-  exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc.
-
-  — usar a `uri` de um vocabulário controlado.
+description: 'Indica a parte do objeto que está sendo medida — por exemplo, se a altura
+  é até a linha de coroamento ou até a cumeeira, etc. — usar a `uri` de um vocabulário
+  controlado.
 
   '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: extent
 domain_of:
-- Measurements
+- Measurement
 - Inscription
 - Topic
 range: TypedReference

@@ -6,7 +6,7 @@ search:
 
 
 
-_Bare ORCID iD, without the https://orcid.org/ prefix._
+_ORCID iD, sem o prefixo https://orcid.org/._
 
 
 

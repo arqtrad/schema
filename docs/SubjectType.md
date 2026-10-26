@@ -9,19 +9,9 @@ search:
 
 
 
-_The type attribute indicates the kind of subject information, whether it_
+_The type attribute indicates the kind of subject information, whether it is, for instance, a description of a generic subject, an identification of a named individual, or an interpretation of the theme._
 
-_is, for instance, a description of a generic subject, an identification_
-
-_of a named individual, or an interpretation of the theme._
-
-__
-
-_Note that "Iconclass notations" are distinguished from other index terms_
-
-_for subject type in order to consider the impact of the type of indexing_
-
-_vocabulary with respect to information retrieval facilities._
+_Note that "Iconclass notations" are distinguished from other index terms for subject type in order to consider the impact of the type of indexing vocabulary with respect to information retrieval facilities._
 
 __
 
@@ -72,18 +62,12 @@ _This is a dynamic enum_
 ```yaml
 name: SubjectType
 description: 'The type attribute indicates the kind of subject information, whether
-  it
+  it is, for instance, a description of a generic subject, an identification of a
+  named individual, or an interpretation of the theme.
 
-  is, for instance, a description of a generic subject, an identification
-
-  of a named individual, or an interpretation of the theme.
-
-
-  Note that "Iconclass notations" are distinguished from other index terms
-
-  for subject type in order to consider the impact of the type of indexing
-
-  vocabulary with respect to information retrieval facilities.
+  Note that "Iconclass notations" are distinguished from other index terms for subject
+  type in order to consider the impact of the type of indexing vocabulary with respect
+  to information retrieval facilities.
 
   '
 from_schema: https://tradicional.arq.br/schema

@@ -6,13 +6,7 @@ search:
 # Slot: object_type
 
 
-_Usar um vocabulário controlado para identificar o tipo de representação,_
-
-_por exemplo as hierarquias do Getty AAT_
-
-_[obras visuais](http://vocab.getty.edu/hier/aat/300191086)._
-
-_ou [formatos de informação](http://vocab.getty.edu/hier/aat/300220751)_
+_Usar um vocabulário controlado para identificar o tipo de representação, por exemplo as hierarquias do Getty AAT [obras visuais](http://vocab.getty.edu/hier/aat/300191086). ou [formatos de informação](http://vocab.getty.edu/hier/aat/300220751)_
 
 __
 
@@ -89,11 +83,7 @@ URI: [wasth:object_type](https://tradicional.arq.br/schema/object_type)
 ```yaml
 name: object_type
 description: 'Usar um vocabulário controlado para identificar o tipo de representação,
-
-  por exemplo as hierarquias do Getty AAT
-
-  [obras visuais](http://vocab.getty.edu/hier/aat/300191086).
-
+  por exemplo as hierarquias do Getty AAT [obras visuais](http://vocab.getty.edu/hier/aat/300191086).
   ou [formatos de informação](http://vocab.getty.edu/hier/aat/300220751)
 
   '

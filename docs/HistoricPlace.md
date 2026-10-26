@@ -129,7 +129,9 @@ attributes:
     name: type
     from_schema: https://tradicional.arq.br/schema/work
     domain_of:
-    - Measurements
+    - Measurement
+    - Right
+    - LegalBody
     - Event
     - StylePeriod
     - EventPlace
@@ -144,6 +146,7 @@ attributes:
     from_schema: https://tradicional.arq.br/schema/work
     domain_of:
     - ConceptReference
+    - LegalBody
     - RelatedEvent
     - HistoricPlace
     range: TypedReference
@@ -171,7 +174,9 @@ attributes:
     from_schema: https://tradicional.arq.br/schema/work
     owner: HistoricPlace
     domain_of:
-    - Measurements
+    - Measurement
+    - Right
+    - LegalBody
     - Event
     - StylePeriod
     - EventPlace
@@ -187,6 +192,7 @@ attributes:
     owner: HistoricPlace
     domain_of:
     - ConceptReference
+    - LegalBody
     - RelatedEvent
     - HistoricPlace
     range: TypedReference

@@ -5,11 +5,6 @@ search:
 
 # Slot: temporal
 
-
-_Temporalidade do objeto._
-
-
-
 <div data-search-exclude markdown="1">
 
 
@@ -25,12 +20,13 @@ URI: [wasth:temporal](https://tradicional.arq.br/schema/temporal)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC |  no  |
 | [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
 | [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical |  no  |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Right](Right.md) | * Preencher `earliest_date` com a data de início da vigência dos direitos ou ... |  no  |
+| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
 
@@ -45,15 +41,8 @@ URI: [wasth:temporal](https://tradicional.arq.br/schema/temporal)
 
 | Property | Value |
 | --- | --- |
-| Range | [Event](Event.md) |
-| Domain Of | [Thing](Thing.md) |
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
-
-
+| Range | [String](String.md) |
+| Domain Of | [Right](Right.md), [Thing](Thing.md) |
 
 
 
@@ -67,13 +56,6 @@ URI: [wasth:temporal](https://tradicional.arq.br/schema/temporal)
 ## Identifier and Mapping Information
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://tradicional.arq.br/schema
 
 
 
@@ -93,15 +75,10 @@ URI: [wasth:temporal](https://tradicional.arq.br/schema/temporal)
 <details>
 ```yaml
 name: temporal
-description: Temporalidade do objeto.
-from_schema: https://tradicional.arq.br/schema
-rank: 1000
 domain_of:
+- Right
 - Thing
-range: Event
-multivalued: true
-inlined: true
-inlined_as_list: true
+range: string
 
 ```
 </details></div>

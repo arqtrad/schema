@@ -28,24 +28,24 @@ Alias: display
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ConceptReference](ConceptReference.md) | Atribuição de vocabulário controlado com citação de apoio |  no  |
-| [Measurements](Measurements.md) | O campo `description` permite uma representação textual das medidas da |  no  |
+| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
 | [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica |  no  |
 | [RelatedObject](RelatedObject.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
-| [Media](Media.md) | Descrição e referência a um único arquivo de mídia |  no  |
-| [EventDate](EventDate.md) | A wrapper for the expression of a date by providing a set of years as |  no  |
+| [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |  no  |
+| [EventDate](EventDate.md) | A wrapper for the expression of a date by providing a set of years as earlies... |  no  |
 | [EventPlace](EventPlace.md) |  |  no  |
 | [RelatedEvent](RelatedEvent.md) |  |  no  |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC |  yes  |
+| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  yes  |
 | [Appellation](Appellation.md) |  |  no  |
 | [Inscription](Inscription.md) | A descrição da inscrição informa local, dimensões e características |  no  |
 | [Topic](Topic.md) | Subject or iconographic topic |  no  |
 | [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
 | [Place](Place.md) | Entities that have a somewhat fixed, physical extension |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical |  no  |
-| [MaterialTech](MaterialTech.md) | Usar discernimento para identificar sistemas, materiais e técnicas que |  no  |
+| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [MaterialTech](MaterialTech.md) | Usar discernimento para identificar sistemas, materiais e técnicas que intere... |  no  |
 | [RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 | [StylePeriod](StylePeriod.md) |  |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
@@ -62,7 +62,7 @@ Alias: display
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [ConceptReference](ConceptReference.md), [Measurements](Measurements.md), [BibliographicCitation](BibliographicCitation.md), [RelatedObject](RelatedObject.md), [Media](Media.md), [EventDate](EventDate.md), [EventPlace](EventPlace.md), [RelatedEvent](RelatedEvent.md), [Thing](Thing.md), [Appellation](Appellation.md), [Inscription](Inscription.md), [Topic](Topic.md) |
+| Domain Of | [ConceptReference](ConceptReference.md), [Measurement](Measurement.md), [BibliographicCitation](BibliographicCitation.md), [RelatedObject](RelatedObject.md), [MediaObject](MediaObject.md), [EventDate](EventDate.md), [EventPlace](EventPlace.md), [RelatedEvent](RelatedEvent.md), [Thing](Thing.md), [Appellation](Appellation.md), [Inscription](Inscription.md), [Topic](Topic.md) |
 | Slot URI | [dcterms:description](http://purl.org/dc/terms/description) |
 
 
@@ -110,10 +110,10 @@ slot_uri: dcterms:description
 alias: display
 domain_of:
 - ConceptReference
-- Measurements
+- Measurement
 - BibliographicCitation
 - RelatedObject
-- Media
+- MediaObject
 - EventDate
 - EventPlace
 - RelatedEvent

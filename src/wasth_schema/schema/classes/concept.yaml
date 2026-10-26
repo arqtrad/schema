@@ -19,8 +19,10 @@ classes:
 
   Concept:
     is_a: Thing
-    class_uri: skos:Concept # schema:DefinedTerm
-    description: |
+    class_uri: skos:Concept
+    exact_mappings:
+      - schema:DefinedTerm
+    description: >
       A SKOS concept can be viewed as an idea or notion; a unit of thought.
       However, what constitutes a unit of thought is subjective, and this
       definition is meant to be suggestive, rather than restrictive.
@@ -33,12 +35,13 @@ classes:
       semi-formal KOS, such as thesauri and classification schemes, a certain
       amount of flexibility has been built in to the formal definition of this
       class.
-#     A word, name, acronym, phrase, etc. with a formal definition. Often used
-#     in the context of category or subject classification, glossaries or
-#     dictionaries, product or creative work types, etc. Use the name property
-#     for the term being defined, use termCode if the term has an alpha-numeric
-#     code allocated, use description to provide the definition of the term.
-#     Use the about property to specify what the term is about.
+
+    # A word, name, acronym, phrase, etc. with a formal definition. Often used
+    # in the context of category or subject classification, glossaries or
+    # dictionaries, product or creative work types, etc. Use the name property
+    # for the term being defined, use termCode if the term has an alpha-numeric
+    # code allocated, use description to provide the definition of the term.
+    # Use the about property to specify what the term is about.
 
     attributes:
 
@@ -51,7 +54,7 @@ classes:
         range: BroaderConceptReference
         multivalued: true
         inlined_as_list: true
-        #inverse: narrower
+        # inverse: narrower
 
       narrower:
         slot_uri: skos:narrower
@@ -62,7 +65,7 @@ classes:
         range: ConceptReference
         multivalued: true
         inlined_as_list: true
-        #inverse: broader
+        # inverse: broader
 
       relation:
         description: >-
@@ -73,9 +76,6 @@ classes:
         multivalued: true
         inlined_as_list: true
         slot_uri: skos:relation
-
-#     category:
-#       ifabsent: string(term:lido01193)
 
   ConceptReference:
     description: Atribuição de vocabulário controlado com citação de apoio.

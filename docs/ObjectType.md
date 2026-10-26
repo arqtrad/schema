@@ -31,7 +31,7 @@ _This is a dynamic enum_
 
 | Name | Description |
 | ---  | --- |
-| [object_type](object_type.md) | Usar um vocabulário controlado para identificar o tipo de representação, |
+| [object_type](object_type.md) | Usar um vocabulário controlado para identificar o tipo de representação, por ... |
 
 
 

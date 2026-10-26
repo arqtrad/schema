@@ -5,6 +5,13 @@ search:
 
 # Slot: start_date
 
+
+_Data inicial do evento ou mais antiga data presumida para o seu decurso._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -22,7 +29,7 @@ Alias: start_date
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 
 
 
@@ -83,6 +90,9 @@ Alias: start_date
 <details>
 ```yaml
 name: start_date
+description: 'Data inicial do evento ou mais antiga data presumida para o seu decurso.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: start_date

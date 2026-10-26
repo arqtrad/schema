@@ -6,7 +6,9 @@ search:
 
 
 
-_Citation Style Language citekey, beginning with '@'_
+_Chave de citação compatível com o Citation Style Language, começando com '@'. Obter as chaves de citação das referências bibliográficas consultando a nossa biblioteca compartilhada no Zotero._
+
+__
 
 
 

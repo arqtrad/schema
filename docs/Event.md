@@ -6,81 +6,15 @@ search:
 # Class: Event
 
 
-_This class comprises distinct, delimited and coherent processes and_
+_This class comprises distinct, delimited and coherent processes and interactions of a material nature, in cultural, social or physical systems, involving and affecting instances of E77 Persistent Item in a way characteristic of the kind of process. Typical examples are meetings, births, deaths, actions of decision taking, making or inventing things, but also more complex and extended ones such as conferences, elections, building of a castle, or battles._
 
-_interactions of a material nature, in cultural, social or physical_
+_While the continuous growth of a tree lacks the limits characteristic of an event, its germination from a seed does qualify as an event. Similarly, the blowing of the wind lacks the distinctness and limits of an event, but a hurricane, flood or earthquake would qualify as an event. Mental processes are considered as events, in cases where they are connected with the material externalization of their results; for example, the creation of a poem, a performance or a change of intention that becomes obvious from subsequent actions or declarations._
 
-_systems, involving and affecting instances of E77 Persistent Item in a_
+_The effects of an instance of E5 Event may not lead to relevant permanent changes of properties or relations of the items involved in it, for example an unrecorded performance. Of course, in order to be documented, some kind of evidence for an event must exist, be it witnesses, traces or products of the event._
 
-_way characteristic of the kind of process. Typical examples are meetings,_
+_While instances of E4 Period always require some form of coherence between its constituent phenomena, in addition, the essential constituents of instances of E5 Event should contribute to an overall effect; for example, the statements made during a meeting and the listening of the audience._
 
-_births, deaths, actions of decision taking, making or inventing things,_
-
-_but also more complex and extended ones such as conferences, elections,_
-
-_building of a castle, or battles._
-
-__
-
-_While the continuous growth of a tree lacks the limits characteristic of_
-
-_an event, its germination from a seed does qualify as an event._
-
-_Similarly, the blowing of the wind lacks the distinctness and limits of_
-
-_an event, but a hurricane, flood or earthquake would qualify as an event._
-
-_Mental processes are considered as events, in cases where they are_
-
-_connected with the material externalization of their results; for_
-
-_example, the creation of a poem, a performance or a change of intention_
-
-_that becomes obvious from subsequent actions or declarations._
-
-__
-
-_The effects of an instance of E5 Event may not lead to relevant permanent_
-
-_changes of properties or relations of the items involved in it, for_
-
-_example an unrecorded performance. Of course, in order to be documented,_
-
-_some kind of evidence for an event must exist, be it witnesses, traces or_
-
-_products of the event._
-
-__
-
-_While instances of E4 Period always require some form of coherence_
-
-_between its constituent phenomena, in addition, the essential_
-
-_constituents of instances of E5 Event should contribute to an overall_
-
-_effect; for example, the statements made during a meeting and the_
-
-_listening of the audience._
-
-__
-
-_Viewed at a coarse level of detail, an instance of E5 Event may appear as_
-
-_if it had an ‘instantaneous’ overall effect, but any process or_
-
-_interaction of material nature in reality have an extent in time and_
-
-_space. At a fine level, instances of E5 Event may be analysed into_
-
-_component phenomena and phases within a space and timeframe, and as such_
-
-_can be seen as a period, regardless of the size of the phenomena. The_
-
-_reverse is not necessarily the case: not all instances of E4 Period give_
-
-_rise to a noteworthy overall effect and are thus not instances of E5_
-
-_Event._
+_Viewed at a coarse level of detail, an instance of E5 Event may appear as if it had an ‘instantaneous’ overall effect, but any process or interaction of material nature in reality have an extent in time and space. At a fine level, instances of E5 Event may be analysed into component phenomena and phases within a space and timeframe, and as such can be seen as a period, regardless of the size of the phenomena. The reverse is not necessarily the case: not all instances of E4 Period give rise to a noteworthy overall effect and are thus not instances of E5 Event._
 
 __
 
@@ -90,7 +24,7 @@ __
 
 
 
-URI: [crm:E5_Event](crm:E5_Event)
+URI: [crm:E5_Event](http://www.cidoc-crm.org/cidoc-crm/E5_Event)
 
 
 
@@ -218,8 +152,8 @@ URI: [crm:E5_Event](crm:E5_Event)
 
 
 
-        Event --> "*" Measurements : measurements
-        click Measurements href "../Measurements/"
+        Event --> "*" Measurement : measurements
+        click Measurement href "../Measurement/"
 
 
 
@@ -229,8 +163,8 @@ URI: [crm:E5_Event](crm:E5_Event)
 
 
 
-        Event --> "*" Media : media
-        click Media href "../Media/"
+        Event --> "*" MediaObject : media
+        click MediaObject href "../MediaObject/"
 
 
 
@@ -280,13 +214,13 @@ URI: [crm:E5_Event](crm:E5_Event)
 
 
 
-      Event : repository
+      Event : repositories
 
 
 
 
 
-        Event --> "*" Repository : repository
+        Event --> "*" Repository : repositories
         click Repository href "../Repository/"
 
 
@@ -367,7 +301,7 @@ URI: [crm:E5_Event](crm:E5_Event)
 
 
 
-        Event --> "0..1" TitleType : title_type
+        Event --> "1" TitleType : title_type
         click TitleType href "../TitleType/"
 
 
@@ -399,45 +333,45 @@ URI: [crm:E5_Event](crm:E5_Event)
 
 | Property | Value |
 | --- | --- |
-| Class URI | [crm:E5_Event](crm:E5_Event) |
+| Class URI | [crm:E5_Event](http://www.cidoc-crm.org/cidoc-crm/E5_Event) |
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [measurements](measurements.md) | * <br/> [Measurements](Measurements.md) |  | direct |
-| [material](material.md) | * <br/> [MaterialTech](MaterialTech.md) |  | direct |
-| [technique](technique.md) | * <br/> [MaterialTech](MaterialTech.md) |  | direct |
-| [media](media.md) | * <br/> [Media](Media.md) |  | direct |
+| [measurements](measurements.md) | * <br/> [Measurement](Measurement.md) |  | direct |
+| [material](material.md) | * <br/> [MaterialTech](MaterialTech.md) | This class is a specialization of E55 Type and comprises the concepts of mate... | direct |
+| [technique](technique.md) | * <br/> [MaterialTech](MaterialTech.md) | The production or manufacturing processes, techniques, and methods incorporat... | direct |
+| [media](media.md) | * <br/> [MediaObject](MediaObject.md) |  | direct |
 | [type](type.md) | 1 <br/> [EventType](EventType.md) |  | direct |
-| [actor_role](actor_role.md) | * <br/> [Actor](Actor.md) |  | direct |
-| [event_date](event_date.md) | 1 <br/> [EventDate](EventDate.md) |  | direct |
-| [start_date](start_date.md) | 0..1 <br/> [EventDate](EventDate.md) |  | direct |
-| [end_date](end_date.md) | 0..1 <br/> [EventDate](EventDate.md) |  | direct |
-| [style_period](style_period.md) | * <br/> [StylePeriod](StylePeriod.md) | An index element for the period in which the event happened, | direct |
+| [actor_role](actor_role.md) | * <br/> [Actor](Actor.md) | Identificação de um agente e do seu papel no evento | direct |
+| [event_date](event_date.md) | 1 <br/> [EventDate](EventDate.md) | Conjunto de datas em que decorreu o evento | direct |
+| [start_date](start_date.md) | 0..1 <br/> [EventDate](EventDate.md) | Data inicial do evento ou mais antiga data presumida para o seu decurso | direct |
+| [end_date](end_date.md) | 0..1 <br/> [EventDate](EventDate.md) | Data final do evento ou mais tardia data presumida para o seu decurso | direct |
+| [style_period](style_period.md) | * <br/> [StylePeriod](StylePeriod.md) | An index element for the period in which the event happened, comprising infor... | direct |
 | [culture](culture.md) | * <br/> [TypedReference](TypedReference.md) | An index element for the cultural context from which the object/work in focus... | direct |
 | [place](place.md) | 0..1 <br/> [EventPlace](EventPlace.md) | A set of structured information indicating the place or location where an obj... | direct |
 | [method](method.md) | * <br/> [ConceptReference](ConceptReference.md) | An index element for the method by which the event is or was carried out | direct |
 | [things_present](things_present.md) | * <br/> [RelatedWork](RelatedWork.md) | A set of structured information for a related object or work that is or was p... | direct |
 | [related_events](related_events.md) | * <br/> [RelatedEvent](RelatedEvent.md) | A set of structured information about an event related to the event in focus,... | direct |
 | [description](description.md) | 1 <br/> [String](String.md) | A human-readable description for a thing | [Thing](Thing.md) |
-| [record_rights](record_rights.md) | 1..* <br/> [Right](Right.md) |  | [Thing](Thing.md) |
-| [title_type](title_type.md) | 0..1 <br/> [TitleType](TitleType.md) | Indica se o título é um nome próprio, descritivo, etc | [Thing](Thing.md) |
-| [alt_name](alt_name.md) | * <br/> [Appellation](Appellation.md) | O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação | [Thing](Thing.md) |
+| [record_rights](record_rights.md) | 1..* <br/> [Right](Right.md) | A set of structured information about rights regarding the content provided i... | [Thing](Thing.md) |
+| [title_type](title_type.md) | 1 <br/> [TitleType](TitleType.md) | Indica se o título é um nome próprio, descritivo, etc | [Thing](Thing.md) |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [Thing](Thing.md) |
-| [identifiers](identifiers.md) | * <br/> [TypedReference](TypedReference.md) | Published or external identifiers for the object | [Thing](Thing.md) |
-| [tags](tags.md) | * <br/> [String](String.md) | Provisional uncontrolled keywords | [Thing](Thing.md) |
-| [temporal](temporal.md) | * <br/> [Event](Event.md) | Temporalidade do objeto | [Thing](Thing.md) |
-| [repository](repository.md) | * <br/> [Repository](Repository.md) |  | [Thing](Thing.md) |
-| [collection](collection.md) | * <br/> [TypedReference](TypedReference.md) | Collections or aggregations to which the object belongs | [Thing](Thing.md) |
-| [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui | [Thing](Thing.md) |
+| [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... | [Thing](Thing.md) |
 | [id](id.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | Unique identifier for this object | [Thing](Thing.md) |
 | [author](author.md) | 0..1 <br/> [OrcidId](OrcidId.md) | ORCID iD of the record author or maintainer | [Thing](Thing.md) |
 | [record_date](record_date.md) | 0..1 <br/> [Date](Date.md) | Date the record was created or last substantively revised | [Thing](Thing.md) |
 | [title](title.md) | 1 <br/> [String](String.md) | The preferred human-readable label for a Thing | [Thing](Thing.md) |
 | [title_source](title_source.md) | * <br/> [BibliographicCitation](BibliographicCitation.md) | 📚 A fonte do título title_source é opcional ; um título pode ser atestado em ... | [Thing](Thing.md) |
+| [alt_name](alt_name.md) | * <br/> [Appellation](Appellation.md) | O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação se... | [Thing](Thing.md) |
 | [category](category.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | The LIDO Category Vocabulary is a structured controlled list of terms recomme... | [Thing](Thing.md) |
+| [identifiers](identifiers.md) | * <br/> [TypedReference](TypedReference.md) | Published or external identifiers for the object | [Thing](Thing.md) |
+| [tags](tags.md) | * <br/> [String](String.md) | Provisional uncontrolled keywords | [Thing](Thing.md) |
+| [temporal](temporal.md) | * <br/> [Event](Event.md) | Temporalidade do objeto | [Thing](Thing.md) |
+| [collection](collection.md) | * <br/> [TypedReference](TypedReference.md) | Collections or aggregations to which the object belongs | [Thing](Thing.md) |
+| [repositories](repositories.md) | * <br/> [Repository](Repository.md) | A set of elements for the identification, name and location of the repository... | [Thing](Thing.md) |
 
 
 
@@ -488,6 +422,7 @@ URI: [crm:E5_Event](crm:E5_Event)
 | ---  | ---  |
 | self | crm:E5_Event |
 | native | wasth:Event |
+| exact | schema:Event |
 
 
 
@@ -504,79 +439,42 @@ URI: [crm:E5_Event](crm:E5_Event)
 ```yaml
 name: Event
 description: 'This class comprises distinct, delimited and coherent processes and
+  interactions of a material nature, in cultural, social or physical systems, involving
+  and affecting instances of E77 Persistent Item in a way characteristic of the kind
+  of process. Typical examples are meetings, births, deaths, actions of decision taking,
+  making or inventing things, but also more complex and extended ones such as conferences,
+  elections, building of a castle, or battles.
 
-  interactions of a material nature, in cultural, social or physical
+  While the continuous growth of a tree lacks the limits characteristic of an event,
+  its germination from a seed does qualify as an event. Similarly, the blowing of
+  the wind lacks the distinctness and limits of an event, but a hurricane, flood or
+  earthquake would qualify as an event. Mental processes are considered as events,
+  in cases where they are connected with the material externalization of their results;
+  for example, the creation of a poem, a performance or a change of intention that
+  becomes obvious from subsequent actions or declarations.
 
-  systems, involving and affecting instances of E77 Persistent Item in a
+  The effects of an instance of E5 Event may not lead to relevant permanent changes
+  of properties or relations of the items involved in it, for example an unrecorded
+  performance. Of course, in order to be documented, some kind of evidence for an
+  event must exist, be it witnesses, traces or products of the event.
 
-  way characteristic of the kind of process. Typical examples are meetings,
+  While instances of E4 Period always require some form of coherence between its constituent
+  phenomena, in addition, the essential constituents of instances of E5 Event should
+  contribute to an overall effect; for example, the statements made during a meeting
+  and the listening of the audience.
 
-  births, deaths, actions of decision taking, making or inventing things,
-
-  but also more complex and extended ones such as conferences, elections,
-
-  building of a castle, or battles.
-
-
-  While the continuous growth of a tree lacks the limits characteristic of
-
-  an event, its germination from a seed does qualify as an event.
-
-  Similarly, the blowing of the wind lacks the distinctness and limits of
-
-  an event, but a hurricane, flood or earthquake would qualify as an event.
-
-  Mental processes are considered as events, in cases where they are
-
-  connected with the material externalization of their results; for
-
-  example, the creation of a poem, a performance or a change of intention
-
-  that becomes obvious from subsequent actions or declarations.
-
-
-  The effects of an instance of E5 Event may not lead to relevant permanent
-
-  changes of properties or relations of the items involved in it, for
-
-  example an unrecorded performance. Of course, in order to be documented,
-
-  some kind of evidence for an event must exist, be it witnesses, traces or
-
-  products of the event.
-
-
-  While instances of E4 Period always require some form of coherence
-
-  between its constituent phenomena, in addition, the essential
-
-  constituents of instances of E5 Event should contribute to an overall
-
-  effect; for example, the statements made during a meeting and the
-
-  listening of the audience.
-
-
-  Viewed at a coarse level of detail, an instance of E5 Event may appear as
-
-  if it had an ‘instantaneous’ overall effect, but any process or
-
-  interaction of material nature in reality have an extent in time and
-
-  space. At a fine level, instances of E5 Event may be analysed into
-
-  component phenomena and phases within a space and timeframe, and as such
-
-  can be seen as a period, regardless of the size of the phenomena. The
-
-  reverse is not necessarily the case: not all instances of E4 Period give
-
-  rise to a noteworthy overall effect and are thus not instances of E5
-
-  Event.
+  Viewed at a coarse level of detail, an instance of E5 Event may appear as if it
+  had an ‘instantaneous’ overall effect, but any process or interaction of material
+  nature in reality have an extent in time and space. At a fine level, instances of
+  E5 Event may be analysed into component phenomena and phases within a space and
+  timeframe, and as such can be seen as a period, regardless of the size of the phenomena.
+  The reverse is not necessarily the case: not all instances of E4 Period give rise
+  to a noteworthy overall effect and are thus not instances of E5 Event.
 
   '
 from_schema: https://tradicional.arq.br/schema
+exact_mappings:
+- schema:Event
 is_a: Thing
 slots:
 - measurements
@@ -588,7 +486,9 @@ attributes:
     name: type
     from_schema: https://tradicional.arq.br/schema/temporal
     domain_of:
-    - Measurements
+    - Measurement
+    - Right
+    - LegalBody
     - Event
     - StylePeriod
     - EventPlace
@@ -599,6 +499,7 @@ attributes:
     required: true
   actor_role:
     name: actor_role
+    description: Identificação de um agente e do seu papel no evento.
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     domain_of:
@@ -608,6 +509,7 @@ attributes:
     inlined_as_list: true
   event_date:
     name: event_date
+    description: Conjunto de datas em que decorreu o evento.
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     domain_of:
@@ -617,6 +519,10 @@ attributes:
     inlined: true
   start_date:
     name: start_date
+    description: 'Data inicial do evento ou mais antiga data presumida para o seu
+      decurso.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     alias: start_date
@@ -626,6 +532,9 @@ attributes:
     inlined: true
   end_date:
     name: end_date
+    description: 'Data final do evento ou mais tardia data presumida para o seu decurso.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     alias: end_date
@@ -635,23 +544,15 @@ attributes:
     inlined: true
   style_period:
     name: style_period
-    description: 'An index element for the period in which the event happened,
+    description: 'An index element for the period in which the event happened, comprising
+      information about geologic time scale, archaelogical, historical, or artistic
+      period, style, or art movement, whose characteristics are represented by the
+      object or work.
 
-      comprising information about geologic time scale, archaelogical,
+      Note that "Period/Style" corresponds to "Style" in CDWA as shorthand for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
 
-      historical, or artistic period, style, or art movement, whose
-
-      characteristics are represented by the object or work.
-
-
-      Note that "Period/Style" corresponds to "Style" in CDWA as shorthand
-
-      for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
-
-
-      Examples may be Neolithic for a period, Impressionist for a style, or
-
-      Cubism for a movement.
+      Examples may be Neolithic for a period, Impressionist for a style, or Cubism
+      for a movement.
 
       '
     from_schema: https://tradicional.arq.br/schema/temporal
@@ -727,79 +628,42 @@ class_uri: crm:E5_Event
 ```yaml
 name: Event
 description: 'This class comprises distinct, delimited and coherent processes and
+  interactions of a material nature, in cultural, social or physical systems, involving
+  and affecting instances of E77 Persistent Item in a way characteristic of the kind
+  of process. Typical examples are meetings, births, deaths, actions of decision taking,
+  making or inventing things, but also more complex and extended ones such as conferences,
+  elections, building of a castle, or battles.
 
-  interactions of a material nature, in cultural, social or physical
+  While the continuous growth of a tree lacks the limits characteristic of an event,
+  its germination from a seed does qualify as an event. Similarly, the blowing of
+  the wind lacks the distinctness and limits of an event, but a hurricane, flood or
+  earthquake would qualify as an event. Mental processes are considered as events,
+  in cases where they are connected with the material externalization of their results;
+  for example, the creation of a poem, a performance or a change of intention that
+  becomes obvious from subsequent actions or declarations.
 
-  systems, involving and affecting instances of E77 Persistent Item in a
+  The effects of an instance of E5 Event may not lead to relevant permanent changes
+  of properties or relations of the items involved in it, for example an unrecorded
+  performance. Of course, in order to be documented, some kind of evidence for an
+  event must exist, be it witnesses, traces or products of the event.
 
-  way characteristic of the kind of process. Typical examples are meetings,
+  While instances of E4 Period always require some form of coherence between its constituent
+  phenomena, in addition, the essential constituents of instances of E5 Event should
+  contribute to an overall effect; for example, the statements made during a meeting
+  and the listening of the audience.
 
-  births, deaths, actions of decision taking, making or inventing things,
-
-  but also more complex and extended ones such as conferences, elections,
-
-  building of a castle, or battles.
-
-
-  While the continuous growth of a tree lacks the limits characteristic of
-
-  an event, its germination from a seed does qualify as an event.
-
-  Similarly, the blowing of the wind lacks the distinctness and limits of
-
-  an event, but a hurricane, flood or earthquake would qualify as an event.
-
-  Mental processes are considered as events, in cases where they are
-
-  connected with the material externalization of their results; for
-
-  example, the creation of a poem, a performance or a change of intention
-
-  that becomes obvious from subsequent actions or declarations.
-
-
-  The effects of an instance of E5 Event may not lead to relevant permanent
-
-  changes of properties or relations of the items involved in it, for
-
-  example an unrecorded performance. Of course, in order to be documented,
-
-  some kind of evidence for an event must exist, be it witnesses, traces or
-
-  products of the event.
-
-
-  While instances of E4 Period always require some form of coherence
-
-  between its constituent phenomena, in addition, the essential
-
-  constituents of instances of E5 Event should contribute to an overall
-
-  effect; for example, the statements made during a meeting and the
-
-  listening of the audience.
-
-
-  Viewed at a coarse level of detail, an instance of E5 Event may appear as
-
-  if it had an ‘instantaneous’ overall effect, but any process or
-
-  interaction of material nature in reality have an extent in time and
-
-  space. At a fine level, instances of E5 Event may be analysed into
-
-  component phenomena and phases within a space and timeframe, and as such
-
-  can be seen as a period, regardless of the size of the phenomena. The
-
-  reverse is not necessarily the case: not all instances of E4 Period give
-
-  rise to a noteworthy overall effect and are thus not instances of E5
-
-  Event.
+  Viewed at a coarse level of detail, an instance of E5 Event may appear as if it
+  had an ‘instantaneous’ overall effect, but any process or interaction of material
+  nature in reality have an extent in time and space. At a fine level, instances of
+  E5 Event may be analysed into component phenomena and phases within a space and
+  timeframe, and as such can be seen as a period, regardless of the size of the phenomena.
+  The reverse is not necessarily the case: not all instances of E4 Period give rise
+  to a noteworthy overall effect and are thus not instances of E5 Event.
 
   '
 from_schema: https://tradicional.arq.br/schema
+exact_mappings:
+- schema:Event
 is_a: Thing
 attributes:
   type:
@@ -807,7 +671,9 @@ attributes:
     from_schema: https://tradicional.arq.br/schema/temporal
     owner: Event
     domain_of:
-    - Measurements
+    - Measurement
+    - Right
+    - LegalBody
     - Event
     - StylePeriod
     - EventPlace
@@ -818,6 +684,7 @@ attributes:
     required: true
   actor_role:
     name: actor_role
+    description: Identificação de um agente e do seu papel no evento.
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     owner: Event
@@ -829,6 +696,7 @@ attributes:
     inlined_as_list: true
   event_date:
     name: event_date
+    description: Conjunto de datas em que decorreu o evento.
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     owner: Event
@@ -839,6 +707,10 @@ attributes:
     inlined: true
   start_date:
     name: start_date
+    description: 'Data inicial do evento ou mais antiga data presumida para o seu
+      decurso.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     alias: start_date
@@ -849,6 +721,9 @@ attributes:
     inlined: true
   end_date:
     name: end_date
+    description: 'Data final do evento ou mais tardia data presumida para o seu decurso.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     alias: end_date
@@ -859,23 +734,15 @@ attributes:
     inlined: true
   style_period:
     name: style_period
-    description: 'An index element for the period in which the event happened,
+    description: 'An index element for the period in which the event happened, comprising
+      information about geologic time scale, archaelogical, historical, or artistic
+      period, style, or art movement, whose characteristics are represented by the
+      object or work.
 
-      comprising information about geologic time scale, archaelogical,
+      Note that "Period/Style" corresponds to "Style" in CDWA as shorthand for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
 
-      historical, or artistic period, style, or art movement, whose
-
-      characteristics are represented by the object or work.
-
-
-      Note that "Period/Style" corresponds to "Style" in CDWA as shorthand
-
-      for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
-
-
-      Examples may be Neolithic for a period, Impressionist for a style, or
-
-      Cubism for a movement.
+      Examples may be Neolithic for a period, Impressionist for a style, or Cubism
+      for a movement.
 
       '
     from_schema: https://tradicional.arq.br/schema/temporal
@@ -955,17 +822,39 @@ attributes:
     rank: 1000
     owner: Event
     domain_of:
-    - Media
+    - MediaObject
     - Event
     - Work
-    range: Measurements
+    range: Measurement
     multivalued: true
     inlined: true
     inlined_as_list: true
   material:
     name: material
+    description: 'This class is a specialization of E55 Type and comprises the concepts
+      of materials.
+
+      Instances of E57 Material may denote properties of matter before its use, during
+      its use, and as incorporated in an object, such as ultramarine powder, tempera
+      paste, reinforced concrete. Discrete pieces of raw-materials kept in museums,
+      such as bricks, sheets of fabric, pieces of metal, should be modelled individually
+      in the same way as other objects. Discrete used or processed pieces, such as
+      the stones from Nefer Titi''s temple, should be modelled as parts (cf. P46 is
+      composed of (forms part of): E18 Physical Thing).
+
+      This type is used categorically in the model without reference to instances
+      of it, i.e. the Model does not foresee the description of instances of instances
+      of E57 Material, e.g. “instances of gold”.
+
+      It is recommended that internationally or nationally agreed codes and terminology
+      should be used.
+
+      '
     from_schema: https://tradicional.arq.br/schema
+    exact_mappings:
+    - vra:Material
     rank: 1000
+    slot_uri: crm:E57_Material
     owner: Event
     domain_of:
     - Event
@@ -976,8 +865,15 @@ attributes:
     inlined_as_list: true
   technique:
     name: technique
+    description: 'The production or manufacturing processes, techniques, and methods
+      incorporated in the fabrication or alteration of the work or image.
+
+      '
     from_schema: https://tradicional.arq.br/schema
+    close_mappings:
+    - crm:E55_Type
     rank: 1000
+    slot_uri: vra:Technique
     owner: Event
     domain_of:
     - Event
@@ -995,7 +891,7 @@ attributes:
     - RelatedObject
     - Event
     - Work
-    range: Media
+    range: MediaObject
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -1009,10 +905,10 @@ attributes:
     owner: Event
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -1024,7 +920,16 @@ attributes:
     required: true
   record_rights:
     name: record_rights
-    from_schema: https://tradicional.arq.br/schema
+    description: 'A set of structured information about rights regarding the content
+      provided in this LIDO record.
+
+      ---------------------------------------------------------------------
+
+      :warning: Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre
+      os direitos incidentes sobre o objeto descrito.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     owner: Event
     domain_of:
@@ -1045,35 +950,7 @@ attributes:
     - Thing
     - Appellation
     range: TitleType
-  alt_name:
-    name: alt_name
-    description: 'O bloco `alt_name` permite cadastrar outros nomes pelos quais a
-      edificação
-
-      será eventualmente conhecida. É uma lista opcional de itens, e se
-
-      existir, os campos de cada item da lista devem ser preenchidos como os do
-
-      título principal.
-
-
-      O campo `description` de cada item contém o texto do título (nome).
-
-
-      Este bloco pode ser omitido por completo se não houver títulos
-
-      alternativos.
-
-      '
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    owner: Event
-    domain_of:
-    - Thing
-    range: Appellation
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
+    required: true
   bibliographic_citation:
     name: bibliographic_citation
     from_schema: https://tradicional.arq.br/schema
@@ -1085,9 +962,9 @@ attributes:
     - GeographicPoint
     - GeographicExtent
     - TypedReference
-    - Measurements
+    - Measurement
     - RelatedObject
-    - Media
+    - MediaObject
     - Actor
     - Thing
     - Appellation
@@ -1097,83 +974,19 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  identifiers:
-    name: identifiers
-    description: Published or external identifiers for the object.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    owner: Event
-    domain_of:
-    - Thing
-    range: TypedReference
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  tags:
-    name: tags
-    description: Provisional uncontrolled keywords. Prefer `classifications` or `subject`
-      for curated vocabulary terms.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    owner: Event
-    domain_of:
-    - Thing
-    range: string
-    multivalued: true
-  temporal:
-    name: temporal
-    description: Temporalidade do objeto.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    owner: Event
-    domain_of:
-    - Thing
-    range: Event
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  repository:
-    name: repository
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    owner: Event
-    domain_of:
-    - Thing
-    - Work
-    range: Repository
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  collection:
-    name: collection
-    description: Collections or aggregations to which the object belongs.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    owner: Event
-    domain_of:
-    - Thing
-    - Work
-    range: TypedReference
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   content:
     name: content
     description: 'Deixe uma linha em branco após o fechamento dos metadados e inclua
-      aqui
+      aqui uma descrição morfológica e histórica da edificação com texto livre, usando
+      formatação Markdown.
 
-      uma descrição morfológica e histórica da edificação com texto livre,
+      Poderá incluir um segundo bloco de metadados para indicar as referências bibliográficas
+      da descrição textual, no campo `nocite`. O formato é uma lista de chaves de
+      citação do Zotero (cada uma começando com `@`) separadas por vírgulas:
 
-      usando formatação Markdown.
+      ```yaml Conteúdo textual em formato *Markdown* com citações [@citekey].
 
-
-      Poderá incluir um segundo bloco de metadados para indicar as referências
-
-      bibliográficas da descrição textual, no campo `nocite`.
-
-      O formato é uma lista de chaves de citação do Zotero
-
-      (cada uma começando com `@`) separadas por vírgulas.
+      --- nocite: "@*" --- ```
 
       '
     from_schema: https://tradicional.arq.br/schema
@@ -1253,6 +1066,27 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  alt_name:
+    name: alt_name
+    description: 'O bloco `alt_name` permite cadastrar outros nomes pelos quais a
+      edificação será eventualmente conhecida. É uma lista opcional de itens, e se
+      existir, os campos de cada item da lista devem ser preenchidos como os do título
+      principal.
+
+      O campo `description` de cada item contém o texto do título (nome).
+
+      Este bloco pode ser omitido por completo se não houver títulos alternativos.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
+    owner: Event
+    domain_of:
+    - Thing
+    range: Appellation
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   category:
     name: category
     description: 'The LIDO Category Vocabulary is a structured controlled list of
@@ -1268,6 +1102,81 @@ attributes:
     - Thing
     range: uriorcurie
     required: true
+  identifiers:
+    name: identifiers
+    description: Published or external identifiers for the object.
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
+    owner: Event
+    domain_of:
+    - Thing
+    range: TypedReference
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  tags:
+    name: tags
+    description: Provisional uncontrolled keywords. Prefer `classifications` or `subject`
+      for curated vocabulary terms.
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
+    owner: Event
+    domain_of:
+    - Thing
+    range: string
+    multivalued: true
+  temporal:
+    name: temporal
+    description: Temporalidade do objeto.
+    from_schema: https://tradicional.arq.br/schema/thing
+    owner: Event
+    domain_of:
+    - Right
+    - Thing
+    range: Event
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  collection:
+    name: collection
+    description: Collections or aggregations to which the object belongs.
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
+    owner: Event
+    domain_of:
+    - Thing
+    - Work
+    range: TypedReference
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  repositories:
+    name: repositories
+    description: 'A set of elements for the identification, name and location of the
+      repository that is responsible for the object/work in focus.
+
+      Repeated if there are several designations known, or if former repositories
+      or geographic places should be listed.
+
+      ---------------------------------------------------------------------
+
+      Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar
+      a inclusão da edificação em perímetros de sítios do patrimônio cultural, etc.
+
+      Os repositórios devem ser cadastrados de modo semelhante às informações de georreferenciamento,
+      usando o tipo `other`.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
+    owner: Event
+    domain_of:
+    - Thing
+    - Work
+    range: Repository
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
 class_uri: crm:E5_Event
 
 ```

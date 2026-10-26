@@ -42,19 +42,9 @@ _    processo de projeto da edificação._
 
 __
 
-_ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER_
+_ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO resource, MAIS ABAIXO._
 
-_CADASTRADOS NO GRUPO resource, MAIS ABAIXO._
-
-__
-
-_O grupo relation é destinado unicamente a cadastrar relações desta_
-
-_edificação com objetos autônomos, tais como outras edificações, conjuntos_
-
-_urbanos, obras de artes visuais, referências bibliográficas ou acervos_
-
-_arquivísticos._
+_O grupo relation é destinado unicamente a cadastrar relações desta edificação com objetos autônomos, tais como outras edificações, conjuntos urbanos, obras de artes visuais, referências bibliográficas ou acervos arquivísticos._
 
 __
 
@@ -96,8 +86,8 @@ URI: [wasth:RelatedObject](https://tradicional.arq.br/schema/RelatedObject)
 
 
 
-        RelatedObject --> "*" Media : media
-        click Media href "../Media/"
+        RelatedObject --> "*" MediaObject : media
+        click MediaObject href "../MediaObject/"
 
 
 
@@ -134,13 +124,13 @@ URI: [wasth:RelatedObject](https://tradicional.arq.br/schema/RelatedObject)
 
 
 
-      RelatedObject : resource
+      RelatedObject : resources
 
 
 
 
 
-        RelatedObject --> "*" Resource : resource
+        RelatedObject --> "*" Resource : resources
         click Resource href "../Resource/"
 
 
@@ -175,9 +165,9 @@ URI: [wasth:RelatedObject](https://tradicional.arq.br/schema/RelatedObject)
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
 | [relation_type](relation_type.md) | 1 <br/> [RelationType](RelationType.md) | Usamos os tipos de relação previstos pelo [VRA Core] | direct |
 | [related_object](related_object.md) | 1 <br/> [Thing](Thing.md) |  | direct |
-| [object_type](object_type.md) | 0..1 <br/> [ObjectType](ObjectType.md) | Usar um vocabulário controlado para identificar o tipo de representação, | direct |
-| [resource](resource.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de | direct |
-| [media](media.md) | * <br/> [Media](Media.md) |  | direct |
+| [object_type](object_type.md) | 0..1 <br/> [ObjectType](ObjectType.md) | Usar um vocabulário controlado para identificar o tipo de representação, por ... | direct |
+| [resources](resources.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de imag... | direct |
+| [media](media.md) | * <br/> [MediaObject](MediaObject.md) |  | direct |
 | [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | direct |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
 
@@ -240,18 +230,18 @@ description: "As formas mais comuns de relação no nosso projeto são :\n\n  - 
   \    fontes externas a este projeto de pesquisa.\n\n  - has construction drawing\
   \ / has design / has sketch: Essas relações se\n    referem a desenhos históricos\
   \ (fontes primárias) que atestam o\n    processo de projeto da edificação.\n\nATENÇÃO\
-  \ : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER\nCADASTRADOS NO\
-  \ GRUPO resource, MAIS ABAIXO.\n\nO grupo relation é destinado unicamente a cadastrar\
-  \ relações desta\nedificação com objetos autônomos, tais como outras edificações,\
-  \ conjuntos\nurbanos, obras de artes visuais, referências bibliográficas ou acervos\n\
-  arquivísticos.\n"
+  \ : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO\
+  \ GRUPO resource, MAIS ABAIXO.\nO grupo relation é destinado unicamente a cadastrar\
+  \ relações desta edificação com objetos autônomos, tais como outras edificações,\
+  \ conjuntos urbanos, obras de artes visuais, referências bibliográficas ou acervos\
+  \ arquivísticos.\n"
 from_schema: https://tradicional.arq.br/schema
 slots:
 - description
 - relation_type
 - related_object
 - object_type
-- resource
+- resources
 - media
 - source
 - bibliographic_citation
@@ -274,11 +264,11 @@ description: "As formas mais comuns de relação no nosso projeto são :\n\n  - 
   \    fontes externas a este projeto de pesquisa.\n\n  - has construction drawing\
   \ / has design / has sketch: Essas relações se\n    referem a desenhos históricos\
   \ (fontes primárias) que atestam o\n    processo de projeto da edificação.\n\nATENÇÃO\
-  \ : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER\nCADASTRADOS NO\
-  \ GRUPO resource, MAIS ABAIXO.\n\nO grupo relation é destinado unicamente a cadastrar\
-  \ relações desta\nedificação com objetos autônomos, tais como outras edificações,\
-  \ conjuntos\nurbanos, obras de artes visuais, referências bibliográficas ou acervos\n\
-  arquivísticos.\n"
+  \ : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO\
+  \ GRUPO resource, MAIS ABAIXO.\nO grupo relation é destinado unicamente a cadastrar\
+  \ relações desta edificação com objetos autônomos, tais como outras edificações,\
+  \ conjuntos urbanos, obras de artes visuais, referências bibliográficas ou acervos\
+  \ arquivísticos.\n"
 from_schema: https://tradicional.arq.br/schema
 attributes:
   description:
@@ -291,10 +281,10 @@ attributes:
     owner: RelatedObject
     domain_of:
     - ConceptReference
-    - Measurements
+    - Measurement
     - BibliographicCitation
     - RelatedObject
-    - Media
+    - MediaObject
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -305,13 +295,13 @@ attributes:
     range: string
   relation_type:
     name: relation_type
-    description: "Usamos os tipos de relação previstos pelo [VRA Core].\nProvavelmente\
-      \ necessitamos apenas de :\n\n- `planFor` : desenho técnico bidimensional de\
-      \ levantamento\n  (padrão, pode ser omitido) ;\n\n- `modelFor` : modelo tridimensional,\
-      \ com ou sem informações construtivas\n  associadas (BIM) ;\n\n- `imageOf` :\
-      \ outras representações em duas dimensões da edificação ;\n\n- `preparatoryFor` :\
-      \ representação técnica de projeto para intervenções a\n  serem realizadas (ou\
-      \ já realizadas) na edificação.\n"
+    description: "Usamos os tipos de relação previstos pelo [VRA Core]. Provavelmente\
+      \ necessitamos apenas de :\n- `planFor` : desenho técnico bidimensional de levantamento\n\
+      \  (padrão, pode ser omitido) ;\n\n- `modelFor` : modelo tridimensional, com\
+      \ ou sem informações construtivas\n  associadas (BIM) ;\n\n- `imageOf` : outras\
+      \ representações em duas dimensões da edificação ;\n- `preparatoryFor` : representação\
+      \ técnica de projeto para intervenções a\n  serem realizadas (ou já realizadas)\
+      \ na edificação.\n"
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     alias: rel_type
@@ -333,11 +323,7 @@ attributes:
   object_type:
     name: object_type
     description: 'Usar um vocabulário controlado para identificar o tipo de representação,
-
-      por exemplo as hierarquias do Getty AAT
-
-      [obras visuais](http://vocab.getty.edu/hier/aat/300191086).
-
+      por exemplo as hierarquias do Getty AAT [obras visuais](http://vocab.getty.edu/hier/aat/300191086).
       ou [formatos de informação](http://vocab.getty.edu/hier/aat/300220751)
 
       '
@@ -347,26 +333,18 @@ attributes:
     domain_of:
     - RelatedObject
     range: ObjectType
-  resource:
-    name: resource
+  resources:
+    name: resources
     description: 'Os desenhos ou modelos da edificação são apresentados online por
-      meio de
+      meio de imagens vetoriais ou bitmap.
 
-      imagens vetoriais ou bitmap.
+      Cada desenho ou modelo pode ser apresentado sob várias representações, como
+      pré-visualização, imagem original, ou serviço [IIIF]. Essas imagens devem ser
+      identificadas como segue :
 
-
-      Cada desenho ou modelo pode ser apresentado sob várias representações,
-
-      como pré-visualização, imagem original, ou serviço [IIIF].
-
-      Essas imagens devem ser identificadas como segue :
-
-
-      As categorias de representação previstas no [LIDO] podem ser consultadas
-
-      em <http://terminology.lido-schema.org/resourceRepresentation_type>
-
-      e são inseridas na ficha como um mapa.
+      As categorias de representação previstas no [LIDO] podem ser consultadas em
+      <http://terminology.lido-schema.org/resourceRepresentation_type> e são inseridas
+      na ficha como um mapa.
 
       '
     from_schema: https://tradicional.arq.br/schema
@@ -388,7 +366,7 @@ attributes:
     - RelatedObject
     - Event
     - Work
-    range: Media
+    range: MediaObject
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -402,7 +380,7 @@ attributes:
     - GeographicExtent
     - TypedReference
     - RelatedObject
-    - Media
+    - MediaObject
     range: LegalBody
     multivalued: true
     inlined: true
@@ -418,9 +396,9 @@ attributes:
     - GeographicPoint
     - GeographicExtent
     - TypedReference
-    - Measurements
+    - Measurement
     - RelatedObject
-    - Media
+    - MediaObject
     - Actor
     - Thing
     - Appellation

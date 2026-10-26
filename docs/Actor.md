@@ -103,11 +103,11 @@ URI: [wasth:Actor](https://tradicional.arq.br/schema/Actor)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
-| [actor_type](actor_type.md) | 0..1 <br/> [AgentType](AgentType.md) |  | direct |
-| [actor_name](actor_name.md) | 0..1 <br/> [TypedReference](TypedReference.md) |  | direct |
-| [role_in_event](role_in_event.md) | 0..1 <br/> [RoleType](RoleType.md) |  | direct |
-| [actor_qualifier](actor_qualifier.md) | * <br/> [TypedReference](TypedReference.md) | For the Attribution Qualifier Actor element choose a concept URI from | direct |
-| [actor_extent](actor_extent.md) | * <br/> [TypedReference](TypedReference.md) |  | direct |
+| [actor_type](actor_type.md) | 0..1 <br/> [AgentType](AgentType.md) | Define se o agente é uma pessoa, uma organização ou corporação, uma oficina, ... | direct |
+| [actor_name](actor_name.md) | 0..1 <br/> [TypedReference](TypedReference.md) | Nome do agente extraído de um vocabulário controlado | direct |
+| [role_in_event](role_in_event.md) | 0..1 <br/> [RoleType](RoleType.md) | Ação desempenhada pelo agente no evento | direct |
+| [actor_qualifier](actor_qualifier.md) | * <br/> [TypedReference](TypedReference.md) | For the Attribution Qualifier Actor element choose a concept URI from the [at... | direct |
+| [actor_extent](actor_extent.md) | * <br/> [TypedReference](TypedReference.md) | Parte da obra sobre a qual o agente interveio | direct |
 
 
 
@@ -172,6 +172,10 @@ slots:
 attributes:
   actor_type:
     name: actor_type
+    description: 'Define se o agente é uma pessoa, uma organização ou corporação,
+      uma oficina, uma família, etc.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     ifabsent: AgentType(personal)
@@ -181,6 +185,7 @@ attributes:
     range: AgentType
   actor_name:
     name: actor_name
+    description: Nome do agente extraído de um vocabulário controlado.
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     alias: name
@@ -190,6 +195,7 @@ attributes:
     inlined: true
   role_in_event:
     name: role_in_event
+    description: Ação desempenhada pelo agente no evento.
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     domain_of:
@@ -198,13 +204,8 @@ attributes:
   actor_qualifier:
     name: actor_qualifier
     description: 'For the Attribution Qualifier Actor element choose a concept URI
-      from
-
-      the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264)
-
-      of the Art & Architecture Thesaurus, or another linked open
-
-      vocabulary.
+      from the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264)
+      of the Art & Architecture Thesaurus, or another linked open vocabulary.
 
       '
     from_schema: https://tradicional.arq.br/schema/temporal
@@ -217,6 +218,7 @@ attributes:
     inlined_as_list: true
   actor_extent:
     name: actor_extent
+    description: Parte da obra sobre a qual o agente interveio.
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     alias: extent
@@ -239,6 +241,10 @@ from_schema: https://tradicional.arq.br/schema
 attributes:
   actor_type:
     name: actor_type
+    description: 'Define se o agente é uma pessoa, uma organização ou corporação,
+      uma oficina, uma família, etc.
+
+      '
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     ifabsent: AgentType(personal)
@@ -249,6 +255,7 @@ attributes:
     range: AgentType
   actor_name:
     name: actor_name
+    description: Nome do agente extraído de um vocabulário controlado.
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     alias: name
@@ -259,6 +266,7 @@ attributes:
     inlined: true
   role_in_event:
     name: role_in_event
+    description: Ação desempenhada pelo agente no evento.
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     owner: Actor
@@ -268,13 +276,8 @@ attributes:
   actor_qualifier:
     name: actor_qualifier
     description: 'For the Attribution Qualifier Actor element choose a concept URI
-      from
-
-      the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264)
-
-      of the Art & Architecture Thesaurus, or another linked open
-
-      vocabulary.
+      from the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264)
+      of the Art & Architecture Thesaurus, or another linked open vocabulary.
 
       '
     from_schema: https://tradicional.arq.br/schema/temporal
@@ -289,6 +292,7 @@ attributes:
     inlined_as_list: true
   actor_extent:
     name: actor_extent
+    description: Parte da obra sobre a qual o agente interveio.
     from_schema: https://tradicional.arq.br/schema/temporal
     rank: 1000
     alias: extent
@@ -310,9 +314,9 @@ attributes:
     - GeographicPoint
     - GeographicExtent
     - TypedReference
-    - Measurements
+    - Measurement
     - RelatedObject
-    - Media
+    - MediaObject
     - Actor
     - Thing
     - Appellation

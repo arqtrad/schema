@@ -5,6 +5,11 @@ search:
 
 # Slot: actor_extent
 
+
+_Parte da obra sobre a qual o agente interveio._
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -90,6 +95,7 @@ Alias: extent
 <details>
 ```yaml
 name: actor_extent
+description: Parte da obra sobre a qual o agente interveio.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: extent

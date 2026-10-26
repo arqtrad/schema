@@ -21,7 +21,7 @@ URI: [wasth:media](https://tradicional.arq.br/schema/media)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [RelatedObject](RelatedObject.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and |  no  |
+| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
 | [Work](Work.md) | An historical landmark or building |  no  |
 | [RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
 
@@ -36,7 +36,7 @@ URI: [wasth:media](https://tradicional.arq.br/schema/media)
 
 | Property | Value |
 | --- | --- |
-| Range | [Media](Media.md) |
+| Range | [MediaObject](MediaObject.md) |
 | Domain Of | [RelatedObject](RelatedObject.md), [Event](Event.md), [Work](Work.md) |
 ### Cardinality and Requirements
 
@@ -90,7 +90,7 @@ domain_of:
 - RelatedObject
 - Event
 - Work
-range: Media
+range: MediaObject
 multivalued: true
 inlined: true
 inlined_as_list: true

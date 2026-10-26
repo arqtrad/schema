@@ -5,6 +5,11 @@ search:
 
 # Slot: concepts
 
+
+_Todos os termos de vocabulário controlado._
+
+
+
 <div data-search-exclude markdown="1">
 
 
@@ -88,6 +93,7 @@ URI: [wasth:concepts](https://tradicional.arq.br/schema/concepts)
 <details>
 ```yaml
 name: concepts
+description: Todos os termos de vocabulário controlado.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 owner: Container

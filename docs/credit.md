@@ -25,8 +25,8 @@ URI: [wasth:credit](https://tradicional.arq.br/schema/credit)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions |  no  |
-| [Media](Media.md) | Descrição e referência a um único arquivo de mídia |  no  |
+| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
+| [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |  no  |
 
 
 
@@ -40,7 +40,7 @@ URI: [wasth:credit](https://tradicional.arq.br/schema/credit)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Resource](Resource.md), [Media](Media.md) |
+| Domain Of | [Resource](Resource.md), [MediaObject](MediaObject.md) |
 
 
 
@@ -85,7 +85,7 @@ from_schema: https://tradicional.arq.br/schema
 rank: 1000
 domain_of:
 - Resource
-- Media
+- MediaObject
 range: string
 
 ```

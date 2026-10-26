@@ -6,13 +6,7 @@ search:
 # Slot: actor_qualifier
 
 
-_For the Attribution Qualifier Actor element choose a concept URI from_
-
-_the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264)_
-
-_of the Art & Architecture Thesaurus, or another linked open_
-
-_vocabulary._
+_For the Attribution Qualifier Actor element choose a concept URI from the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264) of the Art & Architecture Thesaurus, or another linked open vocabulary._
 
 __
 
@@ -104,12 +98,8 @@ Alias: qualifier
 ```yaml
 name: actor_qualifier
 description: 'For the Attribution Qualifier Actor element choose a concept URI from
-
   the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264)
-
-  of the Art & Architecture Thesaurus, or another linked open
-
-  vocabulary.
+  of the Art & Architecture Thesaurus, or another linked open vocabulary.
 
   '
 from_schema: https://tradicional.arq.br/schema

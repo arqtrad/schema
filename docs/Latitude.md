@@ -6,7 +6,7 @@ search:
 
 
 
-_Latitude in decimal degrees._
+_Latitude em graus decimais (separador: ponto)._
 
 
 
