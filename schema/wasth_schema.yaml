@@ -991,6 +991,34 @@ slots:
     range: uriorcurie
     recommended: true
     inlined: true
+  bibliographic_citation:
+    name: bibliographic_citation
+    definition_uri: https://tradicional.arq.br/schema/bibliographic_citation
+    description: "Cadastro de uma refer\xEAncia bibliogr\xE1fica.\nUsar o campo `description`\
+      \ para formatar a refer\xEAncia, caso a formata\xE7\xE3o autom\xE1tica do Zotero\
+      \ n\xE3o for satisfat\xF3ria.\n"
+    from_schema: https://tradicional.arq.br/schema/resource
+    mappings:
+    - dcterms:bibliographicCitation
+    slot_uri: dcterms:bibliographicCitation
+    owner: Inscription
+    domain_of:
+    - ConceptReference
+    - GeographicPoint
+    - GeographicExtent
+    - RelatedObject
+    - MediaObject
+    - TypedReference
+    - Measurement
+    - Actor
+    - Thing
+    - Appellation
+    - Inscription
+    range: BibliographicCitation
+    recommended: true
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   relation_type:
     name: relation_type
     definition_uri: https://tradicional.arq.br/schema/relation_type
@@ -1115,6 +1143,12 @@ slots:
   media:
     name: media
     definition_uri: https://tradicional.arq.br/schema/media
+    description: "Representa\xE7\xF5es iconogr\xE1ficas deste objeto.\nNo caso de\
+      \ `preview_image` ou `provided_image`, o link deve referenciar diretamente o\
+      \ arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`,\
+      \ o link deve remeter a uma p\xE1gina web que forne\xE7a a respetiva API ou\
+      \ as informa\xE7\xF5es acerca do modelo.\n(A FAZER) Ver [Instru\xE7\xF5es para\
+      \ carregar imagens e desenhos].\n"
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:media
     owner: Work
@@ -1215,31 +1249,6 @@ slots:
     - Inscription
     - Topic
     range: string
-  bibliographic_citation:
-    name: bibliographic_citation
-    definition_uri: https://tradicional.arq.br/schema/bibliographic_citation
-    from_schema: https://tradicional.arq.br/schema/shared
-    mappings:
-    - dcterms:bibliographicCitation
-    slot_uri: dcterms:bibliographicCitation
-    owner: Inscription
-    domain_of:
-    - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
-    - RelatedObject
-    - MediaObject
-    - TypedReference
-    - Measurement
-    - Actor
-    - Thing
-    - Appellation
-    - Inscription
-    range: BibliographicCitation
-    recommended: true
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   concept:
     name: concept
     definition_uri: https://tradicional.arq.br/schema/concept
@@ -1276,6 +1285,11 @@ slots:
   measurements:
     name: measurements
     definition_uri: https://tradicional.arq.br/schema/measurements
+    description: 'A wrapper for information about the dimensions, or other measurements,
+      of the object/work in focus. May also include extents of the parts of a complex
+      object or work.
+
+      '
     from_schema: https://tradicional.arq.br/schema/shared
     slot_uri: wasth:measurements
     owner: Work
@@ -1500,6 +1514,25 @@ slots:
   related_works:
     name: related_works
     definition_uri: https://tradicional.arq.br/schema/related_works
+    description: "A wrapper for identifying information about an object or work, including\
+      \ collections, related to the object/work in focus. May include a weblink.\n\
+      As formas mais comuns de rela\xE7\xE3o no nosso projeto s\xE3o :\n\n  - depicted\
+      \ in: A edifica\xE7\xE3o \xE9 representada numa pintura ou desenho\n    art\xED\
+      stico;\n\n  - documented by: Informa\xE7\xF5es sobre a edifica\xE7\xE3o est\xE3\
+      o publicadas numa\n    refer\xEAncia bibliogr\xE1fica, processo administrativo\
+      \ ou outro documento\n    textual impresso, manuscrito ou eletr\xF4nico;\n\n\
+      \  - has plan / has floor plan / has section / has elevation / has\n    rendering:\
+      \ Essas rela\xE7\xF5es mostram a exist\xEAncia de desenhos t\xE9cnicos\n   \
+      \ da edifica\xE7\xE3o, sejam eles hist\xF3ricos ou recentes, compilados de\n\
+      \    fontes externas a este projeto de pesquisa.\n\n  - has construction drawing\
+      \ / has design / has sketch: Essas rela\xE7\xF5es se\n    referem a desenhos\
+      \ hist\xF3ricos (fontes prim\xE1rias) que atestam o\n    processo de projeto\
+      \ da edifica\xE7\xE3o.\n\nATEN\xC7\xC3O : OS DESENHOS PRODUZIDOS POR ESTE PROJETO\
+      \ DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO resource, MAIS ABAIXO.\nO grupo\
+      \ relation \xE9 destinado unicamente a cadastrar rela\xE7\xF5es desta edifica\xE7\
+      \xE3o com objetos aut\xF4nomos, tais como outras edifica\xE7\xF5es, conjuntos\
+      \ urbanos, obras de artes visuais, refer\xEAncias bibliogr\xE1ficas ou acervos\
+      \ arquiv\xEDsticos."
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
     - skos:related
@@ -2466,10 +2499,10 @@ slots:
     inlined_as_list: true
   thing__category:
     name: thing__category
-    description: 'The LIDO Category Vocabulary is a structured controlled list of
-      terms recommended to use as values in the LIDO Category element.
-
-      Examples are human-made object or natural object.'
+    description: "The LIDO Category Vocabulary is a structured controlled list of\
+      \ terms recommended to use as values in the LIDO Category element.\nExamples\
+      \ are human-made object or natural object.\nNos document\xE1rios de edifica\xE7\
+      \xF5es, preencher este campo obrigatoriamente com `term:lido00096`"
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - term:lidoCategory
@@ -2837,9 +2870,9 @@ slots:
     inlined_as_list: false
   work__work_rights:
     name: work__work_rights
-    description: "> :warning: Este bloco se refere a eventuais direitos autorais sobre\
-      \ A > EDIFICA\xC7\xC3O E O SEU PROJETO, n\xE3o sobre o conte\xFAdo da ficha\
-      \ ou sobre a > iconografia relacionada.\n"
+    description: "> \u26A0\uFE0F  Este bloco se refere a eventuais direitos autorais\
+      \ sobre A > EDIFICA\xC7\xC3O E O SEU PROJETO, n\xE3o sobre o conte\xFAdo da\
+      \ ficha ou sobre > a iconografia relacionada.\n"
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
     - lido:rightsWorkSet
@@ -3561,8 +3594,25 @@ classes:
   RelatedWork:
     name: RelatedWork
     definition_uri: https://tradicional.arq.br/schema/RelatedWork
-    description: A wrapper for identifying information about an object or work, including
-      collections, related to the object/work in focus. May include a weblink.
+    description: "A wrapper for identifying information about an object or work, including\
+      \ collections, related to the object/work in focus. May include a weblink.\n\
+      As formas mais comuns de rela\xE7\xE3o no nosso projeto s\xE3o :\n\n  - depicted\
+      \ in: A edifica\xE7\xE3o \xE9 representada numa pintura ou desenho\n    art\xED\
+      stico;\n\n  - documented by: Informa\xE7\xF5es sobre a edifica\xE7\xE3o est\xE3\
+      o publicadas numa\n    refer\xEAncia bibliogr\xE1fica, processo administrativo\
+      \ ou outro documento\n    textual impresso, manuscrito ou eletr\xF4nico;\n\n\
+      \  - has plan / has floor plan / has section / has elevation / has\n    rendering:\
+      \ Essas rela\xE7\xF5es mostram a exist\xEAncia de desenhos t\xE9cnicos\n   \
+      \ da edifica\xE7\xE3o, sejam eles hist\xF3ricos ou recentes, compilados de\n\
+      \    fontes externas a este projeto de pesquisa.\n\n  - has construction drawing\
+      \ / has design / has sketch: Essas rela\xE7\xF5es se\n    referem a desenhos\
+      \ hist\xF3ricos (fontes prim\xE1rias) que atestam o\n    processo de projeto\
+      \ da edifica\xE7\xE3o.\n\nATEN\xC7\xC3O : OS DESENHOS PRODUZIDOS POR ESTE PROJETO\
+      \ DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO resource, MAIS ABAIXO.\nO grupo\
+      \ relation \xE9 destinado unicamente a cadastrar rela\xE7\xF5es desta edifica\xE7\
+      \xE3o com objetos aut\xF4nomos, tais como outras edifica\xE7\xF5es, conjuntos\
+      \ urbanos, obras de artes visuais, refer\xEAncias bibliogr\xE1ficas ou acervos\
+      \ arquiv\xEDsticos."
     from_schema: https://tradicional.arq.br/schema/resource
     is_a: RelatedObject
     slots:
@@ -4284,10 +4334,10 @@ classes:
         inlined_as_list: true
       category:
         name: category
-        description: 'The LIDO Category Vocabulary is a structured controlled list
-          of terms recommended to use as values in the LIDO Category element.
-
-          Examples are human-made object or natural object.'
+        description: "The LIDO Category Vocabulary is a structured controlled list\
+          \ of terms recommended to use as values in the LIDO Category element.\n\
+          Examples are human-made object or natural object.\nNos document\xE1rios\
+          \ de edifica\xE7\xF5es, preencher este campo obrigatoriamente com `term:lido00096`"
         slot_uri: term:lidoCategory
         designates_type: true
         range: uriorcurie
@@ -4647,9 +4697,9 @@ classes:
         inlined_as_list: false
       work_rights:
         name: work_rights
-        description: "> :warning: Este bloco se refere a eventuais direitos autorais\
+        description: "> \u26A0\uFE0F  Este bloco se refere a eventuais direitos autorais\
           \ sobre A > EDIFICA\xC7\xC3O E O SEU PROJETO, n\xE3o sobre o conte\xFAdo\
-          \ da ficha ou sobre a > iconografia relacionada.\n"
+          \ da ficha ou sobre > a iconografia relacionada.\n"
         slot_uri: lido:rightsWorkSet
         range: Right
         required: true
@@ -4727,6 +4777,6 @@ classes:
     class_uri: wasth:HistoricPlace
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-10-26T19:40:44'
+source_file_date: '2026-10-26T19:52:56'
 source_file_size: 25488
 
