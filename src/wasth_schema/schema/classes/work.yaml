@@ -31,16 +31,17 @@ classes:
       para cadastrar uma edificação, um conjunto arquitetônico, ou ainda
       uma parte significativa de uma edificação.
 
-      ## Especificação e modelo de preenchimento
+      <h3>Especificação e modelo de preenchimento</h3>
 
       As instruções de preeenchimento para cada elemento da ficha se encontram
       na seção [Slots](#slots).
 
       Observe como exemplo de ficha (quase) completamente preenchida a
-      [Casa dos Sete Candeeiros].
+      [Casa dos Sete
+      Candeeiros](https://github.com/arqtrad/casa/blob/main/br-ba-salvador-casa_7_candeeiros.md?plain=1).
 
       Em caso de dúvidas quanto à formatação da ficha, observe as informações
-      acerca da especificação [YAML].
+      acerca da especificação [YAML](https://www.yaml.info/learn/index.html).
 
       Todos os grupos que começam com um hífen `-` são listas que podem
       conter qualquer número de linhas ou blocos.
@@ -54,10 +55,6 @@ classes:
       devem ser apagados das fichas preenchidas.
 
       Campos não preenchidos também devem ser apagadas das fichas.
-
-      [YAML]: https://www.yaml.info/learn/index.html
-
-      [Casa dos Sete Candeeiros]: https://github.com/arqtrad/casa/blob/main/br-ba-salvador-casa_7_candeeiros.md?plain=1
 
     # This class comprises all persistent physical objects of any size that are
     # purposely created by human activity and have physical boundaries that

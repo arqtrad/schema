@@ -10,13 +10,13 @@ _An historical landmark or building._
 
 _Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastrar uma edificação, um conjunto arquitetônico, ou ainda uma parte significativa de uma edificação._
 
-_## Especificação e modelo de preenchimento_
+_<h3>Especificação e modelo de preenchimento</h3>_
 
 _As instruções de preeenchimento para cada elemento da ficha se encontram na seção [Slots](#slots)._
 
-_Observe como exemplo de ficha (quase) completamente preenchida a [Casa dos Sete Candeeiros]._
+_Observe como exemplo de ficha (quase) completamente preenchida a [Casa dos Sete Candeeiros](https://github.com/arqtrad/casa/blob/main/br-ba-salvador-casa_7_candeeiros.md?plain=1)._
 
-_Em caso de dúvidas quanto à formatação da ficha, observe as informações acerca da especificação [YAML]._
+_Em caso de dúvidas quanto à formatação da ficha, observe as informações acerca da especificação [YAML](https://www.yaml.info/learn/index.html)._
 
 _Todos os grupos que começam com um hífen `-` são listas que podem conter qualquer número de linhas ou blocos._
 
@@ -25,10 +25,6 @@ _A ordem dos blocos não é importante, mas a hierarquia dentro de cada bloco e 
 _O caractere `#` indica o início de um comentário, que prossegue até o final da linha. Os comentários e as linhas que contêm apenas comentários devem ser apagados das fichas preenchidas._
 
 _Campos não preenchidos também devem ser apagadas das fichas._
-
-_[YAML]: https://www.yaml.info/learn/index.html_
-
-_[Casa dos Sete Candeeiros]: https://github.com/arqtrad/casa/blob/main/br-ba-salvador-casa_7_candeeiros.md?plain=1_
 
 __
 
@@ -579,16 +575,16 @@ description: 'An historical landmark or building.
   uma edificação, um conjunto arquitetônico, ou ainda uma parte significativa de uma
   edificação.
 
-  ## Especificação e modelo de preenchimento
+  <h3>Especificação e modelo de preenchimento</h3>
 
   As instruções de preeenchimento para cada elemento da ficha se encontram na seção
   [Slots](#slots).
 
   Observe como exemplo de ficha (quase) completamente preenchida a [Casa dos Sete
-  Candeeiros].
+  Candeeiros](https://github.com/arqtrad/casa/blob/main/br-ba-salvador-casa_7_candeeiros.md?plain=1).
 
   Em caso de dúvidas quanto à formatação da ficha, observe as informações acerca da
-  especificação [YAML].
+  especificação [YAML](https://www.yaml.info/learn/index.html).
 
   Todos os grupos que começam com um hífen `-` são listas que podem conter qualquer
   número de linhas ou blocos.
@@ -601,10 +597,6 @@ description: 'An historical landmark or building.
   fichas preenchidas.
 
   Campos não preenchidos também devem ser apagadas das fichas.
-
-  [YAML]: https://www.yaml.info/learn/index.html
-
-  [Casa dos Sete Candeeiros]: https://github.com/arqtrad/casa/blob/main/br-ba-salvador-casa_7_candeeiros.md?plain=1
 
   '
 from_schema: https://tradicional.arq.br/schema
@@ -889,16 +881,16 @@ description: 'An historical landmark or building.
   uma edificação, um conjunto arquitetônico, ou ainda uma parte significativa de uma
   edificação.
 
-  ## Especificação e modelo de preenchimento
+  <h3>Especificação e modelo de preenchimento</h3>
 
   As instruções de preeenchimento para cada elemento da ficha se encontram na seção
   [Slots](#slots).
 
   Observe como exemplo de ficha (quase) completamente preenchida a [Casa dos Sete
-  Candeeiros].
+  Candeeiros](https://github.com/arqtrad/casa/blob/main/br-ba-salvador-casa_7_candeeiros.md?plain=1).
 
   Em caso de dúvidas quanto à formatação da ficha, observe as informações acerca da
-  especificação [YAML].
+  especificação [YAML](https://www.yaml.info/learn/index.html).
 
   Todos os grupos que começam com um hífen `-` são listas que podem conter qualquer
   número de linhas ou blocos.
@@ -911,10 +903,6 @@ description: 'An historical landmark or building.
   fichas preenchidas.
 
   Campos não preenchidos também devem ser apagadas das fichas.
-
-  [YAML]: https://www.yaml.info/learn/index.html
-
-  [Casa dos Sete Candeeiros]: https://github.com/arqtrad/casa/blob/main/br-ba-salvador-casa_7_candeeiros.md?plain=1
 
   '
 from_schema: https://tradicional.arq.br/schema

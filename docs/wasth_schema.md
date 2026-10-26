@@ -8,7 +8,7 @@ programas como o Notepad++, Sublime Text, ou Zettlr, entre muitos outros.
 Elas podem, também, ser criadas e editadas diretamente online no repositório
 do GitHub.
 
-> :warning: As fichas **não** devem ser criadas nem editadas em processadores
+> ⚠️ As fichas **não** devem ser criadas nem editadas em processadores
 > de texto formatado, tais como Microsoft Word, Google Docs, ou LibreOffice.
 
 A ficha se divide em dois blocos :
