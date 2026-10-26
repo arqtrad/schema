@@ -318,16 +318,16 @@
     click Thing href "../Thing/"
       Thing &lt;|-- Concept
         click Concept href "../Concept/"
-      Thing &lt;|-- Place
-        click Place href "../Place/"
-      Thing &lt;|-- Site
-        click Site href "../Site/"
       Thing &lt;|-- Resource
         click Resource href "../Resource/"
       Thing &lt;|-- Event
         click Event href "../Event/"
       Thing &lt;|-- Repository
         click Repository href "../Repository/"
+      Thing &lt;|-- Work
+        click Work href "../Work/"
+      Thing &lt;|-- Site
+        click Site href "../Site/"
 
       Thing : alt_name
 
@@ -449,11 +449,11 @@
 <ul>
 <li><strong>Thing</strong><ul>
 <li><a href="../Concept/">Concept</a></li>
-<li><a href="../Place/">Place</a></li>
-<li><a href="../Site/">Site</a></li>
 <li><a href="../Resource/">Resource</a></li>
 <li><a href="../Event/">Event</a></li>
 <li><a href="../Repository/">Repository</a></li>
+<li><a href="../Work/">Work</a></li>
+<li><a href="../Site/">Site</a></li>
 </ul>
 </li>
 </ul>
@@ -1128,8 +1128,6 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
@@ -1137,6 +1135,8 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
 <span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

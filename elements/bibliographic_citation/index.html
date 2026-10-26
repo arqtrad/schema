@@ -497,16 +497,6 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../GeographicPoint/">GeographicPoint</a></td>
-<td>Coordenadas do ponto que situa o sítio na visualização do mapa</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../GeographicExtent/">GeographicExtent</a></td>
-<td>Coordenadas do polígono que define o sítio</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../RelatedObject/">RelatedObject</a></td>
 <td>As formas mais comuns de relação no nosso projeto são :</td>
 <td>no</td>
@@ -542,6 +532,16 @@
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../GeographicPoint/">GeographicPoint</a></td>
+<td>Coordenadas do ponto que situa o sítio na visualização do mapa</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeographicExtent/">GeographicExtent</a></td>
+<td>Coordenadas do polígono que define o sítio</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Inscription/">Inscription</a></td>
 <td>A descrição da inscrição informa local, dimensões e características</td>
 <td>no</td>
@@ -549,16 +549,6 @@
 <tr>
 <td><a href="../Concept/">Concept</a></td>
 <td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Place/">Place</a></td>
-<td>Entities that have a somewhat fixed, physical extension</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Site/">Site</a></td>
-<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -596,6 +586,11 @@
 <td>An historical landmark or building</td>
 <td>no</td>
 </tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>no</td>
+</tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
@@ -614,7 +609,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../ConceptReference/">ConceptReference</a>, <a href="../GeographicPoint/">GeographicPoint</a>, <a href="../GeographicExtent/">GeographicExtent</a>, <a href="../RelatedObject/">RelatedObject</a>, <a href="../MediaObject/">MediaObject</a>, <a href="../TypedReference/">TypedReference</a>, <a href="../Measurement/">Measurement</a>, <a href="../Actor/">Actor</a>, <a href="../Thing/">Thing</a>, <a href="../Appellation/">Appellation</a>, <a href="../Inscription/">Inscription</a></td>
+<td><a href="../ConceptReference/">ConceptReference</a>, <a href="../RelatedObject/">RelatedObject</a>, <a href="../MediaObject/">MediaObject</a>, <a href="../TypedReference/">TypedReference</a>, <a href="../Measurement/">Measurement</a>, <a href="../Actor/">Actor</a>, <a href="../Thing/">Thing</a>, <a href="../Appellation/">Appellation</a>, <a href="../GeographicPoint/">GeographicPoint</a>, <a href="../GeographicExtent/">GeographicExtent</a>, <a href="../Inscription/">Inscription</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
@@ -682,8 +677,6 @@
 <span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:bibliographicCitation</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
@@ -691,6 +684,8 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
 <span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

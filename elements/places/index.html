@@ -398,6 +398,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -411,6 +422,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Source
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -458,8 +486,11 @@
 
 
 <h1 id="slot-places">Slot: places</h1>
+<p><em>Lugares associados ao evento, sem incluir o próprio local no qual se situa a edificação.</em></p>
+<p>__</p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/places">wasth:places</a></p>
+<p>URI: <a href="https://tradicional.arq.br/schema/places">wasth:places</a>
+Alias: places</p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -471,11 +502,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../Container/">Container</a></td>
-<td>Todos os elementos do documentário</td>
-<td>no</td>
-</tr>
 <tr>
 <td><a href="../EventPlace/">EventPlace</a></td>
 <td></td>
@@ -495,15 +521,52 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../String/">String</a></td>
+<td><a href="../Site/">Site</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Container/">Container</a>, <a href="../EventPlace/">EventPlace</a></td>
+<td><a href="../EventPlace/">EventPlace</a></td>
+</tr>
+<tr>
+<td>### Cardinality and Requirements</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multivalued</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td><a href="../EventPlace/">EventPlace</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: <a href="https://tradicional.arq.br/schema">https://tradicional.arq.br/schema</a></li>
+</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -526,10 +589,20 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">places</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Lugares</span><span class="nv"> </span><span class="s">associados</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">evento,</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">incluir</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">próprio</span><span class="nv"> </span><span class="s">local</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">se</span>
+<span class="w">  </span><span class="s">situa</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação.</span>
+
+<span class="w">  </span><span class="s">'</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">places</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Container</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>
