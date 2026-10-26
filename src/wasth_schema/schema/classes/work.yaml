@@ -342,7 +342,6 @@ classes:
       type:
         range: RepositoryType
         required: true
-        inlined: true
 
       name:
         range: TypedReference
