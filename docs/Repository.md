@@ -316,16 +316,18 @@ attributes:
     name: description
     description: A human-readable description for a thing
     from_schema: https://tradicional.arq.br/schema
+    exact_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dcterms:description
     alias: display
     owner: Repository
     domain_of:
     - ConceptReference
-    - Measurement
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - Measurement
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -378,10 +380,10 @@ attributes:
     - ConceptReference
     - GeographicPoint
     - GeographicExtent
-    - TypedReference
-    - Measurement
     - RelatedObject
     - MediaObject
+    - TypedReference
+    - Measurement
     - Actor
     - Thing
     - Appellation
@@ -451,6 +453,8 @@ attributes:
     name: title
     description: The preferred human-readable label for a Thing.
     from_schema: https://tradicional.arq.br/schema/thing
+    exact_mappings:
+    - schema:name
     rank: 1000
     slot_uri: dcterms:title
     owner: Repository

@@ -92,6 +92,7 @@ URI: [dcterms:title](http://purl.org/dc/terms/title)
 | ---  | ---  |
 | self | dcterms:title |
 | native | wasth:title |
+| exact | schema:name |
 
 
 
@@ -103,6 +104,8 @@ URI: [dcterms:title](http://purl.org/dc/terms/title)
 name: title
 description: The preferred human-readable label for a Thing.
 from_schema: https://tradicional.arq.br/schema
+exact_mappings:
+- schema:name
 rank: 1000
 slot_uri: dcterms:title
 owner: Thing

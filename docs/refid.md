@@ -14,7 +14,7 @@ _Local or external identifier._
 
 
 
-URI: [schema:identifier](http://schema.org/identifier)
+URI: [dcterm:identifier](dcterm:identifier)
 <!-- no inheritance hierarchy -->
 
 
@@ -40,8 +40,8 @@ URI: [schema:identifier](http://schema.org/identifier)
 | Property | Value |
 | --- | --- |
 | Range | [Uriorcurie](Uriorcurie.md) |
-| Domain Of | [TypedReference](TypedReference.md), [BibliographicCitation](BibliographicCitation.md) |
-| Slot URI | [schema:identifier](http://schema.org/identifier) |
+| Domain Of | [BibliographicCitation](BibliographicCitation.md), [TypedReference](TypedReference.md) |
+| Slot URI | [dcterm:identifier](dcterm:identifier) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -84,8 +84,9 @@ URI: [schema:identifier](http://schema.org/identifier)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | schema:identifier |
+| self | dcterm:identifier |
 | native | wasth:refid |
+| exact | schema:identifier |
 
 
 
@@ -97,12 +98,14 @@ URI: [schema:identifier](http://schema.org/identifier)
 name: refid
 description: Local or external identifier.
 from_schema: https://tradicional.arq.br/schema
+exact_mappings:
+- schema:identifier
 rank: 1000
-slot_uri: schema:identifier
+slot_uri: dcterm:identifier
 key: true
 domain_of:
-- TypedReference
 - BibliographicCitation
+- TypedReference
 range: uriorcurie
 required: true
 

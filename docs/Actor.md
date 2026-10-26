@@ -313,10 +313,10 @@ attributes:
     - ConceptReference
     - GeographicPoint
     - GeographicExtent
-    - TypedReference
-    - Measurement
     - RelatedObject
     - MediaObject
+    - TypedReference
+    - Measurement
     - Actor
     - Thing
     - Appellation

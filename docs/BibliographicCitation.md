@@ -74,14 +74,14 @@ URI: [dcterms:BibliographicCitation](http://purl.org/dc/terms/BibliographicCitat
 | [Site](Site.md) | [title_source](title_source.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [GeographicPoint](GeographicPoint.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [GeographicExtent](GeographicExtent.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
-| [TypedReference](TypedReference.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
-| [Measurement](Measurement.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
-| [MaterialTech](MaterialTech.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [RelatedObject](RelatedObject.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [RelatedWork](RelatedWork.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [Resource](Resource.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [Resource](Resource.md) | [title_source](title_source.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [MediaObject](MediaObject.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
+| [TypedReference](TypedReference.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
+| [Measurement](Measurement.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
+| [MaterialTech](MaterialTech.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [Event](Event.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [Event](Event.md) | [title_source](title_source.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [Actor](Actor.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
@@ -165,8 +165,8 @@ attributes:
       '
     from_schema: https://tradicional.arq.br/schema/resource
     domain_of:
-    - TypedReference
     - BibliographicCitation
+    - TypedReference
     range: CslCitekey
     required: true
   note:
@@ -213,8 +213,8 @@ attributes:
     from_schema: https://tradicional.arq.br/schema/resource
     owner: BibliographicCitation
     domain_of:
-    - TypedReference
     - BibliographicCitation
+    - TypedReference
     range: CslCitekey
     required: true
   note:
@@ -234,16 +234,18 @@ attributes:
     name: description
     description: A human-readable description for a thing
     from_schema: https://tradicional.arq.br/schema
+    exact_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dcterms:description
     alias: display
     owner: BibliographicCitation
     domain_of:
     - ConceptReference
-    - Measurement
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - Measurement
     - EventDate
     - EventPlace
     - RelatedEvent

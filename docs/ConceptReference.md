@@ -71,7 +71,6 @@ URI: [wasth:ConceptReference](https://tradicional.arq.br/schema/ConceptReference
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
-| [name](name.md) | 0..1 <br/> [Concept](Concept.md) | Identificador do termo referido | direct |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | direct |
 | [name](name.md) | 0..1 <br/> [Concept](Concept.md) | Identificador do termo referido | direct |
 
@@ -148,7 +147,6 @@ description: Atribuição de vocabulário controlado com citação de apoio.
 from_schema: https://tradicional.arq.br/schema
 slots:
 - description
-- name
 - bibliographic_citation
 attributes:
   name:
@@ -190,16 +188,18 @@ attributes:
     name: description
     description: A human-readable description for a thing
     from_schema: https://tradicional.arq.br/schema
+    exact_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dcterms:description
     alias: display
     owner: ConceptReference
     domain_of:
     - ConceptReference
-    - Measurement
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - Measurement
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -218,10 +218,10 @@ attributes:
     - ConceptReference
     - GeographicPoint
     - GeographicExtent
-    - TypedReference
-    - Measurement
     - RelatedObject
     - MediaObject
+    - TypedReference
+    - Measurement
     - Actor
     - Thing
     - Appellation

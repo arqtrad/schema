@@ -218,16 +218,18 @@ attributes:
     name: description
     description: A human-readable description for a thing
     from_schema: https://tradicional.arq.br/schema
+    exact_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dcterms:description
     alias: display
     owner: RelatedWork
     domain_of:
     - ConceptReference
-    - Measurement
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - Measurement
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -321,9 +323,9 @@ attributes:
     domain_of:
     - GeographicPoint
     - GeographicExtent
-    - TypedReference
     - RelatedObject
     - MediaObject
+    - TypedReference
     range: LegalBody
     multivalued: true
     inlined: true
@@ -338,10 +340,10 @@ attributes:
     - ConceptReference
     - GeographicPoint
     - GeographicExtent
-    - TypedReference
-    - Measurement
     - RelatedObject
     - MediaObject
+    - TypedReference
+    - Measurement
     - Actor
     - Thing
     - Appellation

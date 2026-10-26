@@ -12,10 +12,6 @@ _Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research
 
 _Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal._
 
-_Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)_
-
-_Nos Documentários da Arquitetura Tradicional, designa a situação de implantação da edificação, por exemplo se está em contexto urbano ou rural, isolada ou em correnteza..._
-
 
 
 <div data-search-exclude markdown="1">
@@ -109,12 +105,7 @@ description: 'Descriptors for objects that are distinguishable by their physical
 
   Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
 
-  Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal.
-
-  Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
-  Nos Documentários da Arquitetura Tradicional, designa a situação de implantação
-  da edificação, por exemplo se está em contexto urbano ou rural, isolada ou em correnteza...'
+  Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal.'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: term:lido00766

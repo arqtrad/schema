@@ -319,9 +319,9 @@ attributes:
     domain_of:
     - GeographicPoint
     - GeographicExtent
-    - TypedReference
     - RelatedObject
     - MediaObject
+    - TypedReference
     range: LegalBody
     multivalued: true
     inlined: true
@@ -336,10 +336,10 @@ attributes:
     - ConceptReference
     - GeographicPoint
     - GeographicExtent
-    - TypedReference
-    - Measurement
     - RelatedObject
     - MediaObject
+    - TypedReference
+    - Measurement
     - Actor
     - Thing
     - Appellation

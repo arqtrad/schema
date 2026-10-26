@@ -75,8 +75,8 @@ URI: [wasth:StylePeriod](https://tradicional.arq.br/schema/StylePeriod)
 | ---  | --- | --- | --- |
 | [type](type.md) | 1 <br/> [PeriodNameType](PeriodNameType.md) |  | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | [ConceptReference](ConceptReference.md) |
-| [name](name.md) | 0..1 <br/> [Concept](Concept.md) | Identificador do termo referido | [ConceptReference](ConceptReference.md) |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) |  | [ConceptReference](ConceptReference.md) |
+| [name](name.md) | 0..1 <br/> [Concept](Concept.md) | Identificador do termo referido | [ConceptReference](ConceptReference.md) |
 
 
 
@@ -184,16 +184,18 @@ attributes:
     name: description
     description: A human-readable description for a thing
     from_schema: https://tradicional.arq.br/schema
+    exact_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dcterms:description
     alias: display
     owner: StylePeriod
     domain_of:
     - ConceptReference
-    - Measurement
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - Measurement
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -202,6 +204,29 @@ attributes:
     - Inscription
     - Topic
     range: string
+  bibliographic_citation:
+    name: bibliographic_citation
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    slot_uri: dcterms:bibliographicCitation
+    owner: StylePeriod
+    domain_of:
+    - ConceptReference
+    - GeographicPoint
+    - GeographicExtent
+    - RelatedObject
+    - MediaObject
+    - TypedReference
+    - Measurement
+    - Actor
+    - Thing
+    - Appellation
+    - Inscription
+    range: BibliographicCitation
+    recommended: true
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   name:
     name: name
     description: Identificador do termo referido.
@@ -214,29 +239,6 @@ attributes:
     - RelatedEvent
     - HistoricPlace
     range: Concept
-  bibliographic_citation:
-    name: bibliographic_citation
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    slot_uri: dcterms:bibliographicCitation
-    owner: StylePeriod
-    domain_of:
-    - ConceptReference
-    - GeographicPoint
-    - GeographicExtent
-    - TypedReference
-    - Measurement
-    - RelatedObject
-    - MediaObject
-    - Actor
-    - Thing
-    - Appellation
-    - Inscription
-    range: BibliographicCitation
-    recommended: true
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
 
 ```
 </details></div>

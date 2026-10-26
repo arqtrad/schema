@@ -87,7 +87,6 @@ classes:
 
     slots:
       - description
-      - name
       - bibliographic_citation
 
   BroaderConceptReference:

@@ -93,16 +93,16 @@ URI: [wasth:TypedReference](https://tradicional.arq.br/schema/TypedReference)
 | [Place](Place.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
 | [Site](Site.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
 | [Site](Site.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
-| [Measurement](Measurement.md) | [format_extent](format_extent.md) | range | [TypedReference](TypedReference.md) |
-| [Measurement](Measurement.md) | [unit](unit.md) | range | [TypedReference](TypedReference.md) |
-| [Right](Right.md) | [type](type.md) | range | [TypedReference](TypedReference.md) |
-| [LegalBody](LegalBody.md) | [name](name.md) | range | [TypedReference](TypedReference.md) |
 | [Resource](Resource.md) | [resource_service](resource_service.md) | range | [TypedReference](TypedReference.md) |
 | [Resource](Resource.md) | [unit](unit.md) | range | [TypedReference](TypedReference.md) |
 | [Resource](Resource.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
 | [Resource](Resource.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
 | [MediaObject](MediaObject.md) | [format](format.md) | range | [TypedReference](TypedReference.md) |
 | [MediaObject](MediaObject.md) | [resource_service](resource_service.md) | range | [TypedReference](TypedReference.md) |
+| [Measurement](Measurement.md) | [format_extent](format_extent.md) | range | [TypedReference](TypedReference.md) |
+| [Measurement](Measurement.md) | [unit](unit.md) | range | [TypedReference](TypedReference.md) |
+| [Right](Right.md) | [type](type.md) | range | [TypedReference](TypedReference.md) |
+| [LegalBody](LegalBody.md) | [name](name.md) | range | [TypedReference](TypedReference.md) |
 | [Event](Event.md) | [culture](culture.md) | range | [TypedReference](TypedReference.md) |
 | [Event](Event.md) | [identifiers](identifiers.md) | range | [TypedReference](TypedReference.md) |
 | [Event](Event.md) | [collection](collection.md) | range | [TypedReference](TypedReference.md) |
@@ -208,13 +208,15 @@ attributes:
     name: refid
     description: Local or external identifier.
     from_schema: https://tradicional.arq.br/schema
+    exact_mappings:
+    - schema:identifier
     rank: 1000
-    slot_uri: schema:identifier
+    slot_uri: dcterm:identifier
     key: true
     owner: TypedReference
     domain_of:
-    - TypedReference
     - BibliographicCitation
+    - TypedReference
     range: uriorcurie
     required: true
   bibliographic_citation:
@@ -227,10 +229,10 @@ attributes:
     - ConceptReference
     - GeographicPoint
     - GeographicExtent
-    - TypedReference
-    - Measurement
     - RelatedObject
     - MediaObject
+    - TypedReference
+    - Measurement
     - Actor
     - Thing
     - Appellation
@@ -248,9 +250,9 @@ attributes:
     domain_of:
     - GeographicPoint
     - GeographicExtent
-    - TypedReference
     - RelatedObject
     - MediaObject
+    - TypedReference
     range: LegalBody
     multivalued: true
     inlined: true

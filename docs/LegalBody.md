@@ -71,11 +71,11 @@ URI: [wasth:LegalBody](https://tradicional.arq.br/schema/LegalBody)
 | ---  | --- | --- | --- |
 | [GeographicPoint](GeographicPoint.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
 | [GeographicExtent](GeographicExtent.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
-| [TypedReference](TypedReference.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
-| [Right](Right.md) | [holder](holder.md) | range | [LegalBody](LegalBody.md) |
 | [RelatedObject](RelatedObject.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
 | [RelatedWork](RelatedWork.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
 | [MediaObject](MediaObject.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
+| [TypedReference](TypedReference.md) | [source](source.md) | range | [LegalBody](LegalBody.md) |
+| [Right](Right.md) | [holder](holder.md) | range | [LegalBody](LegalBody.md) |
 | [Repository](Repository.md) | [legal_body](legal_body.md) | range | [LegalBody](LegalBody.md) |
 
 

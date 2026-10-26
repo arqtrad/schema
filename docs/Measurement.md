@@ -223,7 +223,7 @@ attributes:
   type:
     name: type
     description: 'designa a natureza da medida : largura, altura, área, etc. — usar
-      um dos [tipos de dimensões](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300226820)
+      um dos [tipos de dimensões ](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300226820)
       do Art and Architecture Thesaurus do Instituto Getty (AAT).
 
       '
@@ -333,7 +333,7 @@ attributes:
   type:
     name: type
     description: 'designa a natureza da medida : largura, altura, área, etc. — usar
-      um dos [tipos de dimensões](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300226820)
+      um dos [tipos de dimensões ](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300226820)
       do Art and Architecture Thesaurus do Instituto Getty (AAT).
 
       '
@@ -394,16 +394,18 @@ attributes:
     name: description
     description: A human-readable description for a thing
     from_schema: https://tradicional.arq.br/schema
+    exact_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dcterms:description
     alias: display
     owner: Measurement
     domain_of:
     - ConceptReference
-    - Measurement
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - Measurement
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -439,10 +441,10 @@ attributes:
     - ConceptReference
     - GeographicPoint
     - GeographicExtent
-    - TypedReference
-    - Measurement
     - RelatedObject
     - MediaObject
+    - TypedReference
+    - Measurement
     - Actor
     - Thing
     - Appellation
@@ -464,8 +466,8 @@ attributes:
     alias: unit
     owner: Measurement
     domain_of:
-    - Measurement
     - Resource
+    - Measurement
     range: TypedReference
     required: true
     inlined: true

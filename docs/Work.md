@@ -623,13 +623,7 @@ attributes:
 
       Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
 
-      Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal.
-
-      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
-      Nos Documentários da Arquitetura Tradicional, designa a situação de implantação
-      da edificação, por exemplo se está em contexto urbano ou rural, isolada ou em
-      correnteza...'
+      Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal.'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00766
@@ -909,13 +903,7 @@ attributes:
 
       Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
 
-      Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal.
-
-      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
-      Nos Documentários da Arquitetura Tradicional, designa a situação de implantação
-      da edificação, por exemplo se está em contexto urbano ou rural, isolada ou em
-      correnteza...'
+      Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal.'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00766
@@ -1349,6 +1337,8 @@ attributes:
       application within a particular physical location. If an object is identifiable
       by association with specific surroundings, it is qualified by location or context.
 
+      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+
       No Documentário de Lugares Tradicionais, designa o tipo de núcleo populacional :
       sítio isolado, povoação rural, vila ou cidade, por exemplo.
 
@@ -1422,16 +1412,18 @@ attributes:
     name: description
     description: A human-readable description for a thing
     from_schema: https://tradicional.arq.br/schema
+    exact_mappings:
+    - schema:description
     rank: 1000
     slot_uri: dcterms:description
     alias: display
     owner: Work
     domain_of:
     - ConceptReference
-    - Measurement
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - Measurement
     - EventDate
     - EventPlace
     - RelatedEvent
@@ -1484,10 +1476,10 @@ attributes:
     - ConceptReference
     - GeographicPoint
     - GeographicExtent
-    - TypedReference
-    - Measurement
     - RelatedObject
     - MediaObject
+    - TypedReference
+    - Measurement
     - Actor
     - Thing
     - Appellation
@@ -1560,6 +1552,8 @@ attributes:
     name: title
     description: The preferred human-readable label for a Thing.
     from_schema: https://tradicional.arq.br/schema/thing
+    exact_mappings:
+    - schema:name
     rank: 1000
     slot_uri: dcterms:title
     owner: Work

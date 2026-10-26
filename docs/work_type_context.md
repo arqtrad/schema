@@ -8,6 +8,8 @@ search:
 
 _Descriptors for objects that are distinguishable by their use or application within a particular physical location. If an object is identifiable by association with specific surroundings, it is qualified by location or context._
 
+_Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)_
+
 _No Documentário de Lugares Tradicionais, designa o tipo de núcleo populacional : sítio isolado, povoação rural, vila ou cidade, por exemplo._
 
 _Nos Documentários de edificações, designa sobretudo o contexto imediato de implantação de uma edificação : urbana, rural, isolada, em correnteza, etc._
@@ -103,6 +105,8 @@ name: work_type_context
 description: 'Descriptors for objects that are distinguishable by their use or application
   within a particular physical location. If an object is identifiable by association
   with specific surroundings, it is qualified by location or context.
+
+  Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
 
   No Documentário de Lugares Tradicionais, designa o tipo de núcleo populacional :
   sítio isolado, povoação rural, vila ou cidade, por exemplo.

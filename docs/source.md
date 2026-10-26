@@ -22,9 +22,9 @@ URI: [wasth:source](https://tradicional.arq.br/schema/source)
 | --- | --- | --- |
 | [GeographicPoint](GeographicPoint.md) | Coordenadas do ponto que situa o sítio na visualização do mapa |  no  |
 | [GeographicExtent](GeographicExtent.md) | Coordenadas do polígono que define o sítio |  no  |
-| [TypedReference](TypedReference.md) | Reference to a local record, IRI, URI, or LIDO terminology term |  no  |
 | [RelatedObject](RelatedObject.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
 | [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |  no  |
+| [TypedReference](TypedReference.md) | Reference to a local record, IRI, URI, or LIDO terminology term |  no  |
 | [RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
 
 
@@ -39,7 +39,7 @@ URI: [wasth:source](https://tradicional.arq.br/schema/source)
 | Property | Value |
 | --- | --- |
 | Range | [LegalBody](LegalBody.md) |
-| Domain Of | [GeographicPoint](GeographicPoint.md), [GeographicExtent](GeographicExtent.md), [TypedReference](TypedReference.md), [RelatedObject](RelatedObject.md), [MediaObject](MediaObject.md) |
+| Domain Of | [GeographicPoint](GeographicPoint.md), [GeographicExtent](GeographicExtent.md), [RelatedObject](RelatedObject.md), [MediaObject](MediaObject.md), [TypedReference](TypedReference.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -91,9 +91,9 @@ rank: 1000
 domain_of:
 - GeographicPoint
 - GeographicExtent
-- TypedReference
 - RelatedObject
 - MediaObject
+- TypedReference
 range: LegalBody
 multivalued: true
 inlined: true

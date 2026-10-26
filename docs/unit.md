@@ -29,8 +29,8 @@ Alias: unit
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
 | [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
+| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
 
 
 
@@ -44,7 +44,7 @@ Alias: unit
 | Property | Value |
 | --- | --- |
 | Range | [TypedReference](TypedReference.md) |
-| Domain Of | [Measurement](Measurement.md), [Resource](Resource.md) |
+| Domain Of | [Resource](Resource.md), [Measurement](Measurement.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -100,8 +100,8 @@ from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: unit
 domain_of:
-- Measurement
 - Resource
+- Measurement
 range: TypedReference
 required: true
 inlined: true
