@@ -365,10 +365,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enumeration-source" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enumeration Source
+        Permissible Values
       
     </span>
   </a>
@@ -447,13 +447,47 @@
 
 
 <h1 id="enum-labeltype">Enum: LabelType</h1>
-<p><em>SKOS label types.</em></p>
+<p><em>No SKOS, caracteriza se cada termo deve ser considerado preferencial ou alternativo, usado para indexação, oculto da visualização (usado apenas para buscas), etc.</em></p>
+<p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/LabelType">wasth:LabelType</a></p>
-<h2 id="enumeration-source">Enumeration Source</h2>
-<p><strong>Reachable From:</strong>
-- <strong>Source:</strong> NONE</p>
-<p><em>This is a dynamic enum</em></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alternative</td>
+<td>skos:altLabel</td>
+<td>Abreviações, abreviaturas, variantes lexicais e formas irregulares de singula...</td>
+</tr>
+<tr>
+<td>display</td>
+<td>term:lido00526</td>
+<td>Nome a ser apresentado na interfaz pública, incluindo artigos se for o caso</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>skos:hiddenLabel</td>
+<td>Uma variante do nome com erros comuns de grafia ou imprecisões lexicais, mas ...</td>
+</tr>
+<tr>
+<td>indexing</td>
+<td>term:lido00961</td>
+<td>Nome, termo ou identificador a ser usado em indexação, por exemplo removendo ...</td>
+</tr>
+<tr>
+<td>preferred</td>
+<td>skos:prefLabel</td>
+<td>O nome, termo ou título preferencial</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -477,12 +511,44 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LabelType</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SKOS label types.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'No</span><span class="nv"> </span><span class="s">SKOS,</span><span class="nv"> </span><span class="s">caracteriza</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">termo</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">considerado</span><span class="nv"> </span><span class="s">preferencial</span>
+<span class="w">  </span><span class="s">ou</span><span class="nv"> </span><span class="s">alternativo,</span><span class="nv"> </span><span class="s">usado</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">indexação,</span><span class="nv"> </span><span class="s">oculto</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">visualização</span><span class="nv"> </span><span class="s">(usado</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">para</span>
+<span class="w">  </span><span class="s">buscas),</span><span class="nv"> </span><span class="s">etc.</span>
+
+<span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">reachable_from</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">source_ontology</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://terminology.lido-schema.org/pref</span>
-<span class="w">  </span><span class="nt">include_self</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">permissible_values</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">alternative</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alternative</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Abreviações, abreviaturas, variantes lexicais e formas irregulares</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">de singular ou plural podem ser incluídas como termos ou títulos alternativos</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">para um conceito ou objeto. No caso de edificações ou conjuntos que são conhecidos</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">por mais de um nome (por exemplo, pela sua função atual ou antiga, ou pelo endereço),</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">selecionar `alternative` e indicar o tipo de título.</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skos:altLabel</span>
+<span class="w">  </span><span class="nt">display</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">display</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nome a ser apresentado na interfaz pública, incluindo artigos se</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for o caso.</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00526</span>
+<span class="w">  </span><span class="nt">hidden</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hidden</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Uma variante do nome com erros comuns de grafia ou imprecisões lexicais,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">mas que seja relevante para buscas dos usuários. Deve ficar oculto da interfaz</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">pública.</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skos:hiddenLabel</span>
+<span class="w">  </span><span class="nt">indexing</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indexing</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nome, termo ou identificador a ser usado em indexação, por exemplo</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">removendo artigos ou partículas iniciais, invertendo a ordem do nome e do sobrenome,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">etc.</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00961</span>
+<span class="w">  </span><span class="nt">preferred</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">preferred</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">O nome, termo ou título preferencial. Normalmente não usaremos esta</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">opção pois o campo `title` já contempla a opção preferencial.</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skos:prefLabel</span>
 </code></pre></div>
 </details>
 </div>
