@@ -669,6 +669,10 @@ enums:
       "Styles/Periods/Groups/Movements"](http://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html)
     reachable_from:
       source_ontology: http://terminology.lido-schema.org/periodName_type
+      source_nodes:
+        - term:periodName_type
+      relationship_types:
+        - skos:inScheme
       include_self: false
 
   GeometryType:
