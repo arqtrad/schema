@@ -980,6 +980,10 @@ enums:
     from_schema: https://tradicional.arq.br/schema
     reachable_from:
       source_ontology: http://terminology.lido-schema.org/periodName_type
+      source_nodes:
+      - term:periodName_type
+      relationship_types:
+      - skos:inScheme
       include_self: false
   GeometryType:
     name: GeometryType
@@ -5128,6 +5132,6 @@ classes:
     class_uri: wasth:HistoricPlace
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-10-28T01:14:06'
-source_file_size: 42361
+source_file_date: '2026-10-28T16:35:21'
+source_file_size: 42462
 
