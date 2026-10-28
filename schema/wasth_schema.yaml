@@ -979,9 +979,9 @@ enums:
       ](http://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html)\n"
     from_schema: https://tradicional.arq.br/schema
     reachable_from:
-      source_ontology: http://terminology.lido-schema.org/periodName_type
+      source_ontology: term
       source_nodes:
-      - term:periodName_type
+      - periodName_type
       relationship_types:
       - skos:inScheme
       include_self: false
@@ -5132,6 +5132,6 @@ classes:
     class_uri: wasth:HistoricPlace
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-10-28T16:35:21'
-source_file_size: 42462
+source_file_date: '2026-10-28T16:44:12'
+source_file_size: 42411
 
