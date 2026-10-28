@@ -668,7 +668,7 @@ enums:
       Baseado na categoria do [CDWA
       "Styles/Periods/Groups/Movements"](http://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html)
     reachable_from:
-      source_ontology: http://terminology.lido-schema.org/periodName_type
+      source_ontology: term
       source_nodes:
         - term:periodName_type
       relationship_types:
