@@ -217,7 +217,16 @@ slots:
     multivalued: true
     inlined_as_list: true
     description: >
-      Cadastro de uma referência bibliográfica.
+      📚  Cadastro de uma referência bibliográfica.
+
+      O campo `refid` deve conter a chave de citação (citation key) que consta
+      do registro bibliográfico na biblioteca do nosso projeto de pesquisa no
+      Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou
+      ISBN da publicação, mas pode ser diferente.
+
+      Se necessário, incluir no campo `note` uma especificação adicional,
+      como o número da página da referência bibliográfica de onde a
+      informação foi extraída.
 
       Usar o campo `description` para formatar a referência, caso a formatação
       automática do Zotero não for satisfatória.

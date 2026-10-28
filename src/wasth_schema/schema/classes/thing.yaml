@@ -17,11 +17,27 @@ default_range: string
 classes:
 
   Thing:
+    rank: 0
     abstract: true
     class_uri: crm:E1_CRM_Entity
     exact_mappings:
       - schema:Thing
     description: >
+      Esta classe compreende todas as coisas no universo do CIDOC CRM.
+      É um conceito abstrato que prevê três propriedades gerais:
+
+      - Identificação por nome ou título, em particular por um identificador
+        preferencial.
+      - Classificação por tipo, permitindo o refinamento da subclasse
+        específica à qual a instância pertence.
+      - Atribuição de texto livre e de outros dados não estruturados, para
+        expressar informações não capturadas por propriedades formais.
+
+      Todas as demais classes do CIDOC CRM são especializações diretas ou
+      indiretas de E1 CRM Entity.
+
+      -------------------------------------------------------------------------
+
       This class comprises all things in the universe of discourse of the CIDOC
       Conceptual Reference Model.
 
@@ -46,20 +62,28 @@ classes:
         identifier: true
         range: uriorcurie
         slot_uri: dcterms:identifier
-        description: Unique identifier for this object.
+        description: >
+          Identificador globalmente único para este objeto ou recurso.
 
-      author:
+      record_author:
+        alias: author
         range: OrcidId
-        slot_uri: dcterms:creator
-        description: ORCID iD of the record author or maintainer.
+        slot_uri: dcterms:contributor
+        description: >
+          ORCID iD da pessoa que escreveu a versão original da ficha.
+          Alterar apenas no caso de a ficha ter sido substancialmente
+          reescrita.
 
       record_date:
+        alias: date
         range: date
         slot_uri: dcterms:created
-        description: Date the record was created or last substantively revised.
+        description: Data de inclusão da ficha.
 
       title:
-        description: The preferred human-readable label for a Thing.
+        description: >
+          Nome pelo qual este item é mais comumente conhecido.
+          Outros nomes podem ser cadastrados em `alt_name`.
         required: true
         range: string
         slot_uri: dcterms:title
@@ -68,33 +92,22 @@ classes:
 
       title_source:
         description: >-
-          📚 A fonte do título title_source é opcional ; um título pode ser
+          A fonte do título title_source é opcional ; um título pode ser
           atestado em mais de uma fonte, por isso este campo é uma lista de
           itens (cada item começa com um hífen).
-
-          Se a fonte for cadastrada, o campo `refid` deve conter a chave de
-          citação (citation key) que consta do registro bibliográfico na
-          biblioteca do nosso projeto de pesquisa no Zotero. Em geral, a chave
-          de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
-
-          Se necessário, incluir no campo note uma especificação adicional,
-          como o número da página da referência bibliográfica de onde a
-          informação foi extraída.
-
-          Todos os campos source no restante da ficha devem ser preenchidos do
-          mesmo modo. (Equivalente DublinCore: bibliographiCitation).
         range: BibliographicCitation
         multivalued: true
         inlined_as_list: true
 
       alt_name:
         description: >
-          O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação
-          será eventualmente conhecida. É uma lista opcional de itens, e se
-          existir, os campos de cada item da lista devem ser preenchidos como os do
-          título principal.
+          O bloco `alt_name` permite cadastrar outros nomes pelos quais o
+          objeto ou conceito será eventualmente conhecido. É uma lista opcional
+          de itens, e se existir, os campos de cada item da lista devem ser
+          preenchidos como os do título principal.
 
-          O campo `description` de cada item contém o texto do título (nome).
+          O campo `label` ou `description` de cada item contém o texto do
+          título (nome).
 
           Este bloco pode ser omitido por completo se não houver títulos
           alternativos.
@@ -108,73 +121,127 @@ classes:
         range: uriorcurie
         required: true
         description: >-
+          Uma classificação ampla para o objeto descrito na ficha, usando o
+          vocabulário controlado do LIDO.
+
+          Nos documentários de edificações, preencher este campo
+          OBRIGATORIAMENTE com `term:lido00096` ("Objeto manufaturado").
+
+          No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com
+          `term:lido01193` ("Objeto conceitual").
+
+          ---------------------------------------------------------------------
+
           The LIDO Category Vocabulary is a structured controlled list of terms
           recommended to use as values in the LIDO Category element.
 
           Examples are human-made object or natural object.
-
-          Nos documentários de edificações, preencher este campo
-          obrigatoriamente com `term:lido00096`
         # ifabsent: string(term:lido00096)
 
       identifiers:
         range: TypedReference
         multivalued: true
         inlined_as_list: true
-        description: Published or external identifiers for the object.
+        description: >
+          Números de inventário e demais códigos que identificam este objeto
+          em outras bases de dados.
+
+          Caso esta edificação esteja cadastrada em outras bases de dados (por
+          exemplo, [SICG], [SIPA], [HPIP], [iPatrimonio], etc.), pode preencher
+          a lista `identifiers` como segue.
+
+          :clipboard:
+          O conteúdo de cada bloco é uma lista recuada em dois espaços com
+          respeito à categoria superior.
+          Seus itens são :
+
+          * `type` é o tipo de referência : pode ser `uri` (padrão), `iri` ou
+            `local` — se estiver em dúvida, omita esta linha ;
+
+          * `refid` é obrigatório : representa o identificador do conceito no
+            vocabulário controlado ou no repositório de origem — normalmente
+            será uma URI (um link para a página web do cadastro) ;
+
+          * `description` deve ser usado para representar textualmente
+            o número de inventário, código identificador ou outra informação
+            que individualize o objeto na base externa (por exemplo, livro do
+            tombo e número do processo de tombamento, no Brasil) ;
+
+          * `bibliographic_citation` é opcional e permite citar uma lista de
+            referências bibliográficas que validem a inclusão deste termo.
+
+          * `source` também é opcional e permite cadastrar os dados da pessoa
+            jurídica responsável pelo registro.
+
+          ---------------------------------------------------------------------
+
+          Published or external identifiers for the object.
 
       tags:
         range: string
         multivalued: true
         description: >-
+          Lista de palavras-chave que caracterizam o objeto, de modo não
+          estruturado. Recomenda-se usar uma palavra-chave de cada um dos
+          recortes abaixo:
+
+          - Geográfico ;
+          - Cronológico ;
+          - Histórico-cultural ;
+          - Técnico-construtivo ;
+          - Temático ou tipológico ;
+          - Funcional.
+
+          ---------------------------------------------------------------------
+
           Provisional uncontrolled keywords. Prefer `classifications` or
           `subject` for curated vocabulary terms.
 
       temporal:
-        description: Temporalidade do objeto.
         range: Event
         multivalued: true
         inlined_as_list: true
-
-      collection:
-        range: TypedReference
-        multivalued: true
-        inlined_as_list: true
-        description: Collections or aggregations to which the object belongs.
+        description: >
+          Descrição dos eventos associados ao ciclo de vida da edificação ou
+          à existência e/ou uso do objeto ou conceito.
+          Ler a respetiva documentação para estruturar este campo.
 
       repositories:
         range: Repository
         multivalued: true
         inlined_as_list: true
         description: >
+          Nos Documentários da Arquitetura Tradicional, usamos repositórios
+          para indicar a inclusão da edificação em perímetros de sítios
+          tombados/classificados do patrimônio, áreas de interesse
+          histórico-cultural, etc.
+
+          O repositório é cadastrado como uma pessoa jurídica dotada de
+          extensão geográfica.
+
+          ---------------------------------------------------------------------
+
           A set of elements for the identification, name and location of the
           repository that is responsible for the object/work in focus.
 
           Repeated if there are several designations known, or if former
           repositories or geographic places should be listed.
 
-          ---------------------------------------------------------------------
-
-          Nos Documentários da Arquitetura Tradicional, usamos repositórios
-          para indicar a inclusão da edificação em perímetros de sítios do
-          patrimônio cultural, etc.
-
-          Os repositórios devem ser cadastrados de modo semelhante às
-          informações de georreferenciamento, usando o tipo `other`.
-
       record_rights:
-        required: true
         range: Right
         multivalued: true
         inlined_as_list: true
         description: >
-          A set of structured information about rights regarding the content
-          provided in this LIDO record.
+          Informações estruturadas sobre os direitos que incidem sobre o
+          conteúdo textual desta ficha.
+
+          ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da
+          ficha, não sobre os direitos incidentes sobre o objeto descrito.
 
           ---------------------------------------------------------------------
 
-          :warning: Este grupo se refere aos direitos sobre o CONTEÚDO da
-          ficha, não sobre os direitos incidentes sobre o objeto descrito.
+          A set of structured information about rights regarding the content
+          provided in this LIDO record.
 
     slot_usage:
       description:
@@ -200,6 +267,10 @@ classes:
         required: true
         # ifabsent: string(alternative)
 
+    slot_usage:
+      description:
+        alias: label
+
     slots:
       - description
       - title_type
@@ -208,7 +279,13 @@ classes:
   Repository:
     is_a: Thing
     class_uri: schema:Organization
+
     description: Entidade com existência jurídica e espacial.
+
+    slot_usage:
+      title_type:
+        range: RepositoryType
+
     slots:
       - site
       - legal_body
@@ -218,33 +295,17 @@ slots:
 
   title_type:
     description: Indica se o título é um nome próprio, descritivo, etc.
-    alias: type
-    range: TitleType
     required: true
+    # range: Any
     # ifabsent: TitleType(descriptive)
 
   legal_body:
     range: LegalBody
     required: true
+    description: Informações estruturadas sobre a pessoa jurídica.
 
   content:
     recommended: true
     range: string
     slot_uri: skos:scopeNote
-    description: >
-      Deixe uma linha em branco após o fechamento dos metadados e inclua
-      aqui uma descrição morfológica e histórica da edificação com texto
-      livre, usando formatação Markdown.
-
-      Poderá incluir um segundo bloco de metadados para indicar as
-      referências bibliográficas da descrição textual, no campo `nocite`.
-      O formato é uma lista de chaves de citação do Zotero
-      (cada uma começando com `@`) separadas por vírgulas:
-
-      ```yaml
-      Conteúdo textual em formato *Markdown* com citações [@citekey].
-
-      ---
-      nocite: "@*"
-      ---
-      ```
+    description: Conteúdo textual descritivo ou explicativo.

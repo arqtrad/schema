@@ -25,8 +25,6 @@ classes:
       - crm:E22_Human-Made_Object
 
     description: >
-      An historical landmark or building.
-
       Nos Documentários da Arquitetura Tradicional, esta ficha é usada
       para cadastrar uma edificação, um conjunto arquitetônico, ou ainda
       uma parte significativa de uma edificação.
@@ -56,6 +54,10 @@ classes:
 
       Campos não preenchidos também devem ser apagadas das fichas.
 
+      -------------------------------------------------------------------------
+
+      An historical landmark or building.
+
     # This class comprises all persistent physical objects of any size that are
     # purposely created by human activity and have physical boundaries that
     # separate them completely in an objective way from other objects.
@@ -73,6 +75,15 @@ classes:
         multivalued: true
         inlined_as_list: false
         description: >-
+          Descreve o estado físico da edificação quanto à sua aparência de
+          completude, deterioração ou capacidade de desempenhar sua função.
+
+          Atende aos campos do
+          [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.html)
+          "estado de preservação" e "estado de conservação".
+
+          ---------------------------------------------------------------------
+
           Descriptors for objects that are distinguishable by their overall state
           such as appearance, level of damage, completeness, or quality. If an
           object is identified by its prevailing physical state, then it is
@@ -82,10 +93,6 @@ classes:
           and [CIDOC CRM "E3 Condition
           State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)
 
-          Atende aos campos do
-          [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.htmlhttps://sicg.iphan.gov.br/sicg/manual/manual.html)
-          "estado de preservação" e "estado de conservação".
-
       work_type_form:
         slot_uri: term:lido00766
         recommended: true
@@ -93,15 +100,20 @@ classes:
         multivalued: true
         inlined_as_list: false
         description: >-
-          Descriptors for objects that are distinguishable by their physical form
-          or by the manner in which they are presented. If an object is identified
-          by sight, then it is qualified by form.
+          Nos Documentários da Arquitetura Tradicional,
+          designa uma tipologia formal.
+
+          O vocabulário controlado para este item está em processo de
+          estruturação.
+
+          ---------------------------------------------------------------------
+
+          Descriptors for objects that are distinguishable by their physical
+          form or by the manner in which they are presented. If an object is
+          identified by sight, then it is qualified by form.
 
           Based on [AAT Guidelines "Types of Guide
           Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
-          Nos Documentários da Arquitetura Tradicional,
-          designa uma tipologia formal.
 
       work_type_function:
         slot_uri: term:lido00767
@@ -110,13 +122,6 @@ classes:
         multivalued: true
         inlined_as_list: false
         description: >-
-          Objects that are distinguishable by the particular purpose for which
-          they are designed or used. If an object is identifiable by its
-          intended use, then it is qualified by function.
-
-          Based on [AAT Guidelines "Types of Guide
-          Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
           Nos Documentários de edificações, designa um dos sete
           tipos de propósitos concebidos por C. William Westfall e Samir Younés
           em *Architectural Type and Character*.
@@ -125,6 +130,15 @@ classes:
           localidade, por exemplo freguesia, sede municipal, capital estadual
           ou nacional.
 
+          ---------------------------------------------------------------------
+
+          Objects that are distinguishable by the particular purpose for which
+          they are designed or used. If an object is identifiable by its
+          intended use, then it is qualified by function.
+
+          Based on [AAT Guidelines "Types of Guide
+          Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+
       work_type_context:
         slot_uri: term:lido00934
         recommended: true
@@ -132,6 +146,16 @@ classes:
         multivalued: true
         inlined_as_list: false
         description: >-
+          Nos Documentários de edificações, designa sobretudo o contexto
+          imediato de implantação de uma edificação : urbana, rural, isolada,
+          em correnteza, etc.
+
+          No Documentário de Lugares Tradicionais, designa o tipo de núcleo
+          populacional : sítio isolado, povoação rural, vila ou cidade,
+          por exemplo.
+
+          ---------------------------------------------------------------------
+
           Descriptors for objects that are distinguishable by their use or
           application within a particular physical location. If an object is
           identifiable by association with specific surroundings, it is
@@ -140,14 +164,6 @@ classes:
           Based on [AAT Guidelines "Types of Guide
           Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
 
-          No Documentário de Lugares Tradicionais, designa o tipo de núcleo
-          populacional : sítio isolado, povoação rural, vila ou cidade,
-          por exemplo.
-
-          Nos Documentários de edificações, designa sobretudo o contexto
-          imediato de implantação de uma edificação : urbana, rural, isolada,
-          em correnteza, etc.
-
       work_type_material_tech:
         slot_uri: term:lido00789
         recommended: true
@@ -155,13 +171,15 @@ classes:
         multivalued: true
         inlined_as_list: false
         description: >-
+          Nos Documentários da Arquitetura Tradicional, refere-se à
+          caracterização construtiva geral da edificação.
+
+          ---------------------------------------------------------------------
+
           Descriptors for objects that are distinguishable by their materials
           encorporated, or the techniques used to create the object or work.
           If an object is identified by the substances detected and/or the
           processes employed, then it is qualified by material or technique.
-
-          Nos Documentários da Arquitetura Tradicional, refere-se à caracterização
-          construtiva geral da edificação.
 
       work_type_subject_type:
         slot_uri: term:lido00768
@@ -170,15 +188,17 @@ classes:
         multivalued: true
         inlined_as_list: false
         description: >-
-          Descriptors for objects that are distinguishable by their topics, themes,
-          or other content of the work. If an object is identified by what it is of
-          or about, then it is qualified by subject.
+          Nos Documentários da Arquitetura Tradicional, indica, se houver, uma
+          classificação iconográfica mais específica do que `form` ou
+          `function`.
+
+          ---------------------------------------------------------------------
+
+          Descriptors for objects that are distinguishable by their topics,
+          themes, or other content of the work. If an object is identified by
+          what it is of or about, then it is qualified by subject.
 
           Based on [AAT "subjects"](http://vocab.getty.edu/page/aat/300404126)
-
-          Nos Documentários da Arquitetura Tradicional,
-          é o único bloco opcional desta seção : ele indica, se houver, uma
-          classificação iconográfica mais específica do que `form` ou `function`.
 
       work_type_use:
         slot_uri: term:lido00938
@@ -187,15 +207,17 @@ classes:
         multivalued: true
         inlined_as_list: false
         description: >-
+          Nos Documentários da Arquitetura Tradicional, designa propriamente
+          a(s) classificação(ões) de usos do solo ou atividades predominante(s)
+          na edificação atualmente.
+
+          ---------------------------------------------------------------------
+
           Descriptors for objects that are distinguishable by the way they are
-          employed, occupied, applied, or function. If an object is identifiable by
-          its particular mode of use, it is qualified by use.
+          employed, occupied, applied, or function. If an object is
+          identifiable by its particular mode of use, it is qualified by use.
 
           Based on [AAT "use"](http://vocab.getty.edu/page/aat/300068844)
-
-          Nos Documentários da Arquitetura Tradicional, designa propriamente a(s)
-          classificação(ões) de usos do solo ou atividades predominante(s) na
-          edificação atualmente.
 
       classification_genre:
         slot_uri: term:lido00853
@@ -203,21 +225,24 @@ classes:
         multivalued: true
         inlined_as_list: false
         description: >
+          ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+          Talvez ele não seja relevante para o documentário de arquitetura
+          doméstica, e não é obrigatório no padrão LIDO nem no perfil de
+          aplicação para arquitetura.
+
+          ---------------------------------------------------------------------
+
           A broad category for grouping objects on the basis of shared
           intrinsic characteristics. The relationship between an object/work
           and the object genre is a generic is-a-relation rather than a
           membership based on ascription to a subject group.
 
           Note that the
-          [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711) hierarchy
-          differs in its scope from Object genre here in that the AAT includes more
-          specific terms grouped by various aspects. In general, AAT descriptors
-          are not intended to be used as indexing terms for classification.
-
-          ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
-          Talvez ele não seja relevante para o documentário de arquitetura
-          doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação
-          para arquitetura.
+          [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711)
+          hierarchy differs in its scope from Object genre here in that the AAT
+          includes more specific terms grouped by various aspects. In general,
+          AAT descriptors are not intended to be used as indexing terms for
+          classification.
 
       classification_subject:
         slot_uri: term:lido00932
@@ -225,16 +250,18 @@ classes:
         multivalued: true
         inlined_as_list: false
         description: >-
+          ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+          Talvez ele não seja relevante para o documentário de arquitetura
+          doméstica, e não é obrigatório no padrão LIDO nem no perfil de
+          aplicação para arquitetura.
+
+          ---------------------------------------------------------------------
+
           A broad category for grouping objects or works on the basis of a
           topical association, including thematic or systematic classification,
           or an assignment by discipline. The relationship between an
           object/work and a subject category is a kind of membership based on
           ascription rather than a generic is-a relation.
-
-          ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
-          Talvez ele não seja relevante para o documentário de arquitetura
-          doméstica, e não é obrigatório no padrão LIDO nem no perfil de
-          aplicação para arquitetura.
 
       classification_local:
         slot_uri: term:lido01135
@@ -242,6 +269,13 @@ classes:
         multivalued: true
         inlined_as_list: false
         description: >-
+          ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+          Talvez ele não seja relevante para o documentário de arquitetura
+          doméstica, e não é obrigatório no padrão LIDO nem no perfil de
+          aplicação para arquitetura.
+
+          ---------------------------------------------------------------------
+
           A classification scheme for grouping objects on the basis of locally
           defined criteria, including categories corresponding to the
           curatorial departments of the repository, such as "prints and
@@ -249,17 +283,19 @@ classes:
           "Bronze Age" or "textiles". [Based on CCO
           "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)
 
-          ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
-          Talvez ele não seja relevante para o documentário de arquitetura
-          doméstica, e não é obrigatório no padrão LIDO nem no perfil de
-          aplicação para arquitetura.
-
       classification_special:
         slot_uri: term:lido01144
         range: ConceptReference
         multivalued: true
         inlined_as_list: false
         description: >-
+          ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+          Talvez ele não seja relevante para o documentário de arquitetura
+          doméstica, e não é obrigatório no padrão LIDO nem no perfil de
+          aplicação para arquitetura.
+
+          ---------------------------------------------------------------------
+
           A classification scheme for grouping objects on the basis of criteria
           defined within specific academic disciplines or cultural domains,
           such as the "Hornbostel-Sachs Classification of Musical Instruments",
@@ -268,23 +304,23 @@ classes:
           characteristics, not on the basis of themes or topics which the
           objects or works are related to.
 
-          ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
-          Talvez ele não seja relevante para o documentário de arquitetura
-          doméstica, e não é obrigatório no padrão LIDO nem no perfil de
-          aplicação para arquitetura.
-
 
       part_of:
-        slot_uri: lido:partOfPlace
+        slot_uri: dcterms:isPartOf  # lido:partOfPlace
+        range: TypedReference
         description: >-
+          Permite identificar o contexto geográfico ou administrativo ao qual
+          a edificação se subordina, ou ainda um conjunto arquitetônico,
+          urbanístico ou conceitual (por exemplo, uma série de casas) do qual
+          ela faz parte.
+
+          ---------------------------------------------------------------------
+
           A set of structured information about a place that is the broader
           context for the place in focus, such as the district, state, or
           nation to which a city belongs.
-        range: GeonamesId
-        inlined: true
 
       former_site:
-        alias: former
         range: Site
         multivalued: true
         inlined_as_list: true
@@ -307,16 +343,17 @@ classes:
         multivalued: true
         inlined_as_list: true
         description: >-
-          Para casos não contemplados em nenhuma das categorias acima.
+          Para casos de implantação não contemplados em nenhuma das categorias
+          acima.
 
       location_historic:
-        range: HistoricPlace
+        range: LocationHistoric
         multivalued: true
         inlined_as_list: true
         description: >-
           Antigas jurisdições ou designações para o lugar onde o objeto se
-          encontra. Para um sítio de onde o objeto foi fisicamente removido, usar
-          `former_site:`.
+          encontra. Para um sítio de onde o objeto foi fisicamente removido,
+          usar a lista `former_site`.
 
 
       inscriptions:
@@ -329,7 +366,23 @@ classes:
           alguma de suas partes. Não usar para iconografia.
 
       collection:
+        slot_uri: lido:collection
+        range: Thing
+        multivalued: true
+        inlined_as_list: false
         description: >
+          Descreve conjuntos conceituais nos quais a edificação foi incluída,
+          por exemplo catálogos raisonnés, obras de referência, exposições,
+          ou agrupamentos *ad-hoc* para formar coleções temáticas de acordo com
+          as necessidades do projeto de investigação.
+
+          Para o pertencimento a perímetros de sítios históricos
+          tombados/classificados, preencher o grupo `identifiers`.
+          Para a identificação de proprietários ou responsáveis,
+          preencher o grupo `work_rights`.
+
+          ---------------------------------------------------------------------
+
           A set of identifying and indexing information about the collection
           the object/work in focus is gathered into or is a member of.
 
@@ -339,10 +392,6 @@ classes:
           are various and may span curated holdings in museums, departmental
           collections, sets of items to be displayed in an exhibition, or
           aggregations bound informally for cataloging and retrieval purposes.
-        range: Thing
-        multivalued: true
-        inlined_as_list: false
-        slot_uri: lido:collection
 
       work_rights:
         required: true
@@ -351,14 +400,14 @@ classes:
         inlined_as_list: true
         slot_uri: lido:rightsWorkSet
         description: >
-          > ⚠️  Este bloco se refere a eventuais direitos autorais sobre A
-          > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre
-          > a iconografia relacionada.
+          ⚠️  Este bloco se refere a eventuais direitos autorais ou de
+          propriedade sobre A EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo
+          da ficha, nem sobre a iconografia relacionada.
 
     slot_usage:
 
       title_type:
-        range: RepositoryType
+        range: TitleType
 
       id:
         description: >-
@@ -376,6 +425,29 @@ classes:
 
       site:
         required: false
+
+      record_rights:
+        required: true
+
+      content:
+        description: >
+          Deixe uma linha em branco após o fechamento dos metadados e inclua
+          aqui uma descrição morfológica e histórica da edificação com texto
+          livre, usando formatação Markdown.
+
+          Poderá incluir um segundo bloco de metadados para indicar as
+          referências bibliográficas da descrição textual, no campo `nocite`.
+          O formato é uma lista de chaves de citação do Zotero
+          (cada uma começando com `@`) separadas por vírgulas:
+
+          ```yaml
+          Conteúdo textual em formato *Markdown* com citações [@citekey].
+
+          ---
+          nocite: "@*"
+          ---
+          ```
+
 
     slots:
       - site
@@ -396,6 +468,26 @@ classes:
       - schema:DefinedRegion
 
     description: >
+      O georreferenciamento é o cerne do projeto dos Documentários da
+      Arquitetura Tradicional.
+      Ele permite investigar a distribuição geográfica das características
+      construtivas e morfológicas das edificações cadastradas.
+
+      Este bloco corresponde à terminologia do [DublinCore] `coverage >
+      spatial`. Na especificação [LIDO], a localização física de um bem se
+      confunde com a sua inserção institucional (repositório).
+      Na formatação da nossa ficha, tentamos desfazer essa confusão separando o
+      georreferenciamento e o repositório em blocos diferentes.
+
+      As instruções de preenchimento específicas se encontram na documentação
+      das classes que fornecem os dados para o sítio.
+      Consulte também o [Tutorial de
+      georreferenciamento](https://github.com/arqtrad/.github/wiki/Tutorial-de-georreferenciamento)
+      para saber como localizar edificações não cadastradas nas bases de dados
+      do patrimônio cultural (SICG ou SIPA).
+
+      -------------------------------------------------------------------------
+
       This class comprises 4-dimensional point sets (volumes) in physical
       spacetime (in contrast to mathematical models of it) regardless of their
       true geometric forms. They may derive their identity from being the
@@ -410,32 +502,32 @@ classes:
       duration of existence of an instance of E92 Spacetime Volume is its
       projection on time.
 
-      Este bloco corresponde à terminologia do [DublinCore] `coverage >
-      spatial`. Na especificação [LIDO], a localização física de um bem se
-      confunde com a sua inserção institucional (repositório).
-      Na formatação da nossa ficha, tentamos desfazer essa confusão separando o
-      georreferenciamento e o repositório em blocos diferentes.
-
-      Ele inclui informações de georreferenciamento, nomes históricos de
-      lugares e repositórios ou conjuntos aos quais pertence a edificação
-      (por exemplo, um conjunto urbano tombado / classificado).
-
-      As informações de localização, especialmente o georreferenciamento, são
-      indispensáveis para espacializar todos os demais atributos da ficha.
-
     attributes:
 
       location:
         required: true
         description: >-
+          Coordenadas geográficas do ponto que permite situar a edificação no
+          mapa para fins ilustrativos.
+          Usar o sistema de coordenadas geográficas EPSG:4326 (WGS84) sempre
+          que possível.
+
+          ---------------------------------------------------------------------
+
           Representative point location for the place, normally in EPSG:4326
           (WGS 84).
-        slot_uri: geo:hasGeometry
+        slot_uri: geo:hasDefaultGeometry
         range: GeographicPoint
         inlined: true
 
       extent:
         description: >-
+          Área da implantação da edificação ou sítio cadastrado.
+          Usar o sistema de coordenadas geográficas EPSG:4326 (WGS84) sempre
+          que possível.
+
+          ---------------------------------------------------------------------
+
           Polygonal, multipolygonal, or linear geographic extent associated
           with the place.
         slot_uri: geo:hasGeometry
@@ -583,7 +675,7 @@ classes:
       - format_extent
       - concept
 
-  HistoricPlace:
+  LocationHistoric:
     description: >-
       Designações alternativas ou jurisdições antigas para o mesmo local, NÃO a
       localização original de uma construção fisicamente deslocada (para tanto,
@@ -594,11 +686,13 @@ classes:
 
     attributes:
 
-      type:
+      location_historic_type:
+        alias: type
         range: RepositoryType
         required: true
 
-      name:
+      location_historic_name:
+        alias: name
         range: TypedReference
         required: true
         inlined: true
@@ -615,15 +709,14 @@ slots:
       todos os casos.
 
   srs_name:
+    recommended: true
+    range: uriorcurie
+    # ifabsent: string('EPSG:4326')
     description: >-
       Names the coordinate reference system (CRS) that defines the semantics of
       the lat/long pair according to the ISO6709 standard.
-
-    recommended: true
-    alias: srsName
-    range: uriorcurie
-    inlined: true
-    # ifabsent: string('EPSG:4326')
+      Sempre que possível, usar EPSG:4326, senão os sistemas de referência
+      nacionais.
 
   subject:
     range: Topic
@@ -649,7 +742,7 @@ slots:
     range: RelatedWork
     multivalued: true
     inlined_as_list: true
-    slot_uri: skos:related
+    slot_uri: dcterms:related
     description: >-
       A wrapper for identifying information about an object or work, including
       collections, related to the object/work in focus. May include a weblink.

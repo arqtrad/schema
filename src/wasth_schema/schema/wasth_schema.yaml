@@ -580,7 +580,34 @@ enums:
           `conversion` ("reforma").
       opening:
         title: inauguração
+        meaning: term:lido01169
+        source: aat:300054769
+        close_mappings:
+          - wd:Q3010369
+          - https://d-nb.info/gnd/4338947-8
+        broad_mappings:
+          - wd:Q29933838
+          - term:lido01161
+        narrow_mappings:
+          - aat:300404068
+        description: >
+          Ato pelo qual um objeto é declarado operacional, geralmente por meio
+          de uma cerimônia, mas não necessariamente.
       decommissioning:
+        title: desafetação
+        meaning: term:lido01170
+        source: https://www.designingbuildings.co.uk/wiki/Decommissioning_buildings
+        close_mappings:
+          - https://en.wikipedia.org/wiki/Decommissioning
+          - https://d-nb.info/gnd/4125246-9
+        broad_mappings:
+          - wd:Q29933838
+          - term:lido01161
+        narrow_mappings:
+          - https://d-nb.info/gnd/4513722-5
+        description: >
+          Ação que acompanha ou sinaliza o encerramento da utilização de um
+          objeto, geralmente associado à interdição física da edificação.
     # Attribute Assignment
       attribute_assignment:
       assignment_to_curated_holding:

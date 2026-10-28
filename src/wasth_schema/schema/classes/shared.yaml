@@ -14,11 +14,18 @@ classes:
 
   TypedReference:
     description: >-
+      Permite referenciar um registro local ou externo por meio da sua URI
+      (localizador universal, como um link da internet, por padrão), IRI ou
+      código na base local (não recomendado).
+
+      -------------------------------------------------------------------------
+
       Reference to a local record, IRI, URI, or LIDO terminology term.
     slots:
       - reference_type
       - term
       - refid
+      - description
       - bibliographic_citation
       - source
 
