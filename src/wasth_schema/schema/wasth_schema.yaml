@@ -140,6 +140,7 @@ prefixes:
   term: http://terminology.lido-schema.org/
   skos: http://www.w3.org/2004/02/skos/core#
   iso: http://purl.org/iso25964/skos-thes#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
   geo: http://www.opengis.net/ont/geosparql#
   geonames: http://www.geonames.org/ontology#
   la: https://linked.art/ns/terms/
@@ -188,7 +189,7 @@ classes:
 enums:
 
   AgentType:
-    description: LIDO actor type.
+    description: Tipo de agente na terminologia LIDO.
     permissible_values:
       personal:
         meaning: term:lido00163
@@ -209,71 +210,475 @@ enums:
 
   EventType:
     description: >
-      The particular kind of event the object/work participated in or was
-      present at.
-    reachable_from:
-      source_ontology: http://terminology.lido-schema.org/eventType
-      include_self: false
-    #description: Tipo de evento segundo o VRA Core.
-    #permissible_values:
-      #alteration:
-        #meaning: vra:wasAlteration
+      O tipo de incidência sobre a edificação que o evento descreve. Usa a
+      terminologia do LIDO em <http://terminology.lido-schema.org/eventType>.
+    permissible_values:
+    # Creation
+      creation:
+        title: criação
+        meaning: term:lido0001
+        source: crm:E65_Creation
+        exact_mappings:
+          - vra:wasCreated
+        description: >
+          Designa um acontecimento que leva à conceção de itens ou produtos de
+          natureza imaterial, como obras literárias ou imagens.
+          Não usar para a produção de bens materiais. Quando a conceção desses
+          bens, como uma edificação, passa por um processo de criação
+          intelectual atestada, usar para tanto o termo `designing` ("projeto").
+    # Production
+      designing:
+        title: projeto
+        meaning: term:lido00224
+        source: aat:300102051
+        exact_mappings:
+          - vra:wasDesigned
+        description: >
+          O projeto, na classificação de tipos de eventos do LIDO, designa a
+          criação de um arcabouço conceitual para a organização da aparência de
+          objetos tridimensionais, obras visuais, obras de arquitetura,
+          ou sistemas técnicos.
+        comments:
+          - Em contraste com "Criação", que descreve a criação de um objeto ou
+            obra em nível conceitual, recomenda-se usar "Projeto" para todos os
+            eventos em que é criado um objeto físico que prepara a produção de
+            um objeto mais acabado ou serve como modelo direto para ele.
+            Frequentemente, trata-se de desenhos usados como esboços na
+            produção de pinturas, esculturas ou edificações. Pode também ser um
+            modelo tridimensional do qual se produz um molde; objetos
+            preparatórios podem igualmente ser gerados digitalmente.
+
+            Recomenda-se usar este termo quando ele for parte de diversos
+            acontecimentos na história da produção da edificação que precisam
+            ser distinguidos entre si, cada qual tendo ocorrido em diferentes
+            momentos e envolvento agentes distintos.
+
+            Se o objeto que está sendo descrito na ficha é ele próprio um
+            projeto ou outra forma de elemento preparatório para a construção,
+            o termo mais indicado para o eventType é `production` ("produção").
+      production:
+        title: produção
+        meaning: term:lido00007
+        source: crm:E12_Production
+        exact_mappings:
+          - vra:wasProduced
+        description: >
+          Designa ações que levam à existência de novos objetos, compreendendo
+          ações como projeto e execução.
+        notes:
+          - Detalhar os processos e técnicas que levaram à produção do objeto
+            na seção materiais e técnicas do evento, por exemplo indicando os
+            sistemas construtivos empregados.
+      item_production:
+        title: produção de um exemplar
+        meaning: term:lido01096
+        source: crm:E22_Human-Made_Object
+        close_mappings:
+          - aat:300404024
+        description: >
+          No caso de construções seriadas (por exemplo, casas idênticas numa
+          vila operária), designa a produção de um exemplar singular dentro do
+          conjunto. Usar quando for relevante individualizar a produção desses
+          exemplares no âmbito da descrição do seu conjunto, mas não quando
+          cada exemplar for indexado separadamente.
+        comments:
+          - Este tipo de evento não deve ser usado para designar a produção de
+            partes do processo produtivo, tais como projetos, maquetes,
+            protótipos ou moldes. Quando for relevante informar a produção de
+            um exemplar, deve-se precisar quais características permitem
+            identificá-lo dentro do conjunto (endereço, variações, etc.).
+      completion:
+        title: conclusão
+        meaning: term:lido00025
+        source: aat:300053844
+        close_mappings:
+          - aat:300390560
+        description: >
+          Processo que completa um objeto ou uma campanha de obras.
+      execution:
+        title: execução do projeto
+        meaning: term:lido00031
+        source: aat:300069715
+        close_mappings:
+          - aat:300069715
+          - http://d-nb.info/gnd/4456788-1
+        description: >
+          Ação de produzir um objeto com base num projeto, por oposição ao
+          processo de projeto.
+    # Transformation
+      transformation:
+        title: transformação
+        meaning: term:lido00029
+        source: crm:E81_Transformation
+        description: >
+          Ação que destrói um objeto e, usando substancialmente a mesma
+          matéria, produz outro que mantém características reconhecíveis do
+          objeto anterior mas é essencialmente distinto deste por sua natureza
+          e identidade.
+          Esta categoria pode ser usada tanto para designar a destruição do
+          objeto antigo quanto a produção do objeto novo.
+
+          Exemplos de transformação incluem o uso de espólios ou ruínas para
+          produzir uma nova construção.
+          Não deve ser confundido com `reconstruction` ("reconstrução"), que
+          implica seja uma mudança de lugar, seja a reprodução da identidade
+          visual e espacial da edificação anterior.
+      reconstruction:
+        title: reconstrução
+        meaning: lido:lido00723
+        source: aat:300081531
+        exact_mappings:
+          - wd:Q2478058
+        close_mappings:
+          - https://d-nb.info/gnd/4065958-6
+        broad_mappings:
+          - aat:300053744
+        description: >
+          Ato de construir uma nova estrutura que substitui e se parece com uma
+          construção anterior que já não subsiste, baseada em evidências
+          históricas, arqueológicas, gráficas, literárias ou outras.
+          A semelhança visual e, eventualmente, funcional é a característica
+          principal de uma reconstrução, e ela pode ou não usar materiais
+          sobrestantes da edificação anterior.
+
+          A edificação destruída e a edificação reconstruída devem ser
+          cadastradas em fichas distintas e relacionadas entre si.
+      translocation:
+        title: remoção
+        meaning: lido:lido01159
+        source: https://www.vdl-denkmalpflege.de/fileadmin/dateien/Brosch%C3%BCren/VdL_Leitbild_Final_160527__1_.pdf
+        exact_mappings:
+          - https://d-nb.info/gnd/4258556-9
+        broad_mappings:
+          - aat:300149370
+        description: >
+          A remoção designa o ato de se desmantelar uma edificação no seu local
+          de origem para reconstruí-la em outro sítio.
+          Para construções deslocadas sem serem desmanteladas, usar o tipo de
+          evento `move` ("deslocação").
+
+          Exemplos de remoção são aquela do templo de Abu Simbel, no
+          Egito, ou ainda aquela da casa Erbo Stenzel em Curitiba do seu
+          lote original para o parque São Lourenço (onde foi posteriormente
+          destruída num incêndio).
+    # Alteração
+      modification_activity:
+        title: modificação
+        meaning: term:lido00006
+        source: crm:E11_Modification
+        exact_mappings:
+          - vra:wasAlteration
+        close_mappings:
+          - aat:300105442
+        description: >
+          Ação intencional que cria, altera ou modifica um objeto ou obra em
+          um ou mais dos seus aspectos mas não em outros. Usar para ações que
+          não possam ser definidas como tipos mais específicos de alteração.
+      conservation:
+        title: conservação
+        meaning: term:lido00402
+        source: aat:300404519
+        close_mappings:
+          - vra:wasRestored
+          - aat:300404519
+          - http://d-nb.info/gnd/4114279-2
+        broad_mappings:
+          - term:lido00006
+        description: >
+          Ação ou processo realizado visando à estabilidade e salvaguarda do
+          objeto no longo prazo, incluindo a sua proteção contra danos ou
+          deterioração e a prevenção da deterioração natural da sua matéria.
+          No nosso vocabulário, a conservação é diferente da preservação e da
+          restauração.
+      conversion:
+        title: reforma
+        meaning: term:lido01178
+        source: https://www.duden.de/rechtschreibung/umbauen_umgebaut
+        exact_mappings:
+          - https://d-nb.info/gnd/4061577-7
+        close_mappings:
+          - https://www.designingbuildings.co.uk/wiki/Conversion
+        broad_mappings:
+          - term:lido00006
+        description: >
+          Intervenção significativa na materialidade e espacialidade de uma
+          edificação, usando materiais e técnicas construtivas.
+          Frequentemente resulta na alteração de uso ou de aparência da
+          edificação, mas sem comprometer a sua identidade anterior.
+
+          Sempre que possível, preferir designações mais específicas, tais como
+          `addition`, `removal`, `adaptive_reuse`, `renewal`.
+      dismantling:
+        title: desmantelamento
+        meaning: term:lido01179
+        source: aat:300061163
+        exact_mappings:
+          - wd:Q52161698
+          - https://d-nb.info/gnd/4149065-4
+        close_mappings:
+          - https://en.wikipedia.org/wiki/Deconstruction_(building)
+          - https://www.designingbuildings.co.uk/wiki/Deconstruction
+        broad_mappings:
+          - wd:Q52161698
+          - aat:300404064
+        description: >
+          Ato de desmontar ou remover partes significativas de um objeto,
+          especialmente com a intenção de reduzir ou desbilitar o seu uso.
+          Particularmente, refere-se à desmontagem cuidadosa de modo a evitar
+          danos ao material removido, visando à sua reutilização, reciclagem
+          ou gestão de resíduos.
+      part_addition:
+        title: acréscimo
+        meaning: term:lido00008
+        source: crm:E79_Part_Addition
+        broad_mappings:
+          - term:lido00006
+        description: >
+          Acréscimo a uma edificação existente, sem lhe alterar
+          fundamentalmente a identidade, por meio da ampliação ou do acréscimo
+          de elementos. O conjunto resultante continuará a ser identificado
+          como a mesma obra anterior ao acréscimo.
+      part_removal:
+        title: eliminação parcial
+        meaning: term:lido00021
+        source: crm:E80_Part_Removal
+        broad_mappings:
+          - aat:300224146
+          - term:lido00006
+        narrow_mappings:
+          - term:lido01187
+        description: >
+          Envolve a redução de uma edificação devida à eliminação de parte(s).
+          Pode incluir a eliminação de anexos, de elementos construtivos, ou
+          a exclusão de uma obra de um conjunto designado.
+      partial_destruction_activity:
+        title: destruição parcial
+        meaning: term:lido01187
+        source: crm:E6_Destruction
+        broad_mappings:
+          - term:lido00021
+          - term:lido00022
+        narrow_mappings:
+          - term:lido01180
+        description: >
+          Ação intencional de destruir ou danificar partes de uma obra, sem lhe
+          comprometer a identatidade enquanto objeto de documentação.
+      remediation:
+        title: reconstituição
+        meaning: term:lido01180
+        source: https://www.duden.de/rechtschreibung/rueckbauen
+        exact_mappings:
+          - https://d-nb.info/gnd/4410380-3
+        related_mappings:
+          - https://historicengland.org.uk/advice/hpg/uwandhc/unlawfulworks/
+        broad_mappings:
+          - term:lido00034
+          - term:lido01187
+        description: >
+          Atividades construtivas ou de gestão que têm por objetivo restituir
+          uma obra a um estado anterior conhecido ou presumido, sobretudo após
+          perdas catastróficas de materialidade ou integridade.
+      renewal:
+        title: renovação
+        meaning: term:lido01183
+        source: aat:300389648
+        close_mappings:
+          - aat:300260783
+          - aat:300077781
+        broad_mappings:
+          - https://d-nb.info/gnd/4152832-3
+          - term:lido00006
+        narrow_mappings:
+          - wd:Q2144402
+        description: >
+          Ação que altera uma edificação de modo a recuperar a sua estrutura,
+          atualizar a sua aparência, permitir a adequação a novos usos,
+          aprimorar a sua eficiência energética, ou outras finalidades não
+          relacionadas à preservação do patrimônio cultural ou que não tenham
+          considerações patrimoniais como prioridade.
+      restoration:
+        title: restauração
+        meaning: term:lido00034
+        source: aat:300053742
+        exact_mappings:
+          - vra:wasRestored
+        close_mappings:
+          - wd:Q217102
+          - aat:300053742
+          - http://d-nb.info/gnd/4049600-4
+        description: >
+          Alterações a um objeto que têm por objetivo restabelecer um estado
+          original ou anterior conhecido ou presumido (usar em vez de
+          `part_removal` --- "eliminação parcial" se a intenção dominante da
+          eliminação tiver sido a restauração a um estado anterior).
+      modification_process:
+        title: alteração
+        meaning: term:lido01155
+        source: aat:300105442
+        broad_mappings:
+          - term:lido01154
+        close_mappings:
+          - crm:E11_Modification
+        narrow_mappings:
+          - term:lido01157
+        description: >
+          Processo não deliberado de alteração nas características, aparência
+          ou desempenho dos materiais que constituem um objeto.
+          Por exemplo, corrosão, formação de cristais salinos, etc.
+      partial_destruction_process:
+        title: perda parcial
+        meaning: term:lido01157
+        broad_mappings:
+          - term:lido01155
+          - term:lido00022
+        narrow_mappings:
+          - term:lido01160
+        close_mappings:
+          - crm:E6_Destruction
+        description: >
+          Processo não intencional de degradação material, destruindo ou
+          danificando partes de um objeto sem descaracterizar a sua identidade
+          (por exemplo, sem convertê-lo numa ruína). Pode ser causado por
+          condições ambientais continuadas ou por desastres naturais.
+      deterioration:
+        title: deterioração
+        meaning: term:lido01160
+        source: aat:300054106
+        close_mappings:
+          - https://d-nb.info/gnd/4745718-1
+          - wd:Q94643648
+        broad_mappings:
+          - term:lido01157
+        description: >
+          Processo de perda parcial de matéria, desempenho, ou funcionalidade
+          de um objeto sem intervenção ou atuação deliberada. Geralmente
+          causado por condições ambientais continuadas, mas pode ser agravado
+          por desastres naturais. A deterioração pode levar ao
+          `destruction_process` ("arruinamento") da edificação.
+    # Activity
+      adaptive_reuse:
+        title: reutilização adaptada
+        meaning: term:lido01161
+        source: aat:300056392
+        exact_mappings:
+          - wd:Q111749149
+        close_mappings:
+          - https://d-nb.info/gnd/4042840-0
+          - aat:300417716
+          - wd:Q21021151
+        broad_mappings:
+          - term:lido00004
+        narrow_mappings:
+          - term:lido01170
+          - term:lido01169
+        description: >
+          Ação de converter ou adaptar uma edificação, em geral com valor
+          histórico-cultural reconhecido, para novos usos ou aplicação em
+          contexto distinto do original. Distinguir eventos de reutilização
+          adaptativa de eventos que envolvem as intervenções físicas
+          necessárias ou preparatórias a essa reutilização, usando o termo
+          `conversion` ("reforma").
+      opening:
+        title: inauguração
+      decommissioning:
+    # Attribute Assignment
+      attribute_assignment:
+      assignment_to_curated_holding:
+      condition_assessment:
+      cultural_context_assignment:
+      designation:
+      deciphering:
+      meaning_assignment:
+      name_assignment:
+      type_assignment:
+    # Ceremony
+      ceremony:
+      cornerstone:
+      groundbreaking:
+      consecration:
+      deconsecration:
+    # Change of physical control or legal title
+      change_control_or_title:
+      change_control_and_title:
+      change_legal_title:
+      restitution:
+      change_physical_control:
+      collecting:
+      loss:
+      # repatriation:
+    # Commissioning
+      commissioning:
+        exact_mappings:
+          - vra:wasCommission
+      excavation:
+      exhibition:
+        close_mappings:
+          - vra:wasPresented
+      finding:
+        exact_mappings:
+          - vra:wasDiscovered
+      marketing:
+      move:
+    # Object requirement assessment
+      req_assess:
+      display_assess:
+      # loan_assess:
+      move_assess:
+      performance:
+        exact_mappings:
+          - vra:wasPerformed
+      planning:
+      protection:
+      publishing:
+        exact_mappings:
+          - vra:wasPublished
+      use:
+    # End of Existence
+      end_existence:
+      destruction:
+      destruction_activity:
+      destruction_process:
+      unknown:
+
+
       #broadcast:
         #meaning: vra:wasBroadcast
-      #commission:
-        #meaning: vra:wasCommission
-      #created:
-        #meaning: vra:wasCreated
-      #designed:
-        #meaning: vra:wasDesigned
       #destroyed:
         #meaning: vra:wasDestroyed
-      #discovered:
-        #meaning: vra:wasDiscovered
-      #performed:
-        #meaning: vra:wasPerformed
-      #presented:
-        #meaning: vra:wasPresented
-      #produced:
-        #meaning: vra:wasProduced
-      #published:
-        #meaning: vra:wasPublished
-      #restored:
-        #meaning: vra:wasRestored
 
   EventPlaceType:
     description: >-
-      The type attribute qualifies the place according to its role or function
-      in the context of an event, whether it is a place of discovery, a point
-      of destination, or a point of origin.
+      Para eventos que implicam a deslocação do bem, indica se o local se
+      refere ao descobrimento, à origem ou ao destino da obra.
     reachable_from:
       source_ontology: http://terminology.lido-schema.org/eventPlace_type
       include_self: false
 
   PeriodNameType:
     description: >
-      The LIDO Period/Style Type-Vocabulary is a controlled list of terms
-      recommended to use as values for the type attribute of the Period/Style
-      element.
+      O vocabulário de tipos de período/estilo do LIDO é uma lista controlada
+      estruturada de termos recomendada para uso como valores do atributo de
+      tipo do elemento Período/Estilo.
 
-      The type attribute qualifies the particular kind of period/style
-      information, such as style, period, or movement. Examples may be
-      neolithic for a period, impressionist for a style, or cubism for a
-      movement.
+      O atributo de tipo qualifica o tipo particular de informação de
+      período/estilo, como estilo, período ou movimento. Exemplos podem ser
+      “neolítico” para um período, “impressionista” para um estilo ou
+      “cubismo” para um movimento.
 
-      Based on [CDWA "Styles/Periods/Groups/Movements"](http://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html)
+      Baseado na categoria do [CDWA
+      "Styles/Periods/Groups/Movements"](http://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html)
     reachable_from:
       source_ontology: http://terminology.lido-schema.org/periodName_type
       include_self: false
 
   GeometryType:
-    description: geoJSON types of area geometry.
+    description: Tipos de geometria do objeto geoJSON
     permissible_values:
       Polygon:
       MultiPolygon:
 
   InscriptionType:
-    description: VRA Core types for inscriptions.
+    description: Tipos de inscrições previstos no VRA Core.
     permissible_values:
       signature:
       mark:
@@ -284,44 +689,51 @@ enums:
       other:
 
   LabelType:
-    description: SKOS label types.
-    reachable_from:
-      source_ontology: http://terminology.lido-schema.org/pref
-      include_self: false
-    #permissible_values:
-      #alternative:
-        #meaning: skos:altLabel # term:lido00170
-        #description: >-
-          #Acronyms, abbreviations, spelling variants, and irregular
-          #plural/singular forms may be included among the alternative labels
-          #for a concept. Mis-spelled terms are normally included as hidden
-          #labels (see skos:hiddenLabel).
-      #display:
-        #meaning: term:lido00526
-        #description: >-
-          #A term, an appellation, or a title as the variant intended to be
-          #displayed to the end user; most often used for personal names to
-          #indicate a display in natural word order.
-      #hidden:
-        #meaning: skos:hiddenLabel # term:lido00426
-        #description: >-
-          #A lexical label for a resource that should be hidden when generating
-          #visual displays of the resource, but should still be accessible to
-          #free text search operations.
-      #indexing:
-        #meaning: term:lido00961
-        #description: >-
-          #A term, an appellation, a title, or an identifier as the term to be
-          #used in indexes and other lists where inverted order is appropriate.
-          #There may be only one term marked as an index label per record. For
-          #names of persons, the preferred label is often also the index label.
-      #preferred:
-        #meaning: skos:prefLabel # term:lido00169
-        #description: >-
-          #The preferred lexical label for a resource, in a given language.
+    description: >
+      No SKOS, caracteriza se cada termo deve ser considerado preferencial ou
+      alternativo, usado para indexação, oculto da visualização (usado apenas
+      para buscas), etc.
+   # reachable_from:
+     # source_ontology: term:pref
+     # include_self: false
+    permissible_values:
+      alternative:
+        meaning: skos:altLabel  # term:lido00170
+        description: >-
+          Abreviações, abreviaturas, variantes lexicais e formas irregulares de
+          singular ou plural podem ser incluídas como termos ou títulos
+          alternativos para um conceito ou objeto.
+          No caso de edificações ou conjuntos que são conhecidos por mais de
+          um nome (por exemplo, pela sua função atual ou antiga, ou pelo
+          endereço), selecionar `alternative` e indicar o tipo de título.
+      display:
+        meaning: term:lido00526
+        description: >-
+          Nome a ser apresentado na interfaz pública, incluindo artigos se for
+          o caso.
+      hidden:
+        meaning: skos:hiddenLabel  # term:lido00426
+        description: >-
+          Uma variante do nome com erros comuns de grafia ou imprecisões
+          lexicais, mas que seja relevante para buscas dos usuários.
+          Deve ficar oculto da interfaz pública.
+      indexing:
+        meaning: term:lido00961
+        description: >-
+          Nome, termo ou identificador a ser usado em indexação, por exemplo
+          removendo artigos ou partículas iniciais, invertendo a ordem do nome
+          e do sobrenome, etc.
+      preferred:
+        meaning: skos:prefLabel  # term:lido00169
+        description: >-
+          O nome, termo ou título preferencial. Normalmente não usaremos esta
+          opção pois o campo `title` já contempla a opção preferencial.
 
   MaterialTechType:
     description: >
+      A materialidade e as técnicas de produção ou intervenção na edificação
+      devem ser categorizadas segundo esta classificação.
+
       The physical matter or substance from which an object is made, including
       any tangible substances, either naturally or synthetically derived,
       ranging from specific materials to types of material designated by their
@@ -490,10 +902,12 @@ enums:
     description: >-
       Os tipos de relação entre objetos são definidos pelo VRA Core.
     reachable_from:
-      source_ontology: vra:isRelatedTo
-      include_self: false
+      source_ontology: http://purl.org/vra/
+      source_nodes:
+        - vra:isRelatedTo
       relationship_types:
         - rdfs:subPropertyOf
+      include_self: false
 
   RepositoryType:
     description: Type of repository or legal body.
