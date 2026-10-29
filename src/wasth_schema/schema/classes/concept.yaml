@@ -13,9 +13,6 @@ prefixes:
 default_prefix: wasth
 default_range: string
 
-imports:
-  - classes/thing
-
 classes:
 
   Concept:
@@ -121,7 +118,16 @@ classes:
       match:
         required: true
         description: Tipo da relação.
-        range: SkosHierarchicalRelation
+        range: SkosBroaderRelation
+
+  NarrowerConceptReference:
+    is_a: ConceptReference
+    description: Relações hierárquicas.
+    attributes:
+      match:
+        required: true
+        description: Tipo da relação.
+        range: SkosNarrowerRelation
 
   MappingConceptReference:
     is_a: ConceptReference

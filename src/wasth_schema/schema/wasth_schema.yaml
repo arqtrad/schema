@@ -193,21 +193,55 @@ enums:
     description: Tipo de agente na terminologia LIDO.
     permissible_values:
       personal:
+        title: individual
         meaning: term:lido00163
       corporate:
+        title: coletivo
         meaning: term:lido00413
+        description: >
+          Uma entidade coletiva tal como uma oficina, escola (no sentido de
+          um grupo de artistas que partilham um estilo semelhante), empresa,
+          corporação de ofício, grupo étnico-cultural, ou outra agremiação na
+          qual é impossível ou irrelevante delimitar as contribuições
+          individuais.
       family:
+        title: familiar
         meaning: term:lido00166
+        description: >
+          Coletivo de agentes caracterizado por laços familiares, incluindo
+          parentesco consanguíneo, por matrimônio, adotivo ou outras relações
+          familiares socialmente sancionadas no seu contexto de origem.
       other:
+        title: outro
         meaning: term:lido00165 # Other groups of persons
 
-  DateQualifier:
+  DateType:
     description: Exatidão da data conhecida.
     permissible_values:
-      estimated:
-        meaning: term:lido00529
       exact:
+        title: conhecida
         meaning: term:lido00528
+        description: >
+          Designates a date that is definitely known, based on credible,
+          documented fact.
+
+          Note that *exact* does not preclude the granularity of the date
+          expression.
+
+      estimated:
+        title: provável
+        meaning: term:lido00529
+        description: >
+          Designates a date that is uncertain, estimated broadly using
+          available information about the work or the artist. For example, you
+          could estimate that the earliest possible date for any work by a
+          given artist is eighteen or twenty years after the artist's birth.
+
+          Included are also dates that are inferred from known dates associated
+          with the object. For instance, if the date of production is unknown,
+          but the date when the object was found is known, there is evidence
+          that the production must have taken place before the finding of the
+          object.
 
   EventType:
     description: >
@@ -678,9 +712,16 @@ enums:
     description: >-
       Para eventos que implicam a deslocação do bem, indica se o local se
       refere ao descobrimento, à origem ou ao destino da obra.
-    reachable_from:
-      source_ontology: http://terminology.lido-schema.org/eventPlace_type
-      include_self: false
+    permissible_values:
+      discovery:
+        meaning: term:lido01037
+      origin:
+        meaning: term:lido00220
+      destination:
+        meaning: term:lido00221
+#   reachable_from:
+#     source_ontology: http://terminology.lido-schema.org/eventPlace_type
+#     include_self: false
 
   PeriodNameType:
     description: >
@@ -695,13 +736,48 @@ enums:
 
       Baseado na categoria do [CDWA
       "Styles/Periods/Groups/Movements"](http://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html)
-    reachable_from:
-      source_ontology: term
-      source_nodes:
-        - term:periodName_type
-      relationship_types:
-        - skos:inScheme
-      include_self: false
+    permissible_values:
+      period:
+        meaning: term:lido00731
+        description: >
+          A distinct named historical or cultural portion or division of time
+          during which something runs its course, characterized by some
+          prevalent or distinguishing condition, circumstance, or occurrence,
+          or by the rule of a particular government.
+      style:
+        meaning: term:lido00732
+        description: >
+          A distinct configuration of artistic elements that together
+          constitute a named manner of expression peculiar to a certain epoch,
+          people, or to a visual appearance, technique, or visual language
+          adopted by particular adherents of that language.
+      group:
+        meaning: term:lido00735
+        description: >
+          A cultural group, which includes societies or groups of people
+          characterized by common ideas, customs, social behavior, products, or
+          way of life within a particular nation, people, or period.
+      movement:
+        meaning: term:lido00733
+        description: >
+          The state or process in which events or conditions transpire, a
+          tendency, or a trend evident at a particular time or in a particular
+          sphere, particularly a course or series of actions and endeavours on
+          the part of a group of people working towards a shared goal or to
+          advance a shared political, social, or artistic objective.
+      dynasty:
+        meaning: term:lido00734
+        description: >
+          The succession of rulers from the same family, line, stock, or group,
+          during a particular period of time; extended to include all the
+          people and culture surrounding this succession of rulers.
+#   reachable_from:
+#     source_ontology: term
+#     source_nodes:
+#       - term:periodName_type
+#     relationship_types:
+#       - skos:inScheme
+#     include_self: false
 
   GeometryType:
     description: Tipos de geometria do objeto geoJSON
@@ -971,20 +1047,24 @@ enums:
     description: Type of repository or legal body.
     permissible_values:
       corporate:
+        title: institucional
       geographic:
+        title: geográfico
       personal:
+        title: individual
       other:
+        title: outro
 
   RightsType:
     description: LIDO expressions for rights types.
-    reachable_from:
-      source_ontology: http://terminology.lido-schema.org/rightsType_type
-      include_self: false
-    #permissible_values:
-      #generic:
-        #meaning: term:lido00920
-      #specific:
-        #meaning: term:lido00921
+  # reachable_from:
+    # source_ontology: http://terminology.lido-schema.org/rightsType_type
+    # include_self: false
+    permissible_values:
+      generic:
+        meaning: term:lido00920
+      specific:
+        meaning: term:lido00921
 
   RoleType:
     description: Contribuições de um agente a um evento.
@@ -1064,8 +1144,8 @@ enums:
       related:
         meaning: skos:relatedMatch
 
-  SkosHierarchicalRelation:
-    description: SKOS-THES hierarchical relation type.
+  SkosBroaderRelation:
+    description: SKOS-THES broader relation type.
     permissible_values:
       broader:
         meaning: skos:broader
@@ -1077,6 +1157,20 @@ enums:
         meaning: skos:broaderInstantial
       partitive:
         meaning: skos:broaderPartitive
+
+  SkosNarrowerRelation:
+    description: SKOS-THES narrower relation type.
+    permissible_values:
+      broader:
+        meaning: skos:narrower
+      transitive:
+        meaning: skos:narrowerTransitive
+      generic:
+        meaning: skos:narrowerGeneric
+      instantial:
+        meaning: skos:narrowerInstantial
+      partitive:
+        meaning: skos:narrowerPartitive
 
   TitleType:
     description: VRA Core title types.
@@ -1102,19 +1196,19 @@ enums:
       Note that "Iconclass notations" are distinguished from other index terms
       for subject type in order to consider the impact of the type of indexing
       vocabulary with respect to information retrieval facilities.
-    reachable_from:
-      source_ontology: http://terminology.lido-schema.org/subject_type
-      include_self: false
-    #description: VRA Core topic types.
-    #permissible_values:
-      #descriptive:
-        #meaning: term:lido00525
-      #iconographic:
-        #meaning: term:lido00745
-      #concept:
-        #meaning: term:lido00524
-      #other:
-        #meaning: term:lido00136
+  # reachable_from:
+  #   source_ontology: http://terminology.lido-schema.org/subject_type
+  #   include_self: false
+  # description: VRA Core topic types.
+    permissible_values:
+      descriptive:
+        meaning: term:lido00525
+      iconographic:
+        meaning: term:lido00745
+      concept:
+        meaning: term:lido00524
+      other:
+        meaning: term:lido00136
 
 
 types:

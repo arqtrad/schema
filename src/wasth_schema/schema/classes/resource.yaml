@@ -56,32 +56,8 @@ classes:
 
   RelatedObject:
     description: >
-      As formas mais comuns de relação no nosso projeto são :
-
-        - depicted in: A edificação é representada numa pintura ou desenho
-          artístico;
-
-        - documented by: Informações sobre a edificação estão publicadas numa
-          referência bibliográfica, processo administrativo ou outro documento
-          textual impresso, manuscrito ou eletrônico;
-
-        - has plan / has floor plan / has section / has elevation / has
-          rendering: Essas relações mostram a existência de desenhos técnicos
-          da edificação, sejam eles históricos ou recentes, compilados de
-          fontes externas a este projeto de pesquisa.
-
-        - has construction drawing / has design / has sketch: Essas relações se
-          referem a desenhos históricos (fontes primárias) que atestam o
-          processo de projeto da edificação.
-
-      ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER
-      CADASTRADOS NO GRUPO resource, MAIS ABAIXO.
-
-      O grupo relation é destinado unicamente a cadastrar relações desta
-      edificação com objetos autônomos, tais como outras edificações, conjuntos
-      urbanos, obras de artes visuais, referências bibliográficas ou acervos
-      arquivísticos.
-    attributes:
+      A wrapper for identifying information about an object or work, including
+      collections, related to the object/work in focus. May include a weblink.
     slots:
       - description
       - relation_type
@@ -95,9 +71,6 @@ classes:
   RelatedWork:
     is_a: RelatedObject
     description: >-
-      A wrapper for identifying information about an object or work, including
-      collections, related to the object/work in focus. May include a weblink.
-
       As formas mais comuns de relação no nosso projeto são :
 
         - depicted in: A edificação é representada numa pintura ou desenho
@@ -130,7 +103,7 @@ classes:
   Resource:
     is_a: Thing
     class_uri: crm:E31_Document
-    exact_mappings:
+    close_mappings:
       - schema:ArchiveComponent
     description: >
       This class comprises identifiable immaterial items that make propositions
@@ -145,7 +118,6 @@ classes:
     attributes:
 
       scale:
-        alias: scale
         range: float
         minimum_value: 0
         description: >-
@@ -172,7 +144,6 @@ classes:
             - 8 = vista ou modelo 3D
             - 9 = definido pelo agente
 
-
     slots:
       - relation_type
       - preview_image
@@ -184,7 +155,7 @@ classes:
 
   MediaObject:
     class_uri: schema:MediaObject
-    exact_mappings:
+    close_mappings:
       - dctypes:Image
     description: >
       Descrição e referência a um único arquivo de mídia.
@@ -211,6 +182,7 @@ classes:
       - bibliographic_citation
       - credit
       - rights
+
 
 slots:
 
@@ -286,7 +258,6 @@ slots:
 
   preview_image:
     range: uriorcurie
-    inlined: true
     description: >
       Uma única miniatura da imagem original.
 
@@ -299,14 +270,12 @@ slots:
   provided_image:
     range: uriorcurie
     multivalued: true
-    inlined_as_list: true
     description: >-
       Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap.
 
   provided_3d:
     range: uriorcurie
     multivalued: true
-    inlined_as_list: true
     description: Modelo tridimensional ou IFC da edificação.
 
   resource_service:
@@ -333,7 +302,7 @@ slots:
       (A FAZER) Ver [Instruções para carregar imagens e desenhos].
 
   format:
-    slot_uri: dcterms:MediaType
+    slot_uri: dcterms:format
     required: true
     range: TypedReference
     inlined: true

@@ -538,6 +538,13 @@ classes:
         range: GeographicExtent
         inlined: true
 
+      event_place_type:
+        range: EventPlaceType
+        description: >
+          Se relevante para a ação, indicar se se trata do local de
+          descobrimento do objeto, do local de origem ou destino do seu
+          translado. Omitir caso o evento não se enquadre nesses casos.
+
     slot_usage:
       id:
         range: GeonamesId

@@ -83,35 +83,50 @@ classes:
         multivalued: true
         inlined_as_list: true
 
-      event_date:
-        description: Conjunto de datas em que decorreu o evento.
-        range: EventDate
-        required: true
-        inlined: true
+      display_date:
+        range: string
+        description: >
+          Permite a expressão descritiva das datas de início e fim do evento,
+          para contemplar variados graus de incerteza, ou de modo a representar
+          a data em calendários diferentes do gregoriano. Omitir apenas se os
+          valores numéricos das datas forem exatos.
 
       start_date:
         description: >
           Data inicial do evento ou mais antiga data presumida para o seu
-          decurso.
-        alias: start_date
+          decurso. Omitir se desconhecida.
+
+          Por ora, é responsabilidade de quem preenche a ficha assegurar que
+          `start_date` e `end_date` ocorram em ordem cronológica. Não dispomos
+          de validação automática para tanto.
         range: EventDate
-        inlined: true
+        multivalued: true
+        inlined_as_list: true
+        minimum_cardinality: 0
+        maximum_cardinality: 2
 
       end_date:
         description: >
           Data final do evento ou mais tardia data presumida para o seu
-          decurso.
-        alias: end_date
+          decurso. Omitir se desconhecida.
+
+          Por ora, é responsabilidade de quem preenche a ficha assegurar que
+          `start_date` e `end_date` ocorram em ordem cronológica. Não dispomos
+          de validação automática para tanto.
         range: EventDate
-        inlined: true
+        multivalued: true
+        inlined_as_list: true
+        minimum_cardinality: 0
+        maximum_cardinality: 2
 
       event_place:
         alias: place
-        description: >-
-          A set of structured information indicating the place or location
-          where an object/work was associated with a particular event.
-        range: EventPlace
-        inlined: true
+        range: Site
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Lugares associados ao evento, sem incluir o próprio local no qual
+          se situa a edificação.
 
       method:
         description: >-
@@ -129,6 +144,7 @@ classes:
           related objects or works.
         range: RelatedWork
         multivalued: true
+        inlined_as_list: true
 
       related_events:
         description: >-
@@ -198,80 +214,60 @@ classes:
       Permite expressar as datas de corte inicial e final, cada uma com seus
       respetivos graus de confiabilidade e de precisão.
 
-      Caso necessário, permite também a expressão descritiva da data, para
-      contemplar variados graus de incerteza, ou de modo a representar a data
-      em calendários diferentes do gregoriano.
+    comments:
 
-      -------------------------------------------------------------------------
+      - ⚠️  Não temos padrão estabelecido para datas anteriores ao calendário
+        gregoriano (1583), antes de Cristo, ou convertidas de outros
+        calendários. Datas no calendário juliano podem ser expressadas
+        nominalmente.
+        Datas da era ibérica podem usar o valor nominal do dia e do mês, tendo
+        o ano convertido para o gregoriano.
+        Datas de calendários não cristãos podem ser convertidas para a data
+        gregoriana correspondente, mesmo as anteriores a 1583.
 
-      A wrapper for the expression of a date by providing a set of years as
-      earliest and latest date delimiting the respective span of time, usually
-      given in the proleptic Gregorian calendar.
+        Ver <https://en.wikipedia.org/wiki/ISO_8601#Dates> para a discussão
+        dessa dificuldade, cuja solução depende do estabelecimento de um padrão
+        específico para cada caso.
 
-      If it is an exact date, possibly with time, repeat the same date (and
-      time) in Earliest Date and Latest Date elements.
+    notes:
+
+      - A wrapper for the expression of a date by providing a set of years as
+        earliest and latest date delimiting the respective span of time,
+        usually given in the proleptic Gregorian calendar.
+
+        If it is an exact date, possibly with time, repeat the same date (and
+        time) in Earliest Date and Latest Date elements.
 
     attributes:
 
-      earliest_date:
-        description: >
-          An index element for the expression of an exact or estimated date,
-          for instance a year or calendar date, that delimits the beginning of
-          a date span.
-        range: DateRange
-
-      latest_date:
-        description: >
-          An index element for the expression of the exact or approximate date,
-          for instance a year or calendar date, that delimits the end of
-          a date span.
-        range: DateRange
-
-    slots:
-      - description
-
-  DateRange:
-    attributes:
       date_type:
-        description: >
-          An attribute for the kind of latest date, whether it is, for
-          instance, exact or estimated.
         alias: type
         required: true
-        range: DateQualifier
-      date_value:
+        range: DateType
         description: >
-          Usar o formato ISO-8601 (por exemplo, 2026-03-17).
-          Para datas imprecisas, usar o primeiro dia, mês ou ano do período
-          delimitado, e descrever verbalmente o período no campo `description`.
+          Qualifica a confiabilidade da data como sendo conhecida ou estimada.
+          A confiabilidade independe do grau de precisão da data.
+
+      date_value:
         range: date
+        description: >
+          Usar o formato ISO-8601 (AAAA-MM-DD).
+          Para datas imprecisas, usar o PRIMEIRO ou o ÚLTIMO dia, mês ou ano do
+          período delimitado, conforme se tratar de uma data de corte inicial
+          ou final para o evento, e descrever verbalmente o período no campo
+          `display_date`.
 
   StylePeriod:
     is_a: ConceptReference
     attributes:
 
-      type:
+      period_name_type:
+        alias: type
         range: PeriodNameType
         required: true
         # ifabsent: PeriodNameType(term:lido00731)
-
-  EventPlace:
-    attributes:
-
-      type:
-        range: EventPlaceType
-
-      places:
         description: >
-          Lugares associados ao evento, sem incluir o próprio local no qual
-          se situa a edificação.
-        alias: places
-        range: Site
-        multivalued: true
-        inlined_as_list: true
-
-    slots:
-      - description
+          Designa a natureza ou origem do nome do período ou estilo indicado.
 
   RelatedEvent:
     attributes:
