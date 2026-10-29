@@ -410,6 +410,7 @@ classes:
 
       title_type:
         range: TitleType
+        required: true
 
       id:
         description: >-
@@ -552,6 +553,13 @@ classes:
           Incluir aqui um identificador da base geonames na forma
           `geonames:1234`.
 
+      title_type:
+        range: RepositoryType
+        ifabsent: RepositoryType(geographic)
+
+    slots:
+      - title_type
+
   GeographicPoint:
     description: >
       Coordenadas do ponto que situa o sítio na visualização do mapa.
@@ -657,10 +665,13 @@ classes:
       # category:
       #   alias: type
       #   (The above requires a uriorcurie, not a string)
-      type:
+      inscription_type:
+        alias: type
         required: true
         range: InscriptionType
         ifabsent: string(text)
+        description: >
+          Determina a natureza da inscrição.
 
     slots:
       - format_extent
@@ -673,9 +684,12 @@ classes:
 
     attributes:
 
-      type:
+      topic_type:
+        alias: type
         required: true
         range: SubjectType
+        description: >
+          Categoriza o nível descritivo ou interpretativo do tema.
 
     slot_usage:
       concept:
@@ -701,12 +715,18 @@ classes:
         alias: type
         range: RepositoryType
         required: true
+        description: >
+          Define se o local histórico designa uma jurisdição, um topônimo
+          antigo, ou outro.
 
       location_historic_name:
         alias: name
         range: TypedReference
         required: true
         inlined: true
+        description: >
+          Identificação do local com referência a um vocabulário controlado ou
+          repositório de topônimos tal como o geonames.
 
 
 slots:

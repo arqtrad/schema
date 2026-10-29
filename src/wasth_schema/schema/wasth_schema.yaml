@@ -215,6 +215,19 @@ enums:
         title: outro
         meaning: term:lido00165 # Other groups of persons
 
+  ConceptType:
+    description: >
+      Tipos de termos de vocabulário baseados no Getty AAT.
+    permissible_values:
+      concept:
+        title: conceitos
+      hierarchy_name:
+        title: (nome de hierarquia)
+      guide_term:
+        title: <termo guia>
+      facet:
+        title: Faceta
+
   DateType:
     description: Exatidão da data conhecida.
     permissible_values:

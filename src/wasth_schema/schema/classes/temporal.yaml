@@ -76,6 +76,9 @@ classes:
         alias: type
         range: EventType
         required: true
+        description: >
+          Categoriza o evento segundo os vários tipos de ações, de processos,
+          ou de resultados (início ou fim da existência, transformação).
 
       actor_role:
         description: Identificação de um agente e do seu papel no evento.
@@ -272,12 +275,14 @@ classes:
   RelatedEvent:
     attributes:
 
-      name:
+      event_name:
         range: Event
         multivalued: true
         required: true
         symmetric: true
         inlined: false
+        description: >
+          Identifica o evento ralacionado.
 
     slots:
       - description

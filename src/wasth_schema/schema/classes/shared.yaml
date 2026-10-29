@@ -249,11 +249,17 @@ classes:
         alias: type
         range: RepositoryType
         ifabsent: RepositoryType(corporate)
+        description: >
+          Define a natureza do ente legal : pessoa jurídica, perímetro
+          geográfico de tutela, etc.
 
       legal_body_name:
         alias: name
         range: TypedReference
         inlined: true
+        description: >
+          Referencia a identidade do ente legal num vocabulário controlado ou
+          repositório de identidades, tal como o ISNI.
 
 
 slots:

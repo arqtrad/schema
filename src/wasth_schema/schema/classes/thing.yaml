@@ -250,7 +250,6 @@ classes:
     slots:
       - description
       # Os campos abaixo são opcionais
-      - title_type
       - bibliographic_citation
       - content
 
@@ -264,15 +263,18 @@ classes:
           alternativa ou uma variante de grafia, etc.
         alias: label_type
         range: LabelType
-        required: true
-        # ifabsent: string(alternative)
+        ifabsent: LabelType(alternative)
+
+      label:
+        range: string
+        description: Nome ou título (texto sem formatação).
 
     slot_usage:
-      description:
-        alias: label
+      title_type:
+        range: TitleType
+        ifabsent: TitleType(descriptive)
 
     slots:
-      - description
       - title_type
       - bibliographic_citation
 
@@ -285,8 +287,10 @@ classes:
     slot_usage:
       title_type:
         range: RepositoryType
+        ifabsent: RepositoryType(corporate)
 
     slots:
+      - title_type
       - site
       - legal_body
 
@@ -295,9 +299,7 @@ slots:
 
   title_type:
     description: Indica se o título é um nome próprio, descritivo, etc.
-    required: true
-    # range: Any
-    # ifabsent: TitleType(descriptive)
+    range: Any
 
   legal_body:
     range: LegalBody
