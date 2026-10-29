@@ -4142,6 +4142,7 @@ wheels = [
 name = "wasth-schema"
 source = { editable = "." }
 dependencies = [
+    { name = "linkml" },
     { name = "linkml-runtime" },
 ]
 
@@ -4156,7 +4157,10 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "linkml-runtime", specifier = ">=1.9.4" }]
+requires-dist = [
+    { name = "linkml", specifier = ">=1.12.1" },
+    { name = "linkml-runtime", specifier = ">=1.9.4" },
+]
 
 [package.metadata.requires-dev]
 dev = [
