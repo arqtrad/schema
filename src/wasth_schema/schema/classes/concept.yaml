@@ -63,33 +63,6 @@ classes:
         range: ConceptType
         ifabsent: ConceptType(concept)
 
-      broader:
-        slot_uri: skos:broader
-        description: >-
-          Um conceito de significação mais genérica.
-          Conceitos genéricos são tipicamente representados como pais em
-          uma hierarquia de conceitos (árvore).
-
-          Preenchimento manual.
-        range: BroaderConceptReference
-        multivalued: true
-        inlined_as_list: true
-        inverse: narrower
-
-      narrower:
-        slot_uri: skos:narrower
-        description: >-
-          Um conceito de significação mais específica.
-          Conceitos específicos são tipicamente representados como descendentes
-          em uma hierarquia de conceitos (árvore).
-
-          Derivado automaticamente das relações `broader` em outras fichas.
-          NÃO preencher manualmente.
-        range: NarrowerConceptReference
-        multivalued: true
-        inlined_as_list: true
-        inverse: broader
-
       mapping:
         description: >-
           Um conceito com o qual existe um relacionamento semântico associativo.
@@ -107,6 +80,10 @@ classes:
         description: >-
           Um conceito com o qual existe um relacionamento semântico associativo.
           Usar em referência ao nosso próprio vocabulário controlado.
+
+    slots:
+      - broader
+      - narrower
 
 
   ConceptReference:
@@ -142,3 +119,33 @@ classes:
         required: true
         description: Tipo da relação.
         range: SkosMappingRelation
+
+
+slots:
+
+      broader:
+        slot_uri: skos:broader
+        description: >-
+          Um conceito de significação mais genérica.
+          Conceitos genéricos são tipicamente representados como pais em
+          uma hierarquia de conceitos (árvore).
+
+          Preenchimento manual.
+        range: BroaderConceptReference
+        multivalued: true
+        inlined_as_list: true
+        inverse: narrower
+
+      narrower:
+        slot_uri: skos:narrower
+        description: >-
+          Um conceito de significação mais específica.
+          Conceitos específicos são tipicamente representados como descendentes
+          em uma hierarquia de conceitos (árvore).
+
+          Derivado automaticamente das relações `broader` em outras fichas.
+          NÃO preencher manualmente.
+        range: NarrowerConceptReference
+        multivalued: true
+        inlined_as_list: true
+        inverse: broader
