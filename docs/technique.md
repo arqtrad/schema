@@ -3,8 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: technique
+# Slot: technique 
 
+
+_Processos, técnicas, métodos e saberes postos em prática no conjunto da edificação e nas suas partes mais significativas, considerando a sua produção e alterações substanciais, bem como a sua eventual destruição._
+
+_-------------------------------------------------------------------------_
 
 _The production or manufacturing processes, techniques, and methods incorporated in the fabrication or alteration of the work or image._
 
@@ -27,8 +31,8 @@ URI: [vra:Technique](http://purl.org/vra/Technique)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -91,7 +95,13 @@ URI: [vra:Technique](http://purl.org/vra/Technique)
 <details>
 ```yaml
 name: technique
-description: 'The production or manufacturing processes, techniques, and methods incorporated
+description: 'Processos, técnicas, métodos e saberes postos em prática no conjunto
+  da edificação e nas suas partes mais significativas, considerando a sua produção
+  e alterações substanciais, bem como a sua eventual destruição.
+
+  -------------------------------------------------------------------------
+
+  The production or manufacturing processes, techniques, and methods incorporated
   in the fabrication or alteration of the work or image.
 
   '

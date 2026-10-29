@@ -3,14 +3,16 @@ search:
   boost: 5.0
 ---
 
-# Slot: classification_genre
+# Slot: classification_genre 
 
+
+_❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura._
+
+_---------------------------------------------------------------------_
 
 _A broad category for grouping objects on the basis of shared intrinsic characteristics. The relationship between an object/work and the object genre is a generic is-a-relation rather than a membership based on ascription to a subject group._
 
 _Note that the [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711) hierarchy differs in its scope from Object genre here in that the AAT includes more specific terms grouped by various aspects. In general, AAT descriptors are not intended to be used as indexing terms for classification._
-
-_❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura._
 
 __
 
@@ -31,7 +33,7 @@ URI: [term:lido00853](http://terminology.lido-schema.org/lido00853)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -100,19 +102,20 @@ URI: [term:lido00853](http://terminology.lido-schema.org/lido00853)
 <details>
 ```yaml
 name: classification_genre
-description: 'A broad category for grouping objects on the basis of shared intrinsic
-  characteristics. The relationship between an object/work and the object genre is
-  a generic is-a-relation rather than a membership based on ascription to a subject
-  group.
+description: '❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez
+  ele não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
+  no padrão LIDO nem no perfil de aplicação para arquitetura.
+
+  ---------------------------------------------------------------------
+
+  A broad category for grouping objects on the basis of shared intrinsic characteristics.
+  The relationship between an object/work and the object genre is a generic is-a-relation
+  rather than a membership based on ascription to a subject group.
 
   Note that the [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711) hierarchy
   differs in its scope from Object genre here in that the AAT includes more specific
   terms grouped by various aspects. In general, AAT descriptors are not intended to
   be used as indexing terms for classification.
-
-  ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele não
-  seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
-  no padrão LIDO nem no perfil de aplicação para arquitetura.
 
   '
 from_schema: https://tradicional.arq.br/schema
@@ -123,7 +126,8 @@ domain_of:
 - Work
 range: ConceptReference
 multivalued: true
-inlined_as_list: false
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

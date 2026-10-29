@@ -3,10 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: title
+# Slot: title 
 
 
-_The preferred human-readable label for a Thing._
+_Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`._
+
+__
 
 
 
@@ -25,13 +27,13 @@ URI: [dcterms:title](http://purl.org/dc/terms/title)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
+| [Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |  no  |
 | [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
+| [Thing](Thing.md) | Esta classe compreende todas as coisas no universo do CIDOC CRM |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
-| [Work](Work.md) | An historical landmark or building |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
+| [Site](Site.md) | O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T... |  no  |
 
 
 
@@ -101,7 +103,10 @@ URI: [dcterms:title](http://purl.org/dc/terms/title)
 <details>
 ```yaml
 name: title
-description: The preferred human-readable label for a Thing.
+description: 'Nome pelo qual este item é mais comumente conhecido. Outros nomes podem
+  ser cadastrados em `alt_name`.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 exact_mappings:
 - schema:name

@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: lon
+# Slot: lon 
 
 
 _Longitude em graus decimais (separador decimal: ponto)._

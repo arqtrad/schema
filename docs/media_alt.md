@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: media_alt
+# Slot: media_alt 
 
 
 _Texto alternativo para leitores de tela ou outras formas de acessibilidade. Apenas texto sem formatação._

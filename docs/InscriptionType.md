@@ -4,12 +4,12 @@ search:
 ---
 
 
-# Enum: InscriptionType
+# Enum: InscriptionType 
 
 
 
 
-_VRA Core types for inscriptions._
+_Tipos de inscrições previstos no VRA Core._
 
 
 
@@ -30,6 +30,12 @@ URI: [wasth:InscriptionType](https://tradicional.arq.br/schema/InscriptionType)
 
 
 
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [inscription_type](inscription_type.md) | Determina a natureza da inscrição |
 
 
 
@@ -61,7 +67,7 @@ URI: [wasth:InscriptionType](https://tradicional.arq.br/schema/InscriptionType)
 <details>
 ```yaml
 name: InscriptionType
-description: VRA Core types for inscriptions.
+description: Tipos de inscrições previstos no VRA Core.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 permissible_values:

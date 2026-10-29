@@ -3,13 +3,28 @@ search:
   boost: 5.0
 ---
 
-# Slot: collection
+# Slot: collection 
+
+
+_Descreve conjuntos conceituais nos quais a edificação foi incluída, por exemplo catálogos raisonnés, obras de referência, exposições, ou agrupamentos *ad-hoc* para formar coleções temáticas de acordo com as necessidades do projeto de investigação._
+
+_Para o pertencimento a perímetros de sítios históricos tombados/classificados, preencher o grupo `identifiers`. Para a identificação de proprietários ou responsáveis, preencher o grupo `work_rights`._
+
+_---------------------------------------------------------------------_
+
+_A set of identifying and indexing information about the collection the object/work in focus is gathered into or is a member of._
+
+_Collection applies to any accumulated group of physical or digital items, conceptually or physically brought together on the basis of a focal characteristic. Use cases for grouping items into a collection are various and may span curated holdings in museums, departmental collections, sets of items to be displayed in an exhibition, or aggregations bound informally for cataloging and retrieval purposes._
+
+__
+
+
 
 <div data-search-exclude markdown="1">
 
 
 
-URI: [wasth:collection](https://tradicional.arq.br/schema/collection)
+URI: [lido:collection](http://www.lido-schema.org/collection)
 <!-- no inheritance hierarchy -->
 
 
@@ -20,13 +35,7 @@ URI: [wasth:collection](https://tradicional.arq.br/schema/collection)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
-| [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
-| [Work](Work.md) | An historical landmark or building |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -39,8 +48,23 @@ URI: [wasth:collection](https://tradicional.arq.br/schema/collection)
 
 | Property | Value |
 | --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Thing](Thing.md), [Work](Work.md) |
+| Range | [Thing](Thing.md) |
+| Domain Of | [Work](Work.md) |
+| Slot URI | [lido:collection](http://www.lido-schema.org/collection) |
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [Work](Work.md) |
+
+
 
 
 
@@ -57,12 +81,19 @@ URI: [wasth:collection](https://tradicional.arq.br/schema/collection)
 
 
 
+### Schema Source
+
+
+* from schema: https://tradicional.arq.br/schema
+
+
+
 
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | wasth:collection |
+| self | lido:collection |
 | native | wasth:collection |
 
 
@@ -73,10 +104,36 @@ URI: [wasth:collection](https://tradicional.arq.br/schema/collection)
 <details>
 ```yaml
 name: collection
+description: 'Descreve conjuntos conceituais nos quais a edificação foi incluída,
+  por exemplo catálogos raisonnés, obras de referência, exposições, ou agrupamentos
+  *ad-hoc* para formar coleções temáticas de acordo com as necessidades do projeto
+  de investigação.
+
+  Para o pertencimento a perímetros de sítios históricos tombados/classificados, preencher
+  o grupo `identifiers`. Para a identificação de proprietários ou responsáveis, preencher
+  o grupo `work_rights`.
+
+  ---------------------------------------------------------------------
+
+  A set of identifying and indexing information about the collection the object/work
+  in focus is gathered into or is a member of.
+
+  Collection applies to any accumulated group of physical or digital items, conceptually
+  or physically brought together on the basis of a focal characteristic. Use cases
+  for grouping items into a collection are various and may span curated holdings in
+  museums, departmental collections, sets of items to be displayed in an exhibition,
+  or aggregations bound informally for cataloging and retrieval purposes.
+
+  '
+from_schema: https://tradicional.arq.br/schema
+rank: 1000
+slot_uri: lido:collection
+owner: Work
 domain_of:
-- Thing
 - Work
-range: string
+range: Thing
+multivalued: true
+inlined_as_list: false
 
 ```
 </details></div>

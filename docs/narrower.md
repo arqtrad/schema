@@ -3,10 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: narrower
+# Slot: narrower 
 
 
 _Um conceito de significação mais específica. Conceitos específicos são tipicamente representados como descendentes em uma hierarquia de conceitos (árvore)._
+
+_Derivado automaticamente das relações `broader` em outras fichas. NÃO preencher manualmente._
 
 
 
@@ -25,7 +27,7 @@ URI: [skos:narrower](http://www.w3.org/2004/02/skos/core#narrower)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
+| [Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |  no  |
 
 
 
@@ -38,7 +40,7 @@ URI: [skos:narrower](http://www.w3.org/2004/02/skos/core#narrower)
 
 | Property | Value |
 | --- | --- |
-| Range | [ConceptReference](ConceptReference.md) |
+| Range | [NarrowerConceptReference](NarrowerConceptReference.md) |
 | Domain Of | [Concept](Concept.md) |
 | Slot URI | [skos:narrower](http://www.w3.org/2004/02/skos/core#narrower) |
 ### Cardinality and Requirements
@@ -54,6 +56,15 @@ URI: [skos:narrower](http://www.w3.org/2004/02/skos/core#narrower)
 | --- | --- |
 | Owner | [Concept](Concept.md) |
 
+
+<details>
+<summary>Relationship Properties</summary>
+
+| Property | Value |
+| --- | --- |
+| Inverse | [broader](broader.md) |
+
+</details>
 
 
 
@@ -94,15 +105,19 @@ URI: [skos:narrower](http://www.w3.org/2004/02/skos/core#narrower)
 <details>
 ```yaml
 name: narrower
-description: Um conceito de significação mais específica. Conceitos específicos são
+description: 'Um conceito de significação mais específica. Conceitos específicos são
   tipicamente representados como descendentes em uma hierarquia de conceitos (árvore).
+
+  Derivado automaticamente das relações `broader` em outras fichas. NÃO preencher
+  manualmente.'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: skos:narrower
 owner: Concept
 domain_of:
 - Concept
-range: ConceptReference
+inverse: broader
+range: NarrowerConceptReference
 multivalued: true
 inlined: true
 inlined_as_list: true

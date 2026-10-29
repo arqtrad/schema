@@ -3,8 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: part_of
+# Slot: part_of 
 
+
+_Permite identificar o contexto geográfico ou administrativo ao qual a edificação se subordina, ou ainda um conjunto arquitetônico, urbanístico ou conceitual (por exemplo, uma série de casas) do qual ela faz parte._
+
+_---------------------------------------------------------------------_
 
 _A set of structured information about a place that is the broader context for the place in focus, such as the district, state, or nation to which a city belongs._
 
@@ -14,7 +18,7 @@ _A set of structured information about a place that is the broader context for t
 
 
 
-URI: [lido:partOfPlace](http://www.lido-schema.org/partOfPlace)
+URI: [dcterms:isPartOf](http://purl.org/dc/terms/isPartOf)
 <!-- no inheritance hierarchy -->
 
 
@@ -25,7 +29,7 @@ URI: [lido:partOfPlace](http://www.lido-schema.org/partOfPlace)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -38,9 +42,16 @@ URI: [lido:partOfPlace](http://www.lido-schema.org/partOfPlace)
 
 | Property | Value |
 | --- | --- |
-| Range | [GeonamesId](GeonamesId.md) |
+| Range | [TypedReference](TypedReference.md) |
 | Domain Of | [Work](Work.md) |
-| Slot URI | [lido:partOfPlace](http://www.lido-schema.org/partOfPlace) |
+| Slot URI | [dcterms:isPartOf](http://purl.org/dc/terms/isPartOf) |
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
 ### Slot Characteristics
 
 | Property | Value |
@@ -76,7 +87,7 @@ URI: [lido:partOfPlace](http://www.lido-schema.org/partOfPlace)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | lido:partOfPlace |
+| self | dcterms:isPartOf |
 | native | wasth:part_of |
 
 
@@ -87,16 +98,24 @@ URI: [lido:partOfPlace](http://www.lido-schema.org/partOfPlace)
 <details>
 ```yaml
 name: part_of
-description: A set of structured information about a place that is the broader context
-  for the place in focus, such as the district, state, or nation to which a city belongs.
+description: 'Permite identificar o contexto geográfico ou administrativo ao qual
+  a edificação se subordina, ou ainda um conjunto arquitetônico, urbanístico ou conceitual
+  (por exemplo, uma série de casas) do qual ela faz parte.
+
+  ---------------------------------------------------------------------
+
+  A set of structured information about a place that is the broader context for the
+  place in focus, such as the district, state, or nation to which a city belongs.'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-slot_uri: lido:partOfPlace
+slot_uri: dcterms:isPartOf
 owner: Work
 domain_of:
 - Work
-range: GeonamesId
+range: TypedReference
+multivalued: true
 inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

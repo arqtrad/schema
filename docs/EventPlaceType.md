@@ -4,28 +4,34 @@ search:
 ---
 
 
-# Enum: EventPlaceType
+# Enum: EventPlaceType 
 
 
 
 
-_The type attribute qualifies the place according to its role or function in the context of an event, whether it is a place of discovery, a point of destination, or a point of origin._
+_Para eventos que implicam a deslocação do bem, indica se o local se refere ao descobrimento, à origem ou ao destino da obra._
 
 
 
 <div data-search-exclude markdown="1">
 
 URI: [wasth:EventPlaceType](https://tradicional.arq.br/schema/EventPlaceType)
-## Enumeration Source
-**Reachable From:**
-- **Source:** NONE
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| discovery | term:lido01037 |  |
+| origin | term:lido00220 |  |
+| destination | term:lido00221 |  |
 
 
 
 
-_This is a dynamic enum_
+## Slots
 
-
+| Name | Description |
+| ---  | --- |
+| [event_place_type](event_place_type.md) | Se relevante para a ação, indicar se se trata do local de descobrimento do ob... |
 
 
 
@@ -57,14 +63,20 @@ _This is a dynamic enum_
 <details>
 ```yaml
 name: EventPlaceType
-description: The type attribute qualifies the place according to its role or function
-  in the context of an event, whether it is a place of discovery, a point of destination,
-  or a point of origin.
+description: Para eventos que implicam a deslocação do bem, indica se o local se refere
+  ao descobrimento, à origem ou ao destino da obra.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-reachable_from:
-  source_ontology: http://terminology.lido-schema.org/eventPlace_type
-  include_self: false
+permissible_values:
+  discovery:
+    text: discovery
+    meaning: term:lido01037
+  origin:
+    text: origin
+    meaning: term:lido00220
+  destination:
+    text: destination
+    meaning: term:lido00221
 
 ```
 </details>

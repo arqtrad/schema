@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: geometry_type
+# Slot: geometry_type 
 
 
 _Tipo da geometria descrita pelas coordenadas._

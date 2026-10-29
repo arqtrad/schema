@@ -3,8 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: location
+# Slot: location 
 
+
+_Coordenadas geográficas do ponto que permite situar a edificação no mapa para fins ilustrativos. Usar o sistema de coordenadas geográficas EPSG:4326 (WGS84) sempre que possível._
+
+_---------------------------------------------------------------------_
 
 _Representative point location for the place, normally in EPSG:4326 (WGS 84)._
 
@@ -14,7 +18,7 @@ _Representative point location for the place, normally in EPSG:4326 (WGS 84)._
 
 
 
-URI: [geo:hasGeometry](http://www.opengis.net/ont/geosparql#hasGeometry)
+URI: [geo:hasDefaultGeometry](http://www.opengis.net/ont/geosparql#hasDefaultGeometry)
 <!-- no inheritance hierarchy -->
 
 
@@ -25,7 +29,7 @@ URI: [geo:hasGeometry](http://www.opengis.net/ont/geosparql#hasGeometry)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Site](Site.md) | O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T... |  no  |
 
 
 
@@ -40,7 +44,7 @@ URI: [geo:hasGeometry](http://www.opengis.net/ont/geosparql#hasGeometry)
 | --- | --- |
 | Range | [GeographicPoint](GeographicPoint.md) |
 | Domain Of | [Site](Site.md) |
-| Slot URI | [geo:hasGeometry](http://www.opengis.net/ont/geosparql#hasGeometry) |
+| Slot URI | [geo:hasDefaultGeometry](http://www.opengis.net/ont/geosparql#hasDefaultGeometry) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -83,7 +87,7 @@ URI: [geo:hasGeometry](http://www.opengis.net/ont/geosparql#hasGeometry)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | geo:hasGeometry |
+| self | geo:hasDefaultGeometry |
 | native | wasth:location |
 
 
@@ -94,11 +98,16 @@ URI: [geo:hasGeometry](http://www.opengis.net/ont/geosparql#hasGeometry)
 <details>
 ```yaml
 name: location
-description: Representative point location for the place, normally in EPSG:4326 (WGS
-  84).
+description: 'Coordenadas geográficas do ponto que permite situar a edificação no
+  mapa para fins ilustrativos. Usar o sistema de coordenadas geográficas EPSG:4326
+  (WGS84) sempre que possível.
+
+  ---------------------------------------------------------------------
+
+  Representative point location for the place, normally in EPSG:4326 (WGS 84).'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-slot_uri: geo:hasGeometry
+slot_uri: geo:hasDefaultGeometry
 owner: Site
 domain_of:
 - Site

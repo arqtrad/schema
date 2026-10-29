@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: Topic
+# Class: Topic 
 
 
 _Subject or iconographic topic._
@@ -25,41 +25,41 @@ URI: [wasth:Topic](https://tradicional.arq.br/schema/Topic)
     class Topic
     click Topic href "../Topic/"
       Topic : concept
-
-
-
-
-
+        
+          
+    
+        
+        
         Topic --> "1" Concept : concept
         click Concept href "../Concept/"
+    
 
-
-
+        
       Topic : description
-
+        
       Topic : format_extent
-
-
-
-
-
+        
+          
+    
+        
+        
         Topic --> "0..1" TypedReference : format_extent
         click TypedReference href "../TypedReference/"
+    
 
-
-
-      Topic : type
-
-
-
-
-
-        Topic --> "1" SubjectType : type
+        
+      Topic : topic_type
+        
+          
+    
+        
+        
+        Topic --> "1" SubjectType : topic_type
         click SubjectType href "../SubjectType/"
+    
 
-
-
-
+        
+      
 ```
 
 
@@ -74,7 +74,7 @@ URI: [wasth:Topic](https://tradicional.arq.br/schema/Topic)
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
 | [format_extent](format_extent.md) | 0..1 <br/> [TypedReference](TypedReference.md) | Indica a parte do objeto que está sendo medida — por exemplo, se a altura é a... | direct |
 | [concept](concept.md) | 1 <br/> [Concept](Concept.md) |  | direct |
-| [type](type.md) | 1 <br/> [SubjectType](SubjectType.md) |  | direct |
+| [topic_type](topic_type.md) | 1 <br/> [SubjectType](SubjectType.md) | Categoriza o nível descritivo ou interpretativo do tema | direct |
 
 
 
@@ -143,19 +143,16 @@ slot_usage:
     name: concept
     required: true
 attributes:
-  type:
-    name: type
+  topic_type:
+    name: topic_type
+    description: 'Categoriza o nível descritivo ou interpretativo do tema.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    alias: type
     domain_of:
-    - Measurement
-    - Right
-    - LegalBody
-    - Event
-    - StylePeriod
-    - EventPlace
-    - Inscription
     - Topic
-    - HistoricPlace
     range: SubjectType
     required: true
 
@@ -174,20 +171,17 @@ slot_usage:
     name: concept
     required: true
 attributes:
-  type:
-    name: type
+  topic_type:
+    name: topic_type
+    description: 'Categoriza o nível descritivo ou interpretativo do tema.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    alias: type
     owner: Topic
     domain_of:
-    - Measurement
-    - Right
-    - LegalBody
-    - Event
-    - StylePeriod
-    - EventPlace
-    - Inscription
     - Topic
-    - HistoricPlace
     range: SubjectType
     required: true
   description:
@@ -205,12 +199,10 @@ attributes:
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - TypedReference
     - Measurement
-    - EventDate
-    - EventPlace
     - RelatedEvent
     - Thing
-    - Appellation
     - Inscription
     - Topic
     range: string
@@ -238,7 +230,7 @@ attributes:
     alias: name
     owner: Topic
     domain_of:
-    - Right
+    - ConceptReference
     - Topic
     range: Concept
     required: true

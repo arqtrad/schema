@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: method
+# Slot: method 
 
 
 _An index element for the method by which the event is or was carried out. Examples may include an acquisition method or a field collection method._
@@ -25,7 +25,7 @@ URI: [wasth:method](https://tradicional.arq.br/schema/method)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
 
 
 

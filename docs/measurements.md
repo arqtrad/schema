@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: measurements
+# Slot: measurements 
 
 
 _A wrapper for information about the dimensions, or other measurements, of the object/work in focus. May also include extents of the parts of a complex object or work._
@@ -28,8 +28,8 @@ URI: [wasth:measurements](https://tradicional.arq.br/schema/measurements)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 

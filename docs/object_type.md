@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: object_type
+# Slot: object_type 
 
 
 _Usar um vocabulário controlado para identificar o tipo de representação, por exemplo as hierarquias do Getty AAT [obras visuais](http://vocab.getty.edu/hier/aat/300191086). ou [formatos de informação](http://vocab.getty.edu/hier/aat/300220751)_
@@ -27,8 +27,8 @@ URI: [wasth:object_type](https://tradicional.arq.br/schema/object_type)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RelatedObject](RelatedObject.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
-| [RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
+| [RelatedObject](RelatedObject.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
+| [RelatedWork](RelatedWork.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
 
 
 

@@ -3,10 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: event_date
+# Slot: event_type 
 
 
-_Conjunto de datas em que decorreu o evento._
+_Categoriza o evento segundo os vários tipos de ações, de processos, ou de resultados (início ou fim da existência, transformação)._
+
+__
 
 
 
@@ -14,7 +16,9 @@ _Conjunto de datas em que decorreu o evento._
 
 
 
-URI: [wasth:event_date](https://tradicional.arq.br/schema/event_date)
+URI: [wasth:event_type](https://tradicional.arq.br/schema/event_type)
+Alias: type
+
 <!-- no inheritance hierarchy -->
 
 
@@ -25,7 +29,7 @@ URI: [wasth:event_date](https://tradicional.arq.br/schema/event_date)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
 
 
 
@@ -38,7 +42,7 @@ URI: [wasth:event_date](https://tradicional.arq.br/schema/event_date)
 
 | Property | Value |
 | --- | --- |
-| Range | [EventDate](EventDate.md) |
+| Range | [EventType](EventType.md) |
 | Domain Of | [Event](Event.md) |
 ### Cardinality and Requirements
 
@@ -82,8 +86,8 @@ URI: [wasth:event_date](https://tradicional.arq.br/schema/event_date)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | wasth:event_date |
-| native | wasth:event_date |
+| self | wasth:event_type |
+| native | wasth:event_type |
 
 
 
@@ -92,16 +96,19 @@ URI: [wasth:event_date](https://tradicional.arq.br/schema/event_date)
 
 <details>
 ```yaml
-name: event_date
-description: Conjunto de datas em que decorreu o evento.
+name: event_type
+description: 'Categoriza o evento segundo os vários tipos de ações, de processos,
+  ou de resultados (início ou fim da existência, transformação).
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
+alias: type
 owner: Event
 domain_of:
 - Event
-range: EventDate
+range: EventType
 required: true
-inlined: true
 
 ```
 </details></div>

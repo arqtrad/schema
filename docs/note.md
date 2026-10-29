@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: note
+# Slot: note 
 
 
 _Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída._

@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: Inscription
+# Class: Inscription 
 
 
 _A descrição da inscrição informa local, dimensões e características. Os tipos de descrição podem ser extraídos da hierarquia Getty: <http://vocab.getty.edu/page/aat/300220469>._
@@ -29,43 +29,43 @@ URI: [wasth:Inscription](https://tradicional.arq.br/schema/Inscription)
     class Inscription
     click Inscription href "../Inscription/"
       Inscription : bibliographic_citation
-
-
-
-
-
+        
+          
+    
+        
+        
         Inscription --> "* _recommended_" BibliographicCitation : bibliographic_citation
         click BibliographicCitation href "../BibliographicCitation/"
+    
 
-
-
+        
       Inscription : content
-
+        
       Inscription : description
-
+        
       Inscription : format_extent
-
-
-
-
-
+        
+          
+    
+        
+        
         Inscription --> "0..1" TypedReference : format_extent
         click TypedReference href "../TypedReference/"
+    
 
-
-
-      Inscription : type
-
-
-
-
-
-        Inscription --> "1" InscriptionType : type
+        
+      Inscription : inscription_type
+        
+          
+    
+        
+        
+        Inscription --> "1" InscriptionType : inscription_type
         click InscriptionType href "../InscriptionType/"
+    
 
-
-
-
+        
+      
 ```
 
 
@@ -79,9 +79,9 @@ URI: [wasth:Inscription](https://tradicional.arq.br/schema/Inscription)
 | ---  | --- | --- | --- |
 | [format_extent](format_extent.md) | 0..1 <br/> [TypedReference](TypedReference.md) | Indica a parte do objeto que está sendo medida — por exemplo, se a altura é a... | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
-| [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
-| [type](type.md) | 1 <br/> [InscriptionType](InscriptionType.md) |  | direct |
+| [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Conteúdo textual descritivo ou explicativo | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | direct |
+| [inscription_type](inscription_type.md) | 1 <br/> [InscriptionType](InscriptionType.md) | Determina a natureza da inscrição | direct |
 
 
 
@@ -154,20 +154,17 @@ slots:
 - content
 - bibliographic_citation
 attributes:
-  type:
-    name: type
+  inscription_type:
+    name: inscription_type
+    description: 'Determina a natureza da inscrição.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
     ifabsent: string(text)
+    alias: type
     domain_of:
-    - Measurement
-    - Right
-    - LegalBody
-    - Event
-    - StylePeriod
-    - EventPlace
     - Inscription
-    - Topic
-    - HistoricPlace
     range: InscriptionType
     required: true
 
@@ -189,21 +186,18 @@ description: 'A descrição da inscrição informa local, dimensões e caracter�
   azulejos ou pinturas decorativas, por oposição à base sobre a qual eles são aplicados.'
 from_schema: https://tradicional.arq.br/schema
 attributes:
-  type:
-    name: type
+  inscription_type:
+    name: inscription_type
+    description: 'Determina a natureza da inscrição.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
     ifabsent: string(text)
+    alias: type
     owner: Inscription
     domain_of:
-    - Measurement
-    - Right
-    - LegalBody
-    - Event
-    - StylePeriod
-    - EventPlace
     - Inscription
-    - Topic
-    - HistoricPlace
     range: InscriptionType
     required: true
   format_extent:
@@ -238,30 +232,16 @@ attributes:
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - TypedReference
     - Measurement
-    - EventDate
-    - EventPlace
     - RelatedEvent
     - Thing
-    - Appellation
     - Inscription
     - Topic
     range: string
   content:
     name: content
-    description: 'Deixe uma linha em branco após o fechamento dos metadados e inclua
-      aqui uma descrição morfológica e histórica da edificação com texto livre, usando
-      formatação Markdown.
-
-      Poderá incluir um segundo bloco de metadados para indicar as referências bibliográficas
-      da descrição textual, no campo `nocite`. O formato é uma lista de chaves de
-      citação do Zotero (cada uma começando com `@`) separadas por vírgulas:
-
-      ```yaml Conteúdo textual em formato *Markdown* com citações [@citekey].
-
-      --- nocite: "@*" --- ```
-
-      '
+    description: Conteúdo textual descritivo ou explicativo.
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: skos:scopeNote
@@ -273,7 +253,15 @@ attributes:
     recommended: true
   bibliographic_citation:
     name: bibliographic_citation
-    description: 'Cadastro de uma referência bibliográfica.
+    description: '📚  Cadastro de uma referência bibliográfica.
+
+      O campo `refid` deve conter a chave de citação (citation key) que consta do
+      registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero,
+      começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação,
+      mas pode ser diferente.
+
+      Se necessário, incluir no campo `note` uma especificação adicional, como o número
+      da página da referência bibliográfica de onde a informação foi extraída.
 
       Usar o campo `description` para formatar a referência, caso a formatação automática
       do Zotero não for satisfatória.

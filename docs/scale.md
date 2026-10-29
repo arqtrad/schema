@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: scale
+# Slot: scale 
 
 
 _Número inverso da escala da imagem, se ela tiver uma resolução ou tamanho de página definidos. Por exemplo, para um desenho na escala 1 : 100, `scale: 100`._
@@ -15,8 +15,6 @@ _Número inverso da escala da imagem, se ela tiver uma resolução ou tamanho de
 
 
 URI: [wasth:scale](https://tradicional.arq.br/schema/scale)
-Alias: scale
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: 'Número inverso da escala da imagem, se ela tiver uma resolução 
   de página definidos. Por exemplo, para um desenho na escala 1 : 100, `scale: 100`.'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-alias: scale
 owner: Resource
 domain_of:
 - Resource

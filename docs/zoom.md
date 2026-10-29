@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: zoom
+# Slot: zoom 
 
 
 _Usado para visualizar o mapa mais de longe se a precisão das coordenadas for baixa._

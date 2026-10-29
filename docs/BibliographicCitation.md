@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: BibliographicCitation
+# Class: BibliographicCitation 
 
 
 _Cadastro de uma referência bibliográfica._
@@ -29,12 +29,12 @@ URI: [dcterms:BibliographicCitation](http://purl.org/dc/terms/BibliographicCitat
     class BibliographicCitation
     click BibliographicCitation href "../BibliographicCitation/"
       BibliographicCitation : description
-
+        
       BibliographicCitation : note
-
+        
       BibliographicCitation : refid
-
-
+        
+      
 ```
 
 
@@ -68,6 +68,9 @@ URI: [dcterms:BibliographicCitation](http://purl.org/dc/terms/BibliographicCitat
 | [Concept](Concept.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [Concept](Concept.md) | [title_source](title_source.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [ConceptReference](ConceptReference.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
+| [BroaderConceptReference](BroaderConceptReference.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
+| [NarrowerConceptReference](NarrowerConceptReference.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
+| [MappingConceptReference](MappingConceptReference.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [RelatedObject](RelatedObject.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [RelatedWork](RelatedWork.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
 | [Resource](Resource.md) | [bibliographic_citation](bibliographic_citation.md) | range | [BibliographicCitation](BibliographicCitation.md) |
@@ -160,13 +163,16 @@ attributes:
       do nosso projeto de pesquisa no [Zotero]. Em geral, a chave de citação é o DOI
       ou ISBN da publicação, mas pode ser diferente.
 
+      Se a referência que necessita citar não constar da biblioteca do Zotero, deve
+      cadastrá-la primeiro nessa biblioteca para então extrair a chave de citação.
+
       '
     from_schema: https://tradicional.arq.br/schema/resource
+    identifier: true
     domain_of:
     - BibliographicCitation
     - TypedReference
     range: CslCitekey
-    required: true
   note:
     name: note
     description: 'Se necessário, incluir no campo `note` uma especificação adicional,
@@ -207,8 +213,12 @@ attributes:
       do nosso projeto de pesquisa no [Zotero]. Em geral, a chave de citação é o DOI
       ou ISBN da publicação, mas pode ser diferente.
 
+      Se a referência que necessita citar não constar da biblioteca do Zotero, deve
+      cadastrá-la primeiro nessa biblioteca para então extrair a chave de citação.
+
       '
     from_schema: https://tradicional.arq.br/schema/resource
+    identifier: true
     owner: BibliographicCitation
     domain_of:
     - BibliographicCitation
@@ -243,12 +253,10 @@ attributes:
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - TypedReference
     - Measurement
-    - EventDate
-    - EventPlace
     - RelatedEvent
     - Thing
-    - Appellation
     - Inscription
     - Topic
     range: string

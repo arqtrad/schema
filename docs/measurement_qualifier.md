@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: qualifier
+# Slot: measurement_qualifier 
 
 
-_Indica que as medidas são aproximadas : usar um [qualificador do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720) ;_
+_Indica que as medidas são aproximadas._
 
 __
 
@@ -16,7 +16,7 @@ __
 
 
 
-URI: [wasth:qualifier](https://tradicional.arq.br/schema/qualifier)
+URI: [wasth:measurement_qualifier](https://tradicional.arq.br/schema/measurement_qualifier)
 Alias: qualifier
 
 <!-- no inheritance hierarchy -->
@@ -29,7 +29,7 @@ Alias: qualifier
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
+| [Measurement](Measurement.md) | Informações estruturadas sobre as dimensões do objeto ou requisitos de condic... |  no  |
 
 
 
@@ -42,12 +42,13 @@ Alias: qualifier
 
 | Property | Value |
 | --- | --- |
-| Range | [String](String.md) |
+| Range | [MeasurementQualifier](MeasurementQualifier.md) |
 | Domain Of | [Measurement](Measurement.md) |
 ### Slot Characteristics
 
 | Property | Value |
 | --- | --- |
+| If Absent | `MeasurementQualifier(2)` |
 | Owner | [Measurement](Measurement.md) |
 
 
@@ -79,8 +80,8 @@ Alias: qualifier
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | wasth:qualifier |
-| native | wasth:qualifier |
+| self | wasth:measurement_qualifier |
+| native | wasth:measurement_qualifier |
 
 
 
@@ -89,17 +90,18 @@ Alias: qualifier
 
 <details>
 ```yaml
-name: qualifier
-description: 'Indica que as medidas são aproximadas : usar um [qualificador do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720) ;
+name: measurement_qualifier
+description: 'Indica que as medidas são aproximadas.
 
   '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
+ifabsent: MeasurementQualifier(2)
 alias: qualifier
 owner: Measurement
 domain_of:
 - Measurement
-range: string
+range: MeasurementQualifier
 
 ```
 </details></div>

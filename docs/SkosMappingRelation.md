@@ -4,7 +4,7 @@ search:
 ---
 
 
-# Enum: SkosMappingRelation
+# Enum: SkosMappingRelation 
 
 
 

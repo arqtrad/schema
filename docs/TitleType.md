@@ -4,7 +4,7 @@ search:
 ---
 
 
-# Enum: TitleType
+# Enum: TitleType 
 
 
 
@@ -39,7 +39,8 @@ URI: [wasth:TitleType](https://tradicional.arq.br/schema/TitleType)
 
 | Name | Description |
 | ---  | --- |
-| [title_type](title_type.md) | Indica se o título é um nome próprio, descritivo, etc |
+| [title_type](title_type.md) |  |
+| [title_type](title_type.md) |  |
 
 
 

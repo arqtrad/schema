@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: preview_image
+# Slot: preview_image 
 
 
 _Uma única miniatura da imagem original._
@@ -97,7 +97,6 @@ domain_of:
 - Resource
 - MediaObject
 range: uriorcurie
-inlined: true
 
 ```
 </details></div>

@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: location_historic
+# Slot: location_historic 
 
 
-_Antigas jurisdições ou designações para o lugar onde o objeto se encontra. Para um sítio de onde o objeto foi fisicamente removido, usar `former_site:`._
+_Antigas jurisdições ou designações para o lugar onde o objeto se encontra. Para um sítio de onde o objeto foi fisicamente removido, usar a lista `former_site`._
 
 
 
@@ -25,7 +25,7 @@ URI: [wasth:location_historic](https://tradicional.arq.br/schema/location_histor
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -38,7 +38,7 @@ URI: [wasth:location_historic](https://tradicional.arq.br/schema/location_histor
 
 | Property | Value |
 | --- | --- |
-| Range | [HistoricPlace](HistoricPlace.md) |
+| Range | [LocationHistoric](LocationHistoric.md) |
 | Domain Of | [Work](Work.md) |
 ### Cardinality and Requirements
 
@@ -94,13 +94,13 @@ URI: [wasth:location_historic](https://tradicional.arq.br/schema/location_histor
 ```yaml
 name: location_historic
 description: Antigas jurisdições ou designações para o lugar onde o objeto se encontra.
-  Para um sítio de onde o objeto foi fisicamente removido, usar `former_site:`.
+  Para um sítio de onde o objeto foi fisicamente removido, usar a lista `former_site`.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 owner: Work
 domain_of:
 - Work
-range: HistoricPlace
+range: LocationHistoric
 multivalued: true
 inlined: true
 inlined_as_list: true

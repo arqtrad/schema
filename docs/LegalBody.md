@@ -3,10 +3,12 @@ search:
   boost: 10.0
 ---
 
-# Class: LegalBody
+# Class: LegalBody 
 
 
-_Personal, corporate, family, or other responsible body._
+_Referência a uma pessoa jurídica (pode ser um indivíduo detentor de direitos jurídicos específicos que se queira referenciar) ou entidade coletiva histórica._
+
+__
 
 
 
@@ -24,29 +26,29 @@ URI: [wasth:LegalBody](https://tradicional.arq.br/schema/LegalBody)
  classDiagram
     class LegalBody
     click LegalBody href "../LegalBody/"
-      LegalBody : name
-
-
-
-
-
-        LegalBody --> "0..1" TypedReference : name
+      LegalBody : legal_body_name
+        
+          
+    
+        
+        
+        LegalBody --> "0..1" TypedReference : legal_body_name
         click TypedReference href "../TypedReference/"
+    
 
-
-
-      LegalBody : type
-
-
-
-
-
-        LegalBody --> "0..1" RepositoryType : type
+        
+      LegalBody : legal_body_type
+        
+          
+    
+        
+        
+        LegalBody --> "0..1" RepositoryType : legal_body_type
         click RepositoryType href "../RepositoryType/"
+    
 
-
-
-
+        
+      
 ```
 
 
@@ -58,8 +60,8 @@ URI: [wasth:LegalBody](https://tradicional.arq.br/schema/LegalBody)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [type](type.md) | 0..1 <br/> [RepositoryType](RepositoryType.md) |  | direct |
-| [name](name.md) | 0..1 <br/> [TypedReference](TypedReference.md) |  | direct |
+| [legal_body_type](legal_body_type.md) | 0..1 <br/> [RepositoryType](RepositoryType.md) | Define a natureza do ente legal : pessoa jurídica, perímetro geográfico de tu... | direct |
+| [legal_body_name](legal_body_name.md) | 0..1 <br/> [TypedReference](TypedReference.md) | Referencia a identidade do ente legal num vocabulário controlado ou repositór... | direct |
 
 
 
@@ -124,34 +126,36 @@ URI: [wasth:LegalBody](https://tradicional.arq.br/schema/LegalBody)
 <details>
 ```yaml
 name: LegalBody
-description: Personal, corporate, family, or other responsible body.
+description: 'Referência a uma pessoa jurídica (pode ser um indivíduo detentor de
+  direitos jurídicos específicos que se queira referenciar) ou entidade coletiva histórica.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 attributes:
-  type:
-    name: type
+  legal_body_type:
+    name: legal_body_type
+    description: 'Define a natureza do ente legal : pessoa jurídica, perímetro geográfico
+      de tutela, etc.
+
+      '
     from_schema: https://tradicional.arq.br/schema/shared
-    ifabsent: string(corporate)
+    rank: 1000
+    ifabsent: RepositoryType(corporate)
     alias: type
     domain_of:
-    - Measurement
-    - Right
     - LegalBody
-    - Event
-    - StylePeriod
-    - EventPlace
-    - Inscription
-    - Topic
-    - HistoricPlace
     range: RepositoryType
-  name:
-    name: name
+  legal_body_name:
+    name: legal_body_name
+    description: 'Referencia a identidade do ente legal num vocabulário controlado
+      ou repositório de identidades, tal como o ISNI.
+
+      '
     from_schema: https://tradicional.arq.br/schema/shared
+    rank: 1000
     alias: name
     domain_of:
-    - ConceptReference
     - LegalBody
-    - RelatedEvent
-    - HistoricPlace
     range: TypedReference
     inlined: true
 
@@ -163,36 +167,38 @@ attributes:
 <details>
 ```yaml
 name: LegalBody
-description: Personal, corporate, family, or other responsible body.
+description: 'Referência a uma pessoa jurídica (pode ser um indivíduo detentor de
+  direitos jurídicos específicos que se queira referenciar) ou entidade coletiva histórica.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 attributes:
-  type:
-    name: type
+  legal_body_type:
+    name: legal_body_type
+    description: 'Define a natureza do ente legal : pessoa jurídica, perímetro geográfico
+      de tutela, etc.
+
+      '
     from_schema: https://tradicional.arq.br/schema/shared
-    ifabsent: string(corporate)
+    rank: 1000
+    ifabsent: RepositoryType(corporate)
     alias: type
     owner: LegalBody
     domain_of:
-    - Measurement
-    - Right
     - LegalBody
-    - Event
-    - StylePeriod
-    - EventPlace
-    - Inscription
-    - Topic
-    - HistoricPlace
     range: RepositoryType
-  name:
-    name: name
+  legal_body_name:
+    name: legal_body_name
+    description: 'Referencia a identidade do ente legal num vocabulário controlado
+      ou repositório de identidades, tal como o ISNI.
+
+      '
     from_schema: https://tradicional.arq.br/schema/shared
+    rank: 1000
     alias: name
     owner: LegalBody
     domain_of:
-    - ConceptReference
     - LegalBody
-    - RelatedEvent
-    - HistoricPlace
     range: TypedReference
     inlined: true
 

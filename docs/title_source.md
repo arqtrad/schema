@@ -3,16 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: title_source
+# Slot: title_source 
 
 
-_📚 A fonte do título title_source é opcional ; um título pode ser atestado em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa com um hífen)._
-
-_Se a fonte for cadastrada, o campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente._
-
-_Se necessário, incluir no campo note uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída._
-
-_Todos os campos source no restante da ficha devem ser preenchidos do mesmo modo. (Equivalente DublinCore: bibliographiCitation)._
+_A fonte do título title_source é opcional ; um título pode ser atestado em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa com um hífen)._
 
 
 
@@ -31,13 +25,13 @@ URI: [wasth:title_source](https://tradicional.arq.br/schema/title_source)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
+| [Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |  no  |
 | [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
+| [Thing](Thing.md) | Esta classe compreende todas as coisas no universo do CIDOC CRM |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
-| [Work](Work.md) | An historical landmark or building |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
+| [Site](Site.md) | O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T... |  no  |
 
 
 
@@ -105,20 +99,9 @@ URI: [wasth:title_source](https://tradicional.arq.br/schema/title_source)
 <details>
 ```yaml
 name: title_source
-description: '📚 A fonte do título title_source é opcional ; um título pode ser atestado
+description: A fonte do título title_source é opcional ; um título pode ser atestado
   em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa
   com um hífen).
-
-  Se a fonte for cadastrada, o campo `refid` deve conter a chave de citação (citation
-  key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa
-  no Zotero. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode
-  ser diferente.
-
-  Se necessário, incluir no campo note uma especificação adicional, como o número
-  da página da referência bibliográfica de onde a informação foi extraída.
-
-  Todos os campos source no restante da ficha devem ser preenchidos do mesmo modo.
-  (Equivalente DublinCore: bibliographiCitation).'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 owner: Thing

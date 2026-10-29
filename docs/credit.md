@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: credit
+# Slot: credit 
 
 
 _Informação sobre autoria ou responsabilidade._

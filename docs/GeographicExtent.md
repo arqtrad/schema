@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: GeographicExtent
+# Class: GeographicExtent 
 
 
 _Coordenadas do polígono que define o sítio._
@@ -27,43 +27,43 @@ URI: [wasth:GeographicExtent](https://tradicional.arq.br/schema/GeographicExtent
     class GeographicExtent
     click GeographicExtent href "../GeographicExtent/"
       GeographicExtent : bibliographic_citation
-
-
-
-
-
+        
+          
+    
+        
+        
         GeographicExtent --> "* _recommended_" BibliographicCitation : bibliographic_citation
         click BibliographicCitation href "../BibliographicCitation/"
+    
 
-
-
+        
       GeographicExtent : coordinates
-
+        
       GeographicExtent : geometry_type
-
-
-
-
-
+        
+          
+    
+        
+        
         GeographicExtent --> "1" GeometryType : geometry_type
         click GeometryType href "../GeometryType/"
+    
 
-
-
+        
       GeographicExtent : source
-
-
-
-
-
+        
+          
+    
+        
+        
         GeographicExtent --> "*" LegalBody : source
         click LegalBody href "../LegalBody/"
+    
 
-
-
+        
       GeographicExtent : srs_name
-
-
+        
+      
 ```
 
 
@@ -77,7 +77,7 @@ URI: [wasth:GeographicExtent](https://tradicional.arq.br/schema/GeographicExtent
 | ---  | --- | --- | --- |
 | [srs_name](srs_name.md) | 0..1 _recommended_ <br/> [Uriorcurie](Uriorcurie.md) | Names the coordinate reference system (CRS) that defines the semantics of the... | direct |
 | [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | direct |
 | [geometry_type](geometry_type.md) | 1 <br/> [GeometryType](GeometryType.md) | Tipo da geometria descrita pelas coordenadas | direct |
 | [coordinates](coordinates.md) | 1 <br/> [GeoJSONCoordinateArray](GeoJSONCoordinateArray.md) | No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do polígono (`... | direct |
 
@@ -211,17 +211,16 @@ attributes:
   srs_name:
     name: srs_name
     description: Names the coordinate reference system (CRS) that defines the semantics
-      of the lat/long pair according to the ISO6709 standard.
+      of the lat/long pair according to the ISO6709 standard. Sempre que possível,
+      usar EPSG:4326, senão os sistemas de referência nacionais.
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
-    alias: srsName
     owner: GeographicExtent
     domain_of:
     - GeographicPoint
     - GeographicExtent
     range: uriorcurie
     recommended: true
-    inlined: true
   source:
     name: source
     from_schema: https://tradicional.arq.br/schema
@@ -239,7 +238,15 @@ attributes:
     inlined_as_list: true
   bibliographic_citation:
     name: bibliographic_citation
-    description: 'Cadastro de uma referência bibliográfica.
+    description: '📚  Cadastro de uma referência bibliográfica.
+
+      O campo `refid` deve conter a chave de citação (citation key) que consta do
+      registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero,
+      começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação,
+      mas pode ser diferente.
+
+      Se necessário, incluir no campo `note` uma especificação adicional, como o número
+      da página da referência bibliográfica de onde a informação foi extraída.
 
       Usar o campo `description` para formatar a referência, caso a formatação automática
       do Zotero não for satisfatória.

@@ -3,48 +3,10 @@ search:
   boost: 10.0
 ---
 
-# Class: RelatedObject
+# Class: RelatedObject 
 
 
-_As formas mais comuns de relação no nosso projeto são :_
-
-__
-
-_  - depicted in: A edificação é representada numa pintura ou desenho_
-
-_    artístico;_
-
-__
-
-_  - documented by: Informações sobre a edificação estão publicadas numa_
-
-_    referência bibliográfica, processo administrativo ou outro documento_
-
-_    textual impresso, manuscrito ou eletrônico;_
-
-__
-
-_  - has plan / has floor plan / has section / has elevation / has_
-
-_    rendering: Essas relações mostram a existência de desenhos técnicos_
-
-_    da edificação, sejam eles históricos ou recentes, compilados de_
-
-_    fontes externas a este projeto de pesquisa._
-
-__
-
-_  - has construction drawing / has design / has sketch: Essas relações se_
-
-_    referem a desenhos históricos (fontes primárias) que atestam o_
-
-_    processo de projeto da edificação._
-
-__
-
-_ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO resource, MAIS ABAIXO._
-
-_O grupo relation é destinado unicamente a cadastrar relações desta edificação com objetos autônomos, tais como outras edificações, conjuntos urbanos, obras de artes visuais, referências bibliográficas ou acervos arquivísticos._
+_A wrapper for identifying information about an object or work, including collections, related to the object/work in focus. May include a weblink._
 
 __
 
@@ -66,87 +28,87 @@ URI: [wasth:RelatedObject](https://tradicional.arq.br/schema/RelatedObject)
     click RelatedObject href "../RelatedObject/"
       RelatedObject <|-- RelatedWork
         click RelatedWork href "../RelatedWork/"
-
+      
       RelatedObject : bibliographic_citation
-
-
-
-
-
+        
+          
+    
+        
+        
         RelatedObject --> "* _recommended_" BibliographicCitation : bibliographic_citation
         click BibliographicCitation href "../BibliographicCitation/"
+    
 
-
-
+        
       RelatedObject : description
-
+        
       RelatedObject : media
-
-
-
-
-
+        
+          
+    
+        
+        
         RelatedObject --> "*" MediaObject : media
         click MediaObject href "../MediaObject/"
+    
 
-
-
+        
       RelatedObject : object_type
-
-
-
-
-
+        
+          
+    
+        
+        
         RelatedObject --> "0..1" ObjectType : object_type
         click ObjectType href "../ObjectType/"
+    
 
-
-
+        
       RelatedObject : related_object
-
-
-
-
-
+        
+          
+    
+        
+        
         RelatedObject --> "1" Thing : related_object
         click Thing href "../Thing/"
+    
 
-
-
+        
       RelatedObject : relation_type
-
-
-
-
-
+        
+          
+    
+        
+        
         RelatedObject --> "1" RelationType : relation_type
         click RelationType href "../RelationType/"
+    
 
-
-
+        
       RelatedObject : resources
-
-
-
-
-
+        
+          
+    
+        
+        
         RelatedObject --> "*" Resource : resources
         click Resource href "../Resource/"
+    
 
-
-
+        
       RelatedObject : source
-
-
-
-
-
+        
+          
+    
+        
+        
         RelatedObject --> "*" LegalBody : source
         click LegalBody href "../LegalBody/"
+    
 
-
-
-
+        
+      
 ```
 
 
@@ -169,7 +131,7 @@ URI: [wasth:RelatedObject](https://tradicional.arq.br/schema/RelatedObject)
 | [resources](resources.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de imag... | direct |
 | [media](media.md) | * <br/> [MediaObject](MediaObject.md) | Representações iconográficas deste objeto | direct |
 | [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | direct |
 
 
 
@@ -220,21 +182,10 @@ URI: [wasth:RelatedObject](https://tradicional.arq.br/schema/RelatedObject)
 <details>
 ```yaml
 name: RelatedObject
-description: "As formas mais comuns de relação no nosso projeto são :\n\n  - depicted\
-  \ in: A edificação é representada numa pintura ou desenho\n    artístico;\n\n  -\
-  \ documented by: Informações sobre a edificação estão publicadas numa\n    referência\
-  \ bibliográfica, processo administrativo ou outro documento\n    textual impresso,\
-  \ manuscrito ou eletrônico;\n\n  - has plan / has floor plan / has section / has\
-  \ elevation / has\n    rendering: Essas relações mostram a existência de desenhos\
-  \ técnicos\n    da edificação, sejam eles históricos ou recentes, compilados de\n\
-  \    fontes externas a este projeto de pesquisa.\n\n  - has construction drawing\
-  \ / has design / has sketch: Essas relações se\n    referem a desenhos históricos\
-  \ (fontes primárias) que atestam o\n    processo de projeto da edificação.\n\nATENÇÃO\
-  \ : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO\
-  \ GRUPO resource, MAIS ABAIXO.\nO grupo relation é destinado unicamente a cadastrar\
-  \ relações desta edificação com objetos autônomos, tais como outras edificações,\
-  \ conjuntos urbanos, obras de artes visuais, referências bibliográficas ou acervos\
-  \ arquivísticos.\n"
+description: 'A wrapper for identifying information about an object or work, including
+  collections, related to the object/work in focus. May include a weblink.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 slots:
 - description
@@ -254,21 +205,10 @@ slots:
 <details>
 ```yaml
 name: RelatedObject
-description: "As formas mais comuns de relação no nosso projeto são :\n\n  - depicted\
-  \ in: A edificação é representada numa pintura ou desenho\n    artístico;\n\n  -\
-  \ documented by: Informações sobre a edificação estão publicadas numa\n    referência\
-  \ bibliográfica, processo administrativo ou outro documento\n    textual impresso,\
-  \ manuscrito ou eletrônico;\n\n  - has plan / has floor plan / has section / has\
-  \ elevation / has\n    rendering: Essas relações mostram a existência de desenhos\
-  \ técnicos\n    da edificação, sejam eles históricos ou recentes, compilados de\n\
-  \    fontes externas a este projeto de pesquisa.\n\n  - has construction drawing\
-  \ / has design / has sketch: Essas relações se\n    referem a desenhos históricos\
-  \ (fontes primárias) que atestam o\n    processo de projeto da edificação.\n\nATENÇÃO\
-  \ : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO\
-  \ GRUPO resource, MAIS ABAIXO.\nO grupo relation é destinado unicamente a cadastrar\
-  \ relações desta edificação com objetos autônomos, tais como outras edificações,\
-  \ conjuntos urbanos, obras de artes visuais, referências bibliográficas ou acervos\
-  \ arquivísticos.\n"
+description: 'A wrapper for identifying information about an object or work, including
+  collections, related to the object/work in focus. May include a weblink.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 attributes:
   description:
@@ -286,12 +226,10 @@ attributes:
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - TypedReference
     - Measurement
-    - EventDate
-    - EventPlace
     - RelatedEvent
     - Thing
-    - Appellation
     - Inscription
     - Topic
     range: string
@@ -399,7 +337,15 @@ attributes:
     inlined_as_list: true
   bibliographic_citation:
     name: bibliographic_citation
-    description: 'Cadastro de uma referência bibliográfica.
+    description: '📚  Cadastro de uma referência bibliográfica.
+
+      O campo `refid` deve conter a chave de citação (citation key) que consta do
+      registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero,
+      começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação,
+      mas pode ser diferente.
+
+      Se necessário, incluir no campo `note` uma especificação adicional, como o número
+      da página da referência bibliográfica de onde a informação foi extraída.
 
       Usar o campo `description` para formatar a referência, caso a formatação automática
       do Zotero não for satisfatória.

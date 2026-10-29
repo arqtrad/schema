@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: title_type
+# Slot: title_type 
 
 
 _Indica se o título é um nome próprio, descritivo, etc._
@@ -15,8 +15,6 @@ _Indica se o título é um nome próprio, descritivo, etc._
 
 
 URI: [wasth:title_type](https://tradicional.arq.br/schema/title_type)
-Alias: type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -27,14 +25,11 @@ Alias: type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
-| [Appellation](Appellation.md) |  |  no  |
-| [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
-| [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
-| [Work](Work.md) | An historical landmark or building |  yes  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |  yes  |
+| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  yes  |
+| [Appellation](Appellation.md) |  |  yes  |
+| [Repository](Repository.md) | Entidade com existência jurídica e espacial |  yes  |
+| [Site](Site.md) | O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T... |  yes  |
 
 
 
@@ -47,15 +42,8 @@ Alias: type
 
 | Property | Value |
 | --- | --- |
-| Range | [TitleType](TitleType.md) |
-| Domain Of | [Thing](Thing.md), [Appellation](Appellation.md) |
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
-
-
+| Range | NONE |
+| Domain Of | [Concept](Concept.md), [Resource](Resource.md), [Appellation](Appellation.md), [Repository](Repository.md), [Site](Site.md) |
 
 
 
@@ -98,12 +86,13 @@ name: title_type
 description: Indica se o título é um nome próprio, descritivo, etc.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-alias: type
 domain_of:
-- Thing
+- Concept
+- Resource
 - Appellation
-range: TitleType
-required: true
+- Repository
+- Site
+range: Any
 
 ```
 </details></div>

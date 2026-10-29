@@ -3,18 +3,18 @@ search:
   boost: 5.0
 ---
 
-# Slot: repositories
+# Slot: repositories 
 
+
+_Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar a inclusão da edificação em perímetros de sítios tombados/classificados do patrimônio, áreas de interesse histórico-cultural, etc._
+
+_O repositório é cadastrado como uma pessoa jurídica dotada de extensão geográfica._
+
+_---------------------------------------------------------------------_
 
 _A set of elements for the identification, name and location of the repository that is responsible for the object/work in focus._
 
 _Repeated if there are several designations known, or if former repositories or geographic places should be listed._
-
-_---------------------------------------------------------------------_
-
-_Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar a inclusão da edificação em perímetros de sítios do patrimônio cultural, etc._
-
-_Os repositórios devem ser cadastrados de modo semelhante às informações de georreferenciamento, usando o tipo `other`._
 
 __
 
@@ -35,13 +35,13 @@ URI: [wasth:repositories](https://tradicional.arq.br/schema/repositories)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
+| [Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |  no  |
 | [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
+| [Thing](Thing.md) | Esta classe compreende todas as coisas no universo do CIDOC CRM |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
-| [Work](Work.md) | An historical landmark or building |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
+| [Site](Site.md) | O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T... |  no  |
 
 
 
@@ -109,19 +109,19 @@ URI: [wasth:repositories](https://tradicional.arq.br/schema/repositories)
 <details>
 ```yaml
 name: repositories
-description: 'A set of elements for the identification, name and location of the repository
-  that is responsible for the object/work in focus.
+description: 'Nos Documentários da Arquitetura Tradicional, usamos repositórios para
+  indicar a inclusão da edificação em perímetros de sítios tombados/classificados
+  do patrimônio, áreas de interesse histórico-cultural, etc.
 
-  Repeated if there are several designations known, or if former repositories or geographic
-  places should be listed.
+  O repositório é cadastrado como uma pessoa jurídica dotada de extensão geográfica.
 
   ---------------------------------------------------------------------
 
-  Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar a
-  inclusão da edificação em perímetros de sítios do patrimônio cultural, etc.
+  A set of elements for the identification, name and location of the repository that
+  is responsible for the object/work in focus.
 
-  Os repositórios devem ser cadastrados de modo semelhante às informações de georreferenciamento,
-  usando o tipo `other`.
+  Repeated if there are several designations known, or if former repositories or geographic
+  places should be listed.
 
   '
 from_schema: https://tradicional.arq.br/schema

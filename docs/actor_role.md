@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: actor_role
+# Slot: actor_role 
 
 
 _Identificação de um agente e do seu papel no evento._
@@ -25,7 +25,7 @@ URI: [wasth:actor_role](https://tradicional.arq.br/schema/actor_role)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
 
 
 

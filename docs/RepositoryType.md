@@ -4,7 +4,7 @@ search:
 ---
 
 
-# Enum: RepositoryType
+# Enum: RepositoryType 
 
 
 
@@ -18,12 +18,12 @@ _Type of repository or legal body._
 URI: [wasth:RepositoryType](https://tradicional.arq.br/schema/RepositoryType)
 
 ## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| corporate | None |  |
-| geographic | None |  |
-| personal | None |  |
-| other | None |  |
+| Value | Meaning | Description | Additional Info |
+| --- | --- | --- | --- |
+| corporate | None |  | Title: institucional<br>|
+| geographic | None |  | Title: geográfico<br>|
+| personal | None |  | Title: individual<br>|
+| other | None |  | Title: outro<br>|
 
 
 
@@ -32,6 +32,9 @@ URI: [wasth:RepositoryType](https://tradicional.arq.br/schema/RepositoryType)
 
 | Name | Description |
 | ---  | --- |
+| [legal_body_type](legal_body_type.md) | Define a natureza do ente legal : pessoa jurídica, perímetro geográfico de tu... |
+| [location_historic_type](location_historic_type.md) | Define se o local histórico designa uma jurisdição, um topônimo antigo, ou ou... |
+| [title_type](title_type.md) |  |
 | [title_type](title_type.md) |  |
 
 
@@ -70,12 +73,16 @@ rank: 1000
 permissible_values:
   corporate:
     text: corporate
+    title: institucional
   geographic:
     text: geographic
+    title: geográfico
   personal:
     text: personal
+    title: individual
   other:
     text: other
+    title: outro
 
 ```
 </details>

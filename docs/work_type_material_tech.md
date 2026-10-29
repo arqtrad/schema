@@ -3,12 +3,14 @@ search:
   boost: 5.0
 ---
 
-# Slot: work_type_material_tech
+# Slot: work_type_material_tech 
 
-
-_Descriptors for objects that are distinguishable by their materials encorporated, or the techniques used to create the object or work. If an object is identified by the substances detected and/or the processes employed, then it is qualified by material or technique._
 
 _Nos Documentários da Arquitetura Tradicional, refere-se à caracterização construtiva geral da edificação._
+
+_---------------------------------------------------------------------_
+
+_Descriptors for objects that are distinguishable by their materials encorporated, or the techniques used to create the object or work. If an object is identified by the substances detected and/or the processes employed, then it is qualified by material or technique._
 
 
 
@@ -27,7 +29,7 @@ URI: [term:lido00789](http://terminology.lido-schema.org/lido00789)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -97,13 +99,15 @@ URI: [term:lido00789](http://terminology.lido-schema.org/lido00789)
 <details>
 ```yaml
 name: work_type_material_tech
-description: 'Descriptors for objects that are distinguishable by their materials
-  encorporated, or the techniques used to create the object or work. If an object
-  is identified by the substances detected and/or the processes employed, then it
-  is qualified by material or technique.
+description: 'Nos Documentários da Arquitetura Tradicional, refere-se à caracterização
+  construtiva geral da edificação.
 
-  Nos Documentários da Arquitetura Tradicional, refere-se à caracterização construtiva
-  geral da edificação.'
+  ---------------------------------------------------------------------
+
+  Descriptors for objects that are distinguishable by their materials encorporated,
+  or the techniques used to create the object or work. If an object is identified
+  by the substances detected and/or the processes employed, then it is qualified by
+  material or technique.'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: term:lido00789
@@ -113,7 +117,8 @@ domain_of:
 range: MaterialTech
 recommended: true
 multivalued: true
-inlined_as_list: false
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

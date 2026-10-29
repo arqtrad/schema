@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: actor_type
+# Slot: actor_type 
 
 
 _Define se o agente é uma pessoa, uma organização ou corporação, uma oficina, uma família, etc._

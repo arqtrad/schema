@@ -135,36 +135,34 @@ Name: wasth_schema
 | [Actor](Actor.md) | Agent and role in an event |
 | [Appellation](Appellation.md) |  |
 | [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica |
-| [BroaderConceptReference](BroaderConceptReference.md) | Relações hierárquicas |
 | [ConceptReference](ConceptReference.md) | Atribuição de vocabulário controlado com citação de apoio |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BroaderConceptReference](BroaderConceptReference.md) | Relações hierárquicas |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MappingConceptReference](MappingConceptReference.md) | Relações semânticas |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MaterialTech](MaterialTech.md) | Usar discernimento para identificar sistemas, materiais e técnicas que intere... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[NarrowerConceptReference](NarrowerConceptReference.md) | Relações hierárquicas |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[StylePeriod](StylePeriod.md) |  |
 | [Container](Container.md) | Todos os elementos do documentário |
-| [DateRange](DateRange.md) |  |
-| [EventDate](EventDate.md) | A wrapper for the expression of a date by providing a set of years as earlies... |
-| [EventPlace](EventPlace.md) |  |
+| [EventDate](EventDate.md) | Expressão complexa de uma data que pode se referir ao começo ou ao término de... |
 | [GeographicExtent](GeographicExtent.md) | Coordenadas do polígono que define o sítio |
 | [GeographicPoint](GeographicPoint.md) | Coordenadas do ponto que situa o sítio na visualização do mapa |
-| [Header](Header.md) | Presentation metadata for the WASTH interface |
-| [HistoricPlace](HistoricPlace.md) | Designações alternativas ou jurisdições antigas para o mesmo local, NÃO a loc... |
 | [Inscription](Inscription.md) | A descrição da inscrição informa local, dimensões e características |
-| [LegalBody](LegalBody.md) | Personal, corporate, family, or other responsible body |
-| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |
+| [LegalBody](LegalBody.md) | Referência a uma pessoa jurídica (pode ser um indivíduo detentor de direitos ... |
+| [LocationHistoric](LocationHistoric.md) | Designações alternativas ou jurisdições antigas para o mesmo local, NÃO a loc... |
+| [Measurement](Measurement.md) | Informações estruturadas sobre as dimensões do objeto ou requisitos de condic... |
 | [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |
-| [RelatedConceptReference](RelatedConceptReference.md) | Relações hierárquicas |
 | [RelatedEvent](RelatedEvent.md) |  |
-| [RelatedObject](RelatedObject.md) | As formas mais comuns de relação no nosso projeto são : |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... |
-| [Right](Right.md) | * Preencher `earliest_date` com a data de início da vigência dos direitos ou ... |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |
+| [RelatedObject](RelatedObject.md) | A wrapper for identifying information about an object or work, including coll... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RelatedWork](RelatedWork.md) | As formas mais comuns de relação no nosso projeto são : |
+| [Right](Right.md) | * Preencher `earliest_date` com a data de início da vigência dos |
+| [Thing](Thing.md) | Esta classe compreende todas as coisas no universo do CIDOC CRM |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Repository](Repository.md) | Entidade com existência jurídica e espacial |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Work](Work.md) | An historical landmark or building |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Site](Site.md) | O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |
 | [Topic](Topic.md) | Subject or iconographic topic |
-| [TypedReference](TypedReference.md) | Reference to a local record, IRI, URI, or LIDO terminology term |
+| [TypedReference](TypedReference.md) | Permite referenciar um registro local ou externo por meio da sua URI (localiz... |
 
 
 
@@ -178,69 +176,78 @@ Name: wasth_schema
 | [actor_role](actor_role.md) | Identificação de um agente e do seu papel no evento |
 | [actor_type](actor_type.md) | Define se o agente é uma pessoa, uma organização ou corporação, uma oficina, ... |
 | [alt](alt.md) | Altitude em metros (separador decimal: ponto) |
-| [alt_name](alt_name.md) | O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação se... |
-| [author](author.md) | ORCID iD of the record author or maintainer |
-| [bibliographic_citation](bibliographic_citation.md) | Cadastro de uma referência bibliográfica |
+| [alt_name](alt_name.md) | O bloco `alt_name` permite cadastrar outros nomes pelos quais o objeto ou con... |
+| [bibliographic_citation](bibliographic_citation.md) | 📚  Cadastro de uma referência bibliográfica |
 | [broader](broader.md) | Um conceito de significação mais genérica |
-| [caption](caption.md) | Legenda descritiva ou explicativa |
-| [category](category.md) | The LIDO Category Vocabulary is a structured controlled list of terms recomme... |
-| [classification_genre](classification_genre.md) | A broad category for grouping objects on the basis of shared intrinsic charac... |
-| [classification_local](classification_local.md) | A classification scheme for grouping objects on the basis of locally defined ... |
-| [classification_special](classification_special.md) | A classification scheme for grouping objects on the basis of criteria defined... |
-| [classification_subject](classification_subject.md) | A broad category for grouping objects or works on the basis of a topical asso... |
-| [collection](collection.md) | Collections or aggregations to which the object belongs |
+| [category](category.md) | Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário... |
+| [classification_genre](classification_genre.md) | ❓ Ainda não implementamos o bloco `objectClassification` do LIDO |
+| [classification_local](classification_local.md) | ❓ Ainda não implementamos o bloco `objectClassification` do LIDO |
+| [classification_special](classification_special.md) | ❓ Ainda não implementamos o bloco `objectClassification` do LIDO |
+| [classification_subject](classification_subject.md) | ❓ Ainda não implementamos o bloco `objectClassification` do LIDO |
+| [collection](collection.md) | Descreve conjuntos conceituais nos quais a edificação foi incluída, por exemp... |
 | [concept](concept.md) |  |
 | [concepts](concepts.md) | Todos os termos de vocabulário controlado |
-| [content](content.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... |
+| [content](content.md) | Conteúdo textual descritivo ou explicativo |
 | [coordinates](coordinates.md) | No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do polígono (`... |
 | [credit](credit.md) | Informação sobre autoria ou responsabilidade |
-| [culture](culture.md) | An index element for the cultural context from which the object/work in focus... |
-| [date_type](date_type.md) | An attribute for the kind of latest date, whether it is, for instance, exact ... |
-| [date_value](date_value.md) | Usar o formato ISO-8601 (por exemplo, 2026-03-17) |
+| [culture](culture.md) | Designa o contexto cultural ou étnico no qual o objeto foi afetado pelo event... |
+| [date_type](date_type.md) | Qualifica a confiabilidade da data como sendo conhecida ou estimada |
+| [date_value](date_value.md) | Usar o formato ISO-8601 (AAAA-MM-DD) |
 | [description](description.md) | A human-readable description for a thing |
-| [earliest_date](earliest_date.md) | An index element for the expression of an exact or estimated date, for instan... |
+| [display_date](display_date.md) | Permite a expressão descritiva das datas de início e fim do evento, para cont... |
 | [end_date](end_date.md) | Data final do evento ou mais tardia data presumida para o seu decurso |
-| [event_date](event_date.md) | Conjunto de datas em que decorreu o evento |
-| [extent](extent.md) | Polygonal, multipolygonal, or linear geographic extent associated with the pl... |
+| [event_name](event_name.md) | Identifica o evento ralacionado |
+| [event_place](event_place.md) | Lugares associados ao evento, sem incluir o próprio local no qual se situa a ... |
+| [event_place_type](event_place_type.md) | Se relevante para a ação, indicar se se trata do local de descobrimento do ob... |
+| [event_type](event_type.md) | Categoriza o evento segundo os vários tipos de ações, de processos, ou de res... |
+| [extent](extent.md) | Área da implantação da edificação ou sítio cadastrado |
 | [format](format.md) | Campo disciplinado pela especificação [DublinCore] no campo [format](https://... |
 | [format_extent](format_extent.md) | Indica a parte do objeto que está sendo medida — por exemplo, se a altura é a... |
 | [former_site](former_site.md) | Indica que a edificação não se encontra mais no local indicado, seja porque f... |
 | [geometry_type](geometry_type.md) | Tipo da geometria descrita pelas coordenadas |
 | [holder](holder.md) | A set of elements identifying the person or the group of persons holding the ... |
-| [href](href.md) | Um hyperlink simples |
-| [id](id.md) | Unique identifier for this object |
-| [identifiers](identifiers.md) | Published or external identifiers for the object |
+| [id](id.md) | Identificador globalmente único para este objeto ou recurso |
+| [identifiers](identifiers.md) | Números de inventário e demais códigos que identificam este objeto em outras ... |
+| [inscription_type](inscription_type.md) | Determina a natureza da inscrição |
 | [inscriptions](inscriptions.md) | Marcas, símbolos ou textos gravados na edificação, especialmente aqueles refe... |
 | [intended_site](intended_site.md) | Sinaliza que a edificação devia ocupar um certo local, mas não chegou a ser c... |
+| [label](label.md) | Nome ou título (texto sem formatação) |
 | [lat](lat.md) | Latitude em graus decimais (separador decimal: ponto) |
-| [latest_date](latest_date.md) | An index element for the expression of the exact or approximate date, for ins... |
-| [legal_body](legal_body.md) |  |
-| [location](location.md) | Representative point location for the place, normally in EPSG:4326 (WGS 84) |
+| [legal_body](legal_body.md) | Informações estruturadas sobre a pessoa jurídica |
+| [legal_body_name](legal_body_name.md) | Referencia a identidade do ente legal num vocabulário controlado ou repositór... |
+| [legal_body_type](legal_body_type.md) | Define a natureza do ente legal : pessoa jurídica, perímetro geográfico de tu... |
+| [lido_term](lido_term.md) | LIDO terminology term |
+| [location](location.md) | Coordenadas geográficas do ponto que permite situar a edificação no mapa para... |
 | [location_historic](location_historic.md) | Antigas jurisdições ou designações para o lugar onde o objeto se encontra |
+| [location_historic_name](location_historic_name.md) | Identificação do local com referência a um vocabulário controlado ou repositó... |
+| [location_historic_type](location_historic_type.md) | Define se o local histórico designa uma jurisdição, um topônimo antigo, ou ou... |
 | [lon](lon.md) | Longitude em graus decimais (separador decimal: ponto) |
+| [mapping](mapping.md) | Um conceito com o qual existe um relacionamento semântico associativo |
 | [match](match.md) | Tipo da relação |
-| [material](material.md) | This class is a specialization of E55 Type and comprises the concepts of mate... |
+| [material](material.md) | Descreve a natureza do material empregado na edificação, no elemento ou no ev... |
 | [material_tech_type](material_tech_type.md) | Tipo da referência a um material ou técnica usado na obra: material de constr... |
+| [measurement_event](measurement_event.md) | Descreve a ocasião em que as medidas foram aferidas, caso essa informação sej... |
+| [measurement_qualifier](measurement_qualifier.md) | Indica que as medidas são aproximadas |
+| [measurement_shape](measurement_shape.md) | caso relevante, indicar a forma do elemento medido usando a [lista de formas ... |
+| [measurement_type](measurement_type.md) | designa a natureza da medida : largura, altura, área, etc |
+| [measurement_value](measurement_value.md) | Valor numérico, usar ponto como separador decimal |
 | [measurements](measurements.md) | A wrapper for information about the dimensions, or other measurements, of the... |
 | [media](media.md) | Representações iconográficas deste objeto |
 | [media_alt](media_alt.md) | Texto alternativo para leitores de tela ou outras formas de acessibilidade |
 | [method](method.md) | An index element for the method by which the event is or was carried out |
-| [name](name.md) | Identificador do termo referido |
 | [narrower](narrower.md) | Um conceito de significação mais específica |
 | [note](note.md) | Se necessário, incluir no campo `note` uma especificação adicional, como o nú... |
 | [object_type](object_type.md) | Usar um vocabulário controlado para identificar o tipo de representação, por ... |
-| [other_site](other_site.md) | Para casos não contemplados em nenhuma das categorias acima |
-| [overlay_image](overlay_image.md) |  |
-| [part_of](part_of.md) | A set of structured information about a place that is the broader context for... |
+| [other_site](other_site.md) | Para casos de implantação não contemplados em nenhuma das categorias acima |
+| [part_of](part_of.md) | Permite identificar o contexto geográfico ou administrativo ao qual a edifica... |
+| [period_name_type](period_name_type.md) | Designa a natureza ou origem do nome do período ou estilo indicado |
 | [perspective](perspective.md) | Tipo de vista do desenho |
-| [place](place.md) | A set of structured information indicating the place or location where an obj... |
-| [places](places.md) | Lugares associados ao evento, sem incluir o próprio local no qual se situa a ... |
 | [preview_image](preview_image.md) | Uma única miniatura da imagem original |
 | [provided_3d](provided_3d.md) | Modelo tridimensional ou IFC da edificação |
 | [provided_image](provided_image.md) | Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap |
-| [qualifier](qualifier.md) | Indica que as medidas são aproximadas : usar um [qualificador do AAT](https:/... |
-| [record_date](record_date.md) | Date the record was created or last substantively revised |
-| [record_rights](record_rights.md) | A set of structured information about rights regarding the content provided i... |
+| [record_author](record_author.md) | ORCID iD da pessoa que escreveu a versão original da ficha |
+| [record_date](record_date.md) | Data de inclusão da ficha |
+| [record_rights](record_rights.md) | Informações estruturadas sobre os direitos que incidem sobre o conteúdo textu... |
 | [reference_type](reference_type.md) |  |
 | [refid](refid.md) | Local or external identifier |
 | [related_events](related_events.md) | A set of structured information about an event related to the event in focus,... |
@@ -248,40 +255,38 @@ Name: wasth_schema
 | [related_works](related_works.md) | A wrapper for identifying information about an object or work, including coll... |
 | [relation](relation.md) | Um conceito com o qual existe um relacionamento semântico associativo |
 | [relation_type](relation_type.md) | Usamos os tipos de relação previstos pelo [VRA Core] |
-| [repositories](repositories.md) | A set of elements for the identification, name and location of the repository... |
+| [repositories](repositories.md) | Nos Documentários da Arquitetura Tradicional, usamos repositórios para indica... |
 | [resource_service](resource_service.md) | Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal... |
 | [resources](resources.md) | Os desenhos ou modelos da edificação são apresentados online por meio de imag... |
 | [rights](rights.md) |  |
+| [rights_statement](rights_statement.md) | Referencia, preferencialmente por meio de uma URI, as informações específicas... |
+| [rights_type](rights_type.md) | Determina se os direitos ora descritos são uma licença específica (padrão) ou... |
 | [role_in_event](role_in_event.md) | Ação desempenhada pelo agente no evento |
 | [scale](scale.md) | Número inverso da escala da imagem, se ela tiver uma resolução ou tamanho de ... |
-| [shape](shape.md) | caso relevante, indicar a forma do elemento medido usando a [lista de formas ... |
 | [site](site.md) | A localização real, atual da edificação — é o que será usado em quase todos o... |
 | [source](source.md) |  |
 | [srs_name](srs_name.md) | Names the coordinate reference system (CRS) that defines the semantics of the... |
 | [start_date](start_date.md) | Data inicial do evento ou mais antiga data presumida para o seu decurso |
-| [style_period](style_period.md) | An index element for the period in which the event happened, comprising infor... |
+| [style_period](style_period.md) | Denomina o(s) período(s) em que o evento decorreu, em qualquer escala relevan... |
 | [subject](subject.md) | Recomenda-se articular o tema em três níveis : descrição, identificação e int... |
-| [tags](tags.md) | Provisional uncontrolled keywords |
-| [teaser](teaser.md) |  |
-| [technique](technique.md) | The production or manufacturing processes, techniques, and methods incorporat... |
+| [tags](tags.md) | Lista de palavras-chave que caracterizam o objeto, de modo não estruturado |
+| [technique](technique.md) | Processos, técnicas, métodos e saberes postos em prática no conjunto da edifi... |
 | [temporal](temporal.md) | Date on which a right is or was current |
-| [term](term.md) | LIDO terminology term |
 | [things_present](things_present.md) | A set of structured information for a related object or work that is or was p... |
-| [title](title.md) | The preferred human-readable label for a Thing |
+| [title](title.md) | Nome pelo qual este item é mais comumente conhecido |
 | [title_preference](title_preference.md) | Indica se o nome em questão deve ser oculto ou não, se é uma versão alternati... |
-| [title_source](title_source.md) | 📚 A fonte do título title_source é opcional ; um título pode ser atestado em ... |
+| [title_source](title_source.md) | A fonte do título title_source é opcional ; um título pode ser atestado em ma... |
 | [title_type](title_type.md) | Indica se o título é um nome próprio, descritivo, etc |
-| [type](type.md) | designa a natureza da medida : largura, altura, área, etc |
-| [unit](unit.md) | Unidade de medida usada no dimensionamento da representação, por exemplo metr... |
-| [value](value.md) | Valor numérico, usar ponto como separador decimal |
-| [work_rights](work_rights.md) | > ⚠️  Este bloco se refere a eventuais direitos autorais sobre A > EDIFICAÇÃO... |
-| [work_type_condition](work_type_condition.md) | Descriptors for objects that are distinguishable by their overall state such ... |
-| [work_type_context](work_type_context.md) | Descriptors for objects that are distinguishable by their use or application ... |
-| [work_type_form](work_type_form.md) | Descriptors for objects that are distinguishable by their physical form or by... |
-| [work_type_function](work_type_function.md) | Objects that are distinguishable by the particular purpose for which they are... |
-| [work_type_material_tech](work_type_material_tech.md) | Descriptors for objects that are distinguishable by their materials encorpora... |
-| [work_type_subject_type](work_type_subject_type.md) | Descriptors for objects that are distinguishable by their topics, themes, or ... |
-| [work_type_use](work_type_use.md) | Descriptors for objects that are distinguishable by the way they are employed... |
+| [topic_type](topic_type.md) | Categoriza o nível descritivo ou interpretativo do tema |
+| [unit](unit.md) | Unidade de medida usada no dimensionamento do objeto ou da representação, por... |
+| [work_rights](work_rights.md) | ⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobr... |
+| [work_type_condition](work_type_condition.md) | Descreve o estado físico da edificação quanto à sua aparência de completude, ... |
+| [work_type_context](work_type_context.md) | Nos Documentários de edificações, designa sobretudo o contexto imediato de im... |
+| [work_type_form](work_type_form.md) | Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal |
+| [work_type_function](work_type_function.md) | Nos Documentários de edificações, designa um dos sete tipos de propósitos con... |
+| [work_type_material_tech](work_type_material_tech.md) | Nos Documentários da Arquitetura Tradicional, refere-se à caracterização cons... |
+| [work_type_subject_type](work_type_subject_type.md) | Nos Documentários da Arquitetura Tradicional, indica, se houver, uma classifi... |
+| [work_type_use](work_type_use.md) | Nos Documentários da Arquitetura Tradicional, designa propriamente a(s) class... |
 | [works](works.md) | Todas as edificações documentadas |
 | [zoom](zoom.md) | Usado para visualizar o mapa mais de longe se a precisão das coordenadas for ... |
 
@@ -290,24 +295,27 @@ Name: wasth_schema
 
 | Enumeration | Description |
 | --- | --- |
-| [AgentType](AgentType.md) | LIDO actor type |
-| [DateQualifier](DateQualifier.md) | Exatidão da data conhecida |
-| [EventPlaceType](EventPlaceType.md) | The type attribute qualifies the place according to its role or function in t... |
-| [EventType](EventType.md) | The particular kind of event the object/work participated in or was present a... |
-| [GeometryType](GeometryType.md) | geoJSON types of area geometry |
-| [InscriptionType](InscriptionType.md) | VRA Core types for inscriptions |
-| [LabelType](LabelType.md) | SKOS label types |
-| [MaterialTechType](MaterialTechType.md) | The physical matter or substance from which an object is made, including any ... |
+| [AgentType](AgentType.md) | Tipo de agente na terminologia LIDO |
+| [ConceptType](ConceptType.md) | Tipos de termos de vocabulário baseados no Getty AAT |
+| [DateType](DateType.md) | Exatidão da data conhecida |
+| [EventPlaceType](EventPlaceType.md) | Para eventos que implicam a deslocação do bem, indica se o local se refere ao... |
+| [EventType](EventType.md) | O tipo de incidência sobre a edificação que o evento descreve |
+| [GeometryType](GeometryType.md) | Tipos de geometria do objeto geoJSON |
+| [InscriptionType](InscriptionType.md) | Tipos de inscrições previstos no VRA Core |
+| [LabelType](LabelType.md) | No SKOS, caracteriza se cada termo deve ser considerado preferencial ou alter... |
+| [MaterialTechType](MaterialTechType.md) | A materialidade e as técnicas de produção ou intervenção na edificação devem ... |
+| [MeasurementQualifier](MeasurementQualifier.md) | Qualifica a confiabilidade das medidas aferidas |
 | [MeasurementType](MeasurementType.md) | The type attribute qualifies whether the measurements given are features of t... |
 | [ObjectType](ObjectType.md) | The LIDO Object Type Vocabulary is a structured controlled list of terms reco... |
-| [PeriodNameType](PeriodNameType.md) | The LIDO Period/Style Type-Vocabulary is a controlled list of terms recommend... |
+| [PeriodNameType](PeriodNameType.md) | O vocabulário de tipos de período/estilo do LIDO é uma lista controlada estru... |
 | [ReferenceType](ReferenceType.md) | Tipos de referências a objetos externos previstos no LIDO |
 | [RelationType](RelationType.md) | Os tipos de relação entre objetos são definidos pelo VRA Core |
 | [RepositoryType](RepositoryType.md) | Type of repository or legal body |
 | [RightsType](RightsType.md) | LIDO expressions for rights types |
 | [RoleType](RoleType.md) | Contribuições de um agente a um evento |
-| [SkosHierarchicalRelation](SkosHierarchicalRelation.md) | SKOS-THES hierarchical relation type |
+| [SkosBroaderRelation](SkosBroaderRelation.md) | SKOS-THES broader relation type |
 | [SkosMappingRelation](SkosMappingRelation.md) | SKOS mapping properties |
+| [SkosNarrowerRelation](SkosNarrowerRelation.md) | SKOS-THES narrower relation type |
 | [SubjectType](SubjectType.md) | The type attribute indicates the kind of subject information, whether it is, ... |
 | [TitleType](TitleType.md) | VRA Core title types |
 

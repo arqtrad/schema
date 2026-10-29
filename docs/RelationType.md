@@ -4,7 +4,7 @@ search:
 ---
 
 
-# Enum: RelationType
+# Enum: RelationType 
 
 
 
@@ -19,6 +19,7 @@ URI: [wasth:RelationType](https://tradicional.arq.br/schema/RelationType)
 ## Enumeration Source
 **Reachable From:**
 - **Source:** NONE
+- **Nodes:** vra:isRelatedTo
 - **Via:** rdfs:subPropertyOf
 
 
@@ -68,7 +69,9 @@ description: Os tipos de relação entre objetos são definidos pelo VRA Core.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 reachable_from:
-  source_ontology: vra:isRelatedTo
+  source_ontology: http://purl.org/vra/
+  source_nodes:
+  - vra:isRelatedTo
   relationship_types:
   - rdfs:subPropertyOf
   include_self: false

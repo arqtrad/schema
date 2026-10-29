@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: MaterialTech
+# Class: MaterialTech 
 
 
 _Usar discernimento para identificar sistemas, materiais e técnicas que interessam ao conhecimento da edificação no seu conjunto, não a partes menos extensas ou pouco importantes._
@@ -28,43 +28,43 @@ URI: [wasth:MaterialTech](https://tradicional.arq.br/schema/MaterialTech)
     click MaterialTech href "../MaterialTech/"
       ConceptReference <|-- MaterialTech
         click ConceptReference href "../ConceptReference/"
-
+      
       MaterialTech : bibliographic_citation
-
-
-
-
-
+        
+          
+    
+        
+        
         MaterialTech --> "* _recommended_" BibliographicCitation : bibliographic_citation
         click BibliographicCitation href "../BibliographicCitation/"
+    
 
+        
+      MaterialTech : concept
+        
+          
+    
+        
+        
+        MaterialTech --> "1" Concept : concept
+        click Concept href "../Concept/"
+    
 
-
+        
       MaterialTech : description
-
+        
       MaterialTech : material_tech_type
-
-
-
-
-
+        
+          
+    
+        
+        
         MaterialTech --> "1" MaterialTechType : material_tech_type
         click MaterialTechType href "../MaterialTechType/"
+    
 
-
-
-      MaterialTech : name
-
-
-
-
-
-        MaterialTech --> "0..1" Concept : name
-        click Concept href "../Concept/"
-
-
-
-
+        
+      
 ```
 
 
@@ -81,9 +81,9 @@ URI: [wasth:MaterialTech](https://tradicional.arq.br/schema/MaterialTech)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [material_tech_type](material_tech_type.md) | 1 <br/> [MaterialTechType](MaterialTechType.md) | Tipo da referência a um material ou técnica usado na obra: material de constr... | direct |
+| [concept](concept.md) | 1 <br/> [Concept](Concept.md) |  | [ConceptReference](ConceptReference.md) |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | [ConceptReference](ConceptReference.md) |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | [ConceptReference](ConceptReference.md) |
-| [name](name.md) | 0..1 <br/> [Concept](Concept.md) | Identificador do termo referido | [ConceptReference](ConceptReference.md) |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | [ConceptReference](ConceptReference.md) |
 
 
 
@@ -197,6 +197,17 @@ attributes:
     - MaterialTech
     range: MaterialTechType
     required: true
+  concept:
+    name: concept
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    alias: name
+    owner: MaterialTech
+    domain_of:
+    - ConceptReference
+    - Topic
+    range: Concept
+    required: true
   description:
     name: description
     description: A human-readable description for a thing
@@ -212,18 +223,24 @@ attributes:
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - TypedReference
     - Measurement
-    - EventDate
-    - EventPlace
     - RelatedEvent
     - Thing
-    - Appellation
     - Inscription
     - Topic
     range: string
   bibliographic_citation:
     name: bibliographic_citation
-    description: 'Cadastro de uma referência bibliográfica.
+    description: '📚  Cadastro de uma referência bibliográfica.
+
+      O campo `refid` deve conter a chave de citação (citation key) que consta do
+      registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero,
+      começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação,
+      mas pode ser diferente.
+
+      Se necessário, incluir no campo `note` uma especificação adicional, como o número
+      da página da referência bibliográfica de onde a informação foi extraída.
 
       Usar o campo `description` para formatar a referência, caso a formatação automática
       do Zotero não for satisfatória.
@@ -250,18 +267,6 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  name:
-    name: name
-    description: Identificador do termo referido.
-    from_schema: https://tradicional.arq.br/schema/concept
-    rank: 1000
-    owner: MaterialTech
-    domain_of:
-    - ConceptReference
-    - LegalBody
-    - RelatedEvent
-    - HistoricPlace
-    range: Concept
 
 ```
 </details></div>

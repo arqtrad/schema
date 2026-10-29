@@ -4,18 +4,18 @@ search:
 ---
 
 
-# Enum: SkosHierarchicalRelation
+# Enum: SkosBroaderRelation 
 
 
 
 
-_SKOS-THES hierarchical relation type._
+_SKOS-THES broader relation type._
 
 
 
 <div data-search-exclude markdown="1">
 
-URI: [wasth:SkosHierarchicalRelation](https://tradicional.arq.br/schema/SkosHierarchicalRelation)
+URI: [wasth:SkosBroaderRelation](https://tradicional.arq.br/schema/SkosBroaderRelation)
 
 ## Permissible Values
 | Value | Meaning | Description |
@@ -64,8 +64,8 @@ URI: [wasth:SkosHierarchicalRelation](https://tradicional.arq.br/schema/SkosHier
 
 <details>
 ```yaml
-name: SkosHierarchicalRelation
-description: SKOS-THES hierarchical relation type.
+name: SkosBroaderRelation
+description: SKOS-THES broader relation type.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 permissible_values:

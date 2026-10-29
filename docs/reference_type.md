@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: reference_type
+# Slot: reference_type 
 
 <div data-search-exclude markdown="1">
 
@@ -22,7 +22,7 @@ Alias: type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TypedReference](TypedReference.md) | Reference to a local record, IRI, URI, or LIDO terminology term |  no  |
+| [TypedReference](TypedReference.md) | Permite referenciar um registro local ou externo por meio da sua URI (localiz... |  no  |
 
 
 
@@ -41,7 +41,7 @@ Alias: type
 
 | Property | Value |
 | --- | --- |
-| If Absent | `string(uri)` |
+| If Absent | `ReferenceType(uri)` |
 
 
 
@@ -85,7 +85,7 @@ Alias: type
 name: reference_type
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-ifabsent: string(uri)
+ifabsent: ReferenceType(uri)
 alias: type
 domain_of:
 - TypedReference

@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: format_extent
+# Slot: format_extent 
 
 
 _Indica a parte do objeto que está sendo medida — por exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc. — usar a `uri` de um vocabulário controlado._
@@ -29,7 +29,7 @@ Alias: extent
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
+| [Measurement](Measurement.md) | Informações estruturadas sobre as dimensões do objeto ou requisitos de condic... |  no  |
 | [Inscription](Inscription.md) | A descrição da inscrição informa local, dimensões e características |  no  |
 | [Topic](Topic.md) | Subject or iconographic topic |  no  |
 

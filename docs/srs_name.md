@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: srs_name
+# Slot: srs_name 
 
 
-_Names the coordinate reference system (CRS) that defines the semantics of the lat/long pair according to the ISO6709 standard._
+_Names the coordinate reference system (CRS) that defines the semantics of the lat/long pair according to the ISO6709 standard. Sempre que possível, usar EPSG:4326, senão os sistemas de referência nacionais._
 
 
 
@@ -15,8 +15,6 @@ _Names the coordinate reference system (CRS) that defines the semantics of the l
 
 
 URI: [wasth:srs_name](https://tradicional.arq.br/schema/srs_name)
-Alias: srsName
-
 <!-- no inheritance hierarchy -->
 
 
@@ -90,16 +88,15 @@ Alias: srsName
 ```yaml
 name: srs_name
 description: Names the coordinate reference system (CRS) that defines the semantics
-  of the lat/long pair according to the ISO6709 standard.
+  of the lat/long pair according to the ISO6709 standard. Sempre que possível, usar
+  EPSG:4326, senão os sistemas de referência nacionais.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-alias: srsName
 domain_of:
 - GeographicPoint
 - GeographicExtent
 range: uriorcurie
 recommended: true
-inlined: true
 
 ```
 </details></div>

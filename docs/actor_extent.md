@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: actor_extent
+# Slot: actor_extent 
 
 
 _Parte da obra sobre a qual o agente interveio._

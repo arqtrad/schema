@@ -3,10 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: broader
+# Slot: broader 
 
 
 _Um conceito de significação mais genérica. Conceitos genéricos são tipicamente representados como pais em uma hierarquia de conceitos (árvore)._
+
+_Preenchimento manual._
 
 
 
@@ -25,7 +27,7 @@ URI: [skos:broader](http://www.w3.org/2004/02/skos/core#broader)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
+| [Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |  no  |
 
 
 
@@ -54,6 +56,15 @@ URI: [skos:broader](http://www.w3.org/2004/02/skos/core#broader)
 | --- | --- |
 | Owner | [Concept](Concept.md) |
 
+
+<details>
+<summary>Relationship Properties</summary>
+
+| Property | Value |
+| --- | --- |
+| Inverse | [narrower](narrower.md) |
+
+</details>
 
 
 
@@ -94,14 +105,17 @@ URI: [skos:broader](http://www.w3.org/2004/02/skos/core#broader)
 <details>
 ```yaml
 name: broader
-description: Um conceito de significação mais genérica. Conceitos genéricos são tipicamente
+description: 'Um conceito de significação mais genérica. Conceitos genéricos são tipicamente
   representados como pais em uma hierarquia de conceitos (árvore).
+
+  Preenchimento manual.'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: skos:broader
 owner: Concept
 domain_of:
 - Concept
+inverse: narrower
 range: BroaderConceptReference
 multivalued: true
 inlined: true

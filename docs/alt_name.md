@@ -3,12 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: alt_name
+# Slot: alt_name 
 
 
-_O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação será eventualmente conhecida. É uma lista opcional de itens, e se existir, os campos de cada item da lista devem ser preenchidos como os do título principal._
+_O bloco `alt_name` permite cadastrar outros nomes pelos quais o objeto ou conceito será eventualmente conhecido. É uma lista opcional de itens, e se existir, os campos de cada item da lista devem ser preenchidos como os do título principal._
 
-_O campo `description` de cada item contém o texto do título (nome)._
+_O campo `label` ou `description` de cada item contém o texto do título (nome)._
 
 _Este bloco pode ser omitido por completo se não houver títulos alternativos._
 
@@ -31,13 +31,13 @@ URI: [wasth:alt_name](https://tradicional.arq.br/schema/alt_name)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
+| [Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |  no  |
 | [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
+| [Thing](Thing.md) | Esta classe compreende todas as coisas no universo do CIDOC CRM |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
-| [Work](Work.md) | An historical landmark or building |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
+| [Site](Site.md) | O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T... |  no  |
 
 
 
@@ -105,11 +105,11 @@ URI: [wasth:alt_name](https://tradicional.arq.br/schema/alt_name)
 <details>
 ```yaml
 name: alt_name
-description: 'O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação
-  será eventualmente conhecida. É uma lista opcional de itens, e se existir, os campos
-  de cada item da lista devem ser preenchidos como os do título principal.
+description: 'O bloco `alt_name` permite cadastrar outros nomes pelos quais o objeto
+  ou conceito será eventualmente conhecido. É uma lista opcional de itens, e se existir,
+  os campos de cada item da lista devem ser preenchidos como os do título principal.
 
-  O campo `description` de cada item contém o texto do título (nome).
+  O campo `label` ou `description` de cada item contém o texto do título (nome).
 
   Este bloco pode ser omitido por completo se não houver títulos alternativos.
 

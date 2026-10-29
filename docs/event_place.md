@@ -3,10 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: place
+# Slot: event_place 
 
 
-_A set of structured information indicating the place or location where an object/work was associated with a particular event._
+_Lugares associados ao evento, sem incluir o próprio local no qual se situa a edificação._
+
+__
 
 
 
@@ -14,7 +16,9 @@ _A set of structured information indicating the place or location where an objec
 
 
 
-URI: [wasth:place](https://tradicional.arq.br/schema/place)
+URI: [wasth:event_place](https://tradicional.arq.br/schema/event_place)
+Alias: place
+
 <!-- no inheritance hierarchy -->
 
 
@@ -25,7 +29,7 @@ URI: [wasth:place](https://tradicional.arq.br/schema/place)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
 
 
 
@@ -38,8 +42,15 @@ URI: [wasth:place](https://tradicional.arq.br/schema/place)
 
 | Property | Value |
 | --- | --- |
-| Range | [EventPlace](EventPlace.md) |
+| Range | [Site](Site.md) |
 | Domain Of | [Event](Event.md) |
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
 ### Slot Characteristics
 
 | Property | Value |
@@ -75,8 +86,8 @@ URI: [wasth:place](https://tradicional.arq.br/schema/place)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | wasth:place |
-| native | wasth:place |
+| self | wasth:event_place |
+| native | wasth:event_place |
 
 
 
@@ -85,16 +96,21 @@ URI: [wasth:place](https://tradicional.arq.br/schema/place)
 
 <details>
 ```yaml
-name: place
-description: A set of structured information indicating the place or location where
-  an object/work was associated with a particular event.
+name: event_place
+description: 'Lugares associados ao evento, sem incluir o próprio local no qual se
+  situa a edificação.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
+alias: place
 owner: Event
 domain_of:
 - Event
-range: EventPlace
+range: Site
+multivalued: true
 inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

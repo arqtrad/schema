@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: Container
+# Class: Container 
 
 
 _Todos os elementos do documentário._
@@ -25,28 +25,28 @@ URI: [wasth:Container](https://tradicional.arq.br/schema/Container)
     class Container
     click Container href "../Container/"
       Container : concepts
-
-
-
-
-
+        
+          
+    
+        
+        
         Container --> "*" Concept : concepts
         click Concept href "../Concept/"
+    
 
-
-
+        
       Container : works
-
-
-
-
-
+        
+          
+    
+        
+        
         Container --> "*" Work : works
         click Work href "../Work/"
+    
 
-
-
-
+        
+      
 ```
 
 

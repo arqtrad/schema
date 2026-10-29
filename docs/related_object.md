@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: related_object
+# Slot: related_object 
 
 <div data-search-exclude markdown="1">
 
@@ -20,8 +20,8 @@ URI: [wasth:related_object](https://tradicional.arq.br/schema/related_object)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RelatedObject](RelatedObject.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
-| [RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... |  yes  |
+| [RelatedObject](RelatedObject.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
+| [RelatedWork](RelatedWork.md) | As formas mais comuns de relação no nosso projeto são : |  yes  |
 
 
 

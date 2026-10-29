@@ -3,10 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: value
+# Slot: topic_type 
 
 
-_Valor numérico, usar ponto como separador decimal._
+_Categoriza o nível descritivo ou interpretativo do tema._
+
+__
 
 
 
@@ -14,8 +16,8 @@ _Valor numérico, usar ponto como separador decimal._
 
 
 
-URI: [wasth:value](https://tradicional.arq.br/schema/value)
-Alias: value
+URI: [wasth:topic_type](https://tradicional.arq.br/schema/topic_type)
+Alias: type
 
 <!-- no inheritance hierarchy -->
 
@@ -27,7 +29,7 @@ Alias: value
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
+| [Topic](Topic.md) | Subject or iconographic topic |  no  |
 
 
 
@@ -40,8 +42,8 @@ Alias: value
 
 | Property | Value |
 | --- | --- |
-| Range | [Float](Float.md) |
-| Domain Of | [Measurement](Measurement.md) |
+| Range | [SubjectType](SubjectType.md) |
+| Domain Of | [Topic](Topic.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -53,14 +55,7 @@ Alias: value
 
 | Property | Value |
 | --- | --- |
-| Owner | [Measurement](Measurement.md) |
-
-
-### Value Constraints
-
-| Property | Value |
-| --- | --- |
-| Minimum Value | 0 |
+| Owner | [Topic](Topic.md) |
 
 
 
@@ -91,8 +86,8 @@ Alias: value
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | wasth:value |
-| native | wasth:value |
+| self | wasth:topic_type |
+| native | wasth:topic_type |
 
 
 
@@ -101,17 +96,18 @@ Alias: value
 
 <details>
 ```yaml
-name: value
-description: Valor numérico, usar ponto como separador decimal.
+name: topic_type
+description: 'Categoriza o nível descritivo ou interpretativo do tema.
+
+  '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-alias: value
-owner: Measurement
+alias: type
+owner: Topic
 domain_of:
-- Measurement
-range: float
+- Topic
+range: SubjectType
 required: true
-minimum_value: 0
 
 ```
 </details></div>

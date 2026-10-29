@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: ConceptReference
+# Class: ConceptReference 
 
 
 _Atribuição de vocabulário controlado com citação de apoio._
@@ -24,36 +24,42 @@ URI: [wasth:ConceptReference](https://tradicional.arq.br/schema/ConceptReference
  classDiagram
     class ConceptReference
     click ConceptReference href "../ConceptReference/"
+      ConceptReference <|-- BroaderConceptReference
+        click BroaderConceptReference href "../BroaderConceptReference/"
+      ConceptReference <|-- NarrowerConceptReference
+        click NarrowerConceptReference href "../NarrowerConceptReference/"
+      ConceptReference <|-- MappingConceptReference
+        click MappingConceptReference href "../MappingConceptReference/"
       ConceptReference <|-- MaterialTech
         click MaterialTech href "../MaterialTech/"
       ConceptReference <|-- StylePeriod
         click StylePeriod href "../StylePeriod/"
-
+      
       ConceptReference : bibliographic_citation
-
-
-
-
-
+        
+          
+    
+        
+        
         ConceptReference --> "* _recommended_" BibliographicCitation : bibliographic_citation
         click BibliographicCitation href "../BibliographicCitation/"
+    
 
-
-
-      ConceptReference : description
-
-      ConceptReference : name
-
-
-
-
-
-        ConceptReference --> "0..1" Concept : name
+        
+      ConceptReference : concept
+        
+          
+    
+        
+        
+        ConceptReference --> "1" Concept : concept
         click Concept href "../Concept/"
+    
 
-
-
-
+        
+      ConceptReference : description
+        
+      
 ```
 
 
@@ -62,6 +68,9 @@ URI: [wasth:ConceptReference](https://tradicional.arq.br/schema/ConceptReference
 
 ## Inheritance
 * **ConceptReference**
+    * [BroaderConceptReference](BroaderConceptReference.md)
+    * [NarrowerConceptReference](NarrowerConceptReference.md)
+    * [MappingConceptReference](MappingConceptReference.md)
     * [MaterialTech](MaterialTech.md)
     * [StylePeriod](StylePeriod.md)
 
@@ -70,9 +79,9 @@ URI: [wasth:ConceptReference](https://tradicional.arq.br/schema/ConceptReference
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [concept](concept.md) | 1 <br/> [Concept](Concept.md) |  | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
-| [name](name.md) | 0..1 <br/> [Concept](Concept.md) | Identificador do termo referido | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | direct |
 
 
 
@@ -82,7 +91,7 @@ URI: [wasth:ConceptReference](https://tradicional.arq.br/schema/ConceptReference
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Concept](Concept.md) | [narrower](narrower.md) | range | [ConceptReference](ConceptReference.md) |
+| [Concept](Concept.md) | [relation](relation.md) | range | [ConceptReference](ConceptReference.md) |
 | [Event](Event.md) | [method](method.md) | range | [ConceptReference](ConceptReference.md) |
 | [Work](Work.md) | [work_type_condition](work_type_condition.md) | range | [ConceptReference](ConceptReference.md) |
 | [Work](Work.md) | [work_type_form](work_type_form.md) | range | [ConceptReference](ConceptReference.md) |
@@ -144,20 +153,9 @@ name: ConceptReference
 description: Atribuição de vocabulário controlado com citação de apoio.
 from_schema: https://tradicional.arq.br/schema
 slots:
+- concept
 - description
 - bibliographic_citation
-attributes:
-  name:
-    name: name
-    description: Identificador do termo referido.
-    from_schema: https://tradicional.arq.br/schema/concept
-    rank: 1000
-    domain_of:
-    - ConceptReference
-    - LegalBody
-    - RelatedEvent
-    - HistoricPlace
-    range: Concept
 
 ```
 </details>
@@ -170,18 +168,17 @@ name: ConceptReference
 description: Atribuição de vocabulário controlado com citação de apoio.
 from_schema: https://tradicional.arq.br/schema
 attributes:
-  name:
-    name: name
-    description: Identificador do termo referido.
-    from_schema: https://tradicional.arq.br/schema/concept
+  concept:
+    name: concept
+    from_schema: https://tradicional.arq.br/schema
     rank: 1000
+    alias: name
     owner: ConceptReference
     domain_of:
     - ConceptReference
-    - LegalBody
-    - RelatedEvent
-    - HistoricPlace
+    - Topic
     range: Concept
+    required: true
   description:
     name: description
     description: A human-readable description for a thing
@@ -197,18 +194,24 @@ attributes:
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - TypedReference
     - Measurement
-    - EventDate
-    - EventPlace
     - RelatedEvent
     - Thing
-    - Appellation
     - Inscription
     - Topic
     range: string
   bibliographic_citation:
     name: bibliographic_citation
-    description: 'Cadastro de uma referência bibliográfica.
+    description: '📚  Cadastro de uma referência bibliográfica.
+
+      O campo `refid` deve conter a chave de citação (citation key) que consta do
+      registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero,
+      começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação,
+      mas pode ser diferente.
+
+      Se necessário, incluir no campo `note` uma especificação adicional, como o número
+      da página da referência bibliográfica de onde a informação foi extraída.
 
       Usar o campo `description` para formatar a referência, caso a formatação automática
       do Zotero não for satisfatória.

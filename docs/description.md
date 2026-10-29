@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: description
+# Slot: description 
 
 
 _A human-readable description for a thing_
@@ -29,25 +29,26 @@ Alias: display
 | --- | --- | --- |
 | [ConceptReference](ConceptReference.md) | Atribuição de vocabulário controlado com citação de apoio |  no  |
 | [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica |  no  |
-| [RelatedObject](RelatedObject.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
+| [RelatedObject](RelatedObject.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
 | [MediaObject](MediaObject.md) | Descrição e referência a um único arquivo de mídia |  no  |
-| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
-| [EventDate](EventDate.md) | A wrapper for the expression of a date by providing a set of years as earlies... |  no  |
-| [EventPlace](EventPlace.md) |  |  no  |
+| [TypedReference](TypedReference.md) | Permite referenciar um registro local ou externo por meio da sua URI (localiz... |  no  |
+| [Measurement](Measurement.md) | Informações estruturadas sobre as dimensões do objeto ou requisitos de condic... |  no  |
 | [RelatedEvent](RelatedEvent.md) |  |  no  |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  yes  |
-| [Appellation](Appellation.md) |  |  no  |
+| [Thing](Thing.md) | Esta classe compreende todas as coisas no universo do CIDOC CRM |  yes  |
 | [Inscription](Inscription.md) | A descrição da inscrição informa local, dimensões e características |  no  |
 | [Topic](Topic.md) | Subject or iconographic topic |  no  |
-| [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
-| [RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
+| [Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |  no  |
+| [BroaderConceptReference](BroaderConceptReference.md) | Relações hierárquicas |  no  |
+| [NarrowerConceptReference](NarrowerConceptReference.md) | Relações hierárquicas |  no  |
+| [MappingConceptReference](MappingConceptReference.md) | Relações semânticas |  no  |
+| [RelatedWork](RelatedWork.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
 | [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
 | [MaterialTech](MaterialTech.md) | Usar discernimento para identificar sistemas, materiais e técnicas que intere... |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
 | [StylePeriod](StylePeriod.md) |  |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
-| [Work](Work.md) | An historical landmark or building |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
+| [Site](Site.md) | O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T... |  no  |
 
 
 
@@ -61,7 +62,7 @@ Alias: display
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [ConceptReference](ConceptReference.md), [BibliographicCitation](BibliographicCitation.md), [RelatedObject](RelatedObject.md), [MediaObject](MediaObject.md), [Measurement](Measurement.md), [EventDate](EventDate.md), [EventPlace](EventPlace.md), [RelatedEvent](RelatedEvent.md), [Thing](Thing.md), [Appellation](Appellation.md), [Inscription](Inscription.md), [Topic](Topic.md) |
+| Domain Of | [ConceptReference](ConceptReference.md), [BibliographicCitation](BibliographicCitation.md), [RelatedObject](RelatedObject.md), [MediaObject](MediaObject.md), [TypedReference](TypedReference.md), [Measurement](Measurement.md), [RelatedEvent](RelatedEvent.md), [Thing](Thing.md), [Inscription](Inscription.md), [Topic](Topic.md) |
 | Slot URI | [dcterms:description](http://purl.org/dc/terms/description) |
 
 
@@ -115,12 +116,10 @@ domain_of:
 - BibliographicCitation
 - RelatedObject
 - MediaObject
+- TypedReference
 - Measurement
-- EventDate
-- EventPlace
 - RelatedEvent
 - Thing
-- Appellation
 - Inscription
 - Topic
 range: string

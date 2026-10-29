@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: actor_name
+# Slot: actor_name 
 
 
 _Nome do agente extraído de um vocabulário controlado._

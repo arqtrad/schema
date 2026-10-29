@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: provided_3d
+# Slot: provided_3d 
 
 
 _Modelo tridimensional ou IFC da edificação._
@@ -95,8 +95,6 @@ domain_of:
 - MediaObject
 range: uriorcurie
 multivalued: true
-inlined: true
-inlined_as_list: true
 
 ```
 </details></div>

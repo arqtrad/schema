@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: resource_service
+# Slot: resource_service 
 
 
 _Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal como a especificação [IIIF]._

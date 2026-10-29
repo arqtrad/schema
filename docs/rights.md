@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: rights
+# Slot: rights 
 
 <div data-search-exclude markdown="1">
 

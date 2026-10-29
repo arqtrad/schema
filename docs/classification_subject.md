@@ -3,12 +3,14 @@ search:
   boost: 5.0
 ---
 
-# Slot: classification_subject
+# Slot: classification_subject 
 
-
-_A broad category for grouping objects or works on the basis of a topical association, including thematic or systematic classification, or an assignment by discipline. The relationship between an object/work and a subject category is a kind of membership based on ascription rather than a generic is-a relation._
 
 _❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura._
+
+_---------------------------------------------------------------------_
+
+_A broad category for grouping objects or works on the basis of a topical association, including thematic or systematic classification, or an assignment by discipline. The relationship between an object/work and a subject category is a kind of membership based on ascription rather than a generic is-a relation._
 
 
 
@@ -27,7 +29,7 @@ URI: [term:lido00932](http://terminology.lido-schema.org/lido00932)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -96,14 +98,16 @@ URI: [term:lido00932](http://terminology.lido-schema.org/lido00932)
 <details>
 ```yaml
 name: classification_subject
-description: 'A broad category for grouping objects or works on the basis of a topical
-  association, including thematic or systematic classification, or an assignment by
-  discipline. The relationship between an object/work and a subject category is a
-  kind of membership based on ascription rather than a generic is-a relation.
+description: '❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez
+  ele não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
+  no padrão LIDO nem no perfil de aplicação para arquitetura.
 
-  ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele não
-  seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
-  no padrão LIDO nem no perfil de aplicação para arquitetura.'
+  ---------------------------------------------------------------------
+
+  A broad category for grouping objects or works on the basis of a topical association,
+  including thematic or systematic classification, or an assignment by discipline.
+  The relationship between an object/work and a subject category is a kind of membership
+  based on ascription rather than a generic is-a relation.'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: term:lido00932
@@ -112,7 +116,8 @@ domain_of:
 - Work
 range: ConceptReference
 multivalued: true
-inlined_as_list: false
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

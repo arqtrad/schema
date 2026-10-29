@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: things_present
+# Slot: things_present 
 
 
 _A set of structured information for a related object or work that is or was present at the event in focus. Repeated if there are multiple related objects or works._
@@ -25,7 +25,7 @@ URI: [wasth:things_present](https://tradicional.arq.br/schema/things_present)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
 
 
 
@@ -103,6 +103,8 @@ domain_of:
 - Event
 range: RelatedWork
 multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

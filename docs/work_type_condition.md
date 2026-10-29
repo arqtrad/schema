@@ -3,14 +3,18 @@ search:
   boost: 5.0
 ---
 
-# Slot: work_type_condition
+# Slot: work_type_condition 
 
+
+_Descreve o estado físico da edificação quanto à sua aparência de completude, deterioração ou capacidade de desempenhar sua função._
+
+_Atende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.html) "estado de preservação" e "estado de conservação"._
+
+_---------------------------------------------------------------------_
 
 _Descriptors for objects that are distinguishable by their overall state such as appearance, level of damage, completeness, or quality. If an object is identified by its prevailing physical state, then it is qualified by condition._
 
 _Based on [AAT "conditions"](http://vocab.getty.edu/page/aat/300389724) and [CIDOC CRM "E3 Condition State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)_
-
-_Atende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.htmlhttps://sicg.iphan.gov.br/sicg/manual/manual.html) "estado de preservação" e "estado de conservação"._
 
 
 
@@ -29,7 +33,7 @@ URI: [term:lido00937](http://terminology.lido-schema.org/lido00937)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -99,15 +103,20 @@ URI: [term:lido00937](http://terminology.lido-schema.org/lido00937)
 <details>
 ```yaml
 name: work_type_condition
-description: 'Descriptors for objects that are distinguishable by their overall state
-  such as appearance, level of damage, completeness, or quality. If an object is identified
+description: 'Descreve o estado físico da edificação quanto à sua aparência de completude,
+  deterioração ou capacidade de desempenhar sua função.
+
+  Atende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.html) "estado
+  de preservação" e "estado de conservação".
+
+  ---------------------------------------------------------------------
+
+  Descriptors for objects that are distinguishable by their overall state such as
+  appearance, level of damage, completeness, or quality. If an object is identified
   by its prevailing physical state, then it is qualified by condition.
 
   Based on [AAT "conditions"](http://vocab.getty.edu/page/aat/300389724) and [CIDOC
-  CRM "E3 Condition State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)
-
-  Atende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.htmlhttps://sicg.iphan.gov.br/sicg/manual/manual.html)
-  "estado de preservação" e "estado de conservação".'
+  CRM "E3 Condition State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: term:lido00937
@@ -117,7 +126,8 @@ domain_of:
 range: ConceptReference
 recommended: true
 multivalued: true
-inlined_as_list: false
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

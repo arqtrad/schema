@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: actor_qualifier
+# Slot: actor_qualifier 
 
 
 _For the Attribution Qualifier Actor element choose a concept URI from the [attribution qualifiers hierarchy](http://vocab.getty.edu/hier/aat/300404264) of the Art & Architecture Thesaurus, or another linked open vocabulary._

@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: Actor
+# Class: Actor 
 
 
 _Agent and role in an event._
@@ -25,72 +25,72 @@ URI: [wasth:Actor](https://tradicional.arq.br/schema/Actor)
     class Actor
     click Actor href "../Actor/"
       Actor : actor_extent
-
-
-
-
-
+        
+          
+    
+        
+        
         Actor --> "*" TypedReference : actor_extent
         click TypedReference href "../TypedReference/"
+    
 
-
-
+        
       Actor : actor_name
-
-
-
-
-
+        
+          
+    
+        
+        
         Actor --> "0..1" TypedReference : actor_name
         click TypedReference href "../TypedReference/"
+    
 
-
-
+        
       Actor : actor_qualifier
-
-
-
-
-
+        
+          
+    
+        
+        
         Actor --> "*" TypedReference : actor_qualifier
         click TypedReference href "../TypedReference/"
+    
 
-
-
+        
       Actor : actor_type
-
-
-
-
-
+        
+          
+    
+        
+        
         Actor --> "0..1" AgentType : actor_type
         click AgentType href "../AgentType/"
+    
 
-
-
+        
       Actor : bibliographic_citation
-
-
-
-
-
+        
+          
+    
+        
+        
         Actor --> "* _recommended_" BibliographicCitation : bibliographic_citation
         click BibliographicCitation href "../BibliographicCitation/"
+    
 
-
-
+        
       Actor : role_in_event
-
-
-
-
-
+        
+          
+    
+        
+        
         Actor --> "0..1" RoleType : role_in_event
         click RoleType href "../RoleType/"
+    
 
-
-
-
+        
+      
 ```
 
 
@@ -102,7 +102,7 @@ URI: [wasth:Actor](https://tradicional.arq.br/schema/Actor)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | direct |
 | [actor_type](actor_type.md) | 0..1 <br/> [AgentType](AgentType.md) | Define se o agente é uma pessoa, uma organização ou corporação, uma oficina, ... | direct |
 | [actor_name](actor_name.md) | 0..1 <br/> [TypedReference](TypedReference.md) | Nome do agente extraído de um vocabulário controlado | direct |
 | [role_in_event](role_in_event.md) | 0..1 <br/> [RoleType](RoleType.md) | Ação desempenhada pelo agente no evento | direct |
@@ -305,7 +305,15 @@ attributes:
     inlined_as_list: true
   bibliographic_citation:
     name: bibliographic_citation
-    description: 'Cadastro de uma referência bibliográfica.
+    description: '📚  Cadastro de uma referência bibliográfica.
+
+      O campo `refid` deve conter a chave de citação (citation key) que consta do
+      registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero,
+      começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação,
+      mas pode ser diferente.
+
+      Se necessário, incluir no campo `note` uma especificação adicional, como o número
+      da página da referência bibliográfica de onde a informação foi extraída.
 
       Usar o campo `description` para formatar a referência, caso a formatação automática
       do Zotero não for satisfatória.

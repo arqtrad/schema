@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: alt
+# Slot: alt 
 
 
 _Altitude em metros (separador decimal: ponto)_

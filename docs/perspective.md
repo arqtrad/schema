@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: perspective
+# Slot: perspective 
 
 
 _Tipo de vista do desenho. Usar a numeração da ISO 19650–2 :_

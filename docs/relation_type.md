@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: relation_type
+# Slot: relation_type 
 
 
 _Usamos os tipos de relação previstos pelo [VRA Core]. Provavelmente necessitamos apenas de :_
@@ -47,9 +47,9 @@ Alias: rel_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RelatedObject](RelatedObject.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
+| [RelatedObject](RelatedObject.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
 | [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
-| [RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
+| [RelatedWork](RelatedWork.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
 
 
 

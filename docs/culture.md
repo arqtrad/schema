@@ -3,8 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: culture
+# Slot: culture 
 
+
+_Designa o contexto cultural ou étnico no qual o objeto foi afetado pelo evento em questão, desde que as características de tal contexto estejam refletidas no objeto. O preenchimento do contexto cultural é especialmente relevante quando os agentes envolvidos na produção ou alteração do objeto são desconhecidos._
+
+_---------------------------------------------------------------------_
 
 _An index element for the cultural context from which the object/work in focus originated. Used if the creator or producer is unknown, or if the cultural context is of particular interest. Examples may include the name of a culture, a nation, or an ethnic group._
 
@@ -25,7 +29,8 @@ URI: [wasth:culture](https://tradicional.arq.br/schema/culture)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -39,19 +44,12 @@ URI: [wasth:culture](https://tradicional.arq.br/schema/culture)
 | Property | Value |
 | --- | --- |
 | Range | [TypedReference](TypedReference.md) |
-| Domain Of | [Event](Event.md) |
+| Domain Of | [Event](Event.md), [Work](Work.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
 | --- | --- |
 | Multivalued | Yes |
-
-
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Event](Event.md) |
 
 
 
@@ -93,15 +91,21 @@ URI: [wasth:culture](https://tradicional.arq.br/schema/culture)
 <details>
 ```yaml
 name: culture
-description: An index element for the cultural context from which the object/work
-  in focus originated. Used if the creator or producer is unknown, or if the cultural
-  context is of particular interest. Examples may include the name of a culture, a
-  nation, or an ethnic group.
+description: 'Designa o contexto cultural ou étnico no qual o objeto foi afetado pelo
+  evento em questão, desde que as características de tal contexto estejam refletidas
+  no objeto. O preenchimento do contexto cultural é especialmente relevante quando
+  os agentes envolvidos na produção ou alteração do objeto são desconhecidos.
+
+  ---------------------------------------------------------------------
+
+  An index element for the cultural context from which the object/work in focus originated.
+  Used if the creator or producer is unknown, or if the cultural context is of particular
+  interest. Examples may include the name of a culture, a nation, or an ethnic group.'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-owner: Event
 domain_of:
 - Event
+- Work
 range: TypedReference
 multivalued: true
 inlined: true

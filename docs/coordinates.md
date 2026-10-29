@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: coordinates
+# Slot: coordinates 
 
 
 _No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do polígono (`extent`) com a opção `Get JSON` — copiar apenas os colchetes `[[[ ]]]` e os valores numéricos dentro deles._

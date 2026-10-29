@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: record_date
+# Slot: record_date 
 
 
-_Date the record was created or last substantively revised._
+_Data de inclusão da ficha._
 
 
 
@@ -15,6 +15,8 @@ _Date the record was created or last substantively revised._
 
 
 URI: [dcterms:created](http://purl.org/dc/terms/created)
+Alias: date
+
 <!-- no inheritance hierarchy -->
 
 
@@ -25,13 +27,13 @@ URI: [dcterms:created](http://purl.org/dc/terms/created)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
+| [Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |  no  |
 | [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
+| [Thing](Thing.md) | Esta classe compreende todas as coisas no universo do CIDOC CRM |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
-| [Work](Work.md) | An historical landmark or building |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
+| [Site](Site.md) | O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T... |  no  |
 
 
 
@@ -93,10 +95,11 @@ URI: [dcterms:created](http://purl.org/dc/terms/created)
 <details>
 ```yaml
 name: record_date
-description: Date the record was created or last substantively revised.
+description: Data de inclusão da ficha.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: dcterms:created
+alias: date
 owner: Thing
 domain_of:
 - Thing

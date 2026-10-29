@@ -3,16 +3,18 @@ search:
   boost: 5.0
 ---
 
-# Slot: work_type_context
+# Slot: work_type_context 
 
+
+_Nos Documentários de edificações, designa sobretudo o contexto imediato de implantação de uma edificação : urbana, rural, isolada, em correnteza, etc._
+
+_No Documentário de Lugares Tradicionais, designa o tipo de núcleo populacional : sítio isolado, povoação rural, vila ou cidade, por exemplo._
+
+_---------------------------------------------------------------------_
 
 _Descriptors for objects that are distinguishable by their use or application within a particular physical location. If an object is identifiable by association with specific surroundings, it is qualified by location or context._
 
 _Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)_
-
-_No Documentário de Lugares Tradicionais, designa o tipo de núcleo populacional : sítio isolado, povoação rural, vila ou cidade, por exemplo._
-
-_Nos Documentários de edificações, designa sobretudo o contexto imediato de implantação de uma edificação : urbana, rural, isolada, em correnteza, etc._
 
 
 
@@ -31,7 +33,7 @@ URI: [term:lido00934](http://terminology.lido-schema.org/lido00934)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -101,17 +103,19 @@ URI: [term:lido00934](http://terminology.lido-schema.org/lido00934)
 <details>
 ```yaml
 name: work_type_context
-description: 'Descriptors for objects that are distinguishable by their use or application
-  within a particular physical location. If an object is identifiable by association
-  with specific surroundings, it is qualified by location or context.
-
-  Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+description: 'Nos Documentários de edificações, designa sobretudo o contexto imediato
+  de implantação de uma edificação : urbana, rural, isolada, em correnteza, etc.
 
   No Documentário de Lugares Tradicionais, designa o tipo de núcleo populacional :
   sítio isolado, povoação rural, vila ou cidade, por exemplo.
 
-  Nos Documentários de edificações, designa sobretudo o contexto imediato de implantação
-  de uma edificação : urbana, rural, isolada, em correnteza, etc.'
+  ---------------------------------------------------------------------
+
+  Descriptors for objects that are distinguishable by their use or application within
+  a particular physical location. If an object is identifiable by association with
+  specific surroundings, it is qualified by location or context.
+
+  Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: term:lido00934
@@ -121,7 +125,8 @@ domain_of:
 range: ConceptReference
 recommended: true
 multivalued: true
-inlined_as_list: false
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

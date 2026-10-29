@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: related_events
+# Slot: related_events 
 
 
 _A set of structured information about an event related to the event in focus, indicating the type of relationship where applicable._
@@ -25,7 +25,7 @@ URI: [wasth:related_events](https://tradicional.arq.br/schema/related_events)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
 
 
 
@@ -102,6 +102,8 @@ domain_of:
 - Event
 range: RelatedEvent
 multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

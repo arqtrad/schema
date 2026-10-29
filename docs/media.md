@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: media
+# Slot: media 
 
 
 _Representações iconográficas deste objeto._
@@ -31,10 +31,10 @@ URI: [wasth:media](https://tradicional.arq.br/schema/media)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RelatedObject](RelatedObject.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
-| [Work](Work.md) | An historical landmark or building |  no  |
-| [RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
+| [RelatedObject](RelatedObject.md) | A wrapper for identifying information about an object or work, including coll... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
+| [RelatedWork](RelatedWork.md) | As formas mais comuns de relação no nosso projeto são : |  no  |
 
 
 

@@ -3,10 +3,8 @@ search:
   boost: 10.0
 ---
 
-# Class: Work
+# Class: Work 
 
-
-_An historical landmark or building._
 
 _Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastrar uma edificação, um conjunto arquitetônico, ou ainda uma parte significativa de uma edificação._
 
@@ -25,6 +23,10 @@ _A ordem dos blocos não é importante, mas a hierarquia dentro de cada bloco e 
 _O caractere `#` indica o início de um comentário, que prossegue até o final da linha. Os comentários e as linhas que contêm apenas comentários devem ser apagados das fichas preenchidas._
 
 _Campos não preenchidos também devem ser apagadas das fichas._
+
+_-------------------------------------------------------------------------_
+
+_An historical landmark or building._
 
 __
 
@@ -46,400 +48,420 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
     click Work href "../Work/"
       Thing <|-- Work
         click Thing href "../Thing/"
-
+      
       Work : alt_name
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" Appellation : alt_name
         click Appellation href "../Appellation/"
+    
 
-
-
-      Work : author
-
+        
       Work : bibliographic_citation
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "* _recommended_" BibliographicCitation : bibliographic_citation
         click BibliographicCitation href "../BibliographicCitation/"
+    
 
-
-
+        
       Work : category
-
+        
       Work : classification_genre
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" ConceptReference : classification_genre
         click ConceptReference href "../ConceptReference/"
+    
 
-
-
+        
       Work : classification_local
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" ConceptReference : classification_local
         click ConceptReference href "../ConceptReference/"
+    
 
-
-
+        
       Work : classification_special
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" ConceptReference : classification_special
         click ConceptReference href "../ConceptReference/"
+    
 
-
-
+        
       Work : classification_subject
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" ConceptReference : classification_subject
         click ConceptReference href "../ConceptReference/"
+    
 
-
-
+        
       Work : collection
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" Thing : collection
         click Thing href "../Thing/"
+    
 
-
-
+        
       Work : content
+        
+      Work : culture
+        
+          
+    
+        
+        
+        Work --> "*" TypedReference : culture
+        click TypedReference href "../TypedReference/"
+    
 
+        
       Work : description
-
+        
       Work : former_site
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" Site : former_site
         click Site href "../Site/"
+    
 
-
-
+        
       Work : id
-
+        
       Work : identifiers
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" TypedReference : identifiers
         click TypedReference href "../TypedReference/"
+    
 
-
-
+        
       Work : inscriptions
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" Inscription : inscriptions
         click Inscription href "../Inscription/"
+    
 
-
-
+        
       Work : intended_site
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" Site : intended_site
         click Site href "../Site/"
+    
 
-
-
+        
       Work : location_historic
+        
+          
+    
+        
+        
+        Work --> "*" LocationHistoric : location_historic
+        click LocationHistoric href "../LocationHistoric/"
+    
 
-
-
-
-
-        Work --> "*" HistoricPlace : location_historic
-        click HistoricPlace href "../HistoricPlace/"
-
-
-
+        
       Work : material
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" MaterialTech : material
         click MaterialTech href "../MaterialTech/"
+    
 
-
-
+        
       Work : measurements
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" Measurement : measurements
         click Measurement href "../Measurement/"
+    
 
-
-
+        
       Work : media
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" MediaObject : media
         click MediaObject href "../MediaObject/"
+    
 
-
-
+        
       Work : other_site
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" Site : other_site
         click Site href "../Site/"
+    
 
-
-
+        
       Work : part_of
+        
+          
+    
+        
+        
+        Work --> "*" TypedReference : part_of
+        click TypedReference href "../TypedReference/"
+    
 
+        
+      Work : record_author
+        
       Work : record_date
-
+        
       Work : record_rights
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "1..*" Right : record_rights
         click Right href "../Right/"
+    
 
-
-
+        
       Work : related_works
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" RelatedWork : related_works
         click RelatedWork href "../RelatedWork/"
+    
 
-
-
+        
       Work : repositories
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" Repository : repositories
         click Repository href "../Repository/"
+    
 
-
-
+        
       Work : resources
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" Resource : resources
         click Resource href "../Resource/"
+    
 
-
-
+        
       Work : site
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "0..1" Site : site
         click Site href "../Site/"
+    
 
+        
+      Work : style_period
+        
+          
+    
+        
+        
+        Work --> "*" StylePeriod : style_period
+        click StylePeriod href "../StylePeriod/"
+    
 
-
+        
       Work : subject
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" Topic : subject
         click Topic href "../Topic/"
+    
 
-
-
+        
       Work : tags
-
+        
       Work : technique
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" MaterialTech : technique
         click MaterialTech href "../MaterialTech/"
+    
 
-
-
+        
       Work : temporal
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" Event : temporal
         click Event href "../Event/"
+    
 
-
-
+        
       Work : title
-
+        
       Work : title_source
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "*" BibliographicCitation : title_source
         click BibliographicCitation href "../BibliographicCitation/"
+    
 
-
-
-      Work : title_type
-
-
-
-
-
-        Work --> "1" RepositoryType : title_type
-        click RepositoryType href "../RepositoryType/"
-
-
-
+        
       Work : work_rights
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "1..*" Right : work_rights
         click Right href "../Right/"
+    
 
-
-
+        
       Work : work_type_condition
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "* _recommended_" ConceptReference : work_type_condition
         click ConceptReference href "../ConceptReference/"
+    
 
-
-
+        
       Work : work_type_context
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "* _recommended_" ConceptReference : work_type_context
         click ConceptReference href "../ConceptReference/"
+    
 
-
-
+        
       Work : work_type_form
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "* _recommended_" ConceptReference : work_type_form
         click ConceptReference href "../ConceptReference/"
+    
 
-
-
+        
       Work : work_type_function
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "* _recommended_" ConceptReference : work_type_function
         click ConceptReference href "../ConceptReference/"
+    
 
-
-
+        
       Work : work_type_material_tech
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "* _recommended_" MaterialTech : work_type_material_tech
         click MaterialTech href "../MaterialTech/"
+    
 
-
-
+        
       Work : work_type_subject_type
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "* _recommended_" ConceptReference : work_type_subject_type
         click ConceptReference href "../ConceptReference/"
+    
 
-
-
+        
       Work : work_type_use
-
-
-
-
-
+        
+          
+    
+        
+        
         Work --> "* _recommended_" ConceptReference : work_type_use
         click ConceptReference href "../ConceptReference/"
+    
 
-
-
-
+        
+      
 ```
 
 
@@ -464,47 +486,48 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 | ---  | --- | --- | --- |
 | [site](site.md) | 0..1 <br/> [Site](Site.md) | A localização real, atual da edificação — é o que será usado em quase todos o... | direct |
 | [measurements](measurements.md) | * <br/> [Measurement](Measurement.md) | A wrapper for information about the dimensions, or other measurements, of the... | direct |
-| [material](material.md) | * <br/> [MaterialTech](MaterialTech.md) | This class is a specialization of E55 Type and comprises the concepts of mate... | direct |
-| [technique](technique.md) | * <br/> [MaterialTech](MaterialTech.md) | The production or manufacturing processes, techniques, and methods incorporat... | direct |
+| [material](material.md) | * <br/> [MaterialTech](MaterialTech.md) | Descreve a natureza do material empregado na edificação, no elemento ou no ev... | direct |
+| [technique](technique.md) | * <br/> [MaterialTech](MaterialTech.md) | Processos, técnicas, métodos e saberes postos em prática no conjunto da edifi... | direct |
+| [style_period](style_period.md) | * <br/> [StylePeriod](StylePeriod.md) | Denomina o(s) período(s) em que o evento decorreu, em qualquer escala relevan... | direct |
+| [culture](culture.md) | * <br/> [TypedReference](TypedReference.md) | Designa o contexto cultural ou étnico no qual o objeto foi afetado pelo event... | direct |
 | [subject](subject.md) | * <br/> [Topic](Topic.md) | Recomenda-se articular o tema em três níveis : descrição, identificação e int... | direct |
 | [related_works](related_works.md) | * <br/> [RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... | direct |
 | [resources](resources.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de imag... | direct |
 | [media](media.md) | * <br/> [MediaObject](MediaObject.md) | Representações iconográficas deste objeto | direct |
-| [work_type_condition](work_type_condition.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their overall state such ... | direct |
-| [work_type_form](work_type_form.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their physical form or by... | direct |
-| [work_type_function](work_type_function.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Objects that are distinguishable by the particular purpose for which they are... | direct |
-| [work_type_context](work_type_context.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their use or application ... | direct |
-| [work_type_material_tech](work_type_material_tech.md) | * _recommended_ <br/> [MaterialTech](MaterialTech.md) | Descriptors for objects that are distinguishable by their materials encorpora... | direct |
-| [work_type_subject_type](work_type_subject_type.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by their topics, themes, or ... | direct |
-| [work_type_use](work_type_use.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descriptors for objects that are distinguishable by the way they are employed... | direct |
-| [classification_genre](classification_genre.md) | * <br/> [ConceptReference](ConceptReference.md) | A broad category for grouping objects on the basis of shared intrinsic charac... | direct |
-| [classification_subject](classification_subject.md) | * <br/> [ConceptReference](ConceptReference.md) | A broad category for grouping objects or works on the basis of a topical asso... | direct |
-| [classification_local](classification_local.md) | * <br/> [ConceptReference](ConceptReference.md) | A classification scheme for grouping objects on the basis of locally defined ... | direct |
-| [classification_special](classification_special.md) | * <br/> [ConceptReference](ConceptReference.md) | A classification scheme for grouping objects on the basis of criteria defined... | direct |
-| [part_of](part_of.md) | 0..1 <br/> [GeonamesId](GeonamesId.md) | A set of structured information about a place that is the broader context for... | direct |
+| [work_type_condition](work_type_condition.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descreve o estado físico da edificação quanto à sua aparência de completude, ... | direct |
+| [work_type_form](work_type_form.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal | direct |
+| [work_type_function](work_type_function.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Nos Documentários de edificações, designa um dos sete tipos de propósitos con... | direct |
+| [work_type_context](work_type_context.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Nos Documentários de edificações, designa sobretudo o contexto imediato de im... | direct |
+| [work_type_material_tech](work_type_material_tech.md) | * _recommended_ <br/> [MaterialTech](MaterialTech.md) | Nos Documentários da Arquitetura Tradicional, refere-se à caracterização cons... | direct |
+| [work_type_subject_type](work_type_subject_type.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Nos Documentários da Arquitetura Tradicional, indica, se houver, uma classifi... | direct |
+| [work_type_use](work_type_use.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Nos Documentários da Arquitetura Tradicional, designa propriamente a(s) class... | direct |
+| [classification_genre](classification_genre.md) | * <br/> [ConceptReference](ConceptReference.md) | ❓ Ainda não implementamos o bloco `objectClassification` do LIDO | direct |
+| [classification_subject](classification_subject.md) | * <br/> [ConceptReference](ConceptReference.md) | ❓ Ainda não implementamos o bloco `objectClassification` do LIDO | direct |
+| [classification_local](classification_local.md) | * <br/> [ConceptReference](ConceptReference.md) | ❓ Ainda não implementamos o bloco `objectClassification` do LIDO | direct |
+| [classification_special](classification_special.md) | * <br/> [ConceptReference](ConceptReference.md) | ❓ Ainda não implementamos o bloco `objectClassification` do LIDO | direct |
+| [part_of](part_of.md) | * <br/> [TypedReference](TypedReference.md) | Permite identificar o contexto geográfico ou administrativo ao qual a edifica... | direct |
 | [former_site](former_site.md) | * <br/> [Site](Site.md) | Indica que a edificação não se encontra mais no local indicado, seja porque f... | direct |
 | [intended_site](intended_site.md) | * <br/> [Site](Site.md) | Sinaliza que a edificação devia ocupar um certo local, mas não chegou a ser c... | direct |
-| [other_site](other_site.md) | * <br/> [Site](Site.md) | Para casos não contemplados em nenhuma das categorias acima | direct |
-| [location_historic](location_historic.md) | * <br/> [HistoricPlace](HistoricPlace.md) | Antigas jurisdições ou designações para o lugar onde o objeto se encontra | direct |
+| [other_site](other_site.md) | * <br/> [Site](Site.md) | Para casos de implantação não contemplados em nenhuma das categorias acima | direct |
+| [location_historic](location_historic.md) | * <br/> [LocationHistoric](LocationHistoric.md) | Antigas jurisdições ou designações para o lugar onde o objeto se encontra | direct |
 | [inscriptions](inscriptions.md) | * <br/> [Inscription](Inscription.md) | Marcas, símbolos ou textos gravados na edificação, especialmente aqueles refe... | direct |
-| [collection](collection.md) | * <br/> [Thing](Thing.md) | A set of identifying and indexing information about the collection the object... | direct |
-| [work_rights](work_rights.md) | 1..* <br/> [Right](Right.md) | > ⚠️  Este bloco se refere a eventuais direitos autorais sobre A > EDIFICAÇÃO... | direct |
+| [collection](collection.md) | * <br/> [Thing](Thing.md) | Descreve conjuntos conceituais nos quais a edificação foi incluída, por exemp... | direct |
+| [work_rights](work_rights.md) | 1..* <br/> [Right](Right.md) | ⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobr... | direct |
 | [description](description.md) | 1 <br/> [String](String.md) | A human-readable description for a thing | [Thing](Thing.md) |
-| [title_type](title_type.md) | 1 <br/> [RepositoryType](RepositoryType.md) | Indica se o título é um nome próprio, descritivo, etc | [Thing](Thing.md) |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | [Thing](Thing.md) |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | [Thing](Thing.md) |
 | [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... | [Thing](Thing.md) |
 | [id](id.md) | 1 <br/> [OlcPlusCode11](OlcPlusCode11.md) | Cada edificação terá um identificador gerado a partir do seu georreferenciame... | [Thing](Thing.md) |
-| [author](author.md) | 1 <br/> [OrcidId](OrcidId.md) | ORCID iD of the record author or maintainer | [Thing](Thing.md) |
-| [record_date](record_date.md) | 0..1 <br/> [Date](Date.md) | Date the record was created or last substantively revised | [Thing](Thing.md) |
-| [title](title.md) | 1 <br/> [String](String.md) | The preferred human-readable label for a Thing | [Thing](Thing.md) |
-| [title_source](title_source.md) | * <br/> [BibliographicCitation](BibliographicCitation.md) | 📚 A fonte do título title_source é opcional ; um título pode ser atestado em ... | [Thing](Thing.md) |
-| [alt_name](alt_name.md) | * <br/> [Appellation](Appellation.md) | O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação se... | [Thing](Thing.md) |
-| [category](category.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | The LIDO Category Vocabulary is a structured controlled list of terms recomme... | [Thing](Thing.md) |
-| [identifiers](identifiers.md) | * <br/> [TypedReference](TypedReference.md) | Published or external identifiers for the object | [Thing](Thing.md) |
-| [tags](tags.md) | * <br/> [String](String.md) | Provisional uncontrolled keywords | [Thing](Thing.md) |
-| [temporal](temporal.md) | * <br/> [Event](Event.md) | Temporalidade do objeto | [Thing](Thing.md) |
-| [repositories](repositories.md) | * <br/> [Repository](Repository.md) | A set of elements for the identification, name and location of the repository... | [Thing](Thing.md) |
-| [record_rights](record_rights.md) | 1..* <br/> [Right](Right.md) | A set of structured information about rights regarding the content provided i... | [Thing](Thing.md) |
+| [record_author](record_author.md) | 0..1 <br/> [OrcidId](OrcidId.md) | ORCID iD da pessoa que escreveu a versão original da ficha | [Thing](Thing.md) |
+| [record_date](record_date.md) | 0..1 <br/> [Date](Date.md) | Data de inclusão da ficha | [Thing](Thing.md) |
+| [title](title.md) | 1 <br/> [String](String.md) | Nome pelo qual este item é mais comumente conhecido | [Thing](Thing.md) |
+| [title_source](title_source.md) | * <br/> [BibliographicCitation](BibliographicCitation.md) | A fonte do título title_source é opcional ; um título pode ser atestado em ma... | [Thing](Thing.md) |
+| [alt_name](alt_name.md) | * <br/> [Appellation](Appellation.md) | O bloco `alt_name` permite cadastrar outros nomes pelos quais o objeto ou con... | [Thing](Thing.md) |
+| [category](category.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário... | [Thing](Thing.md) |
+| [identifiers](identifiers.md) | * <br/> [TypedReference](TypedReference.md) | Números de inventário e demais códigos que identificam este objeto em outras ... | [Thing](Thing.md) |
+| [tags](tags.md) | * <br/> [String](String.md) | Lista de palavras-chave que caracterizam o objeto, de modo não estruturado | [Thing](Thing.md) |
+| [temporal](temporal.md) | * <br/> [Event](Event.md) | Descrição dos eventos associados ao ciclo de vida da edificação ou à existênc... | [Thing](Thing.md) |
+| [repositories](repositories.md) | * <br/> [Repository](Repository.md) | Nos Documentários da Arquitetura Tradicional, usamos repositórios para indica... | [Thing](Thing.md) |
+| [record_rights](record_rights.md) | 1..* <br/> [Right](Right.md) | Informações estruturadas sobre os direitos que incidem sobre o conteúdo textu... | [Thing](Thing.md) |
 
 
 
@@ -568,11 +591,9 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 <details>
 ```yaml
 name: Work
-description: 'An historical landmark or building.
-
-  Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastrar
-  uma edificação, um conjunto arquitetônico, ou ainda uma parte significativa de uma
-  edificação.
+description: 'Nos Documentários da Arquitetura Tradicional, esta ficha é usada para
+  cadastrar uma edificação, um conjunto arquitetônico, ou ainda uma parte significativa
+  de uma edificação.
 
   <h3>Especificação e modelo de preenchimento</h3>
 
@@ -597,6 +618,10 @@ description: 'An historical landmark or building.
 
   Campos não preenchidos também devem ser apagadas das fichas.
 
+  -------------------------------------------------------------------------
+
+  An historical landmark or building.
+
   '
 from_schema: https://tradicional.arq.br/schema
 close_mappings:
@@ -608,6 +633,8 @@ slots:
 - measurements
 - material
 - technique
+- style_period
+- culture
 - subject
 - related_works
 - resources
@@ -615,7 +642,8 @@ slots:
 slot_usage:
   title_type:
     name: title_type
-    range: RepositoryType
+    range: TitleType
+    required: true
   id:
     name: id
     description: Cada edificação terá um identificador gerado a partir do seu georreferenciamento
@@ -631,18 +659,41 @@ slot_usage:
   site:
     name: site
     required: false
+  record_rights:
+    name: record_rights
+    required: true
+  content:
+    name: content
+    description: 'Deixe uma linha em branco após o fechamento dos metadados e inclua
+      aqui uma descrição morfológica e histórica da edificação com texto livre, usando
+      formatação Markdown.
+
+      Poderá incluir um segundo bloco de metadados para indicar as referências bibliográficas
+      da descrição textual, no campo `nocite`. O formato é uma lista de chaves de
+      citação do Zotero (cada uma começando com `@`) separadas por vírgulas:
+
+      ```yaml Conteúdo textual em formato *Markdown* com citações [@citekey].
+
+      --- nocite: "@*" --- ```
+
+      '
 attributes:
   work_type_condition:
     name: work_type_condition
-    description: 'Descriptors for objects that are distinguishable by their overall
-      state such as appearance, level of damage, completeness, or quality. If an object
-      is identified by its prevailing physical state, then it is qualified by condition.
+    description: 'Descreve o estado físico da edificação quanto à sua aparência de
+      completude, deterioração ou capacidade de desempenhar sua função.
+
+      Atende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.html)
+      "estado de preservação" e "estado de conservação".
+
+      ---------------------------------------------------------------------
+
+      Descriptors for objects that are distinguishable by their overall state such
+      as appearance, level of damage, completeness, or quality. If an object is identified
+      by its prevailing physical state, then it is qualified by condition.
 
       Based on [AAT "conditions"](http://vocab.getty.edu/page/aat/300389724) and [CIDOC
-      CRM "E3 Condition State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)
-
-      Atende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.htmlhttps://sicg.iphan.gov.br/sicg/manual/manual.html)
-      "estado de preservação" e "estado de conservação".'
+      CRM "E3 Condition State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00937
@@ -651,16 +702,21 @@ attributes:
     range: ConceptReference
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined_as_list: true
   work_type_form:
     name: work_type_form
-    description: 'Descriptors for objects that are distinguishable by their physical
-      form or by the manner in which they are presented. If an object is identified
-      by sight, then it is qualified by form.
+    description: 'Nos Documentários da Arquitetura Tradicional, designa uma tipologia
+      formal.
 
-      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+      O vocabulário controlado para este item está em processo de estruturação.
 
-      Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal.'
+      ---------------------------------------------------------------------
+
+      Descriptors for objects that are distinguishable by their physical form or by
+      the manner in which they are presented. If an object is identified by sight,
+      then it is qualified by form.
+
+      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00766
@@ -669,20 +725,23 @@ attributes:
     range: ConceptReference
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined_as_list: true
   work_type_function:
     name: work_type_function
-    description: 'Objects that are distinguishable by the particular purpose for which
-      they are designed or used. If an object is identifiable by its intended use,
-      then it is qualified by function.
-
-      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
-      Nos Documentários de edificações, designa um dos sete tipos de propósitos concebidos
-      por C. William Westfall e Samir Younés em *Architectural Type and Character*.
+    description: 'Nos Documentários de edificações, designa um dos sete tipos de propósitos
+      concebidos por C. William Westfall e Samir Younés em *Architectural Type and
+      Character*.
 
       No Documentário de Lugares, designa o papel administrativo da localidade, por
-      exemplo freguesia, sede municipal, capital estadual ou nacional.'
+      exemplo freguesia, sede municipal, capital estadual ou nacional.
+
+      ---------------------------------------------------------------------
+
+      Objects that are distinguishable by the particular purpose for which they are
+      designed or used. If an object is identifiable by its intended use, then it
+      is qualified by function.
+
+      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00767
@@ -691,20 +750,22 @@ attributes:
     range: ConceptReference
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined_as_list: true
   work_type_context:
     name: work_type_context
-    description: 'Descriptors for objects that are distinguishable by their use or
-      application within a particular physical location. If an object is identifiable
-      by association with specific surroundings, it is qualified by location or context.
-
-      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+    description: 'Nos Documentários de edificações, designa sobretudo o contexto imediato
+      de implantação de uma edificação : urbana, rural, isolada, em correnteza, etc.
 
       No Documentário de Lugares Tradicionais, designa o tipo de núcleo populacional :
       sítio isolado, povoação rural, vila ou cidade, por exemplo.
 
-      Nos Documentários de edificações, designa sobretudo o contexto imediato de implantação
-      de uma edificação : urbana, rural, isolada, em correnteza, etc.'
+      ---------------------------------------------------------------------
+
+      Descriptors for objects that are distinguishable by their use or application
+      within a particular physical location. If an object is identifiable by association
+      with specific surroundings, it is qualified by location or context.
+
+      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00934
@@ -713,16 +774,18 @@ attributes:
     range: ConceptReference
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined_as_list: true
   work_type_material_tech:
     name: work_type_material_tech
-    description: 'Descriptors for objects that are distinguishable by their materials
-      encorporated, or the techniques used to create the object or work. If an object
-      is identified by the substances detected and/or the processes employed, then
-      it is qualified by material or technique.
+    description: 'Nos Documentários da Arquitetura Tradicional, refere-se à caracterização
+      construtiva geral da edificação.
 
-      Nos Documentários da Arquitetura Tradicional, refere-se à caracterização construtiva
-      geral da edificação.'
+      ---------------------------------------------------------------------
+
+      Descriptors for objects that are distinguishable by their materials encorporated,
+      or the techniques used to create the object or work. If an object is identified
+      by the substances detected and/or the processes employed, then it is qualified
+      by material or technique.'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00789
@@ -731,18 +794,19 @@ attributes:
     range: MaterialTech
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined_as_list: true
   work_type_subject_type:
     name: work_type_subject_type
-    description: 'Descriptors for objects that are distinguishable by their topics,
-      themes, or other content of the work. If an object is identified by what it
-      is of or about, then it is qualified by subject.
+    description: 'Nos Documentários da Arquitetura Tradicional, indica, se houver,
+      uma classificação iconográfica mais específica do que `form` ou `function`.
 
-      Based on [AAT "subjects"](http://vocab.getty.edu/page/aat/300404126)
+      ---------------------------------------------------------------------
 
-      Nos Documentários da Arquitetura Tradicional, é o único bloco opcional desta
-      seção : ele indica, se houver, uma classificação iconográfica mais específica
-      do que `form` ou `function`.'
+      Descriptors for objects that are distinguishable by their topics, themes, or
+      other content of the work. If an object is identified by what it is of or about,
+      then it is qualified by subject.
+
+      Based on [AAT "subjects"](http://vocab.getty.edu/page/aat/300404126)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00768
@@ -751,17 +815,20 @@ attributes:
     range: ConceptReference
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined_as_list: true
   work_type_use:
     name: work_type_use
-    description: 'Descriptors for objects that are distinguishable by the way they
-      are employed, occupied, applied, or function. If an object is identifiable by
-      its particular mode of use, it is qualified by use.
+    description: 'Nos Documentários da Arquitetura Tradicional, designa propriamente
+      a(s) classificação(ões) de usos do solo ou atividades predominante(s) na edificação
+      atualmente.
 
-      Based on [AAT "use"](http://vocab.getty.edu/page/aat/300068844)
+      ---------------------------------------------------------------------
 
-      Nos Documentários da Arquitetura Tradicional, designa propriamente a(s) classificação(ões)
-      de usos do solo ou atividades predominante(s) na edificação atualmente.'
+      Descriptors for objects that are distinguishable by the way they are employed,
+      occupied, applied, or function. If an object is identifiable by its particular
+      mode of use, it is qualified by use.
+
+      Based on [AAT "use"](http://vocab.getty.edu/page/aat/300068844)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00938
@@ -770,22 +837,23 @@ attributes:
     range: ConceptReference
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined_as_list: true
   classification_genre:
     name: classification_genre
-    description: 'A broad category for grouping objects on the basis of shared intrinsic
-      characteristics. The relationship between an object/work and the object genre
-      is a generic is-a-relation rather than a membership based on ascription to a
-      subject group.
+    description: '❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+      Talvez ele não seja relevante para o documentário de arquitetura doméstica,
+      e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura.
+
+      ---------------------------------------------------------------------
+
+      A broad category for grouping objects on the basis of shared intrinsic characteristics.
+      The relationship between an object/work and the object genre is a generic is-a-relation
+      rather than a membership based on ascription to a subject group.
 
       Note that the [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711)
       hierarchy differs in its scope from Object genre here in that the AAT includes
       more specific terms grouped by various aspects. In general, AAT descriptors
       are not intended to be used as indexing terms for classification.
-
-      ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele
-      não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
-      no padrão LIDO nem no perfil de aplicação para arquitetura.
 
       '
     from_schema: https://tradicional.arq.br/schema/work
@@ -795,18 +863,19 @@ attributes:
     - Work
     range: ConceptReference
     multivalued: true
-    inlined_as_list: false
+    inlined_as_list: true
   classification_subject:
     name: classification_subject
-    description: 'A broad category for grouping objects or works on the basis of a
-      topical association, including thematic or systematic classification, or an
-      assignment by discipline. The relationship between an object/work and a subject
-      category is a kind of membership based on ascription rather than a generic is-a
-      relation.
+    description: '❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+      Talvez ele não seja relevante para o documentário de arquitetura doméstica,
+      e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura.
 
-      ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele
-      não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
-      no padrão LIDO nem no perfil de aplicação para arquitetura.'
+      ---------------------------------------------------------------------
+
+      A broad category for grouping objects or works on the basis of a topical association,
+      including thematic or systematic classification, or an assignment by discipline.
+      The relationship between an object/work and a subject category is a kind of
+      membership based on ascription rather than a generic is-a relation.'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00932
@@ -814,17 +883,19 @@ attributes:
     - Work
     range: ConceptReference
     multivalued: true
-    inlined_as_list: false
+    inlined_as_list: true
   classification_local:
     name: classification_local
-    description: 'A classification scheme for grouping objects on the basis of locally
-      defined criteria, including categories corresponding to the curatorial departments
-      of the repository, such as "prints and drawings", "decorative arts", "North
-      America", "invertebrates", "Bronze Age" or "textiles". [Based on CCO "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)
+    description: '❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+      Talvez ele não seja relevante para o documentário de arquitetura doméstica,
+      e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura.
 
-      ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele
-      não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
-      no padrão LIDO nem no perfil de aplicação para arquitetura.'
+      ---------------------------------------------------------------------
+
+      A classification scheme for grouping objects on the basis of locally defined
+      criteria, including categories corresponding to the curatorial departments of
+      the repository, such as "prints and drawings", "decorative arts", "North America",
+      "invertebrates", "Bronze Age" or "textiles". [Based on CCO "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido01135
@@ -832,19 +903,21 @@ attributes:
     - Work
     range: ConceptReference
     multivalued: true
-    inlined_as_list: false
+    inlined_as_list: true
   classification_special:
     name: classification_special
-    description: 'A classification scheme for grouping objects on the basis of criteria
-      defined within specific academic disciplines or cultural domains, such as the
-      "Hornbostel-Sachs Classification of Musical Instruments", the "Nickel-Strunz
-      classification", biological taxonomies etc. Refers to classification schemes
-      that group objects on the basis of object characteristics, not on the basis
-      of themes or topics which the objects or works are related to.
+    description: '❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+      Talvez ele não seja relevante para o documentário de arquitetura doméstica,
+      e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura.
 
-      ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele
-      não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
-      no padrão LIDO nem no perfil de aplicação para arquitetura.'
+      ---------------------------------------------------------------------
+
+      A classification scheme for grouping objects on the basis of criteria defined
+      within specific academic disciplines or cultural domains, such as the "Hornbostel-Sachs
+      Classification of Musical Instruments", the "Nickel-Strunz classification",
+      biological taxonomies etc. Refers to classification schemes that group objects
+      on the basis of object characteristics, not on the basis of themes or topics
+      which the objects or works are related to.'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido01144
@@ -852,26 +925,31 @@ attributes:
     - Work
     range: ConceptReference
     multivalued: true
-    inlined_as_list: false
+    inlined_as_list: true
   part_of:
     name: part_of
-    description: A set of structured information about a place that is the broader
-      context for the place in focus, such as the district, state, or nation to which
-      a city belongs.
+    description: 'Permite identificar o contexto geográfico ou administrativo ao qual
+      a edificação se subordina, ou ainda um conjunto arquitetônico, urbanístico ou
+      conceitual (por exemplo, uma série de casas) do qual ela faz parte.
+
+      ---------------------------------------------------------------------
+
+      A set of structured information about a place that is the broader context for
+      the place in focus, such as the district, state, or nation to which a city belongs.'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
-    slot_uri: lido:partOfPlace
+    slot_uri: dcterms:isPartOf
     domain_of:
     - Work
-    range: GeonamesId
-    inlined: true
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
   former_site:
     name: former_site
     description: Indica que a edificação não se encontra mais no local indicado, seja
       porque foi deslocada ou demolida.
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
-    alias: former
     domain_of:
     - Work
     range: Site
@@ -891,7 +969,8 @@ attributes:
     inlined_as_list: true
   other_site:
     name: other_site
-    description: Para casos não contemplados em nenhuma das categorias acima.
+    description: Para casos de implantação não contemplados em nenhuma das categorias
+      acima.
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     alias: other
@@ -903,12 +982,13 @@ attributes:
   location_historic:
     name: location_historic
     description: Antigas jurisdições ou designações para o lugar onde o objeto se
-      encontra. Para um sítio de onde o objeto foi fisicamente removido, usar `former_site:`.
+      encontra. Para um sítio de onde o objeto foi fisicamente removido, usar a lista
+      `former_site`.
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     domain_of:
     - Work
-    range: HistoricPlace
+    range: LocationHistoric
     multivalued: true
     inlined_as_list: true
   inscriptions:
@@ -925,8 +1005,19 @@ attributes:
     inlined_as_list: true
   collection:
     name: collection
-    description: 'A set of identifying and indexing information about the collection
-      the object/work in focus is gathered into or is a member of.
+    description: 'Descreve conjuntos conceituais nos quais a edificação foi incluída,
+      por exemplo catálogos raisonnés, obras de referência, exposições, ou agrupamentos
+      *ad-hoc* para formar coleções temáticas de acordo com as necessidades do projeto
+      de investigação.
+
+      Para o pertencimento a perímetros de sítios históricos tombados/classificados,
+      preencher o grupo `identifiers`. Para a identificação de proprietários ou responsáveis,
+      preencher o grupo `work_rights`.
+
+      ---------------------------------------------------------------------
+
+      A set of identifying and indexing information about the collection the object/work
+      in focus is gathered into or is a member of.
 
       Collection applies to any accumulated group of physical or digital items, conceptually
       or physically brought together on the basis of a focal characteristic. Use cases
@@ -936,18 +1027,18 @@ attributes:
 
       '
     from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
     slot_uri: lido:collection
     domain_of:
-    - Thing
     - Work
     range: Thing
     multivalued: true
     inlined_as_list: false
   work_rights:
     name: work_rights
-    description: '> ⚠️  Este bloco se refere a eventuais direitos autorais sobre A
-      > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre > a iconografia
-      relacionada.
+    description: '⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade
+      sobre A EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha, nem sobre
+      a iconografia relacionada.
 
       '
     from_schema: https://tradicional.arq.br/schema/work
@@ -969,11 +1060,9 @@ class_uri: schema:LandmarksOrHistoricalBuildings
 <details>
 ```yaml
 name: Work
-description: 'An historical landmark or building.
-
-  Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastrar
-  uma edificação, um conjunto arquitetônico, ou ainda uma parte significativa de uma
-  edificação.
+description: 'Nos Documentários da Arquitetura Tradicional, esta ficha é usada para
+  cadastrar uma edificação, um conjunto arquitetônico, ou ainda uma parte significativa
+  de uma edificação.
 
   <h3>Especificação e modelo de preenchimento</h3>
 
@@ -998,6 +1087,10 @@ description: 'An historical landmark or building.
 
   Campos não preenchidos também devem ser apagadas das fichas.
 
+  -------------------------------------------------------------------------
+
+  An historical landmark or building.
+
   '
 from_schema: https://tradicional.arq.br/schema
 close_mappings:
@@ -1007,7 +1100,8 @@ is_a: Thing
 slot_usage:
   title_type:
     name: title_type
-    range: RepositoryType
+    range: TitleType
+    required: true
   id:
     name: id
     description: Cada edificação terá um identificador gerado a partir do seu georreferenciamento
@@ -1023,18 +1117,41 @@ slot_usage:
   site:
     name: site
     required: false
+  record_rights:
+    name: record_rights
+    required: true
+  content:
+    name: content
+    description: 'Deixe uma linha em branco após o fechamento dos metadados e inclua
+      aqui uma descrição morfológica e histórica da edificação com texto livre, usando
+      formatação Markdown.
+
+      Poderá incluir um segundo bloco de metadados para indicar as referências bibliográficas
+      da descrição textual, no campo `nocite`. O formato é uma lista de chaves de
+      citação do Zotero (cada uma começando com `@`) separadas por vírgulas:
+
+      ```yaml Conteúdo textual em formato *Markdown* com citações [@citekey].
+
+      --- nocite: "@*" --- ```
+
+      '
 attributes:
   work_type_condition:
     name: work_type_condition
-    description: 'Descriptors for objects that are distinguishable by their overall
-      state such as appearance, level of damage, completeness, or quality. If an object
-      is identified by its prevailing physical state, then it is qualified by condition.
+    description: 'Descreve o estado físico da edificação quanto à sua aparência de
+      completude, deterioração ou capacidade de desempenhar sua função.
+
+      Atende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.html)
+      "estado de preservação" e "estado de conservação".
+
+      ---------------------------------------------------------------------
+
+      Descriptors for objects that are distinguishable by their overall state such
+      as appearance, level of damage, completeness, or quality. If an object is identified
+      by its prevailing physical state, then it is qualified by condition.
 
       Based on [AAT "conditions"](http://vocab.getty.edu/page/aat/300389724) and [CIDOC
-      CRM "E3 Condition State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)
-
-      Atende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.htmlhttps://sicg.iphan.gov.br/sicg/manual/manual.html)
-      "estado de preservação" e "estado de conservação".'
+      CRM "E3 Condition State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00937
@@ -1044,16 +1161,22 @@ attributes:
     range: ConceptReference
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined: true
+    inlined_as_list: true
   work_type_form:
     name: work_type_form
-    description: 'Descriptors for objects that are distinguishable by their physical
-      form or by the manner in which they are presented. If an object is identified
-      by sight, then it is qualified by form.
+    description: 'Nos Documentários da Arquitetura Tradicional, designa uma tipologia
+      formal.
 
-      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+      O vocabulário controlado para este item está em processo de estruturação.
 
-      Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal.'
+      ---------------------------------------------------------------------
+
+      Descriptors for objects that are distinguishable by their physical form or by
+      the manner in which they are presented. If an object is identified by sight,
+      then it is qualified by form.
+
+      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00766
@@ -1063,20 +1186,24 @@ attributes:
     range: ConceptReference
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined: true
+    inlined_as_list: true
   work_type_function:
     name: work_type_function
-    description: 'Objects that are distinguishable by the particular purpose for which
-      they are designed or used. If an object is identifiable by its intended use,
-      then it is qualified by function.
-
-      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
-      Nos Documentários de edificações, designa um dos sete tipos de propósitos concebidos
-      por C. William Westfall e Samir Younés em *Architectural Type and Character*.
+    description: 'Nos Documentários de edificações, designa um dos sete tipos de propósitos
+      concebidos por C. William Westfall e Samir Younés em *Architectural Type and
+      Character*.
 
       No Documentário de Lugares, designa o papel administrativo da localidade, por
-      exemplo freguesia, sede municipal, capital estadual ou nacional.'
+      exemplo freguesia, sede municipal, capital estadual ou nacional.
+
+      ---------------------------------------------------------------------
+
+      Objects that are distinguishable by the particular purpose for which they are
+      designed or used. If an object is identifiable by its intended use, then it
+      is qualified by function.
+
+      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00767
@@ -1086,20 +1213,23 @@ attributes:
     range: ConceptReference
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined: true
+    inlined_as_list: true
   work_type_context:
     name: work_type_context
-    description: 'Descriptors for objects that are distinguishable by their use or
-      application within a particular physical location. If an object is identifiable
-      by association with specific surroundings, it is qualified by location or context.
-
-      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+    description: 'Nos Documentários de edificações, designa sobretudo o contexto imediato
+      de implantação de uma edificação : urbana, rural, isolada, em correnteza, etc.
 
       No Documentário de Lugares Tradicionais, designa o tipo de núcleo populacional :
       sítio isolado, povoação rural, vila ou cidade, por exemplo.
 
-      Nos Documentários de edificações, designa sobretudo o contexto imediato de implantação
-      de uma edificação : urbana, rural, isolada, em correnteza, etc.'
+      ---------------------------------------------------------------------
+
+      Descriptors for objects that are distinguishable by their use or application
+      within a particular physical location. If an object is identifiable by association
+      with specific surroundings, it is qualified by location or context.
+
+      Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00934
@@ -1109,16 +1239,19 @@ attributes:
     range: ConceptReference
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined: true
+    inlined_as_list: true
   work_type_material_tech:
     name: work_type_material_tech
-    description: 'Descriptors for objects that are distinguishable by their materials
-      encorporated, or the techniques used to create the object or work. If an object
-      is identified by the substances detected and/or the processes employed, then
-      it is qualified by material or technique.
+    description: 'Nos Documentários da Arquitetura Tradicional, refere-se à caracterização
+      construtiva geral da edificação.
 
-      Nos Documentários da Arquitetura Tradicional, refere-se à caracterização construtiva
-      geral da edificação.'
+      ---------------------------------------------------------------------
+
+      Descriptors for objects that are distinguishable by their materials encorporated,
+      or the techniques used to create the object or work. If an object is identified
+      by the substances detected and/or the processes employed, then it is qualified
+      by material or technique.'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00789
@@ -1128,18 +1261,20 @@ attributes:
     range: MaterialTech
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined: true
+    inlined_as_list: true
   work_type_subject_type:
     name: work_type_subject_type
-    description: 'Descriptors for objects that are distinguishable by their topics,
-      themes, or other content of the work. If an object is identified by what it
-      is of or about, then it is qualified by subject.
+    description: 'Nos Documentários da Arquitetura Tradicional, indica, se houver,
+      uma classificação iconográfica mais específica do que `form` ou `function`.
 
-      Based on [AAT "subjects"](http://vocab.getty.edu/page/aat/300404126)
+      ---------------------------------------------------------------------
 
-      Nos Documentários da Arquitetura Tradicional, é o único bloco opcional desta
-      seção : ele indica, se houver, uma classificação iconográfica mais específica
-      do que `form` ou `function`.'
+      Descriptors for objects that are distinguishable by their topics, themes, or
+      other content of the work. If an object is identified by what it is of or about,
+      then it is qualified by subject.
+
+      Based on [AAT "subjects"](http://vocab.getty.edu/page/aat/300404126)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00768
@@ -1149,17 +1284,21 @@ attributes:
     range: ConceptReference
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined: true
+    inlined_as_list: true
   work_type_use:
     name: work_type_use
-    description: 'Descriptors for objects that are distinguishable by the way they
-      are employed, occupied, applied, or function. If an object is identifiable by
-      its particular mode of use, it is qualified by use.
+    description: 'Nos Documentários da Arquitetura Tradicional, designa propriamente
+      a(s) classificação(ões) de usos do solo ou atividades predominante(s) na edificação
+      atualmente.
 
-      Based on [AAT "use"](http://vocab.getty.edu/page/aat/300068844)
+      ---------------------------------------------------------------------
 
-      Nos Documentários da Arquitetura Tradicional, designa propriamente a(s) classificação(ões)
-      de usos do solo ou atividades predominante(s) na edificação atualmente.'
+      Descriptors for objects that are distinguishable by the way they are employed,
+      occupied, applied, or function. If an object is identifiable by its particular
+      mode of use, it is qualified by use.
+
+      Based on [AAT "use"](http://vocab.getty.edu/page/aat/300068844)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00938
@@ -1169,22 +1308,24 @@ attributes:
     range: ConceptReference
     recommended: true
     multivalued: true
-    inlined_as_list: false
+    inlined: true
+    inlined_as_list: true
   classification_genre:
     name: classification_genre
-    description: 'A broad category for grouping objects on the basis of shared intrinsic
-      characteristics. The relationship between an object/work and the object genre
-      is a generic is-a-relation rather than a membership based on ascription to a
-      subject group.
+    description: '❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+      Talvez ele não seja relevante para o documentário de arquitetura doméstica,
+      e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura.
+
+      ---------------------------------------------------------------------
+
+      A broad category for grouping objects on the basis of shared intrinsic characteristics.
+      The relationship between an object/work and the object genre is a generic is-a-relation
+      rather than a membership based on ascription to a subject group.
 
       Note that the [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711)
       hierarchy differs in its scope from Object genre here in that the AAT includes
       more specific terms grouped by various aspects. In general, AAT descriptors
       are not intended to be used as indexing terms for classification.
-
-      ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele
-      não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
-      no padrão LIDO nem no perfil de aplicação para arquitetura.
 
       '
     from_schema: https://tradicional.arq.br/schema/work
@@ -1195,18 +1336,20 @@ attributes:
     - Work
     range: ConceptReference
     multivalued: true
-    inlined_as_list: false
+    inlined: true
+    inlined_as_list: true
   classification_subject:
     name: classification_subject
-    description: 'A broad category for grouping objects or works on the basis of a
-      topical association, including thematic or systematic classification, or an
-      assignment by discipline. The relationship between an object/work and a subject
-      category is a kind of membership based on ascription rather than a generic is-a
-      relation.
+    description: '❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+      Talvez ele não seja relevante para o documentário de arquitetura doméstica,
+      e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura.
 
-      ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele
-      não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
-      no padrão LIDO nem no perfil de aplicação para arquitetura.'
+      ---------------------------------------------------------------------
+
+      A broad category for grouping objects or works on the basis of a topical association,
+      including thematic or systematic classification, or an assignment by discipline.
+      The relationship between an object/work and a subject category is a kind of
+      membership based on ascription rather than a generic is-a relation.'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido00932
@@ -1215,17 +1358,20 @@ attributes:
     - Work
     range: ConceptReference
     multivalued: true
-    inlined_as_list: false
+    inlined: true
+    inlined_as_list: true
   classification_local:
     name: classification_local
-    description: 'A classification scheme for grouping objects on the basis of locally
-      defined criteria, including categories corresponding to the curatorial departments
-      of the repository, such as "prints and drawings", "decorative arts", "North
-      America", "invertebrates", "Bronze Age" or "textiles". [Based on CCO "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)
+    description: '❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+      Talvez ele não seja relevante para o documentário de arquitetura doméstica,
+      e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura.
 
-      ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele
-      não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
-      no padrão LIDO nem no perfil de aplicação para arquitetura.'
+      ---------------------------------------------------------------------
+
+      A classification scheme for grouping objects on the basis of locally defined
+      criteria, including categories corresponding to the curatorial departments of
+      the repository, such as "prints and drawings", "decorative arts", "North America",
+      "invertebrates", "Bronze Age" or "textiles". [Based on CCO "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido01135
@@ -1234,19 +1380,22 @@ attributes:
     - Work
     range: ConceptReference
     multivalued: true
-    inlined_as_list: false
+    inlined: true
+    inlined_as_list: true
   classification_special:
     name: classification_special
-    description: 'A classification scheme for grouping objects on the basis of criteria
-      defined within specific academic disciplines or cultural domains, such as the
-      "Hornbostel-Sachs Classification of Musical Instruments", the "Nickel-Strunz
-      classification", biological taxonomies etc. Refers to classification schemes
-      that group objects on the basis of object characteristics, not on the basis
-      of themes or topics which the objects or works are related to.
+    description: '❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
+      Talvez ele não seja relevante para o documentário de arquitetura doméstica,
+      e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura.
 
-      ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele
-      não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
-      no padrão LIDO nem no perfil de aplicação para arquitetura.'
+      ---------------------------------------------------------------------
+
+      A classification scheme for grouping objects on the basis of criteria defined
+      within specific academic disciplines or cultural domains, such as the "Hornbostel-Sachs
+      Classification of Musical Instruments", the "Nickel-Strunz classification",
+      biological taxonomies etc. Refers to classification schemes that group objects
+      on the basis of object characteristics, not on the basis of themes or topics
+      which the objects or works are related to.'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: term:lido01144
@@ -1255,27 +1404,34 @@ attributes:
     - Work
     range: ConceptReference
     multivalued: true
-    inlined_as_list: false
+    inlined: true
+    inlined_as_list: true
   part_of:
     name: part_of
-    description: A set of structured information about a place that is the broader
-      context for the place in focus, such as the district, state, or nation to which
-      a city belongs.
+    description: 'Permite identificar o contexto geográfico ou administrativo ao qual
+      a edificação se subordina, ou ainda um conjunto arquitetônico, urbanístico ou
+      conceitual (por exemplo, uma série de casas) do qual ela faz parte.
+
+      ---------------------------------------------------------------------
+
+      A set of structured information about a place that is the broader context for
+      the place in focus, such as the district, state, or nation to which a city belongs.'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
-    slot_uri: lido:partOfPlace
+    slot_uri: dcterms:isPartOf
     owner: Work
     domain_of:
     - Work
-    range: GeonamesId
+    range: TypedReference
+    multivalued: true
     inlined: true
+    inlined_as_list: true
   former_site:
     name: former_site
     description: Indica que a edificação não se encontra mais no local indicado, seja
       porque foi deslocada ou demolida.
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
-    alias: former
     owner: Work
     domain_of:
     - Work
@@ -1299,7 +1455,8 @@ attributes:
     inlined_as_list: true
   other_site:
     name: other_site
-    description: Para casos não contemplados em nenhuma das categorias acima.
+    description: Para casos de implantação não contemplados em nenhuma das categorias
+      acima.
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     alias: other
@@ -1313,13 +1470,14 @@ attributes:
   location_historic:
     name: location_historic
     description: Antigas jurisdições ou designações para o lugar onde o objeto se
-      encontra. Para um sítio de onde o objeto foi fisicamente removido, usar `former_site:`.
+      encontra. Para um sítio de onde o objeto foi fisicamente removido, usar a lista
+      `former_site`.
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     owner: Work
     domain_of:
     - Work
-    range: HistoricPlace
+    range: LocationHistoric
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -1339,8 +1497,19 @@ attributes:
     inlined_as_list: true
   collection:
     name: collection
-    description: 'A set of identifying and indexing information about the collection
-      the object/work in focus is gathered into or is a member of.
+    description: 'Descreve conjuntos conceituais nos quais a edificação foi incluída,
+      por exemplo catálogos raisonnés, obras de referência, exposições, ou agrupamentos
+      *ad-hoc* para formar coleções temáticas de acordo com as necessidades do projeto
+      de investigação.
+
+      Para o pertencimento a perímetros de sítios históricos tombados/classificados,
+      preencher o grupo `identifiers`. Para a identificação de proprietários ou responsáveis,
+      preencher o grupo `work_rights`.
+
+      ---------------------------------------------------------------------
+
+      A set of identifying and indexing information about the collection the object/work
+      in focus is gathered into or is a member of.
 
       Collection applies to any accumulated group of physical or digital items, conceptually
       or physically brought together on the basis of a focal characteristic. Use cases
@@ -1350,19 +1519,19 @@ attributes:
 
       '
     from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
     slot_uri: lido:collection
     owner: Work
     domain_of:
-    - Thing
     - Work
     range: Thing
     multivalued: true
     inlined_as_list: false
   work_rights:
     name: work_rights
-    description: '> ⚠️  Este bloco se refere a eventuais direitos autorais sobre A
-      > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre > a iconografia
-      relacionada.
+    description: '⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade
+      sobre A EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha, nem sobre
+      a iconografia relacionada.
 
       '
     from_schema: https://tradicional.arq.br/schema/work
@@ -1409,8 +1578,18 @@ attributes:
     inlined_as_list: true
   material:
     name: material
-    description: 'This class is a specialization of E55 Type and comprises the concepts
-      of materials.
+    description: 'Descreve a natureza do material empregado na edificação, no elemento
+      ou no evento descritos. Conforme necessário e segundo o discernimento de quem
+      preenche a ficha, pode se referir a matérias-primas ou a produtos prontos para
+      uso.
+
+      Espólios ou partes de outras edificações reutilizadas podem ser descritos segundo
+      os materiais de que são constituídos, mas a procedência não deve ser cadastrada
+      neste item. Para tanto, devem ser utilizados os eventos no grupo `temporal`.
+
+      -------------------------------------------------------------------------
+
+      This class is a specialization of E55 Type and comprises the concepts of materials.
 
       Instances of E57 Material may denote properties of matter before its use, during
       its use, and as incorporated in an object, such as ultramarine powder, tempera
@@ -1443,8 +1622,14 @@ attributes:
     inlined_as_list: true
   technique:
     name: technique
-    description: 'The production or manufacturing processes, techniques, and methods
-      incorporated in the fabrication or alteration of the work or image.
+    description: 'Processos, técnicas, métodos e saberes postos em prática no conjunto
+      da edificação e nas suas partes mais significativas, considerando a sua produção
+      e alterações substanciais, bem como a sua eventual destruição.
+
+      -------------------------------------------------------------------------
+
+      The production or manufacturing processes, techniques, and methods incorporated
+      in the fabrication or alteration of the work or image.
 
       '
     from_schema: https://tradicional.arq.br/schema
@@ -1457,6 +1642,58 @@ attributes:
     - Event
     - Work
     range: MaterialTech
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  style_period:
+    name: style_period
+    description: 'Denomina o(s) período(s) em que o evento decorreu, em qualquer escala
+      relevante para o conhecimento : geológica, arqueológica, histórica ou artística.
+      A identificação do período ou estilo deve ser relevante para as características
+      que o objeto adquiriu devido a esse evento, não somente uma coincidência cronológica.
+
+      ---------------------------------------------------------------------
+
+      An index element for the period in which the event happened, comprising information
+      about geologic time scale, archaelogical, historical, or artistic period, style,
+      or art movement, whose characteristics are represented by the object or work.
+
+      Note that "Period/Style" corresponds to "Style" in CDWA as shorthand for [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
+
+      Examples may be Neolithic for a period, Impressionist for a style, or Cubism
+      for a movement.
+
+      '
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    owner: Work
+    domain_of:
+    - Event
+    - Work
+    range: StylePeriod
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  culture:
+    name: culture
+    description: 'Designa o contexto cultural ou étnico no qual o objeto foi afetado
+      pelo evento em questão, desde que as características de tal contexto estejam
+      refletidas no objeto. O preenchimento do contexto cultural é especialmente relevante
+      quando os agentes envolvidos na produção ou alteração do objeto são desconhecidos.
+
+      ---------------------------------------------------------------------
+
+      An index element for the cultural context from which the object/work in focus
+      originated. Used if the creator or producer is unknown, or if the cultural context
+      is of particular interest. Examples may include the name of a culture, a nation,
+      or an ethnic group.'
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    owner: Work
+    domain_of:
+    - Event
+    - Work
+    range: TypedReference
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -1508,7 +1745,7 @@ attributes:
       \ ou acervos arquivísticos."
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
-    slot_uri: skos:related
+    slot_uri: dcterms:related
     owner: Work
     domain_of:
     - Work
@@ -1578,31 +1815,25 @@ attributes:
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - TypedReference
     - Measurement
-    - EventDate
-    - EventPlace
     - RelatedEvent
     - Thing
-    - Appellation
     - Inscription
     - Topic
     range: string
     required: true
-  title_type:
-    name: title_type
-    description: Indica se o título é um nome próprio, descritivo, etc.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    alias: type
-    owner: Work
-    domain_of:
-    - Thing
-    - Appellation
-    range: RepositoryType
-    required: true
   bibliographic_citation:
     name: bibliographic_citation
-    description: 'Cadastro de uma referência bibliográfica.
+    description: '📚  Cadastro de uma referência bibliográfica.
+
+      O campo `refid` deve conter a chave de citação (citation key) que consta do
+      registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero,
+      começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação,
+      mas pode ser diferente.
+
+      Se necessário, incluir no campo `note` uma especificação adicional, como o número
+      da página da referência bibliográfica de onde a informação foi extraída.
 
       Usar o campo `description` para formatar a referência, caso a formatação automática
       do Zotero não for satisfatória.
@@ -1667,30 +1898,37 @@ attributes:
     - Thing
     range: OlcPlusCode11
     required: true
-  author:
-    name: author
-    description: ORCID iD of the record author or maintainer.
-    from_schema: https://tradicional.arq.br/schema
+  record_author:
+    name: record_author
+    description: 'ORCID iD da pessoa que escreveu a versão original da ficha. Alterar
+      apenas no caso de a ficha ter sido substancialmente reescrita.
+
+      '
+    from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
-    slot_uri: dcterms:creator
+    slot_uri: dcterms:contributor
+    alias: author
     owner: Work
     domain_of:
     - Thing
     range: OrcidId
-    required: true
   record_date:
     name: record_date
-    description: Date the record was created or last substantively revised.
+    description: Data de inclusão da ficha.
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     slot_uri: dcterms:created
+    alias: date
     owner: Work
     domain_of:
     - Thing
     range: date
   title:
     name: title
-    description: The preferred human-readable label for a Thing.
+    description: 'Nome pelo qual este item é mais comumente conhecido. Outros nomes
+      podem ser cadastrados em `alt_name`.
+
+      '
     from_schema: https://tradicional.arq.br/schema/thing
     exact_mappings:
     - schema:name
@@ -1703,20 +1941,9 @@ attributes:
     required: true
   title_source:
     name: title_source
-    description: '📚 A fonte do título title_source é opcional ; um título pode ser
-      atestado em mais de uma fonte, por isso este campo é uma lista de itens (cada
-      item começa com um hífen).
-
-      Se a fonte for cadastrada, o campo `refid` deve conter a chave de citação (citation
-      key) que consta do registro bibliográfico na biblioteca do nosso projeto de
-      pesquisa no Zotero. Em geral, a chave de citação é o DOI ou ISBN da publicação,
-      mas pode ser diferente.
-
-      Se necessário, incluir no campo note uma especificação adicional, como o número
-      da página da referência bibliográfica de onde a informação foi extraída.
-
-      Todos os campos source no restante da ficha devem ser preenchidos do mesmo modo.
-      (Equivalente DublinCore: bibliographiCitation).'
+    description: A fonte do título title_source é opcional ; um título pode ser atestado
+      em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa
+      com um hífen).
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     owner: Work
@@ -1728,12 +1955,12 @@ attributes:
     inlined_as_list: true
   alt_name:
     name: alt_name
-    description: 'O bloco `alt_name` permite cadastrar outros nomes pelos quais a
-      edificação será eventualmente conhecida. É uma lista opcional de itens, e se
-      existir, os campos de cada item da lista devem ser preenchidos como os do título
-      principal.
+    description: 'O bloco `alt_name` permite cadastrar outros nomes pelos quais o
+      objeto ou conceito será eventualmente conhecido. É uma lista opcional de itens,
+      e se existir, os campos de cada item da lista devem ser preenchidos como os
+      do título principal.
 
-      O campo `description` de cada item contém o texto do título (nome).
+      O campo `label` ou `description` de cada item contém o texto do título (nome).
 
       Este bloco pode ser omitido por completo se não houver títulos alternativos.
 
@@ -1749,13 +1976,21 @@ attributes:
     inlined_as_list: true
   category:
     name: category
-    description: 'The LIDO Category Vocabulary is a structured controlled list of
-      terms recommended to use as values in the LIDO Category element.
+    description: 'Uma classificação ampla para o objeto descrito na ficha, usando
+      o vocabulário controlado do LIDO.
 
-      Examples are human-made object or natural object.
+      Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com
+      `term:lido00096` ("Objeto manufaturado").
 
-      Nos documentários de edificações, preencher este campo obrigatoriamente com
-      `term:lido00096`'
+      No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193`
+      ("Objeto conceitual").
+
+      ---------------------------------------------------------------------
+
+      The LIDO Category Vocabulary is a structured controlled list of terms recommended
+      to use as values in the LIDO Category element.
+
+      Examples are human-made object or natural object.'
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: term:lidoCategory
@@ -1768,7 +2003,23 @@ attributes:
     required: true
   identifiers:
     name: identifiers
-    description: Published or external identifiers for the object.
+    description: "Números de inventário e demais códigos que identificam este objeto\
+      \ em outras bases de dados.\nCaso esta edificação esteja cadastrada em outras\
+      \ bases de dados (por exemplo, [SICG], [SIPA], [HPIP], [iPatrimonio], etc.),\
+      \ pode preencher a lista `identifiers` como segue.\n:clipboard: O conteúdo de\
+      \ cada bloco é uma lista recuada em dois espaços com respeito à categoria superior.\
+      \ Seus itens são :\n* `type` é o tipo de referência : pode ser `uri` (padrão),\
+      \ `iri` ou\n  `local` — se estiver em dúvida, omita esta linha ;\n\n* `refid`\
+      \ é obrigatório : representa o identificador do conceito no\n  vocabulário controlado\
+      \ ou no repositório de origem — normalmente\n  será uma URI (um link para a\
+      \ página web do cadastro) ;\n\n* `description` deve ser usado para representar\
+      \ textualmente\n  o número de inventário, código identificador ou outra informação\n\
+      \  que individualize o objeto na base externa (por exemplo, livro do\n  tombo\
+      \ e número do processo de tombamento, no Brasil) ;\n\n* `bibliographic_citation`\
+      \ é opcional e permite citar uma lista de\n  referências bibliográficas que\
+      \ validem a inclusão deste termo.\n\n* `source` também é opcional e permite\
+      \ cadastrar os dados da pessoa\n  jurídica responsável pelo registro.\n\n---------------------------------------------------------------------\n\
+      Published or external identifiers for the object.\n"
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     owner: Work
@@ -1780,8 +2031,16 @@ attributes:
     inlined_as_list: true
   tags:
     name: tags
-    description: Provisional uncontrolled keywords. Prefer `classifications` or `subject`
-      for curated vocabulary terms.
+    description: 'Lista de palavras-chave que caracterizam o objeto, de modo não estruturado.
+      Recomenda-se usar uma palavra-chave de cada um dos recortes abaixo:
+
+      - Geográfico ; - Cronológico ; - Histórico-cultural ; - Técnico-construtivo ;
+      - Temático ou tipológico ; - Funcional.
+
+      ---------------------------------------------------------------------
+
+      Provisional uncontrolled keywords. Prefer `classifications` or `subject` for
+      curated vocabulary terms.'
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     owner: Work
@@ -1791,7 +2050,11 @@ attributes:
     multivalued: true
   temporal:
     name: temporal
-    description: Temporalidade do objeto.
+    description: 'Descrição dos eventos associados ao ciclo de vida da edificação
+      ou à existência e/ou uso do objeto ou conceito. Ler a respetiva documentação
+      para estruturar este campo.
+
+      '
     from_schema: https://tradicional.arq.br/schema/thing
     owner: Work
     domain_of:
@@ -1803,19 +2066,19 @@ attributes:
     inlined_as_list: true
   repositories:
     name: repositories
-    description: 'A set of elements for the identification, name and location of the
-      repository that is responsible for the object/work in focus.
+    description: 'Nos Documentários da Arquitetura Tradicional, usamos repositórios
+      para indicar a inclusão da edificação em perímetros de sítios tombados/classificados
+      do patrimônio, áreas de interesse histórico-cultural, etc.
 
-      Repeated if there are several designations known, or if former repositories
-      or geographic places should be listed.
+      O repositório é cadastrado como uma pessoa jurídica dotada de extensão geográfica.
 
       ---------------------------------------------------------------------
 
-      Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar
-      a inclusão da edificação em perímetros de sítios do patrimônio cultural, etc.
+      A set of elements for the identification, name and location of the repository
+      that is responsible for the object/work in focus.
 
-      Os repositórios devem ser cadastrados de modo semelhante às informações de georreferenciamento,
-      usando o tipo `other`.
+      Repeated if there are several designations known, or if former repositories
+      or geographic places should be listed.
 
       '
     from_schema: https://tradicional.arq.br/schema/thing
@@ -1829,16 +2092,19 @@ attributes:
     inlined_as_list: true
   record_rights:
     name: record_rights
-    description: 'A set of structured information about rights regarding the content
-      provided in this LIDO record.
+    description: 'Informações estruturadas sobre os direitos que incidem sobre o conteúdo
+      textual desta ficha.
+
+      ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os
+      direitos incidentes sobre o objeto descrito.
 
       ---------------------------------------------------------------------
 
-      :warning: Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre
-      os direitos incidentes sobre o objeto descrito.
+      A set of structured information about rights regarding the content provided
+      in this LIDO record.
 
       '
-    from_schema: https://tradicional.arq.br/schema/thing
+    from_schema: https://tradicional.arq.br/schema
     rank: 1000
     owner: Work
     domain_of:

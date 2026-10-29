@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: lat
+# Slot: lat 
 
 
 _Latitude em graus decimais (separador decimal: ponto)._

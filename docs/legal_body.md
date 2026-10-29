@@ -3,7 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: legal_body
+# Slot: legal_body 
+
+
+_Informações estruturadas sobre a pessoa jurídica._
+
+
 
 <div data-search-exclude markdown="1">
 
@@ -81,6 +86,7 @@ URI: [wasth:legal_body](https://tradicional.arq.br/schema/legal_body)
 <details>
 ```yaml
 name: legal_body
+description: Informações estruturadas sobre a pessoa jurídica.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 domain_of:

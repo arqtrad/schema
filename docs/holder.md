@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: holder
+# Slot: holder 
 
 
 _A set of elements identifying the person or the group of persons holding the rights referenced in Rights Type. Often refers to copyright and related rights, such as the right to reproduce, distribute, exhibit or use the entity in focus, for example, the object/work, resource or metadata record._
@@ -29,7 +29,7 @@ Alias: holder
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Right](Right.md) | * Preencher `earliest_date` com a data de início da vigência dos direitos ou ... |  no  |
+| [Right](Right.md) | * Preencher `earliest_date` com a data de início da vigência dos |  no  |
 
 
 

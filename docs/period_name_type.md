@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: places
+# Slot: period_name_type 
 
 
-_Lugares associados ao evento, sem incluir o próprio local no qual se situa a edificação._
+_Designa a natureza ou origem do nome do período ou estilo indicado._
 
 __
 
@@ -16,8 +16,8 @@ __
 
 
 
-URI: [wasth:places](https://tradicional.arq.br/schema/places)
-Alias: places
+URI: [wasth:period_name_type](https://tradicional.arq.br/schema/period_name_type)
+Alias: type
 
 <!-- no inheritance hierarchy -->
 
@@ -29,7 +29,7 @@ Alias: places
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EventPlace](EventPlace.md) |  |  no  |
+| [StylePeriod](StylePeriod.md) |  |  no  |
 
 
 
@@ -42,20 +42,20 @@ Alias: places
 
 | Property | Value |
 | --- | --- |
-| Range | [Site](Site.md) |
-| Domain Of | [EventPlace](EventPlace.md) |
+| Range | [PeriodNameType](PeriodNameType.md) |
+| Domain Of | [StylePeriod](StylePeriod.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
 | --- | --- |
-| Multivalued | Yes |
+| Required | Yes |
 
 
 ### Slot Characteristics
 
 | Property | Value |
 | --- | --- |
-| Owner | [EventPlace](EventPlace.md) |
+| Owner | [StylePeriod](StylePeriod.md) |
 
 
 
@@ -86,8 +86,8 @@ Alias: places
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | wasth:places |
-| native | wasth:places |
+| self | wasth:period_name_type |
+| native | wasth:period_name_type |
 
 
 
@@ -96,21 +96,18 @@ Alias: places
 
 <details>
 ```yaml
-name: places
-description: 'Lugares associados ao evento, sem incluir o próprio local no qual se
-  situa a edificação.
+name: period_name_type
+description: 'Designa a natureza ou origem do nome do período ou estilo indicado.
 
   '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-alias: places
-owner: EventPlace
+alias: type
+owner: StylePeriod
 domain_of:
-- EventPlace
-range: Site
-multivalued: true
-inlined: true
-inlined_as_list: true
+- StylePeriod
+range: PeriodNameType
+required: true
 
 ```
 </details></div>

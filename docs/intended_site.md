@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: intended_site
+# Slot: intended_site 
 
 
 _Sinaliza que a edificação devia ocupar um certo local, mas não chegou a ser construída._
@@ -27,7 +27,7 @@ Alias: intended
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 

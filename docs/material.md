@@ -3,8 +3,14 @@ search:
   boost: 5.0
 ---
 
-# Slot: material
+# Slot: material 
 
+
+_Descreve a natureza do material empregado na edificação, no elemento ou no evento descritos. Conforme necessário e segundo o discernimento de quem preenche a ficha, pode se referir a matérias-primas ou a produtos prontos para uso._
+
+_Espólios ou partes de outras edificações reutilizadas podem ser descritos segundo os materiais de que são constituídos, mas a procedência não deve ser cadastrada neste item. Para tanto, devem ser utilizados os eventos no grupo `temporal`._
+
+_-------------------------------------------------------------------------_
 
 _This class is a specialization of E55 Type and comprises the concepts of materials._
 
@@ -33,8 +39,8 @@ URI: [crm:E57_Material](http://www.cidoc-crm.org/cidoc-crm/E57_Material)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -97,8 +103,17 @@ URI: [crm:E57_Material](http://www.cidoc-crm.org/cidoc-crm/E57_Material)
 <details>
 ```yaml
 name: material
-description: 'This class is a specialization of E55 Type and comprises the concepts
-  of materials.
+description: 'Descreve a natureza do material empregado na edificação, no elemento
+  ou no evento descritos. Conforme necessário e segundo o discernimento de quem preenche
+  a ficha, pode se referir a matérias-primas ou a produtos prontos para uso.
+
+  Espólios ou partes de outras edificações reutilizadas podem ser descritos segundo
+  os materiais de que são constituídos, mas a procedência não deve ser cadastrada
+  neste item. Para tanto, devem ser utilizados os eventos no grupo `temporal`.
+
+  -------------------------------------------------------------------------
+
+  This class is a specialization of E55 Type and comprises the concepts of materials.
 
   Instances of E57 Material may denote properties of matter before its use, during
   its use, and as incorporated in an object, such as ultramarine powder, tempera paste,

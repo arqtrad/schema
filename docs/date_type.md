@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: date_type
+# Slot: date_type 
 
 
-_An attribute for the kind of latest date, whether it is, for instance, exact or estimated._
+_Qualifica a confiabilidade da data como sendo conhecida ou estimada. A confiabilidade independe do grau de precisão da data._
 
 __
 
@@ -29,7 +29,7 @@ Alias: type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DateRange](DateRange.md) |  |  no  |
+| [EventDate](EventDate.md) | Expressão complexa de uma data que pode se referir ao começo ou ao término de... |  no  |
 
 
 
@@ -42,8 +42,8 @@ Alias: type
 
 | Property | Value |
 | --- | --- |
-| Range | [DateQualifier](DateQualifier.md) |
-| Domain Of | [DateRange](DateRange.md) |
+| Range | [DateType](DateType.md) |
+| Domain Of | [EventDate](EventDate.md) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -55,7 +55,7 @@ Alias: type
 
 | Property | Value |
 | --- | --- |
-| Owner | [DateRange](DateRange.md) |
+| Owner | [EventDate](EventDate.md) |
 
 
 
@@ -97,17 +97,17 @@ Alias: type
 <details>
 ```yaml
 name: date_type
-description: 'An attribute for the kind of latest date, whether it is, for instance,
-  exact or estimated.
+description: 'Qualifica a confiabilidade da data como sendo conhecida ou estimada.
+  A confiabilidade independe do grau de precisão da data.
 
   '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: type
-owner: DateRange
+owner: EventDate
 domain_of:
-- DateRange
-range: DateQualifier
+- EventDate
+range: DateType
 required: true
 
 ```

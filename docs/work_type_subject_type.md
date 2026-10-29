@@ -3,14 +3,16 @@ search:
   boost: 5.0
 ---
 
-# Slot: work_type_subject_type
+# Slot: work_type_subject_type 
 
+
+_Nos Documentários da Arquitetura Tradicional, indica, se houver, uma classificação iconográfica mais específica do que `form` ou `function`._
+
+_---------------------------------------------------------------------_
 
 _Descriptors for objects that are distinguishable by their topics, themes, or other content of the work. If an object is identified by what it is of or about, then it is qualified by subject._
 
 _Based on [AAT "subjects"](http://vocab.getty.edu/page/aat/300404126)_
-
-_Nos Documentários da Arquitetura Tradicional, é o único bloco opcional desta seção : ele indica, se houver, uma classificação iconográfica mais específica do que `form` ou `function`._
 
 
 
@@ -29,7 +31,7 @@ URI: [term:lido00768](http://terminology.lido-schema.org/lido00768)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -99,15 +101,16 @@ URI: [term:lido00768](http://terminology.lido-schema.org/lido00768)
 <details>
 ```yaml
 name: work_type_subject_type
-description: 'Descriptors for objects that are distinguishable by their topics, themes,
-  or other content of the work. If an object is identified by what it is of or about,
-  then it is qualified by subject.
+description: 'Nos Documentários da Arquitetura Tradicional, indica, se houver, uma
+  classificação iconográfica mais específica do que `form` ou `function`.
 
-  Based on [AAT "subjects"](http://vocab.getty.edu/page/aat/300404126)
+  ---------------------------------------------------------------------
 
-  Nos Documentários da Arquitetura Tradicional, é o único bloco opcional desta seção :
-  ele indica, se houver, uma classificação iconográfica mais específica do que `form`
-  ou `function`.'
+  Descriptors for objects that are distinguishable by their topics, themes, or other
+  content of the work. If an object is identified by what it is of or about, then
+  it is qualified by subject.
+
+  Based on [AAT "subjects"](http://vocab.getty.edu/page/aat/300404126)'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: term:lido00768
@@ -117,7 +120,8 @@ domain_of:
 range: ConceptReference
 recommended: true
 multivalued: true
-inlined_as_list: false
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: format
+# Slot: format 
 
 
 _Campo disciplinado pela especificação [DublinCore] no campo [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/). Esta especificação sugere a [lista de tipos de mídia IANA]._
@@ -16,7 +16,7 @@ __
 
 
 
-URI: [dcterms:MediaType](http://purl.org/dc/terms/MediaType)
+URI: [dcterms:format](http://purl.org/dc/terms/format)
 <!-- no inheritance hierarchy -->
 
 
@@ -42,7 +42,7 @@ URI: [dcterms:MediaType](http://purl.org/dc/terms/MediaType)
 | --- | --- |
 | Range | [TypedReference](TypedReference.md) |
 | Domain Of | [MediaObject](MediaObject.md) |
-| Slot URI | [dcterms:MediaType](http://purl.org/dc/terms/MediaType) |
+| Slot URI | [dcterms:format](http://purl.org/dc/terms/format) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -78,7 +78,7 @@ URI: [dcterms:MediaType](http://purl.org/dc/terms/MediaType)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | dcterms:MediaType |
+| self | dcterms:format |
 | native | wasth:format |
 
 
@@ -95,7 +95,7 @@ description: 'Campo disciplinado pela especificação [DublinCore] no campo [for
   '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-slot_uri: dcterms:MediaType
+slot_uri: dcterms:format
 domain_of:
 - MediaObject
 range: TypedReference

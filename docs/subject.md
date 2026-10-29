@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: subject
+# Slot: subject 
 
 
 _Recomenda-se articular o tema em três níveis : descrição, identificação e interpretação._
@@ -33,7 +33,7 @@ URI: [lido:subjectSet](http://www.lido-schema.org/subjectSet)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 

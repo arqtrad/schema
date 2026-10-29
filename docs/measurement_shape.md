@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: shape
+# Slot: measurement_shape 
 
 
-_caso relevante, indicar a forma do elemento medido usando a [lista de formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273)._
+_caso relevante, indicar a forma do elemento medido usando a [lista de formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273), enquanto não tivermos um vocabulário controlado próprio._
 
 __
 
@@ -16,7 +16,7 @@ __
 
 
 
-URI: [wasth:shape](https://tradicional.arq.br/schema/shape)
+URI: [wasth:measurement_shape](https://tradicional.arq.br/schema/measurement_shape)
 Alias: shape
 
 <!-- no inheritance hierarchy -->
@@ -29,7 +29,7 @@ Alias: shape
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Measurement](Measurement.md) | This class comprises actions measuring physical properties and other values t... |  no  |
+| [Measurement](Measurement.md) | Informações estruturadas sobre as dimensões do objeto ou requisitos de condic... |  no  |
 
 
 
@@ -42,7 +42,7 @@ Alias: shape
 
 | Property | Value |
 | --- | --- |
-| Range | [String](String.md) |
+| Range | [TypedReference](TypedReference.md) |
 | Domain Of | [Measurement](Measurement.md) |
 ### Slot Characteristics
 
@@ -79,8 +79,8 @@ Alias: shape
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | wasth:shape |
-| native | wasth:shape |
+| self | wasth:measurement_shape |
+| native | wasth:measurement_shape |
 
 
 
@@ -89,9 +89,10 @@ Alias: shape
 
 <details>
 ```yaml
-name: shape
+name: measurement_shape
 description: 'caso relevante, indicar a forma do elemento medido usando a [lista de
-  formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273).
+  formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273),
+  enquanto não tivermos um vocabulário controlado próprio.
 
   '
 from_schema: https://tradicional.arq.br/schema
@@ -100,7 +101,7 @@ alias: shape
 owner: Measurement
 domain_of:
 - Measurement
-range: string
+range: TypedReference
 
 ```
 </details></div>

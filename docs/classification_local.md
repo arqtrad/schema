@@ -3,12 +3,14 @@ search:
   boost: 5.0
 ---
 
-# Slot: classification_local
+# Slot: classification_local 
 
-
-_A classification scheme for grouping objects on the basis of locally defined criteria, including categories corresponding to the curatorial departments of the repository, such as "prints and drawings", "decorative arts", "North America", "invertebrates", "Bronze Age" or "textiles". [Based on CCO "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)_
 
 _❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura._
+
+_---------------------------------------------------------------------_
+
+_A classification scheme for grouping objects on the basis of locally defined criteria, including categories corresponding to the curatorial departments of the repository, such as "prints and drawings", "decorative arts", "North America", "invertebrates", "Bronze Age" or "textiles". [Based on CCO "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)_
 
 
 
@@ -27,7 +29,7 @@ URI: [term:lido01135](http://terminology.lido-schema.org/lido01135)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -96,14 +98,16 @@ URI: [term:lido01135](http://terminology.lido-schema.org/lido01135)
 <details>
 ```yaml
 name: classification_local
-description: 'A classification scheme for grouping objects on the basis of locally
-  defined criteria, including categories corresponding to the curatorial departments
-  of the repository, such as "prints and drawings", "decorative arts", "North America",
-  "invertebrates", "Bronze Age" or "textiles". [Based on CCO "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)
+description: '❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez
+  ele não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
+  no padrão LIDO nem no perfil de aplicação para arquitetura.
 
-  ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele não
-  seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
-  no padrão LIDO nem no perfil de aplicação para arquitetura.'
+  ---------------------------------------------------------------------
+
+  A classification scheme for grouping objects on the basis of locally defined criteria,
+  including categories corresponding to the curatorial departments of the repository,
+  such as "prints and drawings", "decorative arts", "North America", "invertebrates",
+  "Bronze Age" or "textiles". [Based on CCO "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: term:lido01135
@@ -112,7 +116,8 @@ domain_of:
 - Work
 range: ConceptReference
 multivalued: true
-inlined_as_list: false
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

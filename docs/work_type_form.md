@@ -3,14 +3,18 @@ search:
   boost: 5.0
 ---
 
-# Slot: work_type_form
+# Slot: work_type_form 
 
+
+_Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal._
+
+_O vocabulário controlado para este item está em processo de estruturação._
+
+_---------------------------------------------------------------------_
 
 _Descriptors for objects that are distinguishable by their physical form or by the manner in which they are presented. If an object is identified by sight, then it is qualified by form._
 
 _Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)_
-
-_Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal._
 
 
 
@@ -29,7 +33,7 @@ URI: [term:lido00766](http://terminology.lido-schema.org/lido00766)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -99,13 +103,18 @@ URI: [term:lido00766](http://terminology.lido-schema.org/lido00766)
 <details>
 ```yaml
 name: work_type_form
-description: 'Descriptors for objects that are distinguishable by their physical form
-  or by the manner in which they are presented. If an object is identified by sight,
-  then it is qualified by form.
+description: 'Nos Documentários da Arquitetura Tradicional, designa uma tipologia
+  formal.
 
-  Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+  O vocabulário controlado para este item está em processo de estruturação.
 
-  Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal.'
+  ---------------------------------------------------------------------
+
+  Descriptors for objects that are distinguishable by their physical form or by the
+  manner in which they are presented. If an object is identified by sight, then it
+  is qualified by form.
+
+  Based on [AAT Guidelines "Types of Guide Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: term:lido00766
@@ -115,7 +124,8 @@ domain_of:
 range: ConceptReference
 recommended: true
 multivalued: true
-inlined_as_list: false
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

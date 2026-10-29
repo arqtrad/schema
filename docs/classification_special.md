@@ -3,12 +3,14 @@ search:
   boost: 5.0
 ---
 
-# Slot: classification_special
+# Slot: classification_special 
 
-
-_A classification scheme for grouping objects on the basis of criteria defined within specific academic disciplines or cultural domains, such as the "Hornbostel-Sachs Classification of Musical Instruments", the "Nickel-Strunz classification", biological taxonomies etc. Refers to classification schemes that group objects on the basis of object characteristics, not on the basis of themes or topics which the objects or works are related to._
 
 _❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório no padrão LIDO nem no perfil de aplicação para arquitetura._
+
+_---------------------------------------------------------------------_
+
+_A classification scheme for grouping objects on the basis of criteria defined within specific academic disciplines or cultural domains, such as the "Hornbostel-Sachs Classification of Musical Instruments", the "Nickel-Strunz classification", biological taxonomies etc. Refers to classification schemes that group objects on the basis of object characteristics, not on the basis of themes or topics which the objects or works are related to._
 
 
 
@@ -27,7 +29,7 @@ URI: [term:lido01144](http://terminology.lido-schema.org/lido01144)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -96,16 +98,18 @@ URI: [term:lido01144](http://terminology.lido-schema.org/lido01144)
 <details>
 ```yaml
 name: classification_special
-description: 'A classification scheme for grouping objects on the basis of criteria
-  defined within specific academic disciplines or cultural domains, such as the "Hornbostel-Sachs
+description: '❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez
+  ele não seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
+  no padrão LIDO nem no perfil de aplicação para arquitetura.
+
+  ---------------------------------------------------------------------
+
+  A classification scheme for grouping objects on the basis of criteria defined within
+  specific academic disciplines or cultural domains, such as the "Hornbostel-Sachs
   Classification of Musical Instruments", the "Nickel-Strunz classification", biological
   taxonomies etc. Refers to classification schemes that group objects on the basis
   of object characteristics, not on the basis of themes or topics which the objects
-  or works are related to.
-
-  ❓ Ainda não implementamos o bloco `objectClassification` do LIDO. Talvez ele não
-  seja relevante para o documentário de arquitetura doméstica, e não é obrigatório
-  no padrão LIDO nem no perfil de aplicação para arquitetura.'
+  or works are related to.'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: term:lido01144
@@ -114,7 +118,8 @@ domain_of:
 - Work
 range: ConceptReference
 multivalued: true
-inlined_as_list: false
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

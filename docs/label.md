@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: term
+# Slot: label 
 
 
-_LIDO terminology term._
+_Nome ou título (texto sem formatação)._
 
 
 
@@ -14,7 +14,7 @@ _LIDO terminology term._
 
 
 
-URI: [wasth:term](https://tradicional.arq.br/schema/term)
+URI: [wasth:label](https://tradicional.arq.br/schema/label)
 <!-- no inheritance hierarchy -->
 
 
@@ -25,7 +25,7 @@ URI: [wasth:term](https://tradicional.arq.br/schema/term)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TypedReference](TypedReference.md) | Reference to a local record, IRI, URI, or LIDO terminology term |  no  |
+| [Appellation](Appellation.md) |  |  no  |
 
 
 
@@ -38,13 +38,13 @@ URI: [wasth:term](https://tradicional.arq.br/schema/term)
 
 | Property | Value |
 | --- | --- |
-| Range | [Uriorcurie](Uriorcurie.md) |
-| Domain Of | [TypedReference](TypedReference.md) |
-### Value Constraints
+| Range | [String](String.md) |
+| Domain Of | [Appellation](Appellation.md) |
+### Slot Characteristics
 
 | Property | Value |
 | --- | --- |
-| Regex Pattern | `^http://terminology\.lido-schema\.org/lido[0-9]{5}$` |
+| Owner | [Appellation](Appellation.md) |
 
 
 
@@ -75,8 +75,8 @@ URI: [wasth:term](https://tradicional.arq.br/schema/term)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | wasth:term |
-| native | wasth:term |
+| self | wasth:label |
+| native | wasth:label |
 
 
 
@@ -85,14 +85,14 @@ URI: [wasth:term](https://tradicional.arq.br/schema/term)
 
 <details>
 ```yaml
-name: term
-description: LIDO terminology term.
+name: label
+description: Nome ou título (texto sem formatação).
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
+owner: Appellation
 domain_of:
-- TypedReference
-range: uriorcurie
-pattern: ^http://terminology\.lido-schema\.org/lido[0-9]{5}$
+- Appellation
+range: string
 
 ```
 </details></div>

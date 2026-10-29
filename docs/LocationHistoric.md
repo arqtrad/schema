@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: HistoricPlace
+# Class: LocationHistoric 
 
 
 _Designações alternativas ou jurisdições antigas para o mesmo local, NÃO a localização original de uma construção fisicamente deslocada (para tanto, cadastrar outra localização do tipo `former_site`). Preencher apenas caso a nomenclatura seja relevante, por exemplo para nomear as antigas províncias de Portugal ou o Oeste da Bahia, que originalmente pertencia a Pernambuco, ou ainda se for relevante informar uma região física._
@@ -14,7 +14,7 @@ _Designações alternativas ou jurisdições antigas para o mesmo local, NÃO a 
 
 
 
-URI: [wasth:HistoricPlace](https://tradicional.arq.br/schema/HistoricPlace)
+URI: [wasth:LocationHistoric](https://tradicional.arq.br/schema/LocationHistoric)
 
 
 
@@ -22,31 +22,31 @@ URI: [wasth:HistoricPlace](https://tradicional.arq.br/schema/HistoricPlace)
 
 ```mermaid
  classDiagram
-    class HistoricPlace
-    click HistoricPlace href "../HistoricPlace/"
-      HistoricPlace : name
-
-
-
-
-
-        HistoricPlace --> "1" TypedReference : name
+    class LocationHistoric
+    click LocationHistoric href "../LocationHistoric/"
+      LocationHistoric : location_historic_name
+        
+          
+    
+        
+        
+        LocationHistoric --> "1" TypedReference : location_historic_name
         click TypedReference href "../TypedReference/"
+    
 
-
-
-      HistoricPlace : type
-
-
-
-
-
-        HistoricPlace --> "1" RepositoryType : type
+        
+      LocationHistoric : location_historic_type
+        
+          
+    
+        
+        
+        LocationHistoric --> "1" RepositoryType : location_historic_type
         click RepositoryType href "../RepositoryType/"
+    
 
-
-
-
+        
+      
 ```
 
 
@@ -58,8 +58,8 @@ URI: [wasth:HistoricPlace](https://tradicional.arq.br/schema/HistoricPlace)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [type](type.md) | 1 <br/> [RepositoryType](RepositoryType.md) |  | direct |
-| [name](name.md) | 1 <br/> [TypedReference](TypedReference.md) |  | direct |
+| [location_historic_type](location_historic_type.md) | 1 <br/> [RepositoryType](RepositoryType.md) | Define se o local histórico designa uma jurisdição, um topônimo antigo, ou ou... | direct |
+| [location_historic_name](location_historic_name.md) | 1 <br/> [TypedReference](TypedReference.md) | Identificação do local com referência a um vocabulário controlado ou repositó... | direct |
 
 
 
@@ -69,7 +69,7 @@ URI: [wasth:HistoricPlace](https://tradicional.arq.br/schema/HistoricPlace)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Work](Work.md) | [location_historic](location_historic.md) | range | [HistoricPlace](HistoricPlace.md) |
+| [Work](Work.md) | [location_historic](location_historic.md) | range | [LocationHistoric](LocationHistoric.md) |
 
 
 
@@ -100,8 +100,8 @@ URI: [wasth:HistoricPlace](https://tradicional.arq.br/schema/HistoricPlace)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | wasth:HistoricPlace |
-| native | wasth:HistoricPlace |
+| self | wasth:LocationHistoric |
+| native | wasth:LocationHistoric |
 
 
 
@@ -116,7 +116,7 @@ URI: [wasth:HistoricPlace](https://tradicional.arq.br/schema/HistoricPlace)
 
 <details>
 ```yaml
-name: HistoricPlace
+name: LocationHistoric
 description: Designações alternativas ou jurisdições antigas para o mesmo local, NÃO
   a localização original de uma construção fisicamente deslocada (para tanto, cadastrar
   outra localização do tipo `former_site`). Preencher apenas caso a nomenclatura seja
@@ -125,29 +125,30 @@ description: Designações alternativas ou jurisdições antigas para o mesmo lo
   uma região física.
 from_schema: https://tradicional.arq.br/schema
 attributes:
-  type:
-    name: type
+  location_historic_type:
+    name: location_historic_type
+    description: 'Define se o local histórico designa uma jurisdição, um topônimo
+      antigo, ou outro.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    alias: type
     domain_of:
-    - Measurement
-    - Right
-    - LegalBody
-    - Event
-    - StylePeriod
-    - EventPlace
-    - Inscription
-    - Topic
-    - HistoricPlace
+    - LocationHistoric
     range: RepositoryType
     required: true
-  name:
-    name: name
+  location_historic_name:
+    name: location_historic_name
+    description: 'Identificação do local com referência a um vocabulário controlado
+      ou repositório de topônimos tal como o geonames.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    alias: name
     domain_of:
-    - ConceptReference
-    - LegalBody
-    - RelatedEvent
-    - HistoricPlace
+    - LocationHistoric
     range: TypedReference
     required: true
     inlined: true
@@ -159,7 +160,7 @@ attributes:
 
 <details>
 ```yaml
-name: HistoricPlace
+name: LocationHistoric
 description: Designações alternativas ou jurisdições antigas para o mesmo local, NÃO
   a localização original de uma construção fisicamente deslocada (para tanto, cadastrar
   outra localização do tipo `former_site`). Preencher apenas caso a nomenclatura seja
@@ -168,31 +169,32 @@ description: Designações alternativas ou jurisdições antigas para o mesmo lo
   uma região física.
 from_schema: https://tradicional.arq.br/schema
 attributes:
-  type:
-    name: type
+  location_historic_type:
+    name: location_historic_type
+    description: 'Define se o local histórico designa uma jurisdição, um topônimo
+      antigo, ou outro.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
-    owner: HistoricPlace
+    rank: 1000
+    alias: type
+    owner: LocationHistoric
     domain_of:
-    - Measurement
-    - Right
-    - LegalBody
-    - Event
-    - StylePeriod
-    - EventPlace
-    - Inscription
-    - Topic
-    - HistoricPlace
+    - LocationHistoric
     range: RepositoryType
     required: true
-  name:
-    name: name
+  location_historic_name:
+    name: location_historic_name
+    description: 'Identificação do local com referência a um vocabulário controlado
+      ou repositório de topônimos tal como o geonames.
+
+      '
     from_schema: https://tradicional.arq.br/schema/work
-    owner: HistoricPlace
+    rank: 1000
+    alias: name
+    owner: LocationHistoric
     domain_of:
-    - ConceptReference
-    - LegalBody
-    - RelatedEvent
-    - HistoricPlace
+    - LocationHistoric
     range: TypedReference
     required: true
     inlined: true

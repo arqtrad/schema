@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: BroaderConceptReference
+# Class: BroaderConceptReference 
 
 
 _Relações hierárquicas._
@@ -24,30 +24,64 @@ URI: [wasth:BroaderConceptReference](https://tradicional.arq.br/schema/BroaderCo
  classDiagram
     class BroaderConceptReference
     click BroaderConceptReference href "../BroaderConceptReference/"
+      ConceptReference <|-- BroaderConceptReference
+        click ConceptReference href "../ConceptReference/"
+      
+      BroaderConceptReference : bibliographic_citation
+        
+          
+    
+        
+        
+        BroaderConceptReference --> "* _recommended_" BibliographicCitation : bibliographic_citation
+        click BibliographicCitation href "../BibliographicCitation/"
+    
+
+        
+      BroaderConceptReference : concept
+        
+          
+    
+        
+        
+        BroaderConceptReference --> "1" Concept : concept
+        click Concept href "../Concept/"
+    
+
+        
+      BroaderConceptReference : description
+        
       BroaderConceptReference : match
+        
+          
+    
+        
+        
+        BroaderConceptReference --> "1" SkosBroaderRelation : match
+        click SkosBroaderRelation href "../SkosBroaderRelation/"
+    
 
-
-
-
-
-        BroaderConceptReference --> "0..1" SkosHierarchicalRelation : match
-        click SkosHierarchicalRelation href "../SkosHierarchicalRelation/"
-
-
-
-
+        
+      
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* [ConceptReference](ConceptReference.md)
+    * **BroaderConceptReference**
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [match](match.md) | 0..1 <br/> [SkosHierarchicalRelation](SkosHierarchicalRelation.md) | Tipo da relação | direct |
+| [match](match.md) | 1 <br/> [SkosBroaderRelation](SkosBroaderRelation.md) | Tipo da relação | direct |
+| [concept](concept.md) | 1 <br/> [Concept](Concept.md) |  | [ConceptReference](ConceptReference.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | [ConceptReference](ConceptReference.md) |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | [ConceptReference](ConceptReference.md) |
 
 
 
@@ -107,6 +141,7 @@ URI: [wasth:BroaderConceptReference](https://tradicional.arq.br/schema/BroaderCo
 name: BroaderConceptReference
 description: Relações hierárquicas.
 from_schema: https://tradicional.arq.br/schema
+is_a: ConceptReference
 attributes:
   match:
     name: match
@@ -115,8 +150,10 @@ attributes:
     rank: 1000
     domain_of:
     - BroaderConceptReference
-    - RelatedConceptReference
-    range: SkosHierarchicalRelation
+    - NarrowerConceptReference
+    - MappingConceptReference
+    range: SkosBroaderRelation
+    required: true
 
 ```
 </details>
@@ -128,6 +165,7 @@ attributes:
 name: BroaderConceptReference
 description: Relações hierárquicas.
 from_schema: https://tradicional.arq.br/schema
+is_a: ConceptReference
 attributes:
   match:
     name: match
@@ -137,8 +175,80 @@ attributes:
     owner: BroaderConceptReference
     domain_of:
     - BroaderConceptReference
-    - RelatedConceptReference
-    range: SkosHierarchicalRelation
+    - NarrowerConceptReference
+    - MappingConceptReference
+    range: SkosBroaderRelation
+    required: true
+  concept:
+    name: concept
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    alias: name
+    owner: BroaderConceptReference
+    domain_of:
+    - ConceptReference
+    - Topic
+    range: Concept
+    required: true
+  description:
+    name: description
+    description: A human-readable description for a thing
+    from_schema: https://tradicional.arq.br/schema
+    exact_mappings:
+    - schema:description
+    rank: 1000
+    slot_uri: dcterms:description
+    alias: display
+    owner: BroaderConceptReference
+    domain_of:
+    - ConceptReference
+    - BibliographicCitation
+    - RelatedObject
+    - MediaObject
+    - TypedReference
+    - Measurement
+    - RelatedEvent
+    - Thing
+    - Inscription
+    - Topic
+    range: string
+  bibliographic_citation:
+    name: bibliographic_citation
+    description: '📚  Cadastro de uma referência bibliográfica.
+
+      O campo `refid` deve conter a chave de citação (citation key) que consta do
+      registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero,
+      começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação,
+      mas pode ser diferente.
+
+      Se necessário, incluir no campo `note` uma especificação adicional, como o número
+      da página da referência bibliográfica de onde a informação foi extraída.
+
+      Usar o campo `description` para formatar a referência, caso a formatação automática
+      do Zotero não for satisfatória.
+
+      '
+    from_schema: https://tradicional.arq.br/schema
+    rank: 1000
+    slot_uri: dcterms:bibliographicCitation
+    owner: BroaderConceptReference
+    domain_of:
+    - ConceptReference
+    - RelatedObject
+    - MediaObject
+    - TypedReference
+    - Measurement
+    - Actor
+    - Thing
+    - Appellation
+    - GeographicPoint
+    - GeographicExtent
+    - Inscription
+    range: BibliographicCitation
+    recommended: true
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
 
 ```
 </details></div>

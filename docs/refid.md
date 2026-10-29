@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: refid
+# Slot: refid 
 
 
 _Local or external identifier._
@@ -25,7 +25,7 @@ URI: [dcterms:identifier](http://purl.org/dc/terms/identifier)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TypedReference](TypedReference.md) | Reference to a local record, IRI, URI, or LIDO terminology term |  no  |
+| [TypedReference](TypedReference.md) | Permite referenciar um registro local ou externo por meio da sua URI (localiz... |  yes  |
 | [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica |  no  |
 
 
@@ -42,20 +42,6 @@ URI: [dcterms:identifier](http://purl.org/dc/terms/identifier)
 | Range | [Uriorcurie](Uriorcurie.md) |
 | Domain Of | [BibliographicCitation](BibliographicCitation.md), [TypedReference](TypedReference.md) |
 | Slot URI | [dcterms:identifier](http://purl.org/dc/terms/identifier) |
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
-
-
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Key | Yes |
-
-
 
 
 
@@ -102,12 +88,10 @@ exact_mappings:
 - schema:identifier
 rank: 1000
 slot_uri: dcterms:identifier
-key: true
 domain_of:
 - BibliographicCitation
 - TypedReference
 range: uriorcurie
-required: true
 
 ```
 </details></div>

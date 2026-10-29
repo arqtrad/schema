@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: relation
+# Slot: relation 
 
 
-_Um conceito com o qual existe um relacionamento semântico associativo. Usar principalmente em referência a vocabulários externos, como o Getty Art and Architecture Thesaurus._
+_Um conceito com o qual existe um relacionamento semântico associativo. Usar em referência ao nosso próprio vocabulário controlado._
 
 
 
@@ -14,7 +14,7 @@ _Um conceito com o qual existe um relacionamento semântico associativo. Usar pr
 
 
 
-URI: [skos:relation](http://www.w3.org/2004/02/skos/core#relation)
+URI: [skos:related](http://www.w3.org/2004/02/skos/core#related)
 <!-- no inheritance hierarchy -->
 
 
@@ -25,7 +25,7 @@ URI: [skos:relation](http://www.w3.org/2004/02/skos/core#relation)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
+| [Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |  no  |
 
 
 
@@ -38,9 +38,9 @@ URI: [skos:relation](http://www.w3.org/2004/02/skos/core#relation)
 
 | Property | Value |
 | --- | --- |
-| Range | [RelatedConceptReference](RelatedConceptReference.md) |
+| Range | [ConceptReference](ConceptReference.md) |
 | Domain Of | [Concept](Concept.md) |
-| Slot URI | [skos:relation](http://www.w3.org/2004/02/skos/core#relation) |
+| Slot URI | [skos:related](http://www.w3.org/2004/02/skos/core#related) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -83,7 +83,7 @@ URI: [skos:relation](http://www.w3.org/2004/02/skos/core#relation)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | skos:relation |
+| self | skos:related |
 | native | wasth:relation |
 
 
@@ -95,15 +95,14 @@ URI: [skos:relation](http://www.w3.org/2004/02/skos/core#relation)
 ```yaml
 name: relation
 description: Um conceito com o qual existe um relacionamento semântico associativo.
-  Usar principalmente em referência a vocabulários externos, como o Getty Art and
-  Architecture Thesaurus.
+  Usar em referência ao nosso próprio vocabulário controlado.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-slot_uri: skos:relation
+slot_uri: skos:related
 owner: Concept
 domain_of:
 - Concept
-range: RelatedConceptReference
+range: ConceptReference
 multivalued: true
 inlined: true
 inlined_as_list: true

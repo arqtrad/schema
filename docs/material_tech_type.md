@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: material_tech_type
+# Slot: material_tech_type 
 
 
 _Tipo da referência a um material ou técnica usado na obra: material de construção (support), revestimento (medium), técnica, instrumento, cor, etc._

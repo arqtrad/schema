@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: related_works
+# Slot: related_works 
 
 
 _A wrapper for identifying information about an object or work, including collections, related to the object/work in focus. May include a weblink._
@@ -54,7 +54,7 @@ _O grupo relation é destinado unicamente a cadastrar relações desta edificaç
 
 
 
-URI: [skos:related](http://www.w3.org/2004/02/skos/core#related)
+URI: [dcterms:related](http://purl.org/dc/terms/related)
 <!-- no inheritance hierarchy -->
 
 
@@ -65,7 +65,7 @@ URI: [skos:related](http://www.w3.org/2004/02/skos/core#related)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -80,7 +80,7 @@ URI: [skos:related](http://www.w3.org/2004/02/skos/core#related)
 | --- | --- |
 | Range | [RelatedWork](RelatedWork.md) |
 | Domain Of | [Work](Work.md) |
-| Slot URI | [skos:related](http://www.w3.org/2004/02/skos/core#related) |
+| Slot URI | [dcterms:related](http://purl.org/dc/terms/related) |
 ### Cardinality and Requirements
 
 | Property | Value |
@@ -116,7 +116,7 @@ URI: [skos:related](http://www.w3.org/2004/02/skos/core#related)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | skos:related |
+| self | dcterms:related |
 | native | wasth:related_works |
 
 
@@ -145,7 +145,7 @@ description: "A wrapper for identifying information about an object or work, inc
   \ visuais, referências bibliográficas ou acervos arquivísticos."
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-slot_uri: skos:related
+slot_uri: dcterms:related
 domain_of:
 - Work
 range: RelatedWork

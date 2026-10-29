@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: work_rights
+# Slot: work_rights 
 
 
-_> ⚠️  Este bloco se refere a eventuais direitos autorais sobre A > EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre > a iconografia relacionada._
+_⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobre A EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha, nem sobre a iconografia relacionada._
 
 __
 
@@ -27,7 +27,7 @@ URI: [lido:rightsWorkSet](http://www.lido-schema.org/rightsWorkSet)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -97,8 +97,9 @@ URI: [lido:rightsWorkSet](http://www.lido-schema.org/rightsWorkSet)
 <details>
 ```yaml
 name: work_rights
-description: '> ⚠️  Este bloco se refere a eventuais direitos autorais sobre A > EDIFICAÇÃO
-  E O SEU PROJETO, não sobre o conteúdo da ficha ou sobre > a iconografia relacionada.
+description: '⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade
+  sobre A EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha, nem sobre a iconografia
+  relacionada.
 
   '
 from_schema: https://tradicional.arq.br/schema

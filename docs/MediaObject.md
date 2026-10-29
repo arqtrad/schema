@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: MediaObject
+# Class: MediaObject 
 
 
 _Descrição e referência a um único arquivo de mídia._
@@ -33,84 +33,84 @@ URI: [schema:MediaObject](http://schema.org/MediaObject)
     class MediaObject
     click MediaObject href "../MediaObject/"
       MediaObject : bibliographic_citation
-
-
-
-
-
+        
+          
+    
+        
+        
         MediaObject --> "* _recommended_" BibliographicCitation : bibliographic_citation
         click BibliographicCitation href "../BibliographicCitation/"
+    
 
-
-
+        
       MediaObject : credit
-
+        
       MediaObject : description
-
+        
       MediaObject : format
-
-
-
-
-
+        
+          
+    
+        
+        
         MediaObject --> "1" TypedReference : format
         click TypedReference href "../TypedReference/"
+    
 
-
-
+        
       MediaObject : measurements
-
-
-
-
-
+        
+          
+    
+        
+        
         MediaObject --> "*" Measurement : measurements
         click Measurement href "../Measurement/"
+    
 
-
-
+        
       MediaObject : media_alt
-
+        
       MediaObject : preview_image
-
+        
       MediaObject : provided_3d
-
+        
       MediaObject : provided_image
-
+        
       MediaObject : resource_service
-
-
-
-
-
+        
+          
+    
+        
+        
         MediaObject --> "*" TypedReference : resource_service
         click TypedReference href "../TypedReference/"
+    
 
-
-
+        
       MediaObject : rights
-
-
-
-
-
+        
+          
+    
+        
+        
         MediaObject --> "*" Right : rights
         click Right href "../Right/"
+    
 
-
-
+        
       MediaObject : source
-
-
-
-
-
+        
+          
+    
+        
+        
         MediaObject --> "*" LegalBody : source
         click LegalBody href "../LegalBody/"
+    
 
-
-
-
+        
+      
 ```
 
 
@@ -138,7 +138,7 @@ URI: [schema:MediaObject](http://schema.org/MediaObject)
 | [media_alt](media_alt.md) | 0..1 <br/> [String](String.md) | Texto alternativo para leitores de tela ou outras formas de acessibilidade | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A human-readable description for a thing | direct |
 | [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | direct |
 | [credit](credit.md) | 0..1 <br/> [String](String.md) | Informação sobre autoria ou responsabilidade | direct |
 | [rights](rights.md) | * <br/> [Right](Right.md) |  | direct |
 
@@ -186,7 +186,7 @@ URI: [schema:MediaObject](http://schema.org/MediaObject)
 | ---  | ---  |
 | self | schema:MediaObject |
 | native | wasth:MediaObject |
-| exact | dctypes:Image |
+| close | dctypes:Image |
 
 
 
@@ -215,7 +215,7 @@ description: 'Descrição e referência a um único arquivo de mídia.
 
   '
 from_schema: https://tradicional.arq.br/schema
-exact_mappings:
+close_mappings:
 - dctypes:Image
 slots:
 - format
@@ -253,7 +253,7 @@ description: 'Descrição e referência a um único arquivo de mídia.
 
   '
 from_schema: https://tradicional.arq.br/schema
-exact_mappings:
+close_mappings:
 - dctypes:Image
 attributes:
   format:
@@ -264,7 +264,7 @@ attributes:
       '
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
-    slot_uri: dcterms:MediaType
+    slot_uri: dcterms:format
     owner: MediaObject
     domain_of:
     - MediaObject
@@ -288,7 +288,6 @@ attributes:
     - Resource
     - MediaObject
     range: uriorcurie
-    inlined: true
   provided_image:
     name: provided_image
     description: Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap.
@@ -300,8 +299,6 @@ attributes:
     - MediaObject
     range: uriorcurie
     multivalued: true
-    inlined: true
-    inlined_as_list: true
   provided_3d:
     name: provided_3d
     description: Modelo tridimensional ou IFC da edificação.
@@ -313,8 +310,6 @@ attributes:
     - MediaObject
     range: uriorcurie
     multivalued: true
-    inlined: true
-    inlined_as_list: true
   resource_service:
     name: resource_service
     description: Apenas no caso de a imagem ser fornecida como um serviço dinâmico
@@ -374,12 +369,10 @@ attributes:
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - TypedReference
     - Measurement
-    - EventDate
-    - EventPlace
     - RelatedEvent
     - Thing
-    - Appellation
     - Inscription
     - Topic
     range: string
@@ -400,7 +393,15 @@ attributes:
     inlined_as_list: true
   bibliographic_citation:
     name: bibliographic_citation
-    description: 'Cadastro de uma referência bibliográfica.
+    description: '📚  Cadastro de uma referência bibliográfica.
+
+      O campo `refid` deve conter a chave de citação (citation key) que consta do
+      registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero,
+      começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação,
+      mas pode ser diferente.
+
+      Se necessário, incluir no campo `note` uma especificação adicional, como o número
+      da página da referência bibliográfica de onde a informação foi extraída.
 
       Usar o campo `description` para formatar a referência, caso a formatação automática
       do Zotero não for satisfatória.

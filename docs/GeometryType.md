@@ -4,12 +4,12 @@ search:
 ---
 
 
-# Enum: GeometryType
+# Enum: GeometryType 
 
 
 
 
-_geoJSON types of area geometry._
+_Tipos de geometria do objeto geoJSON_
 
 
 
@@ -62,7 +62,7 @@ URI: [wasth:GeometryType](https://tradicional.arq.br/schema/GeometryType)
 <details>
 ```yaml
 name: GeometryType
-description: geoJSON types of area geometry.
+description: Tipos de geometria do objeto geoJSON
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 permissible_values:

@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: former_site
+# Slot: former_site 
 
 
 _Indica que a edificação não se encontra mais no local indicado, seja porque foi deslocada ou demolida._
@@ -15,8 +15,6 @@ _Indica que a edificação não se encontra mais no local indicado, seja porque 
 
 
 URI: [wasth:former_site](https://tradicional.arq.br/schema/former_site)
-Alias: former
-
 <!-- no inheritance hierarchy -->
 
 
@@ -27,7 +25,7 @@ Alias: former
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -99,7 +97,6 @@ description: Indica que a edificação não se encontra mais no local indicado, 
   porque foi deslocada ou demolida.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-alias: former
 owner: Work
 domain_of:
 - Work

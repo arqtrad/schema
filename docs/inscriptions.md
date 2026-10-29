@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: inscriptions
+# Slot: inscriptions 
 
 
 _Marcas, símbolos ou textos gravados na edificação, especialmente aqueles referentes à estrutura como um todo e não específicos a alguma de suas partes. Não usar para iconografia._
@@ -25,7 +25,7 @@ URI: [wasth:inscriptions](https://tradicional.arq.br/schema/inscriptions)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 

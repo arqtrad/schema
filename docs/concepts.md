@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: concepts
+# Slot: concepts 
 
 
 _Todos os termos de vocabulário controlado._

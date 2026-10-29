@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: match
+# Slot: match 
 
 <div data-search-exclude markdown="1">
 
@@ -21,7 +21,8 @@ URI: [wasth:match](https://tradicional.arq.br/schema/match)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [BroaderConceptReference](BroaderConceptReference.md) | Relações hierárquicas |  no  |
-| [RelatedConceptReference](RelatedConceptReference.md) | Relações hierárquicas |  no  |
+| [NarrowerConceptReference](NarrowerConceptReference.md) | Relações hierárquicas |  no  |
+| [MappingConceptReference](MappingConceptReference.md) | Relações semânticas |  no  |
 
 
 
@@ -35,7 +36,7 @@ URI: [wasth:match](https://tradicional.arq.br/schema/match)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [BroaderConceptReference](BroaderConceptReference.md), [RelatedConceptReference](RelatedConceptReference.md) |
+| Domain Of | [BroaderConceptReference](BroaderConceptReference.md), [NarrowerConceptReference](NarrowerConceptReference.md), [MappingConceptReference](MappingConceptReference.md) |
 
 
 
@@ -70,7 +71,8 @@ URI: [wasth:match](https://tradicional.arq.br/schema/match)
 name: match
 domain_of:
 - BroaderConceptReference
-- RelatedConceptReference
+- NarrowerConceptReference
+- MappingConceptReference
 range: string
 
 ```

@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: works
+# Slot: works 
 
 
 _Todas as edificações documentadas._

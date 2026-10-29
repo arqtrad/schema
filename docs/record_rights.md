@@ -3,14 +3,16 @@ search:
   boost: 5.0
 ---
 
-# Slot: record_rights
+# Slot: record_rights 
 
 
-_A set of structured information about rights regarding the content provided in this LIDO record._
+_Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha._
+
+_⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito._
 
 _---------------------------------------------------------------------_
 
-_:warning: Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito._
+_A set of structured information about rights regarding the content provided in this LIDO record._
 
 __
 
@@ -31,13 +33,13 @@ URI: [wasth:record_rights](https://tradicional.arq.br/schema/record_rights)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Concept](Concept.md) | A SKOS concept can be viewed as an idea or notion; a unit of thought |  no  |
+| [Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |  no  |
 | [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  no  |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
-| [Thing](Thing.md) | This class comprises all things in the universe of discourse of the CIDOC Con... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
+| [Thing](Thing.md) | Esta classe compreende todas as coisas no universo do CIDOC CRM |  no  |
 | [Repository](Repository.md) | Entidade com existência jurídica e espacial |  no  |
-| [Work](Work.md) | An historical landmark or building |  no  |
-| [Site](Site.md) | This class comprises 4-dimensional point sets (volumes) in physical spacetime... |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  yes  |
+| [Site](Site.md) | O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T... |  no  |
 
 
 
@@ -56,7 +58,6 @@ URI: [wasth:record_rights](https://tradicional.arq.br/schema/record_rights)
 
 | Property | Value |
 | --- | --- |
-| Required | Yes |
 | Multivalued | Yes |
 
 
@@ -106,13 +107,16 @@ URI: [wasth:record_rights](https://tradicional.arq.br/schema/record_rights)
 <details>
 ```yaml
 name: record_rights
-description: 'A set of structured information about rights regarding the content provided
-  in this LIDO record.
+description: 'Informações estruturadas sobre os direitos que incidem sobre o conteúdo
+  textual desta ficha.
+
+  ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos
+  incidentes sobre o objeto descrito.
 
   ---------------------------------------------------------------------
 
-  :warning: Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre
-  os direitos incidentes sobre o objeto descrito.
+  A set of structured information about rights regarding the content provided in this
+  LIDO record.
 
   '
 from_schema: https://tradicional.arq.br/schema
@@ -121,7 +125,6 @@ owner: Thing
 domain_of:
 - Thing
 range: Right
-required: true
 multivalued: true
 inlined: true
 inlined_as_list: true

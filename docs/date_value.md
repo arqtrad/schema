@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: date_value
+# Slot: date_value 
 
 
-_Usar o formato ISO-8601 (por exemplo, 2026-03-17). Para datas imprecisas, usar o primeiro dia, mês ou ano do período delimitado, e descrever verbalmente o período no campo `description`._
+_Usar o formato ISO-8601 (AAAA-MM-DD). Para datas imprecisas, usar o PRIMEIRO ou o ÚLTIMO dia, mês ou ano do período delimitado, conforme se tratar de uma data de corte inicial ou final para o evento, e descrever verbalmente o período no campo `display_date`._
 
 __
 
@@ -27,7 +27,7 @@ URI: [wasth:date_value](https://tradicional.arq.br/schema/date_value)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DateRange](DateRange.md) |  |  no  |
+| [EventDate](EventDate.md) | Expressão complexa de uma data que pode se referir ao começo ou ao término de... |  no  |
 
 
 
@@ -41,12 +41,12 @@ URI: [wasth:date_value](https://tradicional.arq.br/schema/date_value)
 | Property | Value |
 | --- | --- |
 | Range | [Date](Date.md) |
-| Domain Of | [DateRange](DateRange.md) |
+| Domain Of | [EventDate](EventDate.md) |
 ### Slot Characteristics
 
 | Property | Value |
 | --- | --- |
-| Owner | [DateRange](DateRange.md) |
+| Owner | [EventDate](EventDate.md) |
 
 
 
@@ -88,16 +88,17 @@ URI: [wasth:date_value](https://tradicional.arq.br/schema/date_value)
 <details>
 ```yaml
 name: date_value
-description: 'Usar o formato ISO-8601 (por exemplo, 2026-03-17). Para datas imprecisas,
-  usar o primeiro dia, mês ou ano do período delimitado, e descrever verbalmente o
-  período no campo `description`.
+description: 'Usar o formato ISO-8601 (AAAA-MM-DD). Para datas imprecisas, usar o
+  PRIMEIRO ou o ÚLTIMO dia, mês ou ano do período delimitado, conforme se tratar de
+  uma data de corte inicial ou final para o evento, e descrever verbalmente o período
+  no campo `display_date`.
 
   '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-owner: DateRange
+owner: EventDate
 domain_of:
-- DateRange
+- EventDate
 range: date
 
 ```

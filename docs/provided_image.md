@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: provided_image
+# Slot: provided_image 
 
 
 _Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap._
@@ -95,8 +95,6 @@ domain_of:
 - MediaObject
 range: uriorcurie
 multivalued: true
-inlined: true
-inlined_as_list: true
 
 ```
 </details></div>

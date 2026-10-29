@@ -3,10 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: end_date
+# Slot: end_date 
 
 
-_Data final do evento ou mais tardia data presumida para o seu decurso._
+_Data final do evento ou mais tardia data presumida para o seu decurso. Omitir se desconhecida._
+
+_Por ora, é responsabilidade de quem preenche a ficha assegurar que `start_date` e `end_date` ocorram em ordem cronológica. Não dispomos de validação automática para tanto._
 
 __
 
@@ -17,8 +19,6 @@ __
 
 
 URI: [wasth:end_date](https://tradicional.arq.br/schema/end_date)
-Alias: end_date
-
 <!-- no inheritance hierarchy -->
 
 
@@ -29,7 +29,7 @@ Alias: end_date
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Event](Event.md) | This class comprises distinct, delimited and coherent processes and interacti... |  no  |
+| [Event](Event.md) | Um evento é um processo específico e coerente, delimitável, de interações ent... |  no  |
 
 
 
@@ -44,6 +44,15 @@ Alias: end_date
 | --- | --- |
 | Range | [EventDate](EventDate.md) |
 | Domain Of | [Event](Event.md) |
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+| Minimum Cardinality | 0 |
+| Maximum Cardinality | 2 |
+
+
 ### Slot Characteristics
 
 | Property | Value |
@@ -91,16 +100,24 @@ Alias: end_date
 ```yaml
 name: end_date
 description: 'Data final do evento ou mais tardia data presumida para o seu decurso.
+  Omitir se desconhecida.
+
+  Por ora, é responsabilidade de quem preenche a ficha assegurar que `start_date`
+  e `end_date` ocorram em ordem cronológica. Não dispomos de validação automática
+  para tanto.
 
   '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-alias: end_date
 owner: Event
 domain_of:
 - Event
 range: EventDate
+multivalued: true
 inlined: true
+inlined_as_list: true
+minimum_cardinality: 0
+maximum_cardinality: 2
 
 ```
 </details></div>

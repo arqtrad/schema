@@ -3,8 +3,28 @@ search:
   boost: 10.0
 ---
 
-# Class: Thing
+# Class: Thing 
 
+
+_Esta classe compreende todas as coisas no universo do CIDOC CRM. É um conceito abstrato que prevê três propriedades gerais:_
+
+_- Identificação por nome ou título, em particular por um identificador_
+
+_  preferencial._
+
+_- Classificação por tipo, permitindo o refinamento da subclasse_
+
+_  específica à qual a instância pertence._
+
+_- Atribuição de texto livre e de outros dados não estruturados, para_
+
+_  expressar informações não capturadas por propriedades formais._
+
+__
+
+_Todas as demais classes do CIDOC CRM são especializações diretas ou indiretas de E1 CRM Entity._
+
+_-------------------------------------------------------------------------_
 
 _This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model._
 
@@ -62,123 +82,101 @@ URI: [crm:E1_CRM_Entity](http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity)
         click Work href "../Work/"
       Thing <|-- Site
         click Site href "../Site/"
-
+      
       Thing : alt_name
-
-
-
-
-
+        
+          
+    
+        
+        
         Thing --> "*" Appellation : alt_name
         click Appellation href "../Appellation/"
+    
 
-
-
-      Thing : author
-
+        
       Thing : bibliographic_citation
-
-
-
-
-
+        
+          
+    
+        
+        
         Thing --> "* _recommended_" BibliographicCitation : bibliographic_citation
         click BibliographicCitation href "../BibliographicCitation/"
+    
 
-
-
+        
       Thing : category
-
-      Thing : collection
-
-
-
-
-
-        Thing --> "*" TypedReference : collection
-        click TypedReference href "../TypedReference/"
-
-
-
+        
       Thing : content
-
+        
       Thing : description
-
+        
       Thing : id
-
+        
       Thing : identifiers
-
-
-
-
-
+        
+          
+    
+        
+        
         Thing --> "*" TypedReference : identifiers
         click TypedReference href "../TypedReference/"
+    
 
-
-
+        
+      Thing : record_author
+        
       Thing : record_date
-
+        
       Thing : record_rights
-
-
-
-
-
-        Thing --> "1..*" Right : record_rights
+        
+          
+    
+        
+        
+        Thing --> "*" Right : record_rights
         click Right href "../Right/"
+    
 
-
-
+        
       Thing : repositories
-
-
-
-
-
+        
+          
+    
+        
+        
         Thing --> "*" Repository : repositories
         click Repository href "../Repository/"
+    
 
-
-
+        
       Thing : tags
-
+        
       Thing : temporal
-
-
-
-
-
+        
+          
+    
+        
+        
         Thing --> "*" Event : temporal
         click Event href "../Event/"
+    
 
-
-
+        
       Thing : title
-
+        
       Thing : title_source
-
-
-
-
-
+        
+          
+    
+        
+        
         Thing --> "*" BibliographicCitation : title_source
         click BibliographicCitation href "../BibliographicCitation/"
+    
 
-
-
-      Thing : title_type
-
-
-
-
-
-        Thing --> "1" TitleType : title_type
-        click TitleType href "../TitleType/"
-
-
-
-
+        
+      
 ```
 
 
@@ -207,22 +205,20 @@ URI: [crm:E1_CRM_Entity](http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [description](description.md) | 1 <br/> [String](String.md) | A human-readable description for a thing | direct |
-| [title_type](title_type.md) | 1 <br/> [TitleType](TitleType.md) | Indica se o título é um nome próprio, descritivo, etc | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
-| [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d... | direct |
-| [id](id.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | Unique identifier for this object | direct |
-| [author](author.md) | 0..1 <br/> [OrcidId](OrcidId.md) | ORCID iD of the record author or maintainer | direct |
-| [record_date](record_date.md) | 0..1 <br/> [Date](Date.md) | Date the record was created or last substantively revised | direct |
-| [title](title.md) | 1 <br/> [String](String.md) | The preferred human-readable label for a Thing | direct |
-| [title_source](title_source.md) | * <br/> [BibliographicCitation](BibliographicCitation.md) | 📚 A fonte do título title_source é opcional ; um título pode ser atestado em ... | direct |
-| [alt_name](alt_name.md) | * <br/> [Appellation](Appellation.md) | O bloco `alt_name` permite cadastrar outros nomes pelos quais a edificação se... | direct |
-| [category](category.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | The LIDO Category Vocabulary is a structured controlled list of terms recomme... | direct |
-| [identifiers](identifiers.md) | * <br/> [TypedReference](TypedReference.md) | Published or external identifiers for the object | direct |
-| [tags](tags.md) | * <br/> [String](String.md) | Provisional uncontrolled keywords | direct |
-| [temporal](temporal.md) | * <br/> [Event](Event.md) | Temporalidade do objeto | direct |
-| [collection](collection.md) | * <br/> [TypedReference](TypedReference.md) | Collections or aggregations to which the object belongs | direct |
-| [repositories](repositories.md) | * <br/> [Repository](Repository.md) | A set of elements for the identification, name and location of the repository... | direct |
-| [record_rights](record_rights.md) | 1..* <br/> [Right](Right.md) | A set of structured information about rights regarding the content provided i... | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | direct |
+| [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Conteúdo textual descritivo ou explicativo | direct |
+| [id](id.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | Identificador globalmente único para este objeto ou recurso | direct |
+| [record_author](record_author.md) | 0..1 <br/> [OrcidId](OrcidId.md) | ORCID iD da pessoa que escreveu a versão original da ficha | direct |
+| [record_date](record_date.md) | 0..1 <br/> [Date](Date.md) | Data de inclusão da ficha | direct |
+| [title](title.md) | 1 <br/> [String](String.md) | Nome pelo qual este item é mais comumente conhecido | direct |
+| [title_source](title_source.md) | * <br/> [BibliographicCitation](BibliographicCitation.md) | A fonte do título title_source é opcional ; um título pode ser atestado em ma... | direct |
+| [alt_name](alt_name.md) | * <br/> [Appellation](Appellation.md) | O bloco `alt_name` permite cadastrar outros nomes pelos quais o objeto ou con... | direct |
+| [category](category.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário... | direct |
+| [identifiers](identifiers.md) | * <br/> [TypedReference](TypedReference.md) | Números de inventário e demais códigos que identificam este objeto em outras ... | direct |
+| [tags](tags.md) | * <br/> [String](String.md) | Lista de palavras-chave que caracterizam o objeto, de modo não estruturado | direct |
+| [temporal](temporal.md) | * <br/> [Event](Event.md) | Descrição dos eventos associados ao ciclo de vida da edificação ou à existênc... | direct |
+| [repositories](repositories.md) | * <br/> [Repository](Repository.md) | Nos Documentários da Arquitetura Tradicional, usamos repositórios para indica... | direct |
+| [record_rights](record_rights.md) | * <br/> [Right](Right.md) | Informações estruturadas sobre os direitos que incidem sobre o conteúdo textu... | direct |
 
 
 
@@ -247,6 +243,10 @@ URI: [crm:E1_CRM_Entity](http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity)
 
 
 ## Identifier and Mapping Information
+### Administrative Metadata
+
+**Rank:** 0
+
 
 
 
@@ -282,21 +282,29 @@ URI: [crm:E1_CRM_Entity](http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity)
 <details>
 ```yaml
 name: Thing
-description: "This class comprises all things in the universe of discourse of the\
-  \ CIDOC Conceptual Reference Model.\nIt is an abstract concept providing for three\
-  \ general properties:\n- Identification by name or appellation, and in particular\
-  \ by a preferred\n  identifier.\n\n- Classification by type, allowing further refinement\
-  \ of the specific\n  subclass to which an instance belongs.\n\n- Attachment of free\
-  \ text and other unstructured data for the expression\n  of anything not captured\
-  \ by formal properties.\n\nAll other classes within the CIDOC CRM are directly or\
-  \ indirectly specialisations of E1 CRM Entity.\n"
+description: "Esta classe compreende todas as coisas no universo do CIDOC CRM. É um\
+  \ conceito abstrato que prevê três propriedades gerais:\n- Identificação por nome\
+  \ ou título, em particular por um identificador\n  preferencial.\n- Classificação\
+  \ por tipo, permitindo o refinamento da subclasse\n  específica à qual a instância\
+  \ pertence.\n- Atribuição de texto livre e de outros dados não estruturados, para\n\
+  \  expressar informações não capturadas por propriedades formais.\n\nTodas as demais\
+  \ classes do CIDOC CRM são especializações diretas ou indiretas de E1 CRM Entity.\n\
+  -------------------------------------------------------------------------\nThis\
+  \ class comprises all things in the universe of discourse of the CIDOC Conceptual\
+  \ Reference Model.\nIt is an abstract concept providing for three general properties:\n\
+  - Identification by name or appellation, and in particular by a preferred\n  identifier.\n\
+  \n- Classification by type, allowing further refinement of the specific\n  subclass\
+  \ to which an instance belongs.\n\n- Attachment of free text and other unstructured\
+  \ data for the expression\n  of anything not captured by formal properties.\n\n\
+  All other classes within the CIDOC CRM are directly or indirectly specialisations\
+  \ of E1 CRM Entity.\n"
 from_schema: https://tradicional.arq.br/schema
 exact_mappings:
 - schema:Thing
+rank: 0
 abstract: true
 slots:
 - description
-- title_type
 - bibliographic_citation
 - content
 slot_usage:
@@ -306,7 +314,9 @@ slot_usage:
 attributes:
   id:
     name: id
-    description: Unique identifier for this object.
+    description: 'Identificador globalmente único para este objeto ou recurso.
+
+      '
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     slot_uri: dcterms:identifier
@@ -314,27 +324,35 @@ attributes:
     domain_of:
     - Thing
     range: uriorcurie
-  author:
-    name: author
-    description: ORCID iD of the record author or maintainer.
+  record_author:
+    name: record_author
+    description: 'ORCID iD da pessoa que escreveu a versão original da ficha. Alterar
+      apenas no caso de a ficha ter sido substancialmente reescrita.
+
+      '
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
-    slot_uri: dcterms:creator
+    slot_uri: dcterms:contributor
+    alias: author
     domain_of:
     - Thing
     range: OrcidId
   record_date:
     name: record_date
-    description: Date the record was created or last substantively revised.
+    description: Data de inclusão da ficha.
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     slot_uri: dcterms:created
+    alias: date
     domain_of:
     - Thing
     range: date
   title:
     name: title
-    description: The preferred human-readable label for a Thing.
+    description: 'Nome pelo qual este item é mais comumente conhecido. Outros nomes
+      podem ser cadastrados em `alt_name`.
+
+      '
     from_schema: https://tradicional.arq.br/schema/thing
     exact_mappings:
     - schema:name
@@ -346,20 +364,9 @@ attributes:
     required: true
   title_source:
     name: title_source
-    description: '📚 A fonte do título title_source é opcional ; um título pode ser
-      atestado em mais de uma fonte, por isso este campo é uma lista de itens (cada
-      item começa com um hífen).
-
-      Se a fonte for cadastrada, o campo `refid` deve conter a chave de citação (citation
-      key) que consta do registro bibliográfico na biblioteca do nosso projeto de
-      pesquisa no Zotero. Em geral, a chave de citação é o DOI ou ISBN da publicação,
-      mas pode ser diferente.
-
-      Se necessário, incluir no campo note uma especificação adicional, como o número
-      da página da referência bibliográfica de onde a informação foi extraída.
-
-      Todos os campos source no restante da ficha devem ser preenchidos do mesmo modo.
-      (Equivalente DublinCore: bibliographiCitation).'
+    description: A fonte do título title_source é opcional ; um título pode ser atestado
+      em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa
+      com um hífen).
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     domain_of:
@@ -369,12 +376,12 @@ attributes:
     inlined_as_list: true
   alt_name:
     name: alt_name
-    description: 'O bloco `alt_name` permite cadastrar outros nomes pelos quais a
-      edificação será eventualmente conhecida. É uma lista opcional de itens, e se
-      existir, os campos de cada item da lista devem ser preenchidos como os do título
-      principal.
+    description: 'O bloco `alt_name` permite cadastrar outros nomes pelos quais o
+      objeto ou conceito será eventualmente conhecido. É uma lista opcional de itens,
+      e se existir, os campos de cada item da lista devem ser preenchidos como os
+      do título principal.
 
-      O campo `description` de cada item contém o texto do título (nome).
+      O campo `label` ou `description` de cada item contém o texto do título (nome).
 
       Este bloco pode ser omitido por completo se não houver títulos alternativos.
 
@@ -388,13 +395,21 @@ attributes:
     inlined_as_list: true
   category:
     name: category
-    description: 'The LIDO Category Vocabulary is a structured controlled list of
-      terms recommended to use as values in the LIDO Category element.
+    description: 'Uma classificação ampla para o objeto descrito na ficha, usando
+      o vocabulário controlado do LIDO.
 
-      Examples are human-made object or natural object.
+      Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com
+      `term:lido00096` ("Objeto manufaturado").
 
-      Nos documentários de edificações, preencher este campo obrigatoriamente com
-      `term:lido00096`'
+      No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193`
+      ("Objeto conceitual").
+
+      ---------------------------------------------------------------------
+
+      The LIDO Category Vocabulary is a structured controlled list of terms recommended
+      to use as values in the LIDO Category element.
+
+      Examples are human-made object or natural object.'
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     slot_uri: term:lidoCategory
@@ -405,7 +420,23 @@ attributes:
     required: true
   identifiers:
     name: identifiers
-    description: Published or external identifiers for the object.
+    description: "Números de inventário e demais códigos que identificam este objeto\
+      \ em outras bases de dados.\nCaso esta edificação esteja cadastrada em outras\
+      \ bases de dados (por exemplo, [SICG], [SIPA], [HPIP], [iPatrimonio], etc.),\
+      \ pode preencher a lista `identifiers` como segue.\n:clipboard: O conteúdo de\
+      \ cada bloco é uma lista recuada em dois espaços com respeito à categoria superior.\
+      \ Seus itens são :\n* `type` é o tipo de referência : pode ser `uri` (padrão),\
+      \ `iri` ou\n  `local` — se estiver em dúvida, omita esta linha ;\n\n* `refid`\
+      \ é obrigatório : representa o identificador do conceito no\n  vocabulário controlado\
+      \ ou no repositório de origem — normalmente\n  será uma URI (um link para a\
+      \ página web do cadastro) ;\n\n* `description` deve ser usado para representar\
+      \ textualmente\n  o número de inventário, código identificador ou outra informação\n\
+      \  que individualize o objeto na base externa (por exemplo, livro do\n  tombo\
+      \ e número do processo de tombamento, no Brasil) ;\n\n* `bibliographic_citation`\
+      \ é opcional e permite citar uma lista de\n  referências bibliográficas que\
+      \ validem a inclusão deste termo.\n\n* `source` também é opcional e permite\
+      \ cadastrar os dados da pessoa\n  jurídica responsável pelo registro.\n\n---------------------------------------------------------------------\n\
+      Published or external identifiers for the object.\n"
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     domain_of:
@@ -415,8 +446,16 @@ attributes:
     inlined_as_list: true
   tags:
     name: tags
-    description: Provisional uncontrolled keywords. Prefer `classifications` or `subject`
-      for curated vocabulary terms.
+    description: 'Lista de palavras-chave que caracterizam o objeto, de modo não estruturado.
+      Recomenda-se usar uma palavra-chave de cada um dos recortes abaixo:
+
+      - Geográfico ; - Cronológico ; - Histórico-cultural ; - Técnico-construtivo ;
+      - Temático ou tipológico ; - Funcional.
+
+      ---------------------------------------------------------------------
+
+      Provisional uncontrolled keywords. Prefer `classifications` or `subject` for
+      curated vocabulary terms.'
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     domain_of:
@@ -425,7 +464,11 @@ attributes:
     multivalued: true
   temporal:
     name: temporal
-    description: Temporalidade do objeto.
+    description: 'Descrição dos eventos associados ao ciclo de vida da edificação
+      ou à existência e/ou uso do objeto ou conceito. Ler a respetiva documentação
+      para estruturar este campo.
+
+      '
     from_schema: https://tradicional.arq.br/schema/thing
     domain_of:
     - Right
@@ -433,32 +476,21 @@ attributes:
     range: Event
     multivalued: true
     inlined_as_list: true
-  collection:
-    name: collection
-    description: Collections or aggregations to which the object belongs.
-    from_schema: https://tradicional.arq.br/schema/thing
-    rank: 1000
-    domain_of:
-    - Thing
-    - Work
-    range: TypedReference
-    multivalued: true
-    inlined_as_list: true
   repositories:
     name: repositories
-    description: 'A set of elements for the identification, name and location of the
-      repository that is responsible for the object/work in focus.
+    description: 'Nos Documentários da Arquitetura Tradicional, usamos repositórios
+      para indicar a inclusão da edificação em perímetros de sítios tombados/classificados
+      do patrimônio, áreas de interesse histórico-cultural, etc.
 
-      Repeated if there are several designations known, or if former repositories
-      or geographic places should be listed.
+      O repositório é cadastrado como uma pessoa jurídica dotada de extensão geográfica.
 
       ---------------------------------------------------------------------
 
-      Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar
-      a inclusão da edificação em perímetros de sítios do patrimônio cultural, etc.
+      A set of elements for the identification, name and location of the repository
+      that is responsible for the object/work in focus.
 
-      Os repositórios devem ser cadastrados de modo semelhante às informações de georreferenciamento,
-      usando o tipo `other`.
+      Repeated if there are several designations known, or if former repositories
+      or geographic places should be listed.
 
       '
     from_schema: https://tradicional.arq.br/schema/thing
@@ -470,13 +502,16 @@ attributes:
     inlined_as_list: true
   record_rights:
     name: record_rights
-    description: 'A set of structured information about rights regarding the content
-      provided in this LIDO record.
+    description: 'Informações estruturadas sobre os direitos que incidem sobre o conteúdo
+      textual desta ficha.
+
+      ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os
+      direitos incidentes sobre o objeto descrito.
 
       ---------------------------------------------------------------------
 
-      :warning: Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre
-      os direitos incidentes sobre o objeto descrito.
+      A set of structured information about rights regarding the content provided
+      in this LIDO record.
 
       '
     from_schema: https://tradicional.arq.br/schema/thing
@@ -484,7 +519,6 @@ attributes:
     domain_of:
     - Thing
     range: Right
-    required: true
     multivalued: true
     inlined_as_list: true
 class_uri: crm:E1_CRM_Entity
@@ -497,17 +531,26 @@ class_uri: crm:E1_CRM_Entity
 <details>
 ```yaml
 name: Thing
-description: "This class comprises all things in the universe of discourse of the\
-  \ CIDOC Conceptual Reference Model.\nIt is an abstract concept providing for three\
-  \ general properties:\n- Identification by name or appellation, and in particular\
-  \ by a preferred\n  identifier.\n\n- Classification by type, allowing further refinement\
-  \ of the specific\n  subclass to which an instance belongs.\n\n- Attachment of free\
-  \ text and other unstructured data for the expression\n  of anything not captured\
-  \ by formal properties.\n\nAll other classes within the CIDOC CRM are directly or\
-  \ indirectly specialisations of E1 CRM Entity.\n"
+description: "Esta classe compreende todas as coisas no universo do CIDOC CRM. É um\
+  \ conceito abstrato que prevê três propriedades gerais:\n- Identificação por nome\
+  \ ou título, em particular por um identificador\n  preferencial.\n- Classificação\
+  \ por tipo, permitindo o refinamento da subclasse\n  específica à qual a instância\
+  \ pertence.\n- Atribuição de texto livre e de outros dados não estruturados, para\n\
+  \  expressar informações não capturadas por propriedades formais.\n\nTodas as demais\
+  \ classes do CIDOC CRM são especializações diretas ou indiretas de E1 CRM Entity.\n\
+  -------------------------------------------------------------------------\nThis\
+  \ class comprises all things in the universe of discourse of the CIDOC Conceptual\
+  \ Reference Model.\nIt is an abstract concept providing for three general properties:\n\
+  - Identification by name or appellation, and in particular by a preferred\n  identifier.\n\
+  \n- Classification by type, allowing further refinement of the specific\n  subclass\
+  \ to which an instance belongs.\n\n- Attachment of free text and other unstructured\
+  \ data for the expression\n  of anything not captured by formal properties.\n\n\
+  All other classes within the CIDOC CRM are directly or indirectly specialisations\
+  \ of E1 CRM Entity.\n"
 from_schema: https://tradicional.arq.br/schema
 exact_mappings:
 - schema:Thing
+rank: 0
 abstract: true
 slot_usage:
   description:
@@ -516,7 +559,9 @@ slot_usage:
 attributes:
   id:
     name: id
-    description: Unique identifier for this object.
+    description: 'Identificador globalmente único para este objeto ou recurso.
+
+      '
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     slot_uri: dcterms:identifier
@@ -526,29 +571,37 @@ attributes:
     - Thing
     range: uriorcurie
     required: true
-  author:
-    name: author
-    description: ORCID iD of the record author or maintainer.
+  record_author:
+    name: record_author
+    description: 'ORCID iD da pessoa que escreveu a versão original da ficha. Alterar
+      apenas no caso de a ficha ter sido substancialmente reescrita.
+
+      '
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
-    slot_uri: dcterms:creator
+    slot_uri: dcterms:contributor
+    alias: author
     owner: Thing
     domain_of:
     - Thing
     range: OrcidId
   record_date:
     name: record_date
-    description: Date the record was created or last substantively revised.
+    description: Data de inclusão da ficha.
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     slot_uri: dcterms:created
+    alias: date
     owner: Thing
     domain_of:
     - Thing
     range: date
   title:
     name: title
-    description: The preferred human-readable label for a Thing.
+    description: 'Nome pelo qual este item é mais comumente conhecido. Outros nomes
+      podem ser cadastrados em `alt_name`.
+
+      '
     from_schema: https://tradicional.arq.br/schema/thing
     exact_mappings:
     - schema:name
@@ -561,20 +614,9 @@ attributes:
     required: true
   title_source:
     name: title_source
-    description: '📚 A fonte do título title_source é opcional ; um título pode ser
-      atestado em mais de uma fonte, por isso este campo é uma lista de itens (cada
-      item começa com um hífen).
-
-      Se a fonte for cadastrada, o campo `refid` deve conter a chave de citação (citation
-      key) que consta do registro bibliográfico na biblioteca do nosso projeto de
-      pesquisa no Zotero. Em geral, a chave de citação é o DOI ou ISBN da publicação,
-      mas pode ser diferente.
-
-      Se necessário, incluir no campo note uma especificação adicional, como o número
-      da página da referência bibliográfica de onde a informação foi extraída.
-
-      Todos os campos source no restante da ficha devem ser preenchidos do mesmo modo.
-      (Equivalente DublinCore: bibliographiCitation).'
+    description: A fonte do título title_source é opcional ; um título pode ser atestado
+      em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa
+      com um hífen).
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     owner: Thing
@@ -586,12 +628,12 @@ attributes:
     inlined_as_list: true
   alt_name:
     name: alt_name
-    description: 'O bloco `alt_name` permite cadastrar outros nomes pelos quais a
-      edificação será eventualmente conhecida. É uma lista opcional de itens, e se
-      existir, os campos de cada item da lista devem ser preenchidos como os do título
-      principal.
+    description: 'O bloco `alt_name` permite cadastrar outros nomes pelos quais o
+      objeto ou conceito será eventualmente conhecido. É uma lista opcional de itens,
+      e se existir, os campos de cada item da lista devem ser preenchidos como os
+      do título principal.
 
-      O campo `description` de cada item contém o texto do título (nome).
+      O campo `label` ou `description` de cada item contém o texto do título (nome).
 
       Este bloco pode ser omitido por completo se não houver títulos alternativos.
 
@@ -607,13 +649,21 @@ attributes:
     inlined_as_list: true
   category:
     name: category
-    description: 'The LIDO Category Vocabulary is a structured controlled list of
-      terms recommended to use as values in the LIDO Category element.
+    description: 'Uma classificação ampla para o objeto descrito na ficha, usando
+      o vocabulário controlado do LIDO.
 
-      Examples are human-made object or natural object.
+      Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com
+      `term:lido00096` ("Objeto manufaturado").
 
-      Nos documentários de edificações, preencher este campo obrigatoriamente com
-      `term:lido00096`'
+      No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193`
+      ("Objeto conceitual").
+
+      ---------------------------------------------------------------------
+
+      The LIDO Category Vocabulary is a structured controlled list of terms recommended
+      to use as values in the LIDO Category element.
+
+      Examples are human-made object or natural object.'
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     slot_uri: term:lidoCategory
@@ -625,7 +675,23 @@ attributes:
     required: true
   identifiers:
     name: identifiers
-    description: Published or external identifiers for the object.
+    description: "Números de inventário e demais códigos que identificam este objeto\
+      \ em outras bases de dados.\nCaso esta edificação esteja cadastrada em outras\
+      \ bases de dados (por exemplo, [SICG], [SIPA], [HPIP], [iPatrimonio], etc.),\
+      \ pode preencher a lista `identifiers` como segue.\n:clipboard: O conteúdo de\
+      \ cada bloco é uma lista recuada em dois espaços com respeito à categoria superior.\
+      \ Seus itens são :\n* `type` é o tipo de referência : pode ser `uri` (padrão),\
+      \ `iri` ou\n  `local` — se estiver em dúvida, omita esta linha ;\n\n* `refid`\
+      \ é obrigatório : representa o identificador do conceito no\n  vocabulário controlado\
+      \ ou no repositório de origem — normalmente\n  será uma URI (um link para a\
+      \ página web do cadastro) ;\n\n* `description` deve ser usado para representar\
+      \ textualmente\n  o número de inventário, código identificador ou outra informação\n\
+      \  que individualize o objeto na base externa (por exemplo, livro do\n  tombo\
+      \ e número do processo de tombamento, no Brasil) ;\n\n* `bibliographic_citation`\
+      \ é opcional e permite citar uma lista de\n  referências bibliográficas que\
+      \ validem a inclusão deste termo.\n\n* `source` também é opcional e permite\
+      \ cadastrar os dados da pessoa\n  jurídica responsável pelo registro.\n\n---------------------------------------------------------------------\n\
+      Published or external identifiers for the object.\n"
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     owner: Thing
@@ -637,8 +703,16 @@ attributes:
     inlined_as_list: true
   tags:
     name: tags
-    description: Provisional uncontrolled keywords. Prefer `classifications` or `subject`
-      for curated vocabulary terms.
+    description: 'Lista de palavras-chave que caracterizam o objeto, de modo não estruturado.
+      Recomenda-se usar uma palavra-chave de cada um dos recortes abaixo:
+
+      - Geográfico ; - Cronológico ; - Histórico-cultural ; - Técnico-construtivo ;
+      - Temático ou tipológico ; - Funcional.
+
+      ---------------------------------------------------------------------
+
+      Provisional uncontrolled keywords. Prefer `classifications` or `subject` for
+      curated vocabulary terms.'
     from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     owner: Thing
@@ -648,7 +722,11 @@ attributes:
     multivalued: true
   temporal:
     name: temporal
-    description: Temporalidade do objeto.
+    description: 'Descrição dos eventos associados ao ciclo de vida da edificação
+      ou à existência e/ou uso do objeto ou conceito. Ler a respetiva documentação
+      para estruturar este campo.
+
+      '
     from_schema: https://tradicional.arq.br/schema/thing
     owner: Thing
     domain_of:
@@ -658,34 +736,21 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  collection:
-    name: collection
-    description: Collections or aggregations to which the object belongs.
-    from_schema: https://tradicional.arq.br/schema/thing
-    rank: 1000
-    owner: Thing
-    domain_of:
-    - Thing
-    - Work
-    range: TypedReference
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   repositories:
     name: repositories
-    description: 'A set of elements for the identification, name and location of the
-      repository that is responsible for the object/work in focus.
+    description: 'Nos Documentários da Arquitetura Tradicional, usamos repositórios
+      para indicar a inclusão da edificação em perímetros de sítios tombados/classificados
+      do patrimônio, áreas de interesse histórico-cultural, etc.
 
-      Repeated if there are several designations known, or if former repositories
-      or geographic places should be listed.
+      O repositório é cadastrado como uma pessoa jurídica dotada de extensão geográfica.
 
       ---------------------------------------------------------------------
 
-      Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar
-      a inclusão da edificação em perímetros de sítios do patrimônio cultural, etc.
+      A set of elements for the identification, name and location of the repository
+      that is responsible for the object/work in focus.
 
-      Os repositórios devem ser cadastrados de modo semelhante às informações de georreferenciamento,
-      usando o tipo `other`.
+      Repeated if there are several designations known, or if former repositories
+      or geographic places should be listed.
 
       '
     from_schema: https://tradicional.arq.br/schema/thing
@@ -699,13 +764,16 @@ attributes:
     inlined_as_list: true
   record_rights:
     name: record_rights
-    description: 'A set of structured information about rights regarding the content
-      provided in this LIDO record.
+    description: 'Informações estruturadas sobre os direitos que incidem sobre o conteúdo
+      textual desta ficha.
+
+      ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os
+      direitos incidentes sobre o objeto descrito.
 
       ---------------------------------------------------------------------
 
-      :warning: Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre
-      os direitos incidentes sobre o objeto descrito.
+      A set of structured information about rights regarding the content provided
+      in this LIDO record.
 
       '
     from_schema: https://tradicional.arq.br/schema/thing
@@ -714,7 +782,6 @@ attributes:
     domain_of:
     - Thing
     range: Right
-    required: true
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -733,31 +800,25 @@ attributes:
     - BibliographicCitation
     - RelatedObject
     - MediaObject
+    - TypedReference
     - Measurement
-    - EventDate
-    - EventPlace
     - RelatedEvent
     - Thing
-    - Appellation
     - Inscription
     - Topic
     range: string
     required: true
-  title_type:
-    name: title_type
-    description: Indica se o título é um nome próprio, descritivo, etc.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    alias: type
-    owner: Thing
-    domain_of:
-    - Thing
-    - Appellation
-    range: TitleType
-    required: true
   bibliographic_citation:
     name: bibliographic_citation
-    description: 'Cadastro de uma referência bibliográfica.
+    description: '📚  Cadastro de uma referência bibliográfica.
+
+      O campo `refid` deve conter a chave de citação (citation key) que consta do
+      registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero,
+      começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação,
+      mas pode ser diferente.
+
+      Se necessário, incluir no campo `note` uma especificação adicional, como o número
+      da página da referência bibliográfica de onde a informação foi extraída.
 
       Usar o campo `description` para formatar a referência, caso a formatação automática
       do Zotero não for satisfatória.
@@ -786,19 +847,7 @@ attributes:
     inlined_as_list: true
   content:
     name: content
-    description: 'Deixe uma linha em branco após o fechamento dos metadados e inclua
-      aqui uma descrição morfológica e histórica da edificação com texto livre, usando
-      formatação Markdown.
-
-      Poderá incluir um segundo bloco de metadados para indicar as referências bibliográficas
-      da descrição textual, no campo `nocite`. O formato é uma lista de chaves de
-      citação do Zotero (cada uma começando com `@`) separadas por vírgulas:
-
-      ```yaml Conteúdo textual em formato *Markdown* com citações [@citekey].
-
-      --- nocite: "@*" --- ```
-
-      '
+    description: Conteúdo textual descritivo ou explicativo.
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
     slot_uri: skos:scopeNote

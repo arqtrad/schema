@@ -4,7 +4,7 @@ search:
 ---
 
 
-# Enum: RightsType
+# Enum: RightsType 
 
 
 
@@ -16,16 +16,21 @@ _LIDO expressions for rights types._
 <div data-search-exclude markdown="1">
 
 URI: [wasth:RightsType](https://tradicional.arq.br/schema/RightsType)
-## Enumeration Source
-**Reachable From:**
-- **Source:** NONE
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| generic | term:lido00920 |  |
+| specific | term:lido00921 |  |
 
 
 
 
-_This is a dynamic enum_
+## Slots
 
-
+| Name | Description |
+| ---  | --- |
+| [rights_type](rights_type.md) | Determina se os direitos ora descritos são uma licença específica (padrão) ou... |
 
 
 
@@ -60,9 +65,13 @@ name: RightsType
 description: LIDO expressions for rights types.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-reachable_from:
-  source_ontology: http://terminology.lido-schema.org/rightsType_type
-  include_self: false
+permissible_values:
+  generic:
+    text: generic
+    meaning: term:lido00920
+  specific:
+    text: specific
+    meaning: term:lido00921
 
 ```
 </details>

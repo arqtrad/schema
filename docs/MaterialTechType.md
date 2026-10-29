@@ -4,10 +4,12 @@ search:
 ---
 
 
-# Enum: MaterialTechType
+# Enum: MaterialTechType 
 
 
 
+
+_A materialidade e as técnicas de produção ou intervenção na edificação devem ser categorizadas segundo esta classificação._
 
 _The physical matter or substance from which an object is made, including any tangible substances, either naturally or synthetically derived, ranging from specific materials to types of material designated by their function. The term comprises both the media that are incorporated in an object and any support to which the media are applied._
 
@@ -116,11 +118,13 @@ URI: [wasth:MaterialTechType](https://tradicional.arq.br/schema/MaterialTechType
 <details>
 ```yaml
 name: MaterialTechType
-description: 'The physical matter or substance from which an object is made, including
-  any tangible substances, either naturally or synthetically derived, ranging from
-  specific materials to types of material designated by their function. The term comprises
-  both the media that are incorporated in an object and any support to which the media
-  are applied.
+description: 'A materialidade e as técnicas de produção ou intervenção na edificação
+  devem ser categorizadas segundo esta classificação.
+
+  The physical matter or substance from which an object is made, including any tangible
+  substances, either naturally or synthetically derived, ranging from specific materials
+  to types of material designated by their function. The term comprises both the media
+  that are incorporated in an object and any support to which the media are applied.
 
   Based on [AAT "materials (matter)"](http://vocab.getty.edu/page/aat/300010358);
   [CDWA "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#RTFToC2)

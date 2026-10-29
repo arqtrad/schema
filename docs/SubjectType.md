@@ -4,7 +4,7 @@ search:
 ---
 
 
-# Enum: SubjectType
+# Enum: SubjectType 
 
 
 
@@ -20,16 +20,23 @@ __
 <div data-search-exclude markdown="1">
 
 URI: [wasth:SubjectType](https://tradicional.arq.br/schema/SubjectType)
-## Enumeration Source
-**Reachable From:**
-- **Source:** NONE
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| descriptive | term:lido00525 |  |
+| iconographic | term:lido00745 |  |
+| concept | term:lido00524 |  |
+| other | term:lido00136 |  |
 
 
 
 
-_This is a dynamic enum_
+## Slots
 
-
+| Name | Description |
+| ---  | --- |
+| [topic_type](topic_type.md) | Categoriza o nível descritivo ou interpretativo do tema |
 
 
 
@@ -72,9 +79,19 @@ description: 'The type attribute indicates the kind of subject information, whet
   '
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
-reachable_from:
-  source_ontology: http://terminology.lido-schema.org/subject_type
-  include_self: false
+permissible_values:
+  descriptive:
+    text: descriptive
+    meaning: term:lido00525
+  iconographic:
+    text: iconographic
+    meaning: term:lido00745
+  concept:
+    text: concept
+    meaning: term:lido00524
+  other:
+    text: other
+    meaning: term:lido00136
 
 ```
 </details>

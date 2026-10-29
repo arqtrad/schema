@@ -1,7 +1,7 @@
 ---
 search:
   boost: 1.0
----# Type: GeonamesId
+---# Type: GeonamesId 
 
 
 

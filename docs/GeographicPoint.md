@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: GeographicPoint
+# Class: GeographicPoint 
 
 
 _Coordenadas do ponto que situa o sítio na visualização do mapa._
@@ -55,38 +55,38 @@ URI: [wasth:GeographicPoint](https://tradicional.arq.br/schema/GeographicPoint)
     class GeographicPoint
     click GeographicPoint href "../GeographicPoint/"
       GeographicPoint : alt
-
+        
       GeographicPoint : bibliographic_citation
-
-
-
-
-
+        
+          
+    
+        
+        
         GeographicPoint --> "* _recommended_" BibliographicCitation : bibliographic_citation
         click BibliographicCitation href "../BibliographicCitation/"
+    
 
-
-
+        
       GeographicPoint : lat
-
+        
       GeographicPoint : lon
-
+        
       GeographicPoint : source
-
-
-
-
-
+        
+          
+    
+        
+        
         GeographicPoint --> "*" LegalBody : source
         click LegalBody href "../LegalBody/"
+    
 
-
-
+        
       GeographicPoint : srs_name
-
+        
       GeographicPoint : zoom
-
-
+        
+      
 ```
 
 
@@ -100,7 +100,7 @@ URI: [wasth:GeographicPoint](https://tradicional.arq.br/schema/GeographicPoint)
 | ---  | --- | --- | --- |
 | [srs_name](srs_name.md) | 0..1 _recommended_ <br/> [Uriorcurie](Uriorcurie.md) | Names the coordinate reference system (CRS) that defines the semantics of the... | direct |
 | [source](source.md) | * <br/> [LegalBody](LegalBody.md) |  | direct |
-| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | Cadastro de uma referência bibliográfica | direct |
+| [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | direct |
 | [lat](lat.md) | 1 <br/> [Latitude](Latitude.md) | Latitude em graus decimais (separador decimal: ponto) | direct |
 | [lon](lon.md) | 1 <br/> [Longitude](Longitude.md) | Longitude em graus decimais (separador decimal: ponto) | direct |
 | [alt](alt.md) | 0..1 <br/> [Float](Float.md) | Altitude em metros (separador decimal: ponto) | direct |
@@ -300,17 +300,16 @@ attributes:
   srs_name:
     name: srs_name
     description: Names the coordinate reference system (CRS) that defines the semantics
-      of the lat/long pair according to the ISO6709 standard.
+      of the lat/long pair according to the ISO6709 standard. Sempre que possível,
+      usar EPSG:4326, senão os sistemas de referência nacionais.
     from_schema: https://tradicional.arq.br/schema
     rank: 1000
-    alias: srsName
     owner: GeographicPoint
     domain_of:
     - GeographicPoint
     - GeographicExtent
     range: uriorcurie
     recommended: true
-    inlined: true
   source:
     name: source
     from_schema: https://tradicional.arq.br/schema
@@ -328,7 +327,15 @@ attributes:
     inlined_as_list: true
   bibliographic_citation:
     name: bibliographic_citation
-    description: 'Cadastro de uma referência bibliográfica.
+    description: '📚  Cadastro de uma referência bibliográfica.
+
+      O campo `refid` deve conter a chave de citação (citation key) que consta do
+      registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero,
+      começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação,
+      mas pode ser diferente.
+
+      Se necessário, incluir no campo `note` uma especificação adicional, como o número
+      da página da referência bibliográfica de onde a informação foi extraída.
 
       Usar o campo `description` para formatar a referência, caso a formatação automática
       do Zotero não for satisfatória.

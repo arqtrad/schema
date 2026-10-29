@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: other_site
+# Slot: other_site 
 
 
-_Para casos não contemplados em nenhuma das categorias acima._
+_Para casos de implantação não contemplados em nenhuma das categorias acima._
 
 
 
@@ -27,7 +27,7 @@ Alias: other
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Work](Work.md) | An historical landmark or building |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -95,7 +95,8 @@ Alias: other
 <details>
 ```yaml
 name: other_site
-description: Para casos não contemplados em nenhuma das categorias acima.
+description: Para casos de implantação não contemplados em nenhuma das categorias
+  acima.
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 alias: other
