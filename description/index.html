@@ -502,7 +502,7 @@ Alias: display</p>
 </tr>
 <tr>
 <td><a href="../RelatedObject/">RelatedObject</a></td>
-<td>As formas mais comuns de relação no nosso projeto são :</td>
+<td>A wrapper for identifying information about an object or work, including coll...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -511,18 +511,13 @@ Alias: display</p>
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../TypedReference/">TypedReference</a></td>
+<td>Permite referenciar um registro local ou externo por meio da sua URI (localiz...</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Measurement/">Measurement</a></td>
-<td>This class comprises actions measuring physical properties and other values t...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EventDate/">EventDate</a></td>
-<td>A wrapper for the expression of a date by providing a set of years as earlies...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EventPlace/">EventPlace</a></td>
-<td></td>
+<td>Informações estruturadas sobre as dimensões do objeto ou requisitos de condic...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -532,13 +527,8 @@ Alias: display</p>
 </tr>
 <tr>
 <td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
+<td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
 <td>yes</td>
-</tr>
-<tr>
-<td><a href="../Appellation/">Appellation</a></td>
-<td></td>
-<td>no</td>
 </tr>
 <tr>
 <td><a href="../Inscription/">Inscription</a></td>
@@ -552,12 +542,27 @@ Alias: display</p>
 </tr>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
+<td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../BroaderConceptReference/">BroaderConceptReference</a></td>
+<td>Relações hierárquicas</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NarrowerConceptReference/">NarrowerConceptReference</a></td>
+<td>Relações hierárquicas</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MappingConceptReference/">MappingConceptReference</a></td>
+<td>Relações semânticas</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../RelatedWork/">RelatedWork</a></td>
-<td>A wrapper for identifying information about an object or work, including coll...</td>
+<td>As formas mais comuns de relação no nosso projeto são :</td>
 <td>no</td>
 </tr>
 <tr>
@@ -572,7 +577,7 @@ Alias: display</p>
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -587,12 +592,12 @@ Alias: display</p>
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>An historical landmark or building</td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
-<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -613,7 +618,7 @@ Alias: display</p>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../ConceptReference/">ConceptReference</a>, <a href="../BibliographicCitation/">BibliographicCitation</a>, <a href="../RelatedObject/">RelatedObject</a>, <a href="../MediaObject/">MediaObject</a>, <a href="../Measurement/">Measurement</a>, <a href="../EventDate/">EventDate</a>, <a href="../EventPlace/">EventPlace</a>, <a href="../RelatedEvent/">RelatedEvent</a>, <a href="../Thing/">Thing</a>, <a href="../Appellation/">Appellation</a>, <a href="../Inscription/">Inscription</a>, <a href="../Topic/">Topic</a></td>
+<td><a href="../ConceptReference/">ConceptReference</a>, <a href="../BibliographicCitation/">BibliographicCitation</a>, <a href="../RelatedObject/">RelatedObject</a>, <a href="../MediaObject/">MediaObject</a>, <a href="../TypedReference/">TypedReference</a>, <a href="../Measurement/">Measurement</a>, <a href="../RelatedEvent/">RelatedEvent</a>, <a href="../Thing/">Thing</a>, <a href="../Inscription/">Inscription</a>, <a href="../Topic/">Topic</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
@@ -664,12 +669,10 @@ Alias: display</p>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>

@@ -217,6 +217,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#notes">
+<span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
 <span class="md-ellipsis">
       
@@ -286,10 +295,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-measurement">Class: Measurement</h1>
-<p><em>This class comprises actions measuring physical properties and other values that can be determined by a systematic, objective procedure of direct observation of particular states of physical reality.</em></p>
-<p><em>An instance of E16 Measurement may use simple counting or tools, such as yardsticks or radiation detection devices. The interest is in the method and care applied, so that the reliability of the result may be judged at a later stage, or research continued on the associated documents. The date of the event is important for dimensions, which may change value over time, such as the length of an object subject to shrinkage. Methods and devices employed should be associated with instances of E16 Measurement by properties such as: <em>P33 used specific technique</em>: E29 Design or Procedure, <em>P125 used object of type</em>: E55 Type, <em>P16 used specific object (was used for)</em>: E70 Thing, whereas basic techniques such as "carbon-14 dating" should be encoded using <em>P2 has type (is type of)</em>: E55 Type. Details of methods and devices reused or reusable in other instances of E16 Measurement should be documented for these entities rather than the measurements themselves, whereas details of particular execution may be documented by free text or by instantiating adequate sub-activities, if the detail may be of interest for an overarching query.</em></p>
-<p><em>Regardless whether a measurement is made by an instrument or by human senses, it represents the initial transition from physical reality to information without any other documented information object in between within the reasoning chain that would represent the result of the interaction of the observer or device with reality. Therefore, determining properties of an instance of E90 Symbolic Object is regarded as an instance of E13 Attribute Assignment, which may be inferred from observing and measuring representative carriers. In the case that the carrier can be named, the property <em>P16 used specific object (was used for)</em> should be used to indicate the instance(s) of E18 Physical Thing that was used as the empirical basis for the attribute assignment. For instance, inferring properties of depicted items using image material, such as satellite images, is not regarded as an instance of E16 Measurement, but as a subsequent instance of E13 Attribute Assignment. Rather, only the production of the images, understood as arrays of radiation intensities, is regarded as an instance of E16 Measurement. The same reasoning holds for other sensor data.</em></p>
-<p><em>O campo <code>description</code> permite uma representação textual das medidas da edificação, caso não seja possível cadastrar medidas individuais com precisão, ou seja preciso maior flexibilidade para explicar as dimensões.</em></p>
+<p><em>Informações estruturadas sobre as dimensões do objeto ou requisitos de condicionamento ambiental no espaço que ele ocupa. Para edificações, é recomendável cadastrar ao menos a área útil, testada e a altura de coroamento.</em></p>
+<p><em>Se a modulação original for conhecida ou puder ser deduzida por um estudo metrológico, é interessante cadastrar também as medidas históricas utilizadas (por exemplo, dimensões em palmos).</em></p>
+<p><em>O campo <code>description</code> permite uma representação textual das medidas da edificação, caso não seja viável cadastrar medidas individuais com precisão, ou seja preciso maior flexibilidade para explicar as dimensões.</em></p>
 <p>__</p>
 <div>
 <p>URI: <a href="http://www.cidoc-crm.org/cidoc-crm/E16_Measurement">crm:E16_Measurement</a></p>
@@ -320,20 +328,51 @@
 
 
 
-      Measurement : qualifier
-
-      Measurement : shape
-
-      Measurement : type
+      Measurement : measurement_event
 
 
 
 
 
-        Measurement --&gt; "0..1" MeasurementType : type
+        Measurement --&gt; "0..1" Event : measurement_event
+        click Event href "../Event/"
+
+
+
+      Measurement : measurement_qualifier
+
+
+
+
+
+        Measurement --&gt; "0..1" MeasurementQualifier : measurement_qualifier
+        click MeasurementQualifier href "../MeasurementQualifier/"
+
+
+
+      Measurement : measurement_shape
+
+
+
+
+
+        Measurement --&gt; "0..1" TypedReference : measurement_shape
+        click TypedReference href "../TypedReference/"
+
+
+
+      Measurement : measurement_type
+
+
+
+
+
+        Measurement --&gt; "0..1" MeasurementType : measurement_type
         click MeasurementType href "../MeasurementType/"
 
 
+
+      Measurement : measurement_value
 
       Measurement : unit
 
@@ -345,8 +384,6 @@
         click TypedReference href "../TypedReference/"
 
 
-
-      Measurement : value
 
 </code></pre>
 <!-- no inheritance hierarchy -->
@@ -377,6 +414,12 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../unit/">unit</a></td>
+<td>1 <br/> <a href="../TypedReference/">TypedReference</a></td>
+<td>Unidade de medida usada no dimensionamento do objeto ou da representação, por...</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../description/">description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable description for a thing</td>
@@ -391,37 +434,37 @@
 <tr>
 <td><a href="../bibliographic_citation/">bibliographic_citation</a></td>
 <td>* <em>recommended</em> <br/> <a href="../BibliographicCitation/">BibliographicCitation</a></td>
-<td>Cadastro de uma referência bibliográfica</td>
+<td>📚  Cadastro de uma referência bibliográfica</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../unit/">unit</a></td>
-<td>1 <br/> <a href="../TypedReference/">TypedReference</a></td>
-<td>Unidade de medida usada no dimensionamento da representação, por exemplo metr...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../type/">type</a></td>
+<td><a href="../measurement_type/">measurement_type</a></td>
 <td>0..1 <br/> <a href="../MeasurementType/">MeasurementType</a></td>
 <td>designa a natureza da medida : largura, altura, área, etc</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../value/">value</a></td>
+<td><a href="../measurement_value/">measurement_value</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td>Valor numérico, usar ponto como separador decimal</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../qualifier/">qualifier</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Indica que as medidas são aproximadas : usar um [qualificador do AAT](https:/...</td>
+<td><a href="../measurement_qualifier/">measurement_qualifier</a></td>
+<td>0..1 <br/> <a href="../MeasurementQualifier/">MeasurementQualifier</a></td>
+<td>Indica que as medidas são aproximadas</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../shape/">shape</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../measurement_shape/">measurement_shape</a></td>
+<td>0..1 <br/> <a href="../TypedReference/">TypedReference</a></td>
 <td>caso relevante, indicar a forma do elemento medido usando a [lista de formas ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../measurement_event/">measurement_event</a></td>
+<td>0..1 <br/> <a href="../Event/">Event</a></td>
+<td>Descreve a ocasião em que as medidas foram aferidas, caso essa informação sej...</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -457,6 +500,12 @@
 </tr>
 </tbody>
 </table>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>This class comprises actions measuring physical properties and other values that can be determined by a systematic, objective procedure of direct observation of particular states of physical reality.</li>
+<li>An instance of E16 Measurement may use simple counting or tools, such as yardsticks or radiation detection devices. The interest is in the method and care applied, so that the reliability of the result may be judged at a later stage, or research continued on the associated documents. The date of the event is important for dimensions, which may change value over time, such as the length of an object subject to shrinkage. Methods and devices employed should be associated with instances of E16 Measurement by properties such as: <em>P33 used specific technique</em>: E29 Design or Procedure, <em>P125 used object of type</em>: E55 Type, <em>P16 used specific object (was used for)</em>: E70 Thing, whereas basic techniques such as "carbon-14 dating" should be encoded using <em>P2 has type (is type of)</em>: E55 Type. Details of methods and devices reused or reusable in other instances of E16 Measurement should be documented for these entities rather than the measurements themselves, whereas details of particular execution may be documented by free text or by instantiating adequate sub-activities, if the detail may be of interest for an overarching query.</li>
+<li>Regardless whether a measurement is made by an instrument or by human senses, it represents the initial transition from physical reality to information without any other documented information object in between within the reasoning chain that would represent the result of the interaction of the observer or device with reality. Therefore, determining properties of an instance of E90 Symbolic Object is regarded as an instance of E13 Attribute Assignment, which may be inferred from observing and measuring representative carriers. In the case that the carrier can be named, the property <em>P16 used specific object (was used for)</em> should be used to indicate the instance(s) of E18 Physical Thing that was used as the empirical basis for the attribute assignment. For instance, inferring properties of depicted items using image material, such as satellite images, is not regarded as an instance of E16 Measurement, but as a subsequent instance of E13 Attribute Assignment. Rather, only the production of the images, understood as arrays of radiation intensities, is regarded as an instance of E16 Measurement. The same reasoning holds for other sensor data.</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -480,7 +529,7 @@
 <td>wasth:Measurement</td>
 </tr>
 <tr>
-<td>close</td>
+<td>related</td>
 <td>dcterms:format</td>
 </tr>
 </tbody>
@@ -490,11 +539,24 @@
 <h3 id="direct">Direct</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'This</span><span class="nv"> </span><span class="s">class</span><span class="nv"> </span><span class="s">comprises</span><span class="nv"> </span><span class="s">actions</span><span class="nv"> </span><span class="s">measuring</span><span class="nv"> </span><span class="s">physical</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">other</span>
-<span class="w">  </span><span class="s">values</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">determined</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">systematic,</span><span class="nv"> </span><span class="s">objective</span><span class="nv"> </span><span class="s">procedure</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">direct</span><span class="nv"> </span><span class="s">observation</span>
-<span class="w">  </span><span class="s">of</span><span class="nv"> </span><span class="s">particular</span><span class="nv"> </span><span class="s">states</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">physical</span><span class="nv"> </span><span class="s">reality.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Informações</span><span class="nv"> </span><span class="s">estruturadas</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">dimensões</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">requisitos</span>
+<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">condicionamento</span><span class="nv"> </span><span class="s">ambiental</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">espaço</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">ele</span><span class="nv"> </span><span class="s">ocupa.</span><span class="nv"> </span><span class="s">Para</span><span class="nv"> </span><span class="s">edificações,</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">recomendável</span>
+<span class="w">  </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">menos</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">área</span><span class="nv"> </span><span class="s">útil,</span><span class="nv"> </span><span class="s">testada</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">altura</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">coroamento.</span>
 
-<span class="w">  </span><span class="s">An</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E16</span><span class="nv"> </span><span class="s">Measurement</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">simple</span><span class="nv"> </span><span class="s">counting</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">tools,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">yardsticks</span>
+<span class="w">  </span><span class="s">Se</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">modulação</span><span class="nv"> </span><span class="s">original</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">conhecida</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">puder</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">deduzida</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">estudo</span><span class="nv"> </span><span class="s">metrológico,</span>
+<span class="w">  </span><span class="s">é</span><span class="nv"> </span><span class="s">interessante</span><span class="nv"> </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">também</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">históricas</span><span class="nv"> </span><span class="s">utilizadas</span><span class="nv"> </span><span class="s">(por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">dimensões</span>
+<span class="w">  </span><span class="s">em</span><span class="nv"> </span><span class="s">palmos).</span>
+
+<span class="w">  </span><span class="s">O</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`</span><span class="nv"> </span><span class="s">permite</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">representação</span><span class="nv"> </span><span class="s">textual</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação,</span>
+<span class="w">  </span><span class="s">caso</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">seja</span><span class="nv"> </span><span class="s">viável</span><span class="nv"> </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">individuais</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">precisão,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">seja</span><span class="nv"> </span><span class="s">preciso</span>
+<span class="w">  </span><span class="s">maior</span><span class="nv"> </span><span class="s">flexibilidade</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">explicar</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">dimensões.</span>
+
+<span class="w">  </span><span class="s">'</span>
+<span class="nt">notes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This class comprises actions measuring physical properties and other values that</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">can be determined by a systematic, objective procedure of direct observation of</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">particular states of physical reality.</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E16</span><span class="nv"> </span><span class="s">Measurement</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">simple</span><span class="nv"> </span><span class="s">counting</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">tools,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">yardsticks</span>
 <span class="w">  </span><span class="s">or</span><span class="nv"> </span><span class="s">radiation</span><span class="nv"> </span><span class="s">detection</span><span class="nv"> </span><span class="s">devices.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">interest</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">method</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">care</span><span class="nv"> </span><span class="s">applied,</span>
 <span class="w">  </span><span class="s">so</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">reliability</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">result</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">judged</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">later</span><span class="nv"> </span><span class="s">stage,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">research</span>
 <span class="w">  </span><span class="s">continued</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">associated</span><span class="nv"> </span><span class="s">documents.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">event</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">important</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">dimensions,</span>
@@ -507,61 +569,52 @@
 <span class="w">  </span><span class="s">in</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E16</span><span class="nv"> </span><span class="s">Measurement</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">documented</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">these</span><span class="nv"> </span><span class="s">entities</span><span class="nv"> </span><span class="s">rather</span>
 <span class="w">  </span><span class="s">than</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">measurements</span><span class="nv"> </span><span class="s">themselves,</span><span class="nv"> </span><span class="s">whereas</span><span class="nv"> </span><span class="s">details</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">particular</span><span class="nv"> </span><span class="s">execution</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span>
 <span class="w">  </span><span class="s">documented</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">free</span><span class="nv"> </span><span class="s">text</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">instantiating</span><span class="nv"> </span><span class="s">adequate</span><span class="nv"> </span><span class="s">sub-activities,</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">detail</span>
-<span class="w">  </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">interest</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">overarching</span><span class="nv"> </span><span class="s">query.</span>
-
-<span class="w">  </span><span class="s">Regardless</span><span class="nv"> </span><span class="s">whether</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">measurement</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">made</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instrument</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">human</span><span class="nv"> </span><span class="s">senses,</span><span class="nv"> </span><span class="s">it</span>
-<span class="w">  </span><span class="s">represents</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">initial</span><span class="nv"> </span><span class="s">transition</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">physical</span><span class="nv"> </span><span class="s">reality</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">without</span><span class="nv"> </span><span class="s">any</span>
-<span class="w">  </span><span class="s">other</span><span class="nv"> </span><span class="s">documented</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">between</span><span class="nv"> </span><span class="s">within</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">reasoning</span><span class="nv"> </span><span class="s">chain</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">would</span>
-<span class="w">  </span><span class="s">represent</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">result</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">interaction</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">observer</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">device</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">reality.</span>
-<span class="w">  </span><span class="s">Therefore,</span><span class="nv"> </span><span class="s">determining</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E90</span><span class="nv"> </span><span class="s">Symbolic</span><span class="nv"> </span><span class="s">Object</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">regarded</span>
-<span class="w">  </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E13</span><span class="nv"> </span><span class="s">Attribute</span><span class="nv"> </span><span class="s">Assignment,</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">inferred</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">observing</span>
-<span class="w">  </span><span class="s">and</span><span class="nv"> </span><span class="s">measuring</span><span class="nv"> </span><span class="s">representative</span><span class="nv"> </span><span class="s">carriers.</span><span class="nv"> </span><span class="s">In</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">case</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">carrier</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">named,</span>
-<span class="w">  </span><span class="s">the</span><span class="nv"> </span><span class="s">property</span><span class="nv"> </span><span class="s">*P16</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">specific</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">(was</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">for)*</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">indicate</span>
-<span class="w">  </span><span class="s">the</span><span class="nv"> </span><span class="s">instance(s)</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E18</span><span class="nv"> </span><span class="s">Physical</span><span class="nv"> </span><span class="s">Thing</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">was</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">empirical</span><span class="nv"> </span><span class="s">basis</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span>
-<span class="w">  </span><span class="s">attribute</span><span class="nv"> </span><span class="s">assignment.</span><span class="nv"> </span><span class="s">For</span><span class="nv"> </span><span class="s">instance,</span><span class="nv"> </span><span class="s">inferring</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">depicted</span><span class="nv"> </span><span class="s">items</span><span class="nv"> </span><span class="s">using</span>
-<span class="w">  </span><span class="s">image</span><span class="nv"> </span><span class="s">material,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">satellite</span><span class="nv"> </span><span class="s">images,</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">regarded</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E16</span>
-<span class="w">  </span><span class="s">Measurement,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">subsequent</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E13</span><span class="nv"> </span><span class="s">Attribute</span><span class="nv"> </span><span class="s">Assignment.</span><span class="nv"> </span><span class="s">Rather,</span><span class="nv"> </span><span class="s">only</span>
-<span class="w">  </span><span class="s">the</span><span class="nv"> </span><span class="s">production</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">images,</span><span class="nv"> </span><span class="s">understood</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">arrays</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">radiation</span><span class="nv"> </span><span class="s">intensities,</span><span class="nv"> </span><span class="s">is</span>
-<span class="w">  </span><span class="s">regarded</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E16</span><span class="nv"> </span><span class="s">Measurement.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">reasoning</span><span class="nv"> </span><span class="s">holds</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">sensor</span>
-<span class="w">  </span><span class="s">data.</span>
-
-<span class="w">  </span><span class="s">O</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`</span><span class="nv"> </span><span class="s">permite</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">representação</span><span class="nv"> </span><span class="s">textual</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação,</span>
-<span class="w">  </span><span class="s">caso</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">seja</span><span class="nv"> </span><span class="s">possível</span><span class="nv"> </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">individuais</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">precisão,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">seja</span><span class="nv"> </span><span class="s">preciso</span>
-<span class="w">  </span><span class="s">maior</span><span class="nv"> </span><span class="s">flexibilidade</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">explicar</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">dimensões.</span>
-
-<span class="w">  </span><span class="s">'</span>
+<span class="w">  </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">interest</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">overarching</span><span class="nv"> </span><span class="s">query.'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Regardless whether a measurement is made by an instrument or by human senses, it</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">represents the initial transition from physical reality to information without any</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">other documented information object in between within the reasoning chain that would</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">represent the result of the interaction of the observer or device with reality.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Therefore, determining properties of an instance of E90 Symbolic Object is regarded</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">as an instance of E13 Attribute Assignment, which may be inferred from observing</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">and measuring representative carriers. In the case that the carrier can be named,</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">the property *P16 used specific object (was used for)* should be used to indicate</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">the instance(s) of E18 Physical Thing that was used as the empirical basis for the</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">attribute assignment. For instance, inferring properties of depicted items using</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">image material, such as satellite images, is not regarded as an instance of E16</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Measurement, but as a subsequent instance of E13 Attribute Assignment. Rather, only</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">the production of the images, understood as arrays of radiation intensities, is</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">regarded as an instance of E16 Measurement. The same reasoning holds for other sensor</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">data.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="nt">close_mappings</span><span class="p">:</span>
+<span class="nt">related_mappings</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:format</span>
 <span class="nt">slots</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">format_extent</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
+<span class="nt">slot_usage</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">unit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">attributes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
+<span class="w">  </span><span class="nt">measurement_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_type</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'designa</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">natureza</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">medida</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">largura,</span><span class="nv"> </span><span class="s">altura,</span><span class="nv"> </span><span class="s">área,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">usar</span>
 <span class="w">      </span><span class="s">um</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">[tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">dimensões</span><span class="nv"> </span><span class="s">](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300226820)</span>
-<span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Architecture</span><span class="nv"> </span><span class="s">Thesaurus</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">Instituto</span><span class="nv"> </span><span class="s">Getty</span><span class="nv"> </span><span class="s">(AAT).</span>
+<span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Architecture</span><span class="nv"> </span><span class="s">Thesaurus</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">Instituto</span><span class="nv"> </span><span class="s">Getty</span><span class="nv"> </span><span class="s">(AAT),</span><span class="nv"> </span><span class="s">enquanto</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">tivermos</span>
+<span class="w">      </span><span class="s">um</span><span class="nv"> </span><span class="s">vocabulário</span><span class="nv"> </span><span class="s">controlado</span><span class="nv"> </span><span class="s">próprio.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementType(proper)</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StylePeriod</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HistoricPlace</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementType</span>
-<span class="w">  </span><span class="nt">value</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+<span class="w">  </span><span class="nt">measurement_value</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_value</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Valor numérico, usar ponto como separador decimal.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
@@ -571,22 +624,23 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
-<span class="w">  </span><span class="nt">qualifier</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qualifier</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Indica</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">são</span><span class="nv"> </span><span class="s">aproximadas</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">[qualificador</span><span class="nv"> </span><span class="s">do</span>
-<span class="w">      </span><span class="s">AAT](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=&amp;note=&amp;page=1&amp;subjectid=300435720)</span><span class="err"> </span><span class="s">;</span>
+<span class="w">  </span><span class="nt">measurement_qualifier</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_qualifier</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Indica</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">são</span><span class="nv"> </span><span class="s">aproximadas.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementQualifier(2)</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qualifier</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">  </span><span class="nt">shape</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shape</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementQualifier</span>
+<span class="w">  </span><span class="nt">measurement_shape</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_shape</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'caso</span><span class="nv"> </span><span class="s">relevante,</span><span class="nv"> </span><span class="s">indicar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">forma</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">elemento</span><span class="nv"> </span><span class="s">medido</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">[lista</span>
-<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">formas</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">AAT](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300056273).</span>
+<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">formas</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">AAT](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300056273),</span>
+<span class="w">      </span><span class="s">enquanto</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">tivermos</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">vocabulário</span><span class="nv"> </span><span class="s">controlado</span><span class="nv"> </span><span class="s">próprio.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
@@ -594,18 +648,47 @@
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shape</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="w">  </span><span class="nt">measurement_event</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_event</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Descreve</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ocasião</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">foram</span><span class="nv"> </span><span class="s">aferidas,</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">essa</span><span class="nv"> </span><span class="s">informação</span>
+<span class="w">      </span><span class="s">seja</span><span class="nv"> </span><span class="s">relevante</span><span class="nv"> </span><span class="s">(por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">âmbito</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">levantamento</span><span class="nv"> </span><span class="s">prévio</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">intervenções</span>
+<span class="w">      </span><span class="s">que</span><span class="nv"> </span><span class="s">alteraram</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">dimensões</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação).</span>
+
+<span class="w">      </span><span class="s">Referencia</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">cadastrado</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">`temporal`</span><span class="nv"> </span><span class="s">pelo</span><span class="nv"> </span><span class="s">seu</span><span class="nv"> </span><span class="s">`id`.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E16_Measurement</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'This</span><span class="nv"> </span><span class="s">class</span><span class="nv"> </span><span class="s">comprises</span><span class="nv"> </span><span class="s">actions</span><span class="nv"> </span><span class="s">measuring</span><span class="nv"> </span><span class="s">physical</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">other</span>
-<span class="w">  </span><span class="s">values</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">determined</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">systematic,</span><span class="nv"> </span><span class="s">objective</span><span class="nv"> </span><span class="s">procedure</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">direct</span><span class="nv"> </span><span class="s">observation</span>
-<span class="w">  </span><span class="s">of</span><span class="nv"> </span><span class="s">particular</span><span class="nv"> </span><span class="s">states</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">physical</span><span class="nv"> </span><span class="s">reality.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Informações</span><span class="nv"> </span><span class="s">estruturadas</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">dimensões</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">requisitos</span>
+<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">condicionamento</span><span class="nv"> </span><span class="s">ambiental</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">espaço</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">ele</span><span class="nv"> </span><span class="s">ocupa.</span><span class="nv"> </span><span class="s">Para</span><span class="nv"> </span><span class="s">edificações,</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">recomendável</span>
+<span class="w">  </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">menos</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">área</span><span class="nv"> </span><span class="s">útil,</span><span class="nv"> </span><span class="s">testada</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">altura</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">coroamento.</span>
 
-<span class="w">  </span><span class="s">An</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E16</span><span class="nv"> </span><span class="s">Measurement</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">simple</span><span class="nv"> </span><span class="s">counting</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">tools,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">yardsticks</span>
+<span class="w">  </span><span class="s">Se</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">modulação</span><span class="nv"> </span><span class="s">original</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">conhecida</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">puder</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">deduzida</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">estudo</span><span class="nv"> </span><span class="s">metrológico,</span>
+<span class="w">  </span><span class="s">é</span><span class="nv"> </span><span class="s">interessante</span><span class="nv"> </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">também</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">históricas</span><span class="nv"> </span><span class="s">utilizadas</span><span class="nv"> </span><span class="s">(por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">dimensões</span>
+<span class="w">  </span><span class="s">em</span><span class="nv"> </span><span class="s">palmos).</span>
+
+<span class="w">  </span><span class="s">O</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`</span><span class="nv"> </span><span class="s">permite</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">representação</span><span class="nv"> </span><span class="s">textual</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação,</span>
+<span class="w">  </span><span class="s">caso</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">seja</span><span class="nv"> </span><span class="s">viável</span><span class="nv"> </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">individuais</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">precisão,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">seja</span><span class="nv"> </span><span class="s">preciso</span>
+<span class="w">  </span><span class="s">maior</span><span class="nv"> </span><span class="s">flexibilidade</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">explicar</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">dimensões.</span>
+
+<span class="w">  </span><span class="s">'</span>
+<span class="nt">notes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This class comprises actions measuring physical properties and other values that</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">can be determined by a systematic, objective procedure of direct observation of</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">particular states of physical reality.</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E16</span><span class="nv"> </span><span class="s">Measurement</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">simple</span><span class="nv"> </span><span class="s">counting</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">tools,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">yardsticks</span>
 <span class="w">  </span><span class="s">or</span><span class="nv"> </span><span class="s">radiation</span><span class="nv"> </span><span class="s">detection</span><span class="nv"> </span><span class="s">devices.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">interest</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">method</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">care</span><span class="nv"> </span><span class="s">applied,</span>
 <span class="w">  </span><span class="s">so</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">reliability</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">result</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">judged</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">later</span><span class="nv"> </span><span class="s">stage,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">research</span>
 <span class="w">  </span><span class="s">continued</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">associated</span><span class="nv"> </span><span class="s">documents.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">event</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">important</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">dimensions,</span>
@@ -618,57 +701,48 @@
 <span class="w">  </span><span class="s">in</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E16</span><span class="nv"> </span><span class="s">Measurement</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">documented</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">these</span><span class="nv"> </span><span class="s">entities</span><span class="nv"> </span><span class="s">rather</span>
 <span class="w">  </span><span class="s">than</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">measurements</span><span class="nv"> </span><span class="s">themselves,</span><span class="nv"> </span><span class="s">whereas</span><span class="nv"> </span><span class="s">details</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">particular</span><span class="nv"> </span><span class="s">execution</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span>
 <span class="w">  </span><span class="s">documented</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">free</span><span class="nv"> </span><span class="s">text</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">instantiating</span><span class="nv"> </span><span class="s">adequate</span><span class="nv"> </span><span class="s">sub-activities,</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">detail</span>
-<span class="w">  </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">interest</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">overarching</span><span class="nv"> </span><span class="s">query.</span>
-
-<span class="w">  </span><span class="s">Regardless</span><span class="nv"> </span><span class="s">whether</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">measurement</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">made</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instrument</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">human</span><span class="nv"> </span><span class="s">senses,</span><span class="nv"> </span><span class="s">it</span>
-<span class="w">  </span><span class="s">represents</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">initial</span><span class="nv"> </span><span class="s">transition</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">physical</span><span class="nv"> </span><span class="s">reality</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">without</span><span class="nv"> </span><span class="s">any</span>
-<span class="w">  </span><span class="s">other</span><span class="nv"> </span><span class="s">documented</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">between</span><span class="nv"> </span><span class="s">within</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">reasoning</span><span class="nv"> </span><span class="s">chain</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">would</span>
-<span class="w">  </span><span class="s">represent</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">result</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">interaction</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">observer</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">device</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">reality.</span>
-<span class="w">  </span><span class="s">Therefore,</span><span class="nv"> </span><span class="s">determining</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E90</span><span class="nv"> </span><span class="s">Symbolic</span><span class="nv"> </span><span class="s">Object</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">regarded</span>
-<span class="w">  </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E13</span><span class="nv"> </span><span class="s">Attribute</span><span class="nv"> </span><span class="s">Assignment,</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">inferred</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">observing</span>
-<span class="w">  </span><span class="s">and</span><span class="nv"> </span><span class="s">measuring</span><span class="nv"> </span><span class="s">representative</span><span class="nv"> </span><span class="s">carriers.</span><span class="nv"> </span><span class="s">In</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">case</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">carrier</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">named,</span>
-<span class="w">  </span><span class="s">the</span><span class="nv"> </span><span class="s">property</span><span class="nv"> </span><span class="s">*P16</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">specific</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">(was</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">for)*</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">indicate</span>
-<span class="w">  </span><span class="s">the</span><span class="nv"> </span><span class="s">instance(s)</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E18</span><span class="nv"> </span><span class="s">Physical</span><span class="nv"> </span><span class="s">Thing</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">was</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">empirical</span><span class="nv"> </span><span class="s">basis</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span>
-<span class="w">  </span><span class="s">attribute</span><span class="nv"> </span><span class="s">assignment.</span><span class="nv"> </span><span class="s">For</span><span class="nv"> </span><span class="s">instance,</span><span class="nv"> </span><span class="s">inferring</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">depicted</span><span class="nv"> </span><span class="s">items</span><span class="nv"> </span><span class="s">using</span>
-<span class="w">  </span><span class="s">image</span><span class="nv"> </span><span class="s">material,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">satellite</span><span class="nv"> </span><span class="s">images,</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">regarded</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E16</span>
-<span class="w">  </span><span class="s">Measurement,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">subsequent</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E13</span><span class="nv"> </span><span class="s">Attribute</span><span class="nv"> </span><span class="s">Assignment.</span><span class="nv"> </span><span class="s">Rather,</span><span class="nv"> </span><span class="s">only</span>
-<span class="w">  </span><span class="s">the</span><span class="nv"> </span><span class="s">production</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">images,</span><span class="nv"> </span><span class="s">understood</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">arrays</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">radiation</span><span class="nv"> </span><span class="s">intensities,</span><span class="nv"> </span><span class="s">is</span>
-<span class="w">  </span><span class="s">regarded</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E16</span><span class="nv"> </span><span class="s">Measurement.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">reasoning</span><span class="nv"> </span><span class="s">holds</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">sensor</span>
-<span class="w">  </span><span class="s">data.</span>
-
-<span class="w">  </span><span class="s">O</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`</span><span class="nv"> </span><span class="s">permite</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">representação</span><span class="nv"> </span><span class="s">textual</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação,</span>
-<span class="w">  </span><span class="s">caso</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">seja</span><span class="nv"> </span><span class="s">possível</span><span class="nv"> </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">individuais</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">precisão,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">seja</span><span class="nv"> </span><span class="s">preciso</span>
-<span class="w">  </span><span class="s">maior</span><span class="nv"> </span><span class="s">flexibilidade</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">explicar</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">dimensões.</span>
-
-<span class="w">  </span><span class="s">'</span>
+<span class="w">  </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">interest</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">overarching</span><span class="nv"> </span><span class="s">query.'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Regardless whether a measurement is made by an instrument or by human senses, it</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">represents the initial transition from physical reality to information without any</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">other documented information object in between within the reasoning chain that would</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">represent the result of the interaction of the observer or device with reality.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Therefore, determining properties of an instance of E90 Symbolic Object is regarded</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">as an instance of E13 Attribute Assignment, which may be inferred from observing</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">and measuring representative carriers. In the case that the carrier can be named,</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">the property *P16 used specific object (was used for)* should be used to indicate</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">the instance(s) of E18 Physical Thing that was used as the empirical basis for the</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">attribute assignment. For instance, inferring properties of depicted items using</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">image material, such as satellite images, is not regarded as an instance of E16</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Measurement, but as a subsequent instance of E13 Attribute Assignment. Rather, only</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">the production of the images, understood as arrays of radiation intensities, is</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">regarded as an instance of E16 Measurement. The same reasoning holds for other sensor</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">data.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="nt">close_mappings</span><span class="p">:</span>
+<span class="nt">related_mappings</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:format</span>
+<span class="nt">slot_usage</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">unit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">attributes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
+<span class="w">  </span><span class="nt">measurement_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_type</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'designa</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">natureza</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">medida</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">largura,</span><span class="nv"> </span><span class="s">altura,</span><span class="nv"> </span><span class="s">área,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">usar</span>
 <span class="w">      </span><span class="s">um</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">[tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">dimensões</span><span class="nv"> </span><span class="s">](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300226820)</span>
-<span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Architecture</span><span class="nv"> </span><span class="s">Thesaurus</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">Instituto</span><span class="nv"> </span><span class="s">Getty</span><span class="nv"> </span><span class="s">(AAT).</span>
+<span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Architecture</span><span class="nv"> </span><span class="s">Thesaurus</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">Instituto</span><span class="nv"> </span><span class="s">Getty</span><span class="nv"> </span><span class="s">(AAT),</span><span class="nv"> </span><span class="s">enquanto</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">tivermos</span>
+<span class="w">      </span><span class="s">um</span><span class="nv"> </span><span class="s">vocabulário</span><span class="nv"> </span><span class="s">controlado</span><span class="nv"> </span><span class="s">próprio.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementType(proper)</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StylePeriod</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HistoricPlace</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementType</span>
-<span class="w">  </span><span class="nt">value</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
+<span class="w">  </span><span class="nt">measurement_value</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_value</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Valor numérico, usar ponto como separador decimal.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
@@ -679,23 +753,24 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
-<span class="w">  </span><span class="nt">qualifier</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qualifier</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Indica</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">são</span><span class="nv"> </span><span class="s">aproximadas</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">[qualificador</span><span class="nv"> </span><span class="s">do</span>
-<span class="w">      </span><span class="s">AAT](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=&amp;note=&amp;page=1&amp;subjectid=300435720)</span><span class="err"> </span><span class="s">;</span>
+<span class="w">  </span><span class="nt">measurement_qualifier</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_qualifier</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Indica</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">são</span><span class="nv"> </span><span class="s">aproximadas.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementQualifier(2)</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qualifier</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">  </span><span class="nt">shape</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shape</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementQualifier</span>
+<span class="w">  </span><span class="nt">measurement_shape</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_shape</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'caso</span><span class="nv"> </span><span class="s">relevante,</span><span class="nv"> </span><span class="s">indicar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">forma</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">elemento</span><span class="nv"> </span><span class="s">medido</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">[lista</span>
-<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">formas</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">AAT](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300056273).</span>
+<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">formas</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">AAT](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300056273),</span>
+<span class="w">      </span><span class="s">enquanto</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">tivermos</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">vocabulário</span><span class="nv"> </span><span class="s">controlado</span><span class="nv"> </span><span class="s">próprio.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
@@ -704,7 +779,41 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="w">  </span><span class="nt">measurement_event</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_event</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Descreve</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ocasião</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">medidas</span><span class="nv"> </span><span class="s">foram</span><span class="nv"> </span><span class="s">aferidas,</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">essa</span><span class="nv"> </span><span class="s">informação</span>
+<span class="w">      </span><span class="s">seja</span><span class="nv"> </span><span class="s">relevante</span><span class="nv"> </span><span class="s">(por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">âmbito</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">levantamento</span><span class="nv"> </span><span class="s">prévio</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">intervenções</span>
+<span class="w">      </span><span class="s">que</span><span class="nv"> </span><span class="s">alteraram</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">dimensões</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação).</span>
+
+<span class="w">      </span><span class="s">Referencia</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">cadastrado</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">`temporal`</span><span class="nv"> </span><span class="s">pelo</span><span class="nv"> </span><span class="s">seu</span><span class="nv"> </span><span class="s">`id`.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">unit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Unidade</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">medida</span><span class="nv"> </span><span class="s">usada</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">dimensionamento</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">representação,</span>
+<span class="w">      </span><span class="s">por</span><span class="nv"> </span><span class="s">exemplo</span><span class="nv"> </span><span class="s">metros,</span><span class="nv"> </span><span class="s">milímetros</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">palmos.</span><span class="nv"> </span><span class="s">Usar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">[hierarquia</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">unidades</span><span class="nv"> </span><span class="s">de</span>
+<span class="w">      </span><span class="s">medida](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300379096)</span>
+<span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">AAT,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">nosso</span><span class="nv"> </span><span class="s">próprio</span><span class="nv"> </span><span class="s">[vocabulário</span><span class="nv"> </span><span class="s">controlado].</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A human-readable description for a thing</span>
@@ -720,12 +829,10 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
@@ -748,7 +855,15 @@
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">bibliographic_citation</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Cadastro</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">bibliográfica.</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'📚</span><span class="nv">  </span><span class="s">Cadastro</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">bibliográfica.</span>
+
+<span class="w">      </span><span class="s">O</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`refid`</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">conter</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span><span class="nv"> </span><span class="s">(citation</span><span class="nv"> </span><span class="s">key)</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">consta</span><span class="nv"> </span><span class="s">do</span>
+<span class="w">      </span><span class="s">registro</span><span class="nv"> </span><span class="s">bibliográfico</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">biblioteca</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">nosso</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">pesquisa</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">Zotero,</span>
+<span class="w">      </span><span class="s">começando</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">arroba</span><span class="nv"> </span><span class="s">@.</span><span class="nv"> </span><span class="s">Em</span><span class="nv"> </span><span class="s">geral,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">DOI</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ISBN</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">publicação,</span>
+<span class="w">      </span><span class="s">mas</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">diferente.</span>
+
+<span class="w">      </span><span class="s">Se</span><span class="nv"> </span><span class="s">necessário,</span><span class="nv"> </span><span class="s">incluir</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`note`</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">especificação</span><span class="nv"> </span><span class="s">adicional,</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">número</span>
+<span class="w">      </span><span class="s">da</span><span class="nv"> </span><span class="s">página</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">bibliográfica</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">onde</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">informação</span><span class="nv"> </span><span class="s">foi</span><span class="nv"> </span><span class="s">extraída.</span>
 
 <span class="w">      </span><span class="s">Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">formatar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">referência,</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">formatação</span><span class="nv"> </span><span class="s">automática</span>
 <span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">Zotero</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">satisfatória.</span>
@@ -775,23 +890,6 @@
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">unit</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Unidade</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">medida</span><span class="nv"> </span><span class="s">usada</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">dimensionamento</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">representação,</span><span class="nv"> </span><span class="s">por</span>
-<span class="w">      </span><span class="s">exemplo</span><span class="nv"> </span><span class="s">metros</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">milímetros.</span><span class="nv"> </span><span class="s">Usar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">[hierarquia</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">unidades</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">medida](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300379096)</span>
-<span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">AAT,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">nosso</span><span class="nv"> </span><span class="s">próprio</span><span class="nv"> </span><span class="s">[vocabulário</span><span class="nv"> </span><span class="s">controlado].</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E16_Measurement</span>
 </code></pre></div>
 </details>

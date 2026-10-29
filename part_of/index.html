@@ -398,6 +398,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -475,9 +486,11 @@
 
 
 <h1 id="slot-part_of">Slot: part_of</h1>
+<p><em>Permite identificar o contexto geográfico ou administrativo ao qual a edificação se subordina, ou ainda um conjunto arquitetônico, urbanístico ou conceitual (por exemplo, uma série de casas) do qual ela faz parte.</em></p>
+<p><em>---------------------------------------------------------------------</em></p>
 <p><em>A set of structured information about a place that is the broader context for the place in focus, such as the district, state, or nation to which a city belongs.</em></p>
 <div>
-<p>URI: <a href="http://www.lido-schema.org/partOfPlace">lido:partOfPlace</a></p>
+<p>URI: <a href="http://purl.org/dc/terms/isPartOf">dcterms:isPartOf</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -491,7 +504,7 @@
 <tbody>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>An historical landmark or building</td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -508,7 +521,7 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../GeonamesId/">GeonamesId</a></td>
+<td><a href="../TypedReference/">TypedReference</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
@@ -516,14 +529,29 @@
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="http://www.lido-schema.org/partOfPlace">lido:partOfPlace</a></td>
+<td><a href="http://purl.org/dc/terms/isPartOf">dcterms:isPartOf</a></td>
 </tr>
 <tr>
-<td>### Slot Characteristics</td>
+<td>### Cardinality and Requirements</td>
 <td></td>
 </tr>
 </tbody>
 </table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multivalued</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
 <table>
 <thead>
 <tr>
@@ -554,7 +582,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>lido:partOfPlace</td>
+<td>dcterms:isPartOf</td>
 </tr>
 <tr>
 <td>native</td>
@@ -565,16 +593,24 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">part_of</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A set of structured information about a place that is the broader context</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">for the place in focus, such as the district, state, or nation to which a city belongs.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Permite</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">geográfico</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">administrativo</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">qual</span>
+<span class="w">  </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">subordina,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ainda</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">conjunto</span><span class="nv"> </span><span class="s">arquitetônico,</span><span class="nv"> </span><span class="s">urbanístico</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">conceitual</span>
+<span class="w">  </span><span class="s">(por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">série</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">casas)</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">ela</span><span class="nv"> </span><span class="s">faz</span><span class="nv"> </span><span class="s">parte.</span>
+
+<span class="w">  </span><span class="s">---------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="s">A</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">place</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">broader</span><span class="nv"> </span><span class="s">context</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span>
+<span class="w">  </span><span class="s">place</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">focus,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">district,</span><span class="nv"> </span><span class="s">state,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">nation</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">city</span><span class="nv"> </span><span class="s">belongs.'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:partOfPlace</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:isPartOf</span>
 <span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesId</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>

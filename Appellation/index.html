@@ -293,7 +293,7 @@
 
 
 
-      Appellation : description
+      Appellation : label
 
       Appellation : title_preference
 
@@ -301,7 +301,7 @@
 
 
 
-        Appellation --&gt; "1" LabelType : title_preference
+        Appellation --&gt; "0..1" LabelType : title_preference
         click LabelType href "../LabelType/"
 
 
@@ -312,7 +312,7 @@
 
 
 
-        Appellation --&gt; "1" TitleType : title_type
+        Appellation --&gt; "0..1" TitleType : title_type
         click TitleType href "../TitleType/"
 
 
@@ -331,27 +331,27 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../title_type/">title_type</a></td>
-<td>1 <br/> <a href="../TitleType/">TitleType</a></td>
-<td>Indica se o título é um nome próprio, descritivo, etc</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../bibliographic_citation/">bibliographic_citation</a></td>
 <td>* <em>recommended</em> <br/> <a href="../BibliographicCitation/">BibliographicCitation</a></td>
-<td>Cadastro de uma referência bibliográfica</td>
+<td>📚  Cadastro de uma referência bibliográfica</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../title_preference/">title_preference</a></td>
-<td>1 <br/> <a href="../LabelType/">LabelType</a></td>
+<td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
 <td>Indica se o nome em questão deve ser oculto ou não, se é uma versão alternati...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../label/">label</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nome ou título (texto sem formatação)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../title_type/">title_type</a></td>
+<td>0..1 <br/> <a href="../TitleType/">TitleType</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -442,8 +442,6 @@
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">slots</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title_type</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">title_preference</span><span class="p">:</span>
@@ -452,11 +450,28 @@
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">alternativa ou uma variante de grafia, etc.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LabelType(alternative)</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">label_type</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LabelType</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">label</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">label</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nome ou título (texto sem formatação).</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">title_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title_type</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TitleType(descriptive)</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TitleType</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
@@ -470,51 +485,42 @@
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">alternativa ou uma variante de grafia, etc.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LabelType(alternative)</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">label_type</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LabelType</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">description</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A human-readable description for a thing</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:description</span>
+<span class="w">  </span><span class="nt">label</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">label</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nome ou título (texto sem formatação).</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:description</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">display</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">  </span><span class="nt">title_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title_type</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Indica se o título é um nome próprio, descritivo, etc.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TitleType(descriptive)</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TitleType</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">bibliographic_citation</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Cadastro</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">bibliográfica.</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'📚</span><span class="nv">  </span><span class="s">Cadastro</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">bibliográfica.</span>
+
+<span class="w">      </span><span class="s">O</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`refid`</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">conter</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span><span class="nv"> </span><span class="s">(citation</span><span class="nv"> </span><span class="s">key)</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">consta</span><span class="nv"> </span><span class="s">do</span>
+<span class="w">      </span><span class="s">registro</span><span class="nv"> </span><span class="s">bibliográfico</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">biblioteca</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">nosso</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">pesquisa</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">Zotero,</span>
+<span class="w">      </span><span class="s">começando</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">arroba</span><span class="nv"> </span><span class="s">@.</span><span class="nv"> </span><span class="s">Em</span><span class="nv"> </span><span class="s">geral,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">DOI</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ISBN</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">publicação,</span>
+<span class="w">      </span><span class="s">mas</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">diferente.</span>
+
+<span class="w">      </span><span class="s">Se</span><span class="nv"> </span><span class="s">necessário,</span><span class="nv"> </span><span class="s">incluir</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`note`</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">especificação</span><span class="nv"> </span><span class="s">adicional,</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">número</span>
+<span class="w">      </span><span class="s">da</span><span class="nv"> </span><span class="s">página</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">bibliográfica</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">onde</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">informação</span><span class="nv"> </span><span class="s">foi</span><span class="nv"> </span><span class="s">extraída.</span>
 
 <span class="w">      </span><span class="s">Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">formatar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">referência,</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">formatação</span><span class="nv"> </span><span class="s">automática</span>
 <span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">Zotero</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">satisfatória.</span>

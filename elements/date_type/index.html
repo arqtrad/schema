@@ -486,7 +486,7 @@
 
 
 <h1 id="slot-date_type">Slot: date_type</h1>
-<p><em>An attribute for the kind of latest date, whether it is, for instance, exact or estimated.</em></p>
+<p><em>Qualifica a confiabilidade da data como sendo conhecida ou estimada. A confiabilidade independe do grau de precisão da data.</em></p>
 <p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/date_type">wasth:date_type</a>
@@ -503,8 +503,8 @@ Alias: type</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../DateRange/">DateRange</a></td>
-<td></td>
+<td><a href="../EventDate/">EventDate</a></td>
+<td>Expressão complexa de uma data que pode se referir ao começo ou ao término de...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -521,11 +521,11 @@ Alias: type</p>
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../DateQualifier/">DateQualifier</a></td>
+<td><a href="../DateType/">DateType</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../DateRange/">DateRange</a></td>
+<td><a href="../EventDate/">EventDate</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -558,7 +558,7 @@ Alias: type</p>
 <tbody>
 <tr>
 <td>Owner</td>
-<td><a href="../DateRange/">DateRange</a></td>
+<td><a href="../EventDate/">EventDate</a></td>
 </tr>
 </tbody>
 </table>
@@ -589,17 +589,17 @@ Alias: type</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date_type</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">attribute</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">kind</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">latest</span><span class="nv"> </span><span class="s">date,</span><span class="nv"> </span><span class="s">whether</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is,</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">instance,</span>
-<span class="w">  </span><span class="s">exact</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">estimated.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Qualifica</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">confiabilidade</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">sendo</span><span class="nv"> </span><span class="s">conhecida</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">estimada.</span>
+<span class="w">  </span><span class="s">A</span><span class="nv"> </span><span class="s">confiabilidade</span><span class="nv"> </span><span class="s">independe</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">grau</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">precisão</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">data.</span>
 
 <span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateRange</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateRange</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateQualifier</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateType</span>
 <span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>

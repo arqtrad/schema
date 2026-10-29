@@ -398,17 +398,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#slot-characteristics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slot Characteristics
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -486,6 +475,8 @@
 
 
 <h1 id="slot-culture">Slot: culture</h1>
+<p><em>Designa o contexto cultural ou étnico no qual o objeto foi afetado pelo evento em questão, desde que as características de tal contexto estejam refletidas no objeto. O preenchimento do contexto cultural é especialmente relevante quando os agentes envolvidos na produção ou alteração do objeto são desconhecidos.</em></p>
+<p><em>---------------------------------------------------------------------</em></p>
 <p><em>An index element for the cultural context from which the object/work in focus originated. Used if the creator or producer is unknown, or if the cultural context is of particular interest. Examples may include the name of a culture, a nation, or an ethnic group.</em></p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/culture">wasth:culture</a></p>
@@ -502,7 +493,12 @@
 <tbody>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Work/">Work</a></td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -523,7 +519,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Event/">Event</a></td>
+<td><a href="../Event/">Event</a>, <a href="../Work/">Work</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -542,21 +538,6 @@
 <tr>
 <td>Multivalued</td>
 <td>Yes</td>
-</tr>
-</tbody>
-</table>
-<h3 id="slot-characteristics">Slot Characteristics</h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Owner</td>
-<td><a href="../Event/">Event</a></td>
 </tr>
 </tbody>
 </table>
@@ -587,15 +568,21 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">culture</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An index element for the cultural context from which the object/work</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">in focus originated. Used if the creator or producer is unknown, or if the cultural</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">context is of particular interest. Examples may include the name of a culture, a</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">nation, or an ethnic group.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Designa</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">cultural</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">étnico</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">foi</span><span class="nv"> </span><span class="s">afetado</span><span class="nv"> </span><span class="s">pelo</span>
+<span class="w">  </span><span class="s">evento</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">questão,</span><span class="nv"> </span><span class="s">desde</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">características</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">tal</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">estejam</span><span class="nv"> </span><span class="s">refletidas</span>
+<span class="w">  </span><span class="s">no</span><span class="nv"> </span><span class="s">objeto.</span><span class="nv"> </span><span class="s">O</span><span class="nv"> </span><span class="s">preenchimento</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">cultural</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">especialmente</span><span class="nv"> </span><span class="s">relevante</span><span class="nv"> </span><span class="s">quando</span>
+<span class="w">  </span><span class="s">os</span><span class="nv"> </span><span class="s">agentes</span><span class="nv"> </span><span class="s">envolvidos</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">produção</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">alteração</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">são</span><span class="nv"> </span><span class="s">desconhecidos.</span>
+
+<span class="w">  </span><span class="s">---------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="s">An</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">cultural</span><span class="nv"> </span><span class="s">context</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">object/work</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">focus</span><span class="nv"> </span><span class="s">originated.</span>
+<span class="w">  </span><span class="s">Used</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">creator</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">producer</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">unknown,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">cultural</span><span class="nv"> </span><span class="s">context</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">particular</span>
+<span class="w">  </span><span class="s">interest.</span><span class="nv"> </span><span class="s">Examples</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">include</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">name</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">culture,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">nation,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">ethnic</span><span class="nv"> </span><span class="s">group.'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

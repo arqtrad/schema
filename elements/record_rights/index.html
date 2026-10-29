@@ -486,9 +486,10 @@
 
 
 <h1 id="slot-record_rights">Slot: record_rights</h1>
-<p><em>A set of structured information about rights regarding the content provided in this LIDO record.</em></p>
+<p><em>Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha.</em></p>
+<p><em>⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.</em></p>
 <p><em>---------------------------------------------------------------------</em></p>
-<p><em>:warning: Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.</em></p>
+<p><em>A set of structured information about rights regarding the content provided in this LIDO record.</em></p>
 <p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/record_rights">wasth:record_rights</a></p>
@@ -505,7 +506,7 @@
 <tbody>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
+<td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -515,12 +516,12 @@
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
+<td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
 <td>no</td>
 </tr>
 <tr>
@@ -530,12 +531,12 @@
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>An historical landmark or building</td>
-<td>no</td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
-<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -572,10 +573,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Required</td>
-<td>Yes</td>
-</tr>
 <tr>
 <td>Multivalued</td>
 <td>Yes</td>
@@ -624,13 +621,16 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_rights</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">rights</span><span class="nv"> </span><span class="s">regarding</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">provided</span>
-<span class="w">  </span><span class="s">in</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">record.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Informações</span><span class="nv"> </span><span class="s">estruturadas</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">incidem</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">conteúdo</span>
+<span class="w">  </span><span class="s">textual</span><span class="nv"> </span><span class="s">desta</span><span class="nv"> </span><span class="s">ficha.</span>
+
+<span class="w">  </span><span class="s">⚠️</span><span class="nv">  </span><span class="s">Este</span><span class="nv"> </span><span class="s">grupo</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">refere</span><span class="nv"> </span><span class="s">aos</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">CONTEÚDO</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha,</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">direitos</span>
+<span class="w">  </span><span class="s">incidentes</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">descrito.</span>
 
 <span class="w">  </span><span class="s">---------------------------------------------------------------------</span>
 
-<span class="w">  </span><span class="s">:warning:</span><span class="nv"> </span><span class="s">Este</span><span class="nv"> </span><span class="s">grupo</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">refere</span><span class="nv"> </span><span class="s">aos</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">CONTEÚDO</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha,</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">sobre</span>
-<span class="w">  </span><span class="s">os</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">incidentes</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">descrito.</span>
+<span class="w">  </span><span class="s">A</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">rights</span><span class="nv"> </span><span class="s">regarding</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">provided</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">this</span>
+<span class="w">  </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">record.</span>
 
 <span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
@@ -639,7 +639,6 @@
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
-<span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

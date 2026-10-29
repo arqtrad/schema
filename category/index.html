@@ -486,9 +486,12 @@
 
 
 <h1 id="slot-category">Slot: category</h1>
+<p><em>Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.</em></p>
+<p><em>Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com <code>term:lido00096</code> ("Objeto manufaturado").</em></p>
+<p><em>No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com <code>term:lido01193</code> ("Objeto conceitual").</em></p>
+<p><em>---------------------------------------------------------------------</em></p>
 <p><em>The LIDO Category Vocabulary is a structured controlled list of terms recommended to use as values in the LIDO Category element.</em></p>
 <p><em>Examples are human-made object or natural object.</em></p>
-<p><em>Nos documentários de edificações, preencher este campo obrigatoriamente com <code>term:lido00096</code></em></p>
 <div>
 <p>URI: <a href="http://terminology.lido-schema.org/lidoCategory">term:lidoCategory</a></p>
 <!-- no inheritance hierarchy -->
@@ -504,7 +507,7 @@
 <tbody>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
+<td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -514,12 +517,12 @@
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
+<td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
 <td>no</td>
 </tr>
 <tr>
@@ -529,12 +532,12 @@
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>An historical landmark or building</td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>yes</td>
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
-<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -627,12 +630,21 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">category</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">Category</span><span class="nv"> </span><span class="s">Vocabulary</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">controlled</span><span class="nv"> </span><span class="s">list</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">terms</span>
-<span class="w">  </span><span class="s">recommended</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">values</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">Category</span><span class="nv"> </span><span class="s">element.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Uma</span><span class="nv"> </span><span class="s">classificação</span><span class="nv"> </span><span class="s">ampla</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">descrito</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">ficha,</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">vocabulário</span>
+<span class="w">  </span><span class="s">controlado</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">LIDO.</span>
 
-<span class="w">  </span><span class="s">Examples</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">human-made</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">natural</span><span class="nv"> </span><span class="s">object.</span>
+<span class="w">  </span><span class="s">Nos</span><span class="nv"> </span><span class="s">documentários</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">edificações,</span><span class="nv"> </span><span class="s">preencher</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">OBRIGATORIAMENTE</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">`term:lido00096`</span>
+<span class="w">  </span><span class="s">("Objeto</span><span class="nv"> </span><span class="s">manufaturado").</span>
 
-<span class="w">  </span><span class="s">Nos</span><span class="nv"> </span><span class="s">documentários</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">edificações,</span><span class="nv"> </span><span class="s">preencher</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">obrigatoriamente</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">`term:lido00096`'</span>
+<span class="w">  </span><span class="s">No</span><span class="nv"> </span><span class="s">vocabulário</span><span class="nv"> </span><span class="s">controlado,</span><span class="nv"> </span><span class="s">preencher</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">OBRIGATORIAMENTE</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">`term:lido01193`</span>
+<span class="w">  </span><span class="s">("Objeto</span><span class="nv"> </span><span class="s">conceitual").</span>
+
+<span class="w">  </span><span class="s">---------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="s">The</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">Category</span><span class="nv"> </span><span class="s">Vocabulary</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">controlled</span><span class="nv"> </span><span class="s">list</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">terms</span><span class="nv"> </span><span class="s">recommended</span>
+<span class="w">  </span><span class="s">to</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">values</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">Category</span><span class="nv"> </span><span class="s">element.</span>
+
+<span class="w">  </span><span class="s">Examples</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">human-made</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">natural</span><span class="nv"> </span><span class="s">object.'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lidoCategory</span>

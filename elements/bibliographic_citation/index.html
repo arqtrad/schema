@@ -475,7 +475,9 @@
 
 
 <h1 id="slot-bibliographic_citation">Slot: bibliographic_citation</h1>
-<p><em>Cadastro de uma referência bibliográfica.</em></p>
+<p><em>📚  Cadastro de uma referência bibliográfica.</em></p>
+<p><em>O campo <code>refid</code> deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.</em></p>
+<p><em>Se necessário, incluir no campo <code>note</code> uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.</em></p>
 <p><em>Usar o campo <code>description</code> para formatar a referência, caso a formatação automática do Zotero não for satisfatória.</em></p>
 <p>__</p>
 <div>
@@ -498,7 +500,7 @@
 </tr>
 <tr>
 <td><a href="../RelatedObject/">RelatedObject</a></td>
-<td>As formas mais comuns de relação no nosso projeto são :</td>
+<td>A wrapper for identifying information about an object or work, including coll...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -508,12 +510,12 @@
 </tr>
 <tr>
 <td><a href="../TypedReference/">TypedReference</a></td>
-<td>Reference to a local record, IRI, URI, or LIDO terminology term</td>
+<td>Permite referenciar um registro local ou externo por meio da sua URI (localiz...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Measurement/">Measurement</a></td>
-<td>This class comprises actions measuring physical properties and other values t...</td>
+<td>Informações estruturadas sobre as dimensões do objeto ou requisitos de condic...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -523,7 +525,7 @@
 </tr>
 <tr>
 <td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
+<td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
 <td>no</td>
 </tr>
 <tr>
@@ -548,12 +550,27 @@
 </tr>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
+<td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../BroaderConceptReference/">BroaderConceptReference</a></td>
+<td>Relações hierárquicas</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NarrowerConceptReference/">NarrowerConceptReference</a></td>
+<td>Relações hierárquicas</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MappingConceptReference/">MappingConceptReference</a></td>
+<td>Relações semânticas</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../RelatedWork/">RelatedWork</a></td>
-<td>A wrapper for identifying information about an object or work, including coll...</td>
+<td>As formas mais comuns de relação no nosso projeto são :</td>
 <td>no</td>
 </tr>
 <tr>
@@ -568,7 +585,7 @@
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -583,12 +600,12 @@
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>An historical landmark or building</td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
-<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -666,7 +683,15 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Cadastro</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">bibliográfica.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'📚</span><span class="nv">  </span><span class="s">Cadastro</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">bibliográfica.</span>
+
+<span class="w">  </span><span class="s">O</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`refid`</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">conter</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span><span class="nv"> </span><span class="s">(citation</span><span class="nv"> </span><span class="s">key)</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">consta</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">registro</span>
+<span class="w">  </span><span class="s">bibliográfico</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">biblioteca</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">nosso</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">pesquisa</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">Zotero,</span><span class="nv"> </span><span class="s">começando</span><span class="nv"> </span><span class="s">com</span>
+<span class="w">  </span><span class="s">arroba</span><span class="nv"> </span><span class="s">@.</span><span class="nv"> </span><span class="s">Em</span><span class="nv"> </span><span class="s">geral,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">DOI</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ISBN</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">publicação,</span><span class="nv"> </span><span class="s">mas</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span>
+<span class="w">  </span><span class="s">diferente.</span>
+
+<span class="w">  </span><span class="s">Se</span><span class="nv"> </span><span class="s">necessário,</span><span class="nv"> </span><span class="s">incluir</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`note`</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">especificação</span><span class="nv"> </span><span class="s">adicional,</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">número</span>
+<span class="w">  </span><span class="s">da</span><span class="nv"> </span><span class="s">página</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">bibliográfica</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">onde</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">informação</span><span class="nv"> </span><span class="s">foi</span><span class="nv"> </span><span class="s">extraída.</span>
 
 <span class="w">  </span><span class="s">Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">formatar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">referência,</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">formatação</span><span class="nv"> </span><span class="s">automática</span>
 <span class="w">  </span><span class="s">do</span><span class="nv"> </span><span class="s">Zotero</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">satisfatória.</span>

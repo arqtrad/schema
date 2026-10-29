@@ -486,10 +486,7 @@
 
 
 <h1 id="slot-title_source">Slot: title_source</h1>
-<p><em>📚 A fonte do título title_source é opcional ; um título pode ser atestado em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa com um hífen).</em></p>
-<p><em>Se a fonte for cadastrada, o campo <code>refid</code> deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.</em></p>
-<p><em>Se necessário, incluir no campo note uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.</em></p>
-<p><em>Todos os campos source no restante da ficha devem ser preenchidos do mesmo modo. (Equivalente DublinCore: bibliographiCitation).</em></p>
+<p><em>A fonte do título title_source é opcional ; um título pode ser atestado em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa com um hífen).</em></p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/title_source">wasth:title_source</a></p>
 <!-- no inheritance hierarchy -->
@@ -505,7 +502,7 @@
 <tbody>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
+<td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -515,12 +512,12 @@
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
+<td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
 <td>no</td>
 </tr>
 <tr>
@@ -530,12 +527,12 @@
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>An historical landmark or building</td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
-<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -620,20 +617,9 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title_source</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'📚</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">fonte</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">título</span><span class="nv"> </span><span class="s">title_source</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">opcional</span><span class="nv"> </span><span class="s">;</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">título</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">atestado</span>
-<span class="w">  </span><span class="s">em</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">fonte,</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">isso</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">itens</span><span class="nv"> </span><span class="s">(cada</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">começa</span>
-<span class="w">  </span><span class="s">com</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">hífen).</span>
-
-<span class="w">  </span><span class="s">Se</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">fonte</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">cadastrada,</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`refid`</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">conter</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span><span class="nv"> </span><span class="s">(citation</span>
-<span class="w">  </span><span class="s">key)</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">consta</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">registro</span><span class="nv"> </span><span class="s">bibliográfico</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">biblioteca</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">nosso</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">pesquisa</span>
-<span class="w">  </span><span class="s">no</span><span class="nv"> </span><span class="s">Zotero.</span><span class="nv"> </span><span class="s">Em</span><span class="nv"> </span><span class="s">geral,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">DOI</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ISBN</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">publicação,</span><span class="nv"> </span><span class="s">mas</span><span class="nv"> </span><span class="s">pode</span>
-<span class="w">  </span><span class="s">ser</span><span class="nv"> </span><span class="s">diferente.</span>
-
-<span class="w">  </span><span class="s">Se</span><span class="nv"> </span><span class="s">necessário,</span><span class="nv"> </span><span class="s">incluir</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">note</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">especificação</span><span class="nv"> </span><span class="s">adicional,</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">número</span>
-<span class="w">  </span><span class="s">da</span><span class="nv"> </span><span class="s">página</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">bibliográfica</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">onde</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">informação</span><span class="nv"> </span><span class="s">foi</span><span class="nv"> </span><span class="s">extraída.</span>
-
-<span class="w">  </span><span class="s">Todos</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">campos</span><span class="nv"> </span><span class="s">source</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">restante</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">devem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">preenchidos</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">mesmo</span><span class="nv"> </span><span class="s">modo.</span>
-<span class="w">  </span><span class="s">(Equivalente</span><span class="nv"> </span><span class="s">DublinCore:</span><span class="nv"> </span><span class="s">bibliographiCitation).'</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A fonte do título title_source é opcional ; um título pode ser atestado</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">com um hífen).</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>

@@ -398,8 +398,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
   
 </li>
       
@@ -411,6 +433,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Source
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -458,8 +497,11 @@
 
 
 <h1 id="slot-collection">Slot: collection</h1>
+<p><em>Descreve conjuntos conceituais nos quais a edificação foi incluída, por exemplo catálogos raisonnés, obras de referência, exposições, ou agrupamentos <em>ad-hoc</em> para formar coleções temáticas de acordo com as necessidades do projeto de investigação.</em></p>
+<p><em>Para o pertencimento a perímetros de sítios históricos tombados/classificados, preencher o grupo <code>identifiers</code>. Para a identificação de proprietários ou responsáveis, preencher o grupo <code>work_rights</code>.</em></p>
+<p>__</p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/collection">wasth:collection</a></p>
+<p>URI: <a href="http://www.lido-schema.org/collection">lido:collection</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -472,38 +514,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Resource/">Resource</a></td>
-<td>This class comprises identifiable immaterial items that make propositions abo...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Repository/">Repository</a></td>
-<td>Entidade com existência jurídica e espacial</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../Work/">Work</a></td>
-<td>An historical landmark or building</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Site/">Site</a></td>
-<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -520,15 +532,61 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../String/">String</a></td>
+<td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Thing/">Thing</a>, <a href="../Work/">Work</a></td>
+<td><a href="../Work/">Work</a></td>
+</tr>
+<tr>
+<td>Slot URI</td>
+<td><a href="http://www.lido-schema.org/collection">lido:collection</a></td>
+</tr>
+<tr>
+<td>### Cardinality and Requirements</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multivalued</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td><a href="../Work/">Work</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>A set of identifying and indexing information about the collection the object/work in focus is gathered into or is a member of.
+Collection applies to any accumulated group of physical or digital items, conceptually or physically brought together on the basis of a focal characteristic. Use cases for grouping items into a collection are various and may span curated holdings in museums, departmental collections, sets of items to be displayed in an exhibition, or aggregations bound informally for cataloging and retrieval purposes.</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: <a href="https://tradicional.arq.br/schema">https://tradicional.arq.br/schema</a></li>
+</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -540,7 +598,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:collection</td>
+<td>lido:collection</td>
 </tr>
 <tr>
 <td>native</td>
@@ -551,10 +609,34 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">collection</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Descreve</span><span class="nv"> </span><span class="s">conjuntos</span><span class="nv"> </span><span class="s">conceituais</span><span class="nv"> </span><span class="s">nos</span><span class="nv"> </span><span class="s">quais</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">foi</span><span class="nv"> </span><span class="s">incluída,</span>
+<span class="w">  </span><span class="s">por</span><span class="nv"> </span><span class="s">exemplo</span><span class="nv"> </span><span class="s">catálogos</span><span class="nv"> </span><span class="s">raisonnés,</span><span class="nv"> </span><span class="s">obras</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">referência,</span><span class="nv"> </span><span class="s">exposições,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">agrupamentos</span>
+<span class="w">  </span><span class="s">*ad-hoc*</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">formar</span><span class="nv"> </span><span class="s">coleções</span><span class="nv"> </span><span class="s">temáticas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">acordo</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">necessidades</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">projeto</span>
+<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">investigação.</span>
+
+<span class="w">  </span><span class="s">Para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">pertencimento</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">perímetros</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">sítios</span><span class="nv"> </span><span class="s">históricos</span><span class="nv"> </span><span class="s">tombados/classificados,</span><span class="nv"> </span><span class="s">preencher</span>
+<span class="w">  </span><span class="s">o</span><span class="nv"> </span><span class="s">grupo</span><span class="nv"> </span><span class="s">`identifiers`.</span><span class="nv"> </span><span class="s">Para</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">identificação</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">proprietários</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">responsáveis,</span><span class="nv"> </span><span class="s">preencher</span>
+<span class="w">  </span><span class="s">o</span><span class="nv"> </span><span class="s">grupo</span><span class="nv"> </span><span class="s">`work_rights`.</span>
+
+<span class="w">  </span><span class="s">'</span>
+<span class="nt">notes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">identifying</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">indexing</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">collection</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">object/work</span>
+<span class="w">  </span><span class="s">in</span><span class="nv"> </span><span class="s">focus</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">gathered</span><span class="nv"> </span><span class="s">into</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">member</span><span class="nv"> </span><span class="s">of.</span>
+
+<span class="w">  </span><span class="s">Collection</span><span class="nv"> </span><span class="s">applies</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">any</span><span class="nv"> </span><span class="s">accumulated</span><span class="nv"> </span><span class="s">group</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">physical</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">digital</span><span class="nv"> </span><span class="s">items,</span><span class="nv"> </span><span class="s">conceptually</span>
+<span class="w">  </span><span class="s">or</span><span class="nv"> </span><span class="s">physically</span><span class="nv"> </span><span class="s">brought</span><span class="nv"> </span><span class="s">together</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">basis</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">focal</span><span class="nv"> </span><span class="s">characteristic.</span><span class="nv"> </span><span class="s">Use</span><span class="nv"> </span><span class="s">cases</span>
+<span class="w">  </span><span class="s">for</span><span class="nv"> </span><span class="s">grouping</span><span class="nv"> </span><span class="s">items</span><span class="nv"> </span><span class="s">into</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">collection</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">various</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">span</span><span class="nv"> </span><span class="s">curated</span><span class="nv"> </span><span class="s">holdings</span><span class="nv"> </span><span class="s">in</span>
+<span class="w">  </span><span class="s">museums,</span><span class="nv"> </span><span class="s">departmental</span><span class="nv"> </span><span class="s">collections,</span><span class="nv"> </span><span class="s">sets</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">items</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">displayed</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">exhibition,</span>
+<span class="w">  </span><span class="s">or</span><span class="nv"> </span><span class="s">aggregations</span><span class="nv"> </span><span class="s">bound</span><span class="nv"> </span><span class="s">informally</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">cataloging</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">retrieval</span><span class="nv"> </span><span class="s">purposes.'</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:collection</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 </details>
 </div>

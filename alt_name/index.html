@@ -486,8 +486,8 @@
 
 
 <h1 id="slot-alt_name">Slot: alt_name</h1>
-<p><em>O bloco <code>alt_name</code> permite cadastrar outros nomes pelos quais a edificação será eventualmente conhecida. É uma lista opcional de itens, e se existir, os campos de cada item da lista devem ser preenchidos como os do título principal.</em></p>
-<p><em>O campo <code>description</code> de cada item contém o texto do título (nome).</em></p>
+<p><em>O bloco <code>alt_name</code> permite cadastrar outros nomes pelos quais o objeto ou conceito será eventualmente conhecido. É uma lista opcional de itens, e se existir, os campos de cada item da lista devem ser preenchidos como os do título principal.</em></p>
+<p><em>O campo <code>label</code> ou <code>description</code> de cada item contém o texto do título (nome).</em></p>
 <p><em>Este bloco pode ser omitido por completo se não houver títulos alternativos.</em></p>
 <p>__</p>
 <div>
@@ -505,7 +505,7 @@
 <tbody>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
+<td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -515,12 +515,12 @@
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
+<td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
 <td>no</td>
 </tr>
 <tr>
@@ -530,12 +530,12 @@
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>An historical landmark or building</td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
-<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -620,11 +620,11 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alt_name</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'O</span><span class="nv"> </span><span class="s">bloco</span><span class="nv"> </span><span class="s">`alt_name`</span><span class="nv"> </span><span class="s">permite</span><span class="nv"> </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">outros</span><span class="nv"> </span><span class="s">nomes</span><span class="nv"> </span><span class="s">pelos</span><span class="nv"> </span><span class="s">quais</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span>
-<span class="w">  </span><span class="s">será</span><span class="nv"> </span><span class="s">eventualmente</span><span class="nv"> </span><span class="s">conhecida.</span><span class="nv"> </span><span class="s">É</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">opcional</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">itens,</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">existir,</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">campos</span>
-<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">devem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">preenchidos</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">título</span><span class="nv"> </span><span class="s">principal.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'O</span><span class="nv"> </span><span class="s">bloco</span><span class="nv"> </span><span class="s">`alt_name`</span><span class="nv"> </span><span class="s">permite</span><span class="nv"> </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">outros</span><span class="nv"> </span><span class="s">nomes</span><span class="nv"> </span><span class="s">pelos</span><span class="nv"> </span><span class="s">quais</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span>
+<span class="w">  </span><span class="s">ou</span><span class="nv"> </span><span class="s">conceito</span><span class="nv"> </span><span class="s">será</span><span class="nv"> </span><span class="s">eventualmente</span><span class="nv"> </span><span class="s">conhecido.</span><span class="nv"> </span><span class="s">É</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">opcional</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">itens,</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">existir,</span>
+<span class="w">  </span><span class="s">os</span><span class="nv"> </span><span class="s">campos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">devem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">preenchidos</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">título</span><span class="nv"> </span><span class="s">principal.</span>
 
-<span class="w">  </span><span class="s">O</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">contém</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">texto</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">título</span><span class="nv"> </span><span class="s">(nome).</span>
+<span class="w">  </span><span class="s">O</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`label`</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">`description`</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">contém</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">texto</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">título</span><span class="nv"> </span><span class="s">(nome).</span>
 
 <span class="w">  </span><span class="s">Este</span><span class="nv"> </span><span class="s">bloco</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">omitido</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">completo</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">houver</span><span class="nv"> </span><span class="s">títulos</span><span class="nv"> </span><span class="s">alternativos.</span>
 

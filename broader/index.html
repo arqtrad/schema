@@ -487,6 +487,7 @@
 
 <h1 id="slot-broader">Slot: broader</h1>
 <p><em>Um conceito de significação mais genérica. Conceitos genéricos são tipicamente representados como pais em uma hierarquia de conceitos (árvore).</em></p>
+<p><em>Preenchimento manual.</em></p>
 <div>
 <p>URI: <a href="http://www.w3.org/2004/02/skos/core#broader">skos:broader</a></p>
 <!-- no inheritance hierarchy -->
@@ -502,7 +503,7 @@
 <tbody>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
+<td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -564,6 +565,14 @@
 </tr>
 </tbody>
 </table>
+<details>
+<summary>Relationship Properties</summary>
+
+| Property | Value |
+| --- | --- |
+| Inverse | [narrower](narrower.md) |
+
+</details>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -591,14 +600,17 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">broader</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Um conceito de significação mais genérica. Conceitos genéricos são tipicamente</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">representados como pais em uma hierarquia de conceitos (árvore).</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Um</span><span class="nv"> </span><span class="s">conceito</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">significação</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">genérica.</span><span class="nv"> </span><span class="s">Conceitos</span><span class="nv"> </span><span class="s">genéricos</span><span class="nv"> </span><span class="s">são</span><span class="nv"> </span><span class="s">tipicamente</span>
+<span class="w">  </span><span class="s">representados</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">pais</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">hierarquia</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">conceitos</span><span class="nv"> </span><span class="s">(árvore).</span>
+
+<span class="w">  </span><span class="s">Preenchimento</span><span class="nv"> </span><span class="s">manual.'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skos:broader</span>
 <span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
+<span class="nt">inverse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">narrower</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BroaderConceptReference</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

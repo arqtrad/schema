@@ -365,10 +365,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enumeration-source" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enumeration Source
+        Permissible Values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slots
       
     </span>
   </a>
@@ -436,14 +447,428 @@
 
 
 <h1 id="enum-eventtype">Enum: EventType</h1>
-<p><em>The particular kind of event the object/work participated in or was present at.</em></p>
+<p><em>O tipo de incidência sobre a edificação que o evento descreve. Usa a terminologia do LIDO em <a href="http://terminology.lido-schema.org/eventType">http://terminology.lido-schema.org/eventType</a>.</em></p>
 <p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/EventType">wasth:EventType</a></p>
-<h2 id="enumeration-source">Enumeration Source</h2>
-<p><strong>Reachable From:</strong>
-- <strong>Source:</strong> NONE</p>
-<p><em>This is a dynamic enum</em></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Additional Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>creation</td>
+<td>term:lido0001</td>
+<td>Designa um acontecimento que leva à conceção de itens ou produtos de natureza...</td>
+<td>Title: criação<br></td>
+</tr>
+<tr>
+<td>designing</td>
+<td>term:lido00224</td>
+<td>O projeto, na classificação de tipos de eventos do LIDO, designa a criação de...</td>
+<td>Title: projeto<br></td>
+</tr>
+<tr>
+<td>production</td>
+<td>term:lido00007</td>
+<td>Designa ações que levam à existência de novos objetos, compreendendo ações co...</td>
+<td>Title: produção<br></td>
+</tr>
+<tr>
+<td>item_production</td>
+<td>term:lido01096</td>
+<td>No caso de construções seriadas (por exemplo, casas idênticas numa vila operá...</td>
+<td>Title: produção de um exemplar<br></td>
+</tr>
+<tr>
+<td>completion</td>
+<td>term:lido00025</td>
+<td>Processo que completa um objeto ou uma campanha de obras</td>
+<td>Title: conclusão<br></td>
+</tr>
+<tr>
+<td>execution</td>
+<td>term:lido00031</td>
+<td>Ação de produzir um objeto com base num projeto, por oposição ao processo de ...</td>
+<td>Title: execução do projeto<br></td>
+</tr>
+<tr>
+<td>transformation</td>
+<td>term:lido00029</td>
+<td>Ação que destrói um objeto e, usando substancialmente a mesma matéria, produz...</td>
+<td>Title: transformação<br></td>
+</tr>
+<tr>
+<td>reconstruction</td>
+<td>lido:lido00723</td>
+<td>Ato de construir uma nova estrutura que substitui e se parece com uma constru...</td>
+<td>Title: reconstrução<br></td>
+</tr>
+<tr>
+<td>translocation</td>
+<td>lido:lido01159</td>
+<td>A remoção designa o ato de se desmantelar uma edificação no seu local de orig...</td>
+<td>Title: remoção<br></td>
+</tr>
+<tr>
+<td>modification_activity</td>
+<td>term:lido00006</td>
+<td>Ação intencional que cria, altera ou modifica um objeto ou obra em um ou mais...</td>
+<td>Title: modificação<br></td>
+</tr>
+<tr>
+<td>conservation</td>
+<td>term:lido00402</td>
+<td>Ação ou processo realizado visando à estabilidade e salvaguarda do objeto no ...</td>
+<td>Title: conservação<br></td>
+</tr>
+<tr>
+<td>conversion</td>
+<td>term:lido01178</td>
+<td>Intervenção significativa na materialidade e espacialidade de uma edificação,...</td>
+<td>Title: reforma<br></td>
+</tr>
+<tr>
+<td>dismantling</td>
+<td>term:lido01179</td>
+<td>Ato de desmontar ou remover partes significativas de um objeto, especialmente...</td>
+<td>Title: desmantelamento<br></td>
+</tr>
+<tr>
+<td>part_addition</td>
+<td>term:lido00008</td>
+<td>Acréscimo a uma edificação existente, sem lhe alterar fundamentalmente a iden...</td>
+<td>Title: acréscimo<br></td>
+</tr>
+<tr>
+<td>part_removal</td>
+<td>term:lido00021</td>
+<td>Envolve a redução de uma edificação devida à eliminação de parte(s)</td>
+<td>Title: eliminação parcial<br></td>
+</tr>
+<tr>
+<td>partial_destruction_activity</td>
+<td>term:lido01187</td>
+<td>Ação intencional de destruir ou danificar partes de uma obra, sem lhe comprom...</td>
+<td>Title: destruição parcial<br></td>
+</tr>
+<tr>
+<td>remediation</td>
+<td>term:lido01180</td>
+<td>Atividades construtivas ou de gestão que têm por objetivo restituir uma obra ...</td>
+<td>Title: reconstituição<br></td>
+</tr>
+<tr>
+<td>renewal</td>
+<td>term:lido01183</td>
+<td>Ação que altera uma edificação de modo a recuperar a sua estrutura, atualizar...</td>
+<td>Title: renovação<br></td>
+</tr>
+<tr>
+<td>restoration</td>
+<td>term:lido00034</td>
+<td>Alterações a um objeto que têm por objetivo restabelecer um estado original o...</td>
+<td>Title: restauração<br></td>
+</tr>
+<tr>
+<td>modification_process</td>
+<td>term:lido01155</td>
+<td>Processo não deliberado de alteração nas características, aparência ou desemp...</td>
+<td>Title: alteração<br></td>
+</tr>
+<tr>
+<td>partial_destruction_process</td>
+<td>term:lido01157</td>
+<td>Processo não intencional de degradação material, destruindo ou danificando pa...</td>
+<td>Title: perda parcial<br></td>
+</tr>
+<tr>
+<td>deterioration</td>
+<td>term:lido01160</td>
+<td>Processo de perda parcial de matéria, desempenho, ou funcionalidade de um obj...</td>
+<td>Title: deterioração<br></td>
+</tr>
+<tr>
+<td>adaptive_reuse</td>
+<td>term:lido01161</td>
+<td>Ação de converter ou adaptar uma edificação, em geral com valor histórico-cul...</td>
+<td>Title: reutilização adaptada<br></td>
+</tr>
+<tr>
+<td>opening</td>
+<td>term:lido01169</td>
+<td>Ato pelo qual um objeto é declarado operacional, geralmente por meio de uma c...</td>
+<td>Title: inauguração<br></td>
+</tr>
+<tr>
+<td>decommissioning</td>
+<td>term:lido01170</td>
+<td>Ação que acompanha ou sinaliza o encerramento da utilização de um objeto, ger...</td>
+<td>Title: desafetação<br></td>
+</tr>
+<tr>
+<td>attribute_assignment</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assignment_to_curated_holding</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>condition_assessment</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cultural_context_assignment</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>designation</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>deciphering</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>meaning_assignment</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>name_assignment</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>type_assignment</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ceremony</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cornerstone</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>groundbreaking</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>consecration</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>deconsecration</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>change_control_or_title</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>change_control_and_title</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>change_legal_title</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>restitution</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>change_physical_control</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>collecting</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>loss</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>commissioning</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>excavation</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exhibition</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>finding</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>marketing</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>move</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>req_assess</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>display_assess</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>move_assess</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>performance</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>planning</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>protection</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>publishing</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>use</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>end_existence</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>destruction</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>destruction_activity</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>destruction_process</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>unknown</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../event_type/">event_type</a></td>
+<td>Categoriza o evento segundo os vários tipos de ações, de processos, ou de res...</td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -452,15 +877,526 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventType</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">particular</span><span class="nv"> </span><span class="s">kind</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">event</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">object/work</span><span class="nv"> </span><span class="s">participated</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">was</span>
-<span class="w">  </span><span class="s">present</span><span class="nv"> </span><span class="s">at.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'O</span><span class="nv"> </span><span class="s">tipo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">incidência</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">descreve.</span><span class="nv"> </span><span class="s">Usa</span><span class="nv"> </span><span class="s">a</span>
+<span class="w">  </span><span class="s">terminologia</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">&lt;http://terminology.lido-schema.org/eventType&gt;.</span>
 
 <span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">reachable_from</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">source_ontology</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://terminology.lido-schema.org/eventType</span>
-<span class="w">  </span><span class="nt">include_self</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">permissible_values</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">creation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">creation</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Designa</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">acontecimento</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">leva</span><span class="nv"> </span><span class="s">à</span><span class="nv"> </span><span class="s">conceção</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">itens</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">produtos</span>
+<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">natureza</span><span class="nv"> </span><span class="s">imaterial,</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">obras</span><span class="nv"> </span><span class="s">literárias</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">imagens.</span><span class="nv"> </span><span class="s">Não</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">produção</span>
+<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">bens</span><span class="nv"> </span><span class="s">materiais.</span><span class="nv"> </span><span class="s">Quando</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">conceção</span><span class="nv"> </span><span class="s">desses</span><span class="nv"> </span><span class="s">bens,</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">edificação,</span><span class="nv"> </span><span class="s">passa</span>
+<span class="w">      </span><span class="s">por</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">processo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">criação</span><span class="nv"> </span><span class="s">intelectual</span><span class="nv"> </span><span class="s">atestada,</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">tanto</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">termo</span><span class="nv"> </span><span class="s">`designing`</span>
+<span class="w">      </span><span class="s">("projeto").</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido0001</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">criação</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E65_Creation</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:wasCreated</span>
+<span class="w">  </span><span class="nt">designing</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">designing</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'O</span><span class="nv"> </span><span class="s">projeto,</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">classificação</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">eventos</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">LIDO,</span><span class="nv"> </span><span class="s">designa</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">criação</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">arcabouço</span><span class="nv"> </span><span class="s">conceitual</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">organização</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">aparência</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">objetos</span>
+<span class="w">      </span><span class="s">tridimensionais,</span><span class="nv"> </span><span class="s">obras</span><span class="nv"> </span><span class="s">visuais,</span><span class="nv"> </span><span class="s">obras</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">arquitetura,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">sistemas</span><span class="nv"> </span><span class="s">técnicos.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00224</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">projeto</span>
+<span class="w">    </span><span class="nt">comments</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Em</span><span class="nv"> </span><span class="s">contraste</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">"Criação",</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">descreve</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">criação</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">obra</span><span class="nv"> </span><span class="s">em</span>
+<span class="w">      </span><span class="s">nível</span><span class="nv"> </span><span class="s">conceitual,</span><span class="nv"> </span><span class="s">recomenda-se</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">"Projeto"</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">todos</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">eventos</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">é</span>
+<span class="w">      </span><span class="s">criado</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">físico</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">prepara</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">produção</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">acabado</span><span class="nv"> </span><span class="s">ou</span>
+<span class="w">      </span><span class="s">serve</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">modelo</span><span class="nv"> </span><span class="s">direto</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">ele.</span><span class="nv"> </span><span class="s">Frequentemente,</span><span class="nv"> </span><span class="s">trata-se</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">desenhos</span><span class="nv"> </span><span class="s">usados</span>
+<span class="w">      </span><span class="s">como</span><span class="nv"> </span><span class="s">esboços</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">produção</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">pinturas,</span><span class="nv"> </span><span class="s">esculturas</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">edificações.</span><span class="nv"> </span><span class="s">Pode</span><span class="nv"> </span><span class="s">também</span>
+<span class="w">      </span><span class="s">ser</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">modelo</span><span class="nv"> </span><span class="s">tridimensional</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">produz</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">molde;</span><span class="nv"> </span><span class="s">objetos</span><span class="nv"> </span><span class="s">preparatórios</span>
+<span class="w">      </span><span class="s">podem</span><span class="nv"> </span><span class="s">igualmente</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">gerados</span><span class="nv"> </span><span class="s">digitalmente.</span>
+
+<span class="w">      </span><span class="s">Recomenda-se</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">termo</span><span class="nv"> </span><span class="s">quando</span><span class="nv"> </span><span class="s">ele</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">parte</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">diversos</span><span class="nv"> </span><span class="s">acontecimentos</span>
+<span class="w">      </span><span class="s">na</span><span class="nv"> </span><span class="s">história</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">produção</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">precisam</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">distinguidos</span><span class="nv"> </span><span class="s">entre</span><span class="nv"> </span><span class="s">si,</span>
+<span class="w">      </span><span class="s">cada</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">tendo</span><span class="nv"> </span><span class="s">ocorrido</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">diferentes</span><span class="nv"> </span><span class="s">momentos</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">envolvento</span><span class="nv"> </span><span class="s">agentes</span><span class="nv"> </span><span class="s">distintos.</span>
+
+<span class="w">      </span><span class="s">Se</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">está</span><span class="nv"> </span><span class="s">sendo</span><span class="nv"> </span><span class="s">descrito</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">ele</span><span class="nv"> </span><span class="s">próprio</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">outra</span>
+<span class="w">      </span><span class="s">forma</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">elemento</span><span class="nv"> </span><span class="s">preparatório</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">construção,</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">termo</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">indicado</span><span class="nv"> </span><span class="s">para</span>
+<span class="w">      </span><span class="s">o</span><span class="nv"> </span><span class="s">eventType</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">`production`</span><span class="nv"> </span><span class="s">("produção").'</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300102051</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:wasDesigned</span>
+<span class="w">  </span><span class="nt">production</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">production</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Designa</span><span class="nv"> </span><span class="s">ações</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">levam</span><span class="nv"> </span><span class="s">à</span><span class="nv"> </span><span class="s">existência</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">novos</span><span class="nv"> </span><span class="s">objetos,</span><span class="nv"> </span><span class="s">compreendendo</span>
+<span class="w">      </span><span class="s">ações</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">execução.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00007</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">produção</span>
+<span class="w">    </span><span class="nt">notes</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detalhar os processos e técnicas que levaram à produção do objeto na seção materiais</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">e técnicas do evento, por exemplo indicando os sistemas construtivos empregados.</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E12_Production</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:wasProduced</span>
+<span class="w">  </span><span class="nt">item_production</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">item_production</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'No</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">construções</span><span class="nv"> </span><span class="s">seriadas</span><span class="nv"> </span><span class="s">(por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">casas</span><span class="nv"> </span><span class="s">idênticas</span><span class="nv"> </span><span class="s">numa</span>
+<span class="w">      </span><span class="s">vila</span><span class="nv"> </span><span class="s">operária),</span><span class="nv"> </span><span class="s">designa</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">produção</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">exemplar</span><span class="nv"> </span><span class="s">singular</span><span class="nv"> </span><span class="s">dentro</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">conjunto.</span>
+<span class="w">      </span><span class="s">Usar</span><span class="nv"> </span><span class="s">quando</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">relevante</span><span class="nv"> </span><span class="s">individualizar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">produção</span><span class="nv"> </span><span class="s">desses</span><span class="nv"> </span><span class="s">exemplares</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">âmbito</span>
+<span class="w">      </span><span class="s">da</span><span class="nv"> </span><span class="s">descrição</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">seu</span><span class="nv"> </span><span class="s">conjunto,</span><span class="nv"> </span><span class="s">mas</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">quando</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">exemplar</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">indexado</span><span class="nv"> </span><span class="s">separadamente.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01096</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">produção de um exemplar</span>
+<span class="w">    </span><span class="nt">comments</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Este tipo de evento não deve ser usado para designar a produção de partes do</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">processo produtivo, tais como projetos, maquetes, protótipos ou moldes. Quando</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for relevante informar a produção de um exemplar, deve-se precisar quais características</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">permitem identificá-lo dentro do conjunto (endereço, variações, etc.).</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E22_Human-Made_Object</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300404024</span>
+<span class="w">  </span><span class="nt">completion</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">completion</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Processo</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">completa</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">campanha</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">obras.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00025</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conclusão</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300053844</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300390560</span>
+<span class="w">  </span><span class="nt">execution</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">execution</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Ação</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">produzir</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">base</span><span class="nv"> </span><span class="s">num</span><span class="nv"> </span><span class="s">projeto,</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">oposição</span><span class="nv"> </span><span class="s">ao</span>
+<span class="w">      </span><span class="s">processo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">projeto.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00031</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">execução do projeto</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300069715</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300069715</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://d-nb.info/gnd/4456788-1</span>
+<span class="w">  </span><span class="nt">transformation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">transformation</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Ação</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">destrói</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">e,</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">substancialmente</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">mesma</span><span class="nv"> </span><span class="s">matéria,</span>
+<span class="w">      </span><span class="s">produz</span><span class="nv"> </span><span class="s">outro</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">mantém</span><span class="nv"> </span><span class="s">características</span><span class="nv"> </span><span class="s">reconhecíveis</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">anterior</span><span class="nv"> </span><span class="s">mas</span>
+<span class="w">      </span><span class="s">é</span><span class="nv"> </span><span class="s">essencialmente</span><span class="nv"> </span><span class="s">distinto</span><span class="nv"> </span><span class="s">deste</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">sua</span><span class="nv"> </span><span class="s">natureza</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">identidade.</span><span class="nv"> </span><span class="s">Esta</span><span class="nv"> </span><span class="s">categoria</span>
+<span class="w">      </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">usada</span><span class="nv"> </span><span class="s">tanto</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">designar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">destruição</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">antigo</span><span class="nv"> </span><span class="s">quanto</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">produção</span>
+<span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">novo.</span>
+
+<span class="w">      </span><span class="s">Exemplos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">transformação</span><span class="nv"> </span><span class="s">incluem</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">uso</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">espólios</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ruínas</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">produzir</span>
+<span class="w">      </span><span class="s">uma</span><span class="nv"> </span><span class="s">nova</span><span class="nv"> </span><span class="s">construção.</span><span class="nv"> </span><span class="s">Não</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">confundido</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">`reconstruction`</span><span class="nv"> </span><span class="s">("reconstrução"),</span>
+<span class="w">      </span><span class="s">que</span><span class="nv"> </span><span class="s">implica</span><span class="nv"> </span><span class="s">seja</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">mudança</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">lugar,</span><span class="nv"> </span><span class="s">seja</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">reprodução</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">identidade</span><span class="nv"> </span><span class="s">visual</span>
+<span class="w">      </span><span class="s">e</span><span class="nv"> </span><span class="s">espacial</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">anterior.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00029</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">transformação</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E81_Transformation</span>
+<span class="w">  </span><span class="nt">reconstruction</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reconstruction</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Ato</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">construir</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">nova</span><span class="nv"> </span><span class="s">estrutura</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">substitui</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">parece</span><span class="nv"> </span><span class="s">com</span>
+<span class="w">      </span><span class="s">uma</span><span class="nv"> </span><span class="s">construção</span><span class="nv"> </span><span class="s">anterior</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">já</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">subsiste,</span><span class="nv"> </span><span class="s">baseada</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">evidências</span><span class="nv"> </span><span class="s">históricas,</span>
+<span class="w">      </span><span class="s">arqueológicas,</span><span class="nv"> </span><span class="s">gráficas,</span><span class="nv"> </span><span class="s">literárias</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">outras.</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">semelhança</span><span class="nv"> </span><span class="s">visual</span><span class="nv"> </span><span class="s">e,</span><span class="nv"> </span><span class="s">eventualmente,</span>
+<span class="w">      </span><span class="s">funcional</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">característica</span><span class="nv"> </span><span class="s">principal</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">reconstrução,</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">ela</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">não</span>
+<span class="w">      </span><span class="s">usar</span><span class="nv"> </span><span class="s">materiais</span><span class="nv"> </span><span class="s">sobrestantes</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">anterior.</span>
+
+<span class="w">      </span><span class="s">A</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">destruída</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">reconstruída</span><span class="nv"> </span><span class="s">devem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">cadastradas</span><span class="nv"> </span><span class="s">em</span>
+<span class="w">      </span><span class="s">fichas</span><span class="nv"> </span><span class="s">distintas</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">relacionadas</span><span class="nv"> </span><span class="s">entre</span><span class="nv"> </span><span class="s">si.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:lido00723</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reconstrução</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300081531</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wd:Q2478058</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://d-nb.info/gnd/4065958-6</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300053744</span>
+<span class="w">  </span><span class="nt">translocation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">translocation</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">remoção</span><span class="nv"> </span><span class="s">designa</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">ato</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">desmantelar</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">seu</span>
+<span class="w">      </span><span class="s">local</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">origem</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">reconstruí-la</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">outro</span><span class="nv"> </span><span class="s">sítio.</span><span class="nv"> </span><span class="s">Para</span><span class="nv"> </span><span class="s">construções</span><span class="nv"> </span><span class="s">deslocadas</span>
+<span class="w">      </span><span class="s">sem</span><span class="nv"> </span><span class="s">serem</span><span class="nv"> </span><span class="s">desmanteladas,</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">tipo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">`move`</span><span class="nv"> </span><span class="s">("deslocação").</span>
+
+<span class="w">      </span><span class="s">Exemplos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">remoção</span><span class="nv"> </span><span class="s">são</span><span class="nv"> </span><span class="s">aquela</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">templo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">Abu</span><span class="nv"> </span><span class="s">Simbel,</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">Egito,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ainda</span><span class="nv"> </span><span class="s">aquela</span>
+<span class="w">      </span><span class="s">da</span><span class="nv"> </span><span class="s">casa</span><span class="nv"> </span><span class="s">Erbo</span><span class="nv"> </span><span class="s">Stenzel</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">Curitiba</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">seu</span><span class="nv"> </span><span class="s">lote</span><span class="nv"> </span><span class="s">original</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">parque</span><span class="nv"> </span><span class="s">São</span><span class="nv"> </span><span class="s">Lourenço</span>
+<span class="w">      </span><span class="s">(onde</span><span class="nv"> </span><span class="s">foi</span><span class="nv"> </span><span class="s">posteriormente</span><span class="nv"> </span><span class="s">destruída</span><span class="nv"> </span><span class="s">num</span><span class="nv"> </span><span class="s">incêndio).</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:lido01159</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">remoção</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.vdl-denkmalpflege.de/fileadmin/dateien/Brosch%C3%BCren/VdL_Leitbild_Final_160527__1_.pdf</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://d-nb.info/gnd/4258556-9</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300149370</span>
+<span class="w">  </span><span class="nt">modification_activity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">modification_activity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Ação</span><span class="nv"> </span><span class="s">intencional</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">cria,</span><span class="nv"> </span><span class="s">altera</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">modifica</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">obra</span>
+<span class="w">      </span><span class="s">em</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">seus</span><span class="nv"> </span><span class="s">aspectos</span><span class="nv"> </span><span class="s">mas</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">outros.</span><span class="nv"> </span><span class="s">Usar</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">ações</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">possam</span>
+<span class="w">      </span><span class="s">ser</span><span class="nv"> </span><span class="s">definidas</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">tipos</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">específicos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">alteração.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00006</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">modificação</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E11_Modification</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:wasAlteration</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300105442</span>
+<span class="w">  </span><span class="nt">conservation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conservation</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Ação</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">processo</span><span class="nv"> </span><span class="s">realizado</span><span class="nv"> </span><span class="s">visando</span><span class="nv"> </span><span class="s">à</span><span class="nv"> </span><span class="s">estabilidade</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">salvaguarda</span>
+<span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">longo</span><span class="nv"> </span><span class="s">prazo,</span><span class="nv"> </span><span class="s">incluindo</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">sua</span><span class="nv"> </span><span class="s">proteção</span><span class="nv"> </span><span class="s">contra</span><span class="nv"> </span><span class="s">danos</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">deterioração</span>
+<span class="w">      </span><span class="s">e</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">prevenção</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">deterioração</span><span class="nv"> </span><span class="s">natural</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">sua</span><span class="nv"> </span><span class="s">matéria.</span><span class="nv"> </span><span class="s">No</span><span class="nv"> </span><span class="s">nosso</span><span class="nv"> </span><span class="s">vocabulário,</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">conservação</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">diferente</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">preservação</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">restauração.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00402</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conservação</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300404519</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:wasRestored</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300404519</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://d-nb.info/gnd/4114279-2</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00006</span>
+<span class="w">  </span><span class="nt">conversion</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conversion</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Intervenção</span><span class="nv"> </span><span class="s">significativa</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">materialidade</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">espacialidade</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span>
+<span class="w">      </span><span class="s">edificação,</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">materiais</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">técnicas</span><span class="nv"> </span><span class="s">construtivas.</span><span class="nv"> </span><span class="s">Frequentemente</span><span class="nv"> </span><span class="s">resulta</span>
+<span class="w">      </span><span class="s">na</span><span class="nv"> </span><span class="s">alteração</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uso</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">aparência</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação,</span><span class="nv"> </span><span class="s">mas</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">comprometer</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">sua</span>
+<span class="w">      </span><span class="s">identidade</span><span class="nv"> </span><span class="s">anterior.</span>
+
+<span class="w">      </span><span class="s">Sempre</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">possível,</span><span class="nv"> </span><span class="s">preferir</span><span class="nv"> </span><span class="s">designações</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">específicas,</span><span class="nv"> </span><span class="s">tais</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">`addition`,</span>
+<span class="w">      </span><span class="s">`removal`,</span><span class="nv"> </span><span class="s">`adaptive_reuse`,</span><span class="nv"> </span><span class="s">`renewal`.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01178</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reforma</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.duden.de/rechtschreibung/umbauen_umgebaut</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://d-nb.info/gnd/4061577-7</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.designingbuildings.co.uk/wiki/Conversion</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00006</span>
+<span class="w">  </span><span class="nt">dismantling</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dismantling</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Ato</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">desmontar</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">remover</span><span class="nv"> </span><span class="s">partes</span><span class="nv"> </span><span class="s">significativas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto,</span>
+<span class="w">      </span><span class="s">especialmente</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">intenção</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">reduzir</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">desbilitar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">seu</span><span class="nv"> </span><span class="s">uso.</span><span class="nv"> </span><span class="s">Particularmente,</span>
+<span class="w">      </span><span class="s">refere-se</span><span class="nv"> </span><span class="s">à</span><span class="nv"> </span><span class="s">desmontagem</span><span class="nv"> </span><span class="s">cuidadosa</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">modo</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">evitar</span><span class="nv"> </span><span class="s">danos</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">removido,</span>
+<span class="w">      </span><span class="s">visando</span><span class="nv"> </span><span class="s">à</span><span class="nv"> </span><span class="s">sua</span><span class="nv"> </span><span class="s">reutilização,</span><span class="nv"> </span><span class="s">reciclagem</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">gestão</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">resíduos.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01179</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">desmantelamento</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300061163</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wd:Q52161698</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://d-nb.info/gnd/4149065-4</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://en.wikipedia.org/wiki/Deconstruction_(building)</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.designingbuildings.co.uk/wiki/Deconstruction</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wd:Q52161698</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300404064</span>
+<span class="w">  </span><span class="nt">part_addition</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">part_addition</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Acréscimo</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">existente,</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">lhe</span><span class="nv"> </span><span class="s">alterar</span><span class="nv"> </span><span class="s">fundamentalmente</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">identidade,</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ampliação</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">acréscimo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">elementos.</span><span class="nv"> </span><span class="s">O</span><span class="nv"> </span><span class="s">conjunto</span>
+<span class="w">      </span><span class="s">resultante</span><span class="nv"> </span><span class="s">continuará</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">identificado</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">mesma</span><span class="nv"> </span><span class="s">obra</span><span class="nv"> </span><span class="s">anterior</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">acréscimo.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00008</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">acréscimo</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E79_Part_Addition</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00006</span>
+<span class="w">  </span><span class="nt">part_removal</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">part_removal</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Envolve</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">redução</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">devida</span><span class="nv"> </span><span class="s">à</span><span class="nv"> </span><span class="s">eliminação</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">parte(s).</span>
+<span class="w">      </span><span class="s">Pode</span><span class="nv"> </span><span class="s">incluir</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">eliminação</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">anexos,</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">elementos</span><span class="nv"> </span><span class="s">construtivos,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">exclusão</span>
+<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">obra</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">conjunto</span><span class="nv"> </span><span class="s">designado.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00021</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eliminação parcial</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E80_Part_Removal</span>
+<span class="w">    </span><span class="nt">narrow_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01187</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300224146</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00006</span>
+<span class="w">  </span><span class="nt">partial_destruction_activity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">partial_destruction_activity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Ação</span><span class="nv"> </span><span class="s">intencional</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">destruir</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">danificar</span><span class="nv"> </span><span class="s">partes</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">obra,</span><span class="nv"> </span><span class="s">sem</span>
+<span class="w">      </span><span class="s">lhe</span><span class="nv"> </span><span class="s">comprometer</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">identatidade</span><span class="nv"> </span><span class="s">enquanto</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">documentação.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01187</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">destruição parcial</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E6_Destruction</span>
+<span class="w">    </span><span class="nt">narrow_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01180</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00021</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00022</span>
+<span class="w">  </span><span class="nt">remediation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">remediation</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Atividades</span><span class="nv"> </span><span class="s">construtivas</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">gestão</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">têm</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">objetivo</span><span class="nv"> </span><span class="s">restituir</span>
+<span class="w">      </span><span class="s">uma</span><span class="nv"> </span><span class="s">obra</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">estado</span><span class="nv"> </span><span class="s">anterior</span><span class="nv"> </span><span class="s">conhecido</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">presumido,</span><span class="nv"> </span><span class="s">sobretudo</span><span class="nv"> </span><span class="s">após</span><span class="nv"> </span><span class="s">perdas</span>
+<span class="w">      </span><span class="s">catastróficas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">materialidade</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">integridade.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01180</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reconstituição</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.duden.de/rechtschreibung/rueckbauen</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://d-nb.info/gnd/4410380-3</span>
+<span class="w">    </span><span class="nt">related_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://historicengland.org.uk/advice/hpg/uwandhc/unlawfulworks/</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00034</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01187</span>
+<span class="w">  </span><span class="nt">renewal</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">renewal</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Ação</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">altera</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">modo</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">recuperar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">sua</span><span class="nv"> </span><span class="s">estrutura,</span>
+<span class="w">      </span><span class="s">atualizar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">sua</span><span class="nv"> </span><span class="s">aparência,</span><span class="nv"> </span><span class="s">permitir</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">adequação</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">novos</span><span class="nv"> </span><span class="s">usos,</span><span class="nv"> </span><span class="s">aprimorar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">sua</span>
+<span class="w">      </span><span class="s">eficiência</span><span class="nv"> </span><span class="s">energética,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">finalidades</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">relacionadas</span><span class="nv"> </span><span class="s">à</span><span class="nv"> </span><span class="s">preservação</span>
+<span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">patrimônio</span><span class="nv"> </span><span class="s">cultural</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">tenham</span><span class="nv"> </span><span class="s">considerações</span><span class="nv"> </span><span class="s">patrimoniais</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">prioridade.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01183</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">renovação</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300389648</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300260783</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300077781</span>
+<span class="w">    </span><span class="nt">narrow_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wd:Q2144402</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://d-nb.info/gnd/4152832-3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00006</span>
+<span class="w">  </span><span class="nt">restoration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">restoration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Alterações</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">têm</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">objetivo</span><span class="nv"> </span><span class="s">restabelecer</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">estado</span>
+<span class="w">      </span><span class="s">original</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">anterior</span><span class="nv"> </span><span class="s">conhecido</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">presumido</span><span class="nv"> </span><span class="s">(usar</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">vez</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">`part_removal`</span><span class="nv"> </span><span class="s">---</span>
+<span class="w">      </span><span class="s">"eliminação</span><span class="nv"> </span><span class="s">parcial"</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">intenção</span><span class="nv"> </span><span class="s">dominante</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">eliminação</span><span class="nv"> </span><span class="s">tiver</span><span class="nv"> </span><span class="s">sido</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">restauração</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">estado</span><span class="nv"> </span><span class="s">anterior).</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00034</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">restauração</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300053742</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:wasRestored</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wd:Q217102</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300053742</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://d-nb.info/gnd/4049600-4</span>
+<span class="w">  </span><span class="nt">modification_process</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">modification_process</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Processo</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">deliberado</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">alteração</span><span class="nv"> </span><span class="s">nas</span><span class="nv"> </span><span class="s">características,</span><span class="nv"> </span><span class="s">aparência</span>
+<span class="w">      </span><span class="s">ou</span><span class="nv"> </span><span class="s">desempenho</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">materiais</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">constituem</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto.</span><span class="nv"> </span><span class="s">Por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">corrosão,</span>
+<span class="w">      </span><span class="s">formação</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">cristais</span><span class="nv"> </span><span class="s">salinos,</span><span class="nv"> </span><span class="s">etc.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01155</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alteração</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300105442</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E11_Modification</span>
+<span class="w">    </span><span class="nt">narrow_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01157</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01154</span>
+<span class="w">  </span><span class="nt">partial_destruction_process</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">partial_destruction_process</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Processo</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">intencional</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">degradação</span><span class="nv"> </span><span class="s">material,</span><span class="nv"> </span><span class="s">destruindo</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">danificando</span>
+<span class="w">      </span><span class="s">partes</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">descaracterizar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">sua</span><span class="nv"> </span><span class="s">identidade</span><span class="nv"> </span><span class="s">(por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">convertê-lo</span>
+<span class="w">      </span><span class="s">numa</span><span class="nv"> </span><span class="s">ruína).</span><span class="nv"> </span><span class="s">Pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">causado</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">condições</span><span class="nv"> </span><span class="s">ambientais</span><span class="nv"> </span><span class="s">continuadas</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">desastres</span>
+<span class="w">      </span><span class="s">naturais.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01157</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">perda parcial</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E6_Destruction</span>
+<span class="w">    </span><span class="nt">narrow_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01160</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01155</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00022</span>
+<span class="w">  </span><span class="nt">deterioration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deterioration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Processo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">perda</span><span class="nv"> </span><span class="s">parcial</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">matéria,</span><span class="nv"> </span><span class="s">desempenho,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">funcionalidade</span>
+<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">intervenção</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">atuação</span><span class="nv"> </span><span class="s">deliberada.</span><span class="nv"> </span><span class="s">Geralmente</span><span class="nv"> </span><span class="s">causado</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">condições</span>
+<span class="w">      </span><span class="s">ambientais</span><span class="nv"> </span><span class="s">continuadas,</span><span class="nv"> </span><span class="s">mas</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">agravado</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">desastres</span><span class="nv"> </span><span class="s">naturais.</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">deterioração</span>
+<span class="w">      </span><span class="s">pode</span><span class="nv"> </span><span class="s">levar</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">`destruction_process`</span><span class="nv"> </span><span class="s">("arruinamento")</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01160</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deterioração</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300054106</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://d-nb.info/gnd/4745718-1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wd:Q94643648</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01157</span>
+<span class="w">  </span><span class="nt">adaptive_reuse</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">adaptive_reuse</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Ação</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">converter</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">adaptar</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">edificação,</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">geral</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">valor</span>
+<span class="w">      </span><span class="s">histórico-cultural</span><span class="nv"> </span><span class="s">reconhecido,</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">novos</span><span class="nv"> </span><span class="s">usos</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">aplicação</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">distinto</span>
+<span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">original.</span><span class="nv"> </span><span class="s">Distinguir</span><span class="nv"> </span><span class="s">eventos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">reutilização</span><span class="nv"> </span><span class="s">adaptativa</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">eventos</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">envolvem</span>
+<span class="w">      </span><span class="s">as</span><span class="nv"> </span><span class="s">intervenções</span><span class="nv"> </span><span class="s">físicas</span><span class="nv"> </span><span class="s">necessárias</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">preparatórias</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">essa</span><span class="nv"> </span><span class="s">reutilização,</span><span class="nv"> </span><span class="s">usando</span>
+<span class="w">      </span><span class="s">o</span><span class="nv"> </span><span class="s">termo</span><span class="nv"> </span><span class="s">`conversion`</span><span class="nv"> </span><span class="s">("reforma").</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01161</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reutilização adaptada</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300056392</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wd:Q111749149</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://d-nb.info/gnd/4042840-0</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300417716</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wd:Q21021151</span>
+<span class="w">    </span><span class="nt">narrow_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01170</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01169</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00004</span>
+<span class="w">  </span><span class="nt">opening</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opening</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Ato</span><span class="nv"> </span><span class="s">pelo</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">declarado</span><span class="nv"> </span><span class="s">operacional,</span><span class="nv"> </span><span class="s">geralmente</span><span class="nv"> </span><span class="s">por</span>
+<span class="w">      </span><span class="s">meio</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">cerimônia,</span><span class="nv"> </span><span class="s">mas</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">necessariamente.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01169</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inauguração</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300054769</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wd:Q3010369</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://d-nb.info/gnd/4338947-8</span>
+<span class="w">    </span><span class="nt">narrow_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aat:300404068</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wd:Q29933838</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01161</span>
+<span class="w">  </span><span class="nt">decommissioning</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">decommissioning</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Ação</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">acompanha</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">sinaliza</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">encerramento</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">utilização</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span>
+<span class="w">      </span><span class="s">objeto,</span><span class="nv"> </span><span class="s">geralmente</span><span class="nv"> </span><span class="s">associado</span><span class="nv"> </span><span class="s">à</span><span class="nv"> </span><span class="s">interdição</span><span class="nv"> </span><span class="s">física</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01170</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">desafetação</span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.designingbuildings.co.uk/wiki/Decommissioning_buildings</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://en.wikipedia.org/wiki/Decommissioning</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://d-nb.info/gnd/4125246-9</span>
+<span class="w">    </span><span class="nt">narrow_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://d-nb.info/gnd/4513722-5</span>
+<span class="w">    </span><span class="nt">broad_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wd:Q29933838</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01161</span>
+<span class="w">  </span><span class="nt">attribute_assignment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attribute_assignment</span>
+<span class="w">  </span><span class="nt">assignment_to_curated_holding</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assignment_to_curated_holding</span>
+<span class="w">  </span><span class="nt">condition_assessment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">condition_assessment</span>
+<span class="w">  </span><span class="nt">cultural_context_assignment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cultural_context_assignment</span>
+<span class="w">  </span><span class="nt">designation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">designation</span>
+<span class="w">  </span><span class="nt">deciphering</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deciphering</span>
+<span class="w">  </span><span class="nt">meaning_assignment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meaning_assignment</span>
+<span class="w">  </span><span class="nt">name_assignment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name_assignment</span>
+<span class="w">  </span><span class="nt">type_assignment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type_assignment</span>
+<span class="w">  </span><span class="nt">ceremony</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceremony</span>
+<span class="w">  </span><span class="nt">cornerstone</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cornerstone</span>
+<span class="w">  </span><span class="nt">groundbreaking</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">groundbreaking</span>
+<span class="w">  </span><span class="nt">consecration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consecration</span>
+<span class="w">  </span><span class="nt">deconsecration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deconsecration</span>
+<span class="w">  </span><span class="nt">change_control_or_title</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">change_control_or_title</span>
+<span class="w">  </span><span class="nt">change_control_and_title</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">change_control_and_title</span>
+<span class="w">  </span><span class="nt">change_legal_title</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">change_legal_title</span>
+<span class="w">  </span><span class="nt">restitution</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">restitution</span>
+<span class="w">  </span><span class="nt">change_physical_control</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">change_physical_control</span>
+<span class="w">  </span><span class="nt">collecting</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">collecting</span>
+<span class="w">  </span><span class="nt">loss</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">loss</span>
+<span class="w">  </span><span class="nt">commissioning</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">commissioning</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:wasCommission</span>
+<span class="w">  </span><span class="nt">excavation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">excavation</span>
+<span class="w">  </span><span class="nt">exhibition</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exhibition</span>
+<span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:wasPresented</span>
+<span class="w">  </span><span class="nt">finding</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finding</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:wasDiscovered</span>
+<span class="w">  </span><span class="nt">marketing</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">marketing</span>
+<span class="w">  </span><span class="nt">move</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">move</span>
+<span class="w">  </span><span class="nt">req_assess</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">req_assess</span>
+<span class="w">  </span><span class="nt">display_assess</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">display_assess</span>
+<span class="w">  </span><span class="nt">move_assess</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">move_assess</span>
+<span class="w">  </span><span class="nt">performance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">performance</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:wasPerformed</span>
+<span class="w">  </span><span class="nt">planning</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">planning</span>
+<span class="w">  </span><span class="nt">protection</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">protection</span>
+<span class="w">  </span><span class="nt">publishing</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">publishing</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:wasPublished</span>
+<span class="w">  </span><span class="nt">use</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">use</span>
+<span class="w">  </span><span class="nt">end_existence</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end_existence</span>
+<span class="w">  </span><span class="nt">destruction</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">destruction</span>
+<span class="w">  </span><span class="nt">destruction_activity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">destruction_activity</span>
+<span class="w">  </span><span class="nt">destruction_process</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">destruction_process</span>
+<span class="w">  </span><span class="nt">unknown</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unknown</span>
 </code></pre></div>
 </details>
 </div>

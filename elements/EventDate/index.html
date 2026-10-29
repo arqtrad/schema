@@ -208,6 +208,24 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+<span class="md-ellipsis">
+      
+        Comments
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#notes">
+<span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
 <span class="md-ellipsis">
       
@@ -277,37 +295,25 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-eventdate">Class: EventDate</h1>
-<p><em>A wrapper for the expression of a date by providing a set of years as earliest and latest date delimiting the respective span of time, usually given in the proleptic Gregorian calendar.</em></p>
-<p><em>If it is an exact date, possibly with time, repeat the same date (and time) in Earliest Date and Latest Date elements.</em></p>
+<p><em>Expressão complexa de uma data que pode se referir ao começo ou ao término de um evento pontual ou de uma decorrência prolongada. Permite expressar as datas de corte inicial e final, cada uma com seus respetivos graus de confiabilidade e de precisão.</em></p>
 <p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/EventDate">wasth:EventDate</a></p>
 <pre class="mermaid"><code> classDiagram
     class EventDate
     click EventDate href "../EventDate/"
-      EventDate : description
-
-      EventDate : earliest_date
+      EventDate : date_type
 
 
 
 
 
-        EventDate --&gt; "0..1" DateRange : earliest_date
-        click DateRange href "../DateRange/"
+        EventDate --&gt; "1" DateType : date_type
+        click DateType href "../DateType/"
 
 
 
-      EventDate : latest_date
-
-
-
-
-
-        EventDate --&gt; "0..1" DateRange : latest_date
-        click DateRange href "../DateRange/"
-
-
+      EventDate : date_value
 
 </code></pre>
 <!-- no inheritance hierarchy -->
@@ -323,21 +329,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
+<td><a href="../date_type/">date_type</a></td>
+<td>1 <br/> <a href="../DateType/">DateType</a></td>
+<td>Qualifica a confiabilidade da data como sendo conhecida ou estimada</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../earliest_date/">earliest_date</a></td>
-<td>0..1 <br/> <a href="../DateRange/">DateRange</a></td>
-<td>An index element for the expression of an exact or estimated date, for instan...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../latest_date/">latest_date</a></td>
-<td>0..1 <br/> <a href="../DateRange/">DateRange</a></td>
-<td>An index element for the expression of the exact or approximate date, for ins...</td>
+<td><a href="../date_value/">date_value</a></td>
+<td>0..1 <br/> <a href="../Date/">Date</a></td>
+<td>Usar o formato ISO-8601 (AAAA-MM-DD)</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -361,12 +361,6 @@
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td><a href="../event_date/">event_date</a></td>
-<td>range</td>
-<td><a href="./">EventDate</a></td>
-</tr>
-<tr>
-<td><a href="../Event/">Event</a></td>
 <td><a href="../start_date/">start_date</a></td>
 <td>range</td>
 <td><a href="./">EventDate</a></td>
@@ -379,6 +373,16 @@
 </tr>
 </tbody>
 </table>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>⚠️  Não temos padrão estabelecido para datas anteriores ao calendário gregoriano (1583), antes de Cristo, ou convertidas de outros calendários. Datas no calendário juliano podem ser expressadas nominalmente. Datas da era ibérica podem usar o valor nominal do dia e do mês, tendo o ano convertido para o gregoriano. Datas de calendários não cristãos podem ser convertidas para a data gregoriana correspondente, mesmo as anteriores a 1583.
+Ver <a href="https://en.wikipedia.org/wiki/ISO_8601#Dates">https://en.wikipedia.org/wiki/ISO_8601#Dates</a> para a discussão dessa dificuldade, cuja solução depende do estabelecimento de um padrão específico para cada caso.</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>A wrapper for the expression of a date by providing a set of years as earliest and latest date delimiting the respective span of time, usually given in the proleptic Gregorian calendar.
+If it is an exact date, possibly with time, repeat the same date (and time) in Earliest Date and Latest Date elements.</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -408,62 +412,107 @@
 <h3 id="direct">Direct</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">wrapper</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">providing</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">years</span><span class="nv"> </span><span class="s">as</span>
-<span class="w">  </span><span class="s">earliest</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">latest</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">delimiting</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">respective</span><span class="nv"> </span><span class="s">span</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">time,</span><span class="nv"> </span><span class="s">usually</span><span class="nv"> </span><span class="s">given</span><span class="nv"> </span><span class="s">in</span>
-<span class="w">  </span><span class="s">the</span><span class="nv"> </span><span class="s">proleptic</span><span class="nv"> </span><span class="s">Gregorian</span><span class="nv"> </span><span class="s">calendar.</span>
-
-<span class="w">  </span><span class="s">If</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">exact</span><span class="nv"> </span><span class="s">date,</span><span class="nv"> </span><span class="s">possibly</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">time,</span><span class="nv"> </span><span class="s">repeat</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">(and</span><span class="nv"> </span><span class="s">time)</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">Earliest</span>
-<span class="w">  </span><span class="s">Date</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Latest</span><span class="nv"> </span><span class="s">Date</span><span class="nv"> </span><span class="s">elements.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Expressão</span><span class="nv"> </span><span class="s">complexa</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">referir</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">começo</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">término</span>
+<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">pontual</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">decorrência</span><span class="nv"> </span><span class="s">prolongada.</span><span class="nv"> </span><span class="s">Permite</span><span class="nv"> </span><span class="s">expressar</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">datas</span>
+<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">corte</span><span class="nv"> </span><span class="s">inicial</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">final,</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">seus</span><span class="nv"> </span><span class="s">respetivos</span><span class="nv"> </span><span class="s">graus</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">confiabilidade</span><span class="nv"> </span><span class="s">e</span>
+<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">precisão.</span>
 
 <span class="w">  </span><span class="s">'</span>
+<span class="nt">notes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">wrapper</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">providing</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">years</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">earliest</span>
+<span class="w">  </span><span class="s">and</span><span class="nv"> </span><span class="s">latest</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">delimiting</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">respective</span><span class="nv"> </span><span class="s">span</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">time,</span><span class="nv"> </span><span class="s">usually</span><span class="nv"> </span><span class="s">given</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">proleptic</span>
+<span class="w">  </span><span class="s">Gregorian</span><span class="nv"> </span><span class="s">calendar.</span>
+
+<span class="w">  </span><span class="s">If</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">exact</span><span class="nv"> </span><span class="s">date,</span><span class="nv"> </span><span class="s">possibly</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">time,</span><span class="nv"> </span><span class="s">repeat</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">(and</span><span class="nv"> </span><span class="s">time)</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">Earliest</span>
+<span class="w">  </span><span class="s">Date</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Latest</span><span class="nv"> </span><span class="s">Date</span><span class="nv"> </span><span class="s">elements.'</span>
+<span class="nt">comments</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'⚠️</span><span class="nv">  </span><span class="s">Não</span><span class="nv"> </span><span class="s">temos</span><span class="nv"> </span><span class="s">padrão</span><span class="nv"> </span><span class="s">estabelecido</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">anteriores</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">calendário</span><span class="nv"> </span><span class="s">gregoriano</span>
+<span class="w">  </span><span class="s">(1583),</span><span class="nv"> </span><span class="s">antes</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">Cristo,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">convertidas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">outros</span><span class="nv"> </span><span class="s">calendários.</span><span class="nv"> </span><span class="s">Datas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">calendário</span>
+<span class="w">  </span><span class="s">juliano</span><span class="nv"> </span><span class="s">podem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">expressadas</span><span class="nv"> </span><span class="s">nominalmente.</span><span class="nv"> </span><span class="s">Datas</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">era</span><span class="nv"> </span><span class="s">ibérica</span><span class="nv"> </span><span class="s">podem</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">valor</span>
+<span class="w">  </span><span class="s">nominal</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">dia</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">mês,</span><span class="nv"> </span><span class="s">tendo</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">ano</span><span class="nv"> </span><span class="s">convertido</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">gregoriano.</span><span class="nv"> </span><span class="s">Datas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">calendários</span>
+<span class="w">  </span><span class="s">não</span><span class="nv"> </span><span class="s">cristãos</span><span class="nv"> </span><span class="s">podem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">convertidas</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">gregoriana</span><span class="nv"> </span><span class="s">correspondente,</span><span class="nv"> </span><span class="s">mesmo</span>
+<span class="w">  </span><span class="s">as</span><span class="nv"> </span><span class="s">anteriores</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">1583.</span>
+
+<span class="w">  </span><span class="s">Ver</span><span class="nv"> </span><span class="s">&lt;https://en.wikipedia.org/wiki/ISO_8601#Dates&gt;</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">discussão</span><span class="nv"> </span><span class="s">dessa</span><span class="nv"> </span><span class="s">dificuldade,</span>
+<span class="w">  </span><span class="s">cuja</span><span class="nv"> </span><span class="s">solução</span><span class="nv"> </span><span class="s">depende</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">estabelecimento</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">padrão</span><span class="nv"> </span><span class="s">específico</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">caso.'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="nt">slots</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="nt">attributes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">earliest_date</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">earliest_date</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">exact</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">estimated</span><span class="nv"> </span><span class="s">date,</span>
-<span class="w">      </span><span class="s">for</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">year</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">calendar</span><span class="nv"> </span><span class="s">date,</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">delimits</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">beginning</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">date</span>
-<span class="w">      </span><span class="s">span.</span>
+<span class="w">  </span><span class="nt">date_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Qualifica</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">confiabilidade</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">sendo</span><span class="nv"> </span><span class="s">conhecida</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">estimada.</span>
+<span class="w">      </span><span class="s">A</span><span class="nv"> </span><span class="s">confiabilidade</span><span class="nv"> </span><span class="s">independe</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">grau</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">precisão</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">data.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateType</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">date_value</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date_value</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">ISO-8601</span><span class="nv"> </span><span class="s">(AAAA-MM-DD).</span><span class="nv"> </span><span class="s">Para</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">imprecisas,</span><span class="nv"> </span><span class="s">usar</span>
+<span class="w">      </span><span class="s">o</span><span class="nv"> </span><span class="s">PRIMEIRO</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">ÚLTIMO</span><span class="nv"> </span><span class="s">dia,</span><span class="nv"> </span><span class="s">mês</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ano</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">período</span><span class="nv"> </span><span class="s">delimitado,</span><span class="nv"> </span><span class="s">conforme</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">tratar</span>
+<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">corte</span><span class="nv"> </span><span class="s">inicial</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">final</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">evento,</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">descrever</span><span class="nv"> </span><span class="s">verbalmente</span>
+<span class="w">      </span><span class="s">o</span><span class="nv"> </span><span class="s">período</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`display_date`.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateRange</span>
-<span class="w">  </span><span class="nt">latest_date</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest_date</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">exact</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">approximate</span>
-<span class="w">      </span><span class="s">date,</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">year</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">calendar</span><span class="nv"> </span><span class="s">date,</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">delimits</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">end</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">date</span>
-<span class="w">      </span><span class="s">span.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateRange</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">wrapper</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">providing</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">years</span><span class="nv"> </span><span class="s">as</span>
-<span class="w">  </span><span class="s">earliest</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">latest</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">delimiting</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">respective</span><span class="nv"> </span><span class="s">span</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">time,</span><span class="nv"> </span><span class="s">usually</span><span class="nv"> </span><span class="s">given</span><span class="nv"> </span><span class="s">in</span>
-<span class="w">  </span><span class="s">the</span><span class="nv"> </span><span class="s">proleptic</span><span class="nv"> </span><span class="s">Gregorian</span><span class="nv"> </span><span class="s">calendar.</span>
-
-<span class="w">  </span><span class="s">If</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">exact</span><span class="nv"> </span><span class="s">date,</span><span class="nv"> </span><span class="s">possibly</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">time,</span><span class="nv"> </span><span class="s">repeat</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">(and</span><span class="nv"> </span><span class="s">time)</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">Earliest</span>
-<span class="w">  </span><span class="s">Date</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Latest</span><span class="nv"> </span><span class="s">Date</span><span class="nv"> </span><span class="s">elements.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Expressão</span><span class="nv"> </span><span class="s">complexa</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">referir</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">começo</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">término</span>
+<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">pontual</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">decorrência</span><span class="nv"> </span><span class="s">prolongada.</span><span class="nv"> </span><span class="s">Permite</span><span class="nv"> </span><span class="s">expressar</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">datas</span>
+<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">corte</span><span class="nv"> </span><span class="s">inicial</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">final,</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">seus</span><span class="nv"> </span><span class="s">respetivos</span><span class="nv"> </span><span class="s">graus</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">confiabilidade</span><span class="nv"> </span><span class="s">e</span>
+<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">precisão.</span>
 
 <span class="w">  </span><span class="s">'</span>
+<span class="nt">notes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">wrapper</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">providing</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">years</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">earliest</span>
+<span class="w">  </span><span class="s">and</span><span class="nv"> </span><span class="s">latest</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">delimiting</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">respective</span><span class="nv"> </span><span class="s">span</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">time,</span><span class="nv"> </span><span class="s">usually</span><span class="nv"> </span><span class="s">given</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">proleptic</span>
+<span class="w">  </span><span class="s">Gregorian</span><span class="nv"> </span><span class="s">calendar.</span>
+
+<span class="w">  </span><span class="s">If</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">exact</span><span class="nv"> </span><span class="s">date,</span><span class="nv"> </span><span class="s">possibly</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">time,</span><span class="nv"> </span><span class="s">repeat</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">(and</span><span class="nv"> </span><span class="s">time)</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">Earliest</span>
+<span class="w">  </span><span class="s">Date</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Latest</span><span class="nv"> </span><span class="s">Date</span><span class="nv"> </span><span class="s">elements.'</span>
+<span class="nt">comments</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'⚠️</span><span class="nv">  </span><span class="s">Não</span><span class="nv"> </span><span class="s">temos</span><span class="nv"> </span><span class="s">padrão</span><span class="nv"> </span><span class="s">estabelecido</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">anteriores</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">calendário</span><span class="nv"> </span><span class="s">gregoriano</span>
+<span class="w">  </span><span class="s">(1583),</span><span class="nv"> </span><span class="s">antes</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">Cristo,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">convertidas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">outros</span><span class="nv"> </span><span class="s">calendários.</span><span class="nv"> </span><span class="s">Datas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">calendário</span>
+<span class="w">  </span><span class="s">juliano</span><span class="nv"> </span><span class="s">podem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">expressadas</span><span class="nv"> </span><span class="s">nominalmente.</span><span class="nv"> </span><span class="s">Datas</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">era</span><span class="nv"> </span><span class="s">ibérica</span><span class="nv"> </span><span class="s">podem</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">valor</span>
+<span class="w">  </span><span class="s">nominal</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">dia</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">mês,</span><span class="nv"> </span><span class="s">tendo</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">ano</span><span class="nv"> </span><span class="s">convertido</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">gregoriano.</span><span class="nv"> </span><span class="s">Datas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">calendários</span>
+<span class="w">  </span><span class="s">não</span><span class="nv"> </span><span class="s">cristãos</span><span class="nv"> </span><span class="s">podem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">convertidas</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">gregoriana</span><span class="nv"> </span><span class="s">correspondente,</span><span class="nv"> </span><span class="s">mesmo</span>
+<span class="w">  </span><span class="s">as</span><span class="nv"> </span><span class="s">anteriores</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">1583.</span>
+
+<span class="w">  </span><span class="s">Ver</span><span class="nv"> </span><span class="s">&lt;https://en.wikipedia.org/wiki/ISO_8601#Dates&gt;</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">discussão</span><span class="nv"> </span><span class="s">dessa</span><span class="nv"> </span><span class="s">dificuldade,</span>
+<span class="w">  </span><span class="s">cuja</span><span class="nv"> </span><span class="s">solução</span><span class="nv"> </span><span class="s">depende</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">estabelecimento</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">padrão</span><span class="nv"> </span><span class="s">específico</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">caso.'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">attributes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">earliest_date</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">earliest_date</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">exact</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">estimated</span><span class="nv"> </span><span class="s">date,</span>
-<span class="w">      </span><span class="s">for</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">year</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">calendar</span><span class="nv"> </span><span class="s">date,</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">delimits</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">beginning</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">date</span>
-<span class="w">      </span><span class="s">span.</span>
+<span class="w">  </span><span class="nt">date_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Qualifica</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">confiabilidade</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">sendo</span><span class="nv"> </span><span class="s">conhecida</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">estimada.</span>
+<span class="w">      </span><span class="s">A</span><span class="nv"> </span><span class="s">confiabilidade</span><span class="nv"> </span><span class="s">independe</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">grau</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">precisão</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">data.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateType</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">date_value</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date_value</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">ISO-8601</span><span class="nv"> </span><span class="s">(AAAA-MM-DD).</span><span class="nv"> </span><span class="s">Para</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">imprecisas,</span><span class="nv"> </span><span class="s">usar</span>
+<span class="w">      </span><span class="s">o</span><span class="nv"> </span><span class="s">PRIMEIRO</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">ÚLTIMO</span><span class="nv"> </span><span class="s">dia,</span><span class="nv"> </span><span class="s">mês</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ano</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">período</span><span class="nv"> </span><span class="s">delimitado,</span><span class="nv"> </span><span class="s">conforme</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">tratar</span>
+<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">corte</span><span class="nv"> </span><span class="s">inicial</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">final</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">evento,</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">descrever</span><span class="nv"> </span><span class="s">verbalmente</span>
+<span class="w">      </span><span class="s">o</span><span class="nv"> </span><span class="s">período</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`display_date`.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
@@ -471,44 +520,7 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateRange</span>
-<span class="w">  </span><span class="nt">latest_date</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest_date</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">exact</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">approximate</span>
-<span class="w">      </span><span class="s">date,</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">year</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">calendar</span><span class="nv"> </span><span class="s">date,</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">delimits</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">end</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">date</span>
-<span class="w">      </span><span class="s">span.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateRange</span>
-<span class="w">  </span><span class="nt">description</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A human-readable description for a thing</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:description</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:description</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">display</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlace</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
 </code></pre></div>
 </details>
 </div>

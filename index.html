@@ -691,16 +691,24 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Cadastro de uma referência bibliográfica</td>
 </tr>
 <tr>
-<td><a href="BroaderConceptReference/">BroaderConceptReference</a></td>
-<td>Relações hierárquicas</td>
-</tr>
-<tr>
 <td><a href="ConceptReference/">ConceptReference</a></td>
 <td>Atribuição de vocabulário controlado com citação de apoio</td>
 </tr>
 <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="BroaderConceptReference/">BroaderConceptReference</a></td>
+<td>Relações hierárquicas</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MappingConceptReference/">MappingConceptReference</a></td>
+<td>Relações semânticas</td>
+</tr>
+<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MaterialTech/">MaterialTech</a></td>
 <td>Usar discernimento para identificar sistemas, materiais e técnicas que intere...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NarrowerConceptReference/">NarrowerConceptReference</a></td>
+<td>Relações hierárquicas</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="StylePeriod/">StylePeriod</a></td>
@@ -711,16 +719,8 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Todos os elementos do documentário</td>
 </tr>
 <tr>
-<td><a href="DateRange/">DateRange</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="EventDate/">EventDate</a></td>
-<td>A wrapper for the expression of a date by providing a set of years as earlies...</td>
-</tr>
-<tr>
-<td><a href="EventPlace/">EventPlace</a></td>
-<td></td>
+<td>Expressão complexa de uma data que pode se referir ao começo ou ao término de...</td>
 </tr>
 <tr>
 <td><a href="GeographicExtent/">GeographicExtent</a></td>
@@ -731,32 +731,24 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Coordenadas do ponto que situa o sítio na visualização do mapa</td>
 </tr>
 <tr>
-<td><a href="Header/">Header</a></td>
-<td>Presentation metadata for the WASTH interface</td>
-</tr>
-<tr>
-<td><a href="HistoricPlace/">HistoricPlace</a></td>
-<td>Designações alternativas ou jurisdições antigas para o mesmo local, NÃO a loc...</td>
-</tr>
-<tr>
 <td><a href="Inscription/">Inscription</a></td>
 <td>A descrição da inscrição informa local, dimensões e características</td>
 </tr>
 <tr>
 <td><a href="LegalBody/">LegalBody</a></td>
-<td>Personal, corporate, family, or other responsible body</td>
+<td>Referência a uma pessoa jurídica (pode ser um indivíduo detentor de direitos ...</td>
+</tr>
+<tr>
+<td><a href="LocationHistoric/">LocationHistoric</a></td>
+<td>Designações alternativas ou jurisdições antigas para o mesmo local, NÃO a loc...</td>
 </tr>
 <tr>
 <td><a href="Measurement/">Measurement</a></td>
-<td>This class comprises actions measuring physical properties and other values t...</td>
+<td>Informações estruturadas sobre as dimensões do objeto ou requisitos de condic...</td>
 </tr>
 <tr>
 <td><a href="MediaObject/">MediaObject</a></td>
 <td>Descrição e referência a um único arquivo de mídia</td>
-</tr>
-<tr>
-<td><a href="RelatedConceptReference/">RelatedConceptReference</a></td>
-<td>Relações hierárquicas</td>
 </tr>
 <tr>
 <td><a href="RelatedEvent/">RelatedEvent</a></td>
@@ -764,27 +756,27 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="RelatedObject/">RelatedObject</a></td>
-<td>As formas mais comuns de relação no nosso projeto são :</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RelatedWork/">RelatedWork</a></td>
 <td>A wrapper for identifying information about an object or work, including coll...</td>
 </tr>
 <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RelatedWork/">RelatedWork</a></td>
+<td>As formas mais comuns de relação no nosso projeto são :</td>
+</tr>
+<tr>
 <td><a href="Right/">Right</a></td>
-<td>* Preencher <code>earliest_date</code> com a data de início da vigência dos direitos ou ...</td>
+<td>* Preencher <code>earliest_date</code> com a data de início da vigência dos</td>
 </tr>
 <tr>
 <td><a href="Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
+<td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
+<td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Repository/">Repository</a></td>
@@ -796,11 +788,11 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Site/">Site</a></td>
-<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Work/">Work</a></td>
-<td>An historical landmark or building</td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 </tr>
 <tr>
 <td><a href="Topic/">Topic</a></td>
@@ -808,7 +800,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="TypedReference/">TypedReference</a></td>
-<td>Reference to a local record, IRI, URI, or LIDO terminology term</td>
+<td>Permite referenciar um registro local ou externo por meio da sua URI (localiz...</td>
 </tr>
 </tbody>
 </table>
@@ -847,50 +839,46 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="alt_name/">alt_name</a></td>
-<td>O bloco <code>alt_name</code> permite cadastrar outros nomes pelos quais a edificação se...</td>
-</tr>
-<tr>
-<td><a href="author/">author</a></td>
-<td>ORCID iD of the record author or maintainer</td>
+<td>O bloco <code>alt_name</code> permite cadastrar outros nomes pelos quais o objeto ou con...</td>
 </tr>
 <tr>
 <td><a href="bibliographic_citation/">bibliographic_citation</a></td>
-<td>Cadastro de uma referência bibliográfica</td>
+<td>📚  Cadastro de uma referência bibliográfica</td>
 </tr>
 <tr>
 <td><a href="broader/">broader</a></td>
 <td>Um conceito de significação mais genérica</td>
 </tr>
 <tr>
-<td><a href="caption/">caption</a></td>
-<td>Legenda descritiva ou explicativa</td>
-</tr>
-<tr>
 <td><a href="category/">category</a></td>
-<td>The LIDO Category Vocabulary is a structured controlled list of terms recomme...</td>
+<td>Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário...</td>
 </tr>
 <tr>
 <td><a href="classification_genre/">classification_genre</a></td>
-<td>A broad category for grouping objects on the basis of shared intrinsic charac...</td>
+<td>❓ Ainda não implementamos o bloco <code>objectClassification</code> do LIDO</td>
 </tr>
 <tr>
 <td><a href="classification_local/">classification_local</a></td>
-<td>A classification scheme for grouping objects on the basis of locally defined ...</td>
+<td>❓ Ainda não implementamos o bloco <code>objectClassification</code> do LIDO</td>
 </tr>
 <tr>
 <td><a href="classification_special/">classification_special</a></td>
-<td>A classification scheme for grouping objects on the basis of criteria defined...</td>
+<td>❓ Ainda não implementamos o bloco <code>objectClassification</code> do LIDO</td>
 </tr>
 <tr>
 <td><a href="classification_subject/">classification_subject</a></td>
-<td>A broad category for grouping objects or works on the basis of a topical asso...</td>
+<td>❓ Ainda não implementamos o bloco <code>objectClassification</code> do LIDO</td>
 </tr>
 <tr>
 <td><a href="collection/">collection</a></td>
-<td>Collections or aggregations to which the object belongs</td>
+<td>Descreve conjuntos conceituais nos quais a edificação foi incluída, por exemp...</td>
 </tr>
 <tr>
-<td><a href="concept.md">concept</a></td>
+<td><a href="concept/">concept</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="concept_type/">concept_type</a></td>
 <td></td>
 </tr>
 <tr>
@@ -899,7 +887,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="content/">content</a></td>
-<td>Deixe uma linha em branco após o fechamento dos metadados e inclua aqui uma d...</td>
+<td>Conteúdo textual descritivo ou explicativo</td>
 </tr>
 <tr>
 <td><a href="coordinates/">coordinates</a></td>
@@ -911,35 +899,47 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="culture/">culture</a></td>
-<td>An index element for the cultural context from which the object/work in focus...</td>
+<td>Designa o contexto cultural ou étnico no qual o objeto foi afetado pelo event...</td>
 </tr>
 <tr>
 <td><a href="date_type/">date_type</a></td>
-<td>An attribute for the kind of latest date, whether it is, for instance, exact ...</td>
+<td>Qualifica a confiabilidade da data como sendo conhecida ou estimada</td>
 </tr>
 <tr>
 <td><a href="date_value/">date_value</a></td>
-<td>Usar o formato ISO-8601 (por exemplo, 2026-03-17)</td>
+<td>Usar o formato ISO-8601 (AAAA-MM-DD)</td>
 </tr>
 <tr>
 <td><a href="description/">description</a></td>
 <td>A human-readable description for a thing</td>
 </tr>
 <tr>
-<td><a href="earliest_date/">earliest_date</a></td>
-<td>An index element for the expression of an exact or estimated date, for instan...</td>
+<td><a href="display_date/">display_date</a></td>
+<td>Permite a expressão descritiva das datas de início e fim do evento, para cont...</td>
 </tr>
 <tr>
 <td><a href="end_date/">end_date</a></td>
 <td>Data final do evento ou mais tardia data presumida para o seu decurso</td>
 </tr>
 <tr>
-<td><a href="event_date/">event_date</a></td>
-<td>Conjunto de datas em que decorreu o evento</td>
+<td><a href="event_name/">event_name</a></td>
+<td>Identifica o evento ralacionado</td>
+</tr>
+<tr>
+<td><a href="event_place/">event_place</a></td>
+<td>Lugares associados ao evento, sem incluir o próprio local no qual se situa a ...</td>
+</tr>
+<tr>
+<td><a href="event_place_type/">event_place_type</a></td>
+<td>Se relevante para a ação, indicar se se trata do local de descobrimento do ob...</td>
+</tr>
+<tr>
+<td><a href="event_type/">event_type</a></td>
+<td>Categoriza o evento segundo os vários tipos de ações, de processos, ou de res...</td>
 </tr>
 <tr>
 <td><a href="extent/">extent</a></td>
-<td>Polygonal, multipolygonal, or linear geographic extent associated with the pl...</td>
+<td>Área da implantação da edificação ou sítio cadastrado</td>
 </tr>
 <tr>
 <td><a href="format/">format</a></td>
@@ -962,16 +962,16 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>A set of elements identifying the person or the group of persons holding the ...</td>
 </tr>
 <tr>
-<td><a href="href/">href</a></td>
-<td>Um hyperlink simples</td>
-</tr>
-<tr>
 <td><a href="id/">id</a></td>
-<td>Unique identifier for this object</td>
+<td>Identificador globalmente único para este objeto ou recurso</td>
 </tr>
 <tr>
 <td><a href="identifiers/">identifiers</a></td>
-<td>Published or external identifiers for the object</td>
+<td>Números de inventário e demais códigos que identificam este objeto em outras ...</td>
+</tr>
+<tr>
+<td><a href="inscription_type/">inscription_type</a></td>
+<td>Determina a natureza da inscrição</td>
 </tr>
 <tr>
 <td><a href="inscriptions/">inscriptions</a></td>
@@ -982,28 +982,52 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Sinaliza que a edificação devia ocupar um certo local, mas não chegou a ser c...</td>
 </tr>
 <tr>
+<td><a href="label/">label</a></td>
+<td>Nome ou título (texto sem formatação)</td>
+</tr>
+<tr>
 <td><a href="lat/">lat</a></td>
 <td>Latitude em graus decimais (separador decimal: ponto)</td>
 </tr>
 <tr>
-<td><a href="latest_date/">latest_date</a></td>
-<td>An index element for the expression of the exact or approximate date, for ins...</td>
+<td><a href="legal_body/">legal_body</a></td>
+<td>Informações estruturadas sobre a pessoa jurídica</td>
 </tr>
 <tr>
-<td><a href="legal_body/">legal_body</a></td>
-<td></td>
+<td><a href="legal_body_name/">legal_body_name</a></td>
+<td>Referencia a identidade do ente legal num vocabulário controlado ou repositór...</td>
+</tr>
+<tr>
+<td><a href="legal_body_type/">legal_body_type</a></td>
+<td>Define a natureza do ente legal : pessoa jurídica, perímetro geográfico de tu...</td>
+</tr>
+<tr>
+<td><a href="lido_term/">lido_term</a></td>
+<td>LIDO terminology term</td>
 </tr>
 <tr>
 <td><a href="location/">location</a></td>
-<td>Representative point location for the place, normally in EPSG:4326 (WGS 84)</td>
+<td>Coordenadas geográficas do ponto que permite situar a edificação no mapa para...</td>
 </tr>
 <tr>
 <td><a href="location_historic/">location_historic</a></td>
 <td>Antigas jurisdições ou designações para o lugar onde o objeto se encontra</td>
 </tr>
 <tr>
+<td><a href="location_historic_name/">location_historic_name</a></td>
+<td>Identificação do local com referência a um vocabulário controlado ou repositó...</td>
+</tr>
+<tr>
+<td><a href="location_historic_type/">location_historic_type</a></td>
+<td>Define se o local histórico designa uma jurisdição, um topônimo antigo, ou ou...</td>
+</tr>
+<tr>
 <td><a href="lon/">lon</a></td>
 <td>Longitude em graus decimais (separador decimal: ponto)</td>
+</tr>
+<tr>
+<td><a href="mapping/">mapping</a></td>
+<td>Um conceito com o qual existe um relacionamento semântico associativo</td>
 </tr>
 <tr>
 <td><a href="match/">match</a></td>
@@ -1011,18 +1035,38 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="material/">material</a></td>
-<td>This class is a specialization of E55 Type and comprises the concepts of mate...</td>
+<td>Descreve a natureza do material empregado na edificação, no elemento ou no ev...</td>
 </tr>
 <tr>
 <td><a href="material_tech_type/">material_tech_type</a></td>
 <td>Tipo da referência a um material ou técnica usado na obra: material de constr...</td>
 </tr>
 <tr>
-<td><a href="measurements.md">measurements</a></td>
+<td><a href="measurement_event/">measurement_event</a></td>
+<td>Descreve a ocasião em que as medidas foram aferidas, caso essa informação sej...</td>
+</tr>
+<tr>
+<td><a href="measurement_qualifier/">measurement_qualifier</a></td>
+<td>Indica que as medidas são aproximadas</td>
+</tr>
+<tr>
+<td><a href="measurement_shape/">measurement_shape</a></td>
+<td>caso relevante, indicar a forma do elemento medido usando a [lista de formas ...</td>
+</tr>
+<tr>
+<td><a href="measurement_type/">measurement_type</a></td>
+<td>designa a natureza da medida : largura, altura, área, etc</td>
+</tr>
+<tr>
+<td><a href="measurement_value/">measurement_value</a></td>
+<td>Valor numérico, usar ponto como separador decimal</td>
+</tr>
+<tr>
+<td><a href="measurements/">measurements</a></td>
 <td>A wrapper for information about the dimensions, or other measurements, of the...</td>
 </tr>
 <tr>
-<td><a href="media.md">media</a></td>
+<td><a href="media/">media</a></td>
 <td>Representações iconográficas deste objeto</td>
 </tr>
 <tr>
@@ -1032,10 +1076,6 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="method/">method</a></td>
 <td>An index element for the method by which the event is or was carried out</td>
-</tr>
-<tr>
-<td><a href="name/">name</a></td>
-<td>Identificador do termo referido</td>
 </tr>
 <tr>
 <td><a href="narrower/">narrower</a></td>
@@ -1051,27 +1091,19 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="other_site/">other_site</a></td>
-<td>Para casos não contemplados em nenhuma das categorias acima</td>
-</tr>
-<tr>
-<td><a href="overlay_image/">overlay_image</a></td>
-<td></td>
+<td>Para casos de implantação não contemplados em nenhuma das categorias acima</td>
 </tr>
 <tr>
 <td><a href="part_of/">part_of</a></td>
-<td>A set of structured information about a place that is the broader context for...</td>
+<td>Permite identificar o contexto geográfico ou administrativo ao qual a edifica...</td>
+</tr>
+<tr>
+<td><a href="period_name_type/">period_name_type</a></td>
+<td>Designa a natureza ou origem do nome do período ou estilo indicado</td>
 </tr>
 <tr>
 <td><a href="perspective/">perspective</a></td>
 <td>Tipo de vista do desenho</td>
-</tr>
-<tr>
-<td><a href="place.md">place</a></td>
-<td>A set of structured information indicating the place or location where an obj...</td>
-</tr>
-<tr>
-<td><a href="places/">places</a></td>
-<td>Lugares associados ao evento, sem incluir o próprio local no qual se situa a ...</td>
 </tr>
 <tr>
 <td><a href="preview_image/">preview_image</a></td>
@@ -1086,16 +1118,16 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap</td>
 </tr>
 <tr>
-<td><a href="qualifier/">qualifier</a></td>
-<td>Indica que as medidas são aproximadas : usar um [qualificador do AAT](https:/...</td>
+<td><a href="record_author/">record_author</a></td>
+<td>ORCID iD da pessoa que escreveu a versão original da ficha</td>
 </tr>
 <tr>
 <td><a href="record_date/">record_date</a></td>
-<td>Date the record was created or last substantively revised</td>
+<td>Data de inclusão da ficha</td>
 </tr>
 <tr>
 <td><a href="record_rights/">record_rights</a></td>
-<td>A set of structured information about rights regarding the content provided i...</td>
+<td>Informações estruturadas sobre os direitos que incidem sobre o conteúdo textu...</td>
 </tr>
 <tr>
 <td><a href="reference_type/">reference_type</a></td>
@@ -1127,7 +1159,11 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="repositories/">repositories</a></td>
-<td>A set of elements for the identification, name and location of the repository...</td>
+<td>Nos Documentários da Arquitetura Tradicional, usamos repositórios para indica...</td>
+</tr>
+<tr>
+<td><a href="repository_type/">repository_type</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="resource_service/">resource_service</a></td>
@@ -1142,6 +1178,14 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td></td>
 </tr>
 <tr>
+<td><a href="rights_statement/">rights_statement</a></td>
+<td>Referencia, preferencialmente por meio de uma URI, as informações específicas...</td>
+</tr>
+<tr>
+<td><a href="rights_type/">rights_type</a></td>
+<td>Determina se os direitos ora descritos são uma licença específica (padrão) ou...</td>
+</tr>
+<tr>
 <td><a href="role_in_event/">role_in_event</a></td>
 <td>Ação desempenhada pelo agente no evento</td>
 </tr>
@@ -1150,12 +1194,12 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Número inverso da escala da imagem, se ela tiver uma resolução ou tamanho de ...</td>
 </tr>
 <tr>
-<td><a href="shape/">shape</a></td>
-<td>caso relevante, indicar a forma do elemento medido usando a [lista de formas ...</td>
+<td><a href="site/">site</a></td>
+<td>A localização real, atual da edificação — é o que será usado em quase todos o...</td>
 </tr>
 <tr>
-<td><a href="site.md">site</a></td>
-<td>A localização real, atual da edificação — é o que será usado em quase todos o...</td>
+<td><a href="site_type/">site_type</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="source/">source</a></td>
@@ -1171,7 +1215,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="style_period/">style_period</a></td>
-<td>An index element for the period in which the event happened, comprising infor...</td>
+<td>Denomina o(s) período(s) em que o evento decorreu, em qualquer escala relevan...</td>
 </tr>
 <tr>
 <td><a href="subject/">subject</a></td>
@@ -1179,23 +1223,15 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="tags/">tags</a></td>
-<td>Provisional uncontrolled keywords</td>
-</tr>
-<tr>
-<td><a href="teaser/">teaser</a></td>
-<td></td>
+<td>Lista de palavras-chave que caracterizam o objeto, de modo não estruturado</td>
 </tr>
 <tr>
 <td><a href="technique/">technique</a></td>
-<td>The production or manufacturing processes, techniques, and methods incorporat...</td>
+<td>Processos, técnicas, métodos e saberes postos em prática no conjunto da edifi...</td>
 </tr>
 <tr>
 <td><a href="temporal/">temporal</a></td>
 <td>Date on which a right is or was current</td>
-</tr>
-<tr>
-<td><a href="term/">term</a></td>
-<td>LIDO terminology term</td>
 </tr>
 <tr>
 <td><a href="things_present/">things_present</a></td>
@@ -1203,7 +1239,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="title/">title</a></td>
-<td>The preferred human-readable label for a Thing</td>
+<td>Nome pelo qual este item é mais comumente conhecido</td>
 </tr>
 <tr>
 <td><a href="title_preference/">title_preference</a></td>
@@ -1211,55 +1247,51 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="title_source/">title_source</a></td>
-<td>📚 A fonte do título title_source é opcional ; um título pode ser atestado em ...</td>
+<td>A fonte do título title_source é opcional ; um título pode ser atestado em ma...</td>
 </tr>
 <tr>
 <td><a href="title_type/">title_type</a></td>
-<td>Indica se o título é um nome próprio, descritivo, etc</td>
+<td></td>
 </tr>
 <tr>
-<td><a href="type/">type</a></td>
-<td>designa a natureza da medida : largura, altura, área, etc</td>
+<td><a href="topic_type/">topic_type</a></td>
+<td>Categoriza o nível descritivo ou interpretativo do tema</td>
 </tr>
 <tr>
 <td><a href="unit/">unit</a></td>
-<td>Unidade de medida usada no dimensionamento da representação, por exemplo metr...</td>
-</tr>
-<tr>
-<td><a href="value/">value</a></td>
-<td>Valor numérico, usar ponto como separador decimal</td>
+<td>Unidade de medida usada no dimensionamento do objeto ou da representação, por...</td>
 </tr>
 <tr>
 <td><a href="work_rights/">work_rights</a></td>
-<td>&gt; ⚠️  Este bloco se refere a eventuais direitos autorais sobre A &gt; EDIFICAÇÃO...</td>
+<td>⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobr...</td>
 </tr>
 <tr>
 <td><a href="work_type_condition/">work_type_condition</a></td>
-<td>Descriptors for objects that are distinguishable by their overall state such ...</td>
+<td>Descreve o estado físico da edificação quanto à sua aparência de completude, ...</td>
 </tr>
 <tr>
 <td><a href="work_type_context/">work_type_context</a></td>
-<td>Descriptors for objects that are distinguishable by their use or application ...</td>
+<td>Nos Documentários de edificações, designa sobretudo o contexto imediato de im...</td>
 </tr>
 <tr>
 <td><a href="work_type_form/">work_type_form</a></td>
-<td>Descriptors for objects that are distinguishable by their physical form or by...</td>
+<td>Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal</td>
 </tr>
 <tr>
 <td><a href="work_type_function/">work_type_function</a></td>
-<td>Objects that are distinguishable by the particular purpose for which they are...</td>
+<td>Nos Documentários de edificações, designa um dos sete tipos de propósitos con...</td>
 </tr>
 <tr>
 <td><a href="work_type_material_tech/">work_type_material_tech</a></td>
-<td>Descriptors for objects that are distinguishable by their materials encorpora...</td>
+<td>Nos Documentários da Arquitetura Tradicional, refere-se à caracterização cons...</td>
 </tr>
 <tr>
 <td><a href="work_type_subject_type/">work_type_subject_type</a></td>
-<td>Descriptors for objects that are distinguishable by their topics, themes, or ...</td>
+<td>Nos Documentários da Arquitetura Tradicional, indica, se houver, uma classifi...</td>
 </tr>
 <tr>
 <td><a href="work_type_use/">work_type_use</a></td>
-<td>Descriptors for objects that are distinguishable by the way they are employed...</td>
+<td>Nos Documentários da Arquitetura Tradicional, designa propriamente a(s) class...</td>
 </tr>
 <tr>
 <td><a href="works/">works</a></td>
@@ -1282,35 +1314,43 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tbody>
 <tr>
 <td><a href="AgentType/">AgentType</a></td>
-<td>LIDO actor type</td>
+<td>Tipo de agente na terminologia LIDO</td>
 </tr>
 <tr>
-<td><a href="DateQualifier/">DateQualifier</a></td>
+<td><a href="ConceptType/">ConceptType</a></td>
+<td>Tipos de termos de vocabulário baseados no Getty AAT</td>
+</tr>
+<tr>
+<td><a href="DateType/">DateType</a></td>
 <td>Exatidão da data conhecida</td>
 </tr>
 <tr>
 <td><a href="EventPlaceType/">EventPlaceType</a></td>
-<td>The type attribute qualifies the place according to its role or function in t...</td>
+<td>Para eventos que implicam a deslocação do bem, indica se o local se refere ao...</td>
 </tr>
 <tr>
 <td><a href="EventType/">EventType</a></td>
-<td>The particular kind of event the object/work participated in or was present a...</td>
+<td>O tipo de incidência sobre a edificação que o evento descreve</td>
 </tr>
 <tr>
 <td><a href="GeometryType/">GeometryType</a></td>
-<td>geoJSON types of area geometry</td>
+<td>Tipos de geometria do objeto geoJSON</td>
 </tr>
 <tr>
 <td><a href="InscriptionType/">InscriptionType</a></td>
-<td>VRA Core types for inscriptions</td>
+<td>Tipos de inscrições previstos no VRA Core</td>
 </tr>
 <tr>
 <td><a href="LabelType/">LabelType</a></td>
-<td>SKOS label types</td>
+<td>No SKOS, caracteriza se cada termo deve ser considerado preferencial ou alter...</td>
 </tr>
 <tr>
 <td><a href="MaterialTechType/">MaterialTechType</a></td>
-<td>The physical matter or substance from which an object is made, including any ...</td>
+<td>A materialidade e as técnicas de produção ou intervenção na edificação devem ...</td>
+</tr>
+<tr>
+<td><a href="MeasurementQualifier/">MeasurementQualifier</a></td>
+<td>Qualifica a confiabilidade das medidas aferidas</td>
 </tr>
 <tr>
 <td><a href="MeasurementType/">MeasurementType</a></td>
@@ -1322,7 +1362,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="PeriodNameType/">PeriodNameType</a></td>
-<td>The LIDO Period/Style Type-Vocabulary is a controlled list of terms recommend...</td>
+<td>O vocabulário de tipos de período/estilo do LIDO é uma lista controlada estru...</td>
 </tr>
 <tr>
 <td><a href="ReferenceType/">ReferenceType</a></td>
@@ -1345,12 +1385,16 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Contribuições de um agente a um evento</td>
 </tr>
 <tr>
-<td><a href="SkosHierarchicalRelation/">SkosHierarchicalRelation</a></td>
-<td>SKOS-THES hierarchical relation type</td>
+<td><a href="SkosBroaderRelation/">SkosBroaderRelation</a></td>
+<td>SKOS-THES broader relation type</td>
 </tr>
 <tr>
 <td><a href="SkosMappingRelation/">SkosMappingRelation</a></td>
 <td>SKOS mapping properties</td>
+</tr>
+<tr>
+<td><a href="SkosNarrowerRelation/">SkosNarrowerRelation</a></td>
+<td>SKOS-THES narrower relation type</td>
 </tr>
 <tr>
 <td><a href="SubjectType/">SubjectType</a></td>

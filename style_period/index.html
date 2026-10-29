@@ -398,17 +398,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#slot-characteristics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slot Characteristics
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -486,6 +475,8 @@
 
 
 <h1 id="slot-style_period">Slot: style_period</h1>
+<p><em>Denomina o(s) período(s) em que o evento decorreu, em qualquer escala relevante para o conhecimento : geológica, arqueológica, histórica ou artística. A identificação do período ou estilo deve ser relevante para as características que o objeto adquiriu devido a esse evento, não somente uma coincidência cronológica.</em></p>
+<p><em>---------------------------------------------------------------------</em></p>
 <p><em>An index element for the period in which the event happened, comprising information about geologic time scale, archaelogical, historical, or artistic period, style, or art movement, whose characteristics are represented by the object or work.</em></p>
 <p><em>Note that "Period/Style" corresponds to "Style" in CDWA as shorthand for <a href="https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html">Style/Period/Group/Movement/Dynasty</a>.</em></p>
 <p><em>Examples may be Neolithic for a period, Impressionist for a style, or Cubism for a movement.</em></p>
@@ -505,7 +496,12 @@
 <tbody>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Work/">Work</a></td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -526,7 +522,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Event/">Event</a></td>
+<td><a href="../Event/">Event</a>, <a href="../Work/">Work</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -545,21 +541,6 @@
 <tr>
 <td>Multivalued</td>
 <td>Yes</td>
-</tr>
-</tbody>
-</table>
-<h3 id="slot-characteristics">Slot Characteristics</h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Owner</td>
-<td><a href="../Event/">Event</a></td>
 </tr>
 </tbody>
 </table>
@@ -590,9 +571,16 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">style_period</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'An</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">event</span><span class="nv"> </span><span class="s">happened,</span><span class="nv"> </span><span class="s">comprising</span>
-<span class="w">  </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">geologic</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">scale,</span><span class="nv"> </span><span class="s">archaelogical,</span><span class="nv"> </span><span class="s">historical,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">artistic</span><span class="nv"> </span><span class="s">period,</span>
-<span class="w">  </span><span class="s">style,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">art</span><span class="nv"> </span><span class="s">movement,</span><span class="nv"> </span><span class="s">whose</span><span class="nv"> </span><span class="s">characteristics</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">represented</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">work.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Denomina</span><span class="nv"> </span><span class="s">o(s)</span><span class="nv"> </span><span class="s">período(s)</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">decorreu,</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">qualquer</span><span class="nv"> </span><span class="s">escala</span>
+<span class="w">  </span><span class="s">relevante</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">conhecimento</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">geológica,</span><span class="nv"> </span><span class="s">arqueológica,</span><span class="nv"> </span><span class="s">histórica</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">artística.</span>
+<span class="w">  </span><span class="s">A</span><span class="nv"> </span><span class="s">identificação</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">período</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">estilo</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">relevante</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">características</span>
+<span class="w">  </span><span class="s">que</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">adquiriu</span><span class="nv"> </span><span class="s">devido</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">esse</span><span class="nv"> </span><span class="s">evento,</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">somente</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">coincidência</span><span class="nv"> </span><span class="s">cronológica.</span>
+
+<span class="w">  </span><span class="s">---------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="s">An</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">event</span><span class="nv"> </span><span class="s">happened,</span><span class="nv"> </span><span class="s">comprising</span><span class="nv"> </span><span class="s">information</span>
+<span class="w">  </span><span class="s">about</span><span class="nv"> </span><span class="s">geologic</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">scale,</span><span class="nv"> </span><span class="s">archaelogical,</span><span class="nv"> </span><span class="s">historical,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">artistic</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">style,</span>
+<span class="w">  </span><span class="s">or</span><span class="nv"> </span><span class="s">art</span><span class="nv"> </span><span class="s">movement,</span><span class="nv"> </span><span class="s">whose</span><span class="nv"> </span><span class="s">characteristics</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">represented</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">work.</span>
 
 <span class="w">  </span><span class="s">Note</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">"Period/Style"</span><span class="nv"> </span><span class="s">corresponds</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">"Style"</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">CDWA</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">shorthand</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">[Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).</span>
 
@@ -602,9 +590,9 @@
 <span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StylePeriod</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

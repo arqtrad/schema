@@ -365,10 +365,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enumeration-source" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enumeration Source
+        Permissible Values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slots
       
     </span>
   </a>
@@ -442,12 +453,58 @@
 <p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/PeriodNameType">wasth:PeriodNameType</a></p>
-<h2 id="enumeration-source">Enumeration Source</h2>
-<p><strong>Reachable From:</strong>
-- <strong>Source:</strong> <a href="../term/">term</a>
-- <strong>Nodes:</strong> term:periodName_type
-- <strong>Via:</strong> skos:inScheme</p>
-<p><em>This is a dynamic enum</em></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>period</td>
+<td>term:lido00731</td>
+<td>A distinct named historical or cultural portion or division of time during wh...</td>
+</tr>
+<tr>
+<td>style</td>
+<td>term:lido00732</td>
+<td>A distinct configuration of artistic elements that together constitute a name...</td>
+</tr>
+<tr>
+<td>group</td>
+<td>term:lido00735</td>
+<td>A cultural group, which includes societies or groups of people characterized ...</td>
+</tr>
+<tr>
+<td>movement</td>
+<td>term:lido00733</td>
+<td>The state or process in which events or conditions transpire, a tendency, or ...</td>
+</tr>
+<tr>
+<td>dynasty</td>
+<td>term:lido00734</td>
+<td>The succession of rulers from the same family, line, stock, or group, during ...</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../period_name_type/">period_name_type</a></td>
+<td>Designa a natureza ou origem do nome do período ou estilo indicado</td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -469,13 +526,50 @@
 <span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">reachable_from</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">source_ontology</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term</span>
-<span class="w">  </span><span class="nt">source_nodes</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:periodName_type</span>
-<span class="w">  </span><span class="nt">relationship_types</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skos:inScheme</span>
-<span class="w">  </span><span class="nt">include_self</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">permissible_values</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">period</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">period</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">distinct</span><span class="nv"> </span><span class="s">named</span><span class="nv"> </span><span class="s">historical</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">cultural</span><span class="nv"> </span><span class="s">portion</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">division</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">time</span>
+<span class="w">      </span><span class="s">during</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">something</span><span class="nv"> </span><span class="s">runs</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">course,</span><span class="nv"> </span><span class="s">characterized</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">some</span><span class="nv"> </span><span class="s">prevalent</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">distinguishing</span>
+<span class="w">      </span><span class="s">condition,</span><span class="nv"> </span><span class="s">circumstance,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">occurrence,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">rule</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">particular</span><span class="nv"> </span><span class="s">government.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00731</span>
+<span class="w">  </span><span class="nt">style</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">style</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">distinct</span><span class="nv"> </span><span class="s">configuration</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">artistic</span><span class="nv"> </span><span class="s">elements</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">together</span><span class="nv"> </span><span class="s">constitute</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">named</span><span class="nv"> </span><span class="s">manner</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">peculiar</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">certain</span><span class="nv"> </span><span class="s">epoch,</span><span class="nv"> </span><span class="s">people,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">visual</span>
+<span class="w">      </span><span class="s">appearance,</span><span class="nv"> </span><span class="s">technique,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">visual</span><span class="nv"> </span><span class="s">language</span><span class="nv"> </span><span class="s">adopted</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">particular</span><span class="nv"> </span><span class="s">adherents</span><span class="nv"> </span><span class="s">of</span>
+<span class="w">      </span><span class="s">that</span><span class="nv"> </span><span class="s">language.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00732</span>
+<span class="w">  </span><span class="nt">group</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">group</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">cultural</span><span class="nv"> </span><span class="s">group,</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">includes</span><span class="nv"> </span><span class="s">societies</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">groups</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">people</span><span class="nv"> </span><span class="s">characterized</span>
+<span class="w">      </span><span class="s">by</span><span class="nv"> </span><span class="s">common</span><span class="nv"> </span><span class="s">ideas,</span><span class="nv"> </span><span class="s">customs,</span><span class="nv"> </span><span class="s">social</span><span class="nv"> </span><span class="s">behavior,</span><span class="nv"> </span><span class="s">products,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">way</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">life</span><span class="nv"> </span><span class="s">within</span><span class="nv"> </span><span class="s">a</span>
+<span class="w">      </span><span class="s">particular</span><span class="nv"> </span><span class="s">nation,</span><span class="nv"> </span><span class="s">people,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">period.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00735</span>
+<span class="w">  </span><span class="nt">movement</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">movement</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">state</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">process</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">events</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">conditions</span><span class="nv"> </span><span class="s">transpire,</span><span class="nv"> </span><span class="s">a</span>
+<span class="w">      </span><span class="s">tendency,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">trend</span><span class="nv"> </span><span class="s">evident</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">particular</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">particular</span><span class="nv"> </span><span class="s">sphere,</span>
+<span class="w">      </span><span class="s">particularly</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">course</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">series</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">actions</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">endeavours</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">part</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">group</span>
+<span class="w">      </span><span class="s">of</span><span class="nv"> </span><span class="s">people</span><span class="nv"> </span><span class="s">working</span><span class="nv"> </span><span class="s">towards</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">shared</span><span class="nv"> </span><span class="s">goal</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">advance</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">shared</span><span class="nv"> </span><span class="s">political,</span><span class="nv"> </span><span class="s">social,</span>
+<span class="w">      </span><span class="s">or</span><span class="nv"> </span><span class="s">artistic</span><span class="nv"> </span><span class="s">objective.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00733</span>
+<span class="w">  </span><span class="nt">dynasty</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dynasty</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">succession</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">rulers</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">family,</span><span class="nv"> </span><span class="s">line,</span><span class="nv"> </span><span class="s">stock,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">group,</span>
+<span class="w">      </span><span class="s">during</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">particular</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">time;</span><span class="nv"> </span><span class="s">extended</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">include</span><span class="nv"> </span><span class="s">all</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">people</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">culture</span>
+<span class="w">      </span><span class="s">surrounding</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">succession</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">rulers.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00734</span>
 </code></pre></div>
 </details>
 </div>

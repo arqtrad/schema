@@ -487,6 +487,7 @@
 
 <h1 id="slot-narrower">Slot: narrower</h1>
 <p><em>Um conceito de significação mais específica. Conceitos específicos são tipicamente representados como descendentes em uma hierarquia de conceitos (árvore).</em></p>
+<p><em>Derivado automaticamente das relações <code>broader</code> em outras fichas. NÃO preencher manualmente.</em></p>
 <div>
 <p>URI: <a href="http://www.w3.org/2004/02/skos/core#narrower">skos:narrower</a></p>
 <!-- no inheritance hierarchy -->
@@ -502,7 +503,7 @@
 <tbody>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
+<td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -519,7 +520,7 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../ConceptReference/">ConceptReference</a></td>
+<td><a href="../NarrowerConceptReference/">NarrowerConceptReference</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
@@ -564,6 +565,14 @@
 </tr>
 </tbody>
 </table>
+<details>
+<summary>Relationship Properties</summary>
+
+| Property | Value |
+| --- | --- |
+| Inverse | [broader](broader.md) |
+
+</details>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -591,15 +600,19 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">narrower</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Um conceito de significação mais específica. Conceitos específicos são</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">tipicamente representados como descendentes em uma hierarquia de conceitos (árvore).</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Um</span><span class="nv"> </span><span class="s">conceito</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">significação</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">específica.</span><span class="nv"> </span><span class="s">Conceitos</span><span class="nv"> </span><span class="s">específicos</span><span class="nv"> </span><span class="s">são</span>
+<span class="w">  </span><span class="s">tipicamente</span><span class="nv"> </span><span class="s">representados</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">descendentes</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">hierarquia</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">conceitos</span><span class="nv"> </span><span class="s">(árvore).</span>
+
+<span class="w">  </span><span class="s">Derivado</span><span class="nv"> </span><span class="s">automaticamente</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">relações</span><span class="nv"> </span><span class="s">`broader`</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">fichas.</span><span class="nv"> </span><span class="s">NÃO</span><span class="nv"> </span><span class="s">preencher</span>
+<span class="w">  </span><span class="s">manualmente.'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skos:narrower</span>
 <span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
+<span class="nt">inverse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">broader</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NarrowerConceptReference</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

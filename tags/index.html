@@ -486,6 +486,9 @@
 
 
 <h1 id="slot-tags">Slot: tags</h1>
+<p><em>Lista de palavras-chave que caracterizam o objeto, de modo não estruturado. Recomenda-se usar uma palavra-chave de cada um dos recortes abaixo:</em></p>
+<p><em>- Geográfico ; - Cronológico ; - Histórico-cultural ; - Técnico-construtivo ; - Temático ou tipológico ; - Funcional.</em></p>
+<p><em>---------------------------------------------------------------------</em></p>
 <p><em>Provisional uncontrolled keywords. Prefer <code>classifications</code> or <code>subject</code> for curated vocabulary terms.</em></p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/tags">wasth:tags</a></p>
@@ -502,7 +505,7 @@
 <tbody>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
+<td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -512,12 +515,12 @@
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
+<td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
 <td>no</td>
 </tr>
 <tr>
@@ -527,12 +530,12 @@
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>An historical landmark or building</td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
-<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -617,8 +620,16 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tags</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provisional uncontrolled keywords. Prefer `classifications` or `subject`</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">for curated vocabulary terms.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Lista</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">palavras-chave</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">caracterizam</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto,</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">modo</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">estruturado.</span>
+<span class="w">  </span><span class="s">Recomenda-se</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">palavra-chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">recortes</span><span class="nv"> </span><span class="s">abaixo:</span>
+
+<span class="w">  </span><span class="s">-</span><span class="nv"> </span><span class="s">Geográfico</span><span class="err"> </span><span class="s">;</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Cronológico</span><span class="err"> </span><span class="s">;</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Histórico-cultural</span><span class="err"> </span><span class="s">;</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Técnico-construtivo</span><span class="err"> </span><span class="s">;</span><span class="nv"> </span><span class="s">-</span>
+<span class="w">  </span><span class="s">Temático</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">tipológico</span><span class="err"> </span><span class="s">;</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Funcional.</span>
+
+<span class="w">  </span><span class="s">---------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="s">Provisional</span><span class="nv"> </span><span class="s">uncontrolled</span><span class="nv"> </span><span class="s">keywords.</span><span class="nv"> </span><span class="s">Prefer</span><span class="nv"> </span><span class="s">`classifications`</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">`subject`</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">curated</span>
+<span class="w">  </span><span class="s">vocabulary</span><span class="nv"> </span><span class="s">terms.'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>

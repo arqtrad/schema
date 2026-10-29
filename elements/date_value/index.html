@@ -475,7 +475,7 @@
 
 
 <h1 id="slot-date_value">Slot: date_value</h1>
-<p><em>Usar o formato ISO-8601 (por exemplo, 2026-03-17). Para datas imprecisas, usar o primeiro dia, mês ou ano do período delimitado, e descrever verbalmente o período no campo <code>description</code>.</em></p>
+<p><em>Usar o formato ISO-8601 (AAAA-MM-DD). Para datas imprecisas, usar o PRIMEIRO ou o ÚLTIMO dia, mês ou ano do período delimitado, conforme se tratar de uma data de corte inicial ou final para o evento, e descrever verbalmente o período no campo <code>display_date</code>.</em></p>
 <p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/date_value">wasth:date_value</a></p>
@@ -491,8 +491,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../DateRange/">DateRange</a></td>
-<td></td>
+<td><a href="../EventDate/">EventDate</a></td>
+<td>Expressão complexa de uma data que pode se referir ao começo ou ao término de...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -513,7 +513,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../DateRange/">DateRange</a></td>
+<td><a href="../EventDate/">EventDate</a></td>
 </tr>
 <tr>
 <td>### Slot Characteristics</td>
@@ -531,7 +531,7 @@
 <tbody>
 <tr>
 <td>Owner</td>
-<td><a href="../DateRange/">DateRange</a></td>
+<td><a href="../EventDate/">EventDate</a></td>
 </tr>
 </tbody>
 </table>
@@ -562,16 +562,17 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date_value</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">ISO-8601</span><span class="nv"> </span><span class="s">(por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">2026-03-17).</span><span class="nv"> </span><span class="s">Para</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">imprecisas,</span>
-<span class="w">  </span><span class="s">usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">primeiro</span><span class="nv"> </span><span class="s">dia,</span><span class="nv"> </span><span class="s">mês</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ano</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">período</span><span class="nv"> </span><span class="s">delimitado,</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">descrever</span><span class="nv"> </span><span class="s">verbalmente</span><span class="nv"> </span><span class="s">o</span>
-<span class="w">  </span><span class="s">período</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`description`.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">ISO-8601</span><span class="nv"> </span><span class="s">(AAAA-MM-DD).</span><span class="nv"> </span><span class="s">Para</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">imprecisas,</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">o</span>
+<span class="w">  </span><span class="s">PRIMEIRO</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">ÚLTIMO</span><span class="nv"> </span><span class="s">dia,</span><span class="nv"> </span><span class="s">mês</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ano</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">período</span><span class="nv"> </span><span class="s">delimitado,</span><span class="nv"> </span><span class="s">conforme</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">tratar</span><span class="nv"> </span><span class="s">de</span>
+<span class="w">  </span><span class="s">uma</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">corte</span><span class="nv"> </span><span class="s">inicial</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">final</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">evento,</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">descrever</span><span class="nv"> </span><span class="s">verbalmente</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">período</span>
+<span class="w">  </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`display_date`.</span>
 
 <span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateRange</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DateRange</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
 </code></pre></div>
 </details>

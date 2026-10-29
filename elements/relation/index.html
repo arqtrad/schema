@@ -486,9 +486,9 @@
 
 
 <h1 id="slot-relation">Slot: relation</h1>
-<p><em>Um conceito com o qual existe um relacionamento semântico associativo. Usar principalmente em referência a vocabulários externos, como o Getty Art and Architecture Thesaurus.</em></p>
+<p><em>Um conceito com o qual existe um relacionamento semântico associativo. Usar em referência ao nosso próprio vocabulário controlado.</em></p>
 <div>
-<p>URI: <a href="http://www.w3.org/2004/02/skos/core#relation">skos:relation</a></p>
+<p>URI: <a href="http://www.w3.org/2004/02/skos/core#related">skos:related</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -502,7 +502,7 @@
 <tbody>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
+<td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -519,7 +519,7 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../RelatedConceptReference/">RelatedConceptReference</a></td>
+<td><a href="../ConceptReference/">ConceptReference</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
@@ -527,7 +527,7 @@
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="http://www.w3.org/2004/02/skos/core#relation">skos:relation</a></td>
+<td><a href="http://www.w3.org/2004/02/skos/core#related">skos:related</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -580,7 +580,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>skos:relation</td>
+<td>skos:related</td>
 </tr>
 <tr>
 <td>native</td>
@@ -592,15 +592,14 @@
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">relation</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Um conceito com o qual existe um relacionamento semântico associativo.</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Usar principalmente em referência a vocabulários externos, como o Getty Art and</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Architecture Thesaurus.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Usar em referência ao nosso próprio vocabulário controlado.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skos:relation</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skos:related</span>
 <span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedConceptReference</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

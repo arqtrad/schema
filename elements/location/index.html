@@ -486,9 +486,11 @@
 
 
 <h1 id="slot-location">Slot: location</h1>
+<p><em>Coordenadas geográficas do ponto que permite situar a edificação no mapa para fins ilustrativos. Usar o sistema de coordenadas geográficas EPSG:4326 (WGS84) sempre que possível.</em></p>
+<p><em>---------------------------------------------------------------------</em></p>
 <p><em>Representative point location for the place, normally in EPSG:4326 (WGS 84).</em></p>
 <div>
-<p>URI: <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a></p>
+<p>URI: <a href="http://www.opengis.net/ont/geosparql#hasDefaultGeometry">geo:hasDefaultGeometry</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -502,7 +504,7 @@
 <tbody>
 <tr>
 <td><a href="../Site/">Site</a></td>
-<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -527,7 +529,7 @@
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a></td>
+<td><a href="http://www.opengis.net/ont/geosparql#hasDefaultGeometry">geo:hasDefaultGeometry</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -580,7 +582,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>geo:hasGeometry</td>
+<td>geo:hasDefaultGeometry</td>
 </tr>
 <tr>
 <td>native</td>
@@ -591,11 +593,16 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">location</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Representative point location for the place, normally in EPSG:4326 (WGS</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">84).</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Coordenadas</span><span class="nv"> </span><span class="s">geográficas</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">ponto</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">permite</span><span class="nv"> </span><span class="s">situar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">no</span>
+<span class="w">  </span><span class="s">mapa</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">fins</span><span class="nv"> </span><span class="s">ilustrativos.</span><span class="nv"> </span><span class="s">Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">sistema</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">coordenadas</span><span class="nv"> </span><span class="s">geográficas</span><span class="nv"> </span><span class="s">EPSG:4326</span>
+<span class="w">  </span><span class="s">(WGS84)</span><span class="nv"> </span><span class="s">sempre</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">possível.</span>
+
+<span class="w">  </span><span class="s">---------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="s">Representative</span><span class="nv"> </span><span class="s">point</span><span class="nv"> </span><span class="s">location</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">place,</span><span class="nv"> </span><span class="s">normally</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">EPSG:4326</span><span class="nv"> </span><span class="s">(WGS</span><span class="nv"> </span><span class="s">84).'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geo:hasGeometry</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geo:hasDefaultGeometry</span>
 <span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>

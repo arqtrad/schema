@@ -398,6 +398,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -475,11 +486,11 @@
 
 
 <h1 id="slot-start_date">Slot: start_date</h1>
-<p><em>Data inicial do evento ou mais antiga data presumida para o seu decurso.</em></p>
+<p><em>Data inicial do evento ou mais antiga data presumida para o seu decurso. Omitir se desconhecida.</em></p>
+<p><em>Por ora, é responsabilidade de quem preenche a ficha assegurar que <code>start_date</code> e <code>end_date</code> ocorram em ordem cronológica. Não dispomos de validação automática para tanto.</em></p>
 <p>__</p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/start_date">wasth:start_date</a>
-Alias: start_date</p>
+<p>URI: <a href="https://tradicional.arq.br/schema/start_date">wasth:start_date</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -493,7 +504,7 @@ Alias: start_date</p>
 <tbody>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -517,11 +528,34 @@ Alias: start_date</p>
 <td><a href="../Event/">Event</a></td>
 </tr>
 <tr>
-<td>### Slot Characteristics</td>
+<td>### Cardinality and Requirements</td>
 <td></td>
 </tr>
 </tbody>
 </table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multivalued</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Minimum Cardinality</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Maximum Cardinality</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
 <table>
 <thead>
 <tr>
@@ -564,16 +598,24 @@ Alias: start_date</p>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start_date</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Data</span><span class="nv"> </span><span class="s">inicial</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">antiga</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">presumida</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">seu</span><span class="nv"> </span><span class="s">decurso.</span>
+<span class="w">  </span><span class="s">Omitir</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">desconhecida.</span>
+
+<span class="w">  </span><span class="s">Por</span><span class="nv"> </span><span class="s">ora,</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">responsabilidade</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">quem</span><span class="nv"> </span><span class="s">preenche</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">assegurar</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">`start_date`</span>
+<span class="w">  </span><span class="s">e</span><span class="nv"> </span><span class="s">`end_date`</span><span class="nv"> </span><span class="s">ocorram</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">ordem</span><span class="nv"> </span><span class="s">cronológica.</span><span class="nv"> </span><span class="s">Não</span><span class="nv"> </span><span class="s">dispomos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">validação</span><span class="nv"> </span><span class="s">automática</span>
+<span class="w">  </span><span class="s">para</span><span class="nv"> </span><span class="s">tanto.</span>
 
 <span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start_date</span>
 <span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
+<span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">minimum_cardinality</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="nt">maximum_cardinality</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 </code></pre></div>
 </details>
 </div>

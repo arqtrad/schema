@@ -486,7 +486,30 @@
 
 
 <h1 id="slot-identifiers">Slot: identifiers</h1>
+<p><em>Números de inventário e demais códigos que identificam este objeto em outras bases de dados.</em></p>
+<p><em>Caso esta edificação esteja cadastrada em outras bases de dados (por exemplo, [SICG], [SIPA], [HPIP], [iPatrimonio], etc.), pode preencher a lista <code>identifiers</code> como segue.</em></p>
+<p><em>:clipboard: O conteúdo de cada bloco é uma lista recuada em dois espaços com respeito à categoria superior. Seus itens são :</em></p>
+<p><em>* <code>type</code> é o tipo de referência : pode ser <code>uri</code> (padrão), <code>iri</code> ou</em></p>
+<p>_  <code>local</code> — se estiver em dúvida, omita esta linha ;_</p>
+<p>__</p>
+<p><em>* <code>refid</code> é obrigatório : representa o identificador do conceito no</em></p>
+<p>_  vocabulário controlado ou no repositório de origem — normalmente_</p>
+<p>_  será uma URI (um link para a página web do cadastro) ;_</p>
+<p>__</p>
+<p><em>* <code>description</code> deve ser usado para representar textualmente</em></p>
+<p>_  o número de inventário, código identificador ou outra informação_</p>
+<p>_  que individualize o objeto na base externa (por exemplo, livro do_</p>
+<p>_  tombo e número do processo de tombamento, no Brasil) ;_</p>
+<p>__</p>
+<p><em>* <code>bibliographic_citation</code> é opcional e permite citar uma lista de</em></p>
+<p>_  referências bibliográficas que validem a inclusão deste termo._</p>
+<p>__</p>
+<p><em>* <code>source</code> também é opcional e permite cadastrar os dados da pessoa</em></p>
+<p>_  jurídica responsável pelo registro._</p>
+<p>__</p>
+<p><em>---------------------------------------------------------------------</em></p>
 <p><em>Published or external identifiers for the object.</em></p>
+<p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/identifiers">wasth:identifiers</a></p>
 <!-- no inheritance hierarchy -->
@@ -502,7 +525,7 @@
 <tbody>
 <tr>
 <td><a href="../Concept/">Concept</a></td>
-<td>A SKOS concept can be viewed as an idea or notion; a unit of thought</td>
+<td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -512,12 +535,12 @@
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
-<td>This class comprises distinct, delimited and coherent processes and interacti...</td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Thing/">Thing</a></td>
-<td>This class comprises all things in the universe of discourse of the CIDOC Con...</td>
+<td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
 <td>no</td>
 </tr>
 <tr>
@@ -527,12 +550,12 @@
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
-<td>An historical landmark or building</td>
+<td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
-<td>This class comprises 4-dimensional point sets (volumes) in physical spacetime...</td>
+<td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -617,7 +640,23 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">identifiers</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Published or external identifiers for the object.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Números</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">inventário</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">demais</span><span class="nv"> </span><span class="s">códigos</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">identificam</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">em\</span>
+<span class="w">  </span><span class="s">\ outras</span><span class="nv"> </span><span class="s">bases</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">dados.\nCaso</span><span class="nv"> </span><span class="s">esta</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">esteja</span><span class="nv"> </span><span class="s">cadastrada</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">bases\</span>
+<span class="w">  </span><span class="s">\ de</span><span class="nv"> </span><span class="s">dados</span><span class="nv"> </span><span class="s">(por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">[SICG],</span><span class="nv"> </span><span class="s">[SIPA],</span><span class="nv"> </span><span class="s">[HPIP],</span><span class="nv"> </span><span class="s">[iPatrimonio],</span><span class="nv"> </span><span class="s">etc.),</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">preencher\</span>
+<span class="w">  </span><span class="s">\ a</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">`identifiers`</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">segue.\n:clipboard:</span><span class="nv"> </span><span class="s">O</span><span class="nv"> </span><span class="s">conteúdo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">bloco</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">uma\</span>
+<span class="w">  </span><span class="s">\ lista</span><span class="nv"> </span><span class="s">recuada</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">dois</span><span class="nv"> </span><span class="s">espaços</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">respeito</span><span class="nv"> </span><span class="s">à</span><span class="nv"> </span><span class="s">categoria</span><span class="nv"> </span><span class="s">superior.</span><span class="nv"> </span><span class="s">Seus</span><span class="nv"> </span><span class="s">itens</span><span class="nv"> </span><span class="s">são</span><span class="err"> </span><span class="s">:\n\</span>
+<span class="w">  </span><span class="s">*</span><span class="nv"> </span><span class="s">`type`</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">tipo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">referência</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">`uri`</span><span class="nv"> </span><span class="s">(padrão),</span><span class="nv"> </span><span class="s">`iri`</span><span class="nv"> </span><span class="s">ou\n</span><span class="nv">  </span><span class="s">`local`</span><span class="nv"> </span><span class="s">—\</span>
+<span class="w">  </span><span class="s">\ se</span><span class="nv"> </span><span class="s">estiver</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">dúvida,</span><span class="nv"> </span><span class="s">omita</span><span class="nv"> </span><span class="s">esta</span><span class="nv"> </span><span class="s">linha</span><span class="err"> </span><span class="s">;\n\n*</span><span class="nv"> </span><span class="s">`refid`</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">obrigatório</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">representa\</span>
+<span class="w">  </span><span class="s">\ o</span><span class="nv"> </span><span class="s">identificador</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">conceito</span><span class="nv"> </span><span class="s">no\n</span><span class="nv">  </span><span class="s">vocabulário</span><span class="nv"> </span><span class="s">controlado</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">repositório</span><span class="nv"> </span><span class="s">de\</span>
+<span class="w">  </span><span class="s">\ origem</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">normalmente\n</span><span class="nv">  </span><span class="s">será</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">URI</span><span class="nv"> </span><span class="s">(um</span><span class="nv"> </span><span class="s">link</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">página</span><span class="nv"> </span><span class="s">web</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">cadastro)</span><span class="err"> </span><span class="s">;\n\</span>
+<span class="w">  </span><span class="s">\n*</span><span class="nv"> </span><span class="s">`description`</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">usado</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">representar</span><span class="nv"> </span><span class="s">textualmente\n</span><span class="nv">  </span><span class="s">o</span><span class="nv"> </span><span class="s">número</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">inventário,\</span>
+<span class="w">  </span><span class="s">\ código</span><span class="nv"> </span><span class="s">identificador</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">outra</span><span class="nv"> </span><span class="s">informação\n</span><span class="nv">  </span><span class="s">que</span><span class="nv"> </span><span class="s">individualize</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">base\</span>
+<span class="w">  </span><span class="s">\ externa</span><span class="nv"> </span><span class="s">(por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">livro</span><span class="nv"> </span><span class="s">do\n</span><span class="nv">  </span><span class="s">tombo</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">número</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">processo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">tombamento,</span><span class="nv"> </span><span class="s">no\</span>
+<span class="w">  </span><span class="s">\ Brasil)</span><span class="err"> </span><span class="s">;\n\n*</span><span class="nv"> </span><span class="s">`bibliographic_citation`</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">opcional</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">permite</span><span class="nv"> </span><span class="s">citar</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">de\n\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv"> </span><span class="s">referências</span><span class="nv"> </span><span class="s">bibliográficas</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">validem</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">inclusão</span><span class="nv"> </span><span class="s">deste</span><span class="nv"> </span><span class="s">termo.\n\n*</span><span class="nv"> </span><span class="s">`source`\</span>
+<span class="w">  </span><span class="s">\ também</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">opcional</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">permite</span><span class="nv"> </span><span class="s">cadastrar</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">dados</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">pessoa\n</span><span class="nv">  </span><span class="s">jurídica</span><span class="nv"> </span><span class="s">responsável\</span>
+<span class="w">  </span><span class="s">\ pelo</span><span class="nv"> </span><span class="s">registro.\n\n---------------------------------------------------------------------\n\</span>
+<span class="w">  </span><span class="s">Published</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">external</span><span class="nv"> </span><span class="s">identifiers</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">object.\n"</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
