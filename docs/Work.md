@@ -373,6 +373,17 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
     
 
         
+      Work : title_type
+        
+          
+    
+        
+        
+        Work --> "1" TitleType : title_type
+        click TitleType href "../TitleType/"
+    
+
+        
       Work : work_rights
         
           
@@ -494,6 +505,7 @@ URI: [schema:LandmarksOrHistoricalBuildings](http://schema.org/LandmarksOrHistor
 | [related_works](related_works.md) | * <br/> [RelatedWork](RelatedWork.md) | A wrapper for identifying information about an object or work, including coll... | direct |
 | [resources](resources.md) | * <br/> [Resource](Resource.md) | Os desenhos ou modelos da edificação são apresentados online por meio de imag... | direct |
 | [media](media.md) | * <br/> [MediaObject](MediaObject.md) | Representações iconográficas deste objeto | direct |
+| [title_type](title_type.md) | 1 <br/> [TitleType](TitleType.md) |  | direct |
 | [work_type_condition](work_type_condition.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Descreve o estado físico da edificação quanto à sua aparência de completude, ... | direct |
 | [work_type_form](work_type_form.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Nos Documentários da Arquitetura Tradicional, designa uma tipologia formal | direct |
 | [work_type_function](work_type_function.md) | * _recommended_ <br/> [ConceptReference](ConceptReference.md) | Nos Documentários de edificações, designa um dos sete tipos de propósitos con... | direct |
@@ -640,10 +652,6 @@ slots:
 - resources
 - media
 slot_usage:
-  title_type:
-    name: title_type
-    range: TitleType
-    required: true
   id:
     name: id
     description: Cada edificação terá um identificador gerado a partir do seu georreferenciamento
@@ -678,6 +686,14 @@ slot_usage:
 
       '
 attributes:
+  title_type:
+    name: title_type
+    from_schema: https://tradicional.arq.br/schema/work
+    domain_of:
+    - Appellation
+    - Work
+    range: TitleType
+    required: true
   work_type_condition:
     name: work_type_condition
     description: 'Descreve o estado físico da edificação quanto à sua aparência de
@@ -1014,18 +1030,16 @@ attributes:
       preencher o grupo `identifiers`. Para a identificação de proprietários ou responsáveis,
       preencher o grupo `work_rights`.
 
-      ---------------------------------------------------------------------
-
-      A set of identifying and indexing information about the collection the object/work
+      '
+    notes:
+    - 'A set of identifying and indexing information about the collection the object/work
       in focus is gathered into or is a member of.
 
       Collection applies to any accumulated group of physical or digital items, conceptually
       or physically brought together on the basis of a focal characteristic. Use cases
       for grouping items into a collection are various and may span curated holdings
       in museums, departmental collections, sets of items to be displayed in an exhibition,
-      or aggregations bound informally for cataloging and retrieval purposes.
-
-      '
+      or aggregations bound informally for cataloging and retrieval purposes.'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: lido:collection
@@ -1098,10 +1112,6 @@ close_mappings:
 rank: 0
 is_a: Thing
 slot_usage:
-  title_type:
-    name: title_type
-    range: TitleType
-    required: true
   id:
     name: id
     description: Cada edificação terá um identificador gerado a partir do seu georreferenciamento
@@ -1136,6 +1146,15 @@ slot_usage:
 
       '
 attributes:
+  title_type:
+    name: title_type
+    from_schema: https://tradicional.arq.br/schema/work
+    owner: Work
+    domain_of:
+    - Appellation
+    - Work
+    range: TitleType
+    required: true
   work_type_condition:
     name: work_type_condition
     description: 'Descreve o estado físico da edificação quanto à sua aparência de
@@ -1506,18 +1525,16 @@ attributes:
       preencher o grupo `identifiers`. Para a identificação de proprietários ou responsáveis,
       preencher o grupo `work_rights`.
 
-      ---------------------------------------------------------------------
-
-      A set of identifying and indexing information about the collection the object/work
+      '
+    notes:
+    - 'A set of identifying and indexing information about the collection the object/work
       in focus is gathered into or is a member of.
 
       Collection applies to any accumulated group of physical or digital items, conceptually
       or physically brought together on the basis of a focal characteristic. Use cases
       for grouping items into a collection are various and may span curated holdings
       in museums, departmental collections, sets of items to be displayed in an exhibition,
-      or aggregations bound informally for cataloging and retrieval purposes.
-
-      '
+      or aggregations bound informally for cataloging and retrieval purposes.'
     from_schema: https://tradicional.arq.br/schema/work
     rank: 1000
     slot_uri: lido:collection

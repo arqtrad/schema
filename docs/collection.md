@@ -10,12 +10,6 @@ _Descreve conjuntos conceituais nos quais a edificação foi incluída, por exem
 
 _Para o pertencimento a perímetros de sítios históricos tombados/classificados, preencher o grupo `identifiers`. Para a identificação de proprietários ou responsáveis, preencher o grupo `work_rights`._
 
-_---------------------------------------------------------------------_
-
-_A set of identifying and indexing information about the collection the object/work in focus is gathered into or is a member of._
-
-_Collection applies to any accumulated group of physical or digital items, conceptually or physically brought together on the basis of a focal characteristic. Use cases for grouping items into a collection are various and may span curated holdings in museums, departmental collections, sets of items to be displayed in an exhibition, or aggregations bound informally for cataloging and retrieval purposes._
-
 __
 
 
@@ -73,6 +67,11 @@ URI: [lido:collection](http://www.lido-schema.org/collection)
 
 
 
+## Notes
+
+* A set of identifying and indexing information about the collection the object/work in focus is gathered into or is a member of.
+Collection applies to any accumulated group of physical or digital items, conceptually or physically brought together on the basis of a focal characteristic. Use cases for grouping items into a collection are various and may span curated holdings in museums, departmental collections, sets of items to be displayed in an exhibition, or aggregations bound informally for cataloging and retrieval purposes.
+
 
 
 ## Identifier and Mapping Information
@@ -113,18 +112,16 @@ description: 'Descreve conjuntos conceituais nos quais a edificação foi inclu�
   o grupo `identifiers`. Para a identificação de proprietários ou responsáveis, preencher
   o grupo `work_rights`.
 
-  ---------------------------------------------------------------------
-
-  A set of identifying and indexing information about the collection the object/work
+  '
+notes:
+- 'A set of identifying and indexing information about the collection the object/work
   in focus is gathered into or is a member of.
 
   Collection applies to any accumulated group of physical or digital items, conceptually
   or physically brought together on the basis of a focal characteristic. Use cases
   for grouping items into a collection are various and may span curated holdings in
   museums, departmental collections, sets of items to be displayed in an exhibition,
-  or aggregations bound informally for cataloging and retrieval purposes.
-
-  '
+  or aggregations bound informally for cataloging and retrieval purposes.'
 from_schema: https://tradicional.arq.br/schema
 rank: 1000
 slot_uri: lido:collection

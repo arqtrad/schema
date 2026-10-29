@@ -33,9 +33,9 @@ URI: [wasth:RepositoryType](https://tradicional.arq.br/schema/RepositoryType)
 | Name | Description |
 | ---  | --- |
 | [legal_body_type](legal_body_type.md) | Define a natureza do ente legal : pessoa jurídica, perímetro geográfico de tu... |
+| [repository_type](repository_type.md) |  |
+| [site_type](site_type.md) |  |
 | [location_historic_type](location_historic_type.md) | Define se o local histórico designa uma jurisdição, um topônimo antigo, ou ou... |
-| [title_type](title_type.md) |  |
-| [title_type](title_type.md) |  |
 
 
 

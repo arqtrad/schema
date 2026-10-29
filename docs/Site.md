@@ -139,6 +139,17 @@ URI: [crm:E92_Spacetime_Volume](http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime
     
 
         
+      Site : site_type
+        
+          
+    
+        
+        
+        Site --> "0..1" RepositoryType : site_type
+        click RepositoryType href "../RepositoryType/"
+    
+
+        
       Site : tags
         
       Site : temporal
@@ -165,17 +176,6 @@ URI: [crm:E92_Spacetime_Volume](http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime
     
 
         
-      Site : title_type
-        
-          
-    
-        
-        
-        Site --> "0..1" RepositoryType : title_type
-        click RepositoryType href "../RepositoryType/"
-    
-
-        
       
 ```
 
@@ -199,7 +199,7 @@ URI: [crm:E92_Spacetime_Volume](http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [title_type](title_type.md) | 0..1 <br/> [RepositoryType](RepositoryType.md) | Indica se o título é um nome próprio, descritivo, etc | direct |
+| [site_type](site_type.md) | 0..1 <br/> [RepositoryType](RepositoryType.md) |  | direct |
 | [location](location.md) | 1 <br/> [GeographicPoint](GeographicPoint.md) | Coordenadas geográficas do ponto que permite situar a edificação no mapa para... | direct |
 | [extent](extent.md) | 0..1 <br/> [GeographicExtent](GeographicExtent.md) | Área da implantação da edificação ou sítio cadastrado | direct |
 | [event_place_type](event_place_type.md) | 0..1 <br/> [EventPlaceType](EventPlaceType.md) | Se relevante para a ação, indicar se se trata do local de descobrimento do ob... | direct |
@@ -315,8 +315,6 @@ exact_mappings:
 - schema:DefinedRegion
 is_a: Thing
 abstract: true
-slots:
-- title_type
 slot_usage:
   id:
     name: id
@@ -324,11 +322,16 @@ slot_usage:
 
       '
     range: GeonamesId
-  title_type:
-    name: title_type
-    ifabsent: RepositoryType(geographic)
-    range: RepositoryType
 attributes:
+  site_type:
+    name: site_type
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    ifabsent: RepositoryType(geographic)
+    alias: type
+    domain_of:
+    - Site
+    range: RepositoryType
   location:
     name: location
     description: 'Coordenadas geográficas do ponto que permite situar a edificação
@@ -424,11 +427,17 @@ slot_usage:
 
       '
     range: GeonamesId
-  title_type:
-    name: title_type
-    ifabsent: RepositoryType(geographic)
-    range: RepositoryType
 attributes:
+  site_type:
+    name: site_type
+    from_schema: https://tradicional.arq.br/schema/work
+    rank: 1000
+    ifabsent: RepositoryType(geographic)
+    alias: type
+    owner: Site
+    domain_of:
+    - Site
+    range: RepositoryType
   location:
     name: location
     description: 'Coordenadas geográficas do ponto que permite situar a edificação
@@ -476,20 +485,6 @@ attributes:
     domain_of:
     - Site
     range: EventPlaceType
-  title_type:
-    name: title_type
-    description: Indica se o título é um nome próprio, descritivo, etc.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    ifabsent: RepositoryType(geographic)
-    owner: Site
-    domain_of:
-    - Concept
-    - Resource
-    - Appellation
-    - Repository
-    - Site
-    range: RepositoryType
   description:
     name: description
     description: A human-readable description for a thing

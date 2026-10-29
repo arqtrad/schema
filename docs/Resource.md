@@ -158,17 +158,6 @@ URI: [crm:E31_Document](http://www.cidoc-crm.org/cidoc-crm/E31_Document)
     
 
         
-      Resource : title_type
-        
-          
-    
-        
-        
-        Resource --> "0..1" TitleType : title_type
-        click TitleType href "../TitleType/"
-    
-
-        
       Resource : unit
         
           
@@ -203,7 +192,6 @@ URI: [crm:E31_Document](http://www.cidoc-crm.org/cidoc-crm/E31_Document)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [title_type](title_type.md) | 0..1 <br/> [TitleType](TitleType.md) | Indica se o título é um nome próprio, descritivo, etc | direct |
 | [relation_type](relation_type.md) | 1 <br/> [RelationType](RelationType.md) | Usamos os tipos de relação previstos pelo [VRA Core] | direct |
 | [preview_image](preview_image.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Uma única miniatura da imagem original | direct |
 | [provided_image](provided_image.md) | * <br/> [Uriorcurie](Uriorcurie.md) | Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap | direct |
@@ -302,7 +290,6 @@ close_mappings:
 - schema:ArchiveComponent
 is_a: Thing
 slots:
-- title_type
 - relation_type
 - preview_image
 - provided_image
@@ -310,11 +297,6 @@ slots:
 - resource_service
 - unit
 - credit
-slot_usage:
-  title_type:
-    name: title_type
-    ifabsent: TitleType(descriptive)
-    range: TitleType
 attributes:
   scale:
     name: scale
@@ -365,11 +347,6 @@ from_schema: https://tradicional.arq.br/schema
 close_mappings:
 - schema:ArchiveComponent
 is_a: Thing
-slot_usage:
-  title_type:
-    name: title_type
-    ifabsent: TitleType(descriptive)
-    range: TitleType
 attributes:
   scale:
     name: scale
@@ -399,20 +376,6 @@ attributes:
     range: integer
     minimum_value: 0
     maximum_value: 9
-  title_type:
-    name: title_type
-    description: Indica se o título é um nome próprio, descritivo, etc.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    ifabsent: TitleType(descriptive)
-    owner: Resource
-    domain_of:
-    - Concept
-    - Resource
-    - Appellation
-    - Repository
-    - Site
-    range: TitleType
   relation_type:
     name: relation_type
     description: "Usamos os tipos de relação previstos pelo [VRA Core]. Provavelmente\

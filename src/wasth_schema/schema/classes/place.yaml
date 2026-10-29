@@ -148,11 +148,12 @@ classes:
       id:
         range: OlcPlusCode11
 
-      title_type:
-        range: RepositoryType
-
 
     attributes:
+
+      place_type:
+        range: RepositoryType
+        required: true
 
       geometry_type:
         description: Tipo da geometria descrita pelas coordenadas.

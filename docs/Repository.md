@@ -105,6 +105,17 @@ URI: [schema:Organization](http://schema.org/Organization)
     
 
         
+      Repository : repository_type
+        
+          
+    
+        
+        
+        Repository --> "0..1" RepositoryType : repository_type
+        click RepositoryType href "../RepositoryType/"
+    
+
+        
       Repository : site
         
           
@@ -142,17 +153,6 @@ URI: [schema:Organization](http://schema.org/Organization)
     
 
         
-      Repository : title_type
-        
-          
-    
-        
-        
-        Repository --> "0..1" RepositoryType : title_type
-        click RepositoryType href "../RepositoryType/"
-    
-
-        
       
 ```
 
@@ -176,9 +176,9 @@ URI: [schema:Organization](http://schema.org/Organization)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [title_type](title_type.md) | 0..1 <br/> [RepositoryType](RepositoryType.md) | Indica se o título é um nome próprio, descritivo, etc | direct |
 | [site](site.md) | 1 <br/> [Site](Site.md) | A localização real, atual da edificação — é o que será usado em quase todos o... | direct |
 | [legal_body](legal_body.md) | 1 <br/> [LegalBody](LegalBody.md) | Informações estruturadas sobre a pessoa jurídica | direct |
+| [repository_type](repository_type.md) | 0..1 <br/> [RepositoryType](RepositoryType.md) |  | direct |
 | [description](description.md) | 1 <br/> [String](String.md) | A human-readable description for a thing | [Thing](Thing.md) |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | [Thing](Thing.md) |
 | [content](content.md) | 0..1 _recommended_ <br/> [String](String.md) | Conteúdo textual descritivo ou explicativo | [Thing](Thing.md) |
@@ -261,13 +261,16 @@ description: Entidade com existência jurídica e espacial.
 from_schema: https://tradicional.arq.br/schema
 is_a: Thing
 slots:
-- title_type
 - site
 - legal_body
-slot_usage:
-  title_type:
-    name: title_type
+attributes:
+  repository_type:
+    name: repository_type
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
     ifabsent: RepositoryType(corporate)
+    domain_of:
+    - Repository
     range: RepositoryType
 class_uri: schema:Organization
 
@@ -282,25 +285,15 @@ name: Repository
 description: Entidade com existência jurídica e espacial.
 from_schema: https://tradicional.arq.br/schema
 is_a: Thing
-slot_usage:
-  title_type:
-    name: title_type
-    ifabsent: RepositoryType(corporate)
-    range: RepositoryType
 attributes:
-  title_type:
-    name: title_type
-    description: Indica se o título é um nome próprio, descritivo, etc.
-    from_schema: https://tradicional.arq.br/schema
+  repository_type:
+    name: repository_type
+    from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     ifabsent: RepositoryType(corporate)
     owner: Repository
     domain_of:
-    - Concept
-    - Resource
-    - Appellation
     - Repository
-    - Site
     range: RepositoryType
   site:
     name: site

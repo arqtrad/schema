@@ -59,6 +59,10 @@ classes:
 
     attributes:
 
+      concept_type:
+        range: ConceptType
+        ifabsent: ConceptType(concept)
+
       broader:
         slot_uri: skos:broader
         description: >-
@@ -104,13 +108,6 @@ classes:
           Um conceito com o qual existe um relacionamento semântico associativo.
           Usar em referência ao nosso próprio vocabulário controlado.
 
-    slot_usage:
-      title_type:
-        range: ConceptType
-        ifabsent: ConceptType(concept)
-
-    slots:
-      - title_type
 
   ConceptReference:
     description: Atribuição de vocabulário controlado com citação de apoio.

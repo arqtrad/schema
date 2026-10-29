@@ -144,13 +144,7 @@ classes:
             - 8 = vista ou modelo 3D
             - 9 = definido pelo agente
 
-    slot_usage:
-      title_type:
-        range: TitleType
-        ifabsent: TitleType(descriptive)
-
     slots:
-      - title_type
       - relation_type
       - preview_image
       - provided_image

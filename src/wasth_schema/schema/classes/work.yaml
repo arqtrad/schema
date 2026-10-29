@@ -68,6 +68,11 @@ classes:
 
     attributes:
 
+      title_type:
+        range: TitleType
+        required: true
+
+
       work_type_condition:
         slot_uri: term:lido00937
         recommended: true
@@ -383,17 +388,17 @@ classes:
           Para a identificação de proprietários ou responsáveis,
           preencher o grupo `work_rights`.
 
-          ---------------------------------------------------------------------
+        notes:
 
-          A set of identifying and indexing information about the collection
-          the object/work in focus is gathered into or is a member of.
+          - A set of identifying and indexing information about the collection
+            the object/work in focus is gathered into or is a member of.
 
-          Collection applies to any accumulated group of physical or digital
-          items, conceptually or physically brought together on the basis of a
-          focal characteristic. Use cases for grouping items into a collection
-          are various and may span curated holdings in museums, departmental
-          collections, sets of items to be displayed in an exhibition, or
-          aggregations bound informally for cataloging and retrieval purposes.
+            Collection applies to any accumulated group of physical or digital
+            items, conceptually or physically brought together on the basis of a
+            focal characteristic. Use cases for grouping items into a collection
+            are various and may span curated holdings in museums, departmental
+            collections, sets of items to be displayed in an exhibition, or
+            aggregations bound informally for cataloging and retrieval purposes.
 
       work_rights:
         required: true
@@ -407,10 +412,6 @@ classes:
           da ficha, nem sobre a iconografia relacionada.
 
     slot_usage:
-
-      title_type:
-        range: TitleType
-        required: true
 
       id:
         description: >-
@@ -509,6 +510,11 @@ classes:
 
     attributes:
 
+      site_type:
+        alias: type
+        range: RepositoryType
+        ifabsent: RepositoryType(geographic)
+
       location:
         required: true
         description: >-
@@ -553,12 +559,6 @@ classes:
           Incluir aqui um identificador da base geonames na forma
           `geonames:1234`.
 
-      title_type:
-        range: RepositoryType
-        ifabsent: RepositoryType(geographic)
-
-    slots:
-      - title_type
 
   GeographicPoint:
     description: >

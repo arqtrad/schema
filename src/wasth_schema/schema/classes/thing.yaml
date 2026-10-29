@@ -269,13 +269,11 @@ classes:
         range: string
         description: Nome ou título (texto sem formatação).
 
-    slot_usage:
       title_type:
         range: TitleType
         ifabsent: TitleType(descriptive)
 
     slots:
-      - title_type
       - bibliographic_citation
 
   Repository:
@@ -284,22 +282,17 @@ classes:
 
     description: Entidade com existência jurídica e espacial.
 
-    slot_usage:
-      title_type:
+    attributes:
+      repository_type:
         range: RepositoryType
         ifabsent: RepositoryType(corporate)
 
     slots:
-      - title_type
       - site
       - legal_body
 
 
 slots:
-
-  title_type:
-    description: Indica se o título é um nome próprio, descritivo, etc.
-    range: Any
 
   legal_body:
     range: LegalBody

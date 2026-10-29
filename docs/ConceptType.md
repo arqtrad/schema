@@ -34,7 +34,7 @@ URI: [wasth:ConceptType](https://tradicional.arq.br/schema/ConceptType)
 
 | Name | Description |
 | ---  | --- |
-| [title_type](title_type.md) |  |
+| [concept_type](concept_type.md) |  |
 
 
 

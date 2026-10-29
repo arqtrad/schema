@@ -76,6 +76,17 @@ URI: [skos:Concept](http://www.w3.org/2004/02/skos/core#Concept)
         
       Concept : category
         
+      Concept : concept_type
+        
+          
+    
+        
+        
+        Concept --> "0..1" ConceptType : concept_type
+        click ConceptType href "../ConceptType/"
+    
+
+        
       Concept : content
         
       Concept : description
@@ -178,17 +189,6 @@ URI: [skos:Concept](http://www.w3.org/2004/02/skos/core#Concept)
     
 
         
-      Concept : title_type
-        
-          
-    
-        
-        
-        Concept --> "0..1" ConceptType : title_type
-        click ConceptType href "../ConceptType/"
-    
-
-        
       
 ```
 
@@ -212,7 +212,7 @@ URI: [skos:Concept](http://www.w3.org/2004/02/skos/core#Concept)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [title_type](title_type.md) | 0..1 <br/> [ConceptType](ConceptType.md) | Indica se o título é um nome próprio, descritivo, etc | direct |
+| [concept_type](concept_type.md) | 0..1 <br/> [ConceptType](ConceptType.md) |  | direct |
 | [broader](broader.md) | * <br/> [BroaderConceptReference](BroaderConceptReference.md) | Um conceito de significação mais genérica | direct |
 | [narrower](narrower.md) | * <br/> [NarrowerConceptReference](NarrowerConceptReference.md) | Um conceito de significação mais específica | direct |
 | [mapping](mapping.md) | * <br/> [MappingConceptReference](MappingConceptReference.md) | Um conceito com o qual existe um relacionamento semântico associativo | direct |
@@ -328,14 +328,15 @@ from_schema: https://tradicional.arq.br/schema
 exact_mappings:
 - schema:DefinedTerm
 is_a: Thing
-slots:
-- title_type
-slot_usage:
-  title_type:
-    name: title_type
-    ifabsent: ConceptType(concept)
-    range: ConceptType
 attributes:
+  concept_type:
+    name: concept_type
+    from_schema: https://tradicional.arq.br/schema/concept
+    rank: 1000
+    ifabsent: ConceptType(concept)
+    domain_of:
+    - Concept
+    range: ConceptType
   broader:
     name: broader
     description: 'Um conceito de significação mais genérica. Conceitos genéricos são
@@ -433,12 +434,16 @@ from_schema: https://tradicional.arq.br/schema
 exact_mappings:
 - schema:DefinedTerm
 is_a: Thing
-slot_usage:
-  title_type:
-    name: title_type
-    ifabsent: ConceptType(concept)
-    range: ConceptType
 attributes:
+  concept_type:
+    name: concept_type
+    from_schema: https://tradicional.arq.br/schema/concept
+    rank: 1000
+    ifabsent: ConceptType(concept)
+    owner: Concept
+    domain_of:
+    - Concept
+    range: ConceptType
   broader:
     name: broader
     description: 'Um conceito de significação mais genérica. Conceitos genéricos são
@@ -503,20 +508,6 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  title_type:
-    name: title_type
-    description: Indica se o título é um nome próprio, descritivo, etc.
-    from_schema: https://tradicional.arq.br/schema
-    rank: 1000
-    ifabsent: ConceptType(concept)
-    owner: Concept
-    domain_of:
-    - Concept
-    - Resource
-    - Appellation
-    - Repository
-    - Site
-    range: ConceptType
   description:
     name: description
     description: A human-readable description for a thing

@@ -186,6 +186,7 @@ Name: wasth_schema
 | [classification_subject](classification_subject.md) | ❓ Ainda não implementamos o bloco `objectClassification` do LIDO |
 | [collection](collection.md) | Descreve conjuntos conceituais nos quais a edificação foi incluída, por exemp... |
 | [concept](concept.md) |  |
+| [concept_type](concept_type.md) |  |
 | [concepts](concepts.md) | Todos os termos de vocabulário controlado |
 | [content](content.md) | Conteúdo textual descritivo ou explicativo |
 | [coordinates](coordinates.md) | No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do polígono (`... |
@@ -256,6 +257,7 @@ Name: wasth_schema
 | [relation](relation.md) | Um conceito com o qual existe um relacionamento semântico associativo |
 | [relation_type](relation_type.md) | Usamos os tipos de relação previstos pelo [VRA Core] |
 | [repositories](repositories.md) | Nos Documentários da Arquitetura Tradicional, usamos repositórios para indica... |
+| [repository_type](repository_type.md) |  |
 | [resource_service](resource_service.md) | Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal... |
 | [resources](resources.md) | Os desenhos ou modelos da edificação são apresentados online por meio de imag... |
 | [rights](rights.md) |  |
@@ -264,6 +266,7 @@ Name: wasth_schema
 | [role_in_event](role_in_event.md) | Ação desempenhada pelo agente no evento |
 | [scale](scale.md) | Número inverso da escala da imagem, se ela tiver uma resolução ou tamanho de ... |
 | [site](site.md) | A localização real, atual da edificação — é o que será usado em quase todos o... |
+| [site_type](site_type.md) |  |
 | [source](source.md) |  |
 | [srs_name](srs_name.md) | Names the coordinate reference system (CRS) that defines the semantics of the... |
 | [start_date](start_date.md) | Data inicial do evento ou mais antiga data presumida para o seu decurso |
@@ -276,7 +279,7 @@ Name: wasth_schema
 | [title](title.md) | Nome pelo qual este item é mais comumente conhecido |
 | [title_preference](title_preference.md) | Indica se o nome em questão deve ser oculto ou não, se é uma versão alternati... |
 | [title_source](title_source.md) | A fonte do título title_source é opcional ; um título pode ser atestado em ma... |
-| [title_type](title_type.md) | Indica se o título é um nome próprio, descritivo, etc |
+| [title_type](title_type.md) |  |
 | [topic_type](topic_type.md) | Categoriza o nível descritivo ou interpretativo do tema |
 | [unit](unit.md) | Unidade de medida usada no dimensionamento do objeto ou da representação, por... |
 | [work_rights](work_rights.md) | ⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobr... |

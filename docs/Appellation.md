@@ -66,10 +66,10 @@ URI: [wasth:Appellation](https://tradicional.arq.br/schema/Appellation)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [title_type](title_type.md) | 0..1 <br/> [TitleType](TitleType.md) | Indica se o título é um nome próprio, descritivo, etc | direct |
 | [bibliographic_citation](bibliographic_citation.md) | * _recommended_ <br/> [BibliographicCitation](BibliographicCitation.md) | 📚  Cadastro de uma referência bibliográfica | direct |
 | [title_preference](title_preference.md) | 0..1 <br/> [LabelType](LabelType.md) | Indica se o nome em questão deve ser oculto ou não, se é uma versão alternati... | direct |
 | [label](label.md) | 0..1 <br/> [String](String.md) | Nome ou título (texto sem formatação) | direct |
+| [title_type](title_type.md) | 0..1 <br/> [TitleType](TitleType.md) |  | direct |
 
 
 
@@ -135,13 +135,7 @@ URI: [wasth:Appellation](https://tradicional.arq.br/schema/Appellation)
 name: Appellation
 from_schema: https://tradicional.arq.br/schema
 slots:
-- title_type
 - bibliographic_citation
-slot_usage:
-  title_type:
-    name: title_type
-    ifabsent: TitleType(descriptive)
-    range: TitleType
 attributes:
   title_preference:
     name: title_preference
@@ -162,6 +156,15 @@ attributes:
     domain_of:
     - Appellation
     range: string
+  title_type:
+    name: title_type
+    from_schema: https://tradicional.arq.br/schema/thing
+    rank: 1000
+    ifabsent: TitleType(descriptive)
+    domain_of:
+    - Appellation
+    - Work
+    range: TitleType
 
 ```
 </details>
@@ -172,11 +175,6 @@ attributes:
 ```yaml
 name: Appellation
 from_schema: https://tradicional.arq.br/schema
-slot_usage:
-  title_type:
-    name: title_type
-    ifabsent: TitleType(descriptive)
-    range: TitleType
 attributes:
   title_preference:
     name: title_preference
@@ -201,17 +199,13 @@ attributes:
     range: string
   title_type:
     name: title_type
-    description: Indica se o título é um nome próprio, descritivo, etc.
-    from_schema: https://tradicional.arq.br/schema
+    from_schema: https://tradicional.arq.br/schema/thing
     rank: 1000
     ifabsent: TitleType(descriptive)
     owner: Appellation
     domain_of:
-    - Concept
-    - Resource
     - Appellation
-    - Repository
-    - Site
+    - Work
     range: TitleType
   bibliographic_citation:
     name: bibliographic_citation

@@ -5,11 +5,6 @@ search:
 
 # Slot: title_type 
 
-
-_Indica se o título é um nome próprio, descritivo, etc._
-
-
-
 <div data-search-exclude markdown="1">
 
 
@@ -25,11 +20,8 @@ URI: [wasth:title_type](https://tradicional.arq.br/schema/title_type)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Concept](Concept.md) | Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini... |  yes  |
-| [Resource](Resource.md) | This class comprises identifiable immaterial items that make propositions abo... |  yes  |
-| [Appellation](Appellation.md) |  |  yes  |
-| [Repository](Repository.md) | Entidade com existência jurídica e espacial |  yes  |
-| [Site](Site.md) | O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T... |  yes  |
+| [Appellation](Appellation.md) |  |  no  |
+| [Work](Work.md) | Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr... |  no  |
 
 
 
@@ -42,8 +34,8 @@ URI: [wasth:title_type](https://tradicional.arq.br/schema/title_type)
 
 | Property | Value |
 | --- | --- |
-| Range | NONE |
-| Domain Of | [Concept](Concept.md), [Resource](Resource.md), [Appellation](Appellation.md), [Repository](Repository.md), [Site](Site.md) |
+| Range | [String](String.md) |
+| Domain Of | [Appellation](Appellation.md), [Work](Work.md) |
 
 
 
@@ -57,13 +49,6 @@ URI: [wasth:title_type](https://tradicional.arq.br/schema/title_type)
 ## Identifier and Mapping Information
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://tradicional.arq.br/schema
 
 
 
@@ -83,16 +68,10 @@ URI: [wasth:title_type](https://tradicional.arq.br/schema/title_type)
 <details>
 ```yaml
 name: title_type
-description: Indica se o título é um nome próprio, descritivo, etc.
-from_schema: https://tradicional.arq.br/schema
-rank: 1000
 domain_of:
-- Concept
-- Resource
 - Appellation
-- Repository
-- Site
-range: Any
+- Work
+range: string
 
 ```
 </details></div>

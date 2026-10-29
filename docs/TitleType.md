@@ -40,7 +40,6 @@ URI: [wasth:TitleType](https://tradicional.arq.br/schema/TitleType)
 | Name | Description |
 | ---  | --- |
 | [title_type](title_type.md) |  |
-| [title_type](title_type.md) |  |
 
 
 
