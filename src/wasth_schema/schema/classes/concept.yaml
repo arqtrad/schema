@@ -5,15 +5,16 @@ title: WASTH SKOS-THES concept model
 prefixes:
   linkml: https://w3id.org/linkml/
   wasth: https://tradicional.arq.br/schema/
-  aat: http://vocab.getty.edu/aat/
+  schema: http://schema.org/
   skos: http://www.w3.org/2004/02/skos/core#
   iso: http://purl.org/iso25964/skos-thes#
   dcterms: http://purl.org/dc/terms/
-  vra: http://purl.org/vra/
-  unesco: http://vocabularies.unesco.org/thesaurus/
 
 default_prefix: wasth
 default_range: string
+
+imports:
+  - classes/thing
 
 classes:
 
@@ -23,6 +24,22 @@ classes:
     exact_mappings:
       - schema:DefinedTerm
     description: >
+      Um conceito é uma unidade de conhecimento ou entendimento delimitada e
+      definida com clareza, distinta de outros conceitos.
+      Cada conceito pretende descrever um aspecto ou recorte da realidade
+      empírica ou teórica, de modo que a sua definição seja amplamente
+      conhecida e partilhada dentro do campo disciplinar ao qual ele pertence.
+
+      Para além da clareza na definição do próprio conceito, estabelecer a sua
+      relação com outros conceitos mais gerais ou mais específicos é importante
+      ao se constituir um vocabulário controlado.
+
+      Por isso, a definição de cada conceito DEVE se referir a bibliografia
+      consagrada e, sempre que possível, a outros vocabulários controlados
+      nacionais e estrangeiros.
+
+      -------------------------------------------------------------------------
+
       A SKOS concept can be viewed as an idea or notion; a unit of thought.
       However, what constitutes a unit of thought is subjective, and this
       definition is meant to be suggestive, rather than restrictive.
@@ -51,10 +68,12 @@ classes:
           Um conceito de significação mais genérica.
           Conceitos genéricos são tipicamente representados como pais em
           uma hierarquia de conceitos (árvore).
+
+          Preenchimento manual.
         range: BroaderConceptReference
         multivalued: true
         inlined_as_list: true
-        # inverse: narrower
+        inverse: narrower
 
       narrower:
         slot_uri: skos:narrower
@@ -62,43 +81,53 @@ classes:
           Um conceito de significação mais específica.
           Conceitos específicos são tipicamente representados como descendentes
           em uma hierarquia de conceitos (árvore).
+
+          Derivado automaticamente das relações `broader` em outras fichas.
+          NÃO preencher manualmente.
+        range: NarrowerConceptReference
+        multivalued: true
+        inlined_as_list: true
+        inverse: broader
+
+      mapping:
+        description: >-
+          Um conceito com o qual existe um relacionamento semântico associativo.
+          Usar em referência a vocabulários externos, como o
+          Getty Art and Architecture Thesaurus.
+        range: MappingConceptReference
+        multivalued: true
+        inlined_as_list: true
+
+      relation:
+        slot_uri: skos:related
         range: ConceptReference
         multivalued: true
         inlined_as_list: true
-        # inverse: broader
-
-      relation:
         description: >-
           Um conceito com o qual existe um relacionamento semântico associativo.
-          Usar principalmente em referência a vocabulários externos, como o
-          Getty Art and Architecture Thesaurus.
-        range: RelatedConceptReference
-        multivalued: true
-        inlined_as_list: true
-        slot_uri: skos:relation
+          Usar em referência ao nosso próprio vocabulário controlado.
 
   ConceptReference:
     description: Atribuição de vocabulário controlado com citação de apoio.
-    attributes:
-
-      name:
-        description: Identificador do termo referido.
-        range: Concept
-
     slots:
+      - concept
       - description
       - bibliographic_citation
 
   BroaderConceptReference:
+    is_a: ConceptReference
     description: Relações hierárquicas.
     attributes:
       match:
+        required: true
         description: Tipo da relação.
         range: SkosHierarchicalRelation
 
-  RelatedConceptReference:
-    description: Relações hierárquicas.
+  MappingConceptReference:
+    is_a: ConceptReference
+    description: Relações semânticas.
     attributes:
       match:
+        required: true
         description: Tipo da relação.
         range: SkosMappingRelation

@@ -4,11 +4,20 @@ title: WASTH shared structures
 
 prefixes:
   linkml: https://w3id.org/linkml/
-  wasth: https://tradicional.arq.br/schema/
+  crm: http://www.cidoc-crm.org/cidoc-crm/
+  dcterms: http://purl.org/dc/terms/
   lido: http://www.lido-schema.org/
+  schema: http://schema.org/
+  vra: http://purl.org/vra/
+  wasth: https://tradicional.arq.br/schema/
 
 default_prefix: wasth
 default_range: string
+
+imports:
+  - linkml:types
+  - classes/concept
+  - classes/temporal
 
 classes:
 
@@ -21,9 +30,14 @@ classes:
       -------------------------------------------------------------------------
 
       Reference to a local record, IRI, URI, or LIDO terminology term.
+
+    slot_usage:
+      refid:
+        key: true
+
     slots:
       - reference_type
-      - term
+      - lido_term
       - refid
       - description
       - bibliographic_citation
@@ -31,10 +45,25 @@ classes:
 
   Measurement:
     class_uri: crm:E16_Measurement
-    close_mappings:
+    related_mappings:
       - dcterms:format
 
     description: >
+      Informações estruturadas sobre as dimensões do objeto ou requisitos de
+      condicionamento ambiental no espaço que ele ocupa.
+      Para edificações, é recomendável cadastrar ao menos a área útil, testada
+      e a altura de coroamento.
+
+      Se a modulação original for conhecida ou puder ser deduzida por um estudo
+      metrológico, é interessante cadastrar também as medidas históricas
+      utilizadas (por exemplo, dimensões em palmos).
+
+      O campo `description` permite uma representação textual das medidas da
+      edificação, caso não seja viável cadastrar medidas individuais com
+      precisão, ou seja preciso maior flexibilidade para explicar as dimensões.
+
+      -------------------------------------------------------------------------
+
       This class comprises actions measuring physical properties and other
       values that can be determined by a systematic, objective procedure of
       direct observation of particular states of physical reality.
@@ -77,10 +106,6 @@ classes:
       radiation intensities, is regarded as an instance of E16 Measurement.
       The same reasoning holds for other sensor data.
 
-      O campo `description` permite uma representação textual das medidas da
-      edificação, caso não seja possível cadastrar medidas individuais com
-      precisão, ou seja preciso maior flexibilidade para explicar as dimensões.
-
     slots:
       - description
       - format_extent
@@ -89,37 +114,51 @@ classes:
 
     attributes:
 
-      type:
+      measurement_type:
+        alias: type
         range: MeasurementType
         ifabsent: MeasurementType(proper)
         description: >
           designa a natureza da medida : largura, altura,
           área, etc. — usar um dos [tipos de dimensões
           ](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300226820)
-          do Art and Architecture Thesaurus do Instituto Getty (AAT).
+          do Art and Architecture Thesaurus do Instituto Getty (AAT), enquanto
+          não tivermos um vocabulário controlado próprio.
 
-      value:
+      measurement_value:
         alias: value
         required: true
         range: float
         minimum_value: 0
         description: Valor numérico, usar ponto como separador decimal.
 
-      qualifier:
+      measurement_qualifier:
         alias: qualifier
-        range: string
+        range: MeasurementQualifier
+        ifabsent: MeasurementQualifier(2)
         description: >
-          Indica que as medidas são aproximadas : usar um
-          [qualificador do
-          AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=&note=&page=1&subjectid=300435720) ;
+          Indica que as medidas são aproximadas.
 
-      shape:
+      measurement_shape:
         alias: shape
-        range: string
+        range: TypedReference
         description: >
           caso relevante, indicar a forma do elemento medido
           usando a [lista de formas do
-          AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273).
+          AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273),
+          enquanto não tivermos um vocabulário controlado próprio.
+
+      measurement_event:
+        alias: event
+        range: Event
+        inlined: false
+        description: >
+          Descreve a ocasião em que as medidas foram aferidas, caso essa
+          informação seja relevante (por exemplo, no âmbito de um
+          levantamento prévio a intervenções que alteraram as dimensões da
+          edificação).
+
+          Referencia um evento cadastrado em `temporal` pelo seu `id`.
 
   MaterialTech:
     is_a: ConceptReference
@@ -140,17 +179,24 @@ classes:
         required: true
 
   Right:
-    class_uri: dcterms:rights
+    class_uri: crm:E30_Right  # dcterms:rights
     description: >
       * Preencher `earliest_date` com a data de início da vigência dos
-      direitos ou a data do preenchimento da ficha.
+        direitos ou a data do preenchimento da ficha.
+
       * `latest_date` pode ser omitido se não houver fim da vigência.
+
       * `holder` pode ser omitido se a obra estiver no domínio público.
 
     attributes:
 
-      concept:
+      rights_type:
         description: >
+          Determina se os direitos ora descritos são uma licença específica
+          (padrão) ou expressão genérica de copyright.
+
+          ---------------------------------------------------------------------
+
           Qualifies the kind of rights type, whether it refers to a generic
           kind of right, like copyright or performance rights, or is a specific
           rights or license statement, for instance, Rights Statements or
@@ -158,19 +204,24 @@ classes:
         required: true
         range: RightsType
 
-      type:
+      rights_statement:
         description: >
-          An index element for rights information being recorded. This can
-          refer to a generic kind of right, such as copyright or a related
-          right, but also be a specific rights or license statement like a
-          standardized statement on copyright, usage, or access rights.
+          Referencia, preferencialmente por meio de uma URI, as informações
+          específicas dos direitos autorais incidentes sobre o item descrito.
 
           Por padrão, as casas tradicionais pertencem ao domínio público até
           prova em contrário.
           Essa informação e a declaração de direitos NKC (Sem direito autoral
           conhecido) NÃO PODE ser omitida da ficha.
-          Para o domínio público, indicar a referência:
+          Para o domínio público, portanto, indicar a referência :
           <https://rightsstatements.org/vocab/NKC/1.0/>.
+
+          ---------------------------------------------------------------------
+
+          An index element for rights information being recorded. This can
+          refer to a generic kind of right, such as copyright or a related
+          right, but also be a specific rights or license statement like a
+          standardized statement on copyright, usage, or access rights.
         required: true
         range: TypedReference
         inlined: true
@@ -193,35 +244,26 @@ classes:
         inlined: true
 
   LegalBody:
-    description: Personal, corporate, family, or other responsible body.
+    description: >
+      Referência a uma pessoa jurídica (pode ser um indivíduo detentor de
+      direitos jurídicos específicos que se queira referenciar) ou entidade
+      coletiva histórica.
     attributes:
 
-      type:
+      legal_body_type:
         alias: type
         range: RepositoryType
-        ifabsent: string(corporate)
+        ifabsent: RepositoryType(corporate)
 
-      name:
+      legal_body_name:
         alias: name
         range: TypedReference
         inlined: true
 
-  Header:
-    description: Presentation metadata for the WASTH interface.
-    slots:
-      - teaser
-      - overlay_image
-      - caption
-
 
 slots:
 
-  href:
-    description: Um hyperlink simples.
-    range: uriorcurie
-
   refid:
-    key: true
     range: uriorcurie
     slot_uri: dcterms:identifier
     exact_mappings:
@@ -244,9 +286,10 @@ slots:
   reference_type:
     alias: type
     range: ReferenceType
-    ifabsent: string(uri)
+    ifabsent: ReferenceType(uri)
 
-  term:
+  lido_term:
+    alias: term
     range: uriorcurie
     pattern: '^http://terminology\.lido-schema\.org/lido[0-9]{5}$'
     description: LIDO terminology term.
@@ -269,6 +312,18 @@ slots:
     multivalued: true
     inlined_as_list: true
     description: >
+      Descreve a natureza do material empregado na edificação, no elemento ou
+      no evento descritos.
+      Conforme necessário e segundo o discernimento de quem preenche a ficha,
+      pode se referir a matérias-primas ou a produtos prontos para uso.
+
+      Espólios ou partes de outras edificações reutilizadas podem ser descritos
+      segundo os materiais de que são constituídos, mas a procedência não deve
+      ser cadastrada neste item. Para tanto, devem ser utilizados os eventos
+      no grupo `temporal`.
+
+      -------------------------------------------------------------------------
+
       This class is a specialization of E55 Type and comprises the concepts of
       materials.
 
@@ -296,6 +351,12 @@ slots:
     multivalued: true
     inlined_as_list: true
     description: >
+      Processos, técnicas, métodos e saberes postos em prática no conjunto da
+      edificação e nas suas partes mais significativas, considerando a sua
+      produção e alterações substanciais, bem como a sua eventual destruição.
+
+      -------------------------------------------------------------------------
+
       The production or manufacturing processes, techniques, and methods
       incorporated in the fabrication or alteration of the work or image.
 
@@ -304,21 +365,67 @@ slots:
     range: TypedReference
     inlined: true
     description: >
-      Indica a parte do objeto que está sendo medida — por
-      exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc.
-      — usar a `uri` de um vocabulário controlado.
+      Indica a parte do objeto que está sendo medida — por exemplo, se a altura
+      é até a linha de coroamento ou até a cumeeira, etc. — usar a `uri` de um
+      vocabulário controlado.
 
   unit:
-    alias: unit
     required: true
     range: TypedReference
     inlined: true
     description: >
-      Unidade de medida usada no dimensionamento da representação,
-      por exemplo metros ou milímetros.
+      Unidade de medida usada no dimensionamento do objeto ou da representação,
+      por exemplo metros, milímetros ou palmos.
       Usar a [hierarquia de unidades de
       medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096)
       do AAT, ou do nosso próprio [vocabulário controlado].
+
+
+  style_period:
+    range: StylePeriod
+    multivalued: true
+    inlined_as_list: true
+    description: >
+      Denomina o(s) período(s) em que o evento decorreu, em qualquer escala
+      relevante para o conhecimento : geológica, arqueológica, histórica ou
+      artística.
+      A identificação do período ou estilo deve ser relevante para as
+      características que o objeto adquiriu devido a esse evento,
+      não somente uma coincidência cronológica.
+
+      ---------------------------------------------------------------------
+
+      An index element for the period in which the event happened,
+      comprising information about geologic time scale, archaelogical,
+      historical, or artistic period, style, or art movement, whose
+      characteristics are represented by the object or work.
+
+      Note that "Period/Style" corresponds to "Style" in CDWA as shorthand for
+      [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
+
+      Examples may be Neolithic for a period, Impressionist for a style, or
+      Cubism for a movement.
+
+  culture:
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+    description: >-
+      Designa o contexto cultural ou étnico no qual o objeto foi
+      afetado pelo evento em questão, desde que as características de tal
+      contexto estejam refletidas no objeto.
+      O preenchimento do contexto cultural é especialmente relevante quando
+      os agentes envolvidos na produção ou alteração do objeto são
+      desconhecidos.
+
+      ---------------------------------------------------------------------
+
+      An index element for the cultural context from which the object/work
+      in focus originated.
+      Used if the creator or producer is unknown, or if the cultural
+      context is of particular interest.
+      Examples may include the name of a culture, a nation, or an ethnic
+      group.
 
 
   source:
@@ -330,14 +437,3 @@ slots:
     range: Right
     multivalued: true
     inlined_as_list: true
-
-  caption:
-    description: Legenda descritiva ou explicativa.
-    alias: caption
-    range: string
-
-  teaser:
-    range: uriorcurie
-
-  overlay_image:
-    range: uriorcurie

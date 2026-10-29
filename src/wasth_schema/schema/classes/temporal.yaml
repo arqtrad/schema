@@ -5,8 +5,10 @@ title: WASTH events, subjects, and related objects
 prefixes:
   linkml: https://w3id.org/linkml/
   wasth: https://tradicional.arq.br/schema/
+  crm: http://www.cidoc-crm.org/cidoc-crm/
   dcterms: http://purl.org/dc/terms/
   lido: http://www.lido-schema.org/
+  schema: http://schema.org/
   ulan: http://vocab.getty.edu/ulan/
   wd: http://www.wikidata.org/entity/
 
@@ -20,6 +22,15 @@ classes:
     exact_mappings:
       - schema:Event
     description: >
+      Um evento é um processo específico e coerente, delimitável, de
+      interações entre fatores materiais, humanos e físico-ambientais,
+      que afetam objetos de modo característico ao tipo de processo em jogo.
+      Pode tratar-se de uma ação ou um conjunto articulado de ações
+      intencionais, de consequências imprevistas de ações intencionais, ou de
+      processos naturais sem intervenção humana.
+
+      -------------------------------------------------------------------------
+
       This class comprises distinct, delimited and coherent processes and
       interactions of a material nature, in cultural, social or physical
       systems, involving and affecting instances of E77 Persistent Item in a
@@ -61,10 +72,10 @@ classes:
 
     attributes:
 
-      type:
+      event_type:
+        alias: type
         range: EventType
         required: true
-        # ifabsent: EventType(term:lido00031)
 
       actor_role:
         description: Identificação de um agente e do seu papel no evento.
@@ -94,35 +105,8 @@ classes:
         range: EventDate
         inlined: true
 
-      style_period:
-        description: >
-          An index element for the period in which the event happened,
-          comprising information about geologic time scale, archaelogical,
-          historical, or artistic period, style, or art movement, whose
-          characteristics are represented by the object or work.
-
-          Note that "Period/Style" corresponds to "Style" in CDWA as shorthand for
-          [Style/Period/Group/Movement/Dynasty](https://www.getty.edu/research/publications/electronic_publications/cdwa/17styles.html).
-
-          Examples may be Neolithic for a period, Impressionist for a style, or
-          Cubism for a movement.
-        range: StylePeriod
-        multivalued: true
-        inlined_as_list: true
-
-      culture:
-        description: >-
-          An index element for the cultural context from which the object/work
-          in focus originated.
-          Used if the creator or producer is unknown, or if the cultural
-          context is of particular interest.
-          Examples may include the name of a culture, a nation, or an ethnic
-          group.
-        range: TypedReference
-        multivalued: true
-        inlined_as_list: true
-
-      place:
+      event_place:
+        alias: place
         description: >-
           A set of structured information indicating the place or location
           where an object/work was associated with a particular event.
@@ -152,8 +136,11 @@ classes:
           in focus, indicating the type of relationship where applicable.
         range: RelatedEvent
         multivalued: true
+        inlined_as_list: true
 
     slots:
+      - style_period
+      - culture
       - measurements
       - material
       - technique
@@ -206,6 +193,17 @@ classes:
 
   EventDate:
     description: >
+      Expressão complexa de uma data que pode se referir ao começo ou ao
+      término de um evento pontual ou de uma decorrência prolongada.
+      Permite expressar as datas de corte inicial e final, cada uma com seus
+      respetivos graus de confiabilidade e de precisão.
+
+      Caso necessário, permite também a expressão descritiva da data, para
+      contemplar variados graus de incerteza, ou de modo a representar a data
+      em calendários diferentes do gregoriano.
+
+      -------------------------------------------------------------------------
+
       A wrapper for the expression of a date by providing a set of years as
       earliest and latest date delimiting the respective span of time, usually
       given in the proleptic Gregorian calendar.

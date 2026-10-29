@@ -31,7 +31,7 @@ classes:
     attributes:
 
       refid:
-        required: true
+        identifier: true
         range: CslCitekey
         description: >
           Se a fonte for cadastrada, o campo `refid` deve conter a chave de
@@ -39,6 +39,10 @@ classes:
           biblioteca do nosso projeto de pesquisa no [Zotero].
           Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode
           ser diferente.
+
+          Se a referência que necessita citar não constar da biblioteca do
+          Zotero, deve cadastrá-la primeiro nessa biblioteca para então extrair
+          a chave de citação.
 
       note:
         range: string

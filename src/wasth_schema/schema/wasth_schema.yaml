@@ -134,7 +134,7 @@ prefixes:
   wasth: https://tradicional.arq.br/schema/
   crm: http://www.cidoc-crm.org/cidoc-crm/
   dcterms: http://purl.org/dc/terms/
-  dcmit: http://purl.org/dc/dcmitype/
+  dctypes: http://purl.org/dc/dcmitype/
   schema: http://schema.org/
   lido: http://www.lido-schema.org/
   term: http://terminology.lido-schema.org/
@@ -147,6 +147,7 @@ prefixes:
   aat: http://vocab.getty.edu/aat/
   tgn: http://vocab.getty.edu/tgn/
   ulan: http://vocab.getty.edu/ulan/
+  unesco: http://vocabularies.unesco.org/thesaurus/
   vra: http://purl.org/vra/
   wd: http://www.wikidata.org/entity/
   EPSG: http://www.opengis.net/def/crs/EPSG/0/
@@ -897,6 +898,32 @@ enums:
       watermark:
         meaning: term:lido00427
       other:
+
+  MeasurementQualifier:
+    description: >
+      Qualifica a confiabilidade das medidas aferidas.
+    permissible_values:
+      interpreted:
+        title: interpretativa
+        description: Metrologia interpretativa ou citação textual.
+      estimated:
+        title: estimativa visual
+        description: >
+          Estimativa obtida por comparação com uma escala gráfica, com medidas
+          adjacentes conhecidas, ou por caminhamento, partes do corpo, etc.
+      derived:
+        title: extrapolada
+        description: Extrapolado de um desenho ou modelo.
+      measured:
+        title: medida no local
+        description: >
+          Medida obtida no local por meio de instrumentos manuais ou
+          eletrônicos (trena, teodolito, etc.).
+      scanned:
+        title: escaneada digitalmente
+        description: >
+          Medida extraída de um escaneamento a laser de alta precisão ou de uma
+          estação topográfica digital.
 
   MeasurementType:
     description: >-

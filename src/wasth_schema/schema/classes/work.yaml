@@ -73,7 +73,7 @@ classes:
         recommended: true
         range: ConceptReference
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
         description: >-
           Descreve o estado físico da edificação quanto à sua aparência de
           completude, deterioração ou capacidade de desempenhar sua função.
@@ -98,7 +98,7 @@ classes:
         recommended: true
         range: ConceptReference
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
         description: >-
           Nos Documentários da Arquitetura Tradicional,
           designa uma tipologia formal.
@@ -120,7 +120,7 @@ classes:
         recommended: true
         range: ConceptReference
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
         description: >-
           Nos Documentários de edificações, designa um dos sete
           tipos de propósitos concebidos por C. William Westfall e Samir Younés
@@ -144,7 +144,7 @@ classes:
         recommended: true
         range: ConceptReference
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
         description: >-
           Nos Documentários de edificações, designa sobretudo o contexto
           imediato de implantação de uma edificação : urbana, rural, isolada,
@@ -169,7 +169,7 @@ classes:
         recommended: true
         range: MaterialTech
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
         description: >-
           Nos Documentários da Arquitetura Tradicional, refere-se à
           caracterização construtiva geral da edificação.
@@ -186,7 +186,7 @@ classes:
         recommended: true
         range: ConceptReference
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
         description: >-
           Nos Documentários da Arquitetura Tradicional, indica, se houver, uma
           classificação iconográfica mais específica do que `form` ou
@@ -205,7 +205,7 @@ classes:
         recommended: true
         range: ConceptReference
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
         description: >-
           Nos Documentários da Arquitetura Tradicional, designa propriamente
           a(s) classificação(ões) de usos do solo ou atividades predominante(s)
@@ -223,7 +223,7 @@ classes:
         slot_uri: term:lido00853
         range: ConceptReference
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
         description: >
           ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
           Talvez ele não seja relevante para o documentário de arquitetura
@@ -248,7 +248,7 @@ classes:
         slot_uri: term:lido00932
         range: ConceptReference
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
         description: >-
           ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
           Talvez ele não seja relevante para o documentário de arquitetura
@@ -267,7 +267,7 @@ classes:
         slot_uri: term:lido01135
         range: ConceptReference
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
         description: >-
           ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
           Talvez ele não seja relevante para o documentário de arquitetura
@@ -287,7 +287,7 @@ classes:
         slot_uri: term:lido01144
         range: ConceptReference
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
         description: >-
           ❓ Ainda não implementamos o bloco `objectClassification` do LIDO.
           Talvez ele não seja relevante para o documentário de arquitetura
@@ -308,6 +308,8 @@ classes:
       part_of:
         slot_uri: dcterms:isPartOf  # lido:partOfPlace
         range: TypedReference
+        multivalued: true
+        inlined_as_list: true
         description: >-
           Permite identificar o contexto geográfico ou administrativo ao qual
           a edificação se subordina, ou ainda um conjunto arquitetônico,
@@ -454,6 +456,8 @@ classes:
       - measurements
       - material
       - technique
+      - style_period
+      - culture
       - subject
       - related_works
       - resources
