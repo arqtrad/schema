@@ -17,6 +17,8 @@ dynamic = ["version"]
 dependencies = [
   "linkml>=1.12.1",
   "linkml-runtime >=1.9.4",
+  "quantulum3[classifier]>=0.10.0",
+  "schema-automator>=0.5.7",
 ]
 
 [dependency-groups]
