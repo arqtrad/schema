@@ -57,12 +57,6 @@ classes:
 
     attributes:
 
-      record_date:
-        alias: date
-        range: date
-        slot_uri: dcterms:created
-        description: Data de inclusão da ficha.
-
       title:
         description: >
           Nome pelo qual este item é mais comumente conhecido.
@@ -195,6 +189,7 @@ classes:
     slots:
       - id
       - record_author
+      - record_date
       - description
       - category
       - record_rights
@@ -259,6 +254,12 @@ slots:
       ORCID iD da pessoa que escreveu a versão original da ficha.
       Alterar apenas no caso de a ficha ter sido substancialmente
       reescrita.
+
+  record_date:
+    alias: date
+    range: date
+    slot_uri: dcterms:created
+    description: Data de inclusão da ficha.
 
   category:
     slot_uri: term:lidoCategory

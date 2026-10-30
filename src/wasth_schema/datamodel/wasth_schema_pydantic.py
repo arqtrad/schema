@@ -2335,6 +2335,13 @@ class Thing(ConfiguredBaseModel):
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
+    date: Optional[date] = Field(
+        default=None,
+        description="""Data de inclusão da ficha.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
+        },
+    )
     display: str = Field(
         default=...,
         description="""A human-readable description for a thing""",
@@ -2423,13 +2430,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
                 "recommended": True,
                 "slot_uri": "skos:scopeNote",
             }
-        },
-    )
-    date: Optional[date] = Field(
-        default=None,
-        description="""Data de inclusão da ficha.""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
     title: str = Field(
@@ -2585,6 +2585,13 @@ Derivado automaticamente das relações `broader` em outras fichas. NÃO preench
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
+    date: Optional[date] = Field(
+        default=None,
+        description="""Data de inclusão da ficha.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
+        },
+    )
     display: str = Field(
         default=...,
         description="""A human-readable description for a thing""",
@@ -2673,13 +2680,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
                 "recommended": True,
                 "slot_uri": "skos:scopeNote",
             }
-        },
-    )
-    date: Optional[date] = Field(
-        default=None,
-        description="""Data de inclusão da ficha.""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
     title: str = Field(
@@ -2868,6 +2868,13 @@ Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente 
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
+    date: Optional[date] = Field(
+        default=None,
+        description="""Data de inclusão da ficha.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
+        },
+    )
     display: str = Field(
         default=...,
         description="""A human-readable description for a thing""",
@@ -2956,13 +2963,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
                 "recommended": True,
                 "slot_uri": "skos:scopeNote",
             }
-        },
-    )
-    date: Optional[date] = Field(
-        default=None,
-        description="""Data de inclusão da ficha.""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
     title: str = Field(
@@ -3204,6 +3204,13 @@ Por ora, é responsabilidade de quem preenche a ficha assegurar que `start_date`
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
+    date: Optional[date] = Field(
+        default=None,
+        description="""Data de inclusão da ficha.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
+        },
+    )
     display: str = Field(
         default=...,
         description="""A human-readable description for a thing""",
@@ -3292,13 +3299,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
                 "recommended": True,
                 "slot_uri": "skos:scopeNote",
             }
-        },
-    )
-    date: Optional[date] = Field(
-        default=None,
-        description="""Data de inclusão da ficha.""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
     title: str = Field(
@@ -3486,6 +3486,13 @@ class Repository(Thing):
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
+    date: Optional[date] = Field(
+        default=None,
+        description="""Data de inclusão da ficha.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
+        },
+    )
     display: str = Field(
         default=...,
         description="""A human-readable description for a thing""",
@@ -3574,13 +3581,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
                 "recommended": True,
                 "slot_uri": "skos:scopeNote",
             }
-        },
-    )
-    date: Optional[date] = Field(
-        default=None,
-        description="""Data de inclusão da ficha.""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
     title: str = Field(
@@ -3722,6 +3722,7 @@ class Work(Thing):
                     "range": "OlcPlusCode11",
                 },
                 "record_author": {"name": "record_author", "required": True},
+                "record_date": {"name": "record_date", "required": True},
                 "record_rights": {"name": "record_rights", "required": True},
             },
         }
@@ -4069,6 +4070,13 @@ Para o pertencimento a perímetros de sítios históricos tombados/classificados
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
+    date: date = Field(
+        default=...,
+        description="""Data de inclusão da ficha.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
+        },
+    )
     display: str = Field(
         default=...,
         description="""A human-readable description for a thing""",
@@ -4164,13 +4172,6 @@ Poderá incluir um segundo bloco de metadados para indicar as referências bibli
             }
         },
     )
-    date: Optional[date] = Field(
-        default=None,
-        description="""Data de inclusão da ficha.""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
-        },
-    )
     title: str = Field(
         default=...,
         description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
@@ -4256,8 +4257,6 @@ class Site(Thing):
     O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura Tradicional. Ele permite investigar a distribuição geográfica das características construtivas e morfológicas das edificações cadastradas.
     Este bloco corresponde à terminologia do [DublinCore] `coverage > spatial`. Na especificação [LIDO], a localização física de um bem se confunde com a sua inserção institucional (repositório). Na formatação da nossa ficha, tentamos desfazer essa confusão separando o georreferenciamento e o repositório em blocos diferentes.
     As instruções de preenchimento específicas se encontram na documentação das classes que fornecem os dados para o sítio. Consulte também o [Tutorial de georreferenciamento](https://github.com/arqtrad/.github/wiki/Tutorial-de-georreferenciamento) para saber como localizar edificações não cadastradas nas bases de dados do patrimônio cultural (SICG ou SIPA).
-    -------------------------------------------------------------------------
-    This class comprises 4-dimensional point sets (volumes) in physical spacetime (in contrast to mathematical models of it) regardless of their true geometric forms. They may derive their identity from being the extent of a material phenomenon or from being the interpretation of an expression defining an extent in spacetime. Intersections of instances of E92 Spacetime Volume, E53 Place, and E52 Time-Span are also regarded as instances of E92 Spacetime Volume. An instance of E92 Spacetime Volume is either contiguous or composed of a finite number of contiguous subsets. Its boundaries may be fuzzy due to the properties of the phenomena it derives from or due to the limited precision up to which defining expression can be identified with a real extent in spacetime. The duration of existence of an instance of E92 Spacetime Volume is its projection on time.
 
     """
 
@@ -4267,6 +4266,22 @@ class Site(Thing):
             "class_uri": "crm:E92_Spacetime_Volume",
             "exact_mappings": ["schema:DefinedRegion"],
             "from_schema": "https://tradicional.arq.br/schema/work",
+            "notes": [
+                "This class comprises 4-dimensional point sets (volumes) in "
+                "physical spacetime (in contrast to mathematical models of it) "
+                "regardless of their true geometric forms. They may derive their "
+                "identity from being the extent of a material phenomenon or from "
+                "being the interpretation of an expression defining an extent in "
+                "spacetime. Intersections of instances of E92 Spacetime Volume, E53 "
+                "Place, and E52 Time-Span are also regarded as instances of E92 "
+                "Spacetime Volume. An instance of E92 Spacetime Volume is either "
+                "contiguous or composed of a finite number of contiguous subsets. "
+                "Its boundaries may be fuzzy due to the properties of the phenomena "
+                "it derives from or due to the limited precision up to which "
+                "defining expression can be identified with a real extent in "
+                "spacetime. The duration of existence of an instance of E92 "
+                "Spacetime Volume is its projection on time."
+            ],
             "slot_usage": {
                 "id": {
                     "description": "Incluir aqui um identificador da base "
@@ -4325,6 +4340,13 @@ Polygonal, multipolygonal, or linear geographic extent associated with the place
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    date: Optional[date] = Field(
+        default=None,
+        description="""Data de inclusão da ficha.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
     display: str = Field(
@@ -4415,13 +4437,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
                 "recommended": True,
                 "slot_uri": "skos:scopeNote",
             }
-        },
-    )
-    date: Optional[date] = Field(
-        default=None,
-        description="""Data de inclusão da ficha.""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
     title: str = Field(

@@ -2159,6 +2159,19 @@ slots:
     domain_of:
     - Thing
     range: OrcidId
+  record_date:
+    name: record_date
+    definition_uri: https://tradicional.arq.br/schema/record_date
+    description: "Data de inclus\xE3o da ficha."
+    from_schema: https://tradicional.arq.br/schema/thing
+    mappings:
+    - dcterms:created
+    slot_uri: dcterms:created
+    alias: date
+    owner: Thing
+    domain_of:
+    - Thing
+    range: date
   category:
     name: category
     definition_uri: https://tradicional.arq.br/schema/category
@@ -2900,18 +2913,6 @@ slots:
     required: true
     multivalued: true
     inlined: false
-  thing__record_date:
-    name: thing__record_date
-    description: "Data de inclus\xE3o da ficha."
-    from_schema: https://tradicional.arq.br/schema/thing
-    mappings:
-    - dcterms:created
-    slot_uri: dcterms:created
-    alias: date
-    owner: Thing
-    domain_of:
-    - Thing
-    range: date
   thing__title:
     name: thing__title
     description: "Nome pelo qual este item \xE9 mais comumente conhecido. Outros nomes\
@@ -3784,6 +3785,24 @@ slots:
     usage_slot_name: record_author
     range: OrcidId
     required: true
+  Work_record_date:
+    name: Work_record_date
+    definition_uri: https://tradicional.arq.br/schema/record_date
+    description: "Data de inclus\xE3o da ficha."
+    from_schema: https://tradicional.arq.br/schema/thing
+    mappings:
+    - dcterms:created
+    is_a: record_date
+    domain: Work
+    slot_uri: dcterms:created
+    alias: date
+    owner: Work
+    domain_of:
+    - Work
+    is_usage_slot: true
+    usage_slot_name: record_date
+    range: date
+    required: true
   Work_category:
     name: Work_category
     definition_uri: https://tradicional.arq.br/schema/category
@@ -3951,12 +3970,12 @@ classes:
     slots:
     - id
     - record_author
+    - record_date
     - Thing_description
     - category
     - record_rights
     - bibliographic_citation
     - content
-    - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
@@ -4167,12 +4186,12 @@ classes:
     slots:
     - id
     - record_author
+    - record_date
     - Thing_description
     - category
     - record_rights
     - bibliographic_citation
     - content
-    - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
@@ -4529,12 +4548,12 @@ classes:
     slots:
     - id
     - record_author
+    - record_date
     - Thing_description
     - category
     - record_rights
     - bibliographic_citation
     - content
-    - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
@@ -4793,12 +4812,12 @@ classes:
     slots:
     - id
     - record_author
+    - record_date
     - Thing_description
     - category
     - record_rights
     - bibliographic_citation
     - content
-    - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
@@ -4811,12 +4830,6 @@ classes:
         name: description
         required: true
     attributes:
-      record_date:
-        name: record_date
-        description: "Data de inclus\xE3o da ficha."
-        slot_uri: dcterms:created
-        alias: date
-        range: date
       title:
         name: title
         description: "Nome pelo qual este item \xE9 mais comumente conhecido. Outros\
@@ -4942,12 +4955,12 @@ classes:
     slots:
     - id
     - record_author
+    - record_date
     - Thing_description
     - category
     - record_rights
     - bibliographic_citation
     - content
-    - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
@@ -4994,7 +5007,6 @@ classes:
     slots:
     - Thing_description
     - bibliographic_citation
-    - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
@@ -5034,6 +5046,7 @@ classes:
     - work__work_rights
     - Work_id
     - Work_record_author
+    - Work_record_date
     - Work_category
     - Work_record_rights
     - Work_content
@@ -5047,6 +5060,9 @@ classes:
         range: OlcPlusCode11
       record_author:
         name: record_author
+        required: true
+      record_date:
+        name: record_date
         required: true
       category:
         name: category
@@ -5336,19 +5352,19 @@ classes:
       \ classes que fornecem os dados para o s\xEDtio. Consulte tamb\xE9m o [Tutorial\
       \ de georreferenciamento](https://github.com/arqtrad/.github/wiki/Tutorial-de-georreferenciamento)\
       \ para saber como localizar edifica\xE7\xF5es n\xE3o cadastradas nas bases de\
-      \ dados do patrim\xF4nio cultural (SICG ou SIPA).\n-------------------------------------------------------------------------\n\
-      This class comprises 4-dimensional point sets (volumes) in physical spacetime\
-      \ (in contrast to mathematical models of it) regardless of their true geometric\
-      \ forms. They may derive their identity from being the extent of a material\
-      \ phenomenon or from being the interpretation of an expression defining an extent\
-      \ in spacetime. Intersections of instances of E92 Spacetime Volume, E53 Place,\
-      \ and E52 Time-Span are also regarded as instances of E92 Spacetime Volume.\
-      \ An instance of E92 Spacetime Volume is either contiguous or composed of a\
-      \ finite number of contiguous subsets. Its boundaries may be fuzzy due to the\
-      \ properties of the phenomena it derives from or due to the limited precision\
-      \ up to which defining expression can be identified with a real extent in spacetime.\
-      \ The duration of existence of an instance of E92 Spacetime Volume is its projection\
-      \ on time.\n"
+      \ dados do patrim\xF4nio cultural (SICG ou SIPA).\n"
+    notes:
+    - This class comprises 4-dimensional point sets (volumes) in physical spacetime
+      (in contrast to mathematical models of it) regardless of their true geometric
+      forms. They may derive their identity from being the extent of a material phenomenon
+      or from being the interpretation of an expression defining an extent in spacetime.
+      Intersections of instances of E92 Spacetime Volume, E53 Place, and E52 Time-Span
+      are also regarded as instances of E92 Spacetime Volume. An instance of E92 Spacetime
+      Volume is either contiguous or composed of a finite number of contiguous subsets.
+      Its boundaries may be fuzzy due to the properties of the phenomena it derives
+      from or due to the limited precision up to which defining expression can be
+      identified with a real extent in spacetime. The duration of existence of an
+      instance of E92 Spacetime Volume is its projection on time.
     from_schema: https://tradicional.arq.br/schema/work
     exact_mappings:
     - crm:E92_Spacetime_Volume
@@ -5357,12 +5373,12 @@ classes:
     abstract: true
     slots:
     - record_author
+    - record_date
     - Thing_description
     - category
     - record_rights
     - bibliographic_citation
     - content
-    - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
@@ -5578,5 +5594,5 @@ classes:
     class_uri: wasth:LocationHistoric
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-10-30T09:33:14'
-source_file_size: 48473
+source_file_date: '2026-10-30T10:39:58'
+source_file_size: 48474

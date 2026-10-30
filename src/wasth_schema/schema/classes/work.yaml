@@ -410,6 +410,7 @@ classes:
           propriedade sobre A EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo
           da ficha, nem sobre a iconografia relacionada.
 
+
     slot_usage:
 
       id:
@@ -421,6 +422,9 @@ classes:
         range: OlcPlusCode11
 
       record_author:
+        required: true
+
+      record_date:
         required: true
 
       category:
@@ -487,21 +491,21 @@ classes:
       para saber como localizar edificações não cadastradas nas bases de dados
       do patrimônio cultural (SICG ou SIPA).
 
-      -------------------------------------------------------------------------
+    notes:
 
-      This class comprises 4-dimensional point sets (volumes) in physical
-      spacetime (in contrast to mathematical models of it) regardless of their
-      true geometric forms. They may derive their identity from being the
-      extent of a material phenomenon or from being the interpretation of an
-      expression defining an extent in spacetime. Intersections of instances of
-      E92 Spacetime Volume, E53 Place, and E52 Time-Span are also regarded as
-      instances of E92 Spacetime Volume. An instance of E92 Spacetime Volume is
-      either contiguous or composed of a finite number of contiguous subsets.
-      Its boundaries may be fuzzy due to the properties of the phenomena it
-      derives from or due to the limited precision up to which defining
-      expression can be identified with a real extent in spacetime. The
-      duration of existence of an instance of E92 Spacetime Volume is its
-      projection on time.
+      - This class comprises 4-dimensional point sets (volumes) in physical
+        spacetime (in contrast to mathematical models of it) regardless of
+        their true geometric forms. They may derive their identity from being
+        the extent of a material phenomenon or from being the interpretation of
+        an expression defining an extent in spacetime. Intersections of
+        instances of E92 Spacetime Volume, E53 Place, and E52 Time-Span are
+        also regarded as instances of E92 Spacetime Volume. An instance of E92
+        Spacetime Volume is either contiguous or composed of a finite number of
+        contiguous subsets. Its boundaries may be fuzzy due to the properties
+        of the phenomena it derives from or due to the limited precision up to
+        which defining expression can be identified with a real extent in
+        spacetime. The duration of existence of an instance of E92 Spacetime
+        Volume is its projection on time.
 
     attributes:
 

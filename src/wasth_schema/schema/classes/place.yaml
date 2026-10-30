@@ -2,20 +2,14 @@ id: https://tradicional.arq.br/schema/place
 name: wasth-place
 title: WASTH Place
 
+imports:
+  - linkml:types
+
 prefixes:
   linkml: https://w3id.org/linkml/
   wasth: https://tradicional.arq.br/schema/
+  crm: http://www.cidoc-crm.org/cidoc-crm/
   schema: http://schema.org/
-  dcterms: http://purl.org/dc/terms/
-  lido: http://www.lido-schema.org/
-  term: http://terminology.lido-schema.org/
-  skos: http://www.w3.org/2004/02/skos/core#
-  iso: http://purl.org/iso25964/skos-thes#
-  geo: http://www.opengis.net/ont/geosparql#
-  geonames: http://www.geonames.org/ontology#
-  EPSG: http://www.opengis.net/def/crs/EPSG/0/
-  tgn: http://vocab.getty.edu/tgn/
-  wd: http://www.wikidata.org/entity/
 
 default_prefix: wasth
 default_range: string
@@ -23,7 +17,7 @@ default_range: string
 classes:
 
   Place:
-    is_a: Thing
+    is_a: Work
     class_uri: schema:Place
     exact_mappings:
       - crm:E18_Physical_Thing
@@ -58,140 +52,14 @@ classes:
       [tipos de obra](#work_types) mas, em geral, não precisa de
       bibliografia.
 
-    attributes:
-
-      work_type_function:
-        slot_uri: term:lido00767
-        recommended: true
-        range: ConceptReference
-        multivalued: true
-        inlined_as_list: false
-        description: >-
-          Objects that are distinguishable by the particular purpose for which
-          they are designed or used. If an object is identifiable by its
-          intended use, then it is qualified by function.
-
-          Based on [AAT Guidelines "Types of Guide
-          Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
-          Nos Documentários de edificações, designa um dos sete
-          tipos de propósitos concebidos por C. William Westfall e Samir Younés
-          em *Architectural Type and Character*.
-
-          No Documentário de Lugares, designa o papel administrativo da
-          localidade, por exemplo freguesia, sede municipal, capital estadual
-          ou nacional.
-
-      work_type_context:
-        slot_uri: term:lido00934
-        recommended: true
-        range: ConceptReference
-        multivalued: true
-        inlined_as_list: false
-        description: >-
-          Descriptors for objects that are distinguishable by their use or
-          application within a particular physical location. If an object is
-          identifiable by association with specific surroundings, it is
-          qualified by location or context.
-
-          Based on [AAT Guidelines "Types of Guide
-          Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
-
-          No Documentário de Lugares Tradicionais, designa o tipo de núcleo
-          populacional : sítio isolado, povoação rural, vila ou cidade,
-          por exemplo.
-
-          Nos Documentários de edificações, designa sobretudo o contexto
-          imediato de implantação de uma edificação : urbana, rural, isolada,
-          em correnteza, etc.
-
-      part_of:
-        slot_uri: lido:partOfPlace
-        description: >-
-          A set of structured information about a place that is the broader
-          context for the place in focus, such as the district, state, or
-          nation to which a city belongs.
-        range: GeonamesId
-        inlined: true
-
-      former_site:
-        alias: former
-        range: Site
-        multivalued: true
-        inlined_as_list: true
-        description: >-
-          Indica que a edificação não se encontra mais no local indicado,
-          seja porque foi deslocada ou demolida.
-
-      intended_site:
-        alias: intended
-        range: Site
-        multivalued: true
-        inlined_as_list: true
-        description: >-
-          Sinaliza que a edificação devia ocupar um certo local, mas não
-          chegou a ser construída.
-
-      other_site:
-        alias: other
-        range: Site
-        multivalued: true
-        inlined_as_list: true
-        description: >-
-          Para casos não contemplados em nenhuma das categorias acima.
-
-    slots:
-      - site
-
-    slot_usage:
-
       id:
         range: OlcPlusCode11
 
+    slot_usage:
 
-    attributes:
-
-      place_type:
+      title_type:
         range: RepositoryType
         required: true
 
-      geometry_type:
-        description: Tipo da geometria descrita pelas coordenadas.
-        alias: type
-        required: true
-        range: GeometryType
-
-      coordinates:
-        description: >
-          No QGIS, usar a ferramenta `Get WKT` para obter as coordenadas do
-          polígono (`extent`) com a opção `Get JSON` — copiar apenas os
-          colchetes `[[[ ]]]` e os valores numéricos dentro deles.
-        required: true
-        range: GeoJSONCoordinateArray
-
-    slots:
-      - srs_name
-      - source
-      - bibliographic_citation
-
-
-slots:
-
-  site:
-    required: true
-    range: Site
-    inlined: true
-    description: >-
-      A localização real, atual da edificação — é o que será usado em quase
-      todos os casos.
-
-  srs_name:
-    description: >-
-      Names the coordinate reference system (CRS) that defines the semantics of
-      the lat/long pair according to the ISO6709 standard.
-
-    recommended: true
-    alias: srsName
-    range: uriorcurie
-    inlined: true
-    # ifabsent: string('EPSG:4326')
+      work_rights:
+        required: false
