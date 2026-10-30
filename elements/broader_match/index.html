@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/title_preference/">
+        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/broader_match/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: title_preference - wasth_schema</title>
+        <title>Slot: broader_match - wasth_schema</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-title_preference" class="md-skip">
+        <a href="#slot-broader_match" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: title_preference
+              Slot: broader_match
             
           </span>
         </div>
@@ -398,6 +398,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -474,11 +485,11 @@
   
 
 
-<h1 id="slot-title_preference">Slot: title_preference</h1>
-<p><em>Indica se o nome em questão deve ser oculto ou não, se é uma versão alternativa ou uma variante de grafia, etc.</em></p>
+<h1 id="slot-broader_match">Slot: broader_match</h1>
+<p><em>Tipo da relação.</em></p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/title_preference">wasth:title_preference</a>
-Alias: label_type</p>
+<p>URI: <a href="https://tradicional.arq.br/schema/broader_match">wasth:broader_match</a>
+Alias: match</p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -491,8 +502,8 @@ Alias: label_type</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Appellation/">Appellation</a></td>
-<td></td>
+<td><a href="../BroaderConceptReference/">BroaderConceptReference</a></td>
+<td>Relações hierárquicas</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -509,14 +520,14 @@ Alias: label_type</p>
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../LabelType/">LabelType</a></td>
+<td><a href="../SkosBroaderRelation/">SkosBroaderRelation</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Appellation/">Appellation</a></td>
+<td><a href="../BroaderConceptReference/">BroaderConceptReference</a></td>
 </tr>
 <tr>
-<td>### Slot Characteristics</td>
+<td>### Cardinality and Requirements</td>
 <td></td>
 </tr>
 </tbody>
@@ -530,12 +541,23 @@ Alias: label_type</p>
 </thead>
 <tbody>
 <tr>
-<td>If Absent</td>
-<td><code>LabelType(alternative)</code></td>
+<td>Required</td>
+<td>Yes</td>
 </tr>
+</tbody>
+</table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Owner</td>
-<td><a href="../Appellation/">Appellation</a></td>
+<td><a href="../BroaderConceptReference/">BroaderConceptReference</a></td>
 </tr>
 </tbody>
 </table>
@@ -555,27 +577,26 @@ Alias: label_type</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:title_preference</td>
+<td>wasth:broader_match</td>
 </tr>
 <tr>
 <td>native</td>
-<td>wasth:title_preference</td>
+<td>wasth:broader_match</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title_preference</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Indica se o nome em questão deve ser oculto ou não, se é uma versão alternativa</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">ou uma variante de grafia, etc.</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">broader_match</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tipo da relação.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LabelType(alternative)</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">label_type</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">match</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BroaderConceptReference</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LabelType</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BroaderConceptReference</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SkosBroaderRelation</span>
+<span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>

@@ -398,6 +398,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -411,6 +422,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Source
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -458,6 +486,9 @@
 
 
 <h1 id="slot-temporal">Slot: temporal</h1>
+<p><em>Descrição dos eventos associados ao ciclo de vida da edificação ou à existência e/ou uso do objeto ou conceito.</em></p>
+<p><em>Ler a respetiva documentação para estruturar este campo.</em></p>
+<p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/temporal">wasth:temporal</a></p>
 <!-- no inheritance hierarchy -->
@@ -479,11 +510,6 @@
 <tr>
 <td><a href="../Resource/">Resource</a></td>
 <td>This class comprises identifiable immaterial items that make propositions abo...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Right/">Right</a></td>
-<td>* Preencher <code>earliest_date</code> com a data de início da vigência dos</td>
 <td>no</td>
 </tr>
 <tr>
@@ -525,15 +551,52 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../String/">String</a></td>
+<td><a href="../Event/">Event</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Right/">Right</a>, <a href="../Thing/">Thing</a></td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
+<td>### Cardinality and Requirements</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multivalued</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td><a href="../Thing/">Thing</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: <a href="https://tradicional.arq.br/schema">https://tradicional.arq.br/schema</a></li>
+</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -556,10 +619,21 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temporal</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Descrição</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">eventos</span><span class="nv"> </span><span class="s">associados</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">ciclo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">vida</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">à</span>
+<span class="w">  </span><span class="s">existência</span><span class="nv"> </span><span class="s">e/ou</span><span class="nv"> </span><span class="s">uso</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">conceito.</span>
+
+<span class="w">  </span><span class="s">Ler</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">respetiva</span><span class="nv"> </span><span class="s">documentação</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">estruturar</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">campo.</span>
+
+<span class="w">  </span><span class="s">'</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>

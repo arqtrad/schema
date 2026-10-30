@@ -361,11 +361,23 @@
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
+         <loc>https://tradicional.arq.br/schema/elements/appellation_preference/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://tradicional.arq.br/schema/elements/appellation_type/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
          <loc>https://tradicional.arq.br/schema/elements/bibliographic_citation/</loc>
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
          <loc>https://tradicional.arq.br/schema/elements/broader/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://tradicional.arq.br/schema/elements/broader_match/</loc>
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
@@ -549,7 +561,7 @@
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
-         <loc>https://tradicional.arq.br/schema/elements/match/</loc>
+         <loc>https://tradicional.arq.br/schema/elements/mapping_match/</loc>
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
@@ -598,6 +610,10 @@
     </url>
     <url>
          <loc>https://tradicional.arq.br/schema/elements/narrower/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://tradicional.arq.br/schema/elements/narrower_match/</loc>
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
@@ -697,6 +713,14 @@
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
+         <loc>https://tradicional.arq.br/schema/elements/rights_end_date/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://tradicional.arq.br/schema/elements/rights_start_date/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
          <loc>https://tradicional.arq.br/schema/elements/rights_statement/</loc>
          <lastmod>2026-10-30</lastmod>
     </url>
@@ -758,10 +782,6 @@
     </url>
     <url>
          <loc>https://tradicional.arq.br/schema/elements/title/</loc>
-         <lastmod>2026-10-30</lastmod>
-    </url>
-    <url>
-         <loc>https://tradicional.arq.br/schema/elements/title_preference/</loc>
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>

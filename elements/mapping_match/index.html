@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/match/">
+        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/mapping_match/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: match - wasth_schema</title>
+        <title>Slot: mapping_match - wasth_schema</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-match" class="md-skip">
+        <a href="#slot-mapping_match" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: match
+              Slot: mapping_match
             
           </span>
         </div>
@@ -398,6 +398,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -411,6 +422,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Source
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -457,9 +485,11 @@
   
 
 
-<h1 id="slot-match">Slot: match</h1>
+<h1 id="slot-mapping_match">Slot: mapping_match</h1>
+<p><em>Tipo da relação.</em></p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/match">wasth:match</a></p>
+<p>URI: <a href="https://tradicional.arq.br/schema/mapping_match">wasth:mapping_match</a>
+Alias: match</p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -471,16 +501,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../BroaderConceptReference/">BroaderConceptReference</a></td>
-<td>Relações hierárquicas</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NarrowerConceptReference/">NarrowerConceptReference</a></td>
-<td>Relações hierárquicas</td>
-<td>no</td>
-</tr>
 <tr>
 <td><a href="../MappingConceptReference/">MappingConceptReference</a></td>
 <td>Relações semânticas</td>
@@ -500,15 +520,52 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../String/">String</a></td>
+<td><a href="../SkosMappingRelation/">SkosMappingRelation</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../BroaderConceptReference/">BroaderConceptReference</a>, <a href="../NarrowerConceptReference/">NarrowerConceptReference</a>, <a href="../MappingConceptReference/">MappingConceptReference</a></td>
+<td><a href="../MappingConceptReference/">MappingConceptReference</a></td>
+</tr>
+<tr>
+<td>### Cardinality and Requirements</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Required</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td><a href="../MappingConceptReference/">MappingConceptReference</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: <a href="https://tradicional.arq.br/schema">https://tradicional.arq.br/schema</a></li>
+</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -520,22 +577,26 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:match</td>
+<td>wasth:mapping_match</td>
 </tr>
 <tr>
 <td>native</td>
-<td>wasth:match</td>
+<td>wasth:mapping_match</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">match</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mapping_match</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tipo da relação.</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">match</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MappingConceptReference</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BroaderConceptReference</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NarrowerConceptReference</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MappingConceptReference</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SkosMappingRelation</span>
+<span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>
