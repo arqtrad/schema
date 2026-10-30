@@ -134,9 +134,9 @@ classes:
       measurement_qualifier:
         alias: qualifier
         range: MeasurementQualifier
-        ifabsent: MeasurementQualifier(2)
+        ifabsent: MeasurementQualifier(derived)
         description: >
-          Indica que as medidas são aproximadas.
+          Indica o grau de confiabilidade das medidas.
 
       measurement_shape:
         alias: shape
@@ -225,9 +225,15 @@ classes:
         range: TypedReference
         inlined: true
 
-      temporal:
+      rights_start_date:
+        alias: start_date
         description: Date on which a right is or was current.
-        alias: temporal
+        range: EventDate
+        inlined: true
+
+      rights_end_date:
+        alias: end_date
+        description: Date on which a right is or will be no longer current.
         range: EventDate
         inlined: true
 

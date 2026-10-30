@@ -97,7 +97,8 @@ classes:
     is_a: ConceptReference
     description: Relações hierárquicas.
     attributes:
-      match:
+      broader_match:
+        alias: match
         required: true
         description: Tipo da relação.
         range: SkosBroaderRelation
@@ -106,7 +107,8 @@ classes:
     is_a: ConceptReference
     description: Relações hierárquicas.
     attributes:
-      match:
+      narrower_match:
+        alias: match
         required: true
         description: Tipo da relação.
         range: SkosNarrowerRelation
@@ -115,7 +117,8 @@ classes:
     is_a: ConceptReference
     description: Relações semânticas.
     attributes:
-      match:
+      mapping_match:
+        alias: match
         required: true
         description: Tipo da relação.
         range: SkosMappingRelation

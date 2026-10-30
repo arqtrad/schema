@@ -2377,8 +2377,8 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  broaderConceptReference__match:
-    name: broaderConceptReference__match
+  broaderConceptReference__broader_match:
+    name: broaderConceptReference__broader_match
     description: "Tipo da rela\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/concept
     slot_uri: wasth:match
@@ -2388,8 +2388,8 @@ slots:
     - BroaderConceptReference
     range: SkosBroaderRelation
     required: true
-  narrowerConceptReference__match:
-    name: narrowerConceptReference__match
+  narrowerConceptReference__narrower_match:
+    name: narrowerConceptReference__narrower_match
     description: "Tipo da rela\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/concept
     slot_uri: wasth:match
@@ -2399,8 +2399,8 @@ slots:
     - NarrowerConceptReference
     range: SkosNarrowerRelation
     required: true
-  mappingConceptReference__match:
-    name: mappingConceptReference__match
+  mappingConceptReference__mapping_match:
+    name: mappingConceptReference__mapping_match
     description: "Tipo da rela\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/concept
     slot_uri: wasth:match
@@ -2498,10 +2498,12 @@ slots:
     minimum_value: 0
   measurement__measurement_qualifier:
     name: measurement__measurement_qualifier
-    description: "Indica que as medidas s\xE3o aproximadas.\n"
+    description: 'Indica o grau de confiabilidade das medidas.
+
+      '
     from_schema: https://tradicional.arq.br/schema/shared
     slot_uri: wasth:qualifier
-    ifabsent: MeasurementQualifier(2)
+    ifabsent: MeasurementQualifier(derived)
     alias: qualifier
     owner: Measurement
     domain_of:
@@ -2584,12 +2586,24 @@ slots:
     required: true
     inlined: true
     inlined_as_list: false
-  right__temporal:
-    name: right__temporal
+  right__rights_start_date:
+    name: right__rights_start_date
     description: Date on which a right is or was current.
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:temporal
-    alias: temporal
+    slot_uri: wasth:start_date
+    alias: start_date
+    owner: Right
+    domain_of:
+    - Right
+    range: EventDate
+    inlined: true
+    inlined_as_list: true
+  right__rights_end_date:
+    name: right__rights_end_date
+    description: Date on which a right is or will be no longer current.
+    from_schema: https://tradicional.arq.br/schema/shared
+    slot_uri: wasth:end_date
+    alias: end_date
     owner: Right
     domain_of:
     - Right
@@ -2998,7 +3012,7 @@ slots:
   thing__temporal:
     name: thing__temporal
     description: "Descri\xE7\xE3o dos eventos associados ao ciclo de vida da edifica\xE7\
-      \xE3o ou \xE0 exist\xEAncia e/ou uso do objeto ou conceito. Ler a respetiva\
+      \xE3o ou \xE0 exist\xEAncia e/ou uso do objeto ou conceito.\nLer a respetiva\
       \ documenta\xE7\xE3o para estruturar este campo.\n"
     from_schema: https://tradicional.arq.br/schema/thing
     slot_uri: wasth:temporal
@@ -3031,18 +3045,6 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  appellation__title_preference:
-    name: appellation__title_preference
-    description: "Indica se o nome em quest\xE3o deve ser oculto ou n\xE3o, se \xE9\
-      \ uma vers\xE3o alternativa ou uma variante de grafia, etc."
-    from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:label_type
-    ifabsent: LabelType(alternative)
-    alias: label_type
-    owner: Appellation
-    domain_of:
-    - Appellation
-    range: LabelType
   appellation__label:
     name: appellation__label
     description: "Nome ou t\xEDtulo (texto sem formata\xE7\xE3o)."
@@ -3053,8 +3055,20 @@ slots:
     domain_of:
     - Appellation
     range: string
-  appellation__title_type:
-    name: appellation__title_type
+  appellation__appellation_preference:
+    name: appellation__appellation_preference
+    description: "Indica se o nome em quest\xE3o deve ser oculto ou n\xE3o, se \xE9\
+      \ uma vers\xE3o alternativa ou uma variante de grafia, etc."
+    from_schema: https://tradicional.arq.br/schema/thing
+    slot_uri: wasth:label_type
+    ifabsent: LabelType(alternative)
+    alias: label_type
+    owner: Appellation
+    domain_of:
+    - Appellation
+    range: LabelType
+  appellation__appellation_type:
+    name: appellation__appellation_type
     from_schema: https://tradicional.arq.br/schema/thing
     slot_uri: wasth:title_type
     ifabsent: TitleType(descriptive)
@@ -3999,11 +4013,12 @@ classes:
     - concept_name
     - description
     - bibliographic_citation
-    - broaderConceptReference__match
+    - broaderConceptReference__broader_match
     attributes:
-      match:
-        name: match
+      broader_match:
+        name: broader_match
         description: "Tipo da rela\xE7\xE3o."
+        alias: match
         range: SkosBroaderRelation
         required: true
     class_uri: wasth:BroaderConceptReference
@@ -4017,11 +4032,12 @@ classes:
     - concept_name
     - description
     - bibliographic_citation
-    - narrowerConceptReference__match
+    - narrowerConceptReference__narrower_match
     attributes:
-      match:
-        name: match
+      narrower_match:
+        name: narrower_match
         description: "Tipo da rela\xE7\xE3o."
+        alias: match
         range: SkosNarrowerRelation
         required: true
     class_uri: wasth:NarrowerConceptReference
@@ -4035,11 +4051,12 @@ classes:
     - concept_name
     - description
     - bibliographic_citation
-    - mappingConceptReference__match
+    - mappingConceptReference__mapping_match
     attributes:
-      match:
-        name: match
+      mapping_match:
+        name: mapping_match
         description: "Tipo da rela\xE7\xE3o."
+        alias: match
         range: SkosMappingRelation
         required: true
     class_uri: wasth:MappingConceptReference
@@ -4325,8 +4342,10 @@ classes:
         minimum_value: 0
       measurement_qualifier:
         name: measurement_qualifier
-        description: "Indica que as medidas s\xE3o aproximadas.\n"
-        ifabsent: MeasurementQualifier(2)
+        description: 'Indica o grau de confiabilidade das medidas.
+
+          '
+        ifabsent: MeasurementQualifier(derived)
         alias: qualifier
         range: MeasurementQualifier
       measurement_shape:
@@ -4383,7 +4402,8 @@ classes:
     slots:
     - right__rights_type
     - right__rights_statement
-    - right__temporal
+    - right__rights_start_date
+    - right__rights_end_date
     - right__holder
     attributes:
       rights_type:
@@ -4413,10 +4433,16 @@ classes:
         range: TypedReference
         required: true
         inlined: true
-      temporal:
-        name: temporal
+      rights_start_date:
+        name: rights_start_date
         description: Date on which a right is or was current.
-        alias: temporal
+        alias: start_date
+        range: EventDate
+        inlined: true
+      rights_end_date:
+        name: rights_end_date
+        description: Date on which a right is or will be no longer current.
+        alias: end_date
         range: EventDate
         inlined: true
       holder:
@@ -4858,7 +4884,7 @@ classes:
       temporal:
         name: temporal
         description: "Descri\xE7\xE3o dos eventos associados ao ciclo de vida da edifica\xE7\
-          \xE3o ou \xE0 exist\xEAncia e/ou uso do objeto ou conceito. Ler a respetiva\
+          \xE3o ou \xE0 exist\xEAncia e/ou uso do objeto ou conceito.\nLer a respetiva\
           \ documenta\xE7\xE3o para estruturar este campo.\n"
         range: Event
         multivalued: true
@@ -4884,24 +4910,25 @@ classes:
     from_schema: https://tradicional.arq.br/schema/thing
     slots:
     - bibliographic_citation
-    - appellation__title_preference
     - appellation__label
-    - appellation__title_type
+    - appellation__appellation_preference
+    - appellation__appellation_type
     attributes:
-      title_preference:
-        name: title_preference
+      label:
+        name: label
+        description: "Nome ou t\xEDtulo (texto sem formata\xE7\xE3o)."
+        range: string
+      appellation_preference:
+        name: appellation_preference
         description: "Indica se o nome em quest\xE3o deve ser oculto ou n\xE3o, se\
           \ \xE9 uma vers\xE3o alternativa ou uma variante de grafia, etc."
         ifabsent: LabelType(alternative)
         alias: label_type
         range: LabelType
-      label:
-        name: label
-        description: "Nome ou t\xEDtulo (texto sem formata\xE7\xE3o)."
-        range: string
-      title_type:
-        name: title_type
+      appellation_type:
+        name: appellation_type
         ifabsent: TitleType(descriptive)
+        alias: title_type
         range: TitleType
     class_uri: wasth:Appellation
   Repository:

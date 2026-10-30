@@ -164,6 +164,7 @@ classes:
         description: >
           Descrição dos eventos associados ao ciclo de vida da edificação ou
           à existência e/ou uso do objeto ou conceito.
+
           Ler a respetiva documentação para estruturar este campo.
 
       repositories:
@@ -205,19 +206,20 @@ classes:
   Appellation:
     attributes:
 
-      title_preference:
-        description: >-
-          Indica se o nome em questão deve ser oculto ou não, se é uma versão
-          alternativa ou uma variante de grafia, etc.
-        alias: label_type
-        range: LabelType
-        ifabsent: LabelType(alternative)
-
       label:
         range: string
         description: Nome ou título (texto sem formatação).
 
-      title_type:
+      appellation_preference:
+        alias: label_type
+        range: LabelType
+        ifabsent: LabelType(alternative)
+        description: >-
+          Indica se o nome em questão deve ser oculto ou não, se é uma versão
+          alternativa ou uma variante de grafia, etc.
+
+      appellation_type:
+        alias: title_type
         range: TitleType
         ifabsent: TitleType(descriptive)
 
