@@ -226,6 +226,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#notes">
+<span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
 <span class="md-ellipsis">
       
@@ -298,8 +307,6 @@
 <p><em>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura Tradicional. Ele permite investigar a distribuição geográfica das características construtivas e morfológicas das edificações cadastradas.</em></p>
 <p><em>Este bloco corresponde à terminologia do [DublinCore] <code>coverage &gt; spatial</code>. Na especificação [LIDO], a localização física de um bem se confunde com a sua inserção institucional (repositório). Na formatação da nossa ficha, tentamos desfazer essa confusão separando o georreferenciamento e o repositório em blocos diferentes.</em></p>
 <p><em>As instruções de preenchimento específicas se encontram na documentação das classes que fornecem os dados para o sítio. Consulte também o <a href="https://github.com/arqtrad/.github/wiki/Tutorial-de-georreferenciamento">Tutorial de georreferenciamento</a> para saber como localizar edificações não cadastradas nas bases de dados do patrimônio cultural (SICG ou SIPA).</em></p>
-<p><em>-------------------------------------------------------------------------</em></p>
-<p><em>This class comprises 4-dimensional point sets (volumes) in physical spacetime (in contrast to mathematical models of it) regardless of their true geometric forms. They may derive their identity from being the extent of a material phenomenon or from being the interpretation of an expression defining an extent in spacetime. Intersections of instances of E92 Spacetime Volume, E53 Place, and E52 Time-Span are also regarded as instances of E92 Spacetime Volume. An instance of E92 Spacetime Volume is either contiguous or composed of a finite number of contiguous subsets. Its boundaries may be fuzzy due to the properties of the phenomena it derives from or due to the limited precision up to which defining expression can be identified with a real extent in spacetime. The duration of existence of an instance of E92 Spacetime Volume is its projection on time.</em></p>
 <p>__</p>
 <div>
 <ul>
@@ -520,6 +527,12 @@
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
+<td><a href="../record_date/">record_date</a></td>
+<td>0..1 <br/> <a href="../Date/">Date</a></td>
+<td>Data de inclusão da ficha</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
 <td><a href="../description/">description</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable description for a thing</td>
@@ -547,12 +560,6 @@
 <td><a href="../content/">content</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>Conteúdo textual descritivo ou explicativo</td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
-<td><a href="../record_date/">record_date</a></td>
-<td>0..1 <br/> <a href="../Date/">Date</a></td>
-<td>Data de inclusão da ficha</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -648,6 +655,10 @@
 </tr>
 </tbody>
 </table>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>This class comprises 4-dimensional point sets (volumes) in physical spacetime (in contrast to mathematical models of it) regardless of their true geometric forms. They may derive their identity from being the extent of a material phenomenon or from being the interpretation of an expression defining an extent in spacetime. Intersections of instances of E92 Spacetime Volume, E53 Place, and E52 Time-Span are also regarded as instances of E92 Spacetime Volume. An instance of E92 Spacetime Volume is either contiguous or composed of a finite number of contiguous subsets. Its boundaries may be fuzzy due to the properties of the phenomena it derives from or due to the limited precision up to which defining expression can be identified with a real extent in spacetime. The duration of existence of an instance of E92 Spacetime Volume is its projection on time.</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -695,21 +706,19 @@
 <span class="w">  </span><span class="s">para</span><span class="nv"> </span><span class="s">saber</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">localizar</span><span class="nv"> </span><span class="s">edificações</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">cadastradas</span><span class="nv"> </span><span class="s">nas</span><span class="nv"> </span><span class="s">bases</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">dados</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">patrimônio</span>
 <span class="w">  </span><span class="s">cultural</span><span class="nv"> </span><span class="s">(SICG</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">SIPA).</span>
 
-<span class="w">  </span><span class="s">-------------------------------------------------------------------------</span>
-
-<span class="w">  </span><span class="s">This</span><span class="nv"> </span><span class="s">class</span><span class="nv"> </span><span class="s">comprises</span><span class="nv"> </span><span class="s">4-dimensional</span><span class="nv"> </span><span class="s">point</span><span class="nv"> </span><span class="s">sets</span><span class="nv"> </span><span class="s">(volumes)</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">physical</span><span class="nv"> </span><span class="s">spacetime</span><span class="nv"> </span><span class="s">(in</span>
-<span class="w">  </span><span class="s">contrast</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">mathematical</span><span class="nv"> </span><span class="s">models</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">it)</span><span class="nv"> </span><span class="s">regardless</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">their</span><span class="nv"> </span><span class="s">true</span><span class="nv"> </span><span class="s">geometric</span><span class="nv"> </span><span class="s">forms.</span>
-<span class="w">  </span><span class="s">They</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">derive</span><span class="nv"> </span><span class="s">their</span><span class="nv"> </span><span class="s">identity</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">being</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">extent</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">phenomenon</span><span class="nv"> </span><span class="s">or</span>
-<span class="w">  </span><span class="s">from</span><span class="nv"> </span><span class="s">being</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">interpretation</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">defining</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">extent</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">spacetime.</span>
-<span class="w">  </span><span class="s">Intersections</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E92</span><span class="nv"> </span><span class="s">Spacetime</span><span class="nv"> </span><span class="s">Volume,</span><span class="nv"> </span><span class="s">E53</span><span class="nv"> </span><span class="s">Place,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">E52</span><span class="nv"> </span><span class="s">Time-Span</span>
-<span class="w">  </span><span class="s">are</span><span class="nv"> </span><span class="s">also</span><span class="nv"> </span><span class="s">regarded</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E92</span><span class="nv"> </span><span class="s">Spacetime</span><span class="nv"> </span><span class="s">Volume.</span><span class="nv"> </span><span class="s">An</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E92</span><span class="nv"> </span><span class="s">Spacetime</span>
-<span class="w">  </span><span class="s">Volume</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">either</span><span class="nv"> </span><span class="s">contiguous</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">composed</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">finite</span><span class="nv"> </span><span class="s">number</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">contiguous</span><span class="nv"> </span><span class="s">subsets.</span>
-<span class="w">  </span><span class="s">Its</span><span class="nv"> </span><span class="s">boundaries</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">fuzzy</span><span class="nv"> </span><span class="s">due</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">phenomena</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">derives</span><span class="nv"> </span><span class="s">from</span>
-<span class="w">  </span><span class="s">or</span><span class="nv"> </span><span class="s">due</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">limited</span><span class="nv"> </span><span class="s">precision</span><span class="nv"> </span><span class="s">up</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">defining</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">identified</span>
-<span class="w">  </span><span class="s">with</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">real</span><span class="nv"> </span><span class="s">extent</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">spacetime.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">duration</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">existence</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E92</span>
-<span class="w">  </span><span class="s">Spacetime</span><span class="nv"> </span><span class="s">Volume</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">projection</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">time.</span>
-
 <span class="w">  </span><span class="s">'</span>
+<span class="nt">notes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This class comprises 4-dimensional point sets (volumes) in physical spacetime (in</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">contrast to mathematical models of it) regardless of their true geometric forms.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">They may derive their identity from being the extent of a material phenomenon or</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">from being the interpretation of an expression defining an extent in spacetime.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Intersections of instances of E92 Spacetime Volume, E53 Place, and E52 Time-Span</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">are also regarded as instances of E92 Spacetime Volume. An instance of E92 Spacetime</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Volume is either contiguous or composed of a finite number of contiguous subsets.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Its boundaries may be fuzzy due to the properties of the phenomena it derives from</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">or due to the limited precision up to which defining expression can be identified</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">with a real extent in spacetime. The duration of existence of an instance of E92</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Spacetime Volume is its projection on time.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">exact_mappings</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:DefinedRegion</span>
@@ -796,21 +805,19 @@
 <span class="w">  </span><span class="s">para</span><span class="nv"> </span><span class="s">saber</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">localizar</span><span class="nv"> </span><span class="s">edificações</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">cadastradas</span><span class="nv"> </span><span class="s">nas</span><span class="nv"> </span><span class="s">bases</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">dados</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">patrimônio</span>
 <span class="w">  </span><span class="s">cultural</span><span class="nv"> </span><span class="s">(SICG</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">SIPA).</span>
 
-<span class="w">  </span><span class="s">-------------------------------------------------------------------------</span>
-
-<span class="w">  </span><span class="s">This</span><span class="nv"> </span><span class="s">class</span><span class="nv"> </span><span class="s">comprises</span><span class="nv"> </span><span class="s">4-dimensional</span><span class="nv"> </span><span class="s">point</span><span class="nv"> </span><span class="s">sets</span><span class="nv"> </span><span class="s">(volumes)</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">physical</span><span class="nv"> </span><span class="s">spacetime</span><span class="nv"> </span><span class="s">(in</span>
-<span class="w">  </span><span class="s">contrast</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">mathematical</span><span class="nv"> </span><span class="s">models</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">it)</span><span class="nv"> </span><span class="s">regardless</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">their</span><span class="nv"> </span><span class="s">true</span><span class="nv"> </span><span class="s">geometric</span><span class="nv"> </span><span class="s">forms.</span>
-<span class="w">  </span><span class="s">They</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">derive</span><span class="nv"> </span><span class="s">their</span><span class="nv"> </span><span class="s">identity</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">being</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">extent</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">material</span><span class="nv"> </span><span class="s">phenomenon</span><span class="nv"> </span><span class="s">or</span>
-<span class="w">  </span><span class="s">from</span><span class="nv"> </span><span class="s">being</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">interpretation</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">defining</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">extent</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">spacetime.</span>
-<span class="w">  </span><span class="s">Intersections</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E92</span><span class="nv"> </span><span class="s">Spacetime</span><span class="nv"> </span><span class="s">Volume,</span><span class="nv"> </span><span class="s">E53</span><span class="nv"> </span><span class="s">Place,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">E52</span><span class="nv"> </span><span class="s">Time-Span</span>
-<span class="w">  </span><span class="s">are</span><span class="nv"> </span><span class="s">also</span><span class="nv"> </span><span class="s">regarded</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">instances</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E92</span><span class="nv"> </span><span class="s">Spacetime</span><span class="nv"> </span><span class="s">Volume.</span><span class="nv"> </span><span class="s">An</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E92</span><span class="nv"> </span><span class="s">Spacetime</span>
-<span class="w">  </span><span class="s">Volume</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">either</span><span class="nv"> </span><span class="s">contiguous</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">composed</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">finite</span><span class="nv"> </span><span class="s">number</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">contiguous</span><span class="nv"> </span><span class="s">subsets.</span>
-<span class="w">  </span><span class="s">Its</span><span class="nv"> </span><span class="s">boundaries</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">fuzzy</span><span class="nv"> </span><span class="s">due</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">properties</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">phenomena</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">derives</span><span class="nv"> </span><span class="s">from</span>
-<span class="w">  </span><span class="s">or</span><span class="nv"> </span><span class="s">due</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">limited</span><span class="nv"> </span><span class="s">precision</span><span class="nv"> </span><span class="s">up</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">defining</span><span class="nv"> </span><span class="s">expression</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">identified</span>
-<span class="w">  </span><span class="s">with</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">real</span><span class="nv"> </span><span class="s">extent</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">spacetime.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">duration</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">existence</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">E92</span>
-<span class="w">  </span><span class="s">Spacetime</span><span class="nv"> </span><span class="s">Volume</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">projection</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">time.</span>
-
 <span class="w">  </span><span class="s">'</span>
+<span class="nt">notes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This class comprises 4-dimensional point sets (volumes) in physical spacetime (in</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">contrast to mathematical models of it) regardless of their true geometric forms.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">They may derive their identity from being the extent of a material phenomenon or</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">from being the interpretation of an expression defining an extent in spacetime.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Intersections of instances of E92 Spacetime Volume, E53 Place, and E52 Time-Span</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">are also regarded as instances of E92 Spacetime Volume. An instance of E92 Spacetime</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Volume is either contiguous or composed of a finite number of contiguous subsets.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Its boundaries may be fuzzy due to the properties of the phenomena it derives from</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">or due to the limited precision up to which defining expression can be identified</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">with a real extent in spacetime. The duration of existence of an instance of E92</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Spacetime Volume is its projection on time.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">exact_mappings</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:DefinedRegion</span>
@@ -909,6 +916,17 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrcidId</span>
+<span class="w">  </span><span class="nt">record_date</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Data de inclusão da ficha.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:created</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A human-readable description for a thing</span>
@@ -1030,17 +1048,6 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">record_date</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_date</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Data de inclusão da ficha.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:created</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
 <span class="w">  </span><span class="nt">title</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Nome</span><span class="nv"> </span><span class="s">pelo</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">comumente</span><span class="nv"> </span><span class="s">conhecido.</span><span class="nv"> </span><span class="s">Outros</span><span class="nv"> </span><span class="s">nomes</span>
