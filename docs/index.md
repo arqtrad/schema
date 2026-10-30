@@ -185,7 +185,7 @@ Name: wasth_schema
 | [classification_special](classification_special.md) | ❓ Ainda não implementamos o bloco `objectClassification` do LIDO |
 | [classification_subject](classification_subject.md) | ❓ Ainda não implementamos o bloco `objectClassification` do LIDO |
 | [collection](collection.md) | Descreve conjuntos conceituais nos quais a edificação foi incluída, por exemp... |
-| [concept](concept.md) |  |
+| [concept_name](concept_name.md) |  |
 | [concept_type](concept_type.md) |  |
 | [concepts](concepts.md) | Todos os termos de vocabulário controlado |
 | [content](content.md) | Conteúdo textual descritivo ou explicativo |
