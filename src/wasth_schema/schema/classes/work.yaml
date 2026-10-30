@@ -376,7 +376,7 @@ classes:
         slot_uri: lido:collection
         range: Thing
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
         description: >
           Descreve conjuntos conceituais nos quais a edificação foi incluída,
           por exemplo catálogos raisonnés, obras de referência, exposições,
@@ -451,7 +451,6 @@ classes:
           nocite: "@*"
           ---
           ```
-
 
     slots:
       - site
@@ -692,13 +691,13 @@ classes:
           Categoriza o nível descritivo ou interpretativo do tema.
 
     slot_usage:
-      concept:
+      concept_name:
         required: true
 
     slots:
       - description
       - format_extent
-      - concept
+      - concept_name
 
   LocationHistoric:
     description: >-

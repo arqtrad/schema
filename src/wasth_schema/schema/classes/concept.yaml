@@ -89,7 +89,7 @@ classes:
   ConceptReference:
     description: Atribuição de vocabulário controlado com citação de apoio.
     slots:
-      - concept
+      - concept_name
       - description
       - bibliographic_citation
 
@@ -123,29 +123,31 @@ classes:
 
 slots:
 
-      broader:
-        slot_uri: skos:broader
-        description: >-
-          Um conceito de significação mais genérica.
-          Conceitos genéricos são tipicamente representados como pais em
-          uma hierarquia de conceitos (árvore).
+  concept_name:
+    range: Concept
+    inlined: true
 
-          Preenchimento manual.
-        range: BroaderConceptReference
-        multivalued: true
-        inlined_as_list: true
-        inverse: narrower
+  broader:
+    slot_uri: skos:broader
+    description: >-
+      Um conceito de significação mais genérica.
+      Conceitos genéricos são tipicamente representados como pais em
+      uma hierarquia de conceitos (árvore).
 
-      narrower:
-        slot_uri: skos:narrower
-        description: >-
-          Um conceito de significação mais específica.
-          Conceitos específicos são tipicamente representados como descendentes
-          em uma hierarquia de conceitos (árvore).
+      Preenchimento manual.
+    range: BroaderConceptReference
+    multivalued: true
+    inlined_as_list: true
 
-          Derivado automaticamente das relações `broader` em outras fichas.
-          NÃO preencher manualmente.
-        range: NarrowerConceptReference
-        multivalued: true
-        inlined_as_list: true
-        inverse: broader
+  narrower:
+    slot_uri: skos:narrower
+    description: >-
+      Um conceito de significação mais específica.
+      Conceitos específicos são tipicamente representados como descendentes
+      em uma hierarquia de conceitos (árvore).
+
+      Derivado automaticamente das relações `broader` em outras fichas.
+      NÃO preencher manualmente.
+    range: NarrowerConceptReference
+    multivalued: true
+    inlined_as_list: true

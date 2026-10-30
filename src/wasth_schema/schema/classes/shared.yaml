@@ -283,11 +283,6 @@ slots:
       - schema:description
     description: A human-readable description for a thing
 
-  concept:
-    alias: name
-    range: Concept
-    required: true
-
   reference_type:
     alias: type
     range: ReferenceType

@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: Concept 
+# Class: Concept
 
 
 _Um conceito é uma unidade de conhecimento ou entendimento delimitada e definida com clareza, distinta de outros conceitos. Cada conceito pretende descrever um aspecto ou recorte da realidade empírica ou teórica, de modo que a sua definição seja amplamente conhecida e partilhada dentro do campo disciplinar ao qual ele pertence._
@@ -40,156 +40,156 @@ URI: [skos:Concept](http://www.w3.org/2004/02/skos/core#Concept)
     click Concept href "../Concept/"
       Thing <|-- Concept
         click Thing href "../Thing/"
-      
+
       Concept : alt_name
-        
-          
-    
-        
-        
+
+
+
+
+
         Concept --> "*" Appellation : alt_name
         click Appellation href "../Appellation/"
-    
 
-        
+
+
       Concept : bibliographic_citation
-        
-          
-    
-        
-        
+
+
+
+
+
         Concept --> "* _recommended_" BibliographicCitation : bibliographic_citation
         click BibliographicCitation href "../BibliographicCitation/"
-    
 
-        
+
+
       Concept : broader
-        
-          
-    
-        
-        
+
+
+
+
+
         Concept --> "*" BroaderConceptReference : broader
         click BroaderConceptReference href "../BroaderConceptReference/"
-    
 
-        
+
+
       Concept : category
-        
+
       Concept : concept_type
-        
-          
-    
-        
-        
+
+
+
+
+
         Concept --> "0..1" ConceptType : concept_type
         click ConceptType href "../ConceptType/"
-    
 
-        
+
+
       Concept : content
-        
+
       Concept : description
-        
+
       Concept : id
-        
+
       Concept : identifiers
-        
-          
-    
-        
-        
+
+
+
+
+
         Concept --> "*" TypedReference : identifiers
         click TypedReference href "../TypedReference/"
-    
 
-        
+
+
       Concept : mapping
-        
-          
-    
-        
-        
+
+
+
+
+
         Concept --> "*" MappingConceptReference : mapping
         click MappingConceptReference href "../MappingConceptReference/"
-    
 
-        
+
+
       Concept : narrower
-        
-          
-    
-        
-        
+
+
+
+
+
         Concept --> "*" NarrowerConceptReference : narrower
         click NarrowerConceptReference href "../NarrowerConceptReference/"
-    
 
-        
+
+
       Concept : record_author
-        
+
       Concept : record_date
-        
+
       Concept : record_rights
-        
-          
-    
-        
-        
+
+
+
+
+
         Concept --> "*" Right : record_rights
         click Right href "../Right/"
-    
 
-        
+
+
       Concept : relation
-        
-          
-    
-        
-        
+
+
+
+
+
         Concept --> "*" ConceptReference : relation
         click ConceptReference href "../ConceptReference/"
-    
 
-        
+
+
       Concept : repositories
-        
-          
-    
-        
-        
+
+
+
+
+
         Concept --> "*" Repository : repositories
         click Repository href "../Repository/"
-    
 
-        
+
+
       Concept : tags
-        
+
       Concept : temporal
-        
-          
-    
-        
-        
+
+
+
+
+
         Concept --> "*" Event : temporal
         click Event href "../Event/"
-    
 
-        
+
+
       Concept : title
-        
+
       Concept : title_source
-        
-          
-    
-        
-        
+
+
+
+
+
         Concept --> "*" BibliographicCitation : title_source
         click BibliographicCitation href "../BibliographicCitation/"
-    
 
-        
-      
+
+
+
 ```
 
 

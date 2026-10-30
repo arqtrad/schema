@@ -3,7 +3,7 @@ search:
   boost: 10.0
 ---
 
-# Class: Site 
+# Class: Site
 
 
 _O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura Tradicional. Ele permite investigar a distribuição geográfica das características construtivas e morfológicas das edificações cadastradas._
@@ -38,145 +38,145 @@ URI: [crm:E92_Spacetime_Volume](http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime
     click Site href "../Site/"
       Thing <|-- Site
         click Thing href "../Thing/"
-      
+
       Site : alt_name
-        
-          
-    
-        
-        
+
+
+
+
+
         Site --> "*" Appellation : alt_name
         click Appellation href "../Appellation/"
-    
 
-        
+
+
       Site : bibliographic_citation
-        
-          
-    
-        
-        
+
+
+
+
+
         Site --> "* _recommended_" BibliographicCitation : bibliographic_citation
         click BibliographicCitation href "../BibliographicCitation/"
-    
 
-        
+
+
       Site : category
-        
+
       Site : content
-        
+
       Site : description
-        
+
       Site : event_place_type
-        
-          
-    
-        
-        
+
+
+
+
+
         Site --> "0..1" EventPlaceType : event_place_type
         click EventPlaceType href "../EventPlaceType/"
-    
 
-        
+
+
       Site : extent
-        
-          
-    
-        
-        
+
+
+
+
+
         Site --> "0..1" GeographicExtent : extent
         click GeographicExtent href "../GeographicExtent/"
-    
 
-        
+
+
       Site : id
-        
+
       Site : identifiers
-        
-          
-    
-        
-        
+
+
+
+
+
         Site --> "*" TypedReference : identifiers
         click TypedReference href "../TypedReference/"
-    
 
-        
+
+
       Site : location
-        
-          
-    
-        
-        
+
+
+
+
+
         Site --> "1" GeographicPoint : location
         click GeographicPoint href "../GeographicPoint/"
-    
 
-        
+
+
       Site : record_author
-        
+
       Site : record_date
-        
+
       Site : record_rights
-        
-          
-    
-        
-        
+
+
+
+
+
         Site --> "*" Right : record_rights
         click Right href "../Right/"
-    
 
-        
+
+
       Site : repositories
-        
-          
-    
-        
-        
+
+
+
+
+
         Site --> "*" Repository : repositories
         click Repository href "../Repository/"
-    
 
-        
+
+
       Site : site_type
-        
-          
-    
-        
-        
+
+
+
+
+
         Site --> "0..1" RepositoryType : site_type
         click RepositoryType href "../RepositoryType/"
-    
 
-        
+
+
       Site : tags
-        
+
       Site : temporal
-        
-          
-    
-        
-        
+
+
+
+
+
         Site --> "*" Event : temporal
         click Event href "../Event/"
-    
 
-        
+
+
       Site : title
-        
+
       Site : title_source
-        
-          
-    
-        
-        
+
+
+
+
+
         Site --> "*" BibliographicCitation : title_source
         click BibliographicCitation href "../BibliographicCitation/"
-    
 
-        
-      
+
+
+
 ```
 
 
