@@ -1625,6 +1625,18 @@ enums:
         text: other
         meaning: term:lido00136
 slots:
+  concept_name:
+    name: concept_name
+    definition_uri: https://tradicional.arq.br/schema/concept_name
+    from_schema: https://tradicional.arq.br/schema/concept
+    slot_uri: wasth:concept_name
+    owner: Topic
+    domain_of:
+    - ConceptReference
+    - Topic
+    range: Concept
+    inlined: true
+    inlined_as_list: false
   broader:
     name: broader
     definition_uri: https://tradicional.arq.br/schema/broader
@@ -1638,7 +1650,6 @@ slots:
     owner: Concept
     domain_of:
     - Concept
-    inverse: narrower
     range: BroaderConceptReference
     multivalued: true
     inlined: true
@@ -1657,7 +1668,6 @@ slots:
     owner: Concept
     domain_of:
     - Concept
-    inverse: broader
     range: NarrowerConceptReference
     multivalued: true
     inlined: true
@@ -1912,18 +1922,6 @@ slots:
     - Inscription
     - Topic
     range: string
-  concept:
-    name: concept
-    definition_uri: https://tradicional.arq.br/schema/concept
-    from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:name
-    alias: name
-    owner: Topic
-    domain_of:
-    - ConceptReference
-    - Topic
-    range: Concept
-    required: true
   reference_type:
     name: reference_type
     definition_uri: https://tradicional.arq.br/schema/reference_type
@@ -3456,7 +3454,8 @@ slots:
     - Work
     range: Thing
     multivalued: true
-    inlined_as_list: false
+    inlined: true
+    inlined_as_list: true
   work__work_rights:
     name: work__work_rights
     description: "\u26A0\uFE0F  Este bloco se refere a eventuais direitos autorais\
@@ -3863,21 +3862,23 @@ slots:
     usage_slot_name: id
     range: GeonamesId
     required: true
-  Topic_concept:
-    name: Topic_concept
-    definition_uri: https://tradicional.arq.br/schema/concept
-    from_schema: https://tradicional.arq.br/schema/shared
-    is_a: concept
+  Topic_concept_name:
+    name: Topic_concept_name
+    definition_uri: https://tradicional.arq.br/schema/concept_name
+    from_schema: https://tradicional.arq.br/schema/concept
+    is_a: concept_name
     domain: Topic
-    slot_uri: wasth:name
-    alias: name
+    slot_uri: wasth:concept_name
+    alias: concept_name
     owner: Topic
     domain_of:
     - Topic
     is_usage_slot: true
-    usage_slot_name: concept
+    usage_slot_name: concept_name
     range: Concept
     required: true
+    inlined: true
+    inlined_as_list: false
 classes:
   Container:
     name: Container
@@ -3979,7 +3980,7 @@ classes:
       \ de apoio."
     from_schema: https://tradicional.arq.br/schema/concept
     slots:
-    - concept
+    - concept_name
     - description
     - bibliographic_citation
     class_uri: wasth:ConceptReference
@@ -3990,7 +3991,7 @@ classes:
     from_schema: https://tradicional.arq.br/schema/concept
     is_a: ConceptReference
     slots:
-    - concept
+    - concept_name
     - description
     - bibliographic_citation
     - broaderConceptReference__match
@@ -4008,7 +4009,7 @@ classes:
     from_schema: https://tradicional.arq.br/schema/concept
     is_a: ConceptReference
     slots:
-    - concept
+    - concept_name
     - description
     - bibliographic_citation
     - narrowerConceptReference__match
@@ -4026,7 +4027,7 @@ classes:
     from_schema: https://tradicional.arq.br/schema/concept
     is_a: ConceptReference
     slots:
-    - concept
+    - concept_name
     - description
     - bibliographic_citation
     - mappingConceptReference__match
@@ -4350,7 +4351,7 @@ classes:
     from_schema: https://tradicional.arq.br/schema/shared
     is_a: ConceptReference
     slots:
-    - concept
+    - concept_name
     - description
     - bibliographic_citation
     - materialTech__material_tech_type
@@ -4702,7 +4703,7 @@ classes:
     from_schema: https://tradicional.arq.br/schema/temporal
     is_a: ConceptReference
     slots:
-    - concept
+    - concept_name
     - description
     - bibliographic_citation
     - stylePeriod__period_name_type
@@ -5325,7 +5326,7 @@ classes:
         slot_uri: lido:collection
         range: Thing
         multivalued: true
-        inlined_as_list: false
+        inlined_as_list: true
       work_rights:
         name: work_rights
         description: "\u26A0\uFE0F  Este bloco se refere a eventuais direitos autorais\
@@ -5548,11 +5549,11 @@ classes:
     slots:
     - description
     - format_extent
-    - Topic_concept
+    - Topic_concept_name
     - topic__topic_type
     slot_usage:
-      concept:
-        name: concept
+      concept_name:
+        name: concept_name
         required: true
     attributes:
       topic_type:
@@ -5595,6 +5596,6 @@ classes:
     class_uri: wasth:LocationHistoric
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-10-29T21:51:09'
+source_file_date: '2026-10-30T13:00:09'
 source_file_size: 48473
 
