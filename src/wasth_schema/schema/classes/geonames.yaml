@@ -104,8 +104,8 @@ enums:
         title: administrative division
       ADMDH:
         text: ADMDH
-        description: a former administrative division of a political entity,
-          undifferentiated as to administrative level
+        description: a former administrative division of a political entity, undifferentiated
+          as to administrative level
         title: historical administrative division
       ADMS:
         text: ADMS
@@ -176,8 +176,8 @@ enums:
         title: bay
       BAYS:
         text: BAYS
-        description: coastal indentations between two capes or headlands, larger than
-          a cove but smaller than a gulf
+        description: coastal indentations between two capes or headlands, larger
+          than a cove but smaller than a gulf
         title: bays
       BGHT:
         text: BGHT
@@ -214,8 +214,8 @@ enums:
         title: channel
       CHNL:
         text: CHNL
-        description: that part of a lake having water deep enough for navigation between
-          islands, shoals, etc.
+        description: that part of a lake having water deep enough for navigation
+          between islands, shoals, etc.
         title: lake channel(s)
       CHNM:
         text: CHNM
@@ -325,8 +325,8 @@ enums:
         title: ditch mouth(s)
       ESTY:
         text: ESTY
-        description: a funnel-shaped stream mouth or embayment where fresh water mixes
-          with sea water under tidal influences
+        description: a funnel-shaped stream mouth or embayment where fresh water
+          mixes with sea water under tidal influences
         title: estuary
       FISH:
         text: FISH
@@ -357,14 +357,14 @@ enums:
         title: mud flat(s)
       FLTT:
         text: FLTT
-        description: a large flat area of mud or sand attached to the shore and
-          alternately covered and uncovered by the tide
+        description: a large flat area of mud or sand attached to the shore and alternately
+          covered and uncovered by the tide
         title: tidal flat(s)
       GLCR:
         text: GLCR
         description: a mass of ice, usually at high latitudes or high elevations,
-          with sufficient thickness to flow away from the source area in lobes,
-          tongues, or masses
+          with sufficient thickness to flow away from the source area in lobes, tongues,
+          or masses
         title: glacier(s)
       GULF:
         text: GULF
@@ -372,13 +372,13 @@ enums:
         title: gulf
       GYSR:
         text: GYSR
-        description: a type of hot spring with intermittent eruptions of jets of hot
-          water and steam
+        description: a type of hot spring with intermittent eruptions of jets of
+          hot water and steam
         title: geyser
       HBR:
         text: HBR
-        description: a haven or space of deep water so sheltered by the adjacent land
-          as to afford a safe anchorage for ships
+        description: a haven or space of deep water so sheltered by the adjacent
+          land as to afford a safe anchorage for ships
         title: harbor(s)
       HBRX:
         text: HBRX
@@ -399,14 +399,14 @@ enums:
         title: lake bed(s)
       LGN:
         text: LGN
-        description: a shallow coastal waterbody, completely or partly separated from
-          a larger body of water by a barrier island, coral reef or other depositional
+        description: a shallow coastal waterbody, completely or partly separated
+          from a larger body of water by a barrier island, coral reef or other depositional
           feature
         title: lagoon
       LGNS:
         text: LGNS
-        description: shallow coastal waterbodies, completely or partly separated from
-          a larger body of water by a barrier island, coral reef or other depositional
+        description: shallow coastal waterbodies, completely or partly separated
+          from a larger body of water by a barrier island, coral reef or other depositional
           feature
         title: lagoons
       LGNX:
@@ -472,7 +472,8 @@ enums:
         title: section of lake
       MFGN:
         text: MFGN
-        description: diked salt ponds used in the production of solar evaporated salt
+        description: diked salt ponds used in the production of solar evaporated
+          salt
         title: salt evaporation ponds
       MGV:
         text: MGV
@@ -502,8 +503,8 @@ enums:
         title: ocean
       OVF:
         text: OVF
-        description: an area of breaking waves caused by the meeting of currents or
-          by waves moving against the current
+        description: an area of breaking waves caused by the meeting of currents
+          or by waves moving against the current
         title: overfalls
       PND:
         text: PND
@@ -541,8 +542,8 @@ enums:
         title: salt ponds
       POOL:
         text: POOL
-        description: a small and comparatively still, deep part of a larger body of
-          water such as a stream or harbor; or a small body of standing water
+        description: a small and comparatively still, deep part of a larger body
+          of water such as a stream or harbor; or a small body of standing water
         title: pool(s)
       POOLI:
         text: POOLI
@@ -550,8 +551,8 @@ enums:
         title: intermittent pool
       RCH:
         text: RCH
-        description: a straight section of a navigable stream or channel between two
-          bends
+        description: a straight section of a navigable stream or channel between
+          two bends
         title: reach
       RDGG:
         text: RDGG
@@ -649,8 +650,7 @@ enums:
         title: stream bend
       STMC:
         text: STMC
-        description: a stream that has been substantially ditched, diked, or
-          straightened
+        description: a stream that has been substantially ditched, diked, or straightened
         title: canalized stream
       STMD:
         text: STMD
@@ -747,8 +747,8 @@ enums:
         title: whirlpool
       WLL:
         text: WLL
-        description: a cylindrical hole, pit, or tunnel drilled or dug down to a depth
-          from which water, oil, or gas can be pumped or brought to the surface
+        description: a cylindrical hole, pit, or tunnel drilled or dug down to a
+          depth from which water, oil, or gas can be pumped or brought to the surface
         title: well
       WLLQ:
         text: WLLQ
@@ -784,8 +784,8 @@ enums:
         title: agricultural colony
       AMUS:
         text: AMUS
-        description: Amusement Park are theme parks, adventure parks offering
-          entertainment, similar to funfairs but with a fix location
+        description: Amusement Park are theme parks, adventure parks offering entertainment,
+          similar to funfairs but with a fix location
         title: amusement park
       AREA:
         text: AREA
@@ -869,8 +869,8 @@ enums:
         title: arctic land
       LCTY:
         text: LCTY
-        description: a minor area or place of unspecified or mixed character
-          and indefinite boundaries
+        description: a minor area or place of unspecified or mixed character and
+          indefinite boundaries
         title: locality
       MILB:
         text: MILB
@@ -888,9 +888,9 @@ enums:
         title: maneuver area
       NVB:
         text: NVB
-        description: an area used to store supplies, provide barracks for troops and
-          naval personnel, a port for naval vessels, and from which operations are
-          initiated
+        description: an area used to store supplies, provide barracks for troops
+          and naval personnel, a port for naval vessels, and from which operations
+          are initiated
         title: naval base
       OAS:
         text: OAS
@@ -918,7 +918,8 @@ enums:
       QCKS:
         text: QCKS
         description: an area where loose sand with water moving through it may become
-          unstable when heavy objects are placed at the surface, causing them to sink
+          unstable when heavy objects are placed at the surface, causing them to
+          sink
         title: quicksand
       RES:
         text: RES
@@ -948,8 +949,8 @@ enums:
         title: palm tree reserve
       RESV:
         text: RESV
-        description: a tract of land set aside for aboriginal, tribal, or
-          native populations
+        description: a tract of land set aside for aboriginal, tribal, or native
+          populations
         title: reservation
       RESW:
         text: RESW
@@ -957,8 +958,8 @@ enums:
         title: wildlife reserve
       RGN:
         text: RGN
-        description: an area distinguished by one or more observable physical
-          or cultural characteristics
+        description: an area distinguished by one or more observable physical or
+          cultural characteristics
         title: region
       RGNE:
         text: RGNE
@@ -999,8 +1000,8 @@ enums:
         title: populated place
       PPLA:
         text: PPLA
-        description: seat of a first-order administrative division (PPLC takes
-          precedence over PPLA)
+        description: seat of a first-order administrative division (PPLC takes precedence
+          over PPLA)
         title: seat of a first-order administrative division
       PPLA2:
         text: PPLA2
@@ -1065,8 +1066,8 @@ enums:
         title: populated places
       PPLW:
         text: PPLW
-        description: a village, town or city destroyed by a natural disaster, or by
-          war
+        description: a village, town or city destroyed by a natural disaster, or
+          by war
         title: destroyed populated place
       PPLX:
         text: PPLX
@@ -1180,8 +1181,8 @@ enums:
       AIRB:
         text: AIRB
         description: an area used to store supplies, provide barracks for air force
-          personnel, hangars and runways for aircraft, and from which operations are
-          initiated
+          personnel, hangars and runways for aircraft, and from which operations
+          are initiated
         title: airbase
       AIRF:
         text: AIRF
@@ -1195,8 +1196,8 @@ enums:
       AIRP:
         text: AIRP
         description: a place where aircraft regularly land and take off, with runways,
-          navigational aids, and major facilities for the commercial handling
-          of passengers and cargo
+          navigational aids, and major facilities for the commercial handling of
+          passengers and cargo
         title: airport
       AIRQ:
         text: AIRQ
@@ -1218,9 +1219,9 @@ enums:
         title: archaeological/prehistoric site
       AQC:
         text: AQC
-        description: facility or area for the cultivation of aquatic animals and plants,
-          especially fish, shellfish, and seaweed, in natural or controlled marine
-          or freshwater environments; underwater agriculture
+        description: facility or area for the cultivation of aquatic animals and
+          plants, especially fish, shellfish, and seaweed, in natural or controlled
+          marine or freshwater environments; underwater agriculture
         title: aquaculture facility
       ARCH:
         text: ARCH
@@ -1237,8 +1238,8 @@ enums:
         title: piece of art
       ASTR:
         text: ASTR
-        description: a point on the earth whose position has been determined by
-          observations of celestial bodies
+        description: a point on the earth whose position has been determined by observations
+          of celestial bodies
         title: astronomical station
       ASYL:
         text: ASYL
@@ -1304,8 +1305,8 @@ enums:
         title: baling station
       BTYD:
         text: BTYD
-        description: a waterside facility for servicing, repairing, and building small
-          vessels
+        description: a waterside facility for servicing, repairing, and building
+          small vessels
         title: boatyard
       BUR:
         text: BUR
@@ -1326,8 +1327,8 @@ enums:
         title: cairn
       CAVE:
         text: CAVE
-        description: an underground passageway or chamber, or cavity on the side of
-          a cliff
+        description: an underground passageway or chamber, or cavity on the side
+          of a cliff
         title: cave(s)
       CH:
         text: CH
@@ -1385,8 +1386,8 @@ enums:
         title: castle
       CSTM:
         text: CSTM
-        description: a building in a port where customs and duties are paid, and where
-          vessels are entered and cleared
+        description: a building in a port where customs and duties are paid, and
+          where vessels are entered and cleared
         title: customs house
       CTHSE:
         text: CTHSE
@@ -1422,7 +1423,8 @@ enums:
         title: space center
       CTYD:
         text: CTYD
-        description: an area surrounded by a building or complex and open to the sky
+        description: an area surrounded by a building or complex and open to the
+          sky
         title: courtyard
       CVNT:
         text: CVNT
@@ -1529,9 +1531,8 @@ enums:
         title: fort
       FY:
         text: FY
-        description: a boat or other floating conveyance and terminal
-          facilities regularly used to transport people and vehicles across a
-          waterbody
+        description: a boat or other floating conveyance and terminal facilities
+          regularly used to transport people and vehicles across a waterbody
         title: ferry
       FYT:
         text: FYT
@@ -1548,8 +1549,8 @@ enums:
         title: garden(s)
       GHAT:
         text: GHAT
-        description: a set of steps leading to a river, which are of religious
-          significance, and at their base is usually a platform for bathing
+        description: a set of steps leading to a river, which are of religious significance,
+          and at their base is usually a platform for bathing
         title: ghat
       GHSE:
         text: GHSE
@@ -1579,8 +1580,8 @@ enums:
       HMSD:
         text: HMSD
         description: a residence, owner's or manager's, on a sheep or cattle station,
-          woolshed, outcamp, or Aboriginal outstation, specific to Australia and New
-          Zealand
+          woolshed, outcamp, or Aboriginal outstation, specific to Australia and
+          New Zealand
         title: homestead
       HSE:
         text: HSE
@@ -1666,8 +1667,8 @@ enums:
         title: lighthouse
       MALL:
         text: MALL
-        description: A large, often enclosed shopping complex containing various stores,
-          businesses, and restaurants usually accessible by common passageways.
+        description: A large, often enclosed shopping complex containing various
+          stores, businesses, and restaurants usually accessible by common passageways.
         title: mall
       MAR:
         text: MAR
@@ -1750,8 +1751,8 @@ enums:
         title: water mill
       MN:
         text: MN
-        description: a site where mineral ores are extracted from the ground by
-          excavating surface pits and subterranean passages
+        description: a site where mineral ores are extracted from the ground by excavating
+          surface pits and subterranean passages
         title: mine(s)
       MNAU:
         text: MNAU
@@ -1792,8 +1793,8 @@ enums:
         title: quarry(-ies)
       MOLE:
         text: MOLE
-        description: a massive structure of masonry or large stones serving as a pier
-          or breakwater
+        description: a massive structure of masonry or large stones serving as a
+          pier or breakwater
         title: mole
       MSQE:
         text: MSQE
@@ -1802,8 +1803,8 @@ enums:
       MSSN:
         text: MSSN
         description: a place characterized by dwellings, school, church, hospital
-          and other facilities operated by a religious group for the purpose of
-          providing charitable services and to propagate religion
+          and other facilities operated by a religious group for the purpose of providing
+          charitable services and to propagate religion
         title: mission
       MSSNQ:
         text: MSSNQ
@@ -1811,8 +1812,7 @@ enums:
         title: abandoned mission
       MSTY:
         text: MSTY
-        description: a building and grounds where a community of monks lives in
-          seclusion
+        description: a building and grounds where a community of monks lives in seclusion
         title: monastery
       MTRO:
         text: MTRO
@@ -1842,8 +1842,8 @@ enums:
         title: observatory
       OBSR:
         text: OBSR
-        description: a facility equipped with an array of antennae for receiving radio
-          waves from space
+        description: a facility equipped with an array of antennae for receiving
+          radio waves from space
         title: radio observatory
       OILJ:
         text: OILJ
@@ -1859,8 +1859,8 @@ enums:
         title: oil refinery
       OILT:
         text: OILT
-        description: a tract of land occupied by large, cylindrical, metal tanks in
-          which oil or liquid petrochemicals are stored
+        description: a tract of land occupied by large, cylindrical, metal tanks
+          in which oil or liquid petrochemicals are stored
         title: tank farm
       OILW:
         text: OILW
@@ -1893,8 +1893,8 @@ enums:
         title: oil pumping station
       PMPW:
         text: PMPW
-        description: a facility for pumping water from a major well or through
-          a pipeline
+        description: a facility for pumping water from a major well or through a
+          pipeline
         title: water pumping station
       PO:
         text: PO
@@ -1922,8 +1922,8 @@ enums:
         title: prison
       PRNJ:
         text: PRNJ
-        description: a facility for confining, training, and reforming young
-          law offenders
+        description: a facility for confining, training, and reforming young law
+          offenders
         title: reformatory
       PRNQ:
         text: PRNQ
@@ -1962,8 +1962,8 @@ enums:
         title: pyramid
       PYRS:
         text: PYRS
-        description: ancient massive structures of square ground plan with four
-          triangular faces meeting at a point and used for enclosing tombs
+        description: ancient massive structures of square ground plan with four triangular
+          faces meeting at a point and used for enclosing tombs
         title: pyramids
       QUAY:
         text: QUAY
@@ -1973,14 +1973,14 @@ enums:
         title: quay
       RDCR:
         text: RDCR
-        description: a road junction formed around a central circle about which
-          traffic moves in one direction only
+        description: a road junction formed around a central circle about which traffic
+          moves in one direction only
         title: traffic circle
       RDIN:
         text: RDIN
-        description: a junction of two or more highways by a system of separate
-          levels that permit traffic to pass from one to another without the
-          crossing of traffic streams
+        description: a junction of two or more highways by a system of separate levels
+          that permit traffic to pass from one to another without the crossing of
+          traffic streams
         title: intersection
       RECG:
         text: RECG
@@ -2102,8 +2102,8 @@ enums:
         title: storehouse
       SLCE:
         text: SLCE
-        description: a conduit or passage for carrying off surplus water from a
-          waterbody, usually regulated by means of a sluice gate
+        description: a conduit or passage for carrying off surplus water from a waterbody,
+          usually regulated by means of a sluice gate
         title: sluice
       SNTR:
         text: SNTR
@@ -2116,8 +2116,8 @@ enums:
         title: spa
       SPLY:
         text: SPLY
-        description: a passage or outlet through which surplus water flows over, around
-          or through a dam
+        description: a passage or outlet through which surplus water flows over,
+          around or through a dam
         title: spillway
       SQR:
         text: SQR
@@ -2130,13 +2130,13 @@ enums:
         title: stable
       STDM:
         text: STDM
-        description: a structure with an enclosure for athletic games with tiers of
-          seats for spectators
+        description: a structure with an enclosure for athletic games with tiers
+          of seats for spectators
         title: stadium
       STNB:
         text: STNB
-        description: a scientific facility used as a base from which research is carried
-          out or monitored
+        description: a scientific facility used as a base from which research is
+          carried out or monitored
         title: scientific research base
       STNC:
         text: STNC
@@ -2223,8 +2223,7 @@ enums:
         title: transit terminal
       TRIG:
         text: TRIG
-        description: a point on the earth whose position has been determined by
-          triangulation
+        description: a point on the earth whose position has been determined by triangulation
         title: triangulation station
       TRMO:
         text: TRMO
@@ -2288,8 +2287,8 @@ enums:
         title: free trade zone
       ZOO:
         text: ZOO
-        description: a zoological garden or park where wild animals are kept
-          for exhibition
+        description: a zoological garden or park where wild animals are kept for
+          exhibition
         title: zoo
       ASPH:
         text: ASPH
@@ -2308,13 +2307,13 @@ enums:
         title: bar
       BCH:
         text: BCH
-        description: a shore zone of coarse unconsolidated sediment that extends from
-          the low-water line to the highest reach of storm waves
+        description: a shore zone of coarse unconsolidated sediment that extends
+          from the low-water line to the highest reach of storm waves
         title: beach
       BCHS:
         text: BCHS
-        description: a shore zone of coarse unconsolidated sediment that extends from
-          the low-water line to the highest reach of storm waves
+        description: a shore zone of coarse unconsolidated sediment that extends
+          from the low-water line to the highest reach of storm waves
         title: beaches
       BDLD:
         text: BDLD
@@ -2328,8 +2327,8 @@ enums:
         title: boulder field
       BLHL:
         text: BLHL
-        description: a hole in coastal rock through which sea water is forced by a
-          rising tide or waves and spurted through an outlet into the air
+        description: a hole in coastal rock through which sea water is forced by
+          a rising tide or waves and spurted through an outlet into the air
         title: blowhole(s)
       BLOW:
         text: BLOW
@@ -2406,8 +2405,8 @@ enums:
         title: depression(s)
       DSRT:
         text: DSRT
-        description: a large area with little or no vegetation due to extreme
-          environmental conditions
+        description: a large area with little or no vegetation due to extreme environmental
+          conditions
         title: desert
       DUNE:
         text: DUNE
@@ -2562,18 +2561,18 @@ enums:
         title: nunataks
       PAN:
         text: PAN
-        description: a near-level shallow, natural depression or basin, usually
-          containing an intermittent lake, pond, or pool
+        description: a near-level shallow, natural depression or basin, usually containing
+          an intermittent lake, pond, or pool
         title: pan
       PANS:
         text: PANS
-        description: a near-level shallow, natural depression or basin, usually
-          containing an intermittent lake, pond, or pool
+        description: a near-level shallow, natural depression or basin, usually containing
+          an intermittent lake, pond, or pool
         title: pans
       PASS:
         text: PASS
-        description: a break in a mountain range or other high obstruction,
-          used for transportation from one side to the other [See also gap]
+        description: a break in a mountain range or other high obstruction, used
+          for transportation from one side to the other [See also gap]
         title: pass
       PEN:
         text: PEN
@@ -2610,7 +2609,8 @@ enums:
       PLN:
         text: PLN
         description: an extensive area of comparatively level to gently undulating
-          land, lacking surface irregularities, and usually adjacent to a higher area
+          land, lacking surface irregularities, and usually adjacent to a higher
+          area
         title: plain(s)
       PLNX:
         text: PLNX
@@ -2686,8 +2686,8 @@ enums:
         title: sinkhole
       SLID:
         text: SLID
-        description: a mound of earth material, at the base of a slope and the
-          associated scoured area
+        description: a mound of earth material, at the base of a slope and the associated
+          scoured area
         title: slide
       SLP:
         text: SLP
@@ -2695,8 +2695,8 @@ enums:
         title: slope(s)
       SPIT:
         text: SPIT
-        description: a narrow, straight or curved continuation of a beach into
-          a waterbody
+        description: a narrow, straight or curved continuation of a beach into a
+          waterbody
         title: spit
       SPUR:
         text: SPUR
@@ -2780,13 +2780,13 @@ enums:
         title: basin
       CDAU:
         text: CDAU
-        description: an entire mountain system including the subordinate
-          ranges, interior plateaus, and basins
+        description: an entire mountain system including the subordinate ranges,
+          interior plateaus, and basins
         title: cordillera
       CNSU:
         text: CNSU
-        description: relatively narrow, deep depressions with steep sides, the
-          bottom of which generally has a continuous slope
+        description: relatively narrow, deep depressions with steep sides, the bottom
+          of which generally has a continuous slope
         title: canyons
       CNYU:
         text: CNYU
@@ -2824,8 +2824,9 @@ enums:
         title: flat
       FRZU:
         text: FRZU
-        description: an extensive linear zone of irregular topography of the sea floor,
-          characterized by steep-sided or asymmetrical ridges, troughs, or escarpments
+        description: an extensive linear zone of irregular topography of the sea
+          floor, characterized by steep-sided or asymmetrical ridges, troughs, or
+          escarpments
         title: fracture zone
       FURU:
         text: FURU
@@ -2853,8 +2854,8 @@ enums:
         title: hole
       KNLU:
         text: KNLU
-        description: an elevation rising generally more than 500 meters and less than
-          1,000 meters and of limited extent across the summit
+        description: an elevation rising generally more than 500 meters and less
+          than 1,000 meters and of limited extent across the summit
         title: knoll
       KNSU:
         text: KNSU
@@ -2871,8 +2872,8 @@ enums:
         title: levee
       MESU:
         text: MESU
-        description: an isolated, extensive, flat-topped elevation on the shelf, with
-          relatively steep sides
+        description: an isolated, extensive, flat-topped elevation on the shelf,
+          with relatively steep sides
         title: mesa
       MNDU:
         text: MNDU
@@ -2904,19 +2905,18 @@ enums:
         title: plain
       PLTU:
         text: PLTU
-        description: a comparatively flat-topped feature of considerable
-          extent, dropping off abruptly on one or more sides
+        description: a comparatively flat-topped feature of considerable extent,
+          dropping off abruptly on one or more sides
         title: plateau
       PNLU:
         text: PNLU
-        description: a high tower or spire-shaped pillar of rock or coral,
-          alone or cresting a summit
+        description: a high tower or spire-shaped pillar of rock or coral, alone
+          or cresting a summit
         title: pinnacle
       PRVU:
         text: PRVU
-        description: a region identifiable by a group of similar physiographic
-          features whose characteristics are markedly in contrast with
-          surrounding areas
+        description: a region identifiable by a group of similar physiographic features
+          whose characteristics are markedly in contrast with surrounding areas
         title: province
       RDGU:
         text: RDGU
@@ -2941,8 +2941,8 @@ enums:
         title: rise
       SCNU:
         text: SCNU
-        description: a continuously sloping, elongated depression commonly found in
-          fans or plains and customarily bordered by levees on one or two sides
+        description: a continuously sloping, elongated depression commonly found
+          in fans or plains and customarily bordered by levees on one or two sides
         title: seachannel
       SCSU:
         text: SCSU
@@ -2970,8 +2970,8 @@ enums:
         title: shoals
       SHVU:
         text: SHVU
-        description: a valley on the shelf, generally the shoreward extension of a
-          canyon
+        description: a valley on the shelf, generally the shoreward extension of
+          a canyon
         title: shelf valley
       SILU:
         text: SILU
@@ -2979,24 +2979,23 @@ enums:
         title: sill
       SLPU:
         text: SLPU
-        description: the slope seaward from the shelf edge to the beginning of
-          a continental rise or the point where there is a general reduction in
-          slope
+        description: the slope seaward from the shelf edge to the beginning of a
+          continental rise or the point where there is a general reduction in slope
         title: slope
       SMSU:
         text: SMSU
-        description: elevations rising generally more than 1,000 meters and of
-          limited extent across the summit
+        description: elevations rising generally more than 1,000 meters and of limited
+          extent across the summit
         title: seamounts
       SMU:
         text: SMU
-        description: an elevation rising generally more than 1,000 meters and
-          of limited extent across the summit
+        description: an elevation rising generally more than 1,000 meters and of
+          limited extent across the summit
         title: seamount
       SPRU:
         text: SPRU
-        description: a subordinate elevation, ridge, or rise projecting outward
-          from a larger feature
+        description: a subordinate elevation, ridge, or rise projecting outward from
+          a larger feature
         title: spur
       TERU:
         text: TERU
@@ -3056,8 +3055,8 @@ enums:
         title: fossilized forest
       GROVE:
         text: GROVE
-        description: a small wooded area or collection of trees growing closely
-          together, occurring naturally or deliberately planted
+        description: a small wooded area or collection of trees growing closely together,
+          occurring naturally or deliberately planted
         title: grove
       GRSLD:
         text: GRSLD
@@ -3094,8 +3093,8 @@ enums:
         title: orchard(s)
       SCRB:
         text: SCRB
-        description: an area of low trees, bushes, and shrubs stunted by some
-          environmental limitation
+        description: an area of low trees, bushes, and shrubs stunted by some environmental
+          limitation
         title: scrubland
       TREE:
         text: TREE
@@ -3122,9 +3121,762 @@ enums:
     name: country_code_enum
     from_schema: https://w3id.org/Geonames
     permissible_values:
+      AD:
+        text: AD
+        title: Andorra
+      AE:
+        text: AE
+        title: United Arab Emirates
+      AF:
+        text: AF
+        title: Afghanistan
+      AG:
+        text: AG
+        title: Antigua and Barbuda
+      AI:
+        text: AI
+        title: Anguilla
+      AL:
+        text: AL
+        title: Albania
+      AM:
+        text: AM
+        title: Armenia
+      AO:
+        text: AO
+        title: Angola
+      AQ:
+        text: AQ
+        title: Antarctica
+      AR:
+        text: AR
+        title: Argentina
+      AS:
+        text: AS
+        title: American Samoa
+      AT:
+        text: AT
+        title: Austria
+      AU:
+        text: AU
+        title: Australia
+      AW:
+        text: AW
+        title: Aruba
+      AX:
+        text: AX
+        title: Aland Islands
+      AZ:
+        text: AZ
+        title: Azerbaijan
+      BA:
+        text: BA
+        title: Bosnia and Herzegovina
+      BB:
+        text: BB
+        title: Barbados
+      BD:
+        text: BD
+        title: Bangladesh
+      BE:
+        text: BE
+        title: Belgium
+      BF:
+        text: BF
+        title: Burkina Faso
+      BG:
+        text: BG
+        title: Bulgaria
+      BH:
+        text: BH
+        title: Bahrain
+      BI:
+        text: BI
+        title: Burundi
+      BJ:
+        text: BJ
+        title: Benin
+      BL:
+        text: BL
+        title: Saint Barthelemy
+      BM:
+        text: BM
+        title: Bermuda
+      BN:
+        text: BN
+        title: Brunei
+      BO:
+        text: BO
+        title: Bolivia
+      BQ:
+        text: BQ
+        title: Bonaire, Saint Eustatius and Saba
       BR:
         text: BR
-        description: BR
+        title: Brazil
+      BS:
+        text: BS
+        title: Bahamas
+      BT:
+        text: BT
+        title: Bhutan
+      BV:
+        text: BV
+        title: Bouvet Island
+      BW:
+        text: BW
+        title: Botswana
+      BY:
+        text: BY
+        title: Belarus
+      BZ:
+        text: BZ
+        title: Belize
+      CA:
+        text: CA
+        title: Canada
+      CC:
+        text: CC
+        title: Cocos Islands
+      CD:
+        text: CD
+        title: Democratic Republic of the Congo
+      CF:
+        text: CF
+        title: Central African Republic
+      CG:
+        text: CG
+        title: Republic of the Congo
+      CH:
+        text: CH
+        title: Switzerland
+      CI:
+        text: CI
+        title: Ivory Coast
+      CK:
+        text: CK
+        title: Cook Islands
+      CL:
+        text: CL
+        title: Chile
+      CM:
+        text: CM
+        title: Cameroon
+      CN:
+        text: CN
+        title: China
+      CO:
+        text: CO
+        title: Colombia
+      CR:
+        text: CR
+        title: Costa Rica
+      CU:
+        text: CU
+        title: Cuba
+      CV:
+        text: CV
+        title: Cabo Verde
+      CW:
+        text: CW
+        title: Curacao
+      CX:
+        text: CX
+        title: Christmas Island
+      CY:
+        text: CY
+        title: Cyprus
+      CZ:
+        text: CZ
+        title: Czechia
+      DE:
+        text: DE
+        title: Germany
+      DJ:
+        text: DJ
+        title: Djibouti
+      DK:
+        text: DK
+        title: Denmark
+      DM:
+        text: DM
+        title: Dominica
+      DO:
+        text: DO
+        title: Dominican Republic
+      DZ:
+        text: DZ
+        title: Algeria
+      EC:
+        text: EC
+        title: Ecuador
+      EE:
+        text: EE
+        title: Estonia
+      EG:
+        text: EG
+        title: Egypt
+      EH:
+        text: EH
+        title: Western Sahara
+      ER:
+        text: ER
+        title: Eritrea
+      ES:
+        text: ES
+        title: Spain
+      ET:
+        text: ET
+        title: Ethiopia
+      FI:
+        text: FI
+        title: Finland
+      FJ:
+        text: FJ
+        title: Fiji
+      FK:
+        text: FK
+        title: Falkland Islands
+      FM:
+        text: FM
+        title: Micronesia
+      FO:
+        text: FO
+        title: Faroe Islands
+      FR:
+        text: FR
+        title: France
+      GA:
+        text: GA
+        title: Gabon
+      GB:
+        text: GB
+        title: United Kingdom
+      GD:
+        text: GD
+        title: Grenada
+      GE:
+        text: GE
+        title: Georgia
+      GF:
+        text: GF
+        title: French Guiana
+      GG:
+        text: GG
+        title: Guernsey
+      GH:
+        text: GH
+        title: Ghana
+      GI:
+        text: GI
+        title: Gibraltar
+      GL:
+        text: GL
+        title: Greenland
+      GM:
+        text: GM
+        title: Gambia
+      GN:
+        text: GN
+        title: Guinea
+      GP:
+        text: GP
+        title: Guadeloupe
+      GQ:
+        text: GQ
+        title: Equatorial Guinea
+      GR:
+        text: GR
+        title: Greece
+      GS:
+        text: GS
+        title: South Georgia and the South Sandwich Islands
+      GT:
+        text: GT
+        title: Guatemala
+      GU:
+        text: GU
+        title: Guam
+      GW:
+        text: GW
+        title: Guinea-Bissau
+      GY:
+        text: GY
+        title: Guyana
+      HK:
+        text: HK
+        title: Hong Kong
+      HM:
+        text: HM
+        title: Heard Island and McDonald Islands
+      HN:
+        text: HN
+        title: Honduras
+      HR:
+        text: HR
+        title: Croatia
+      HT:
+        text: HT
+        title: Haiti
+      HU:
+        text: HU
+        title: Hungary
+      ID:
+        text: ID
+        title: Indonesia
+      IE:
+        text: IE
+        title: Ireland
+      IL:
+        text: IL
+        title: Israel
+      IM:
+        text: IM
+        title: Isle of Man
+      IN:
+        text: IN
+        title: India
+      IO:
+        text: IO
+        title: British Indian Ocean Territory
+      IQ:
+        text: IQ
+        title: Iraq
+      IR:
+        text: IR
+        title: Iran
+      IS:
+        text: IS
+        title: Iceland
+      IT:
+        text: IT
+        title: Italy
+      JE:
+        text: JE
+        title: Jersey
+      JM:
+        text: JM
+        title: Jamaica
+      JO:
+        text: JO
+        title: Jordan
+      JP:
+        text: JP
+        title: Japan
+      KE:
+        text: KE
+        title: Kenya
+      KG:
+        text: KG
+        title: Kyrgyzstan
+      KH:
+        text: KH
+        title: Cambodia
+      KI:
+        text: KI
+        title: Kiribati
+      KM:
+        text: KM
+        title: Comoros
+      KN:
+        text: KN
+        title: Saint Kitts and Nevis
+      KP:
+        text: KP
+        title: North Korea
+      KR:
+        text: KR
+        title: South Korea
+      XK:
+        text: XK
+        title: Kosovo
+      KW:
+        text: KW
+        title: Kuwait
+      KY:
+        text: KY
+        title: Cayman Islands
+      KZ:
+        text: KZ
+        title: Kazakhstan
+      LA:
+        text: LA
+        title: Laos
+      LB:
+        text: LB
+        title: Lebanon
+      LC:
+        text: LC
+        title: Saint Lucia
+      LI:
+        text: LI
+        title: Liechtenstein
+      LK:
+        text: LK
+        title: Sri Lanka
+      LR:
+        text: LR
+        title: Liberia
+      LS:
+        text: LS
+        title: Lesotho
+      LT:
+        text: LT
+        title: Lithuania
+      LU:
+        text: LU
+        title: Luxembourg
+      LV:
+        text: LV
+        title: Latvia
+      LY:
+        text: LY
+        title: Libya
+      MA:
+        text: MA
+        title: Morocco
+      MC:
+        text: MC
+        title: Monaco
+      MD:
+        text: MD
+        title: Moldova
+      ME:
+        text: ME
+        title: Montenegro
+      MF:
+        text: MF
+        title: Saint Martin
+      MG:
+        text: MG
+        title: Madagascar
+      MH:
+        text: MH
+        title: Marshall Islands
+      MK:
+        text: MK
+        title: North Macedonia
+      ML:
+        text: ML
+        title: Mali
+      MM:
+        text: MM
+        title: Myanmar
+      MN:
+        text: MN
+        title: Mongolia
+      MO:
+        text: MO
+        title: Macao
+      MP:
+        text: MP
+        title: Northern Mariana Islands
+      MQ:
+        text: MQ
+        title: Martinique
+      MR:
+        text: MR
+        title: Mauritania
+      MS:
+        text: MS
+        title: Montserrat
+      MT:
+        text: MT
+        title: Malta
+      MU:
+        text: MU
+        title: Mauritius
+      MV:
+        text: MV
+        title: Maldives
+      MW:
+        text: MW
+        title: Malawi
+      MX:
+        text: MX
+        title: Mexico
+      MY:
+        text: MY
+        title: Malaysia
+      MZ:
+        text: MZ
+        title: Mozambique
+      NA:
+        text: NA
+        title: Namibia
+      NC:
+        text: NC
+        title: New Caledonia
+      NE:
+        text: NE
+        title: Niger
+      NF:
+        text: NF
+        title: Norfolk Island
+      NG:
+        text: NG
+        title: Nigeria
+      NI:
+        text: NI
+        title: Nicaragua
+      NL:
+        text: NL
+        title: The Netherlands
+      'NO':
+        text: 'NO'
+        title: Norway
+      NP:
+        text: NP
+        title: Nepal
+      NR:
+        text: NR
+        title: Nauru
+      NU:
+        text: NU
+        title: Niue
+      NZ:
+        text: NZ
+        title: New Zealand
+      OM:
+        text: OM
+        title: Oman
+      PA:
+        text: PA
+        title: Panama
+      PE:
+        text: PE
+        title: Peru
+      PF:
+        text: PF
+        title: French Polynesia
+      PG:
+        text: PG
+        title: Papua New Guinea
+      PH:
+        text: PH
+        title: Philippines
+      PK:
+        text: PK
+        title: Pakistan
+      PL:
+        text: PL
+        title: Poland
+      PM:
+        text: PM
+        title: Saint Pierre and Miquelon
+      PN:
+        text: PN
+        title: Pitcairn
+      PR:
+        text: PR
+        title: Puerto Rico
+      PS:
+        text: PS
+        title: Palestinian Territory
+      PT:
+        text: PT
+        title: Portugal
+      PW:
+        text: PW
+        title: Palau
+      PY:
+        text: PY
+        title: Paraguay
+      QA:
+        text: QA
+        title: Qatar
+      RE:
+        text: RE
+        title: Reunion
+      RO:
+        text: RO
+        title: Romania
+      RS:
+        text: RS
+        title: Serbia
+      RU:
+        text: RU
+        title: Russia
+      RW:
+        text: RW
+        title: Rwanda
+      SA:
+        text: SA
+        title: Saudi Arabia
+      SB:
+        text: SB
+        title: Solomon Islands
+      SC:
+        text: SC
+        title: Seychelles
+      SD:
+        text: SD
+        title: Sudan
+      SS:
+        text: SS
+        title: South Sudan
+      SE:
+        text: SE
+        title: Sweden
+      SG:
+        text: SG
+        title: Singapore
+      SH:
+        text: SH
+        title: Saint Helena
+      SI:
+        text: SI
+        title: Slovenia
+      SJ:
+        text: SJ
+        title: Svalbard and Jan Mayen
+      SK:
+        text: SK
+        title: Slovakia
+      SL:
+        text: SL
+        title: Sierra Leone
+      SM:
+        text: SM
+        title: San Marino
+      SN:
+        text: SN
+        title: Senegal
+      SO:
+        text: SO
+        title: Somalia
+      SR:
+        text: SR
+        title: Suriname
+      ST:
+        text: ST
+        title: Sao Tome and Principe
+      SV:
+        text: SV
+        title: El Salvador
+      SX:
+        text: SX
+        title: Sint Maarten
+      SY:
+        text: SY
+        title: Syria
+      SZ:
+        text: SZ
+        title: Eswatini
+      TC:
+        text: TC
+        title: Turks and Caicos Islands
+      TD:
+        text: TD
+        title: Chad
+      TF:
+        text: TF
+        title: French Southern Territories
+      TG:
+        text: TG
+        title: Togo
+      TH:
+        text: TH
+        title: Thailand
+      TJ:
+        text: TJ
+        title: Tajikistan
+      TK:
+        text: TK
+        title: Tokelau
+      TL:
+        text: TL
+        title: Timor Leste
+      TM:
+        text: TM
+        title: Turkmenistan
+      TN:
+        text: TN
+        title: Tunisia
+      TO:
+        text: TO
+        title: Tonga
+      TR:
+        text: TR
+        title: Turkey
+      TT:
+        text: TT
+        title: Trinidad and Tobago
+      TV:
+        text: TV
+        title: Tuvalu
+      TW:
+        text: TW
+        title: Taiwan
+      TZ:
+        text: TZ
+        title: Tanzania
+      UA:
+        text: UA
+        title: Ukraine
+      UG:
+        text: UG
+        title: Uganda
+      UM:
+        text: UM
+        title: United States Minor Outlying Islands
+      US:
+        text: US
+        title: United States
+      UY:
+        text: UY
+        title: Uruguay
+      UZ:
+        text: UZ
+        title: Uzbekistan
+      VA:
+        text: VA
+        title: Vatican
+      VC:
+        text: VC
+        title: Saint Vincent and the Grenadines
+      VE:
+        text: VE
+        title: Venezuela
+      VG:
+        text: VG
+        title: British Virgin Islands
+      VI:
+        text: VI
+        title: U.S. Virgin Islands
+      VN:
+        text: VN
+        title: Vietnam
+      VU:
+        text: VU
+        title: Vanuatu
+      WF:
+        text: WF
+        title: Wallis and Futuna
+      WS:
+        text: WS
+        title: Samoa
+      YE:
+        text: YE
+        title: Yemen
+      YT:
+        text: YT
+        title: Mayotte
+      ZA:
+        text: ZA
+        title: South Africa
+      ZM:
+        text: ZM
+        title: Zambia
+      ZW:
+        text: ZW
+        title: Zimbabwe
+      CS:
+        text: CS
+        title: Serbia and Montenegro
+      AN:
+        text: AN
+        title: Netherlands Antilles
   timezone_enum:
     name: timezone_enum
     from_schema: https://w3id.org/Geonames
@@ -3262,18 +4014,16 @@ slots:
       num_distinct_values:
         tag: num_distinct_values
         value: '118603'
-    description: 'Alternatenames, comma separated, ascii names automatically
-      transliterated, convenience attribute from alternatename table,
-      varchar(10000)
-      '
+    description: 'Alternatenames, comma separated, ascii names automatically transliterated,
+      convenience attribute from alternatename table, varchar(10000) '
     examples:
-      - value: >
-          Armenian Apostolic Church of Saint John the
-          Baptist,Hayastaneaycʻ Arakʻelakan Surb Yovhannes Mkrticʻ ekegecʻi,Igreja
-          Apostolica Armenia Sao Joao Batista,Igreja
-          Apostólica Armênia São João Batista,Surb Hovhannes Mkrticʻ
-          ekegecʻi,Հայաստանեայց Առաքելական Սուրբ Յովհաննէս Մկրտիչ եկեղեցի,Սուրբ
+      - value: 'Armenian Apostolic Church of Saint John the Baptist,Hayastaneaycʻ
+          Arakʻelakan Surb Yovhannes Mkrticʻ ekegecʻi,Igreja Apostolica Armenia Sao
+          Joao Batista,Igreja Apostólica Armênia São João Batista,Surb Hovhannes
+          Mkrticʻ ekegecʻi,Հայաստանեայց Առաքելական Սուրբ Յովհաննէս Մկրտիչ եկեղեցի,Սուրբ
           Հովհաննես Մկրտիչ եկեղեցի
+
+          '
     from_schema: https://w3id.org/Geonames
     domain_of:
       - Place
@@ -3368,9 +4118,9 @@ slots:
     description: 'Fipscode (subject to change to iso code), see exceptions below,
       see file admin1Codes.txt for display names of this code; varchar(20)
 
-      Most adm1 are FIPS codes. ISO codes are used for US, CH, BE and ME. UK and Greece
-      are using an additional level between country and fips code. The code ''00''
-      stands for general features where no specific adm1 code is defined.
+      Most adm1 are FIPS codes. ISO codes are used for US, CH, BE and ME. UK and
+      Greece are using an additional level between country and fips code. The code
+      ''00'' stands for general features where no specific adm1 code is defined.
 
       The corresponding admin feature is found with the same countrycode and adminX
       codes and the respective feature code ADMx.
