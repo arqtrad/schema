@@ -17,7 +17,6 @@ default_range: string
 classes:
 
   Thing:
-    rank: 0
     abstract: true
     class_uri: crm:E1_CRM_Entity
     exact_mappings:
@@ -57,22 +56,6 @@ classes:
 #     The most generic type of item.
 
     attributes:
-
-      id:
-        identifier: true
-        range: uriorcurie
-        slot_uri: dcterms:identifier
-        description: >
-          Identificador globalmente único para este objeto ou recurso.
-
-      record_author:
-        alias: author
-        range: OrcidId
-        slot_uri: dcterms:contributor
-        description: >
-          ORCID iD da pessoa que escreveu a versão original da ficha.
-          Alterar apenas no caso de a ficha ter sido substancialmente
-          reescrita.
 
       record_date:
         alias: date
@@ -114,29 +97,6 @@ classes:
         range: Appellation
         multivalued: true
         inlined_as_list: true
-
-      category:
-        slot_uri: term:lidoCategory
-        designates_type: true
-        range: uriorcurie
-        required: true
-        description: >-
-          Uma classificação ampla para o objeto descrito na ficha, usando o
-          vocabulário controlado do LIDO.
-
-          Nos documentários de edificações, preencher este campo
-          OBRIGATORIAMENTE com `term:lido00096` ("Objeto manufaturado").
-
-          No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com
-          `term:lido01193` ("Objeto conceitual").
-
-          ---------------------------------------------------------------------
-
-          The LIDO Category Vocabulary is a structured controlled list of terms
-          recommended to use as values in the LIDO Category element.
-
-          Examples are human-made object or natural object.
-        # ifabsent: string(term:lido00096)
 
       identifiers:
         range: TypedReference
@@ -227,28 +187,16 @@ classes:
           Repeated if there are several designations known, or if former
           repositories or geographic places should be listed.
 
-      record_rights:
-        range: Right
-        multivalued: true
-        inlined_as_list: true
-        description: >
-          Informações estruturadas sobre os direitos que incidem sobre o
-          conteúdo textual desta ficha.
-
-          ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da
-          ficha, não sobre os direitos incidentes sobre o objeto descrito.
-
-          ---------------------------------------------------------------------
-
-          A set of structured information about rights regarding the content
-          provided in this LIDO record.
-
     slot_usage:
       description:
         required: true
 
     slots:
+      - id
+      - record_author
       - description
+      - category
+      - record_rights
       # Os campos abaixo são opcionais
       - bibliographic_citation
       - content
@@ -293,6 +241,61 @@ classes:
 
 
 slots:
+
+  id:
+    identifier: true
+    range: uriorcurie
+    slot_uri: dcterms:identifier
+    description: >
+      Identificador globalmente único para este objeto ou recurso.
+
+  record_author:
+    alias: author
+    range: OrcidId
+    slot_uri: dcterms:contributor
+    description: >
+      ORCID iD da pessoa que escreveu a versão original da ficha.
+      Alterar apenas no caso de a ficha ter sido substancialmente
+      reescrita.
+
+  category:
+    slot_uri: term:lidoCategory
+    designates_type: true
+    range: uriorcurie
+    required: true
+    description: >-
+      Uma classificação ampla para o objeto descrito na ficha, usando o
+      vocabulário controlado do LIDO.
+
+      Nos documentários de edificações, preencher este campo
+      OBRIGATORIAMENTE com `term:lido00096` ("Objeto manufaturado").
+
+      No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com
+      `term:lido01193` ("Objeto conceitual").
+
+      ---------------------------------------------------------------------
+
+      The LIDO Category Vocabulary is a structured controlled list of terms
+      recommended to use as values in the LIDO Category element.
+
+      Examples are human-made object or natural object.
+    # ifabsent: string(term:lido00096)
+
+  record_rights:
+    range: Right
+    multivalued: true
+    inlined_as_list: true
+    description: >
+      Informações estruturadas sobre os direitos que incidem sobre o
+      conteúdo textual desta ficha.
+
+      ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da
+      ficha, não sobre os direitos incidentes sobre o objeto descrito.
+
+      ---------------------------------------------------------------------
+
+      A set of structured information about rights regarding the content
+      provided in this LIDO record.
 
   legal_body:
     range: LegalBody

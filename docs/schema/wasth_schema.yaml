@@ -2131,6 +2131,73 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  id:
+    name: id
+    definition_uri: https://tradicional.arq.br/schema/id
+    description: "Identificador globalmente \xFAnico para este objeto ou recurso.\n"
+    from_schema: https://tradicional.arq.br/schema/thing
+    mappings:
+    - dcterms:identifier
+    slot_uri: dcterms:identifier
+    identifier: true
+    owner: Thing
+    domain_of:
+    - Thing
+    range: uriorcurie
+    required: true
+  record_author:
+    name: record_author
+    definition_uri: https://tradicional.arq.br/schema/record_author
+    description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha. Alterar\
+      \ apenas no caso de a ficha ter sido substancialmente reescrita.\n"
+    from_schema: https://tradicional.arq.br/schema/thing
+    mappings:
+    - dcterms:contributor
+    slot_uri: dcterms:contributor
+    alias: author
+    owner: Thing
+    domain_of:
+    - Thing
+    range: OrcidId
+  category:
+    name: category
+    definition_uri: https://tradicional.arq.br/schema/category
+    description: "Uma classifica\xE7\xE3o ampla para o objeto descrito na ficha, usando\
+      \ o vocabul\xE1rio controlado do LIDO.\nNos document\xE1rios de edifica\xE7\xF5\
+      es, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\"\
+      ).\nNo vocabul\xE1rio controlado, preencher este campo OBRIGATORIAMENTE com\
+      \ `term:lido01193` (\"Objeto conceitual\").\n---------------------------------------------------------------------\n\
+      The LIDO Category Vocabulary is a structured controlled list of terms recommended\
+      \ to use as values in the LIDO Category element.\nExamples are human-made object\
+      \ or natural object."
+    from_schema: https://tradicional.arq.br/schema/thing
+    mappings:
+    - term:lidoCategory
+    slot_uri: term:lidoCategory
+    designates_type: true
+    owner: Thing
+    domain_of:
+    - Thing
+    range: uriorcurie
+    required: true
+  record_rights:
+    name: record_rights
+    definition_uri: https://tradicional.arq.br/schema/record_rights
+    description: "Informa\xE7\xF5es estruturadas sobre os direitos que incidem sobre\
+      \ o conte\xFAdo textual desta ficha.\n\u26A0\uFE0F  Este grupo se refere aos\
+      \ direitos sobre o CONTE\xDADO da ficha, n\xE3o sobre os direitos incidentes\
+      \ sobre o objeto descrito.\n---------------------------------------------------------------------\n\
+      A set of structured information about rights regarding the content provided\
+      \ in this LIDO record.\n"
+    from_schema: https://tradicional.arq.br/schema/thing
+    slot_uri: wasth:record_rights
+    owner: Thing
+    domain_of:
+    - Thing
+    range: Right
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   legal_body:
     name: legal_body
     definition_uri: https://tradicional.arq.br/schema/legal_body
@@ -2819,33 +2886,6 @@ slots:
     required: true
     multivalued: true
     inlined: false
-  thing__id:
-    name: thing__id
-    description: "Identificador globalmente \xFAnico para este objeto ou recurso.\n"
-    from_schema: https://tradicional.arq.br/schema/thing
-    mappings:
-    - dcterms:identifier
-    slot_uri: dcterms:identifier
-    identifier: true
-    alias: id
-    owner: Thing
-    domain_of:
-    - Thing
-    range: uriorcurie
-    required: true
-  thing__record_author:
-    name: thing__record_author
-    description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha. Alterar\
-      \ apenas no caso de a ficha ter sido substancialmente reescrita.\n"
-    from_schema: https://tradicional.arq.br/schema/thing
-    mappings:
-    - dcterms:contributor
-    slot_uri: dcterms:contributor
-    alias: author
-    owner: Thing
-    domain_of:
-    - Thing
-    range: OrcidId
   thing__record_date:
     name: thing__record_date
     description: "Data de inclus\xE3o da ficha."
@@ -2907,27 +2947,6 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  thing__category:
-    name: thing__category
-    description: "Uma classifica\xE7\xE3o ampla para o objeto descrito na ficha, usando\
-      \ o vocabul\xE1rio controlado do LIDO.\nNos document\xE1rios de edifica\xE7\xF5\
-      es, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\"\
-      ).\nNo vocabul\xE1rio controlado, preencher este campo OBRIGATORIAMENTE com\
-      \ `term:lido01193` (\"Objeto conceitual\").\n---------------------------------------------------------------------\n\
-      The LIDO Category Vocabulary is a structured controlled list of terms recommended\
-      \ to use as values in the LIDO Category element.\nExamples are human-made object\
-      \ or natural object."
-    from_schema: https://tradicional.arq.br/schema/thing
-    mappings:
-    - term:lidoCategory
-    slot_uri: term:lidoCategory
-    designates_type: true
-    alias: category
-    owner: Thing
-    domain_of:
-    - Thing
-    range: uriorcurie
-    required: true
   thing__identifiers:
     name: thing__identifiers
     description: "N\xFAmeros de invent\xE1rio e demais c\xF3digos que identificam\
@@ -3009,24 +3028,6 @@ slots:
     domain_of:
     - Thing
     range: Repository
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  thing__record_rights:
-    name: thing__record_rights
-    description: "Informa\xE7\xF5es estruturadas sobre os direitos que incidem sobre\
-      \ o conte\xFAdo textual desta ficha.\n\u26A0\uFE0F  Este grupo se refere aos\
-      \ direitos sobre o CONTE\xDADO da ficha, n\xE3o sobre os direitos incidentes\
-      \ sobre o objeto descrito.\n---------------------------------------------------------------------\n\
-      A set of structured information about rights regarding the content provided\
-      \ in this LIDO record.\n"
-    from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:record_rights
-    alias: record_rights
-    owner: Thing
-    domain_of:
-    - Thing
-    range: Right
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -3652,12 +3653,6 @@ slots:
     required: true
     inlined: true
     inlined_as_list: false
-  author:
-    name: author
-    from_schema: https://tradicional.arq.br/schema
-    slot_uri: wasth:author
-    range: string
-    required: true
   RelatedWork_related_object:
     name: RelatedWork_related_object
     definition_uri: https://tradicional.arq.br/schema/related_object
@@ -3737,13 +3732,16 @@ slots:
     required: true
   Work_id:
     name: Work_id
+    definition_uri: https://tradicional.arq.br/schema/id
     description: "Cada edifica\xE7\xE3o ter\xE1 um identificador gerado a partir do\
       \ seu georreferenciamento usando Open Location Code (\"PlusCode\"). Este identificador\
       \ usa o campo `id`, que ser\xE1 gerado automaticamente pelo programa WASTH."
-    from_schema: https://tradicional.arq.br/schema
-    is_a: thing__id
+    from_schema: https://tradicional.arq.br/schema/thing
+    mappings:
+    - dcterms:identifier
+    is_a: id
     domain: Work
-    slot_uri: wasth:id
+    slot_uri: dcterms:identifier
     identifier: true
     alias: id
     owner: Work
@@ -3753,26 +3751,42 @@ slots:
     usage_slot_name: id
     range: OlcPlusCode11
     required: true
-  Work_author:
-    name: Work_author
-    from_schema: https://tradicional.arq.br/schema
-    is_a: author
+  Work_record_author:
+    name: Work_record_author
+    definition_uri: https://tradicional.arq.br/schema/record_author
+    description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha. Alterar\
+      \ apenas no caso de a ficha ter sido substancialmente reescrita.\n"
+    from_schema: https://tradicional.arq.br/schema/thing
+    mappings:
+    - dcterms:contributor
+    is_a: record_author
     domain: Work
-    slot_uri: wasth:author
+    slot_uri: dcterms:contributor
     alias: author
     owner: Work
     domain_of:
     - Work
     is_usage_slot: true
-    usage_slot_name: author
-    range: string
+    usage_slot_name: record_author
+    range: OrcidId
     required: true
   Work_category:
     name: Work_category
-    from_schema: https://tradicional.arq.br/schema
-    is_a: thing__category
+    definition_uri: https://tradicional.arq.br/schema/category
+    description: "Uma classifica\xE7\xE3o ampla para o objeto descrito na ficha, usando\
+      \ o vocabul\xE1rio controlado do LIDO.\nNos document\xE1rios de edifica\xE7\xF5\
+      es, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\"\
+      ).\nNo vocabul\xE1rio controlado, preencher este campo OBRIGATORIAMENTE com\
+      \ `term:lido01193` (\"Objeto conceitual\").\n---------------------------------------------------------------------\n\
+      The LIDO Category Vocabulary is a structured controlled list of terms recommended\
+      \ to use as values in the LIDO Category element.\nExamples are human-made object\
+      \ or natural object."
+    from_schema: https://tradicional.arq.br/schema/thing
+    mappings:
+    - term:lidoCategory
+    is_a: category
     domain: Work
-    slot_uri: wasth:category
+    slot_uri: term:lidoCategory
     ifabsent: string(http://terminology.lido-schema.org/lido00096)
     designates_type: true
     alias: category
@@ -3783,29 +3797,17 @@ slots:
     usage_slot_name: category
     range: uriorcurie
     required: true
-  Work_site:
-    name: Work_site
-    definition_uri: https://tradicional.arq.br/schema/site
-    description: "A localiza\xE7\xE3o real, atual da edifica\xE7\xE3o \u2014 \xE9\
-      \ o que ser\xE1 usado em quase todos os casos."
-    from_schema: https://tradicional.arq.br/schema/work
-    is_a: site
-    domain: Work
-    slot_uri: wasth:site
-    alias: site
-    owner: Work
-    domain_of:
-    - Work
-    is_usage_slot: true
-    usage_slot_name: site
-    range: Site
-    required: true
-    inlined: true
-    inlined_as_list: false
   Work_record_rights:
     name: Work_record_rights
-    from_schema: https://tradicional.arq.br/schema
-    is_a: thing__record_rights
+    definition_uri: https://tradicional.arq.br/schema/record_rights
+    description: "Informa\xE7\xF5es estruturadas sobre os direitos que incidem sobre\
+      \ o conte\xFAdo textual desta ficha.\n\u26A0\uFE0F  Este grupo se refere aos\
+      \ direitos sobre o CONTE\xDADO da ficha, n\xE3o sobre os direitos incidentes\
+      \ sobre o objeto descrito.\n---------------------------------------------------------------------\n\
+      A set of structured information about rights regarding the content provided\
+      \ in this LIDO record.\n"
+    from_schema: https://tradicional.arq.br/schema/thing
+    is_a: record_rights
     domain: Work
     slot_uri: wasth:record_rights
     alias: record_rights
@@ -3846,13 +3848,16 @@ slots:
     recommended: true
   Site_id:
     name: Site_id
+    definition_uri: https://tradicional.arq.br/schema/id
     description: 'Incluir aqui um identificador da base geonames na forma `geonames:1234`.
 
       '
-    from_schema: https://tradicional.arq.br/schema
-    is_a: thing__id
+    from_schema: https://tradicional.arq.br/schema/thing
+    mappings:
+    - dcterms:identifier
+    is_a: id
     domain: Site
-    slot_uri: wasth:id
+    slot_uri: dcterms:identifier
     identifier: true
     alias: id
     owner: Site
@@ -3930,21 +3935,21 @@ classes:
     - schema:DefinedTerm
     is_a: Thing
     slots:
+    - id
+    - record_author
     - Thing_description
+    - category
+    - record_rights
     - bibliographic_citation
     - content
-    - thing__id
-    - thing__record_author
     - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
-    - thing__category
     - thing__identifiers
     - thing__tags
     - thing__temporal
     - thing__repositories
-    - thing__record_rights
     - broader
     - narrower
     - concept__concept_type
@@ -4143,21 +4148,21 @@ classes:
     - schema:ArchiveComponent
     is_a: Thing
     slots:
+    - id
+    - record_author
     - Thing_description
+    - category
+    - record_rights
     - bibliographic_citation
     - content
-    - thing__id
-    - thing__record_author
     - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
-    - thing__category
     - thing__identifiers
     - thing__tags
     - thing__temporal
     - thing__repositories
-    - thing__record_rights
     - relation_type
     - preview_image
     - provided_image
@@ -4496,21 +4501,21 @@ classes:
     - schema:Event
     is_a: Thing
     slots:
+    - id
+    - record_author
     - Thing_description
+    - category
+    - record_rights
     - bibliographic_citation
     - content
-    - thing__id
-    - thing__record_author
     - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
-    - thing__category
     - thing__identifiers
     - thing__tags
     - thing__temporal
     - thing__repositories
-    - thing__record_rights
     - style_period
     - culture
     - measurements
@@ -4758,42 +4763,28 @@ classes:
     exact_mappings:
     - crm:E1_CRM_Entity
     - schema:Thing
-    rank: 0
     abstract: true
     slots:
+    - id
+    - record_author
     - Thing_description
+    - category
+    - record_rights
     - bibliographic_citation
     - content
-    - thing__id
-    - thing__record_author
     - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
-    - thing__category
     - thing__identifiers
     - thing__tags
     - thing__temporal
     - thing__repositories
-    - thing__record_rights
     slot_usage:
       description:
         name: description
         required: true
     attributes:
-      id:
-        name: id
-        description: "Identificador globalmente \xFAnico para este objeto ou recurso.\n"
-        slot_uri: dcterms:identifier
-        identifier: true
-        range: uriorcurie
-      record_author:
-        name: record_author
-        description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha.\
-          \ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.\n"
-        slot_uri: dcterms:contributor
-        alias: author
-        range: OrcidId
       record_date:
         name: record_date
         description: "Data de inclus\xE3o da ficha."
@@ -4828,20 +4819,6 @@ classes:
         range: Appellation
         multivalued: true
         inlined_as_list: true
-      category:
-        name: category
-        description: "Uma classifica\xE7\xE3o ampla para o objeto descrito na ficha,\
-          \ usando o vocabul\xE1rio controlado do LIDO.\nNos document\xE1rios de edifica\xE7\
-          \xF5es, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto\
-          \ manufaturado\").\nNo vocabul\xE1rio controlado, preencher este campo OBRIGATORIAMENTE\
-          \ com `term:lido01193` (\"Objeto conceitual\").\n---------------------------------------------------------------------\n\
-          The LIDO Category Vocabulary is a structured controlled list of terms recommended\
-          \ to use as values in the LIDO Category element.\nExamples are human-made\
-          \ object or natural object."
-        slot_uri: term:lidoCategory
-        designates_type: true
-        range: uriorcurie
-        required: true
       identifiers:
         name: identifiers
         description: "N\xFAmeros de invent\xE1rio e demais c\xF3digos que identificam\
@@ -4900,17 +4877,6 @@ classes:
         range: Repository
         multivalued: true
         inlined_as_list: true
-      record_rights:
-        name: record_rights
-        description: "Informa\xE7\xF5es estruturadas sobre os direitos que incidem\
-          \ sobre o conte\xFAdo textual desta ficha.\n\u26A0\uFE0F  Este grupo se\
-          \ refere aos direitos sobre o CONTE\xDADO da ficha, n\xE3o sobre os direitos\
-          \ incidentes sobre o objeto descrito.\n---------------------------------------------------------------------\n\
-          A set of structured information about rights regarding the content provided\
-          \ in this LIDO record.\n"
-        range: Right
-        multivalued: true
-        inlined_as_list: true
     class_uri: crm:E1_CRM_Entity
   Appellation:
     name: Appellation
@@ -4947,21 +4913,21 @@ classes:
     - schema:Organization
     is_a: Thing
     slots:
+    - id
+    - record_author
     - Thing_description
+    - category
+    - record_rights
     - bibliographic_citation
     - content
-    - thing__id
-    - thing__record_author
     - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
-    - thing__category
     - thing__identifiers
     - thing__tags
     - thing__temporal
     - thing__repositories
-    - thing__record_rights
     - site
     - legal_body
     - repository__repository_type
@@ -4997,7 +4963,6 @@ classes:
     - schema:LandmarksOrHistoricalBuildings
     close_mappings:
     - crm:E22_Human-Made_Object
-    rank: 0
     is_a: Thing
     slots:
     - Thing_description
@@ -5010,7 +4975,7 @@ classes:
     - thing__tags
     - thing__temporal
     - thing__repositories
-    - Work_site
+    - site
     - measurements
     - material
     - technique
@@ -5041,7 +5006,7 @@ classes:
     - work__collection
     - work__work_rights
     - Work_id
-    - Work_author
+    - Work_record_author
     - Work_category
     - Work_record_rights
     - Work_content
@@ -5052,24 +5017,15 @@ classes:
           \ do seu georreferenciamento usando Open Location Code (\"PlusCode\"). Este\
           \ identificador usa o campo `id`, que ser\xE1 gerado automaticamente pelo\
           \ programa WASTH."
-        is_a: thing__id
         range: OlcPlusCode11
-      author:
-        name: author
-        from_schema: https://tradicional.arq.br/schema
-        slot_uri: wasth:author
-        range: string
+      record_author:
+        name: record_author
         required: true
       category:
         name: category
-        is_a: thing__category
         ifabsent: string(http://terminology.lido-schema.org/lido00096)
-      site:
-        name: site
-        required: false
       record_rights:
         name: record_rights
-        is_a: thing__record_rights
         required: true
       content:
         name: content
@@ -5373,20 +5329,20 @@ classes:
     is_a: Thing
     abstract: true
     slots:
+    - record_author
     - Thing_description
+    - category
+    - record_rights
     - bibliographic_citation
     - content
-    - thing__record_author
     - thing__record_date
     - thing__title
     - thing__title_source
     - thing__alt_name
-    - thing__category
     - thing__identifiers
     - thing__tags
     - thing__temporal
     - thing__repositories
-    - thing__record_rights
     - site__site_type
     - site__location
     - site__extent
@@ -5398,7 +5354,6 @@ classes:
         description: 'Incluir aqui um identificador da base geonames na forma `geonames:1234`.
 
           '
-        is_a: thing__id
         range: GeonamesId
     attributes:
       site_type:
