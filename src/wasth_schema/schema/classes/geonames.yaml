@@ -1,16 +1,14 @@
 name: Geonames
 description: Geonames
-id: https://w3id.org/Geonames
+id: https://tradicional.arq.br/schema/geonames
 imports:
   - linkml:types
 prefixes:
-  linkml:
-    prefix_prefix: linkml
-    prefix_reference: https://w3id.org/linkml/
-  Geonames:
-    prefix_prefix: Geonames
-    prefix_reference: https://w3id.org/Geonames
-default_prefix: Geonames
+  linkml: https://w3id.org/linkml/
+  geonames: https://www.geonames.org/ontology#
+  wgs84: http://www.w3.org/2003/01/geo/wgs84_pos#
+# default_prefix: geonames
+default_range: string
 enums:
   feature_class_enum:
     name: feature_class_enum
@@ -3981,6 +3979,7 @@ slots:
       - Place
     range: integer
   name:
+    slot_uri: geonames:name
     name: name
     annotations:
       num_distinct_values:
@@ -4009,6 +4008,7 @@ slots:
       - Place
     range: string
   alternatenames:
+    slot_uri: geonames:alternatenames
     name: alternatenames
     annotations:
       num_distinct_values:
@@ -4029,6 +4029,7 @@ slots:
       - Place
     range: string
   latitude:
+    slot_uri: wgs84:lat
     name: latitude
     annotations:
       num_distinct_values:
@@ -4040,8 +4041,9 @@ slots:
     from_schema: https://w3id.org/Geonames
     domain_of:
       - Place
-    range: double
+    range: Latitude
   longitude:
+    slot_uri: wgs84:long
     name: longitude
     annotations:
       num_distinct_values:
@@ -4053,8 +4055,9 @@ slots:
     from_schema: https://w3id.org/Geonames
     domain_of:
       - Place
-    range: double
+    range: Longitude
   feature class:
+    slot_uri: geonames:featureClass
     name: feature class
     annotations:
       num_distinct_values:
@@ -4068,6 +4071,7 @@ slots:
       - Place
     range: feature_class_enum
   feature code:
+    slot_uri: geonames:featureCode
     name: feature code
     annotations:
       num_distinct_values:
@@ -4081,6 +4085,7 @@ slots:
       - Place
     range: feature_code_enum
   country code:
+    slot_uri: geonames:countryCode
     name: country code
     annotations:
       num_distinct_values:
@@ -4173,6 +4178,7 @@ slots:
       - Place
     range: string
   population:
+    slot_uri: geonames:population
     name: population
     annotations:
       num_distinct_values:
@@ -4242,9 +4248,10 @@ slots:
       - Place
     range: date
 classes:
-  Place:
-    name: Place
-    from_schema: https://w3id.org/Geonames
+  GeonamesFeature:
+    name: GeonamesFeature
+    class_uri: geonames:Feature
+    from_schema: http://www.geonames.org/ontology#
     slots:
       - geonameid
       - name
@@ -4265,9 +4272,5 @@ classes:
       - dem
       - timezone
       - modification date
-    unique_keys:
-      admin4 code_key:
-        unique_key_name: admin4 code_key
-        unique_key_slots:
-          - admin4 code
-source_file: /Users/palazzo/src/github.com/arqtrad/schema/src/wasth_schema/schema/classes/geonames.yaml
+
+source_file: src/wasth_schema/schema/classes/geonames.yaml

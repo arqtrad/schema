@@ -163,6 +163,7 @@ imports:
   - classes/temporal
   - classes/thing
   - classes/work
+  - classes/geonames
 
 
 classes:
@@ -186,6 +187,12 @@ classes:
         multivalued: true
         inlined_as_list: true
         range: Concept
+
+      places:
+        description: Lugares indexados pelo Geonames
+        multivalued: true
+        inlined_as_list: true
+        range: GeonamesFeature
 
 
 enums:
