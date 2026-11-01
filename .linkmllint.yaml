@@ -1,0 +1,5 @@
+# Use all the recommended rules and also enable the no_empty_title rule
+extends: recommended
+rules:
+  standard_naming:
+    level: disabled
