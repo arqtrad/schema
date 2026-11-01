@@ -310,21 +310,14 @@ classes:
 
 
       part_of:
-        slot_uri: dcterms:isPartOf  # lido:partOfPlace
+        slot_uri: dcterms:isPartOf
         range: TypedReference
         multivalued: true
         inlined_as_list: true
         description: >-
-          Permite identificar o contexto geográfico ou administrativo ao qual
-          a edificação se subordina, ou ainda um conjunto arquitetônico,
-          urbanístico ou conceitual (por exemplo, uma série de casas) do qual
-          ela faz parte.
-
-          ---------------------------------------------------------------------
-
-          A set of structured information about a place that is the broader
-          context for the place in focus, such as the district, state, or
-          nation to which a city belongs.
+          Permite identificar um conjunto arquitetônico, urbanístico ou
+          conceitual (por exemplo, uma série de casas) do qual a edificação faz
+          parte.
 
       former_site:
         range: Site
@@ -421,6 +414,9 @@ classes:
           programa WASTH.
         range: OlcPlusCode11
 
+      title:
+        required: true
+
       record_author:
         required: true
 
@@ -509,6 +505,22 @@ classes:
 
     attributes:
 
+      part_of:
+        slot_uri: lido:partOfPlace
+        range: GeonamesFeature
+        inlined: true
+        description: >
+          Permite identificar o contexto geográfico ou administrativo ao qual
+          a edificação se subordina.
+          Referenciar a localidade por meio do código identificador na forma:
+          `geonameid: 1234`
+
+          ---------------------------------------------------------------------
+
+          A set of structured information about a place that is the broader
+          context for the place in focus, such as the district, state, or
+          nation to which a city belongs.
+
       site_type:
         alias: type
         range: RepositoryType
@@ -516,6 +528,9 @@ classes:
 
       location:
         required: true
+        slot_uri: geo:hasDefaultGeometry
+        range: GeographicPoint
+        inlined: true
         description: >-
           Coordenadas geográficas do ponto que permite situar a edificação no
           mapa para fins ilustrativos.
@@ -526,11 +541,11 @@ classes:
 
           Representative point location for the place, normally in EPSG:4326
           (WGS 84).
-        slot_uri: geo:hasDefaultGeometry
-        range: GeographicPoint
-        inlined: true
 
       extent:
+        slot_uri: geo:hasGeometry
+        range: GeographicExtent
+        inlined: true
         description: >-
           Área da implantação da edificação ou sítio cadastrado.
           Usar o sistema de coordenadas geográficas EPSG:4326 (WGS84) sempre
@@ -540,9 +555,6 @@ classes:
 
           Polygonal, multipolygonal, or linear geographic extent associated
           with the place.
-        slot_uri: geo:hasGeometry
-        range: GeographicExtent
-        inlined: true
 
       event_place_type:
         range: EventPlaceType
@@ -550,13 +562,6 @@ classes:
           Se relevante para a ação, indicar se se trata do local de
           descobrimento do objeto, do local de origem ou destino do seu
           translado. Omitir caso o evento não se enquadre nesses casos.
-
-    slot_usage:
-      id:
-        range: GeonamesId
-        description: >
-          Incluir aqui um identificador da base geonames na forma
-          `geonames:1234`.
 
 
   GeographicPoint:

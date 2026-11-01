@@ -58,14 +58,13 @@ classes:
     attributes:
 
       title:
+        slot_uri: dcterms:title
+        range: string
+        exact_mappings:
+          - schema:name
         description: >
           Nome pelo qual este item é mais comumente conhecido.
           Outros nomes podem ser cadastrados em `alt_name`.
-        required: true
-        range: string
-        slot_uri: dcterms:title
-        exact_mappings:
-          - schema:name
 
       title_source:
         description: >-
