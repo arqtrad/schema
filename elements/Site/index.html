@@ -393,6 +393,17 @@
 
 
 
+      Site : part_of
+
+
+
+
+
+        Site --&gt; "0..1" GeonamesFeature : part_of
+        click GeonamesFeature href "../GeonamesFeature/"
+
+
+
       Site : record_author
 
       Site : record_date
@@ -491,6 +502,12 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../part_of/">part_of</a></td>
+<td>0..1 <br/> <a href="../GeonamesFeature/">GeonamesFeature</a></td>
+<td>Permite identificar o contexto geográfico ou administrativo ao qual a edifica...</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../site_type/">site_type</a></td>
 <td>0..1 <br/> <a href="../RepositoryType/">RepositoryType</a></td>
 <td></td>
@@ -516,8 +533,8 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1 <br/> <a href="../GeonamesId/">GeonamesId</a></td>
-<td>Incluir aqui um identificador da base geonames na forma <code>geonames:1234</code></td>
+<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>Identificador globalmente único para este objeto ou recurso</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -564,7 +581,7 @@
 </tr>
 <tr>
 <td><a href="../title/">title</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Nome pelo qual este item é mais comumente conhecido</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
@@ -724,14 +741,26 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:DefinedRegion</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">slot_usage</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">id</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Incluir</span><span class="nv"> </span><span class="s">aqui</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">identificador</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">base</span><span class="nv"> </span><span class="s">geonames</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">forma</span><span class="nv"> </span><span class="s">`geonames:1234`.</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">part_of</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">part_of</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Permite</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">geográfico</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">administrativo</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">qual</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">subordina.</span><span class="nv"> </span><span class="s">Referenciar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">localidade</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">código</span><span class="nv"> </span><span class="s">identificador</span>
+<span class="w">      </span><span class="s">na</span><span class="nv"> </span><span class="s">forma:</span><span class="nv"> </span><span class="s">`geonameid:</span><span class="nv"> </span><span class="s">1234`</span>
+
+<span class="w">      </span><span class="s">---------------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="s">A</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">place</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">broader</span><span class="nv"> </span><span class="s">context</span><span class="nv"> </span><span class="s">for</span>
+<span class="w">      </span><span class="s">the</span><span class="nv"> </span><span class="s">place</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">focus,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">district,</span><span class="nv"> </span><span class="s">state,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">nation</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">city</span><span class="nv"> </span><span class="s">belongs.</span>
 
 <span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesId</span>
-<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/work</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:partOfPlace</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesFeature</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">site_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_type</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/work</span>
@@ -823,14 +852,27 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:DefinedRegion</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">slot_usage</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">id</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Incluir</span><span class="nv"> </span><span class="s">aqui</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">identificador</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">base</span><span class="nv"> </span><span class="s">geonames</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">forma</span><span class="nv"> </span><span class="s">`geonames:1234`.</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">part_of</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">part_of</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Permite</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">geográfico</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">administrativo</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">qual</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">subordina.</span><span class="nv"> </span><span class="s">Referenciar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">localidade</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">código</span><span class="nv"> </span><span class="s">identificador</span>
+<span class="w">      </span><span class="s">na</span><span class="nv"> </span><span class="s">forma:</span><span class="nv"> </span><span class="s">`geonameid:</span><span class="nv"> </span><span class="s">1234`</span>
+
+<span class="w">      </span><span class="s">---------------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="s">A</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">place</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">broader</span><span class="nv"> </span><span class="s">context</span><span class="nv"> </span><span class="s">for</span>
+<span class="w">      </span><span class="s">the</span><span class="nv"> </span><span class="s">place</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">focus,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">district,</span><span class="nv"> </span><span class="s">state,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">nation</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">city</span><span class="nv"> </span><span class="s">belongs.</span>
 
 <span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesId</span>
-<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/work</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:partOfPlace</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesFeature</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">site_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_type</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/work</span>
@@ -890,7 +932,7 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventPlaceType</span>
 <span class="w">  </span><span class="nt">id</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Incluir</span><span class="nv"> </span><span class="s">aqui</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">identificador</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">base</span><span class="nv"> </span><span class="s">geonames</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">forma</span><span class="nv"> </span><span class="s">`geonames:1234`.</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Identificador</span><span class="nv"> </span><span class="s">globalmente</span><span class="nv"> </span><span class="s">único</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">recurso.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
@@ -900,7 +942,7 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesId</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">record_author</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_author</span>
@@ -961,9 +1003,9 @@
 <span class="w">      </span><span class="s">No</span><span class="nv"> </span><span class="s">vocabulário</span><span class="nv"> </span><span class="s">controlado,</span><span class="nv"> </span><span class="s">preencher</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">OBRIGATORIAMENTE</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">`term:lido01193`</span>
 <span class="w">      </span><span class="s">("Objeto</span><span class="nv"> </span><span class="s">conceitual").</span>
 
-<span class="w">      </span><span class="s">---------------------------------------------------------------------</span>
-
-<span class="w">      </span><span class="s">The</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">Category</span><span class="nv"> </span><span class="s">Vocabulary</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">controlled</span><span class="nv"> </span><span class="s">list</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">terms</span><span class="nv"> </span><span class="s">recommended</span>
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">notes</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">Category</span><span class="nv"> </span><span class="s">Vocabulary</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">controlled</span><span class="nv"> </span><span class="s">list</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">terms</span><span class="nv"> </span><span class="s">recommended</span>
 <span class="w">      </span><span class="s">to</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">values</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">Category</span><span class="nv"> </span><span class="s">element.</span>
 
 <span class="w">      </span><span class="s">Examples</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">human-made</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">natural</span><span class="nv"> </span><span class="s">object.'</span>
@@ -1063,7 +1105,6 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">title_source</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title_source</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A fonte do título title_source é opcional ; um título pode ser atestado</span>

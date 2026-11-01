@@ -733,6 +733,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Coordenadas do ponto que situa o sítio na visualização do mapa</td>
 </tr>
 <tr>
+<td><a href="GeonamesFeature/">GeonamesFeature</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="Inscription/">Inscription</a></td>
 <td>A descrição da inscrição informa local, dimensões e características</td>
 </tr>
@@ -836,6 +840,22 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Define se o agente é uma pessoa, uma organização ou corporação, uma oficina, ...</td>
 </tr>
 <tr>
+<td><a href="admin1_code/">admin1_code</a></td>
+<td>Fipscode (subject to change to iso code), see exceptions below, see file admi...</td>
+</tr>
+<tr>
+<td><a href="admin2_code/">admin2_code</a></td>
+<td>Code for the second administrative division, a county in the US, see file adm...</td>
+</tr>
+<tr>
+<td><a href="admin3_code/">admin3_code</a></td>
+<td>code for third level administrative division, varchar(20)</td>
+</tr>
+<tr>
+<td><a href="admin4_code/">admin4_code</a></td>
+<td>code for fourth level administrative division, varchar(20)</td>
+</tr>
+<tr>
 <td><a href="alt/">alt</a></td>
 <td>Altitude em metros (separador decimal: ponto)</td>
 </tr>
@@ -844,12 +864,20 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>O bloco <code>alt_name</code> permite cadastrar outros nomes pelos quais o objeto ou con...</td>
 </tr>
 <tr>
+<td><a href="alternatenames/">alternatenames</a></td>
+<td>Alternatenames, comma separated, ascii names automatically transliterated, co...</td>
+</tr>
+<tr>
 <td><a href="appellation_preference/">appellation_preference</a></td>
 <td>Indica se o nome em questão deve ser oculto ou não, se é uma versão alternati...</td>
 </tr>
 <tr>
 <td><a href="appellation_type/">appellation_type</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="asciiname/">asciiname</a></td>
+<td>Name of geographical point in plain ascii characters, varchar(200)</td>
 </tr>
 <tr>
 <td><a href="bibliographic_citation/">bibliographic_citation</a></td>
@@ -866,6 +894,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="category/">category</a></td>
 <td>Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário...</td>
+</tr>
+<tr>
+<td><a href="cc2/">cc2</a></td>
+<td>Alternate country codes, comma separated, ISO-3166 2-letter country code, 200...</td>
 </tr>
 <tr>
 <td><a href="classification_genre/">classification_genre</a></td>
@@ -908,6 +940,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>No QGIS, usar a ferramenta <code>Get WKT</code> para obter as coordenadas do polígono (`...</td>
 </tr>
 <tr>
+<td><a href="country_code/">country_code</a></td>
+<td>ISO-3166 2-letter country code, 2 characters</td>
+</tr>
+<tr>
 <td><a href="credit/">credit</a></td>
 <td>Informação sobre autoria ou responsabilidade</td>
 </tr>
@@ -924,12 +960,20 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Usar o formato ISO-8601 (AAAA-MM-DD)</td>
 </tr>
 <tr>
+<td><a href="dem/">dem</a></td>
+<td>Digital elevation model, srtm3 or gtopo30, average elevation of 3''x3'' (ca 9...</td>
+</tr>
+<tr>
 <td><a href="description/">description</a></td>
 <td>A human-readable description for a thing</td>
 </tr>
 <tr>
 <td><a href="display_date/">display_date</a></td>
 <td>Permite a expressão descritiva das datas de início e fim do evento, para cont...</td>
+</tr>
+<tr>
+<td><a href="elevation/">elevation</a></td>
+<td>in meters, integer</td>
 </tr>
 <tr>
 <td><a href="end_date/">end_date</a></td>
@@ -956,6 +1000,14 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Área da implantação da edificação ou sítio cadastrado</td>
 </tr>
 <tr>
+<td><a href="feature_class/">feature_class</a></td>
+<td>See <a href="http://www">http://www</a></td>
+</tr>
+<tr>
+<td><a href="feature_code/">feature_code</a></td>
+<td>See <a href="http://www">http://www</a></td>
+</tr>
+<tr>
 <td><a href="format/">format</a></td>
 <td>Campo disciplinado pela especificação <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DublinCore</a> no campo [format](https://...</td>
 </tr>
@@ -970,6 +1022,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="geometry_type/">geometry_type</a></td>
 <td>Tipo da geometria descrita pelas coordenadas</td>
+</tr>
+<tr>
+<td><a href="geonameid/">geonameid</a></td>
+<td>Integer id of record in geonames database</td>
 </tr>
 <tr>
 <td><a href="holder/">holder</a></td>
@@ -1002,6 +1058,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="lat/">lat</a></td>
 <td>Latitude em graus decimais (separador decimal: ponto)</td>
+</tr>
+<tr>
+<td><a href="latitude/">latitude</a></td>
+<td>Latitude in decimal degrees (wgs84)</td>
 </tr>
 <tr>
 <td><a href="legal_body/">legal_body</a></td>
@@ -1038,6 +1098,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="lon/">lon</a></td>
 <td>Longitude em graus decimais (separador decimal: ponto)</td>
+</tr>
+<tr>
+<td><a href="longitude/">longitude</a></td>
+<td>Longitude in decimal degrees (wgs84)</td>
 </tr>
 <tr>
 <td><a href="mapping/">mapping</a></td>
@@ -1092,6 +1156,14 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>An index element for the method by which the event is or was carried out</td>
 </tr>
 <tr>
+<td><a href="modification_date/">modification_date</a></td>
+<td>date of last modification in yyyy-MM-dd format</td>
+</tr>
+<tr>
+<td><a href="name/">name</a></td>
+<td>Name of geographical point (utf8) varchar(200)</td>
+</tr>
+<tr>
 <td><a href="narrower/">narrower</a></td>
 <td>Um conceito de significação mais específica</td>
 </tr>
@@ -1113,7 +1185,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="part_of/">part_of</a></td>
-<td>Permite identificar o contexto geográfico ou administrativo ao qual a edifica...</td>
+<td>Permite identificar um conjunto arquitetônico, urbanístico ou conceitual (por...</td>
 </tr>
 <tr>
 <td><a href="period_name_type/">period_name_type</a></td>
@@ -1122,6 +1194,14 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="perspective/">perspective</a></td>
 <td>Tipo de vista do desenho</td>
+</tr>
+<tr>
+<td><a href="places/">places</a></td>
+<td>Lugares indexados pelo Geonames</td>
+</tr>
+<tr>
+<td><a href="population/">population</a></td>
+<td>bigint (8 byte int)</td>
 </tr>
 <tr>
 <td><a href="preview_image/">preview_image</a></td>
@@ -1264,6 +1344,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>A set of structured information for a related object or work that is or was p...</td>
 </tr>
 <tr>
+<td><a href="timezone/">timezone</a></td>
+<td>the iana timezone id (see file timeZone</td>
+</tr>
+<tr>
 <td><a href="title/">title</a></td>
 <td>Nome pelo qual este item é mais comumente conhecido</td>
 </tr>
@@ -1343,6 +1427,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Tipos de termos de vocabulário baseados no Getty AAT</td>
 </tr>
 <tr>
+<td><a href="CountryCodeEnum/">CountryCodeEnum</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="DateType/">DateType</a></td>
 <td>Exatidão da data conhecida</td>
 </tr>
@@ -1353,6 +1441,14 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="EventType/">EventType</a></td>
 <td>O tipo de incidência sobre a edificação que o evento descreve</td>
+</tr>
+<tr>
+<td><a href="FeatureClassEnum/">FeatureClassEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="FeatureCodeEnum/">FeatureCodeEnum</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="GeometryType/">GeometryType</a></td>
@@ -1421,6 +1517,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="SubjectType/">SubjectType</a></td>
 <td>The type attribute indicates the kind of subject information, whether it is, ...</td>
+</tr>
+<tr>
+<td><a href="TimezoneEnum/">TimezoneEnum</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="TitleType/">TitleType</a></td>
