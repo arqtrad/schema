@@ -142,7 +142,7 @@ prefixes:
   iso: http://purl.org/iso25964/skos-thes#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   geo: http://www.opengis.net/ont/geosparql#
-  geonames: http://www.geonames.org/ontology#
+  geonames: https://www.geonames.org/ontology#
   la: https://linked.art/ns/terms/
   aat: http://vocab.getty.edu/aat/
   tgn: http://vocab.getty.edu/tgn/
