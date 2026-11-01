@@ -192,7 +192,6 @@ classes:
       - description
       - category
       - record_rights
-      # Os campos abaixo são opcionais
       - bibliographic_citation
       - content
 
@@ -265,7 +264,7 @@ slots:
     designates_type: true
     range: uriorcurie
     required: true
-    description: >-
+    description: >
       Uma classificação ampla para o objeto descrito na ficha, usando o
       vocabulário controlado do LIDO.
 
@@ -275,13 +274,12 @@ slots:
       No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com
       `term:lido01193` ("Objeto conceitual").
 
-      ---------------------------------------------------------------------
+    notes:
 
-      The LIDO Category Vocabulary is a structured controlled list of terms
-      recommended to use as values in the LIDO Category element.
+      - The LIDO Category Vocabulary is a structured controlled list of terms
+        recommended to use as values in the LIDO Category element.
 
-      Examples are human-made object or natural object.
-    # ifabsent: string(term:lido00096)
+        Examples are human-made object or natural object.
 
   record_rights:
     range: Right
