@@ -254,7 +254,6 @@ slots:
       reescrita.
 
   record_date:
-    alias: date
     range: date
     slot_uri: dcterms:created
     description: Data de inclusão da ficha.
@@ -263,7 +262,6 @@ slots:
     slot_uri: term:lidoCategory
     designates_type: true
     range: uriorcurie
-    required: true
     description: >
       Uma classificação ampla para o objeto descrito na ficha, usando o
       vocabulário controlado do LIDO.
@@ -287,15 +285,15 @@ slots:
     inlined_as_list: true
     description: >
       Informações estruturadas sobre os direitos que incidem sobre o
-      conteúdo textual desta ficha.
+      conteúdo textual desta ficha e o detentor desses direitos.
 
       ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da
       ficha, não sobre os direitos incidentes sobre o objeto descrito.
 
-      ---------------------------------------------------------------------
+    notes:
 
-      A set of structured information about rights regarding the content
-      provided in this LIDO record.
+      - A set of structured information about rights regarding the content
+        provided in this LIDO record.
 
   legal_body:
     range: LegalBody

@@ -221,6 +221,7 @@ linkml_meta = LinkMLMeta(
             "classes/temporal",
             "classes/thing",
             "classes/work",
+            "classes/geonames",
         ],
         "license": "MIT",
         "name": "wasth_schema",
@@ -251,7 +252,7 @@ linkml_meta = LinkMLMeta(
             },
             "geonames": {
                 "prefix_prefix": "geonames",
-                "prefix_reference": "http://www.geonames.org/ontology#",
+                "prefix_reference": "https://www.geonames.org/ontology#",
             },
             "iso": {
                 "prefix_prefix": "iso",
@@ -385,6 +386,2917 @@ linkml_meta = LinkMLMeta(
         },
     }
 )
+
+
+class FeatureClassEnum(str, Enum):
+    administrativo = "A"
+    """
+    country, state, region,...
+    """
+    hidrografia = "H"
+    """
+    stream, lake, ...
+    """
+    paisagem = "L"
+    """
+    parks, area, ...
+    """
+    povoações = "P"
+    """
+    city, village,...
+    """
+    estradas = "R"
+    """
+    road, railroad
+    """
+    construções = "S"
+    """
+    spot, building, farm
+    """
+    topografia = "T"
+    """
+    mountain,hill,rock,...
+    """
+    batimetria = "U"
+    """
+    undersea
+    """
+    vegetação = "V"
+    """
+    forest,heath,...
+    """
+
+
+class FeatureCodeEnum(str, Enum):
+    first_order_administrative_division = "ADM1"
+    """
+    a primary administrative division of a country, such as a state in the United States
+    """
+    historical_first_order_administrative_division = "ADM1H"
+    """
+    a former first-order administrative division
+    """
+    second_order_administrative_division = "ADM2"
+    """
+    a subdivision of a first-order administrative division
+    """
+    historical_second_order_administrative_division = "ADM2H"
+    """
+    a former second-order administrative division
+    """
+    third_order_administrative_division = "ADM3"
+    """
+    a subdivision of a second-order administrative division
+    """
+    historical_third_order_administrative_division = "ADM3H"
+    """
+    a former third-order administrative division
+    """
+    fourth_order_administrative_division = "ADM4"
+    """
+    a subdivision of a third-order administrative division
+    """
+    historical_fourth_order_administrative_division = "ADM4H"
+    """
+    a former fourth-order administrative division
+    """
+    fifth_order_administrative_division = "ADM5"
+    """
+    a subdivision of a fourth-order administrative division
+    """
+    historical_fifth_order_administrative_division = "ADM5H"
+    """
+    a former fifth-order administrative division
+    """
+    administrative_division = "ADMD"
+    """
+    an administrative division of a country, undifferentiated as to administrative level
+    """
+    historical_administrative_division = "ADMDH"
+    """
+    a former administrative division of a political entity, undifferentiated as to administrative level
+    """
+    school_district = "ADMS"
+    """
+    school district
+    """
+    leased_area = "LTER"
+    """
+    a tract of land leased to another country, usually for military installations
+    """
+    political_entity = "PCL"
+    dependent_political_entity = "PCLD"
+    freely_associated_state = "PCLF"
+    historical_political_entity = "PCLH"
+    """
+    a former political entity
+    """
+    independent_political_entity = "PCLI"
+    section_of_independent_political_entity = "PCLIX"
+    semi_independent_political_entity = "PCLS"
+    parish = "PRSH"
+    """
+    an ecclesiastical district
+    """
+    territory = "TERR"
+    zone = "ZN"
+    buffer_zone = "ZNB"
+    """
+    a zone recognized as a buffer between two nations in which military presence is minimal or absent
+    """
+    seaplane_landing_area = "AIRS"
+    """
+    a place on a waterbody where floatplanes land and take off
+    """
+    anchorage = "ANCH"
+    """
+    an area where vessels may anchor
+    """
+    bay = "BAY"
+    """
+    a coastal indentation between two capes or headlands, larger than a cove but smaller than a gulf
+    """
+    bays = "BAYS"
+    """
+    coastal indentations between two capes or headlands, larger than a cove but smaller than a gulf
+    """
+    bightLEFT_PARENTHESISsRIGHT_PARENTHESIS = "BGHT"
+    """
+    an open body of water forming a slight recession in a coastline
+    """
+    bankLEFT_PARENTHESISsRIGHT_PARENTHESIS = "BNK"
+    """
+    an elevation, typically located on a shelf, over which the depth of water is relatively shallow but sufficient for most surface navigation
+    """
+    stream_bank = "BNKR"
+    """
+    a sloping margin of a stream channel which normally confines the stream to its channel on land
+    """
+    section_of_bank = "BNKX"
+    bogLEFT_PARENTHESISsRIGHT_PARENTHESIS = "BOG"
+    """
+    a wetland characterized by peat forming sphagnum moss, sedge, and other acid-water plants
+    """
+    icecap = "CAPG"
+    """
+    a dome-shaped mass of glacial ice covering an area of mountain summits or other high lands; smaller than an ice sheet
+    """
+    channel = "CHN"
+    """
+    the deepest part of a stream, bay, lagoon, or strait, through which the main current flows
+    """
+    lake_channelLEFT_PARENTHESISsRIGHT_PARENTHESIS = "CHNL"
+    """
+    that part of a lake having water deep enough for navigation between islands, shoals, etc.
+    """
+    marine_channel = "CHNM"
+    """
+    that part of a body of water deep enough for navigation through an area otherwise not suitable
+    """
+    navigation_channel = "CHNN"
+    """
+    a buoyed channel of sufficient depth for the safe navigation of vessels
+    """
+    confluence = "CNFL"
+    """
+    a place where two or more streams or intermittent streams flow together
+    """
+    canal = "CNL"
+    """
+    an artificial watercourse
+    """
+    aqueduct = "CNLA"
+    """
+    a conduit used to carry water
+    """
+    canal_bend = "CNLB"
+    """
+    a conspicuously curved or bent section of a canal
+    """
+    drainage_canal = "CNLD"
+    """
+    an artificial waterway carrying water away from a wetland or from drainage ditches
+    """
+    irrigation_canal = "CNLI"
+    """
+    a canal which serves as a main conduit for irrigation water
+    """
+    navigation_canalLEFT_PARENTHESISsRIGHT_PARENTHESIS = "CNLN"
+    """
+    a watercourse constructed for navigation of vessels
+    """
+    abandoned_canal = "CNLQ"
+    underground_irrigation_canalLEFT_PARENTHESISsRIGHT_PARENTHESIS = "CNLSB"
+    """
+    a gently inclined underground tunnel bringing water for irrigation from aquifers
+    """
+    section_of_canal = "CNLX"
+    coveLEFT_PARENTHESISsRIGHT_PARENTHESIS = "COVE"
+    """
+    a small coastal indentation, smaller than a bay
+    """
+    tidal_creekLEFT_PARENTHESISsRIGHT_PARENTHESIS = "CRKT"
+    """
+    a meandering channel in a coastal wetland subject to bi-directional tidal currents
+    """
+    current = "CRNT"
+    """
+    a horizontal flow of water in a given direction with uniform velocity
+    """
+    cutoff = "CUTF"
+    """
+    a channel formed as a result of a stream cutting through a meander neck
+    """
+    dockLEFT_PARENTHESISsRIGHT_PARENTHESIS = "DCK"
+    """
+    a waterway between two piers, or cut into the land for the berthing of ships
+    """
+    docking_basin = "DCKB"
+    """
+    a part of a harbor where ships dock
+    """
+    icecap_dome = "DOMG"
+    """
+    a comparatively elevated area on an icecap
+    """
+    icecap_depression = "DPRG"
+    """
+    a comparatively depressed area on an icecap
+    """
+    ditch = "DTCH"
+    """
+    a small artificial watercourse dug for draining or irrigating the land
+    """
+    drainage_ditch = "DTCHD"
+    """
+    a ditch which serves to drain the land
+    """
+    irrigation_ditch = "DTCHI"
+    """
+    a ditch which serves to distribute irrigation water
+    """
+    ditch_mouthLEFT_PARENTHESISsRIGHT_PARENTHESIS = "DTCHM"
+    """
+    an area where a drainage ditch enters a lagoon, lake or bay
+    """
+    estuary = "ESTY"
+    """
+    a funnel-shaped stream mouth or embayment where fresh water mixes with sea water under tidal influences
+    """
+    fishing_area = "FISH"
+    """
+    a fishing ground, bank or area where fishermen go to catch fish
+    """
+    fjord = "FJD"
+    """
+    a long, narrow, steep-walled, deep-water arm of the sea at high latitudes, usually along mountainous coasts
+    """
+    fjords = "FJDS"
+    """
+    long, narrow, steep-walled, deep-water arms of the sea at high latitudes, usually along mountainous coasts
+    """
+    waterfallLEFT_PARENTHESISsRIGHT_PARENTHESIS = "FLLS"
+    """
+    a perpendicular or very steep descent of the water of a stream
+    """
+    section_of_waterfallLEFT_PARENTHESISsRIGHT_PARENTHESIS = "FLLSX"
+    mud_flatLEFT_PARENTHESISsRIGHT_PARENTHESIS = "FLTM"
+    """
+    a relatively level area of mud either between high and low tide lines, or subject to flooding
+    """
+    tidal_flatLEFT_PARENTHESISsRIGHT_PARENTHESIS = "FLTT"
+    """
+    a large flat area of mud or sand attached to the shore and alternately covered and uncovered by the tide
+    """
+    glacierLEFT_PARENTHESISsRIGHT_PARENTHESIS = "GLCR"
+    """
+    a mass of ice, usually at high latitudes or high elevations, with sufficient thickness to flow away from the source area in lobes, tongues, or masses
+    """
+    gulf = "GULF"
+    """
+    a large recess in the coastline, larger than a bay
+    """
+    geyser = "GYSR"
+    """
+    a type of hot spring with intermittent eruptions of jets of hot water and steam
+    """
+    harborLEFT_PARENTHESISsRIGHT_PARENTHESIS = "HBR"
+    """
+    a haven or space of deep water so sheltered by the adjacent land as to afford a safe anchorage for ships
+    """
+    section_of_harbor = "HBRX"
+    inlet = "INLT"
+    """
+    a narrow waterway extending into the land, or connecting a bay or lagoon with a larger body of water
+    """
+    former_inlet = "INLTQ"
+    """
+    an inlet which has been filled in, or blocked by deposits
+    """
+    lake_bedLEFT_PARENTHESISsRIGHT_PARENTHESIS = "LBED"
+    """
+    a dried up or drained area of a former lake
+    """
+    lagoon = "LGN"
+    """
+    a shallow coastal waterbody, completely or partly separated from a larger body of water by a barrier island, coral reef or other depositional feature
+    """
+    lagoons = "LGNS"
+    """
+    shallow coastal waterbodies, completely or partly separated from a larger body of water by a barrier island, coral reef or other depositional feature
+    """
+    section_of_lagoon = "LGNX"
+    lake = "LK"
+    """
+    a large inland body of standing water
+    """
+    crater_lake = "LKC"
+    """
+    a lake in a crater or caldera
+    """
+    intermittent_lake = "LKI"
+    salt_lake = "LKN"
+    """
+    an inland body of salt water with no outlet
+    """
+    intermittent_salt_lake = "LKNI"
+    oxbow_lake = "LKO"
+    """
+    a crescent-shaped lake commonly found adjacent to meandering streams
+    """
+    intermittent_oxbow_lake = "LKOI"
+    lakes = "LKS"
+    """
+    large inland bodies of standing water
+    """
+    underground_lake = "LKSB"
+    """
+    a standing body of water in a cave
+    """
+    crater_lakes = "LKSC"
+    """
+    lakes in a crater or caldera
+    """
+    intermittent_lakes = "LKSI"
+    salt_lakes = "LKSN"
+    """
+    inland bodies of salt water with no outlet
+    """
+    intermittent_salt_lakes = "LKSNI"
+    section_of_lake = "LKX"
+    salt_evaporation_ponds = "MFGN"
+    """
+    diked salt ponds used in the production of solar evaporated salt
+    """
+    mangrove_swamp = "MGV"
+    """
+    a tropical tidal mud flat characterized by mangrove vegetation
+    """
+    moorLEFT_PARENTHESISsRIGHT_PARENTHESIS = "MOOR"
+    """
+    an area of open ground overlaid with wet peaty soils
+    """
+    marshLEFT_PARENTHESISesRIGHT_PARENTHESIS = "MRSH"
+    """
+    a wetland dominated by grass-like vegetation
+    """
+    salt_marsh = "MRSHN"
+    """
+    a flat area, subject to periodic salt water inundation, dominated by grassy salt-tolerant plants
+    """
+    narrows = "NRWS"
+    """
+    a navigable narrow part of a bay, strait, river, etc.
+    """
+    ocean = "OCN"
+    """
+    one of the major divisions of the vast expanse of salt water covering part of the earth
+    """
+    overfalls = "OVF"
+    """
+    an area of breaking waves caused by the meeting of currents or by waves moving against the current
+    """
+    pond = "PND"
+    """
+    a small standing waterbody
+    """
+    intermittent_pond = "PNDI"
+    salt_pond = "PNDN"
+    """
+    a small standing body of salt water often in a marsh or swamp, usually along a seacoast
+    """
+    intermittent_salt_pondLEFT_PARENTHESISsRIGHT_PARENTHESIS = "PNDNI"
+    ponds = "PNDS"
+    """
+    small standing waterbodies
+    """
+    fishponds = "PNDSF"
+    """
+    ponds or enclosures in which fish are kept or raised
+    """
+    intermittent_ponds = "PNDSI"
+    salt_ponds = "PNDSN"
+    """
+    small standing bodies of salt water often in a marsh or swamp, usually along a seacoast
+    """
+    poolLEFT_PARENTHESISsRIGHT_PARENTHESIS = "POOL"
+    """
+    a small and comparatively still, deep part of a larger body of water such as a stream or harbor; or a small body of standing water
+    """
+    intermittent_pool = "POOLI"
+    reach = "RCH"
+    """
+    a straight section of a navigable stream or channel between two bends
+    """
+    icecap_ridge = "RDGG"
+    """
+    a linear elevation on an icecap
+    """
+    roadstead = "RDST"
+    """
+    an open anchorage affording less protection than a harbor
+    """
+    reefLEFT_PARENTHESISsRIGHT_PARENTHESIS = "RF"
+    """
+    a surface-navigation hazard composed of consolidated material
+    """
+    coral_reefLEFT_PARENTHESISsRIGHT_PARENTHESIS = "RFC"
+    """
+    a surface-navigation hazard composed of coral
+    """
+    section_of_reef = "RFX"
+    rapids = "RPDS"
+    """
+    a turbulent section of a stream associated with a steep, irregular stream bed
+    """
+    reservoirLEFT_PARENTHESISsRIGHT_PARENTHESIS = "RSV"
+    """
+    an artificial pond or lake
+    """
+    intermittent_reservoir = "RSVI"
+    water_tank = "RSVT"
+    """
+    a contained pool or tank of water at, below, or above ground level
+    """
+    ravineLEFT_PARENTHESISsRIGHT_PARENTHESIS = "RVN"
+    """
+    a small, narrow, deep, steep-sided stream channel, smaller than a gorge
+    """
+    sabkhaLEFT_PARENTHESISsRIGHT_PARENTHESIS = "SBKH"
+    """
+    a salt flat or salt encrusted plain subject to periodic inundation from flooding or high tides
+    """
+    sound = "SD"
+    """
+    a long arm of the sea forming a channel between the mainland and an island or islands; or connecting two larger bodies of water
+    """
+    sea = "SEA"
+    """
+    a large body of salt water more or less confined by continuous land or chains of islands forming a subdivision of an ocean
+    """
+    shoalLEFT_PARENTHESISsRIGHT_PARENTHESIS = "SHOL"
+    """
+    a surface-navigation hazard composed of unconsolidated material
+    """
+    sill = "SILU"
+    """
+    the low part of a gap or saddle separating basins
+    """
+    springLEFT_PARENTHESISsRIGHT_PARENTHESIS = "SPNG"
+    """
+    a place where ground water flows naturally out of the ground
+    """
+    sulphur_springLEFT_PARENTHESISsRIGHT_PARENTHESIS = "SPNS"
+    """
+    a place where sulphur ground water flows naturally out of the ground
+    """
+    hot_springLEFT_PARENTHESISsRIGHT_PARENTHESIS = "SPNT"
+    """
+    a place where hot ground water flows naturally out of the ground
+    """
+    stream = "STM"
+    """
+    a body of running water moving to a lower level in a channel on land
+    """
+    anabranch = "STMA"
+    """
+    a diverging branch flowing out of a main stream and rejoining it downstream
+    """
+    stream_bend = "STMB"
+    """
+    a conspicuously curved or bent segment of a stream
+    """
+    canalized_stream = "STMC"
+    """
+    a stream that has been substantially ditched, diked, or straightened
+    """
+    distributaryLEFT_PARENTHESIS_iesRIGHT_PARENTHESIS = "STMD"
+    """
+    a branch which flows away from the main stream, as in a delta or irrigation canal
+    """
+    headwaters = "STMH"
+    """
+    the source and upper part of a stream, including the upper drainage basin
+    """
+    intermittent_stream = "STMI"
+    section_of_intermittent_stream = "STMIX"
+    stream_mouthLEFT_PARENTHESISsRIGHT_PARENTHESIS = "STMM"
+    """
+    a place where a stream discharges into a lagoon, lake, or the sea
+    """
+    abandoned_watercourse = "STMQ"
+    """
+    a former stream or distributary no longer carrying flowing water, but still evident due to lakes, wetland, topographic or vegetation patterns
+    """
+    streams = "STMS"
+    """
+    bodies of running water moving to a lower level in a channel on land
+    """
+    lost_river = "STMSB"
+    """
+    a surface stream that disappears into an underground channel, or dries up in an arid area
+    """
+    section_of_stream = "STMX"
+    strait = "STRT"
+    """
+    a relatively narrow waterway, usually narrower and less extensive than a sound, connecting two larger bodies of water
+    """
+    swamp = "SWMP"
+    """
+    a wetland dominated by tree vegetation
+    """
+    irrigation_system = "SYSI"
+    """
+    a network of ditches and one or more of the following elements: water supply, reservoir, canal, pump, well, drain, etc.
+    """
+    canal_tunnel = "TNLC"
+    """
+    a tunnel through which a canal passes
+    """
+    wadi = "WAD"
+    """
+    a valley or ravine, bounded by relatively steep banks, which in the rainy season becomes a watercourse; found primarily in North Africa and the Middle East
+    """
+    wadi_bend = "WADB"
+    """
+    a conspicuously curved or bent segment of a wadi
+    """
+    wadi_junction = "WADJ"
+    """
+    a place where two or more wadies join
+    """
+    wadi_mouth = "WADM"
+    """
+    the lower terminus of a wadi where it widens into an adjoining floodplain, depression, or waterbody
+    """
+    wadies = "WADS"
+    """
+    valleys or ravines, bounded by relatively steep banks, which in the rainy season become watercourses; found primarily in North Africa and the Middle East
+    """
+    section_of_wadi = "WADX"
+    whirlpool = "WHRL"
+    """
+    a turbulent, rotating movement of water in a stream
+    """
+    well = "WLL"
+    """
+    a cylindrical hole, pit, or tunnel drilled or dug down to a depth from which water, oil, or gas can be pumped or brought to the surface
+    """
+    abandoned_well = "WLLQ"
+    wells = "WLLS"
+    """
+    cylindrical holes, pits, or tunnels drilled or dug down to a depth from which water, oil, or gas can be pumped or brought to the surface
+    """
+    wetland = "WTLD"
+    """
+    an area subject to inundation, usually characterized by bog, marsh, or swamp vegetation
+    """
+    intermittent_wetland = "WTLDI"
+    watercourse = "WTRC"
+    """
+    a natural, well-defined channel produced by flowing water, or an artificial channel designed to carry flowing water
+    """
+    waterholeLEFT_PARENTHESISsRIGHT_PARENTHESIS = "WTRH"
+    """
+    a natural hole, hollow, or small depression that contains water, used by man and animals, especially in arid areas
+    """
+    agricultural_colony = "AGRC"
+    """
+    a tract of land set aside for agricultural settlement
+    """
+    amusement_park = "AMUS"
+    """
+    Amusement Park are theme parks, adventure parks offering entertainment, similar to funfairs but with a fix location
+    """
+    area = "AREA"
+    """
+    a tract of land without homogeneous character or boundaries
+    """
+    drainage_basin = "BSND"
+    """
+    an area drained by a stream
+    """
+    petroleum_basin = "BSNP"
+    """
+    an area underlain by an oil-rich structural basin
+    """
+    battlefield = "BTL"
+    """
+    a site of a land battle of historical importance
+    """
+    clearing = "CLG"
+    """
+    an area in a forest with trees removed
+    """
+    common = "CMN"
+    """
+    a park or pasture for community use
+    """
+    concession_area = "CNS"
+    """
+    a lease of land by a government for economic development, e.g., mining, forestry
+    """
+    coalfield = "COLF"
+    """
+    a region in which coal deposits of possible economic value occur
+    """
+    continent = "CONT"
+    """
+    continent: Europe, Africa, Asia, North America, South America, Oceania, Antarctica
+    """
+    coast = "CST"
+    """
+    a zone of variable width straddling the shoreline
+    """
+    business_center = "CTRB"
+    """
+    a place where a number of businesses are located
+    """
+    housing_development = "DEVH"
+    """
+    a tract of land on which many houses of similar design are built according to a development plan
+    """
+    fieldLEFT_PARENTHESISsRIGHT_PARENTHESIS = "FLD"
+    """
+    an open as opposed to wooded area
+    """
+    irrigated_fieldLEFT_PARENTHESISsRIGHT_PARENTHESIS = "FLDI"
+    """
+    a tract of level or terraced land which is irrigated
+    """
+    gasfield = "GASF"
+    """
+    an area containing a subterranean store of natural gas of economic value
+    """
+    grazing_area = "GRAZ"
+    """
+    an area of grasses and shrubs used for grazing
+    """
+    gravel_area = "GVL"
+    """
+    an area covered with gravel
+    """
+    industrial_area = "INDS"
+    """
+    an area characterized by industrial activity
+    """
+    arctic_land = "LAND"
+    """
+    a tract of land in the Arctic
+    """
+    locality = "LCTY"
+    """
+    a minor area or place of unspecified or mixed character and indefinite boundaries
+    """
+    military_base = "MILB"
+    """
+    a place used by an army or other armed service for storing arms and supplies, and for accommodating and training troops, a base from which operations can be initiated
+    """
+    mining_area = "MNA"
+    """
+    an area of mine sites where minerals and ores are extracted
+    """
+    maneuver_area = "MVA"
+    """
+    a tract of land where military field exercises are carried out
+    """
+    naval_base = "NVB"
+    """
+    an area used to store supplies, provide barracks for troops and naval personnel, a port for naval vessels, and from which operations are initiated
+    """
+    oasisLEFT_PARENTHESIS_esRIGHT_PARENTHESIS = "OAS"
+    """
+    an area in a desert made productive by the availability of water
+    """
+    oilfield = "OILF"
+    """
+    an area containing a subterranean store of petroleum of economic value
+    """
+    peat_cutting_area = "PEAT"
+    """
+    an area where peat is harvested
+    """
+    park = "PRK"
+    """
+    an area, often of forested land, maintained as a place of beauty, or for recreation
+    """
+    port = "PRT"
+    """
+    a place provided with terminal and transfer facilities for loading and discharging waterborne cargo or passengers, usually located in a harbor
+    """
+    quicksand = "QCKS"
+    """
+    an area where loose sand with water moving through it may become unstable when heavy objects are placed at the surface, causing them to sink
+    """
+    reserve = "RES"
+    """
+    a tract of public land reserved for future use or restricted as to use
+    """
+    agricultural_reserve = "RESA"
+    """
+    a tract of land reserved for agricultural reclamation and/or development
+    """
+    forest_reserve = "RESF"
+    """
+    a forested area set aside for preservation or controlled use
+    """
+    hunting_reserve = "RESH"
+    """
+    a tract of land used primarily for hunting
+    """
+    nature_reserve = "RESN"
+    """
+    an area reserved for the maintenance of a natural habitat
+    """
+    palm_tree_reserve = "RESP"
+    """
+    an area of palm trees where use is controlled
+    """
+    reservation = "RESV"
+    """
+    a tract of land set aside for aboriginal, tribal, or native populations
+    """
+    wildlife_reserve = "RESW"
+    """
+    a tract of public land reserved for the preservation of wildlife
+    """
+    region = "RGN"
+    """
+    an area distinguished by one or more observable physical or cultural characteristics
+    """
+    economic_region = "RGNE"
+    """
+    a region of a country established for economic development or for statistical purposes
+    """
+    historical_region = "RGNH"
+    """
+    a former historic area distinguished by one or more observable physical or cultural characteristics
+    """
+    lake_region = "RGNL"
+    """
+    a tract of land distinguished by numerous lakes
+    """
+    artillery_range = "RNGA"
+    """
+    a tract of land used for artillery firing practice
+    """
+    salt_area = "SALT"
+    """
+    a shallow basin or flat where salt accumulates after periodic inundation
+    """
+    snowfield = "SNOW"
+    """
+    an area of permanent snow and ice forming the accumulation area of a glacier
+    """
+    tribal_area = "TRB"
+    """
+    a tract of land used by nomadic or other tribes
+    """
+    populated_place = "PPL"
+    """
+    a city, town, village, or other agglomeration of buildings where people live and work
+    """
+    seat_of_a_first_order_administrative_division = "PPLA"
+    """
+    seat of a first-order administrative division (PPLC takes precedence over PPLA)
+    """
+    seat_of_a_second_order_administrative_division = "PPLA2"
+    seat_of_a_third_order_administrative_division = "PPLA3"
+    seat_of_a_fourth_order_administrative_division = "PPLA4"
+    seat_of_a_fifth_order_administrative_division = "PPLA5"
+    capital_of_a_political_entity = "PPLC"
+    """
+    capital of a political entity designated as an independent state
+    """
+    capital_of_a_dependency_or_special_area = "PPLCD"
+    """
+    capital or administrative center of a dependent political territory or area of special sovereignty
+    """
+    historical_capital_of_a_political_entity = "PPLCH"
+    """
+    a former capital of a political entity
+    """
+    farm_village = "PPLF"
+    """
+    a populated place where the population is largely engaged in agricultural activities
+    """
+    seat_of_government_of_a_political_entity = "PPLG"
+    historical_populated_place = "PPLH"
+    """
+    a populated place that no longer exists
+    """
+    populated_locality = "PPLL"
+    """
+    an area similar to a locality but with a small group of dwellings or other buildings
+    """
+    abandoned_populated_place = "PPLQ"
+    religious_populated_place = "PPLR"
+    """
+    a populated place whose population is largely engaged in religious occupations
+    """
+    populated_places = "PPLS"
+    """
+    cities, towns, villages, or other agglomerations of buildings where people live and work
+    """
+    destroyed_populated_place = "PPLW"
+    """
+    a village, town or city destroyed by a natural disaster, or by war
+    """
+    section_of_populated_place = "PPLX"
+    israeli_settlement = "STLMT"
+    causeway = "CSWY"
+    """
+    a raised roadway across wet ground or shallow water
+    """
+    oil_pipeline = "OILP"
+    """
+    a pipeline used for transporting oil
+    """
+    promenade = "PRMN"
+    """
+    a place for public walking, usually along a beach front
+    """
+    portage = "PTGE"
+    """
+    a place where boats, goods, etc., are carried overland between navigable waters
+    """
+    road = "RD"
+    """
+    an open way with improved surface for transportation of animals, people and vehicles
+    """
+    ancient_road = "RDA"
+    """
+    the remains of a road used by ancient cultures
+    """
+    road_bend = "RDB"
+    """
+    a conspicuously curved or bent section of a road
+    """
+    road_cut = "RDCUT"
+    """
+    an excavation cut through a hill or ridge for a road
+    """
+    road_junction = "RDJCT"
+    """
+    a place where two or more roads join
+    """
+    railroad_junction = "RJCT"
+    """
+    a place where two or more railroad tracks join
+    """
+    railroad = "RR"
+    """
+    a permanent twin steel-rail track on which freight and passenger cars move long distances
+    """
+    abandoned_railroad = "RRQ"
+    caravan_route = "RTE"
+    """
+    the route taken by caravans
+    """
+    railroad_yard = "RYD"
+    """
+    a system of tracks used for the making up of trains, and switching and storing freight cars
+    """
+    street = "ST"
+    """
+    a paved urban thoroughfare
+    """
+    stock_route = "STKR"
+    """
+    a route taken by livestock herds
+    """
+    tunnel = "TNL"
+    """
+    a subterranean passageway for transportation
+    """
+    natural_tunnel = "TNLN"
+    """
+    a cave that is open at both ends
+    """
+    road_tunnel = "TNLRD"
+    """
+    a tunnel through which a road passes
+    """
+    railroad_tunnel = "TNLRR"
+    """
+    a tunnel through which a railroad passes
+    """
+    tunnels = "TNLS"
+    """
+    subterranean passageways for transportation
+    """
+    trail = "TRL"
+    """
+    a path, track, or route used by pedestrians, animals, or off-road vehicles
+    """
+    administrative_facility = "ADMF"
+    """
+    a government building
+    """
+    agricultural_facility = "AGRF"
+    """
+    a building and/or tract of land used for improving agriculture
+    """
+    airbase = "AIRB"
+    """
+    an area used to store supplies, provide barracks for air force personnel, hangars and runways for aircraft, and from which operations are initiated
+    """
+    airfield = "AIRF"
+    """
+    a place on land where aircraft land and take off; no facilities provided for the commercial handling of passengers and cargo
+    """
+    heliport = "AIRH"
+    """
+    a place where helicopters land and take off
+    """
+    airport = "AIRP"
+    """
+    a place where aircraft regularly land and take off, with runways, navigational aids, and major facilities for the commercial handling of passengers and cargo
+    """
+    abandoned_airfield = "AIRQ"
+    terminal = "AIRT"
+    """
+    airport facilities for the handling of freight and passengers
+    """
+    amphitheater = "AMTH"
+    """
+    an oval or circular structure with rising tiers of seats about a stage or open space
+    """
+    archaeologicalSOLIDUSprehistoric_site = "ANS"
+    """
+    a place where archeological remains, old structures, or cultural artifacts are located
+    """
+    aquaculture_facility = "AQC"
+    """
+    facility or area for the cultivation of aquatic animals and plants, especially fish, shellfish, and seaweed, in natural or controlled marine or freshwater environments; underwater agriculture
+    """
+    arch = "ARCU"
+    """
+    a low bulge around the southeastern end of the island of Hawaii
+    """
+    archive = "ARCHV"
+    """
+    a place or institution where documents are preserved
+    """
+    piece_of_art = "ART"
+    """
+    a piece of art, like a sculpture, painting. In contrast to monument (MNMT) it is not commemorative.
+    """
+    astronomical_station = "ASTR"
+    """
+    a point on the earth whose position has been determined by observations of celestial bodies
+    """
+    asylum = "ASYL"
+    """
+    a facility where the insane are cared for and protected
+    """
+    athletic_field = "ATHF"
+    """
+    a tract of land used for playing team sports, and athletic track and field events
+    """
+    automatic_teller_machine = "ATM"
+    """
+    An unattended electronic machine in a public place, connected to a data system and related equipment and activated by a bank customer to obtain cash withdrawals and other banking services.
+    """
+    bank = "BNKU"
+    """
+    an elevation, typically located on a shelf, over which the depth of water is relatively shallow but sufficient for safe surface navigation
+    """
+    beacon = "BCN"
+    """
+    a fixed artificial navigation mark
+    """
+    bridge = "BDG"
+    """
+    a structure erected across an obstacle such as a stream, road, etc., in order to carry roads, railroads, and pedestrians across
+    """
+    ruined_bridge = "BDGQ"
+    """
+    a destroyed or decayed bridge which is no longer functional
+    """
+    apartment_building = "BLDA"
+    """
+    a building containing several individual apartments
+    """
+    buildingLEFT_PARENTHESISsRIGHT_PARENTHESIS = "BLDG"
+    """
+    a structure built for permanent use, as a house, factory, etc.
+    """
+    office_building = "BLDO"
+    """
+    commercial building where business and/or services are conducted
+    """
+    boundary_marker = "BP"
+    """
+    a fixture marking a point along a boundary
+    """
+    barracks = "BRKS"
+    """
+    a building for lodging military personnel
+    """
+    breakwater = "BRKW"
+    """
+    a structure erected to break the force of waves at the entrance to a harbor or port
+    """
+    baling_station = "BSTN"
+    """
+    a facility for baling agricultural products
+    """
+    boatyard = "BTYD"
+    """
+    a waterside facility for servicing, repairing, and building small vessels
+    """
+    burial_caveLEFT_PARENTHESISsRIGHT_PARENTHESIS = "BUR"
+    """
+    a cave used for human burials
+    """
+    bus_station = "BUSTN"
+    """
+    a facility comprising ticket office, platforms, etc. for loading and unloading passengers
+    """
+    bus_stop = "BUSTP"
+    """
+    a place lacking station facilities
+    """
+    cairn = "CARN"
+    """
+    a heap of stones erected as a landmark or for other purposes
+    """
+    caveLEFT_PARENTHESISsRIGHT_PARENTHESIS = "CAVE"
+    """
+    an underground passageway or chamber, or cavity on the side of a cliff
+    """
+    church = "CH"
+    """
+    a building for public Christian worship
+    """
+    campLEFT_PARENTHESISsRIGHT_PARENTHESIS = "CMP"
+    """
+    a site occupied by tents, huts, or other shelters for temporary use
+    """
+    logging_camp = "CMPL"
+    """
+    a camp used by loggers
+    """
+    labor_camp = "CMPLA"
+    """
+    a camp used by migrant or temporary laborers
+    """
+    mining_camp = "CMPMN"
+    """
+    a camp used by miners
+    """
+    oil_camp = "CMPO"
+    """
+    a camp used by oilfield workers
+    """
+    abandoned_camp = "CMPQ"
+    refugee_camp = "CMPRF"
+    """
+    a camp used by refugees
+    """
+    cemetery = "CMTY"
+    """
+    a burial place or ground
+    """
+    communication_center = "COMC"
+    """
+    a facility, including buildings, antennae, towers and electronic equipment for receiving and transmitting information
+    """
+    corralLEFT_PARENTHESISsRIGHT_PARENTHESIS = "CRRL"
+    """
+    a pen or enclosure for confining or capturing animals
+    """
+    casino = "CSNO"
+    """
+    a building used for entertainment, especially gambling
+    """
+    castle = "CSTL"
+    """
+    a large fortified building or set of buildings
+    """
+    customs_house = "CSTM"
+    """
+    a building in a port where customs and duties are paid, and where vessels are entered and cleared
+    """
+    courthouse = "CTHSE"
+    """
+    a building in which courts of law are held
+    """
+    atomic_center = "CTRA"
+    """
+    a facility where atomic research is carried out
+    """
+    community_center = "CTRCM"
+    """
+    a facility for community recreation and other activities
+    """
+    facility_center = "CTRF"
+    """
+    a place where more than one facility is situated
+    """
+    medical_center = "CTRM"
+    """
+    a complex of health care buildings including two or more of the following: hospital, medical school, clinic, pharmacy, doctor's offices, etc.
+    """
+    religious_center = "CTRR"
+    """
+    a facility where more than one religious activity is carried out, e.g., retreat, school, monastery, worship
+    """
+    space_center = "CTRS"
+    """
+    a facility for launching, tracking, or controlling satellites and space vehicles
+    """
+    courtyard = "CTYD"
+    """
+    an area surrounded by a building or complex and open to the sky
+    """
+    convent = "CVNT"
+    """
+    a building where a community of nuns lives in seclusion
+    """
+    dam = "DAM"
+    """
+    a barrier constructed across a stream to impound water
+    """
+    ruined_dam = "DAMQ"
+    """
+    a destroyed or decayed dam which is no longer functional
+    """
+    sub_surface_dam = "DAMSB"
+    """
+    a dam put down to bedrock in a sand river
+    """
+    dairy = "DARY"
+    """
+    a facility for the processing, sale and distribution of milk or milk products
+    """
+    dry_dock = "DCKD"
+    """
+    a dock providing support for a vessel, and means for removing the water so that the bottom of the vessel can be exposed
+    """
+    dockyard = "DCKY"
+    """
+    a facility for servicing, building, or repairing ships
+    """
+    dike = "DIKE"
+    """
+    an earth or stone embankment usually constructed for flood or stream control
+    """
+    diplomatic_facility = "DIP"
+    """
+    office, residence, or facility of a foreign government, which may include an embassy, consulate, chancery, office of charge d'affaires, or other diplomatic, economic, military, or cultural mission
+    """
+    fuel_depot = "DPOF"
+    """
+    an area where fuel is stored
+    """
+    estateLEFT_PARENTHESISsRIGHT_PARENTHESIS = "EST"
+    """
+    a large commercialized agricultural landholding with associated buildings and other facilities
+    """
+    oil_palm_plantation = "ESTO"
+    """
+    an estate specializing in the cultivation of oil palm trees
+    """
+    rubber_plantation = "ESTR"
+    """
+    an estate which specializes in growing and tapping rubber trees
+    """
+    sugar_plantation = "ESTSG"
+    """
+    an estate that specializes in growing sugar cane
+    """
+    tea_plantation = "ESTT"
+    """
+    an estate which specializes in growing tea bushes
+    """
+    section_of_estate = "ESTX"
+    facility = "FCL"
+    """
+    a building or buildings housing a center, institute, foundation, hospital, prison, mission, courthouse, etc.
+    """
+    fire_station = "FIRE"
+    """
+    building housing firefighters and/or fire fighting equipment
+    """
+    foundry = "FNDY"
+    """
+    a building or works where metal casting is carried out
+    """
+    farm = "FRM"
+    """
+    a tract of land with associated buildings devoted to agriculture
+    """
+    abandoned_farm = "FRMQ"
+    farms = "FRMS"
+    """
+    tracts of land with associated buildings devoted to agriculture
+    """
+    farmstead = "FRMT"
+    """
+    the buildings and adjacent service areas of a farm
+    """
+    fort = "FT"
+    """
+    a defensive structure or earthworks
+    """
+    ferry = "FY"
+    """
+    a boat or other floating conveyance and terminal facilities regularly used to transport people and vehicles across a waterbody
+    """
+    ferry_terminal = "FYT"
+    """
+    a place where ferries pick-up and discharge passengers, vehicles and or cargo
+    """
+    gate = "GATE"
+    """
+    a controlled access entrance or exit
+    """
+    gardenLEFT_PARENTHESISsRIGHT_PARENTHESIS = "GDN"
+    """
+    an enclosure for displaying selected plant or animal life
+    """
+    ghat = "GHAT"
+    """
+    a set of steps leading to a river, which are of religious significance, and at their base is usually a platform for bathing
+    """
+    guest_house = "GHSE"
+    """
+    a house used to provide lodging for paying guests
+    """
+    gas_oil_separator_plant = "GOSP"
+    """
+    a facility for separating gas from oil
+    """
+    local_government_office = "GOVL"
+    """
+    a facility housing local governmental offices, usually a city, town, or village hall
+    """
+    grave = "GRVE"
+    """
+    a burial site
+    """
+    hermitage = "HERM"
+    """
+    a secluded residence, usually for religious sects
+    """
+    halting_place = "HLT"
+    """
+    a place where caravans stop for rest
+    """
+    homestead = "HMSD"
+    """
+    a residence, owner's or manager's, on a sheep or cattle station, woolshed, outcamp, or Aboriginal outstation, specific to Australia and New Zealand
+    """
+    houseLEFT_PARENTHESISsRIGHT_PARENTHESIS = "HSE"
+    """
+    a building used as a human habitation
+    """
+    country_house = "HSEC"
+    """
+    a large house, mansion, or chateau, on a large estate
+    """
+    hospital = "HSP"
+    """
+    a building in which sick or injured, especially those confined to bed, are medically treated
+    """
+    clinic = "HSPC"
+    """
+    a medical facility associated with a hospital for outpatients
+    """
+    dispensary = "HSPD"
+    """
+    a building where medical or dental aid is dispensed
+    """
+    leprosarium = "HSPL"
+    """
+    an asylum or hospital for lepers
+    """
+    historical_site = "HSTS"
+    """
+    a place of historical importance
+    """
+    hotel = "HTL"
+    """
+    a building providing lodging and/or meals for the public
+    """
+    hut = "HUT"
+    """
+    a small primitive house
+    """
+    huts = "HUTS"
+    """
+    small primitive houses
+    """
+    military_installation = "INSM"
+    """
+    a facility for use of and control by armed forces
+    """
+    research_institute = "ITTR"
+    """
+    a facility where research is carried out
+    """
+    jetty = "JTY"
+    """
+    a structure built out into the water at a river mouth or harbor entrance to regulate currents and silting
+    """
+    landing = "LDNG"
+    """
+    a place where boats receive or discharge passengers and freight, but lacking most port facilities
+    """
+    leper_colony = "LEPC"
+    """
+    a settled area inhabited by lepers in relative isolation
+    """
+    library = "LIBR"
+    """
+    A place in which information resources such as books are kept for reading, reference, or lending.
+    """
+    landfill = "LNDF"
+    """
+    a place for trash and garbage disposal in which the waste is buried between layers of earth to build up low-lying land
+    """
+    lockLEFT_PARENTHESISsRIGHT_PARENTHESIS = "LOCK"
+    """
+    a basin in a waterway with gates at each end by means of which vessels are passed from one water level to another
+    """
+    lighthouse = "LTHSE"
+    """
+    a distinctive structure exhibiting a major navigation light
+    """
+    mall = "MALL"
+    """
+    A large, often enclosed shopping complex containing various stores, businesses, and restaurants usually accessible by common passageways.
+    """
+    marina = "MAR"
+    """
+    a harbor facility for small boats, yachts, etc.
+    """
+    factory = "MFG"
+    """
+    one or more buildings where goods are manufactured, processed or fabricated
+    """
+    brewery = "MFGB"
+    """
+    one or more buildings where beer is brewed
+    """
+    cannery = "MFGC"
+    """
+    a building where food items are canned
+    """
+    copper_works = "MFGCU"
+    """
+    a facility for processing copper ore
+    """
+    limekiln = "MFGLM"
+    """
+    a furnace in which limestone is reduced to lime
+    """
+    munitions_plant = "MFGM"
+    """
+    a factory where ammunition is made
+    """
+    phosphate_works = "MFGPH"
+    """
+    a facility for producing fertilizer
+    """
+    abandoned_factory = "MFGQ"
+    sugar_refinery = "MFGSG"
+    """
+    a facility for converting raw sugar into refined sugar
+    """
+    market = "MKT"
+    """
+    a place where goods are bought and sold at regular intervals
+    """
+    millLEFT_PARENTHESISsRIGHT_PARENTHESIS = "ML"
+    """
+    a building housing machines for transforming, shaping, finishing, grinding, or extracting products
+    """
+    ore_treatment_plant = "MLM"
+    """
+    a facility for improving the metal content of ore by concentration
+    """
+    olive_oil_mill = "MLO"
+    """
+    a mill where oil is extracted from olives
+    """
+    sugar_mill = "MLSG"
+    """
+    a facility where sugar cane is processed into raw sugar
+    """
+    former_sugar_mill = "MLSGQ"
+    """
+    a sugar mill no longer used as a sugar mill
+    """
+    sawmill = "MLSW"
+    """
+    a mill where logs or lumber are sawn to specified shapes and sizes
+    """
+    windmill = "MLWND"
+    """
+    a mill or water pump powered by wind
+    """
+    water_mill = "MLWTR"
+    """
+    a mill powered by running water
+    """
+    mineLEFT_PARENTHESISsRIGHT_PARENTHESIS = "MN"
+    """
+    a site where mineral ores are extracted from the ground by excavating surface pits and subterranean passages
+    """
+    gold_mineLEFT_PARENTHESISsRIGHT_PARENTHESIS = "MNAU"
+    """
+    a mine where gold ore, or alluvial gold is extracted
+    """
+    coal_mineLEFT_PARENTHESISsRIGHT_PARENTHESIS = "MNC"
+    """
+    a mine where coal is extracted
+    """
+    chrome_mineLEFT_PARENTHESISsRIGHT_PARENTHESIS = "MNCR"
+    """
+    a mine where chrome ore is extracted
+    """
+    copper_mineLEFT_PARENTHESISsRIGHT_PARENTHESIS = "MNCU"
+    """
+    a mine where copper ore is extracted
+    """
+    iron_mineLEFT_PARENTHESISsRIGHT_PARENTHESIS = "MNFE"
+    """
+    a mine where iron ore is extracted
+    """
+    monument = "MNMT"
+    """
+    a commemorative structure or statue
+    """
+    salt_mineLEFT_PARENTHESISsRIGHT_PARENTHESIS = "MNN"
+    """
+    a mine from which salt is extracted
+    """
+    abandoned_mine = "MNQ"
+    quarryLEFT_PARENTHESIS_iesRIGHT_PARENTHESIS = "MNQR"
+    """
+    a surface mine where building stone or gravel and sand, etc. are extracted
+    """
+    mole = "MOLE"
+    """
+    a massive structure of masonry or large stones serving as a pier or breakwater
+    """
+    mosque = "MSQE"
+    """
+    a building for public Islamic worship
+    """
+    mission = "MSSN"
+    """
+    a place characterized by dwellings, school, church, hospital and other facilities operated by a religious group for the purpose of providing charitable services and to propagate religion
+    """
+    abandoned_mission = "MSSNQ"
+    monastery = "MSTY"
+    """
+    a building and grounds where a community of monks lives in seclusion
+    """
+    metro_station = "MTRO"
+    """
+    metro station (Underground, Tube, or Metro)
+    """
+    museum = "MUS"
+    """
+    a building where objects of permanent interest in one or more of the arts and sciences are preserved and exhibited
+    """
+    novitiate = "NOV"
+    """
+    a religious house or school where novices are trained
+    """
+    nurseryLEFT_PARENTHESIS_iesRIGHT_PARENTHESIS = "NSY"
+    """
+    a place where plants are propagated for transplanting or grafting
+    """
+    observation_point = "OBPT"
+    """
+    a wildlife or scenic observation point
+    """
+    observatory = "OBS"
+    """
+    a facility equipped for observation of atmospheric or space phenomena
+    """
+    radio_observatory = "OBSR"
+    """
+    a facility equipped with an array of antennae for receiving radio waves from space
+    """
+    oil_pipeline_junction = "OILJ"
+    """
+    a section of an oil pipeline where two or more pipes join together
+    """
+    abandoned_oil_well = "OILQ"
+    oil_refinery = "OILR"
+    """
+    a facility for converting crude oil into refined petroleum products
+    """
+    tank_farm = "OILT"
+    """
+    a tract of land occupied by large, cylindrical, metal tanks in which oil or liquid petrochemicals are stored
+    """
+    oil_well = "OILW"
+    """
+    a well from which oil may be pumped
+    """
+    opera_house = "OPRA"
+    """
+    A theater designed chiefly for the performance of operas.
+    """
+    palace = "PAL"
+    """
+    a large stately house, often a royal or presidential residence
+    """
+    pagoda = "PGDA"
+    """
+    a tower-like storied structure, usually a Buddhist shrine
+    """
+    pier = "PIER"
+    """
+    a structure built out into navigable water on piles providing berthing for ships and recreation
+    """
+    parking_lot = "PKLT"
+    """
+    an area used for parking vehicles
+    """
+    oil_pumping_station = "PMPO"
+    """
+    a facility for pumping oil through a pipeline
+    """
+    water_pumping_station = "PMPW"
+    """
+    a facility for pumping water from a major well or through a pipeline
+    """
+    post_office = "PO"
+    """
+    a public building in which mail is received, sorted and distributed
+    """
+    police_post = "PP"
+    """
+    a building in which police are stationed
+    """
+    abandoned_police_post = "PPQ"
+    park_gate = "PRKGT"
+    """
+    a controlled access to a park
+    """
+    park_headquarters = "PRKHQ"
+    """
+    a park administrative facility
+    """
+    prison = "PRN"
+    """
+    a facility for confining prisoners
+    """
+    reformatory = "PRNJ"
+    """
+    a facility for confining, training, and reforming young law offenders
+    """
+    abandoned_prison = "PRNQ"
+    power_station = "PS"
+    """
+    a facility for generating electric power
+    """
+    hydroelectric_power_station = "PSH"
+    """
+    a building where electricity is generated from water power
+    """
+    nuclear_power_station = "PSN"
+    """
+    nuclear power station
+    """
+    border_post = "PSTB"
+    """
+    a post or station at an international boundary for the regulation of movement of people and goods
+    """
+    customs_post = "PSTC"
+    """
+    a building at an international boundary where customs and duties are paid on goods
+    """
+    patrol_post = "PSTP"
+    """
+    a post from which patrols are sent out
+    """
+    pyramid = "PYR"
+    """
+    an ancient massive structure of square ground plan with four triangular faces meeting at a point and used for enclosing tombs
+    """
+    pyramids = "PYRS"
+    """
+    ancient massive structures of square ground plan with four triangular faces meeting at a point and used for enclosing tombs
+    """
+    quay = "QUAY"
+    """
+    a structure of solid construction along a shore or bank which provides berthing for ships and which generally provides cargo handling facilities
+    """
+    traffic_circle = "RDCR"
+    """
+    a road junction formed around a central circle about which traffic moves in one direction only
+    """
+    intersection = "RDIN"
+    """
+    a junction of two or more highways by a system of separate levels that permit traffic to pass from one to another without the crossing of traffic streams
+    """
+    golf_course = "RECG"
+    """
+    a recreation field where golf is played
+    """
+    racetrack = "RECR"
+    """
+    a track where races are held
+    """
+    restaurant = "REST"
+    """
+    A place where meals are served to the public
+    """
+    store = "RET"
+    """
+    a building where goods and/or services are offered for sale
+    """
+    resthouse = "RHSE"
+    """
+    a structure maintained for the rest and shelter of travelers
+    """
+    rookery = "RKRY"
+    """
+    a breeding place of a colony of birds or seals
+    """
+    religious_site = "RLG"
+    """
+    an ancient site of significant religious importance
+    """
+    retreat = "RLGR"
+    """
+    a place of temporary seclusion, especially for religious groups
+    """
+    ranchLEFT_PARENTHESISesRIGHT_PARENTHESIS = "RNCH"
+    """
+    a large farm specializing in extensive grazing of livestock
+    """
+    railroad_siding = "RSD"
+    """
+    a short track parallel to and joining the main track
+    """
+    railroad_signal = "RSGNL"
+    """
+    a signal at the entrance of a particular section of track governing the movement of trains
+    """
+    resort = "RSRT"
+    """
+    a specialized facility for vacation, health, or participation sports activities
+    """
+    railroad_station = "RSTN"
+    """
+    a facility comprising ticket office, platforms, etc. for loading and unloading train passengers and freight
+    """
+    abandoned_railroad_station = "RSTNQ"
+    railroad_stop = "RSTP"
+    """
+    a place lacking station facilities where trains stop to pick up and unload passengers and freight
+    """
+    abandoned_railroad_stop = "RSTPQ"
+    ruinLEFT_PARENTHESISsRIGHT_PARENTHESIS = "RUIN"
+    """
+    a destroyed or decayed structure which is no longer functional
+    """
+    school = "SCH"
+    """
+    building(s) where instruction in one or more branches of knowledge takes place
+    """
+    agricultural_school = "SCHA"
+    """
+    a school with a curriculum focused on agriculture
+    """
+    college = "SCHC"
+    """
+    the grounds and buildings of an institution of higher learning
+    """
+    language_school = "SCHL"
+    """
+    Language Schools & Institutions
+    """
+    military_school = "SCHM"
+    """
+    a school at which military science forms the core of the curriculum
+    """
+    maritime_school = "SCHN"
+    """
+    a school at which maritime sciences form the core of the curriculum
+    """
+    technical_school = "SCHT"
+    """
+    post-secondary school with a specifically technical or vocational curriculum
+    """
+    State_Exam_Prep_Centre = "SECP"
+    """
+    state exam preparation centres
+    """
+    sheepfold = "SHPF"
+    """
+    a fence or wall enclosure for sheep and other small herd animals
+    """
+    shrine = "SHRN"
+    """
+    a structure or place memorializing a person or religious concept
+    """
+    storehouse = "SHSE"
+    """
+    a building for storing goods, especially provisions
+    """
+    sluice = "SLCE"
+    """
+    a conduit or passage for carrying off surplus water from a waterbody, usually regulated by means of a sluice gate
+    """
+    sanatorium = "SNTR"
+    """
+    a facility where victims of physical or mental disorders are treated
+    """
+    spa = "SPA"
+    """
+    a resort area usually developed around a medicinal spring
+    """
+    spillway = "SPLY"
+    """
+    a passage or outlet through which surplus water flows over, around or through a dam
+    """
+    square = "SQR"
+    """
+    a broad, open, public area near the center of a town or city
+    """
+    stable = "STBL"
+    """
+    a building for the shelter and feeding of farm animals, especially horses
+    """
+    stadium = "STDM"
+    """
+    a structure with an enclosure for athletic games with tiers of seats for spectators
+    """
+    scientific_research_base = "STNB"
+    """
+    a scientific facility used as a base from which research is carried out or monitored
+    """
+    coast_guard_station = "STNC"
+    """
+    a facility from which the coast is guarded by armed vessels
+    """
+    experiment_station = "STNE"
+    """
+    a facility for carrying out experiments
+    """
+    forest_station = "STNF"
+    """
+    a collection of buildings and facilities for carrying out forest management
+    """
+    inspection_station = "STNI"
+    """
+    a station at which vehicles, goods, and people are inspected
+    """
+    meteorological_station = "STNM"
+    """
+    a station at which weather elements are recorded
+    """
+    radio_station = "STNR"
+    """
+    a facility for producing and transmitting information by radio waves
+    """
+    satellite_station = "STNS"
+    """
+    a facility for tracking and communicating with orbiting satellites
+    """
+    whaling_station = "STNW"
+    """
+    a facility for butchering whales and processing train oil
+    """
+    steps = "STPS"
+    """
+    stones or slabs placed for ease in ascending or descending a steep slope
+    """
+    sewage_treatment_plant = "SWT"
+    """
+    facility for the processing of sewage and/or wastewater
+    """
+    synagogue = "SYG"
+    """
+    a place for Jewish worship and religious instruction
+    """
+    theater = "THTR"
+    """
+    a building or outdoor area used for live theatrical presentations, concerts, opera or dance productions, cinema, and/or other stage productions
+    """
+    tombLEFT_PARENTHESISsRIGHT_PARENTHESIS = "TMB"
+    """
+    a structure for interring bodies
+    """
+    templeLEFT_PARENTHESISsRIGHT_PARENTHESIS = "TMPL"
+    """
+    an edifice dedicated to religious worship
+    """
+    cattle_dipping_tank = "TNKD"
+    """
+    a small artificial pond used for immersing cattle in chemically treated water for disease control
+    """
+    toll_gateSOLIDUSbarrier = "TOLL"
+    """
+    highway toll collection station
+    """
+    tower = "TOWR"
+    """
+    a high conspicuous structure, typically much higher than its diameter
+    """
+    tram = "TRAM"
+    """
+    rail vehicle along urban streets (also known as streetcar or trolley)
+    """
+    transit_terminal = "TRANT"
+    """
+    facilities for the handling of vehicular freight and passengers
+    """
+    triangulation_station = "TRIG"
+    """
+    a point on the earth whose position has been determined by triangulation
+    """
+    oil_pipeline_terminal = "TRMO"
+    """
+    a tank farm or loading facility at the end of an oil pipeline
+    """
+    temp_work_office = "TWO"
+    """
+    Temporary Work Offices
+    """
+    university_prep_school = "UNIP"
+    """
+    University Preparation Schools & Institutions
+    """
+    university = "UNIV"
+    """
+    An institution for higher learning with teaching and research facilities constituting a graduate school and professional schools that award master's degrees and doctorates and an undergraduate division that awards bachelor's degrees.
+    """
+    united_states_government_establishment = "USGE"
+    """
+    a facility operated by the United States Government in Panama
+    """
+    veterinary_facility = "VETF"
+    """
+    a building or camp at which veterinary services are available
+    """
+    wall = "WALL"
+    """
+    a thick masonry structure, usually enclosing a field or building, or forming the side of a structure
+    """
+    ancient_wall = "WALLA"
+    """
+    the remains of a linear defensive stone structure
+    """
+    weirLEFT_PARENTHESISsRIGHT_PARENTHESIS = "WEIR"
+    """
+    a small dam in a stream, designed to raise the water level or to divert stream flow through a desired channel
+    """
+    wharfLEFT_PARENTHESIS_vesRIGHT_PARENTHESIS = "WHRF"
+    """
+    a structure of open rather than solid construction along a shore or a bank which provides berthing for ships and cargo-handling facilities
+    """
+    wreck = "WRCK"
+    """
+    the site of the remains of a wrecked vessel
+    """
+    waterworks = "WTRW"
+    """
+    a facility for supplying potable water through a water source and a system of pumps and filtration beds
+    """
+    free_trade_zone = "ZNF"
+    """
+    an area, usually a section of a port, where goods may be received and shipped free of customs duty and of most customs regulations
+    """
+    zoo = "ZOO"
+    """
+    a zoological garden or park where wild animals are kept for exhibition
+    """
+    asphalt_lake = "ASPH"
+    """
+    a small basin containing naturally occurring asphalt
+    """
+    atollLEFT_PARENTHESISsRIGHT_PARENTHESIS = "ATOL"
+    """
+    a ring-shaped coral reef which has closely spaced islands on it encircling a lagoon
+    """
+    bar = "BAR"
+    """
+    a shallow ridge or mound of coarse unconsolidated material in a stream channel, at the mouth of a stream, estuary, or lagoon and in the wave-break zone along coasts
+    """
+    beach = "BCH"
+    """
+    a shore zone of coarse unconsolidated sediment that extends from the low-water line to the highest reach of storm waves
+    """
+    beaches = "BCHS"
+    """
+    a shore zone of coarse unconsolidated sediment that extends from the low-water line to the highest reach of storm waves
+    """
+    badlands = "BDLD"
+    """
+    an area characterized by a maze of very closely spaced, deep, narrow, steep-sided ravines, and sharp crests and pinnacles
+    """
+    boulder_field = "BLDR"
+    """
+    a high altitude or high latitude bare, flat area covered with large angular rocks
+    """
+    blowholeLEFT_PARENTHESISsRIGHT_PARENTHESIS = "BLHL"
+    """
+    a hole in coastal rock through which sea water is forced by a rising tide or waves and spurted through an outlet into the air
+    """
+    blowoutLEFT_PARENTHESISsRIGHT_PARENTHESIS = "BLOW"
+    """
+    a small depression in sandy terrain, caused by wind erosion
+    """
+    bench = "BNCH"
+    """
+    a long, narrow bedrock platform bounded by steeper slopes above and below, usually overlooking a waterbody
+    """
+    butteLEFT_PARENTHESISsRIGHT_PARENTHESIS = "BUTE"
+    """
+    a small, isolated, usually flat-topped hill with steep sides
+    """
+    cape = "CAPE"
+    """
+    a land area, more prominent than a point, projecting into the sea and marking a notable change in coastal direction
+    """
+    cleftLEFT_PARENTHESISsRIGHT_PARENTHESIS = "CFT"
+    """
+    a deep narrow slot, notch, or groove in a coastal cliff
+    """
+    caldera = "CLDA"
+    """
+    a depression measuring kilometers across formed by the collapse of a volcanic mountain
+    """
+    cliffLEFT_PARENTHESISsRIGHT_PARENTHESIS = "CLF"
+    """
+    a high, steep to perpendicular slope overlooking a waterbody or lower area
+    """
+    canyon = "CNYU"
+    """
+    a relatively narrow, deep depression with steep sides, the bottom of which generally has a continuous slope
+    """
+    coneLEFT_PARENTHESISsRIGHT_PARENTHESIS = "CONE"
+    """
+    a conical landform composed of mud or volcanic material
+    """
+    corridor = "CRDR"
+    """
+    a strip or area of land having significance as an access way
+    """
+    cirque = "CRQ"
+    """
+    a bowl-like hollow partially surrounded by cliffs or steep slopes at the head of a glaciated valley
+    """
+    cirques = "CRQS"
+    """
+    bowl-like hollows partially surrounded by cliffs or steep slopes at the head of a glaciated valley
+    """
+    craterLEFT_PARENTHESISsRIGHT_PARENTHESIS = "CRTR"
+    """
+    a generally circular saucer or bowl-shaped depression caused by volcanic or meteorite explosive action
+    """
+    cuestaLEFT_PARENTHESISsRIGHT_PARENTHESIS = "CUET"
+    """
+    an asymmetric ridge formed on tilted strata
+    """
+    delta = "DLTA"
+    """
+    a flat plain formed by alluvial deposits at the mouth of a stream
+    """
+    depressionLEFT_PARENTHESISsRIGHT_PARENTHESIS = "DPR"
+    """
+    a low area surrounded by higher land and usually characterized by interior drainage
+    """
+    desert = "DSRT"
+    """
+    a large area with little or no vegetation due to extreme environmental conditions
+    """
+    duneLEFT_PARENTHESISsRIGHT_PARENTHESIS = "DUNE"
+    """
+    a wave form, ridge or star shape feature composed of sand
+    """
+    divide = "DVD"
+    """
+    a line separating adjacent drainage basins
+    """
+    sandy_desert = "ERG"
+    """
+    an extensive tract of shifting sand and sand dunes
+    """
+    fanLEFT_PARENTHESISsRIGHT_PARENTHESIS = "FAN"
+    """
+    a fan-shaped wedge of coarse alluvium with apex merging with a mountain stream bed and the fan spreading out at a low angle slope onto an adjacent plain
+    """
+    ford = "FORD"
+    """
+    a shallow part of a stream which can be crossed on foot or by land vehicle
+    """
+    fissure = "FSR"
+    """
+    a crack associated with volcanism
+    """
+    gap = "GAPU"
+    """
+    a narrow break in a ridge or rise
+    """
+    gorgeLEFT_PARENTHESISsRIGHT_PARENTHESIS = "GRGE"
+    """
+    a short, narrow, steep-sided section of a stream valley
+    """
+    headland = "HDLD"
+    """
+    a high projection of land extending into a large body of water beyond the line of the coast
+    """
+    hill = "HLLU"
+    """
+    an elevation rising generally less than 500 meters
+    """
+    hills = "HLSU"
+    """
+    elevations rising generally less than 500 meters
+    """
+    hammockLEFT_PARENTHESISsRIGHT_PARENTHESIS = "HMCK"
+    """
+    a patch of ground, distinct from and slightly above the surrounding plain or wetland. Often occurs in groups
+    """
+    rock_desert = "HMDA"
+    """
+    a relatively sand-free, high bedrock plateau in a hot desert, with or without a gravel veneer
+    """
+    interfluve = "INTF"
+    """
+    a relatively undissected upland between adjacent stream valleys
+    """
+    island = "ISL"
+    """
+    a tract of land, smaller than a continent, surrounded by water at high water
+    """
+    islet = "ISLET"
+    """
+    small island, bigger than rock, smaller than island.
+    """
+    artificial_island = "ISLF"
+    """
+    an island created by landfill or diking and filling in a wetland, bay, or lagoon
+    """
+    mangrove_island = "ISLM"
+    """
+    a mangrove swamp surrounded by a waterbody
+    """
+    islands = "ISLS"
+    """
+    tracts of land, smaller than a continent, surrounded by water at high water
+    """
+    land_tied_island = "ISLT"
+    """
+    a coastal island connected to the mainland by barrier beaches, levees or dikes
+    """
+    section_of_island = "ISLX"
+    isthmus = "ISTH"
+    """
+    a narrow strip of land connecting two larger land masses and bordered by water
+    """
+    karst_area = "KRST"
+    """
+    a distinctive landscape developed on soluble rock such as limestone characterized by sinkholes, caves, disappearing streams, and underground drainage
+    """
+    lava_area = "LAVA"
+    """
+    an area of solidified lava
+    """
+    levee = "LEVU"
+    """
+    an embankment bordering a canyon, valley, or seachannel
+    """
+    mesaLEFT_PARENTHESISsRIGHT_PARENTHESIS = "MESA"
+    """
+    a flat-topped, isolated elevation with steep slopes on all sides, less extensive than a plateau
+    """
+    moundLEFT_PARENTHESISsRIGHT_PARENTHESIS = "MND"
+    """
+    a low, isolated, rounded hill
+    """
+    moraine = "MRN"
+    """
+    a mound, ridge, or other accumulation of glacial till
+    """
+    mountain = "MTU"
+    """
+    a well-delineated subdivision of a large and complex positive feature
+    """
+    mountains = "MTS"
+    """
+    a mountain range or a group of mountains or high ridges
+    """
+    meander_neck = "NKM"
+    """
+    a narrow strip of land between the two limbs of a meander loop at its narrowest point
+    """
+    nunatak = "NTK"
+    """
+    a rock or mountain peak protruding through glacial ice
+    """
+    nunataks = "NTKS"
+    """
+    rocks or mountain peaks protruding through glacial ice
+    """
+    pan = "PAN"
+    """
+    a near-level shallow, natural depression or basin, usually containing an intermittent lake, pond, or pool
+    """
+    pans = "PANS"
+    """
+    a near-level shallow, natural depression or basin, usually containing an intermittent lake, pond, or pool
+    """
+    pass_ = "PASS"
+    """
+    a break in a mountain range or other high obstruction, used for transportation from one side to the other [See also gap]
+    """
+    peninsula = "PEN"
+    """
+    an elongate area of land projecting into a body of water and nearly surrounded by water
+    """
+    section_of_peninsula = "PENX"
+    peak = "PKU"
+    """
+    a prominent elevation, part of a larger feature, either pointed or of very limited extent across the summit
+    """
+    peaks = "PKSU"
+    """
+    prominent elevations, part of a larger feature, either pointed or of very limited extent across the summit
+    """
+    plateau = "PLTU"
+    """
+    a comparatively flat-topped feature of considerable extent, dropping off abruptly on one or more sides
+    """
+    section_of_plateau = "PLATX"
+    polder = "PLDR"
+    """
+    an area reclaimed from the sea by diking and draining
+    """
+    plainLEFT_PARENTHESISsRIGHT_PARENTHESIS = "PLN"
+    """
+    an extensive area of comparatively level to gently undulating land, lacking surface irregularities, and usually adjacent to a higher area
+    """
+    section_of_plain = "PLNX"
+    promontoryLEFT_PARENTHESIS_iesRIGHT_PARENTHESIS = "PROM"
+    """
+    a bluff or prominent hill overlooking or projecting into a lowland
+    """
+    point = "PT"
+    """
+    a tapering piece of land projecting into a body of water, less prominent than a cape
+    """
+    points = "PTS"
+    """
+    tapering pieces of land projecting into a body of water, less prominent than a cape
+    """
+    beach_ridge = "RDGB"
+    """
+    a ridge of sand just inland and parallel to the beach, usually in series
+    """
+    ridgeLEFT_PARENTHESISsRIGHT_PARENTHESIS = "RDGE"
+    """
+    a long narrow elevation with steep sides, and a more or less continuous crest
+    """
+    stony_desert = "REG"
+    """
+    a desert plain characterized by a surface veneer of gravel and stones
+    """
+    rock = "RK"
+    """
+    a conspicuous, isolated rocky mass
+    """
+    rockfall = "RKFL"
+    """
+    an irregular mass of fallen rock at the base of a cliff or steep slope
+    """
+    rocks = "RKS"
+    """
+    conspicuous, isolated rocky masses
+    """
+    sand_area = "SAND"
+    """
+    a tract of land covered with sand
+    """
+    dry_stream_bed = "SBED"
+    """
+    a channel formerly containing the water of a stream
+    """
+    escarpment = "SCRP"
+    """
+    a long line of cliffs or steep slopes separating level surfaces above and below
+    """
+    saddle = "SDLU"
+    """
+    a low part, resembling in shape a saddle, in a ridge or between contiguous seamounts
+    """
+    shore = "SHOR"
+    """
+    a narrow zone bordering a waterbody which covers and uncovers at high and low water, respectively
+    """
+    sinkhole = "SINK"
+    """
+    a small crater-shape depression in a karst area
+    """
+    slide = "SLID"
+    """
+    a mound of earth material, at the base of a slope and the associated scoured area
+    """
+    slopeLEFT_PARENTHESISsRIGHT_PARENTHESIS = "SLP"
+    """
+    a surface with a relatively uniform slope angle
+    """
+    spit = "SPIT"
+    """
+    a narrow, straight or curved continuation of a beach into a waterbody
+    """
+    spurLEFT_PARENTHESISsRIGHT_PARENTHESIS = "SPUR"
+    """
+    a subordinate ridge projecting outward from a hill, mountain or other elevation
+    """
+    talus_slope = "TAL"
+    """
+    a steep concave slope formed by an accumulation of loose rock fragments at the base of a cliff or steep slope
+    """
+    interdune_troughLEFT_PARENTHESISsRIGHT_PARENTHESIS = "TRGD"
+    """
+    a long wind-swept trough between parallel longitudinal dunes
+    """
+    terrace = "TERU"
+    """
+    a relatively flat horizontal or gently inclined surface, sometimes long and narrow, which is bounded by a steeper ascending slope on one side and by a steep descending slope on the opposite side
+    """
+    upland = "UPLD"
+    """
+    an extensive interior region of high land with low to moderate surface relief
+    """
+    valley = "VALU"
+    """
+    a relatively shallow, wide depression, the bottom of which usually has a continuous gradient
+    """
+    hanging_valley = "VALG"
+    """
+    a valley the floor of which is notably higher than the valley or shore to which it leads; most common in areas that have been glaciated
+    """
+    valleys = "VLSU"
+    """
+    a relatively shallow, wide depression, the bottom of which usually has a continuous gradient
+    """
+    section_of_valley = "VALX"
+    volcano = "VLC"
+    """
+    a conical elevation composed of volcanic materials with a crater at the top
+    """
+    apron = "APNU"
+    """
+    a gentle slope, with a generally smooth surface, particularly found around groups of islands and seamounts
+    """
+    arrugado = "ARRU"
+    """
+    an area of subdued corrugations off Baja California
+    """
+    borderland = "BDLU"
+    """
+    a region adjacent to a continent, normally occupied by or bordering a shelf, that is highly irregular with depths well in excess of those typical of a shelf
+    """
+    banks = "BKSU"
+    """
+    elevations, typically located on a shelf, over which the depth of water is relatively shallow but sufficient for safe surface navigation
+    """
+    basin = "BSNU"
+    """
+    a depression more or less equidimensional in plan and of variable extent
+    """
+    cordillera = "CDAU"
+    """
+    an entire mountain system including the subordinate ranges, interior plateaus, and basins
+    """
+    canyons = "CNSU"
+    """
+    relatively narrow, deep depressions with steep sides, the bottom of which generally has a continuous slope
+    """
+    continental_rise = "CRSU"
+    """
+    a gentle slope rising from oceanic depths towards the foot of a continental slope
+    """
+    deep = "DEPU"
+    """
+    a localized deep area within the confines of a larger feature, such as a trough, basin or trench
+    """
+    shelf_edge = "EDGU"
+    """
+    a line along which there is a marked increase of slope at the outer margin of a continental shelf or island shelf
+    """
+    escarpment_LEFT_PARENTHESISor_scarpRIGHT_PARENTHESIS = "ESCU"
+    """
+    an elongated and comparatively steep slope separating flat or gently sloping areas
+    """
+    fan = "FANU"
+    """
+    a relatively smooth feature normally sloping away from the lower termination of a canyon or canyon system
+    """
+    flat = "FLTU"
+    """
+    a small level or nearly level area
+    """
+    fracture_zone = "FRZU"
+    """
+    an extensive linear zone of irregular topography of the sea floor, characterized by steep-sided or asymmetrical ridges, troughs, or escarpments
+    """
+    furrow = "FURU"
+    """
+    a closed, linear, narrow, shallow depression
+    """
+    gully = "GLYU"
+    """
+    a small valley-like feature
+    """
+    hole = "HOLU"
+    """
+    a small depression of the sea floor
+    """
+    knoll = "KNLU"
+    """
+    an elevation rising generally more than 500 meters and less than 1,000 meters and of limited extent across the summit
+    """
+    knolls = "KNSU"
+    """
+    elevations rising generally more than 500 meters and less than 1,000 meters and of limited extent across the summits
+    """
+    ledge = "LDGU"
+    """
+    a rocky projection or outcrop, commonly linear and near shore
+    """
+    mesa = "MESU"
+    """
+    an isolated, extensive, flat-topped elevation on the shelf, with relatively steep sides
+    """
+    mound = "MNDU"
+    """
+    a low, isolated, rounded hill
+    """
+    moat = "MOTU"
+    """
+    an annular depression that may not be continuous, located at the base of many seamounts, islands, and other isolated elevations
+    """
+    plain = "PLNU"
+    """
+    a flat, gently sloping or nearly level region
+    """
+    pinnacle = "PNLU"
+    """
+    a high tower or spire-shaped pillar of rock or coral, alone or cresting a summit
+    """
+    province = "PRVU"
+    """
+    a region identifiable by a group of similar physiographic features whose characteristics are markedly in contrast with surrounding areas
+    """
+    ridge = "RDGU"
+    """
+    a long narrow elevation with steep sides
+    """
+    ridges = "RDSU"
+    """
+    long narrow elevations with steep sides
+    """
+    reefs = "RFSU"
+    """
+    surface-navigation hazards composed of consolidated material
+    """
+    reef = "RFU"
+    """
+    a surface-navigation hazard composed of consolidated material
+    """
+    rise = "RISU"
+    """
+    a broad elevation that rises gently, and generally smoothly, from the sea floor
+    """
+    seachannel = "SCNU"
+    """
+    a continuously sloping, elongated depression commonly found in fans or plains and customarily bordered by levees on one or two sides
+    """
+    seachannels = "SCSU"
+    """
+    continuously sloping, elongated depressions commonly found in fans or plains and customarily bordered by levees on one or two sides
+    """
+    shelf = "SHFU"
+    """
+    a zone adjacent to a continent (or around an island) that extends from the low water line to a depth at which there is usually a marked increase of slope towards oceanic depths
+    """
+    shoal = "SHLU"
+    """
+    a surface-navigation hazard composed of unconsolidated material
+    """
+    shoals = "SHSU"
+    """
+    hazards to surface navigation composed of unconsolidated material
+    """
+    shelf_valley = "SHVU"
+    """
+    a valley on the shelf, generally the shoreward extension of a canyon
+    """
+    slope = "SLPU"
+    """
+    the slope seaward from the shelf edge to the beginning of a continental rise or the point where there is a general reduction in slope
+    """
+    seamounts = "SMSU"
+    """
+    elevations rising generally more than 1,000 meters and of limited extent across the summit
+    """
+    seamount = "SMU"
+    """
+    an elevation rising generally more than 1,000 meters and of limited extent across the summit
+    """
+    spur = "SPRU"
+    """
+    a subordinate elevation, ridge, or rise projecting outward from a larger feature
+    """
+    tablemounts_LEFT_PARENTHESISor_guyotsRIGHT_PARENTHESIS = "TMSU"
+    """
+    seamounts having a comparatively smooth, flat top
+    """
+    tablemount_LEFT_PARENTHESISor_guyotRIGHT_PARENTHESIS = "TMTU"
+    """
+    a seamount having a comparatively smooth, flat top
+    """
+    tongue = "TNGU"
+    """
+    an elongate (tongue-like) extension of a flat sea floor into an adjacent higher feature
+    """
+    trough = "TRGU"
+    """
+    a long depression of the sea floor characteristically flat bottomed and steep sided, and normally shallower than a trench
+    """
+    trench = "TRNU"
+    """
+    a long, narrow, characteristically very deep and asymmetrical depression of the sea floor, with relatively steep sides
+    """
+    bushLEFT_PARENTHESISesRIGHT_PARENTHESIS = "BUSH"
+    """
+    a small clump of conspicuous bushes in an otherwise bare area
+    """
+    cultivated_area = "CULT"
+    """
+    an area under cultivation
+    """
+    forestLEFT_PARENTHESISsRIGHT_PARENTHESIS = "FRST"
+    """
+    an area dominated by tree vegetation
+    """
+    fossilized_forest = "FRSTF"
+    """
+    a forest fossilized by geologic processes and now exposed at the earth's surface
+    """
+    grove = "GROVE"
+    """
+    a small wooded area or collection of trees growing closely together, occurring naturally or deliberately planted
+    """
+    grassland = "GRSLD"
+    """
+    an area dominated by grass vegetation
+    """
+    coconut_grove = "GRVC"
+    """
+    a planting of coconut trees
+    """
+    olive_grove = "GRVO"
+    """
+    a planting of olive trees
+    """
+    palm_grove = "GRVP"
+    """
+    a planting of palm trees
+    """
+    pine_grove = "GRVPN"
+    """
+    a planting of pine trees
+    """
+    heath = "HTH"
+    """
+    an upland moor or sandy area dominated by low shrubby vegetation including heather
+    """
+    meadow = "MDW"
+    """
+    a small, poorly drained area dominated by grassy vegetation
+    """
+    orchardLEFT_PARENTHESISsRIGHT_PARENTHESIS = "OCH"
+    """
+    a planting of fruit or nut trees
+    """
+    scrubland = "SCRB"
+    """
+    an area of low trees, bushes, and shrubs stunted by some environmental limitation
+    """
+    treeLEFT_PARENTHESISsRIGHT_PARENTHESIS = "TREE"
+    """
+    a conspicuous tree used as a landmark
+    """
+    tundra = "TUND"
+    """
+    a marshy, treeless, high latitude plain, dominated by mosses, lichens, and low shrub vegetation under permafrost conditions
+    """
+    vineyard = "VIN"
+    """
+    a planting of grapevines
+    """
+    vineyards = "VINS"
+    """
+    plantings of grapevines
+    """
+    not_available = "null"
+
+
+class CountryCodeEnum(str, Enum):
+    Andorra = "AD"
+    United_Arab_Emirates = "AE"
+    Afghanistan = "AF"
+    Antigua_and_Barbuda = "AG"
+    Anguilla = "AI"
+    Albania = "AL"
+    Armenia = "AM"
+    Angola = "AO"
+    Antarctica = "AQ"
+    Argentina = "AR"
+    American_Samoa = "AS"
+    Austria = "AT"
+    Australia = "AU"
+    Aruba = "AW"
+    Aland_Islands = "AX"
+    Azerbaijan = "AZ"
+    Bosnia_and_Herzegovina = "BA"
+    Barbados = "BB"
+    Bangladesh = "BD"
+    Belgium = "BE"
+    Burkina_Faso = "BF"
+    Bulgaria = "BG"
+    Bahrain = "BH"
+    Burundi = "BI"
+    Benin = "BJ"
+    Saint_Barthelemy = "BL"
+    Bermuda = "BM"
+    Brunei = "BN"
+    Bolivia = "BO"
+    Bonaire_Saint_Eustatius_and_Saba = "BQ"
+    Brazil = "BR"
+    Bahamas = "BS"
+    Bhutan = "BT"
+    Bouvet_Island = "BV"
+    Botswana = "BW"
+    Belarus = "BY"
+    Belize = "BZ"
+    Canada = "CA"
+    Cocos_Islands = "CC"
+    Democratic_Republic_of_the_Congo = "CD"
+    Central_African_Republic = "CF"
+    Republic_of_the_Congo = "CG"
+    Switzerland = "CH"
+    Ivory_Coast = "CI"
+    Cook_Islands = "CK"
+    Chile = "CL"
+    Cameroon = "CM"
+    China = "CN"
+    Colombia = "CO"
+    Costa_Rica = "CR"
+    Cuba = "CU"
+    Cabo_Verde = "CV"
+    Curacao = "CW"
+    Christmas_Island = "CX"
+    Cyprus = "CY"
+    Czechia = "CZ"
+    Germany = "DE"
+    Djibouti = "DJ"
+    Denmark = "DK"
+    Dominica = "DM"
+    Dominican_Republic = "DO"
+    Algeria = "DZ"
+    Ecuador = "EC"
+    Estonia = "EE"
+    Egypt = "EG"
+    Western_Sahara = "EH"
+    Eritrea = "ER"
+    Spain = "ES"
+    Ethiopia = "ET"
+    Finland = "FI"
+    Fiji = "FJ"
+    Falkland_Islands = "FK"
+    Micronesia = "FM"
+    Faroe_Islands = "FO"
+    France = "FR"
+    Gabon = "GA"
+    United_Kingdom = "GB"
+    Grenada = "GD"
+    Georgia = "GE"
+    French_Guiana = "GF"
+    Guernsey = "GG"
+    Ghana = "GH"
+    Gibraltar = "GI"
+    Greenland = "GL"
+    Gambia = "GM"
+    Guinea = "GN"
+    Guadeloupe = "GP"
+    Equatorial_Guinea = "GQ"
+    Greece = "GR"
+    South_Georgia_and_the_South_Sandwich_Islands = "GS"
+    Guatemala = "GT"
+    Guam = "GU"
+    Guinea_Bissau = "GW"
+    Guyana = "GY"
+    Hong_Kong = "HK"
+    Heard_Island_and_McDonald_Islands = "HM"
+    Honduras = "HN"
+    Croatia = "HR"
+    Haiti = "HT"
+    Hungary = "HU"
+    Indonesia = "ID"
+    Ireland = "IE"
+    Israel = "IL"
+    Isle_of_Man = "IM"
+    India = "IN"
+    British_Indian_Ocean_Territory = "IO"
+    Iraq = "IQ"
+    Iran = "IR"
+    Iceland = "IS"
+    Italy = "IT"
+    Jersey = "JE"
+    Jamaica = "JM"
+    Jordan = "JO"
+    Japan = "JP"
+    Kenya = "KE"
+    Kyrgyzstan = "KG"
+    Cambodia = "KH"
+    Kiribati = "KI"
+    Comoros = "KM"
+    Saint_Kitts_and_Nevis = "KN"
+    North_Korea = "KP"
+    South_Korea = "KR"
+    Kosovo = "XK"
+    Kuwait = "KW"
+    Cayman_Islands = "KY"
+    Kazakhstan = "KZ"
+    Laos = "LA"
+    Lebanon = "LB"
+    Saint_Lucia = "LC"
+    Liechtenstein = "LI"
+    Sri_Lanka = "LK"
+    Liberia = "LR"
+    Lesotho = "LS"
+    Lithuania = "LT"
+    Luxembourg = "LU"
+    Latvia = "LV"
+    Libya = "LY"
+    Morocco = "MA"
+    Monaco = "MC"
+    Moldova = "MD"
+    Montenegro = "ME"
+    Saint_Martin = "MF"
+    Madagascar = "MG"
+    Marshall_Islands = "MH"
+    North_Macedonia = "MK"
+    Mali = "ML"
+    Myanmar = "MM"
+    Mongolia = "MN"
+    Macao = "MO"
+    Northern_Mariana_Islands = "MP"
+    Martinique = "MQ"
+    Mauritania = "MR"
+    Montserrat = "MS"
+    Malta = "MT"
+    Mauritius = "MU"
+    Maldives = "MV"
+    Malawi = "MW"
+    Mexico = "MX"
+    Malaysia = "MY"
+    Mozambique = "MZ"
+    Namibia = "NA"
+    New_Caledonia = "NC"
+    Niger = "NE"
+    Norfolk_Island = "NF"
+    Nigeria = "NG"
+    Nicaragua = "NI"
+    The_Netherlands = "NL"
+    Norway = "NO"
+    Nepal = "NP"
+    Nauru = "NR"
+    Niue = "NU"
+    New_Zealand = "NZ"
+    Oman = "OM"
+    Panama = "PA"
+    Peru = "PE"
+    French_Polynesia = "PF"
+    Papua_New_Guinea = "PG"
+    Philippines = "PH"
+    Pakistan = "PK"
+    Poland = "PL"
+    Saint_Pierre_and_Miquelon = "PM"
+    Pitcairn = "PN"
+    Puerto_Rico = "PR"
+    Palestinian_Territory = "PS"
+    Portugal = "PT"
+    Palau = "PW"
+    Paraguay = "PY"
+    Qatar = "QA"
+    Reunion = "RE"
+    Romania = "RO"
+    Serbia = "RS"
+    Russia = "RU"
+    Rwanda = "RW"
+    Saudi_Arabia = "SA"
+    Solomon_Islands = "SB"
+    Seychelles = "SC"
+    Sudan = "SD"
+    South_Sudan = "SS"
+    Sweden = "SE"
+    Singapore = "SG"
+    Saint_Helena = "SH"
+    Slovenia = "SI"
+    Svalbard_and_Jan_Mayen = "SJ"
+    Slovakia = "SK"
+    Sierra_Leone = "SL"
+    San_Marino = "SM"
+    Senegal = "SN"
+    Somalia = "SO"
+    Suriname = "SR"
+    Sao_Tome_and_Principe = "ST"
+    El_Salvador = "SV"
+    Sint_Maarten = "SX"
+    Syria = "SY"
+    Eswatini = "SZ"
+    Turks_and_Caicos_Islands = "TC"
+    Chad = "TD"
+    French_Southern_Territories = "TF"
+    Togo = "TG"
+    Thailand = "TH"
+    Tajikistan = "TJ"
+    Tokelau = "TK"
+    Timor_Leste = "TL"
+    Turkmenistan = "TM"
+    Tunisia = "TN"
+    Tonga = "TO"
+    Turkey = "TR"
+    Trinidad_and_Tobago = "TT"
+    Tuvalu = "TV"
+    Taiwan = "TW"
+    Tanzania = "TZ"
+    Ukraine = "UA"
+    Uganda = "UG"
+    United_States_Minor_Outlying_Islands = "UM"
+    United_States = "US"
+    Uruguay = "UY"
+    Uzbekistan = "UZ"
+    Vatican = "VA"
+    Saint_Vincent_and_the_Grenadines = "VC"
+    Venezuela = "VE"
+    British_Virgin_Islands = "VG"
+    UFULL_STOPSFULL_STOP_Virgin_Islands = "VI"
+    Vietnam = "VN"
+    Vanuatu = "VU"
+    Wallis_and_Futuna = "WF"
+    Samoa = "WS"
+    Yemen = "YE"
+    Mayotte = "YT"
+    South_Africa = "ZA"
+    Zambia = "ZM"
+    Zimbabwe = "ZW"
+    Serbia_and_Montenegro = "CS"
+    Netherlands_Antilles = "AN"
+
+
+class TimezoneEnum(str, Enum):
+    AmericaSOLIDUSSao_Paulo = "America/Sao_Paulo"
+    """
+    America/Sao_Paulo
+    """
+    AmericaSOLIDUSCaracas = "America/Caracas"
+    """
+    America/Caracas
+    """
+    AmericaSOLIDUSMontevideo = "America/Montevideo"
+    """
+    America/Montevideo
+    """
+    AmericaSOLIDUSGuatemala = "America/Guatemala"
+    """
+    America/Guatemala
+    """
+    AmericaSOLIDUSLa_Paz = "America/La_Paz"
+    """
+    America/La_Paz
+    """
+    AmericaSOLIDUSBelem = "America/Belem"
+    """
+    America/Belem
+    """
+    AmericaSOLIDUSAraguaina = "America/Araguaina"
+    """
+    America/Araguaina
+    """
+    AmericaSOLIDUSBahia = "America/Bahia"
+    """
+    America/Bahia
+    """
+    AmericaSOLIDUSArgentinaSOLIDUSCordoba = "America/Argentina/Cordoba"
+    """
+    America/Argentina/Cordoba
+    """
+    AmericaSOLIDUSMaceio = "America/Maceio"
+    """
+    America/Maceio
+    """
+    AmericaSOLIDUSFortaleza = "America/Fortaleza"
+    """
+    America/Fortaleza
+    """
+    AmericaSOLIDUSLima = "America/Lima"
+    """
+    America/Lima
+    """
+    AmericaSOLIDUSSantarem = "America/Santarem"
+    """
+    America/Santarem
+    """
+    AmericaSOLIDUSCayenne = "America/Cayenne"
+    """
+    America/Cayenne
+    """
+    AmericaSOLIDUSRio_Branco = "America/Rio_Branco"
+    """
+    America/Rio_Branco
+    """
+    AmericaSOLIDUSCampo_Grande = "America/Campo_Grande"
+    """
+    America/Campo_Grande
+    """
+    AmericaSOLIDUSNoronha = "America/Noronha"
+    """
+    America/Noronha
+    """
+    AmericaSOLIDUSPorto_Velho = "America/Porto_Velho"
+    """
+    America/Porto_Velho
+    """
+    AmericaSOLIDUSGuyana = "America/Guyana"
+    """
+    America/Guyana
+    """
+    AmericaSOLIDUSCuiaba = "America/Cuiaba"
+    """
+    America/Cuiaba
+    """
+    AmericaSOLIDUSManaus = "America/Manaus"
+    """
+    America/Manaus
+    """
+    AmericaSOLIDUSParamaribo = "America/Paramaribo"
+    """
+    America/Paramaribo
+    """
+    AmericaSOLIDUSAsuncion = "America/Asuncion"
+    """
+    America/Asuncion
+    """
+    AmericaSOLIDUSBoa_Vista = "America/Boa_Vista"
+    """
+    America/Boa_Vista
+    """
+    AmericaSOLIDUSCosta_Rica = "America/Costa_Rica"
+    """
+    America/Costa_Rica
+    """
+    AmericaSOLIDUSBogota = "America/Bogota"
+    """
+    America/Bogota
+    """
+    AmericaSOLIDUSEirunepe = "America/Eirunepe"
+    """
+    America/Eirunepe
+    """
+    AmericaSOLIDUSRecife = "America/Recife"
+    """
+    America/Recife
+    """
 
 
 class AgentType(str, Enum):
@@ -2335,7 +5247,7 @@ class Thing(ConfiguredBaseModel):
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
-    date: Optional[date] = Field(
+    record_date: Optional[date] = Field(
         default=None,
         description="""Data de inclusão da ficha.""",
         json_schema_extra={
@@ -2374,25 +5286,34 @@ class Thing(ConfiguredBaseModel):
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
 No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
----------------------------------------------------------------------
-The LIDO Category Vocabulary is a structured controlled list of terms recommended to use as values in the LIDO Category element.
-Examples are human-made object or natural object.""",
+""",
         json_schema_extra={
             "linkml_meta": {
                 "designates_type": True,
                 "domain_of": ["Thing"],
+                "notes": [
+                    "The LIDO Category Vocabulary is a structured controlled list of "
+                    "terms recommended to use as values in the LIDO Category element.\n"
+                    "Examples are human-made object or natural object."
+                ],
                 "slot_uri": "term:lidoCategory",
             }
         },
     )
     record_rights: Optional[list[Right]] = Field(
         default=None,
-        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha.
+        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
 ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.
----------------------------------------------------------------------
-A set of structured information about rights regarding the content provided in this LIDO record.
 """,
-        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "notes": [
+                    "A set of structured information about rights regarding the content "
+                    "provided in this LIDO record."
+                ],
+            }
+        },
     )
     bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
         default=None,
@@ -2432,8 +5353,8 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             }
         },
     )
-    title: str = Field(
-        default=...,
+    title: Optional[str] = Field(
+        default=None,
         description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
 """,
         json_schema_extra={
@@ -2585,7 +5506,7 @@ Derivado automaticamente das relações `broader` em outras fichas. NÃO preench
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
-    date: Optional[date] = Field(
+    record_date: Optional[date] = Field(
         default=None,
         description="""Data de inclusão da ficha.""",
         json_schema_extra={
@@ -2624,25 +5545,34 @@ Derivado automaticamente das relações `broader` em outras fichas. NÃO preench
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
 No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
----------------------------------------------------------------------
-The LIDO Category Vocabulary is a structured controlled list of terms recommended to use as values in the LIDO Category element.
-Examples are human-made object or natural object.""",
+""",
         json_schema_extra={
             "linkml_meta": {
                 "designates_type": True,
                 "domain_of": ["Thing"],
+                "notes": [
+                    "The LIDO Category Vocabulary is a structured controlled list of "
+                    "terms recommended to use as values in the LIDO Category element.\n"
+                    "Examples are human-made object or natural object."
+                ],
                 "slot_uri": "term:lidoCategory",
             }
         },
     )
     record_rights: Optional[list[Right]] = Field(
         default=None,
-        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha.
+        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
 ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.
----------------------------------------------------------------------
-A set of structured information about rights regarding the content provided in this LIDO record.
 """,
-        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "notes": [
+                    "A set of structured information about rights regarding the content "
+                    "provided in this LIDO record."
+                ],
+            }
+        },
     )
     bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
         default=None,
@@ -2682,8 +5612,8 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             }
         },
     )
-    title: str = Field(
-        default=...,
+    title: Optional[str] = Field(
+        default=None,
         description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
 """,
         json_schema_extra={
@@ -2868,7 +5798,7 @@ Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente 
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
-    date: Optional[date] = Field(
+    record_date: Optional[date] = Field(
         default=None,
         description="""Data de inclusão da ficha.""",
         json_schema_extra={
@@ -2907,25 +5837,34 @@ Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente 
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
 No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
----------------------------------------------------------------------
-The LIDO Category Vocabulary is a structured controlled list of terms recommended to use as values in the LIDO Category element.
-Examples are human-made object or natural object.""",
+""",
         json_schema_extra={
             "linkml_meta": {
                 "designates_type": True,
                 "domain_of": ["Thing"],
+                "notes": [
+                    "The LIDO Category Vocabulary is a structured controlled list of "
+                    "terms recommended to use as values in the LIDO Category element.\n"
+                    "Examples are human-made object or natural object."
+                ],
                 "slot_uri": "term:lidoCategory",
             }
         },
     )
     record_rights: Optional[list[Right]] = Field(
         default=None,
-        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha.
+        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
 ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.
----------------------------------------------------------------------
-A set of structured information about rights regarding the content provided in this LIDO record.
 """,
-        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "notes": [
+                    "A set of structured information about rights regarding the content "
+                    "provided in this LIDO record."
+                ],
+            }
+        },
     )
     bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
         default=None,
@@ -2965,8 +5904,8 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             }
         },
     )
-    title: str = Field(
-        default=...,
+    title: Optional[str] = Field(
+        default=None,
         description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
 """,
         json_schema_extra={
@@ -3204,7 +6143,7 @@ Por ora, é responsabilidade de quem preenche a ficha assegurar que `start_date`
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
-    date: Optional[date] = Field(
+    record_date: Optional[date] = Field(
         default=None,
         description="""Data de inclusão da ficha.""",
         json_schema_extra={
@@ -3243,25 +6182,34 @@ Por ora, é responsabilidade de quem preenche a ficha assegurar que `start_date`
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
 No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
----------------------------------------------------------------------
-The LIDO Category Vocabulary is a structured controlled list of terms recommended to use as values in the LIDO Category element.
-Examples are human-made object or natural object.""",
+""",
         json_schema_extra={
             "linkml_meta": {
                 "designates_type": True,
                 "domain_of": ["Thing"],
+                "notes": [
+                    "The LIDO Category Vocabulary is a structured controlled list of "
+                    "terms recommended to use as values in the LIDO Category element.\n"
+                    "Examples are human-made object or natural object."
+                ],
                 "slot_uri": "term:lidoCategory",
             }
         },
     )
     record_rights: Optional[list[Right]] = Field(
         default=None,
-        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha.
+        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
 ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.
----------------------------------------------------------------------
-A set of structured information about rights regarding the content provided in this LIDO record.
 """,
-        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "notes": [
+                    "A set of structured information about rights regarding the content "
+                    "provided in this LIDO record."
+                ],
+            }
+        },
     )
     bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
         default=None,
@@ -3301,8 +6249,8 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             }
         },
     )
-    title: str = Field(
-        default=...,
+    title: Optional[str] = Field(
+        default=None,
         description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
 """,
         json_schema_extra={
@@ -3486,7 +6434,7 @@ class Repository(Thing):
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
-    date: Optional[date] = Field(
+    record_date: Optional[date] = Field(
         default=None,
         description="""Data de inclusão da ficha.""",
         json_schema_extra={
@@ -3525,25 +6473,34 @@ class Repository(Thing):
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
 No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
----------------------------------------------------------------------
-The LIDO Category Vocabulary is a structured controlled list of terms recommended to use as values in the LIDO Category element.
-Examples are human-made object or natural object.""",
+""",
         json_schema_extra={
             "linkml_meta": {
                 "designates_type": True,
                 "domain_of": ["Thing"],
+                "notes": [
+                    "The LIDO Category Vocabulary is a structured controlled list of "
+                    "terms recommended to use as values in the LIDO Category element.\n"
+                    "Examples are human-made object or natural object."
+                ],
                 "slot_uri": "term:lidoCategory",
             }
         },
     )
     record_rights: Optional[list[Right]] = Field(
         default=None,
-        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha.
+        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
 ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.
----------------------------------------------------------------------
-A set of structured information about rights regarding the content provided in this LIDO record.
 """,
-        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "notes": [
+                    "A set of structured information about rights regarding the content "
+                    "provided in this LIDO record."
+                ],
+            }
+        },
     )
     bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
         default=None,
@@ -3583,8 +6540,8 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             }
         },
     )
-    title: str = Field(
-        default=...,
+    title: Optional[str] = Field(
+        default=None,
         description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
 """,
         json_schema_extra={
@@ -3724,6 +6681,7 @@ class Work(Thing):
                 "record_author": {"name": "record_author", "required": True},
                 "record_date": {"name": "record_date", "required": True},
                 "record_rights": {"name": "record_rights", "required": True},
+                "title": {"name": "title", "required": True},
             },
         }
     )
@@ -3990,11 +6948,12 @@ A classification scheme for grouping objects on the basis of criteria defined wi
     )
     part_of: Optional[list[TypedReference]] = Field(
         default=None,
-        description="""Permite identificar o contexto geográfico ou administrativo ao qual a edificação se subordina, ou ainda um conjunto arquitetônico, urbanístico ou conceitual (por exemplo, uma série de casas) do qual ela faz parte.
----------------------------------------------------------------------
-A set of structured information about a place that is the broader context for the place in focus, such as the district, state, or nation to which a city belongs.""",
+        description="""Permite identificar um conjunto arquitetônico, urbanístico ou conceitual (por exemplo, uma série de casas) do qual a edificação faz parte.""",
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Work"], "slot_uri": "dcterms:isPartOf"}
+            "linkml_meta": {
+                "domain_of": ["Work", "Site"],
+                "slot_uri": "dcterms:isPartOf",
+            }
         },
     )
     former_site: Optional[list[Site]] = Field(
@@ -4070,7 +7029,7 @@ Para o pertencimento a perímetros de sítios históricos tombados/classificados
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
-    date: date = Field(
+    record_date: date = Field(
         default=...,
         description="""Data de inclusão da ficha.""",
         json_schema_extra={
@@ -4109,26 +7068,35 @@ Para o pertencimento a perímetros de sítios históricos tombados/classificados
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
 No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
----------------------------------------------------------------------
-The LIDO Category Vocabulary is a structured controlled list of terms recommended to use as values in the LIDO Category element.
-Examples are human-made object or natural object.""",
+""",
         json_schema_extra={
             "linkml_meta": {
                 "designates_type": True,
                 "domain_of": ["Thing"],
                 "ifabsent": "string(http://terminology.lido-schema.org/lido00096)",
+                "notes": [
+                    "The LIDO Category Vocabulary is a structured controlled list of "
+                    "terms recommended to use as values in the LIDO Category element.\n"
+                    "Examples are human-made object or natural object."
+                ],
                 "slot_uri": "term:lidoCategory",
             }
         },
     )
     record_rights: list[Right] = Field(
         default=...,
-        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha.
+        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
 ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.
----------------------------------------------------------------------
-A set of structured information about rights regarding the content provided in this LIDO record.
 """,
-        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "notes": [
+                    "A set of structured information about rights regarding the content "
+                    "provided in this LIDO record."
+                ],
+            }
+        },
     )
     bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
         default=None,
@@ -4255,7 +7223,6 @@ Repeated if there are several designations known, or if former repositories or g
 class Site(Thing):
     """
     O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura Tradicional. Ele permite investigar a distribuição geográfica das características construtivas e morfológicas das edificações cadastradas.
-    Este bloco corresponde à terminologia do [DublinCore] `coverage > spatial`. Na especificação [LIDO], a localização física de um bem se confunde com a sua inserção institucional (repositório). Na formatação da nossa ficha, tentamos desfazer essa confusão separando o georreferenciamento e o repositório em blocos diferentes.
     As instruções de preenchimento específicas se encontram na documentação das classes que fornecem os dados para o sítio. Consulte também o [Tutorial de georreferenciamento](https://github.com/arqtrad/.github/wiki/Tutorial-de-georreferenciamento) para saber como localizar edificações não cadastradas nas bases de dados do patrimônio cultural (SICG ou SIPA).
 
     """
@@ -4264,6 +7231,14 @@ class Site(Thing):
         {
             "abstract": True,
             "class_uri": "crm:E92_Spacetime_Volume",
+            "comments": [
+                "Este bloco corresponde à terminologia do [DublinCore] `coverage "
+                "> spatial`. Na especificação [LIDO], a localização física de um "
+                "bem se confunde com a sua inserção institucional (repositório). "
+                "Na formatação da nossa ficha, tentamos desfazer essa confusão "
+                "separando o georreferenciamento e o repositório em blocos "
+                "diferentes."
+            ],
             "exact_mappings": ["schema:DefinedRegion"],
             "from_schema": "https://tradicional.arq.br/schema/work",
             "notes": [
@@ -4282,17 +7257,22 @@ class Site(Thing):
                 "spacetime. The duration of existence of an instance of E92 "
                 "Spacetime Volume is its projection on time."
             ],
-            "slot_usage": {
-                "id": {
-                    "description": "Incluir aqui um identificador da base "
-                    "geonames na forma `geonames:1234`.\n",
-                    "name": "id",
-                    "range": "GeonamesId",
-                }
-            },
         }
     )
 
+    part_of: Optional[GeonamesFeature] = Field(
+        default=None,
+        description="""Permite identificar o contexto geográfico ou administrativo ao qual a edificação se subordina. Referenciar a localidade por meio do código identificador na forma: `geonameid: 1234`
+---------------------------------------------------------------------
+A set of structured information about a place that is the broader context for the place in focus, such as the district, state, or nation to which a city belongs.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Work", "Site"],
+                "slot_uri": "lido:partOfPlace",
+            }
+        },
+    )
     type: Optional[RepositoryType] = Field(
         default=RepositoryType("geographic"),
         json_schema_extra={
@@ -4328,7 +7308,7 @@ Polygonal, multipolygonal, or linear geographic extent associated with the place
     )
     id: str = Field(
         default=...,
-        description="""Incluir aqui um identificador da base geonames na forma `geonames:1234`.
+        description="""Identificador globalmente único para este objeto ou recurso.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:identifier"}
@@ -4342,7 +7322,7 @@ Polygonal, multipolygonal, or linear geographic extent associated with the place
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
         },
     )
-    date: Optional[date] = Field(
+    record_date: Optional[date] = Field(
         default=None,
         description="""Data de inclusão da ficha.""",
         json_schema_extra={
@@ -4381,25 +7361,34 @@ Polygonal, multipolygonal, or linear geographic extent associated with the place
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
 No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
----------------------------------------------------------------------
-The LIDO Category Vocabulary is a structured controlled list of terms recommended to use as values in the LIDO Category element.
-Examples are human-made object or natural object.""",
+""",
         json_schema_extra={
             "linkml_meta": {
                 "designates_type": True,
                 "domain_of": ["Thing"],
+                "notes": [
+                    "The LIDO Category Vocabulary is a structured controlled list of "
+                    "terms recommended to use as values in the LIDO Category element.\n"
+                    "Examples are human-made object or natural object."
+                ],
                 "slot_uri": "term:lidoCategory",
             }
         },
     )
     record_rights: Optional[list[Right]] = Field(
         default=None,
-        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha.
+        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
 ⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.
----------------------------------------------------------------------
-A set of structured information about rights regarding the content provided in this LIDO record.
 """,
-        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "notes": [
+                    "A set of structured information about rights regarding the content "
+                    "provided in this LIDO record."
+                ],
+            }
+        },
     )
     bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
         default=None,
@@ -4439,8 +7428,8 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             }
         },
     )
-    title: str = Field(
-        default=...,
+    title: Optional[str] = Field(
+        default=None,
         description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
 """,
         json_schema_extra={
@@ -4863,6 +7852,323 @@ class LocationHistoric(ConfiguredBaseModel):
     )
 
 
+class GeonamesFeature(ConfiguredBaseModel):
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
+        {
+            "class_uri": "geonames:Feature",
+            "from_schema": "https://tradicional.arq.br/schema/geonames",
+        }
+    )
+
+    geonameid: int = Field(
+        default=...,
+        description="""Integer id of record in geonames database""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {
+                        "tag": "num_distinct_values",
+                        "value": "235530",
+                    }
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "13713056"}],
+            }
+        },
+    )
+    name: Optional[str] = Field(
+        default=None,
+        description="""Name of geographical point (utf8) varchar(200)""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {
+                        "tag": "num_distinct_values",
+                        "value": "126931",
+                    }
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "Sítio Julião"}],
+                "slot_uri": "geonames:name",
+            }
+        },
+    )
+    asciiname: Optional[str] = Field(
+        default=None,
+        description="""Name of geographical point in plain ascii characters, varchar(200)
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {
+                        "tag": "num_distinct_values",
+                        "value": "126467",
+                    }
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "Sitio Juliao"}],
+            }
+        },
+    )
+    alternatenames: Optional[str] = Field(
+        default=None,
+        description="""Alternatenames, comma separated, ascii names automatically transliterated, convenience attribute from alternatename table, varchar(10000) """,
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {
+                        "tag": "num_distinct_values",
+                        "value": "118603",
+                    }
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [
+                    {
+                        "value": "Armenian Apostolic Church of Saint John the "
+                        "Baptist,Hayastaneaycʻ Arakʻelakan Surb Yovhannes "
+                        "Mkrticʻ ekegecʻi,Igreja Apostolica Armenia Sao Joao "
+                        "Batista,Igreja Apostólica Armênia São João "
+                        "Batista,Surb Hovhannes Mkrticʻ ekegecʻi,Հայաստանեայց "
+                        "Առաքելական Սուրբ Յովհաննէս Մկրտիչ եկեղեցի,Սուրբ "
+                        "Հովհաննես Մկրտիչ եկեղեցի\n"
+                    }
+                ],
+                "slot_uri": "geonames:alternatenames",
+            }
+        },
+    )
+    latitude: Optional[float] = Field(
+        default=None,
+        description="""Latitude in decimal degrees (wgs84)""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {
+                        "tag": "num_distinct_values",
+                        "value": "191229",
+                    }
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "-6.1516"}],
+                "slot_uri": "wgs84:lat",
+            }
+        },
+    )
+    longitude: Optional[float] = Field(
+        default=None,
+        description="""Longitude in decimal degrees (wgs84)""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {
+                        "tag": "num_distinct_values",
+                        "value": "190039",
+                    }
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "-39.59999"}],
+                "slot_uri": "wgs84:long",
+            }
+        },
+    )
+    feature_class: Optional[FeatureClassEnum] = Field(
+        default=None,
+        description="""See http://www.geonames.org/export/codes.html, char(1)""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {"tag": "num_distinct_values", "value": "9"}
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "S"}],
+                "slot_uri": "geonames:featureClass",
+            }
+        },
+    )
+    feature_code: Optional[FeatureCodeEnum] = Field(
+        default=None,
+        description="""See http://www.geonames.org/export/codes.html, varchar(10)""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {
+                        "tag": "num_distinct_values",
+                        "value": "319",
+                    }
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "HSE"}],
+                "slot_uri": "geonames:featureCode",
+            }
+        },
+    )
+    country_code: Optional[CountryCodeEnum] = Field(
+        default=None,
+        description="""ISO-3166 2-letter country code, 2 characters""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {"tag": "num_distinct_values", "value": "1"}
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "BR"}],
+                "slot_uri": "geonames:countryCode",
+            }
+        },
+    )
+    cc2: Optional[str] = Field(
+        default=None,
+        description="""Alternate country codes, comma separated, ISO-3166 2-letter country code, 200 characters
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {"tag": "num_distinct_values", "value": "22"}
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "CO"}],
+            }
+        },
+    )
+    admin1_code: Optional[int] = Field(
+        default=None,
+        description="""Fipscode (subject to change to iso code), see exceptions below, see file admin1Codes.txt for display names of this code; varchar(20)
+Most adm1 are FIPS codes. ISO codes are used for US, CH, BE and ME. UK and Greece are using an additional level between country and fips code. The code '00' stands for general features where no specific adm1 code is defined.
+The corresponding admin feature is found with the same countrycode and adminX codes and the respective feature code ADMx.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {"tag": "num_distinct_values", "value": "28"}
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "06"}],
+            }
+        },
+    )
+    admin2_code: Optional[int] = Field(
+        default=None,
+        description="""Code for the second administrative division, a county in the US, see file admin2Codes.txt; varchar(80)
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {
+                        "tag": "num_distinct_values",
+                        "value": "5577",
+                    }
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "2300309"}],
+            }
+        },
+    )
+    admin3_code: Optional[int] = Field(
+        default=None,
+        description="""code for third level administrative division, varchar(20)""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {"tag": "num_distinct_values", "value": "45"}
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "09"}],
+            }
+        },
+    )
+    admin4_code: Optional[str] = Field(
+        default=None,
+        description="""code for fourth level administrative division, varchar(20)""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {"tag": "num_distinct_values", "value": "0"}
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+            }
+        },
+    )
+    population: Optional[int] = Field(
+        default=None,
+        description="""bigint (8 byte int)""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {
+                        "tag": "num_distinct_values",
+                        "value": "9242",
+                    }
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "15"}],
+                "slot_uri": "geonames:population",
+            }
+        },
+    )
+    elevation: Optional[int] = Field(
+        default=None,
+        description="""in meters, integer""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {
+                        "tag": "num_distinct_values",
+                        "value": "701",
+                    }
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "303"}],
+            }
+        },
+    )
+    dem: Optional[int] = Field(
+        default=None,
+        description="""Digital elevation model, srtm3 or gtopo30, average elevation of 3''x3'' (ca 90mx90m) or 30''x30'' (ca 900mx900m) area in meters, integer. srtm processed by cgiar/ciat.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {
+                        "tag": "num_distinct_values",
+                        "value": "1706",
+                    }
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "406"}],
+            }
+        },
+    )
+    timezone: Optional[TimezoneEnum] = Field(
+        default=None,
+        description="""the iana timezone id (see file timeZone.txt) varchar(40)""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {"tag": "num_distinct_values", "value": "28"}
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "America/Fortaleza"}],
+            }
+        },
+    )
+    modification_date: Optional[date] = Field(
+        default=None,
+        description="""date of last modification in yyyy-MM-dd format""",
+        json_schema_extra={
+            "linkml_meta": {
+                "annotations": {
+                    "num_distinct_values": {
+                        "tag": "num_distinct_values",
+                        "value": "1414",
+                    }
+                },
+                "domain_of": ["Place", "GeonamesFeature"],
+                "examples": [{"value": "2026-10-09"}],
+            }
+        },
+    )
+
+
 class Container(ConfiguredBaseModel):
     """
     Todos os elementos do documentário.
@@ -4880,6 +8186,11 @@ class Container(ConfiguredBaseModel):
     concepts: Optional[list[Concept]] = Field(
         default=None,
         description="""Todos os termos de vocabulário controlado.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Container"]}},
+    )
+    places: Optional[list[GeonamesFeature]] = Field(
+        default=None,
+        description="""Lugares indexados pelo Geonames""",
         json_schema_extra={"linkml_meta": {"domain_of": ["Container"]}},
     )
 
@@ -4916,4 +8227,5 @@ GeographicExtent.model_rebuild()
 Inscription.model_rebuild()
 Topic.model_rebuild()
 LocationHistoric.model_rebuild()
+GeonamesFeature.model_rebuild()
 Container.model_rebuild()

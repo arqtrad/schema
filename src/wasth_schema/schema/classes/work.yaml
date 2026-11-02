@@ -474,18 +474,20 @@ classes:
       Ele permite investigar a distribuição geográfica das características
       construtivas e morfológicas das edificações cadastradas.
 
-      Este bloco corresponde à terminologia do [DublinCore] `coverage >
-      spatial`. Na especificação [LIDO], a localização física de um bem se
-      confunde com a sua inserção institucional (repositório).
-      Na formatação da nossa ficha, tentamos desfazer essa confusão separando o
-      georreferenciamento e o repositório em blocos diferentes.
-
       As instruções de preenchimento específicas se encontram na documentação
       das classes que fornecem os dados para o sítio.
       Consulte também o [Tutorial de
       georreferenciamento](https://github.com/arqtrad/.github/wiki/Tutorial-de-georreferenciamento)
       para saber como localizar edificações não cadastradas nas bases de dados
       do patrimônio cultural (SICG ou SIPA).
+
+    comments:
+
+      - Este bloco corresponde à terminologia do [DublinCore] `coverage >
+        spatial`. Na especificação [LIDO], a localização física de um bem se
+        confunde com a sua inserção institucional (repositório).
+        Na formatação da nossa ficha, tentamos desfazer essa confusão separando
+        o georreferenciamento e o repositório em blocos diferentes.
 
     notes:
 
