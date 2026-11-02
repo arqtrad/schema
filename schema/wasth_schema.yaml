@@ -6114,7 +6114,6 @@ slots:
     mappings:
     - dcterms:created
     slot_uri: dcterms:created
-    alias: date
     owner: Thing
     domain_of:
     - Thing
@@ -6141,16 +6140,16 @@ slots:
     domain_of:
     - Thing
     range: uriorcurie
-    required: true
   record_rights:
     name: record_rights
     definition_uri: https://tradicional.arq.br/schema/record_rights
     description: "Informa\xE7\xF5es estruturadas sobre os direitos que incidem sobre\
-      \ o conte\xFAdo textual desta ficha.\n\u26A0\uFE0F  Este grupo se refere aos\
-      \ direitos sobre o CONTE\xDADO da ficha, n\xE3o sobre os direitos incidentes\
-      \ sobre o objeto descrito.\n---------------------------------------------------------------------\n\
-      A set of structured information about rights regarding the content provided\
-      \ in this LIDO record.\n"
+      \ o conte\xFAdo textual desta ficha e o detentor desses direitos.\n\u26A0\uFE0F\
+      \  Este grupo se refere aos direitos sobre o CONTE\xDADO da ficha, n\xE3o sobre\
+      \ os direitos incidentes sobre o objeto descrito.\n"
+    notes:
+    - A set of structured information about rights regarding the content provided
+      in this LIDO record.
     from_schema: https://tradicional.arq.br/schema/thing
     slot_uri: wasth:record_rights
     owner: Thing
@@ -8156,7 +8155,7 @@ slots:
     is_a: record_date
     domain: Work
     slot_uri: dcterms:created
-    alias: date
+    alias: record_date
     owner: Work
     domain_of:
     - Work
@@ -8192,16 +8191,16 @@ slots:
     is_usage_slot: true
     usage_slot_name: category
     range: uriorcurie
-    required: true
   Work_record_rights:
     name: Work_record_rights
     definition_uri: https://tradicional.arq.br/schema/record_rights
     description: "Informa\xE7\xF5es estruturadas sobre os direitos que incidem sobre\
-      \ o conte\xFAdo textual desta ficha.\n\u26A0\uFE0F  Este grupo se refere aos\
-      \ direitos sobre o CONTE\xDADO da ficha, n\xE3o sobre os direitos incidentes\
-      \ sobre o objeto descrito.\n---------------------------------------------------------------------\n\
-      A set of structured information about rights regarding the content provided\
-      \ in this LIDO record.\n"
+      \ o conte\xFAdo textual desta ficha e o detentor desses direitos.\n\u26A0\uFE0F\
+      \  Este grupo se refere aos direitos sobre o CONTE\xDADO da ficha, n\xE3o sobre\
+      \ os direitos incidentes sobre o objeto descrito.\n"
+    notes:
+    - A set of structured information about rights regarding the content provided
+      in this LIDO record.
     from_schema: https://tradicional.arq.br/schema/thing
     is_a: record_rights
     domain: Work
@@ -9691,14 +9690,9 @@ classes:
     description: "O georreferenciamento \xE9 o cerne do projeto dos Document\xE1rios\
       \ da Arquitetura Tradicional. Ele permite investigar a distribui\xE7\xE3o geogr\xE1\
       fica das caracter\xEDsticas construtivas e morfol\xF3gicas das edifica\xE7\xF5\
-      es cadastradas.\nEste bloco corresponde \xE0 terminologia do [DublinCore] `coverage\
-      \ > spatial`. Na especifica\xE7\xE3o [LIDO], a localiza\xE7\xE3o f\xEDsica de\
-      \ um bem se confunde com a sua inser\xE7\xE3o institucional (reposit\xF3rio).\
-      \ Na formata\xE7\xE3o da nossa ficha, tentamos desfazer essa confus\xE3o separando\
-      \ o georreferenciamento e o reposit\xF3rio em blocos diferentes.\nAs instru\xE7\
-      \xF5es de preenchimento espec\xEDficas se encontram na documenta\xE7\xE3o das\
-      \ classes que fornecem os dados para o s\xEDtio. Consulte tamb\xE9m o [Tutorial\
-      \ de georreferenciamento](https://github.com/arqtrad/.github/wiki/Tutorial-de-georreferenciamento)\
+      es cadastradas.\nAs instru\xE7\xF5es de preenchimento espec\xEDficas se encontram\
+      \ na documenta\xE7\xE3o das classes que fornecem os dados para o s\xEDtio. Consulte\
+      \ tamb\xE9m o [Tutorial de georreferenciamento](https://github.com/arqtrad/.github/wiki/Tutorial-de-georreferenciamento)\
       \ para saber como localizar edifica\xE7\xF5es n\xE3o cadastradas nas bases de\
       \ dados do patrim\xF4nio cultural (SICG ou SIPA).\n"
     notes:
@@ -9713,6 +9707,12 @@ classes:
       from or due to the limited precision up to which defining expression can be
       identified with a real extent in spacetime. The duration of existence of an
       instance of E92 Spacetime Volume is its projection on time.
+    comments:
+    - "Este bloco corresponde \xE0 terminologia do [DublinCore] `coverage > spatial`.\
+      \ Na especifica\xE7\xE3o [LIDO], a localiza\xE7\xE3o f\xEDsica de um bem se\
+      \ confunde com a sua inser\xE7\xE3o institucional (reposit\xF3rio). Na formata\xE7\
+      \xE3o da nossa ficha, tentamos desfazer essa confus\xE3o separando o georreferenciamento\
+      \ e o reposit\xF3rio em blocos diferentes."
     from_schema: https://tradicional.arq.br/schema/work
     exact_mappings:
     - crm:E92_Spacetime_Volume
@@ -9974,6 +9974,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-11-01T23:50:02'
+source_file_date: '2026-11-02T14:14:33'
 source_file_size: 48651
 

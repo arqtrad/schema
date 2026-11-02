@@ -558,7 +558,7 @@
 </tr>
 <tr>
 <td><a href="../category/">category</a></td>
-<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário...</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
@@ -916,7 +916,6 @@
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:created</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
@@ -969,21 +968,18 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">record_rights</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_rights</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Informações</span><span class="nv"> </span><span class="s">estruturadas</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">incidem</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">conteúdo</span>
-<span class="w">      </span><span class="s">textual</span><span class="nv"> </span><span class="s">desta</span><span class="nv"> </span><span class="s">ficha.</span>
+<span class="w">      </span><span class="s">textual</span><span class="nv"> </span><span class="s">desta</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">detentor</span><span class="nv"> </span><span class="s">desses</span><span class="nv"> </span><span class="s">direitos.</span>
 
 <span class="w">      </span><span class="s">⚠️</span><span class="nv">  </span><span class="s">Este</span><span class="nv"> </span><span class="s">grupo</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">refere</span><span class="nv"> </span><span class="s">aos</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">CONTEÚDO</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha,</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">os</span>
 <span class="w">      </span><span class="s">direitos</span><span class="nv"> </span><span class="s">incidentes</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">descrito.</span>
 
-<span class="w">      </span><span class="s">---------------------------------------------------------------------</span>
-
-<span class="w">      </span><span class="s">A</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">rights</span><span class="nv"> </span><span class="s">regarding</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">provided</span>
-<span class="w">      </span><span class="s">in</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">record.</span>
-
 <span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">notes</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A set of structured information about rights regarding the content provided</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">in this LIDO record.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
