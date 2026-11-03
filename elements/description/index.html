@@ -501,16 +501,6 @@ Alias: display</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../RelatedObject/">RelatedObject</a></td>
-<td>A wrapper for identifying information about an object or work, including coll...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MediaObject/">MediaObject</a></td>
-<td>Descrição e referência a um único arquivo de mídia</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../TypedReference/">TypedReference</a></td>
 <td>Permite referenciar um registro local ou externo por meio da sua URI (localiz...</td>
 <td>no</td>
@@ -528,7 +518,7 @@ Alias: display</p>
 <tr>
 <td><a href="../Thing/">Thing</a></td>
 <td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 <tr>
 <td><a href="../Inscription/">Inscription</a></td>
@@ -561,14 +551,29 @@ Alias: display</p>
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../RelatedObject/">RelatedObject</a></td>
+<td>A set of structured information about an object or work, or a group of object...</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../RelatedWork/">RelatedWork</a></td>
 <td>As formas mais comuns de relação no nosso projeto são :</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Resource/">Resource</a></td>
-<td>This class comprises identifiable immaterial items that make propositions abo...</td>
+<td><a href="../LargerContextReference/">LargerContextReference</a></td>
+<td>Tipo de relação específica entre obras a ser usado quando o objeto descrito n...</td>
 <td>no</td>
+</tr>
+<tr>
+<td><a href="../Resource/">Resource</a></td>
+<td>Este grupo identifica um recurso visual ou documental que fornece informações...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MediaObject/">MediaObject</a></td>
+<td>Descrição e referência a um único arquivo de mídia</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../MaterialTech/">MaterialTech</a></td>
@@ -593,11 +598,16 @@ Alias: display</p>
 <tr>
 <td><a href="../Work/">Work</a></td>
 <td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
 <td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Collection/">Collection</a></td>
+<td></td>
 <td>no</td>
 </tr>
 </tbody>
@@ -618,7 +628,7 @@ Alias: display</p>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../ConceptReference/">ConceptReference</a>, <a href="../BibliographicCitation/">BibliographicCitation</a>, <a href="../RelatedObject/">RelatedObject</a>, <a href="../MediaObject/">MediaObject</a>, <a href="../TypedReference/">TypedReference</a>, <a href="../Measurement/">Measurement</a>, <a href="../RelatedEvent/">RelatedEvent</a>, <a href="../Thing/">Thing</a>, <a href="../Inscription/">Inscription</a>, <a href="../Topic/">Topic</a></td>
+<td><a href="../ConceptReference/">ConceptReference</a>, <a href="../BibliographicCitation/">BibliographicCitation</a>, <a href="../TypedReference/">TypedReference</a>, <a href="../Measurement/">Measurement</a>, <a href="../RelatedEvent/">RelatedEvent</a>, <a href="../Thing/">Thing</a>, <a href="../Inscription/">Inscription</a>, <a href="../Topic/">Topic</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
@@ -667,8 +677,6 @@ Alias: display</p>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>

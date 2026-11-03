@@ -475,7 +475,7 @@
 
 
 <h1 id="slot-format">Slot: format</h1>
-<p><em>Campo disciplinado pela especificação [DublinCore] no campo <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/">format</a>. Esta especificação sugere a [lista de tipos de mídia IANA].</em></p>
+<p><em>Campo disciplinado pela especificação [DublinCore] no campo <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/">format</a>. Esta especificação sugere a lista de tipos de mídia IANA : <a href="https://www.iana.org/assignments/media-types">https://www.iana.org/assignments/media-types</a>.</em></p>
 <p>__</p>
 <div>
 <p>URI: <a href="http://purl.org/dc/terms/format">dcterms:format</a></p>
@@ -490,6 +490,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../Resource/">Resource</a></td>
+<td>Este grupo identifica um recurso visual ou documental que fornece informações...</td>
+<td>no</td>
+</tr>
 <tr>
 <td><a href="../MediaObject/">MediaObject</a></td>
 <td>Descrição e referência a um único arquivo de mídia</td>
@@ -513,7 +518,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../MediaObject/">MediaObject</a></td>
+<td><a href="../Resource/">Resource</a>, <a href="../MediaObject/">MediaObject</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
@@ -567,13 +572,14 @@
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">format</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Campo</span><span class="nv"> </span><span class="s">disciplinado</span><span class="nv"> </span><span class="s">pela</span><span class="nv"> </span><span class="s">especificação</span><span class="nv"> </span><span class="s">[DublinCore]</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">[format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).</span>
-<span class="w">  </span><span class="s">Esta</span><span class="nv"> </span><span class="s">especificação</span><span class="nv"> </span><span class="s">sugere</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">[lista</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">mídia</span><span class="nv"> </span><span class="s">IANA].</span>
+<span class="w">  </span><span class="s">Esta</span><span class="nv"> </span><span class="s">especificação</span><span class="nv"> </span><span class="s">sugere</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">mídia</span><span class="nv"> </span><span class="s">IANA</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">&lt;https://www.iana.org/assignments/media-types&gt;.</span>
 
 <span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:format</span>
 <span class="nt">domain_of</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

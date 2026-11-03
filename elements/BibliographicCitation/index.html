@@ -294,11 +294,11 @@
 <pre class="mermaid"><code> classDiagram
     class BibliographicCitation
     click BibliographicCitation href "../BibliographicCitation/"
+      BibliographicCitation : citation_refid
+
       BibliographicCitation : description
 
       BibliographicCitation : note
-
-      BibliographicCitation : refid
 
 </code></pre>
 <!-- no inheritance hierarchy -->
@@ -335,7 +335,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../refid/">refid</a></td>
+<td><a href="../citation_refid/">citation_refid</a></td>
 <td>1 <br/> <a href="../CslCitekey/">CslCitekey</a></td>
 <td>Se a fonte for cadastrada, o campo <code>refid</code> deve conter a chave de citação (`c...</td>
 <td>direct</td>
@@ -402,8 +402,32 @@
 <td><a href="./">BibliographicCitation</a></td>
 </tr>
 <tr>
+<td><a href="../RelatedObject/">RelatedObject</a></td>
+<td><a href="../title_source/">title_source</a></td>
+<td>range</td>
+<td><a href="./">BibliographicCitation</a></td>
+</tr>
+<tr>
 <td><a href="../RelatedWork/">RelatedWork</a></td>
 <td><a href="../bibliographic_citation/">bibliographic_citation</a></td>
+<td>range</td>
+<td><a href="./">BibliographicCitation</a></td>
+</tr>
+<tr>
+<td><a href="../RelatedWork/">RelatedWork</a></td>
+<td><a href="../title_source/">title_source</a></td>
+<td>range</td>
+<td><a href="./">BibliographicCitation</a></td>
+</tr>
+<tr>
+<td><a href="../LargerContextReference/">LargerContextReference</a></td>
+<td><a href="../bibliographic_citation/">bibliographic_citation</a></td>
+<td>range</td>
+<td><a href="./">BibliographicCitation</a></td>
+</tr>
+<tr>
+<td><a href="../LargerContextReference/">LargerContextReference</a></td>
+<td><a href="../title_source/">title_source</a></td>
 <td>range</td>
 <td><a href="./">BibliographicCitation</a></td>
 </tr>
@@ -422,6 +446,12 @@
 <tr>
 <td><a href="../MediaObject/">MediaObject</a></td>
 <td><a href="../bibliographic_citation/">bibliographic_citation</a></td>
+<td>range</td>
+<td><a href="./">BibliographicCitation</a></td>
+</tr>
+<tr>
+<td><a href="../MediaObject/">MediaObject</a></td>
+<td><a href="../title_source/">title_source</a></td>
 <td>range</td>
 <td><a href="./">BibliographicCitation</a></td>
 </tr>
@@ -539,6 +569,18 @@
 <td>range</td>
 <td><a href="./">BibliographicCitation</a></td>
 </tr>
+<tr>
+<td><a href="../Collection/">Collection</a></td>
+<td><a href="../bibliographic_citation/">bibliographic_citation</a></td>
+<td>range</td>
+<td><a href="./">BibliographicCitation</a></td>
+</tr>
+<tr>
+<td><a href="../Collection/">Collection</a></td>
+<td><a href="../title_source/">title_source</a></td>
+<td>range</td>
+<td><a href="./">BibliographicCitation</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -587,8 +629,8 @@
 <span class="nt">slots</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="nt">attributes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">refid</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refid</span>
+<span class="w">  </span><span class="nt">citation_refid</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">citation_refid</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Se</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">fonte</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">cadastrada,</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`refid`</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">conter</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span>
 <span class="w">      </span><span class="s">citação</span><span class="nv"> </span><span class="s">(`citation</span><span class="nv"> </span><span class="s">key`)</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">consta</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">registro</span><span class="nv"> </span><span class="s">bibliográfico</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">biblioteca</span>
 <span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">nosso</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">pesquisa</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">[Zotero].</span><span class="nv"> </span><span class="s">Em</span><span class="nv"> </span><span class="s">geral,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">DOI</span>
@@ -599,10 +641,11 @@
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/resource</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refid</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CslCitekey</span>
 <span class="w">  </span><span class="nt">note</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">note</span>
@@ -633,8 +676,8 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E31_Document</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:CreativeWork</span>
 <span class="nt">attributes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">refid</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refid</span>
+<span class="w">  </span><span class="nt">citation_refid</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">citation_refid</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Se</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">fonte</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">cadastrada,</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`refid`</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">conter</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span>
 <span class="w">      </span><span class="s">citação</span><span class="nv"> </span><span class="s">(`citation</span><span class="nv"> </span><span class="s">key`)</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">consta</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">registro</span><span class="nv"> </span><span class="s">bibliográfico</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">biblioteca</span>
 <span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">nosso</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">pesquisa</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">[Zotero].</span><span class="nv"> </span><span class="s">Em</span><span class="nv"> </span><span class="s">geral,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">DOI</span>
@@ -645,11 +688,12 @@
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/resource</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refid</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CslCitekey</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">note</span><span class="p">:</span>
@@ -678,8 +722,6 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>

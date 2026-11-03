@@ -351,7 +351,7 @@
 <tr>
 <td><a href="../appellation_type/">appellation_type</a></td>
 <td>0..1 <br/> <a href="../TitleType/">TitleType</a></td>
-<td></td>
+<td>Categoriza a natureza do nome dado ao objeto ou conceito</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -374,7 +374,31 @@
 <td><a href="./">Appellation</a></td>
 </tr>
 <tr>
+<td><a href="../RelatedObject/">RelatedObject</a></td>
+<td><a href="../alt_name/">alt_name</a></td>
+<td>range</td>
+<td><a href="./">Appellation</a></td>
+</tr>
+<tr>
+<td><a href="../RelatedWork/">RelatedWork</a></td>
+<td><a href="../alt_name/">alt_name</a></td>
+<td>range</td>
+<td><a href="./">Appellation</a></td>
+</tr>
+<tr>
+<td><a href="../LargerContextReference/">LargerContextReference</a></td>
+<td><a href="../alt_name/">alt_name</a></td>
+<td>range</td>
+<td><a href="./">Appellation</a></td>
+</tr>
+<tr>
 <td><a href="../Resource/">Resource</a></td>
+<td><a href="../alt_name/">alt_name</a></td>
+<td>range</td>
+<td><a href="./">Appellation</a></td>
+</tr>
+<tr>
+<td><a href="../MediaObject/">MediaObject</a></td>
 <td><a href="../alt_name/">alt_name</a></td>
 <td>range</td>
 <td><a href="./">Appellation</a></td>
@@ -405,6 +429,12 @@
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
+<td><a href="../alt_name/">alt_name</a></td>
+<td>range</td>
+<td><a href="./">Appellation</a></td>
+</tr>
+<tr>
+<td><a href="../Collection/">Collection</a></td>
 <td><a href="../alt_name/">alt_name</a></td>
 <td>range</td>
 <td><a href="./">Appellation</a></td>
@@ -465,6 +495,9 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LabelType</span>
 <span class="w">  </span><span class="nt">appellation_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">appellation_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Categoriza</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">natureza</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">nome</span><span class="nv"> </span><span class="s">dado</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">conceito.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TitleType(descriptive)</span>
@@ -502,6 +535,9 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LabelType</span>
 <span class="w">  </span><span class="nt">appellation_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">appellation_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Categoriza</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">natureza</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">nome</span><span class="nv"> </span><span class="s">dado</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">conceito.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TitleType(descriptive)</span>
@@ -532,8 +568,6 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>

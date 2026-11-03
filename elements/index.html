@@ -753,20 +753,8 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Informações estruturadas sobre as dimensões do objeto ou requisitos de condic...</td>
 </tr>
 <tr>
-<td><a href="MediaObject/">MediaObject</a></td>
-<td>Descrição e referência a um único arquivo de mídia</td>
-</tr>
-<tr>
 <td><a href="RelatedEvent/">RelatedEvent</a></td>
 <td></td>
-</tr>
-<tr>
-<td><a href="RelatedObject/">RelatedObject</a></td>
-<td>A wrapper for identifying information about an object or work, including coll...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RelatedWork/">RelatedWork</a></td>
-<td>As formas mais comuns de relação no nosso projeto são :</td>
 </tr>
 <tr>
 <td><a href="Right/">Right</a></td>
@@ -777,6 +765,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
 </tr>
 <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Collection/">Collection</a></td>
+<td></td>
+</tr>
+<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Concept/">Concept</a></td>
 <td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
 </tr>
@@ -785,12 +777,28 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
 </tr>
 <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RelatedObject/">RelatedObject</a></td>
+<td>A set of structured information about an object or work, or a group of object...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="LargerContextReference/">LargerContextReference</a></td>
+<td>Tipo de relação específica entre obras a ser usado quando o objeto descrito n...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MediaObject/">MediaObject</a></td>
+<td>Descrição e referência a um único arquivo de mídia</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RelatedWork/">RelatedWork</a></td>
+<td>As formas mais comuns de relação no nosso projeto são :</td>
+</tr>
+<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Repository/">Repository</a></td>
 <td>Entidade com existência jurídica e espacial</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Resource/">Resource</a></td>
-<td>This class comprises identifiable immaterial items that make propositions abo...</td>
+<td>Este grupo identifica um recurso visual ou documental que fornece informações...</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Site/">Site</a></td>
@@ -873,7 +881,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="appellation_type/">appellation_type</a></td>
-<td></td>
+<td>Categoriza a natureza do nome dado ao objeto ou conceito</td>
 </tr>
 <tr>
 <td><a href="asciiname/">asciiname</a></td>
@@ -900,6 +908,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Alternate country codes, comma separated, ISO-3166 2-letter country code, 200...</td>
 </tr>
 <tr>
+<td><a href="citation_refid/">citation_refid</a></td>
+<td>Se a fonte for cadastrada, o campo <code>refid</code> deve conter a chave de citação (`c...</td>
+</tr>
+<tr>
 <td><a href="classification_genre/">classification_genre</a></td>
 <td>❓ Ainda não implementamos o bloco <code>objectClassification</code> do LIDO</td>
 </tr>
@@ -920,12 +932,16 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Descreve conjuntos conceituais nos quais a edificação foi incluída, por exemp...</td>
 </tr>
 <tr>
+<td><a href="collection_type/">collection_type</a></td>
+<td>Usar um vocabulário controlado para identificar o tipo de representação, por ...</td>
+</tr>
+<tr>
 <td><a href="concept_name/">concept_name</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="concept_type/">concept_type</a></td>
-<td></td>
+<td>Tipos de termos de vocabulário baseados no Getty AAT</td>
 </tr>
 <tr>
 <td><a href="concepts/">concepts</a></td>
@@ -962,6 +978,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="dem/">dem</a></td>
 <td>Digital elevation model, srtm3 or gtopo30, average elevation of 3''x3'' (ca 9...</td>
+</tr>
+<tr>
+<td><a href="depiction_type/">depiction_type</a></td>
+<td>O tipo de representação que a mídia contém</td>
 </tr>
 <tr>
 <td><a href="description/">description</a></td>
@@ -1056,6 +1076,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Nome ou título (texto sem formatação)</td>
 </tr>
 <tr>
+<td><a href="larger_context_type/">larger_context_type</a></td>
+<td>O tipo de relação entre os objetos</td>
+</tr>
+<tr>
 <td><a href="lat/">lat</a></td>
 <td>Latitude em graus decimais (separador decimal: ponto)</td>
 </tr>
@@ -1148,10 +1172,6 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Representações iconográficas deste objeto</td>
 </tr>
 <tr>
-<td><a href="media_alt/">media_alt</a></td>
-<td>Texto alternativo para leitores de tela ou outras formas de acessibilidade</td>
-</tr>
-<tr>
 <td><a href="method/">method</a></td>
 <td>An index element for the method by which the event is or was carried out</td>
 </tr>
@@ -1174,10 +1194,6 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="note/">note</a></td>
 <td>Se necessário, incluir no campo <code>note</code> uma especificação adicional, como o nú...</td>
-</tr>
-<tr>
-<td><a href="object_type/">object_type</a></td>
-<td>Usar um vocabulário controlado para identificar o tipo de representação, por ...</td>
 </tr>
 <tr>
 <td><a href="other_site/">other_site</a></td>
@@ -1228,24 +1244,20 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Informações estruturadas sobre os direitos que incidem sobre o conteúdo textu...</td>
 </tr>
 <tr>
-<td><a href="reference_type/">reference_type</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="refid/">refid</a></td>
 <td>Local or external identifier</td>
+</tr>
+<tr>
+<td><a href="refid_type/">refid_type</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="related_events/">related_events</a></td>
 <td>A set of structured information about an event related to the event in focus,...</td>
 </tr>
 <tr>
-<td><a href="related_object/">related_object</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="related_works/">related_works</a></td>
-<td>A wrapper for identifying information about an object or work, including coll...</td>
+<td>O grupo <code>related_works</code> é destinado unicamente a cadastrar relações desta edi...</td>
 </tr>
 <tr>
 <td><a href="relation/">relation</a></td>
@@ -1253,7 +1265,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="relation_type/">relation_type</a></td>
-<td>Usamos os tipos de relação previstos pelo <a href="https://www.loc.gov/standards/vracore/">VRA Core</a></td>
+<td>Indica o tipo de relação entre a edificação descrita na ficha e o objeto rela...</td>
 </tr>
 <tr>
 <td><a href="repositories/">repositories</a></td>
@@ -1261,11 +1273,15 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="repository_type/">repository_type</a></td>
-<td></td>
+<td>Categoriza a natureza física ou jurídica do repositório</td>
 </tr>
 <tr>
 <td><a href="resource_service/">resource_service</a></td>
 <td>Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal...</td>
+</tr>
+<tr>
+<td><a href="resource_type/">resource_type</a></td>
+<td>Usamos os tipos de relação previstos pelo LIDO em `relatedWorkRelType &gt; Assoc...</td>
 </tr>
 <tr>
 <td><a href="resources/">resources</a></td>
@@ -1297,7 +1313,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="scale/">scale</a></td>
-<td>Número inverso da escala da imagem, se ela tiver uma resolução ou tamanho de ...</td>
+<td>Número inverso da escala da imagem ou desenho, se tiver uma resolução ou tama...</td>
 </tr>
 <tr>
 <td><a href="site/">site</a></td>
@@ -1305,7 +1321,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="site_type/">site_type</a></td>
-<td></td>
+<td>Categoriza a natureza do recorte que define o sítio</td>
 </tr>
 <tr>
 <td><a href="source/">source</a></td>
@@ -1357,7 +1373,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="title_type/">title_type</a></td>
-<td></td>
+<td>Categoriza a natureza do nome dado ao objeto</td>
 </tr>
 <tr>
 <td><a href="topic_type/">topic_type</a></td>
@@ -1423,6 +1439,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Tipo de agente na terminologia LIDO</td>
 </tr>
 <tr>
+<td><a href="CollectionType/">CollectionType</a></td>
+<td>The LIDO Object Type Vocabulary is a structured controlled list of terms reco...</td>
+</tr>
+<tr>
 <td><a href="ConceptType/">ConceptType</a></td>
 <td>Tipos de termos de vocabulário baseados no Getty AAT</td>
 </tr>
@@ -1433,6 +1453,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="DateType/">DateType</a></td>
 <td>Exatidão da data conhecida</td>
+</tr>
+<tr>
+<td><a href="DepictionType/">DepictionType</a></td>
+<td>Designa a relação que a edificação descrita na ficha tem com a mídia relacion...</td>
 </tr>
 <tr>
 <td><a href="EventPlaceType/">EventPlaceType</a></td>
@@ -1463,6 +1487,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>No SKOS, caracteriza se cada termo deve ser considerado preferencial ou alter...</td>
 </tr>
 <tr>
+<td><a href="LargerContextType/">LargerContextType</a></td>
+<td>Tipos de relações entre partes e todo previstas no vocabulário controlado do ...</td>
+</tr>
+<tr>
 <td><a href="MaterialTechType/">MaterialTechType</a></td>
 <td>A materialidade e as técnicas de produção ou intervenção na edificação devem ...</td>
 </tr>
@@ -1475,10 +1503,6 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>The type attribute qualifies whether the measurements given are features of t...</td>
 </tr>
 <tr>
-<td><a href="ObjectType/">ObjectType</a></td>
-<td>The LIDO Object Type Vocabulary is a structured controlled list of terms reco...</td>
-</tr>
-<tr>
 <td><a href="PeriodNameType/">PeriodNameType</a></td>
 <td>O vocabulário de tipos de período/estilo do LIDO é uma lista controlada estru...</td>
 </tr>
@@ -1487,12 +1511,16 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Tipos de referências a objetos externos previstos no LIDO</td>
 </tr>
 <tr>
-<td><a href="RelationType/">RelationType</a></td>
-<td>Os tipos de relação entre objetos são definidos pelo VRA Core</td>
+<td><a href="RelatedWorkRelType/">RelatedWorkRelType</a></td>
+<td>Relações associativas entre objetos físicos ou criações intelectuais, definid...</td>
 </tr>
 <tr>
 <td><a href="RepositoryType/">RepositoryType</a></td>
 <td>Type of repository or legal body</td>
+</tr>
+<tr>
+<td><a href="ResourceType/">ResourceType</a></td>
+<td>Relações associativas entre objetos físicos ou criações intelectuais, definid...</td>
 </tr>
 <tr>
 <td><a href="RightsType/">RightsType</a></td>

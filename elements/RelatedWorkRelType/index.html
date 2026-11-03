@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/RelationType/">
+        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/RelatedWorkRelType/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Enum: RelationType - wasth_schema</title>
+        <title>Enum: RelatedWorkRelType - wasth_schema</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-relationtype" class="md-skip">
+        <a href="#enum-relatedworkreltype" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: RelationType
+              Enum: RelatedWorkRelType
             
           </span>
         </div>
@@ -365,10 +365,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enumeration-source" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enumeration Source
+        Permissible Values
       
     </span>
   </a>
@@ -446,16 +446,54 @@
   
 
 
-<h1 id="enum-relationtype">Enum: RelationType</h1>
-<p><em>Os tipos de relação entre objetos são definidos pelo VRA Core.</em></p>
+<h1 id="enum-relatedworkreltype">Enum: RelatedWorkRelType</h1>
+<p><em>Relações associativas entre objetos físicos ou criações intelectuais, definidas segundo o vocabulário do LIDO. Compreende as relações associativas, exceto aquelas de partes com o todo.</em></p>
+<p><em>Ver <a href="http://terminology.lido-schema.org/relatedWorkRelType">http://terminology.lido-schema.org/relatedWorkRelType</a></em></p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/RelationType">wasth:RelationType</a></p>
-<h2 id="enumeration-source">Enumeration Source</h2>
-<p><strong>Reachable From:</strong>
-- <strong>Source:</strong> NONE
-- <strong>Nodes:</strong> vra:isRelatedTo
-- <strong>Via:</strong> rdfs:subPropertyOf</p>
-<p><em>This is a dynamic enum</em></p>
+<p>URI: <a href="https://tradicional.arq.br/schema/RelatedWorkRelType">wasth:RelatedWorkRelType</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Additional Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>documentedIn</td>
+<td>term:lido00617</td>
+<td>A obra descrita na ficha está documentada, discutida ou descrita na mídia rel...</td>
+<td>Title: documentado em<br></td>
+</tr>
+<tr>
+<td>complements</td>
+<td>term:lido00580</td>
+<td>Relação entre obras criadas independentemente uma da outra, mas que mais tard...</td>
+<td>Title: complementa<br></td>
+</tr>
+<tr>
+<td>complemented</td>
+<td>term:lido01095</td>
+<td>Relação entre obras criadas independentemente uma da outra, mas que mais tard...</td>
+<td>Title: complementava<br></td>
+</tr>
+<tr>
+<td>derivedFrom</td>
+<td>term:lido00603</td>
+<td>A obra descrita é derivada ou sensivelmente influenciada pelo objeto relacion...</td>
+<td>Title: derivado de<br></td>
+</tr>
+<tr>
+<td>positionedNear</td>
+<td>term:lido01136</td>
+<td>Relação simétrica entre dois objetos situados em proximidade espacial, quando...</td>
+<td>Title: próximo a<br></td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -467,7 +505,7 @@
 <tbody>
 <tr>
 <td><a href="../relation_type/">relation_type</a></td>
-<td>Usamos os tipos de relação previstos pelo [VRA Core]</td>
+<td>Indica o tipo de relação entre a edificação descrita na ficha e o objeto rela...</td>
 </tr>
 </tbody>
 </table>
@@ -478,17 +516,62 @@
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelationType</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Os tipos de relação entre objetos são definidos pelo VRA Core.</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedWorkRelType</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Relações</span><span class="nv"> </span><span class="s">associativas</span><span class="nv"> </span><span class="s">entre</span><span class="nv"> </span><span class="s">objetos</span><span class="nv"> </span><span class="s">físicos</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">criações</span><span class="nv"> </span><span class="s">intelectuais,</span>
+<span class="w">  </span><span class="s">definidas</span><span class="nv"> </span><span class="s">segundo</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">vocabulário</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">LIDO.</span><span class="nv"> </span><span class="s">Compreende</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">relações</span><span class="nv"> </span><span class="s">associativas,</span><span class="nv"> </span><span class="s">exceto</span>
+<span class="w">  </span><span class="s">aquelas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">partes</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">todo.</span>
+
+<span class="w">  </span><span class="s">Ver</span><span class="nv"> </span><span class="s">&lt;http://terminology.lido-schema.org/relatedWorkRelType&gt;'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">reachable_from</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">source_ontology</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://purl.org/vra/</span>
-<span class="w">  </span><span class="nt">source_nodes</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vra:isRelatedTo</span>
-<span class="w">  </span><span class="nt">relationship_types</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rdfs:subPropertyOf</span>
-<span class="w">  </span><span class="nt">include_self</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">permissible_values</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">documentedIn</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentedIn</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">obra</span><span class="nv"> </span><span class="s">descrita</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">está</span><span class="nv"> </span><span class="s">documentada,</span><span class="nv"> </span><span class="s">discutida</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">descrita</span>
+<span class="w">      </span><span class="s">na</span><span class="nv"> </span><span class="s">mídia</span><span class="nv"> </span><span class="s">relacionada,</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">geral</span><span class="nv"> </span><span class="s">será</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">texto.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00617</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentado em</span>
+<span class="w">  </span><span class="nt">complements</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">complements</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Relação</span><span class="nv"> </span><span class="s">entre</span><span class="nv"> </span><span class="s">obras</span><span class="nv"> </span><span class="s">criadas</span><span class="nv"> </span><span class="s">independentemente</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">outra,</span><span class="nv"> </span><span class="s">mas</span>
+<span class="w">      </span><span class="s">que</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">tarde</span><span class="nv"> </span><span class="s">passaram</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">consideradas</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">usadas</span><span class="nv"> </span><span class="s">conjuntamente.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00580</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">complementa</span>
+<span class="w">  </span><span class="nt">complemented</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">complemented</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Relação</span><span class="nv"> </span><span class="s">entre</span><span class="nv"> </span><span class="s">obras</span><span class="nv"> </span><span class="s">criadas</span><span class="nv"> </span><span class="s">independentemente</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">outra,</span><span class="nv"> </span><span class="s">mas</span>
+<span class="w">      </span><span class="s">que</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">tarde</span><span class="nv"> </span><span class="s">passaram</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">consideradas</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">usadas</span><span class="nv"> </span><span class="s">conjuntamente,</span><span class="nv"> </span><span class="s">sendo</span><span class="nv"> </span><span class="s">essa</span>
+<span class="w">      </span><span class="s">associação</span><span class="nv"> </span><span class="s">posteriormente</span><span class="nv"> </span><span class="s">desfeita.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01095</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">complementava</span>
+<span class="w">  </span><span class="nt">derivedFrom</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">derivedFrom</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'A</span><span class="nv"> </span><span class="s">obra</span><span class="nv"> </span><span class="s">descrita</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">derivada</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">sensivelmente</span><span class="nv"> </span><span class="s">influenciada</span><span class="nv"> </span><span class="s">pelo</span><span class="nv"> </span><span class="s">objeto</span>
+<span class="w">      </span><span class="s">relacionado.</span>
+
+<span class="w">      </span><span class="s">Preferir</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">expressões</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">relação</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">específicas</span><span class="nv"> </span><span class="s">sempre</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">possível.</span>
+<span class="w">      </span><span class="s">A</span><span class="nv"> </span><span class="s">relação</span><span class="nv"> </span><span class="s">`derivedFrom`</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">reservada</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">casos</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">relação</span><span class="nv"> </span><span class="s">seja</span>
+<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">variações</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">influências.</span><span class="nv"> </span><span class="s">Essas</span><span class="nv"> </span><span class="s">relações</span><span class="nv"> </span><span class="s">devem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">fundamentadas</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">interpretação</span>
+<span class="w">      </span><span class="s">bibliográfica.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido00603</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">derivado de</span>
+<span class="w">  </span><span class="nt">positionedNear</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">positionedNear</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Relação</span><span class="nv"> </span><span class="s">simétrica</span><span class="nv"> </span><span class="s">entre</span><span class="nv"> </span><span class="s">dois</span><span class="nv"> </span><span class="s">objetos</span><span class="nv"> </span><span class="s">situados</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">proximidade</span><span class="nv"> </span><span class="s">espacial,</span>
+<span class="w">      </span><span class="s">quando</span><span class="nv"> </span><span class="s">esta</span><span class="nv"> </span><span class="s">proximidade</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">significativa</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">razões</span><span class="nv"> </span><span class="s">compositivas,</span><span class="nv"> </span><span class="s">históricas</span>
+<span class="w">      </span><span class="s">ou</span><span class="nv"> </span><span class="s">funcionais.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">meaning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lido01136</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">próximo a</span>
 </code></pre></div>
 </details>
 </div>

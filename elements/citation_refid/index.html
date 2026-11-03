@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/ObjectType/">
+        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/citation_refid/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Enum: ObjectType - wasth_schema</title>
+        <title>Slot: citation_refid - wasth_schema</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-objecttype" class="md-skip">
+        <a href="#slot-citation_refid" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: ObjectType
+              Slot: citation_refid
             
           </span>
         </div>
@@ -365,10 +365,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enumeration-source" class="md-nav__link">
+  <a href="#applicable-classes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enumeration Source
+        Applicable Classes
       
     </span>
   </a>
@@ -376,13 +376,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slots" class="md-nav__link">
+  <a href="#properties" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Slots
+        Properties
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-and-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type and Range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -411,6 +439,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mappings
+      
+    </span>
+  </a>
   
 </li>
       
@@ -446,26 +485,85 @@
   
 
 
-<h1 id="enum-objecttype">Enum: ObjectType</h1>
-<p><em>The LIDO Object Type Vocabulary is a structured controlled list of terms recommended to use as values in the LIDO Object Type element, specifying the particular kind of object being in some way associated with the object/work that is the focus of the record.</em></p>
+<h1 id="slot-citation_refid">Slot: citation_refid</h1>
+<p><em>Se a fonte for cadastrada, o campo <code>refid</code> deve conter a chave de citação (<code>citation key</code>) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no [Zotero]. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.</em></p>
+<p><em>Se a referência que necessita citar não constar da biblioteca do Zotero, deve cadastrá-la primeiro nessa biblioteca para então extrair a chave de citação.</em></p>
+<p>__</p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/ObjectType">wasth:ObjectType</a></p>
-<h2 id="enumeration-source">Enumeration Source</h2>
-<p><strong>Reachable From:</strong>
-- <strong>Source:</strong> NONE</p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="slots">Slots</h2>
+<p>URI: <a href="https://tradicional.arq.br/schema/citation_refid">wasth:citation_refid</a>
+Alias: refid</p>
+<!-- no inheritance hierarchy -->
+<h2 id="applicable-classes">Applicable Classes</h2>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Description</th>
+<th>Modifies Slot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../object_type/">object_type</a></td>
-<td>Usar um vocabulário controlado para identificar o tipo de representação, por ...</td>
+<td><a href="../BibliographicCitation/">BibliographicCitation</a></td>
+<td>Cadastro de uma referência bibliográfica</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h2 id="properties">Properties</h2>
+<h3 id="type-and-range">Type and Range</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Range</td>
+<td><a href="../CslCitekey/">CslCitekey</a></td>
+</tr>
+<tr>
+<td>Domain Of</td>
+<td><a href="../BibliographicCitation/">BibliographicCitation</a></td>
+</tr>
+<tr>
+<td>### Cardinality and Requirements</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Required</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Owner</td>
+<td><a href="../BibliographicCitation/">BibliographicCitation</a></td>
 </tr>
 </tbody>
 </table>
@@ -474,18 +572,46 @@
 <ul>
 <li>from schema: <a href="https://tradicional.arq.br/schema">https://tradicional.arq.br/schema</a></li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>wasth:citation_refid</td>
+</tr>
+<tr>
+<td>native</td>
+<td>wasth:citation_refid</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ObjectType</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The LIDO Object Type Vocabulary is a structured controlled list of terms</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">recommended to use as values in the LIDO Object Type element, specifying the particular</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">kind of object being in some way associated with the object/work that is the focus</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">of the record.</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">citation_refid</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Se</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">fonte</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">cadastrada,</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">`refid`</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">conter</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span>
+<span class="w">  </span><span class="s">(`citation</span><span class="nv"> </span><span class="s">key`)</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">consta</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">registro</span><span class="nv"> </span><span class="s">bibliográfico</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">biblioteca</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">nosso</span><span class="nv"> </span><span class="s">projeto</span>
+<span class="w">  </span><span class="s">de</span><span class="nv"> </span><span class="s">pesquisa</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">[Zotero].</span><span class="nv"> </span><span class="s">Em</span><span class="nv"> </span><span class="s">geral,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">DOI</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">ISBN</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">publicação,</span>
+<span class="w">  </span><span class="s">mas</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">diferente.</span>
+
+<span class="w">  </span><span class="s">Se</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">necessita</span><span class="nv"> </span><span class="s">citar</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">constar</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">biblioteca</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">Zotero,</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">cadastrá-la</span>
+<span class="w">  </span><span class="s">primeiro</span><span class="nv"> </span><span class="s">nessa</span><span class="nv"> </span><span class="s">biblioteca</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">então</span><span class="nv"> </span><span class="s">extrair</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">chave</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">citação.</span>
+
+<span class="w">  </span><span class="s">'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">reachable_from</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">source_ontology</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://terminology.lido-schema.org/objectType</span>
-<span class="w">  </span><span class="nt">include_self</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refid</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
+<span class="nt">domain_of</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CslCitekey</span>
+<span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>

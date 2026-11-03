@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/media_alt/">
+        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/refid_type/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: media_alt - wasth_schema</title>
+        <title>Slot: refid_type - wasth_schema</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-media_alt" class="md-skip">
+        <a href="#slot-refid_type" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: media_alt
+              Slot: refid_type
             
           </span>
         </div>
@@ -474,11 +474,10 @@
   
 
 
-<h1 id="slot-media_alt">Slot: media_alt</h1>
-<p><em>Texto alternativo para leitores de tela ou outras formas de acessibilidade. Apenas texto sem formatação.</em></p>
+<h1 id="slot-refid_type">Slot: refid_type</h1>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/media_alt">wasth:media_alt</a>
-Alias: alt</p>
+<p>URI: <a href="https://tradicional.arq.br/schema/refid_type">wasth:refid_type</a>
+Alias: type</p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -491,8 +490,8 @@ Alias: alt</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../MediaObject/">MediaObject</a></td>
-<td>Descrição e referência a um único arquivo de mídia</td>
+<td><a href="../TypedReference/">TypedReference</a></td>
+<td>Permite referenciar um registro local ou externo por meio da sua URI (localiz...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -509,11 +508,29 @@ Alias: alt</p>
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../String/">String</a></td>
+<td><a href="../ReferenceType/">ReferenceType</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../MediaObject/">MediaObject</a></td>
+<td><a href="../TypedReference/">TypedReference</a></td>
+</tr>
+<tr>
+<td>### Slot Characteristics</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>If Absent</td>
+<td><code>ReferenceType(uri)</code></td>
 </tr>
 </tbody>
 </table>
@@ -533,25 +550,24 @@ Alias: alt</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:media_alt</td>
+<td>wasth:refid_type</td>
 </tr>
 <tr>
 <td>native</td>
-<td>wasth:media_alt</td>
+<td>wasth:refid_type</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media_alt</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Texto alternativo para leitores de tela ou outras formas de acessibilidade.</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Apenas texto sem formatação.</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refid_type</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alt</span>
+<span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReferenceType(uri)</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReferenceType</span>
 </code></pre></div>
 </details>
 </div>

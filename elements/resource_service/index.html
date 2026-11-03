@@ -476,6 +476,7 @@
 
 <h1 id="slot-resource_service">Slot: resource_service</h1>
 <p><em>Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal como a especificação [IIIF].</em></p>
+<p><em>No caso de <code>preview_image</code> ou <code>provided_image</code>, o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se tratando de <code>provided_3d</code> ou <code>service</code>, o link deve remeter a uma página web que forneça a respetiva API ou as informações acerca do modelo.</em></p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/resource_service">wasth:resource_service</a>
 Alias: service</p>
@@ -492,7 +493,7 @@ Alias: service</p>
 <tbody>
 <tr>
 <td><a href="../Resource/">Resource</a></td>
-<td>This class comprises identifiable immaterial items that make propositions abo...</td>
+<td>Este grupo identifica um recurso visual ou documental que fornece informações...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -514,7 +515,7 @@ Alias: service</p>
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../TypedReference/">TypedReference</a></td>
+<td><a href="../Uriorcurie/">Uriorcurie</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
@@ -567,15 +568,20 @@ Alias: service</p>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resource_service</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Apenas no caso de a imagem ser fornecida como um serviço dinâmico online,</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">tal como a especificação [IIIF].</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Apenas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">imagem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">fornecida</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">serviço</span><span class="nv"> </span><span class="s">dinâmico</span><span class="nv"> </span><span class="s">online,</span>
+<span class="w">  </span><span class="s">tal</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">especificação</span><span class="nv"> </span><span class="s">[IIIF].</span>
+
+<span class="w">  </span><span class="s">No</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">`preview_image`</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">`provided_image`,</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">link</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">referenciar</span><span class="nv"> </span><span class="s">diretamente</span>
+<span class="w">  </span><span class="s">o</span><span class="nv"> </span><span class="s">arquivo</span><span class="nv"> </span><span class="s">(ficheiro)</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">imagem.</span><span class="nv"> </span><span class="s">Em</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">tratando</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">`provided_3d`</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">`service`,</span><span class="nv"> </span><span class="s">o</span>
+<span class="w">  </span><span class="s">link</span><span class="nv"> </span><span class="s">deve</span><span class="nv"> </span><span class="s">remeter</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">página</span><span class="nv"> </span><span class="s">web</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">forneça</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">respetiva</span><span class="nv"> </span><span class="s">API</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">informações</span>
+<span class="w">  </span><span class="s">acerca</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">modelo.'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

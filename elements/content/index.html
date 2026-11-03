@@ -477,7 +477,7 @@
 <h1 id="slot-content">Slot: content</h1>
 <p><em>Conteúdo textual descritivo ou explicativo.</em></p>
 <div>
-<p>URI: <a href="http://www.w3.org/2004/02/skos/core#scopeNote">skos:scopeNote</a></p>
+<p>URI: <a href="http://www.lido-schema.org/descriptiveNoteValue">lido:descriptiveNoteValue</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -502,12 +502,32 @@
 <tr>
 <td><a href="../Concept/">Concept</a></td>
 <td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../RelatedObject/">RelatedObject</a></td>
+<td>A set of structured information about an object or work, or a group of object...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../RelatedWork/">RelatedWork</a></td>
+<td>As formas mais comuns de relação no nosso projeto são :</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../LargerContextReference/">LargerContextReference</a></td>
+<td>Tipo de relação específica entre obras a ser usado quando o objeto descrito n...</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Resource/">Resource</a></td>
-<td>This class comprises identifiable immaterial items that make propositions abo...</td>
+<td>Este grupo identifica um recurso visual ou documental que fornece informações...</td>
 <td>no</td>
+</tr>
+<tr>
+<td><a href="../MediaObject/">MediaObject</a></td>
+<td>Descrição e referência a um único arquivo de mídia</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
@@ -527,6 +547,11 @@
 <tr>
 <td><a href="../Site/">Site</a></td>
 <td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Collection/">Collection</a></td>
+<td></td>
 <td>no</td>
 </tr>
 </tbody>
@@ -551,7 +576,7 @@
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="http://www.w3.org/2004/02/skos/core#scopeNote">skos:scopeNote</a></td>
+<td><a href="http://www.lido-schema.org/descriptiveNoteValue">lido:descriptiveNoteValue</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -589,7 +614,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>skos:scopeNote</td>
+<td>lido:descriptiveNoteValue</td>
 </tr>
 <tr>
 <td>native</td>
@@ -603,7 +628,7 @@
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Conteúdo textual descritivo ou explicativo.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skos:scopeNote</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:descriptiveNoteValue</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
