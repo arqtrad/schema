@@ -70,6 +70,7 @@ classes:
       title_type:
         range: TitleType
         required: true
+        description: Categoriza a natureza do nome dado ao objeto.
 
 
       work_type_condition:
@@ -311,13 +312,37 @@ classes:
 
       part_of:
         slot_uri: dcterms:isPartOf
-        range: TypedReference
+        range: LargerContextReference
         multivalued: true
         inlined_as_list: true
         description: >-
           Permite identificar um conjunto arquitetônico, urbanístico ou
           conceitual (por exemplo, uma série de casas) do qual a edificação faz
           parte.
+
+          Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO
+          [`relatedWorksWrap`](https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap)
+          em quatro tipos de relacionamentos :
+
+          1. `part_of` : a edificação descrita na ficha é intrinsecamente parte
+             de um conjunto arquitetônico ou urbanístico maior, quando se trata
+             de uma parte fisicamente vinculada a outra edificaçao ou um
+             elemento concebido dentro de um projeto de conjunto.
+
+          2. `related_works` : a edificação descrita na ficha pode ser
+             relacionada, por meio de interpretação historiográfica, a outras
+             edificações ou objetos (fontes primárias escritas ou visuais,
+             obras de arte em geral, outras edificações, etc.).
+
+          3. `media` : fotografias ou imagens históricas (desenhos técnicos ou
+             artísticos, pinturas, estampas, etc.) que representem fielmente a
+             aparência da edificação descrita na ficha.
+
+          4. `resources` : desenhos técnicos em formato vetorial e,
+             eventualmente, modelos tridimensionais ou outras formas de
+             informação técnica que não cabem no formato da ficha, mas que
+             foram produzidas pela equipe e colaboradores do projeto de
+             pesquisa.
 
       former_site:
         range: Site
@@ -366,7 +391,7 @@ classes:
 
       collection:
         slot_uri: lido:collection
-        range: Thing
+        range: Collection
         multivalued: true
         inlined_as_list: true
         description: >
@@ -392,27 +417,100 @@ classes:
             collections, sets of items to be displayed in an exhibition, or
             aggregations bound informally for cataloging and retrieval purposes.
 
-      work_rights:
-        required: true
-        range: Right
+      related_works:
+        range: RelatedWork
         multivalued: true
         inlined_as_list: true
-        slot_uri: lido:rightsWorkSet
+        slot_uri: dcterms:related
         description: >
-          ⚠️  Este bloco se refere a eventuais direitos autorais ou de
-          propriedade sobre A EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo
-          da ficha, nem sobre a iconografia relacionada.
+          O grupo `related_works` é destinado unicamente a cadastrar relações desta
+          edificação com objetos autônomos, tais como outras edificações, conjuntos
+          urbanos, obras de artes visuais, referências bibliográficas ou acervos
+          arquivísticos.
+
+          ⚠️  OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER
+          CADASTRADOS NO GRUPO `resources`.
+
+          As formas mais comuns de relação no nosso projeto são :
+
+            - depicted in: A edificação é representada numa pintura ou desenho
+              artístico;
+
+            - documented by: Informações sobre a edificação estão publicadas numa
+              referência bibliográfica, processo administrativo ou outro documento
+              textual impresso, manuscrito ou eletrônico;
+
+            - has plan / has floor plan / has section / has elevation / has
+              rendering: Essas relações mostram a existência de desenhos técnicos
+              da edificação, sejam eles históricos ou recentes, compilados de
+              fontes externas a este projeto de pesquisa.
+
+            - has construction drawing / has design / has sketch: Essas relações se
+              referem a desenhos históricos (fontes primárias) que atestam o
+              processo de projeto da edificação.
+
+          Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO
+          [`relatedWorksWrap`](https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap)
+          em quatro tipos de relacionamentos :
+
+          1. `part_of` : a edificação descrita na ficha é intrinsecamente parte
+             de um conjunto arquitetônico ou urbanístico maior, quando se trata
+             de uma parte fisicamente vinculada a outra edificaçao ou um
+             elemento concebido dentro de um projeto de conjunto.
+
+          2. `related_works` : a edificação descrita na ficha pode ser
+             relacionada, por meio de interpretação historiográfica, a outras
+             edificações ou objetos (fontes primárias escritas ou visuais,
+             obras de arte em geral, outras edificações, etc.).
+
+          3. `media` : fotografias ou imagens históricas (desenhos técnicos ou
+             artísticos, pinturas, estampas, etc.) que representem fielmente a
+             aparência da edificação descrita na ficha.
+
+          4. `resources` : desenhos técnicos em formato vetorial e,
+             eventualmente, modelos tridimensionais ou outras formas de
+             informação técnica que não cabem no formato da ficha, mas que
+             foram produzidas pela equipe e colaboradores do projeto de
+             pesquisa.
+
+        notes:
+
+          - A wrapper for identifying information about an object or work,
+            including collections, related to the object/work in focus. May
+            include a weblink.
+
+      subject:
+        range: Topic
+        multivalued: true
+        inlined_as_list: true
+        slot_uri: lido:subjectSet
+        description: >
+          Recomenda-se articular o tema em três níveis : descrição,
+          identificação e interpretação.
+
+          DESCRIÇÃO se refere a elementos imediatamente reconhecíveis sem
+          necessidade de conhecimento especializado : coluna(ta)s, arcadas,
+          brasões, cunhais, ornamentos em geral.
+
+          IDENTIFICAÇÃO se refere ao reconhecimento das particularidades
+          arquitetônicas ou iconográficas dos elementos : p. ex. as colunas são
+          da ordem toscana, a abóbada é de aresta, o brasão pertence a tal
+          família...
+
+          INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou
+          político dos elementos, incluindo questões de status e estilo.
 
 
     slot_usage:
 
       id:
+        identifier: true
+        range: OlcPlusCode11
         description: >-
           Cada edificação terá um identificador gerado a partir do seu
           georreferenciamento usando Open Location Code ("PlusCode"). Este
           identificador usa o campo `id`, que será gerado automaticamente pelo
           programa WASTH.
-        range: OlcPlusCode11
 
       title:
         required: true
@@ -423,10 +521,81 @@ classes:
       record_date:
         required: true
 
+      description:
+        required: true
+
       category:
         ifabsent: string(http://terminology.lido-schema.org/lido00096)
 
+
+      resources:
+        description: >
+          Os desenhos ou modelos da edificação são apresentados online por meio
+          de imagens vetoriais ou bitmap.
+
+          Cada desenho ou modelo pode ser apresentado sob várias
+          representações, como pré-visualização, imagem original, ou serviço
+          [IIIF]. Essas imagens devem ser identificadas como segue :
+
+          As categorias de representação previstas no [LIDO] podem ser consultadas
+          em <http://terminology.lido-schema.org/resourceRepresentation_type>
+          e são inseridas na ficha como um mapa.
+
+          Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO
+          [`relatedWorksWrap`](https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap)
+          em quatro tipos de relacionamentos :
+
+          1. `part_of` : a edificação descrita na ficha é intrinsecamente parte
+             de um conjunto arquitetônico ou urbanístico maior, quando se trata
+             de uma parte fisicamente vinculada a outra edificaçao ou um
+             elemento concebido dentro de um projeto de conjunto.
+
+          2. `related_works` : a edificação descrita na ficha pode ser
+             relacionada, por meio de interpretação historiográfica, a outras
+             edificações ou objetos (fontes primárias escritas ou visuais,
+             obras de arte em geral, outras edificações, etc.).
+
+          3. `media` : fotografias ou imagens históricas (desenhos técnicos ou
+             artísticos, pinturas, estampas, etc.) que representem fielmente a
+             aparência da edificação descrita na ficha.
+
+          4. `resources` : desenhos técnicos em formato vetorial e,
+             eventualmente, modelos tridimensionais ou outras formas de
+             informação técnica que não cabem no formato da ficha, mas que
+             foram produzidas pela equipe e colaboradores do projeto de
+             pesquisa.
+
+      media:
+        description: >
+          Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO
+          [`relatedWorksWrap`](https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap)
+          em quatro tipos de relacionamentos :
+
+          1. `part_of` : a edificação descrita na ficha é intrinsecamente parte
+             de um conjunto arquitetônico ou urbanístico maior, quando se trata
+             de uma parte fisicamente vinculada a outra edificaçao ou um
+             elemento concebido dentro de um projeto de conjunto.
+
+          2. `related_works` : a edificação descrita na ficha pode ser
+             relacionada, por meio de interpretação historiográfica, a outras
+             edificações ou objetos (fontes primárias escritas ou visuais,
+             obras de arte em geral, outras edificações, etc.).
+
+          3. `media` : fotografias ou imagens históricas (desenhos técnicos ou
+             artísticos, pinturas, estampas, etc.) que representem fielmente a
+             aparência da edificação descrita na ficha.
+
+          4. `resources` : desenhos técnicos em formato vetorial e,
+             eventualmente, modelos tridimensionais ou outras formas de
+             informação técnica que não cabem no formato da ficha, mas que
+             foram produzidas pela equipe e colaboradores do projeto de
+             pesquisa.
+
+
       record_rights:
+        required: true
+
+      work_rights:
         required: true
 
       content:
@@ -448,6 +617,7 @@ classes:
           ---
           ```
 
+
     slots:
       - site
       - measurements
@@ -455,8 +625,6 @@ classes:
       - technique
       - style_period
       - culture
-      - subject
-      - related_works
       - resources
       - media
 
@@ -527,6 +695,8 @@ classes:
         alias: type
         range: RepositoryType
         ifabsent: RepositoryType(geographic)
+        description: >
+          Categoriza a natureza do recorte que define o sítio.
 
       location:
         required: true
@@ -689,7 +859,6 @@ classes:
     description: Subject or iconographic topic.
 
     attributes:
-
       topic_type:
         alias: type
         required: true
@@ -734,6 +903,16 @@ classes:
           Identificação do local com referência a um vocabulário controlado ou
           repositório de topônimos tal como o geonames.
 
+  Collection:
+    is_a: Thing
+    attributes:
+      collection_type:
+        alias: type
+        range: CollectionType
+        required: true
+        description: >-
+          Descreve a natureza da coleção.
+
 
 slots:
 
@@ -754,58 +933,3 @@ slots:
       the lat/long pair according to the ISO6709 standard.
       Sempre que possível, usar EPSG:4326, senão os sistemas de referência
       nacionais.
-
-  subject:
-    range: Topic
-    multivalued: true
-    inlined_as_list: true
-    slot_uri: lido:subjectSet
-    description: >
-      Recomenda-se articular o tema em três níveis : descrição, identificação e
-      interpretação.
-
-      DESCRIÇÃO se refere a elementos imediatamente reconhecíveis sem
-      necessidade de conhecimento especializado : coluna(ta)s, arcadas,
-      brasões, cunhais, ornamentos em geral.
-
-      IDENTIFICAÇÃO se refere ao reconhecimento das particularidades
-      arquitetônicas ou iconográficas dos elementos : p. ex. as colunas são da
-      ordem toscana, a abóbada é de aresta, o brasão pertence a tal família...
-
-      INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou
-      político dos elementos, incluindo questões de status e estilo.
-
-  related_works:
-    range: RelatedWork
-    multivalued: true
-    inlined_as_list: true
-    slot_uri: dcterms:related
-    description: >-
-      A wrapper for identifying information about an object or work, including
-      collections, related to the object/work in focus. May include a weblink.
-
-      As formas mais comuns de relação no nosso projeto são :
-
-        - depicted in: A edificação é representada numa pintura ou desenho
-          artístico;
-
-        - documented by: Informações sobre a edificação estão publicadas numa
-          referência bibliográfica, processo administrativo ou outro documento
-          textual impresso, manuscrito ou eletrônico;
-
-        - has plan / has floor plan / has section / has elevation / has
-          rendering: Essas relações mostram a existência de desenhos técnicos
-          da edificação, sejam eles históricos ou recentes, compilados de
-          fontes externas a este projeto de pesquisa.
-
-        - has construction drawing / has design / has sketch: Essas relações se
-          referem a desenhos históricos (fontes primárias) que atestam o
-          processo de projeto da edificação.
-
-      ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER
-      CADASTRADOS NO GRUPO resource, MAIS ABAIXO.
-
-      O grupo relation é destinado unicamente a cadastrar relações desta
-      edificação com objetos autônomos, tais como outras edificações, conjuntos
-      urbanos, obras de artes visuais, referências bibliográficas ou acervos
-      arquivísticos.

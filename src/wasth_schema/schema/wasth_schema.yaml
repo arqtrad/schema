@@ -223,6 +223,16 @@ enums:
         title: outro
         meaning: term:lido00165 # Other groups of persons
 
+  CollectionType:
+    description: >-
+      The LIDO Object Type Vocabulary is a structured controlled list of terms
+      recommended to use as values in the LIDO Object Type element, specifying
+      the particular kind of object being in some way associated with the
+      object/work that is the focus of the record.
+    reachable_from:
+      source_ontology: http://terminology.lido-schema.org/objectType
+      include_self: false
+
   ConceptType:
     description: >
       Tipos de termos de vocabulário baseados no Getty AAT.
@@ -1023,36 +1033,196 @@ enums:
       requirement:
         meaning: term:lido00923
 
-  ObjectType:
+  DepictionType:
+    description: >
+      Designa a relação que a edificação descrita na ficha tem com a mídia
+      relacionada.
+    permissible_values:  # http://terminology.lido-schema.org/lido00583
+      depictedIn:
+        title: representado em
+        meaning: term:lido00998
+        description: >
+          A obra descrita na ficha está representada na mídia relacionada,
+          que será geralmente uma obra de arte ou fotografia depositada num
+          repositório externo (catálogo de museu, Wikimedia Commons, etc.).
+
+  LargerContextType:
     description: >-
-      The LIDO Object Type Vocabulary is a structured controlled list of terms
-      recommended to use as values in the LIDO Object Type element, specifying
-      the particular kind of object being in some way associated with the
-      object/work that is the focus of the record.
-    reachable_from:
-      source_ontology: http://terminology.lido-schema.org/objectType
-      include_self: false
+      Tipos de relações entre partes e todo previstas no vocabulário controlado
+      do LIDO. Inclui as categorias de relações hierárquicas e de relações
+      associativas de parte ao todo.
+
+      Ver <http://terminology.lido-schema.org/relatedWorkRelType>
+    permissible_values:
+      physical_part_of:
+        title: fisicamente contido em
+        meaning: term:lido00255
+        description: >
+          Usar quando um objeto físico fizer parte integrante de um objeto ou
+          complexo físico maior. Se o conjunto mais amplo for um construto
+          interpretativo, usar a relação `has_borader_conceptual_context`.
+      conceptual_part_of:
+        title: parte conceitual de
+        meaning: term:lido00572
+        description: >
+          Usar quando um objeto intelectual for parte de uma entidade
+          conceitual maior ou mais ampla.
+      has_borader_conceptual_context:
+        title: tem contexto conceitual mais amplo
+        meaning: term:lido00575
+        description: >
+          Usar quando um objeto físico for incluído segundo critérios
+          interpretativos num conjunto conceitual mais amplo. Se o conjunto
+          mais amplo for uma extensão física que compreende inequivocamente o
+          objeto, usar a relação `physical_part_of`.
+      example_of:
+        title: exemplar de
+        meaning: term:lido00627
+        description: >
+          Usar quando o objeto construído é a manifestação física de um
+          conteúdo intelectual, podendo abarcar desde instâncias específicas de
+          um projeto seriado (por exemplo, um exemplar das casas da SHIS —
+          Sociedade de Habitações de Interesse Social — produzidas em Brasília
+          a partir de 1969) até a realização edificada de um programa teórico
+          específico (por exemplo, a Cité Radieuse de Marselha como
+          exemplo da unité d'habitation de Le Corbusier).
+
+          Vinculações teóricas ou conceituais com maior distância
+          interpretativa (por exemplo, o Jardim América como exemplar de
+          cidade–jardim) devem ser cadastradas no grupo `subject`.
+      has_arch_context:
+        title: tem como contexto arquitetônico
+        meaning: term:lido00616
+        description: >
+          O objeto em causa foi concebido para integrar ou está situado no
+          referido conjunto edificado, ou integra o contexto funcional deste.
+      had_arch_context:
+        title: tinha como contexto arquitetônico
+        meaning: term:lido01051
+        description: >
+          O objeto em causa foi concebido para integrar ou esteve situado no
+          referido conjunto edificado, mas não tem mais esse contexto por ter
+          sido trasladado ou removido, ou porque o contexto foi destruído ou
+          descaracterizado.
+      in_conceptual_whole_with:
+        title: pertence ao mesmo contexto conceitual que
+        meaning: term:lido00578
+        description: >
+          Relação simétrica entre dois objetos que pertencem ao mesmo contexto
+          conceitual. Usar apenas nos casos em que o conjunto conceitual
+          maior não for cadastrado no documentário, por motivos técnicos ou
+          decisão científica.
+      in_physical_whole_with:
+        title: pertence ao mesmo contexto material que
+        meaning: term:lido00577
+        description: >
+          Relação simétrica entre dois objetos que pertencem ao mesmo contexto
+          material ou espacial. Usar apenas nos casos em que o conjunto
+          arquitetônico maior não for cadastrado no documentário, por motivos
+          técnicos ou decisão científica.
+      was_part_of_whole_with:
+        title: pertenceu ao mesmo contexto que
+        meaning: term:lido01059
+        description: >
+          Relação simétrica entre dois objetos que pertenceram ao mesmo
+          contexto conceitual, material ou espacial, mas já não pertencem
+          devido a remoção, traslado, destruição ou reclassificação. Usar
+          apenas nos casos em que o conjunto maior não for cadastrado no
+          documentário, por motivos técnicos ou decisão científica.
+      was_antedated:
+        title: foi precedido no mesmo sítio por
+        meaning: term:lido01189
+      is_part_of:
+        title: faz parte de
+        meaning: term:lido00574
+        description: >
+          Relação genérica entre parte e todo. Sempre que possível, usar os
+          tipos de relação mais específicos.
+      formerly_part_of:
+        title: anteriormente parte de
+        meaning: term:lido01085
+        description: >
+          O objeto físico em questão era anteriormente compreendido num
+          conjunto edificado maior que não mais existe, seja porque o conjunto
+          foi parcialmente demolido ou descaracterizado, ou porque suas outras
+          partes foram trasladadas ou removidas.
+      is_was_part_of:
+        title: parte de
+        meaning: term:lido01088
+        description: >
+          O objeto faz ou fazia parte de um conjunto físico maior, mas não é
+          possível determinar se esse conjunto ainda existe ou não.
 
   ReferenceType:
-    description: Tipos de referências a objetos externos previstos no LIDO.
+    description: >
+      Tipos de referências a objetos externos previstos no LIDO.
     permissible_values:
       uri:
+        title: URI
         meaning: term:lido00099
       iri:
+        title: IRI
         meaning: term:lido00510
       local:
+        title: Identificador local
         meaning: term:lido00100
 
-  RelationType:
+  RelatedWorkRelType:
     description: >-
-      Os tipos de relação entre objetos são definidos pelo VRA Core.
-    reachable_from:
-      source_ontology: http://purl.org/vra/
-      source_nodes:
-        - vra:isRelatedTo
-      relationship_types:
-        - rdfs:subPropertyOf
-      include_self: false
+      Relações associativas entre objetos físicos ou criações intelectuais,
+      definidas segundo o vocabulário do LIDO.
+      Compreende as relações associativas, exceto aquelas de partes com o todo.
+
+      Ver <http://terminology.lido-schema.org/relatedWorkRelType>
+    permissible_values:  # http://terminology.lido-schema.org/lido00583
+      documentedIn:
+        title: documentado em
+        meaning: term:lido00617
+        description: >
+          A obra descrita na ficha está documentada, discutida ou descrita na
+          mídia relacionada, que em geral será um texto.
+      complements:
+        title: complementa
+        meaning: term:lido00580
+        description: >
+          Relação entre obras criadas independentemente uma da outra, mas que
+          mais tarde passaram a ser consideradas ou usadas conjuntamente.
+      complemented:
+        title: complementava
+        meaning: term:lido01095
+        description: >
+          Relação entre obras criadas independentemente uma da outra, mas que
+          mais tarde passaram a ser consideradas ou usadas conjuntamente, sendo
+          essa associação posteriormente desfeita.
+      derivedFrom:
+        title: derivado de
+        meaning: term:lido00603
+        description: >
+          A obra descrita é derivada ou sensivelmente influenciada pelo objeto
+          relacionado.
+
+          Preferir outras expressões de relação mais específicas sempre que
+          possível. A relação `derivedFrom` deve ser reservada para casos em
+          que a relação seja de variações e influências. Essas relações devem
+          ser fundamentadas em interpretação bibliográfica.
+      positionedNear:
+        title: próximo a
+        meaning: term:lido01136
+        description: >
+          Relação simétrica entre dois objetos situados em proximidade
+          espacial, quando esta proximidade for significativa por razões
+          compositivas, históricas ou funcionais.
+
+  ResourceType:
+    description: >-
+      Relações associativas entre objetos físicos ou criações intelectuais,
+      definidas segundo o vocabulário do LIDO.
+      Compreende as relações de documentação técnica das edificações.
+
+      Ver <http://terminology.lido-schema.org/relatedWorkRelType>
+    permissible_values:
+      architecturalSurvey:
+      planFor:
 
   RepositoryType:
     description: Type of repository or legal body.

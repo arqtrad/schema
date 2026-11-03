@@ -30,7 +30,8 @@ classes:
 
     attributes:
 
-      refid:
+      citation_refid:
+        alias: refid
         identifier: true
         range: CslCitekey
         description: >
@@ -55,18 +56,16 @@ classes:
       - description
 
   RelatedObject:
+    is_a: Thing
+    abstract: true
     description: >
-      A wrapper for identifying information about an object or work, including
-      collections, related to the object/work in focus. May include a weblink.
+      A set of structured information about an object or work, or a group of
+      objects or works related to the object/work in focus, including the kind
+      of relationship between them. May include bibliographic objects in which
+      the object/work is documented or mentioned.
+
     slots:
-      - description
-      - relation_type
-      - related_object
-      - object_type
-      - resources
-      - media
-      - source
-      - bibliographic_citation
+      - work_rights
 
   RelatedWork:
     is_a: RelatedObject
@@ -96,9 +95,39 @@ classes:
       edificação com objetos autônomos, tais como outras edificações, conjuntos
       urbanos, obras de artes visuais, referências bibliográficas ou acervos
       arquivísticos.
-    slot_usage:
-      related_object:
-        range: Work
+
+    attributes:
+      relation_type:
+        slot_uri: lido:relatedWorkRelType
+        alias: rel_type
+        range: RelatedWorkRelType
+        required: true
+        # ifabsent: RelationType(planFor)
+        description: >
+          Indica o tipo de relação entre a edificação descrita na ficha e o
+          objeto relacionado. O sujeito do tipo é sempre a obra titular da
+          ficha.
+
+    slots:
+      - media
+
+  LargerContextReference:
+    is_a: RelatedObject
+    description: >
+      Tipo de relação específica entre obras a ser usado quando o objeto
+      descrito na ficha é ou era parte integrante de outro objeto, físico ou
+      intelectual.
+
+    attributes:
+      larger_context_type:
+        slot_uri: lido:relatedWorkRelType
+        alias: type
+        range: LargerContextType
+        required: true
+        description: O tipo de relação entre os objetos.
+
+    slots:
+      - media
 
   Resource:
     is_a: Thing
@@ -106,35 +135,60 @@ classes:
     close_mappings:
       - schema:ArchiveComponent
     description: >
-      This class comprises identifiable immaterial items that make propositions
-      about reality.
+      Este grupo identifica um recurso visual ou documental que fornece
+      informações técnicas ou uma representação ilustrativa da obra à qual ele
+      se relaciona.
 
-      These propositions may be expressed in text, graphics, images,
-      audiograms, videograms, or by other similar means. Documentation
-      databases are regarded as instances of E31 Document. This class should
-      not be confused with the concept “document” in Information Technology,
-      which is compatible with E73 Information Object.
+      Recursos produzidos pela equipe dos Documentários da Arquitetura
+      Tradicional são descritos na ficha de cada edificação, no grupo
+      `resources`.
+      Representações e documentos externos são referidos nos grupos `media` e
+      `related_works`, respetivamente.
+
+    notes:
+
+      - This class comprises identifiable immaterial items that make
+        propositions about reality.
+
+        These propositions may be expressed in text, graphics, images,
+        audiograms, videograms, or by other similar means. Documentation
+        databases are regarded as instances of E31 Document. This class should
+        not be confused with the concept “document” in Information Technology,
+        which is compatible with E73 Information Object.
 
     attributes:
 
-      scale:
-        range: float
-        minimum_value: 0
-        description: >-
-          Número inverso da escala da imagem, se ela tiver uma resolução ou
-          tamanho de página definidos.
-          Por exemplo, para um desenho na escala 1 : 100, `scale: 100`.
+      resource_type:
+        slot_uri: lido:relatedWorkRelType
+        alias: type
+        range: ResourceType
+        required: true
+        description: >
+          Usamos os tipos de relação previstos pelo LIDO em
+          `relatedWorkRelType > Associative relationships > Derivative relationships`.
+          Provavelmente necessitamos apenas de :
+
+          - `planFor` : desenho técnico bidimensional de levantamento
+            (padrão, pode ser omitido) ;
+
+          - `modelFor` : modelo tridimensional, com ou sem informações construtivas
+            associadas (BIM) ;
+
+          - `imageOf` : outras representações em duas dimensões da edificação ;
+
+          - `preparatoryFor` : representação técnica de projeto para intervenções a
+            serem realizadas (ou já realizadas) na edificação.
 
       perspective:
+        required: true
         range: integer
         minimum_value: 0
         maximum_value: 9
-        ifabsent: integer(1)
         description: >
           Tipo de vista do desenho. Usar a numeração da ISO 19650–2 :
 
-            - 0 = geral
-            - 1 = planta baixa (padrão, pode ser omitido)
+            - 0 = sem projeção ou representação não visual
+            - 1 = planta baixa
             - 2 = elevação
             - 3 = corte
             - 4 = mapa de elementos
@@ -144,44 +198,99 @@ classes:
             - 8 = vista ou modelo 3D
             - 9 = definido pelo agente
 
+    slot_usage:
+
+      id:
+        identifier: true
+
+      category:
+        ifabsent: string(http://terminology.lido-schema.org/lido01193)
+
     slots:
-      - relation_type
+      - format
+      - scale
+      - unit
       - preview_image
       - provided_image
       - provided_3d
       - resource_service
-      - unit
       - credit
+      - work_rights
 
   MediaObject:
+    is_a: RelatedObject
     class_uri: schema:MediaObject
     close_mappings:
       - dctypes:Image
     description: >
       Descrição e referência a um único arquivo de mídia.
 
-      Obrigatoriamente deve conter uma URI.
+      O `id` deve ser uma URI apontando para a localização permanente da mídia,
+      não diretamente para um arquivo de imagem.
+
+      Obrigatoriamente deve conter um link para o recurso online, seja na forma
+      de `provided_image`, `provided_3d` ou `resource_service`.
+      É importante, também, fornecer o link para uma miniatura que será usada
+      como pré-visualização, em `preview_image`.
 
       No caso de `preview_image` ou `provided_image`, o link deve referenciar
       diretamente o arquivo (ficheiro) da imagem.
       Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma
       página web que forneça a respetiva API ou as informações acerca do modelo.
 
-      (A FAZER) Ver [Instruções para carregar imagens e desenhos].
+      Por exemplo, no caso de uma imagem hospedada no Wikimedia Commons:
+
+      ```
+      id: https://commons.wikimedia.org/wiki/File:BR-DF-Planaltina-Casarao_azul-PP-090421-3018.jpg
+      preview_image: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/BR-DF-Planaltina-Casarao_azul-PP-090421-3018.jpg/330px-BR-DF-Planaltina-Casarao_azul-PP-090421-3018.jpg
+      provided_image:
+        - https://upload.wikimedia.org/wikipedia/commons/8/86/BR-DF-Planaltina-Casarao_azul-PP-090421-3018.jpg
+      resource_service:
+        - https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&format=json&titles=File:BR-DF-Planaltina-Casarao_azul-PP-090421-3018.jpg
+      ```
+
+      Não armazenamos imagens ou outros arquivos de mídia nos sites dos
+      Documentários da Arquitetura Tradicional.
+
+    attributes:
+      depiction_type:
+        slot_uri: lido:relatedWorkRelType
+        alias: type
+        range: DepictionType
+        required: true
+        description: >
+          O tipo de representação que a mídia contém. A edificação descrita na
+          ficha é sempre o sujeito da relação.
+
+    slot_usage:
+      title:
+        required: true
+        description: >
+          Título breve para identificar este recurso visual na listagem.
+
+      description:
+        required: true
+        description: >
+          Texto alternativo para leitores de tela ou outras formas de
+          acessibilidade. Apenas texto sem formatação.
+
+      content:
+        description: >
+          Opcional, para descrever com mais detalhe a representação.
+
+      work_rights:
+        required: true
 
     slots:
       - format
+      - scale
+      - unit
       - preview_image
       - provided_image
       - provided_3d
       - resource_service
       - measurements
-      - media_alt
-      - description
-      - source
-      - bibliographic_citation
       - credit
-      - rights
 
 
 slots:
@@ -207,32 +316,8 @@ slots:
       Usar o campo `description` para formatar a referência, caso a formatação
       automática do Zotero não for satisfatória.
 
-  relation_type:
-    alias: rel_type
-    range: RelationType
-    required: true
-    # ifabsent: RelationType(planFor)
-    description: >
-      Usamos os tipos de relação previstos pelo [VRA Core].
-      Provavelmente necessitamos apenas de :
-
-      - `planFor` : desenho técnico bidimensional de levantamento
-        (padrão, pode ser omitido) ;
-
-      - `modelFor` : modelo tridimensional, com ou sem informações construtivas
-        associadas (BIM) ;
-
-      - `imageOf` : outras representações em duas dimensões da edificação ;
-
-      - `preparatoryFor` : representação técnica de projeto para intervenções a
-        serem realizadas (ou já realizadas) na edificação.
-
-  related_object:
-    range: Thing
-    required: true
-
-  object_type:
-    range: ObjectType
+  collection_type:
+    range: CollectionType
     description: >
       Usar um vocabulário controlado para identificar o tipo de representação,
       por exemplo as hierarquias do Getty AAT
@@ -256,6 +341,12 @@ slots:
       em <http://terminology.lido-schema.org/resourceRepresentation_type>
       e são inseridas na ficha como um mapa.
 
+  media:
+    range: MediaObject
+    multivalued: true
+    description: >
+      Representações iconográficas deste objeto.
+
   preview_image:
     range: uriorcurie
     description: >
@@ -270,36 +361,29 @@ slots:
   provided_image:
     range: uriorcurie
     multivalued: true
+    inlined_as_list: true
     description: >-
       Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap.
 
   provided_3d:
     range: uriorcurie
     multivalued: true
+    inlined_as_list: true
     description: Modelo tridimensional ou IFC da edificação.
 
   resource_service:
     alias: service
-    range: TypedReference
+    range: uriorcurie
     multivalued: true
     inlined_as_list: true
     description: >-
       Apenas no caso de a imagem ser fornecida como um serviço dinâmico
       online, tal como a especificação [IIIF].
 
-  media:
-    range: MediaObject
-    multivalued: true
-    inlined_as_list: true
-    description: >
-      Representações iconográficas deste objeto.
-
       No caso de `preview_image` ou `provided_image`, o link deve referenciar
       diretamente o arquivo (ficheiro) da imagem.
       Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma
       página web que forneça a respetiva API ou as informações acerca do modelo.
-
-      (A FAZER) Ver [Instruções para carregar imagens e desenhos].
 
   format:
     slot_uri: dcterms:format
@@ -309,14 +393,26 @@ slots:
     description: >
       Campo disciplinado pela especificação [DublinCore] no campo
       [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).
-      Esta especificação sugere a [lista de tipos de mídia IANA].
+      Esta especificação sugere a lista de tipos de mídia IANA :
+      <https://www.iana.org/assignments/media-types>.
 
-  media_alt:
+  scale:
+    range: float
+    minimum_value: 0
     description: >-
-      Texto alternativo para leitores de tela ou outras formas de
-      acessibilidade. Apenas texto sem formatação.
-    alias: alt
-    range: string
+      Número inverso da escala da imagem ou desenho, se tiver uma resolução ou
+      tamanho de página definidos.
+      Por exemplo, para um desenho na escala 1 : 100, `scale: 100`.
+
+  work_rights:
+    range: Right
+    multivalued: true
+    inlined_as_list: true
+    slot_uri: lido:rightsWorkSet
+    description: >
+      ⚠️  Este bloco se refere a eventuais direitos autorais ou de
+      propriedade sobre O OBJETO OU RECURSO QUE ESTÁ SENDO DESCRITO, não sobre
+      o preenchimento da ficha.
 
   credit:
     description: Informação sobre autoria ou responsabilidade.

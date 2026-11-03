@@ -181,10 +181,6 @@ classes:
           Repeated if there are several designations known, or if former
           repositories or geographic places should be listed.
 
-    slot_usage:
-      description:
-        required: true
-
     slots:
       - id
       - record_author
@@ -215,6 +211,8 @@ classes:
         alias: title_type
         range: TitleType
         ifabsent: TitleType(descriptive)
+        description: >
+          Categoriza a natureza do nome dado ao objeto ou conceito.
 
     slots:
       - bibliographic_citation
@@ -229,6 +227,7 @@ classes:
       repository_type:
         range: RepositoryType
         ifabsent: RepositoryType(corporate)
+        description: Categoriza a natureza física ou jurídica do repositório.
 
     slots:
       - site
@@ -238,7 +237,6 @@ classes:
 slots:
 
   id:
-    identifier: true
     range: uriorcurie
     slot_uri: dcterms:identifier
     description: >
@@ -269,8 +267,9 @@ slots:
       Nos documentários de edificações, preencher este campo
       OBRIGATORIAMENTE com `term:lido00096` ("Objeto manufaturado").
 
-      No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com
-      `term:lido01193` ("Objeto conceitual").
+      Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE
+      com `term:lido01193` ("Objeto conceitual").
+
 
     notes:
 
@@ -301,7 +300,7 @@ slots:
     description: Informações estruturadas sobre a pessoa jurídica.
 
   content:
+    slot_uri: lido:descriptiveNoteValue
     recommended: true
     range: string
-    slot_uri: skos:scopeNote
     description: Conteúdo textual descritivo ou explicativo.

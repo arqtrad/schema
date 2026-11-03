@@ -22,18 +22,18 @@ classes:
       (localizador universal, como um link da internet, por padrão), IRI ou
       código na base local (não recomendado).
 
-      -------------------------------------------------------------------------
+    notes:
 
-      Reference to a local record, IRI, URI, or LIDO terminology term.
+      - Reference to a local record, IRI, URI, or LIDO terminology term.
 
     slot_usage:
       refid:
         key: true
 
     slots:
-      - reference_type
-      - lido_term
+      - refid_type
       - refid
+      - lido_term
       - description
       - bibliographic_citation
       - source
@@ -289,7 +289,7 @@ slots:
       - schema:description
     description: A human-readable description for a thing
 
-  reference_type:
+  refid_type:
     alias: type
     range: ReferenceType
     ifabsent: ReferenceType(uri)

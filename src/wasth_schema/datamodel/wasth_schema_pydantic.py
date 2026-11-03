@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from datetime import date
 from enum import Enum
-from typing import Any, ClassVar, Literal, Optional, Union
+from typing import Any, ClassVar, Literal, Optional
 
 from pydantic import BaseModel, ConfigDict, Field, RootModel, field_validator
 
@@ -3318,6 +3318,14 @@ class AgentType(str, Enum):
     outro = "other"
 
 
+class CollectionType(str):
+    """
+    The LIDO Object Type Vocabulary is a structured controlled list of terms recommended to use as values in the LIDO Object Type element, specifying the particular kind of object being in some way associated with the object/work that is the focus of the record.
+    """
+
+    pass
+
+
 class ConceptType(str, Enum):
     """
     Tipos de termos de vocabulário baseados no Getty AAT.
@@ -3678,30 +3686,142 @@ class MeasurementType(str, Enum):
     requirement = "requirement"
 
 
-class ObjectType(str):
+class DepictionType(str, Enum):
     """
-    The LIDO Object Type Vocabulary is a structured controlled list of terms recommended to use as values in the LIDO Object Type element, specifying the particular kind of object being in some way associated with the object/work that is the focus of the record.
+    Designa a relação que a edificação descrita na ficha tem com a mídia relacionada.
+
     """
 
-    pass
+    representado_em = "depictedIn"
+    """
+    A obra descrita na ficha está representada na mídia relacionada, que será geralmente uma obra de arte ou fotografia depositada num repositório externo (catálogo de museu, Wikimedia Commons, etc.).
+
+    """
+
+
+class LargerContextType(str, Enum):
+    """
+        Tipos de relações entre partes e todo previstas no vocabulário controlado do LIDO. Inclui as categorias de relações hierárquicas e de relações associativas de parte ao todo.
+    Ver <http://terminology.lido-schema.org/relatedWorkRelType>
+    """
+
+    fisicamente_contido_em = "physical_part_of"
+    """
+    Usar quando um objeto físico fizer parte integrante de um objeto ou complexo físico maior. Se o conjunto mais amplo for um construto interpretativo, usar a relação `has_borader_conceptual_context`.
+
+    """
+    parte_conceitual_de = "conceptual_part_of"
+    """
+    Usar quando um objeto intelectual for parte de uma entidade conceitual maior ou mais ampla.
+
+    """
+    tem_contexto_conceitual_mais_amplo = "has_borader_conceptual_context"
+    """
+    Usar quando um objeto físico for incluído segundo critérios interpretativos num conjunto conceitual mais amplo. Se o conjunto mais amplo for uma extensão física que compreende inequivocamente o objeto, usar a relação `physical_part_of`.
+
+    """
+    exemplar_de = "example_of"
+    """
+    Usar quando o objeto construído é a manifestação física de um conteúdo intelectual, podendo abarcar desde instâncias específicas de um projeto seriado (por exemplo, um exemplar das casas da SHIS — Sociedade de Habitações de Interesse Social — produzidas em Brasília a partir de 1969) até a realização edificada de um programa teórico específico (por exemplo, a Cité Radieuse de Marselha como exemplo da unité d'habitation de Le Corbusier).
+    Vinculações teóricas ou conceituais com maior distância interpretativa (por exemplo, o Jardim América como exemplar de cidade–jardim) devem ser cadastradas no grupo `subject`.
+
+    """
+    tem_como_contexto_arquitetônico = "has_arch_context"
+    """
+    O objeto em causa foi concebido para integrar ou está situado no referido conjunto edificado, ou integra o contexto funcional deste.
+
+    """
+    tinha_como_contexto_arquitetônico = "had_arch_context"
+    """
+    O objeto em causa foi concebido para integrar ou esteve situado no referido conjunto edificado, mas não tem mais esse contexto por ter sido trasladado ou removido, ou porque o contexto foi destruído ou descaracterizado.
+
+    """
+    pertence_ao_mesmo_contexto_conceitual_que = "in_conceptual_whole_with"
+    """
+    Relação simétrica entre dois objetos que pertencem ao mesmo contexto conceitual. Usar apenas nos casos em que o conjunto conceitual maior não for cadastrado no documentário, por motivos técnicos ou decisão científica.
+
+    """
+    pertence_ao_mesmo_contexto_material_que = "in_physical_whole_with"
+    """
+    Relação simétrica entre dois objetos que pertencem ao mesmo contexto material ou espacial. Usar apenas nos casos em que o conjunto arquitetônico maior não for cadastrado no documentário, por motivos técnicos ou decisão científica.
+
+    """
+    pertenceu_ao_mesmo_contexto_que = "was_part_of_whole_with"
+    """
+    Relação simétrica entre dois objetos que pertenceram ao mesmo contexto conceitual, material ou espacial, mas já não pertencem devido a remoção, traslado, destruição ou reclassificação. Usar apenas nos casos em que o conjunto maior não for cadastrado no documentário, por motivos técnicos ou decisão científica.
+
+    """
+    foi_precedido_no_mesmo_sítio_por = "was_antedated"
+    faz_parte_de = "is_part_of"
+    """
+    Relação genérica entre parte e todo. Sempre que possível, usar os tipos de relação mais específicos.
+
+    """
+    anteriormente_parte_de = "formerly_part_of"
+    """
+    O objeto físico em questão era anteriormente compreendido num conjunto edificado maior que não mais existe, seja porque o conjunto foi parcialmente demolido ou descaracterizado, ou porque suas outras partes foram trasladadas ou removidas.
+
+    """
+    parte_de = "is_was_part_of"
+    """
+    O objeto faz ou fazia parte de um conjunto físico maior, mas não é possível determinar se esse conjunto ainda existe ou não.
+
+    """
 
 
 class ReferenceType(str, Enum):
     """
     Tipos de referências a objetos externos previstos no LIDO.
+
     """
 
-    uri = "uri"
-    iri = "iri"
-    local = "local"
+    URI = "uri"
+    IRI = "iri"
+    Identificador_local = "local"
 
 
-class RelationType(str):
+class RelatedWorkRelType(str, Enum):
     """
-    Os tipos de relação entre objetos são definidos pelo VRA Core.
+        Relações associativas entre objetos físicos ou criações intelectuais, definidas segundo o vocabulário do LIDO. Compreende as relações associativas, exceto aquelas de partes com o todo.
+    Ver <http://terminology.lido-schema.org/relatedWorkRelType>
     """
 
-    pass
+    documentado_em = "documentedIn"
+    """
+    A obra descrita na ficha está documentada, discutida ou descrita na mídia relacionada, que em geral será um texto.
+
+    """
+    complementa = "complements"
+    """
+    Relação entre obras criadas independentemente uma da outra, mas que mais tarde passaram a ser consideradas ou usadas conjuntamente.
+
+    """
+    complementava = "complemented"
+    """
+    Relação entre obras criadas independentemente uma da outra, mas que mais tarde passaram a ser consideradas ou usadas conjuntamente, sendo essa associação posteriormente desfeita.
+
+    """
+    derivado_de = "derivedFrom"
+    """
+    A obra descrita é derivada ou sensivelmente influenciada pelo objeto relacionado.
+    Preferir outras expressões de relação mais específicas sempre que possível. A relação `derivedFrom` deve ser reservada para casos em que a relação seja de variações e influências. Essas relações devem ser fundamentadas em interpretação bibliográfica.
+
+    """
+    próximo_a = "positionedNear"
+    """
+    Relação simétrica entre dois objetos situados em proximidade espacial, quando esta proximidade for significativa por razões compositivas, históricas ou funcionais.
+
+    """
+
+
+class ResourceType(str, Enum):
+    """
+        Relações associativas entre objetos físicos ou criações intelectuais, definidas segundo o vocabulário do LIDO. Compreende as relações de documentação técnica das edificações.
+    Ver <http://terminology.lido-schema.org/relatedWorkRelType>
+    """
+
+    architecturalSurvey = "architecturalSurvey"
+    planFor = "planFor"
 
 
 class RepositoryType(str, Enum):
@@ -3849,8 +3969,6 @@ class ConceptReference(ConfiguredBaseModel):
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -3874,8 +3992,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -3918,8 +4034,6 @@ class BroaderConceptReference(ConceptReference):
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -3943,8 +4057,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -3987,8 +4099,6 @@ class NarrowerConceptReference(ConceptReference):
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -4012,8 +4122,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -4056,8 +4164,6 @@ class MappingConceptReference(ConceptReference):
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -4081,8 +4187,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -4122,8 +4226,6 @@ class BibliographicCitation(ConfiguredBaseModel):
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -4141,9 +4243,7 @@ class BibliographicCitation(ConfiguredBaseModel):
         description="""Se a fonte for cadastrada, o campo `refid` deve conter a chave de citação (`citation key`) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no [Zotero]. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
 Se a referência que necessita citar não constar da biblioteca do Zotero, deve cadastrá-la primeiro nessa biblioteca para então extrair a chave de citação.
 """,
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["BibliographicCitation", "TypedReference"]}
-        },
+        json_schema_extra={"linkml_meta": {"domain_of": ["BibliographicCitation"]}},
     )
     note: Optional[str] = Field(
         default=None,
@@ -4153,406 +4253,17 @@ Se a referência que necessita citar não constar da biblioteca do Zotero, deve 
     )
 
 
-class RelatedObject(ConfiguredBaseModel):
-    """
-    A wrapper for identifying information about an object or work, including collections, related to the object/work in focus. May include a weblink.
-
-    """
-
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {"from_schema": "https://tradicional.arq.br/schema/resource"}
-    )
-
-    display: Optional[str] = Field(
-        default=None,
-        description="""A human-readable description for a thing""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
-                    "TypedReference",
-                    "Measurement",
-                    "RelatedEvent",
-                    "Thing",
-                    "Inscription",
-                    "Topic",
-                ],
-                "exact_mappings": ["schema:description"],
-                "slot_uri": "dcterms:description",
-            }
-        },
-    )
-    rel_type: RelationType = Field(
-        default=...,
-        description="""Usamos os tipos de relação previstos pelo [VRA Core]. Provavelmente necessitamos apenas de :
-- `planFor` : desenho técnico bidimensional de levantamento
-  (padrão, pode ser omitido) ;
-
-- `modelFor` : modelo tridimensional, com ou sem informações construtivas
-  associadas (BIM) ;
-
-- `imageOf` : outras representações em duas dimensões da edificação ;
-- `preparatoryFor` : representação técnica de projeto para intervenções a
-  serem realizadas (ou já realizadas) na edificação.
-""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["RelatedObject", "Resource"]}},
-    )
-    related_object: str = Field(
-        default=..., json_schema_extra={"linkml_meta": {"domain_of": ["RelatedObject"]}}
-    )
-    object_type: Optional[ObjectType] = Field(
-        default=None,
-        description="""Usar um vocabulário controlado para identificar o tipo de representação, por exemplo as hierarquias do Getty AAT [obras visuais](http://vocab.getty.edu/hier/aat/300191086). ou [formatos de informação](http://vocab.getty.edu/hier/aat/300220751)
-""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["RelatedObject"]}},
-    )
-    resources: Optional[dict[str, Resource]] = Field(
-        default=None,
-        description="""Os desenhos ou modelos da edificação são apresentados online por meio de imagens vetoriais ou bitmap.
-Cada desenho ou modelo pode ser apresentado sob várias representações, como pré-visualização, imagem original, ou serviço [IIIF]. Essas imagens devem ser identificadas como segue :
-As categorias de representação previstas no [LIDO] podem ser consultadas em <http://terminology.lido-schema.org/resourceRepresentation_type> e são inseridas na ficha como um mapa.
-""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["RelatedObject", "Work"]}},
-    )
-    media: Optional[list[MediaObject]] = Field(
-        default=None,
-        description="""Representações iconográficas deste objeto.
-No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma página web que forneça a respetiva API ou as informações acerca do modelo.
-(A FAZER) Ver [Instruções para carregar imagens e desenhos].
-""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["RelatedObject", "Event", "Work"]}
-        },
-    )
-    source: Optional[list[LegalBody]] = Field(
-        default=None,
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "RelatedObject",
-                    "MediaObject",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
-            }
-        },
-    )
-    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
-        default=None,
-        description="""📚  Cadastro de uma referência bibliográfica.
-O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
-Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
-Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
-                    "TypedReference",
-                    "Measurement",
-                    "Actor",
-                    "Thing",
-                    "Appellation",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                    "Inscription",
-                ],
-                "recommended": True,
-                "slot_uri": "dcterms:bibliographicCitation",
-            }
-        },
-    )
-
-
-class RelatedWork(RelatedObject):
-    """
-    As formas mais comuns de relação no nosso projeto são :
-
-      - depicted in: A edificação é representada numa pintura ou desenho
-        artístico;
-
-      - documented by: Informações sobre a edificação estão publicadas numa
-        referência bibliográfica, processo administrativo ou outro documento
-        textual impresso, manuscrito ou eletrônico;
-
-      - has plan / has floor plan / has section / has elevation / has
-        rendering: Essas relações mostram a existência de desenhos técnicos
-        da edificação, sejam eles históricos ou recentes, compilados de
-        fontes externas a este projeto de pesquisa.
-
-      - has construction drawing / has design / has sketch: Essas relações se
-        referem a desenhos históricos (fontes primárias) que atestam o
-        processo de projeto da edificação.
-
-    ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO resource, MAIS ABAIXO.
-    O grupo relation é destinado unicamente a cadastrar relações desta edificação com objetos autônomos, tais como outras edificações, conjuntos urbanos, obras de artes visuais, referências bibliográficas ou acervos arquivísticos.
-    """
-
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {
-            "from_schema": "https://tradicional.arq.br/schema/resource",
-            "slot_usage": {
-                "related_object": {"name": "related_object", "range": "Work"}
-            },
-        }
-    )
-
-    display: Optional[str] = Field(
-        default=None,
-        description="""A human-readable description for a thing""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
-                    "TypedReference",
-                    "Measurement",
-                    "RelatedEvent",
-                    "Thing",
-                    "Inscription",
-                    "Topic",
-                ],
-                "exact_mappings": ["schema:description"],
-                "slot_uri": "dcterms:description",
-            }
-        },
-    )
-    rel_type: RelationType = Field(
-        default=...,
-        description="""Usamos os tipos de relação previstos pelo [VRA Core]. Provavelmente necessitamos apenas de :
-- `planFor` : desenho técnico bidimensional de levantamento
-  (padrão, pode ser omitido) ;
-
-- `modelFor` : modelo tridimensional, com ou sem informações construtivas
-  associadas (BIM) ;
-
-- `imageOf` : outras representações em duas dimensões da edificação ;
-- `preparatoryFor` : representação técnica de projeto para intervenções a
-  serem realizadas (ou já realizadas) na edificação.
-""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["RelatedObject", "Resource"]}},
-    )
-    related_object: str = Field(
-        default=..., json_schema_extra={"linkml_meta": {"domain_of": ["RelatedObject"]}}
-    )
-    object_type: Optional[ObjectType] = Field(
-        default=None,
-        description="""Usar um vocabulário controlado para identificar o tipo de representação, por exemplo as hierarquias do Getty AAT [obras visuais](http://vocab.getty.edu/hier/aat/300191086). ou [formatos de informação](http://vocab.getty.edu/hier/aat/300220751)
-""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["RelatedObject"]}},
-    )
-    resources: Optional[dict[str, Resource]] = Field(
-        default=None,
-        description="""Os desenhos ou modelos da edificação são apresentados online por meio de imagens vetoriais ou bitmap.
-Cada desenho ou modelo pode ser apresentado sob várias representações, como pré-visualização, imagem original, ou serviço [IIIF]. Essas imagens devem ser identificadas como segue :
-As categorias de representação previstas no [LIDO] podem ser consultadas em <http://terminology.lido-schema.org/resourceRepresentation_type> e são inseridas na ficha como um mapa.
-""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["RelatedObject", "Work"]}},
-    )
-    media: Optional[list[MediaObject]] = Field(
-        default=None,
-        description="""Representações iconográficas deste objeto.
-No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma página web que forneça a respetiva API ou as informações acerca do modelo.
-(A FAZER) Ver [Instruções para carregar imagens e desenhos].
-""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["RelatedObject", "Event", "Work"]}
-        },
-    )
-    source: Optional[list[LegalBody]] = Field(
-        default=None,
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "RelatedObject",
-                    "MediaObject",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
-            }
-        },
-    )
-    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
-        default=None,
-        description="""📚  Cadastro de uma referência bibliográfica.
-O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
-Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
-Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
-                    "TypedReference",
-                    "Measurement",
-                    "Actor",
-                    "Thing",
-                    "Appellation",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                    "Inscription",
-                ],
-                "recommended": True,
-                "slot_uri": "dcterms:bibliographicCitation",
-            }
-        },
-    )
-
-
-class MediaObject(ConfiguredBaseModel):
-    """
-    Descrição e referência a um único arquivo de mídia.
-    Obrigatoriamente deve conter uma URI.
-    No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma página web que forneça a respetiva API ou as informações acerca do modelo.
-    (A FAZER) Ver [Instruções para carregar imagens e desenhos].
-
-    """
-
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {
-            "class_uri": "schema:MediaObject",
-            "close_mappings": ["dctypes:Image"],
-            "from_schema": "https://tradicional.arq.br/schema/resource",
-        }
-    )
-
-    format: TypedReference = Field(
-        default=...,
-        description="""Campo disciplinado pela especificação [DublinCore] no campo [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/). Esta especificação sugere a [lista de tipos de mídia IANA].
-""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["MediaObject"], "slot_uri": "dcterms:format"}
-        },
-    )
-    preview_image: Optional[str] = Field(
-        default=None,
-        description="""Uma única miniatura da imagem original.
-Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente em caso de ausência da miniatura, nem outros tipos de miniaturas que não imagens. A especificação LIDO admite listar mais de uma miniatura, mas tampouco prevemos essa hipótese.
-""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    provided_image: Optional[list[str]] = Field(
-        default=None,
-        description="""Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    provided_3d: Optional[list[str]] = Field(
-        default=None,
-        description="""Modelo tridimensional ou IFC da edificação.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    service: Optional[list[TypedReference]] = Field(
-        default=None,
-        description="""Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal como a especificação [IIIF].""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    measurements: Optional[list[Measurement]] = Field(
-        default=None,
-        description="""A wrapper for information about the dimensions, or other measurements, of the object/work in focus. May also include extents of the parts of a complex object or work.
-""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["MediaObject", "Event", "Work"]}
-        },
-    )
-    alt: Optional[str] = Field(
-        default=None,
-        description="""Texto alternativo para leitores de tela ou outras formas de acessibilidade. Apenas texto sem formatação.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["MediaObject"]}},
-    )
-    display: Optional[str] = Field(
-        default=None,
-        description="""A human-readable description for a thing""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
-                    "TypedReference",
-                    "Measurement",
-                    "RelatedEvent",
-                    "Thing",
-                    "Inscription",
-                    "Topic",
-                ],
-                "exact_mappings": ["schema:description"],
-                "slot_uri": "dcterms:description",
-            }
-        },
-    )
-    source: Optional[list[LegalBody]] = Field(
-        default=None,
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "RelatedObject",
-                    "MediaObject",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
-            }
-        },
-    )
-    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
-        default=None,
-        description="""📚  Cadastro de uma referência bibliográfica.
-O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
-Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
-Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
-                    "TypedReference",
-                    "Measurement",
-                    "Actor",
-                    "Thing",
-                    "Appellation",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                    "Inscription",
-                ],
-                "recommended": True,
-                "slot_uri": "dcterms:bibliographicCitation",
-            }
-        },
-    )
-    credit: Optional[str] = Field(
-        default=None,
-        description="""Informação sobre autoria ou responsabilidade.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    rights: Optional[list[Right]] = Field(
-        default=None, json_schema_extra={"linkml_meta": {"domain_of": ["MediaObject"]}}
-    )
-
-
 class TypedReference(ConfiguredBaseModel):
     """
     Permite referenciar um registro local ou externo por meio da sua URI (localizador universal, como um link da internet, por padrão), IRI ou código na base local (não recomendado).
-    -------------------------------------------------------------------------
-    Reference to a local record, IRI, URI, or LIDO terminology term.
     """
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
             "from_schema": "https://tradicional.arq.br/schema/shared",
+            "notes": [
+                "Reference to a local record, IRI, URI, or LIDO terminology term."
+            ],
             "slot_usage": {"refid": {"key": True, "name": "refid"}},
         }
     )
@@ -4566,21 +4277,21 @@ class TypedReference(ConfiguredBaseModel):
             }
         },
     )
-    term: Optional[str] = Field(
-        default=None,
-        description="""LIDO terminology term.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["TypedReference"]}},
-    )
     refid: str = Field(
         default=...,
         description="""Local or external identifier.""",
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": ["BibliographicCitation", "TypedReference"],
+                "domain_of": ["TypedReference"],
                 "exact_mappings": ["schema:identifier"],
                 "slot_uri": "dcterms:identifier",
             }
         },
+    )
+    term: Optional[str] = Field(
+        default=None,
+        description="""LIDO terminology term.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["TypedReference"]}},
     )
     display: Optional[str] = Field(
         default=None,
@@ -4590,8 +4301,6 @@ class TypedReference(ConfiguredBaseModel):
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -4615,8 +4324,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -4635,13 +4342,7 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         default=None,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": [
-                    "RelatedObject",
-                    "MediaObject",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
             }
         },
     )
@@ -4724,7 +4425,9 @@ class Measurement(ConfiguredBaseModel):
         default=...,
         description="""Unidade de medida usada no dimensionamento do objeto ou da representação, por exemplo metros, milímetros ou palmos. Usar a [hierarquia de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096) do AAT, ou do nosso próprio [vocabulário controlado].
 """,
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "Measurement"]}},
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Resource", "MediaObject", "Measurement"]}
+        },
     )
     display: Optional[str] = Field(
         default=None,
@@ -4734,8 +4437,6 @@ class Measurement(ConfiguredBaseModel):
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -4767,8 +4468,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -4817,7 +4516,7 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
 """,
         json_schema_extra={"linkml_meta": {"domain_of": ["Measurement"]}},
     )
-    event: Optional[str] = Field(
+    event: Optional[Event] = Field(
         default=None,
         description="""Descreve a ocasião em que as medidas foram aferidas, caso essa informação seja relevante (por exemplo, no âmbito de um levantamento prévio a intervenções que alteraram as dimensões da edificação).
 Referencia um evento cadastrado em `temporal` pelo seu `id`.
@@ -4854,8 +4553,6 @@ class MaterialTech(ConceptReference):
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -4879,8 +4576,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -4998,8 +4693,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -5114,8 +4807,6 @@ class StylePeriod(ConceptReference):
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -5139,8 +4830,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -5170,8 +4859,6 @@ class RelatedEvent(ConfiguredBaseModel):
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -5184,7 +4871,7 @@ class RelatedEvent(ConfiguredBaseModel):
             }
         },
     )
-    event_name: list[str] = Field(
+    event_name: list[Event] = Field(
         default=...,
         description="""Identifica o evento ralacionado.
 """,
@@ -5227,12 +4914,11 @@ class Thing(ConfiguredBaseModel):
             "class_uri": "crm:E1_CRM_Entity",
             "exact_mappings": ["schema:Thing"],
             "from_schema": "https://tradicional.arq.br/schema/thing",
-            "slot_usage": {"description": {"name": "description", "required": True}},
         }
     )
 
-    id: str = Field(
-        default=...,
+    id: Optional[str] = Field(
+        default=None,
         description="""Identificador globalmente único para este objeto ou recurso.
 """,
         json_schema_extra={
@@ -5254,16 +4940,14 @@ class Thing(ConfiguredBaseModel):
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
-    display: str = Field(
-        default=...,
+    display: Optional[str] = Field(
+        default=None,
         description="""A human-readable description for a thing""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -5285,7 +4969,7 @@ class Thing(ConfiguredBaseModel):
         default="crm:E1_CRM_Entity",
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
-No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
+Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
 """,
         json_schema_extra={
             "linkml_meta": {
@@ -5326,8 +5010,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -5349,7 +5031,7 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": ["Thing", "Inscription"],
                 "recommended": True,
-                "slot_uri": "skos:scopeNote",
+                "slot_uri": "lido:descriptiveNoteValue",
             }
         },
     )
@@ -5450,6 +5132,13 @@ class Concept(Thing):
             "class_uri": "skos:Concept",
             "exact_mappings": ["schema:DefinedTerm"],
             "from_schema": "https://tradicional.arq.br/schema/concept",
+            "slot_usage": {
+                "content": {
+                    "description": "Notas de escopo sobre o conceito.",
+                    "name": "content",
+                    "slot_uri": "skos:scopeNote",
+                }
+            },
         }
     )
 
@@ -5471,6 +5160,8 @@ Derivado automaticamente das relações `broader` em outras fichas. NÃO preench
     )
     concept_type: Optional[ConceptType] = Field(
         default=ConceptType("concept"),
+        description="""Tipos de termos de vocabulário baseados no Getty AAT.
+""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": ["Concept"],
@@ -5490,8 +5181,8 @@ Derivado automaticamente das relações `broader` em outras fichas. NÃO preench
             "linkml_meta": {"domain_of": ["Concept"], "slot_uri": "skos:related"}
         },
     )
-    id: str = Field(
-        default=...,
+    id: Optional[str] = Field(
+        default=None,
         description="""Identificador globalmente único para este objeto ou recurso.
 """,
         json_schema_extra={
@@ -5513,16 +5204,14 @@ Derivado automaticamente das relações `broader` em outras fichas. NÃO preench
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
-    display: str = Field(
-        default=...,
+    display: Optional[str] = Field(
+        default=None,
         description="""A human-readable description for a thing""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -5544,7 +5233,7 @@ Derivado automaticamente das relações `broader` em outras fichas. NÃO preench
         default="skos:Concept",
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
-No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
+Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
 """,
         json_schema_extra={
             "linkml_meta": {
@@ -5585,8 +5274,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -5603,7 +5290,7 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
     )
     content: Optional[str] = Field(
         default=None,
-        description="""Conteúdo textual descritivo ou explicativo.""",
+        description="""Notas de escopo sobre o conceito.""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": ["Thing", "Inscription"],
@@ -5692,98 +5379,29 @@ Repeated if there are several designations known, or if former repositories or g
     )
 
 
-class Resource(Thing):
+class RelatedObject(Thing):
     """
-    This class comprises identifiable immaterial items that make propositions about reality.
-    These propositions may be expressed in text, graphics, images, audiograms, videograms, or by other similar means. Documentation databases are regarded as instances of E31 Document. This class should not be confused with the concept “document” in Information Technology, which is compatible with E73 Information Object.
+    A set of structured information about an object or work, or a group of objects or works related to the object/work in focus, including the kind of relationship between them. May include bibliographic objects in which the object/work is documented or mentioned.
 
     """
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {
-            "class_uri": "crm:E31_Document",
-            "close_mappings": ["schema:ArchiveComponent"],
-            "from_schema": "https://tradicional.arq.br/schema/resource",
-        }
+        {"abstract": True, "from_schema": "https://tradicional.arq.br/schema/resource"}
     )
 
-    rel_type: RelationType = Field(
-        default=...,
-        description="""Usamos os tipos de relação previstos pelo [VRA Core]. Provavelmente necessitamos apenas de :
-- `planFor` : desenho técnico bidimensional de levantamento
-  (padrão, pode ser omitido) ;
-
-- `modelFor` : modelo tridimensional, com ou sem informações construtivas
-  associadas (BIM) ;
-
-- `imageOf` : outras representações em duas dimensões da edificação ;
-- `preparatoryFor` : representação técnica de projeto para intervenções a
-  serem realizadas (ou já realizadas) na edificação.
+    work_rights: Optional[list[Right]] = Field(
+        default=None,
+        description="""⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobre O OBJETO OU RECURSO QUE ESTÁ SENDO DESCRITO, não sobre o preenchimento da ficha.
 """,
-        json_schema_extra={"linkml_meta": {"domain_of": ["RelatedObject", "Resource"]}},
-    )
-    preview_image: Optional[str] = Field(
-        default=None,
-        description="""Uma única miniatura da imagem original.
-Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente em caso de ausência da miniatura, nem outros tipos de miniaturas que não imagens. A especificação LIDO admite listar mais de uma miniatura, mas tampouco prevemos essa hipótese.
-""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    provided_image: Optional[list[str]] = Field(
-        default=None,
-        description="""Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    provided_3d: Optional[list[str]] = Field(
-        default=None,
-        description="""Modelo tridimensional ou IFC da edificação.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    service: Optional[list[TypedReference]] = Field(
-        default=None,
-        description="""Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal como a especificação [IIIF].""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    unit: Optional[TypedReference] = Field(
-        default=None,
-        description="""Unidade de medida usada no dimensionamento do objeto ou da representação, por exemplo metros, milímetros ou palmos. Usar a [hierarquia de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096) do AAT, ou do nosso próprio [vocabulário controlado].
-""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "Measurement"]}},
-    )
-    credit: Optional[str] = Field(
-        default=None,
-        description="""Informação sobre autoria ou responsabilidade.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    scale: Optional[float] = Field(
-        default=None,
-        description="""Número inverso da escala da imagem, se ela tiver uma resolução ou tamanho de página definidos. Por exemplo, para um desenho na escala 1 : 100, `scale: 100`.""",
-        ge=0,
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource"]}},
-    )
-    perspective: Optional[int] = Field(
-        default=1,
-        description="""Tipo de vista do desenho. Usar a numeração da ISO 19650–2 :
-
-  - 0 = geral
-  - 1 = planta baixa (padrão, pode ser omitido)
-  - 2 = elevação
-  - 3 = corte
-  - 4 = mapa de elementos
-  - 5 = detalhe
-  - 6 = mapa de revestimentos
-  - 7 = planta de forro
-  - 8 = vista ou modelo 3D
-  - 9 = definido pelo agente
-""",
-        ge=0,
-        le=9,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Resource"], "ifabsent": "integer(1)"}
+            "linkml_meta": {
+                "domain_of": ["RelatedObject", "Resource"],
+                "slot_uri": "lido:rightsWorkSet",
+            }
         },
     )
-    id: str = Field(
-        default=...,
+    id: Optional[str] = Field(
+        default=None,
         description="""Identificador globalmente único para este objeto ou recurso.
 """,
         json_schema_extra={
@@ -5805,16 +5423,14 @@ Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente 
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
-    display: str = Field(
-        default=...,
+    display: Optional[str] = Field(
+        default=None,
         description="""A human-readable description for a thing""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -5828,15 +5444,12 @@ Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente 
         },
     )
     category: Literal[
-        "https://tradicional.arq.br/schema/Resource",
-        "http://www.cidoc-crm.org/cidoc-crm/E31_Document",
-        "wasth:Resource",
-        "crm:E31_Document",
+        "https://tradicional.arq.br/schema/RelatedObject", "wasth:RelatedObject"
     ] = Field(
-        default="crm:E31_Document",
+        default="wasth:RelatedObject",
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
-No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
+Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
 """,
         json_schema_extra={
             "linkml_meta": {
@@ -5877,8 +5490,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -5900,13 +5511,1167 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": ["Thing", "Inscription"],
                 "recommended": True,
-                "slot_uri": "skos:scopeNote",
+                "slot_uri": "lido:descriptiveNoteValue",
             }
         },
     )
     title: Optional[str] = Field(
         default=None,
         description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "exact_mappings": ["schema:name"],
+                "slot_uri": "dcterms:title",
+            }
+        },
+    )
+    title_source: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""A fonte do título title_source é opcional ; um título pode ser atestado em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa com um hífen).""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    alt_name: Optional[list[Appellation]] = Field(
+        default=None,
+        description="""O bloco `alt_name` permite cadastrar outros nomes pelos quais o objeto ou conceito será eventualmente conhecido. É uma lista opcional de itens, e se existir, os campos de cada item da lista devem ser preenchidos como os do título principal.
+O campo `label` ou `description` de cada item contém o texto do título (nome).
+Este bloco pode ser omitido por completo se não houver títulos alternativos.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    identifiers: Optional[list[TypedReference]] = Field(
+        default=None,
+        description="""Números de inventário e demais códigos que identificam este objeto em outras bases de dados.
+Caso esta edificação esteja cadastrada em outras bases de dados (por exemplo, [SICG], [SIPA], [HPIP], [iPatrimonio], etc.), pode preencher a lista `identifiers` como segue.
+:clipboard: O conteúdo de cada bloco é uma lista recuada em dois espaços com respeito à categoria superior. Seus itens são :
+* `type` é o tipo de referência : pode ser `uri` (padrão), `iri` ou
+  `local` — se estiver em dúvida, omita esta linha ;
+
+* `refid` é obrigatório : representa o identificador do conceito no
+  vocabulário controlado ou no repositório de origem — normalmente
+  será uma URI (um link para a página web do cadastro) ;
+
+* `description` deve ser usado para representar textualmente
+  o número de inventário, código identificador ou outra informação
+  que individualize o objeto na base externa (por exemplo, livro do
+  tombo e número do processo de tombamento, no Brasil) ;
+
+* `bibliographic_citation` é opcional e permite citar uma lista de
+  referências bibliográficas que validem a inclusão deste termo.
+
+* `source` também é opcional e permite cadastrar os dados da pessoa
+  jurídica responsável pelo registro.
+
+---------------------------------------------------------------------
+Published or external identifiers for the object.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    tags: Optional[list[str]] = Field(
+        default=None,
+        description="""Lista de palavras-chave que caracterizam o objeto, de modo não estruturado. Recomenda-se usar uma palavra-chave de cada um dos recortes abaixo:
+- Geográfico ; - Cronológico ; - Histórico-cultural ; - Técnico-construtivo ; - Temático ou tipológico ; - Funcional.
+---------------------------------------------------------------------
+Provisional uncontrolled keywords. Prefer `classifications` or `subject` for curated vocabulary terms.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    temporal: Optional[list[Event]] = Field(
+        default=None,
+        description="""Descrição dos eventos associados ao ciclo de vida da edificação ou à existência e/ou uso do objeto ou conceito.
+Ler a respetiva documentação para estruturar este campo.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    repositories: Optional[list[Repository]] = Field(
+        default=None,
+        description="""Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar a inclusão da edificação em perímetros de sítios tombados/classificados do patrimônio, áreas de interesse histórico-cultural, etc.
+O repositório é cadastrado como uma pessoa jurídica dotada de extensão geográfica.
+---------------------------------------------------------------------
+A set of elements for the identification, name and location of the repository that is responsible for the object/work in focus.
+Repeated if there are several designations known, or if former repositories or geographic places should be listed.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+
+
+class RelatedWork(RelatedObject):
+    """
+    As formas mais comuns de relação no nosso projeto são :
+
+      - depicted in: A edificação é representada numa pintura ou desenho
+        artístico;
+
+      - documented by: Informações sobre a edificação estão publicadas numa
+        referência bibliográfica, processo administrativo ou outro documento
+        textual impresso, manuscrito ou eletrônico;
+
+      - has plan / has floor plan / has section / has elevation / has
+        rendering: Essas relações mostram a existência de desenhos técnicos
+        da edificação, sejam eles históricos ou recentes, compilados de
+        fontes externas a este projeto de pesquisa.
+
+      - has construction drawing / has design / has sketch: Essas relações se
+        referem a desenhos históricos (fontes primárias) que atestam o
+        processo de projeto da edificação.
+
+    ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO resource, MAIS ABAIXO.
+    O grupo relation é destinado unicamente a cadastrar relações desta edificação com objetos autônomos, tais como outras edificações, conjuntos urbanos, obras de artes visuais, referências bibliográficas ou acervos arquivísticos.
+    """
+
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
+        {"from_schema": "https://tradicional.arq.br/schema/resource"}
+    )
+
+    media: Optional[list[MediaObject]] = Field(
+        default=None,
+        description="""Representações iconográficas deste objeto.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["RelatedWork", "LargerContextReference", "Event", "Work"]
+            }
+        },
+    )
+    rel_type: RelatedWorkRelType = Field(
+        default=...,
+        description="""Indica o tipo de relação entre a edificação descrita na ficha e o objeto relacionado. O sujeito do tipo é sempre a obra titular da ficha.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["RelatedWork"],
+                "slot_uri": "lido:relatedWorkRelType",
+            }
+        },
+    )
+    work_rights: Optional[list[Right]] = Field(
+        default=None,
+        description="""⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobre O OBJETO OU RECURSO QUE ESTÁ SENDO DESCRITO, não sobre o preenchimento da ficha.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["RelatedObject", "Resource"],
+                "slot_uri": "lido:rightsWorkSet",
+            }
+        },
+    )
+    id: Optional[str] = Field(
+        default=None,
+        description="""Identificador globalmente único para este objeto ou recurso.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:identifier"}
+        },
+    )
+    author: Optional[str] = Field(
+        default=None,
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    record_date: Optional[date] = Field(
+        default=None,
+        description="""Data de inclusão da ficha.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
+        },
+    )
+    display: Optional[str] = Field(
+        default=None,
+        description="""A human-readable description for a thing""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "BibliographicCitation",
+                    "TypedReference",
+                    "Measurement",
+                    "RelatedEvent",
+                    "Thing",
+                    "Inscription",
+                    "Topic",
+                ],
+                "exact_mappings": ["schema:description"],
+                "slot_uri": "dcterms:description",
+            }
+        },
+    )
+    category: Literal[
+        "https://tradicional.arq.br/schema/RelatedWork", "wasth:RelatedWork"
+    ] = Field(
+        default="wasth:RelatedWork",
+        description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
+Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
+Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "designates_type": True,
+                "domain_of": ["Thing"],
+                "notes": [
+                    "The LIDO Category Vocabulary is a structured controlled list of "
+                    "terms recommended to use as values in the LIDO Category element.\n"
+                    "Examples are human-made object or natural object."
+                ],
+                "slot_uri": "term:lidoCategory",
+            }
+        },
+    )
+    record_rights: Optional[list[Right]] = Field(
+        default=None,
+        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
+⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "notes": [
+                    "A set of structured information about rights regarding the content "
+                    "provided in this LIDO record."
+                ],
+            }
+        },
+    )
+    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""📚  Cadastro de uma referência bibliográfica.
+O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
+Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
+Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "Measurement",
+                    "Actor",
+                    "Thing",
+                    "Appellation",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                    "Inscription",
+                ],
+                "recommended": True,
+                "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    content: Optional[str] = Field(
+        default=None,
+        description="""Conteúdo textual descritivo ou explicativo.""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing", "Inscription"],
+                "recommended": True,
+                "slot_uri": "lido:descriptiveNoteValue",
+            }
+        },
+    )
+    title: Optional[str] = Field(
+        default=None,
+        description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "exact_mappings": ["schema:name"],
+                "slot_uri": "dcterms:title",
+            }
+        },
+    )
+    title_source: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""A fonte do título title_source é opcional ; um título pode ser atestado em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa com um hífen).""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    alt_name: Optional[list[Appellation]] = Field(
+        default=None,
+        description="""O bloco `alt_name` permite cadastrar outros nomes pelos quais o objeto ou conceito será eventualmente conhecido. É uma lista opcional de itens, e se existir, os campos de cada item da lista devem ser preenchidos como os do título principal.
+O campo `label` ou `description` de cada item contém o texto do título (nome).
+Este bloco pode ser omitido por completo se não houver títulos alternativos.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    identifiers: Optional[list[TypedReference]] = Field(
+        default=None,
+        description="""Números de inventário e demais códigos que identificam este objeto em outras bases de dados.
+Caso esta edificação esteja cadastrada em outras bases de dados (por exemplo, [SICG], [SIPA], [HPIP], [iPatrimonio], etc.), pode preencher a lista `identifiers` como segue.
+:clipboard: O conteúdo de cada bloco é uma lista recuada em dois espaços com respeito à categoria superior. Seus itens são :
+* `type` é o tipo de referência : pode ser `uri` (padrão), `iri` ou
+  `local` — se estiver em dúvida, omita esta linha ;
+
+* `refid` é obrigatório : representa o identificador do conceito no
+  vocabulário controlado ou no repositório de origem — normalmente
+  será uma URI (um link para a página web do cadastro) ;
+
+* `description` deve ser usado para representar textualmente
+  o número de inventário, código identificador ou outra informação
+  que individualize o objeto na base externa (por exemplo, livro do
+  tombo e número do processo de tombamento, no Brasil) ;
+
+* `bibliographic_citation` é opcional e permite citar uma lista de
+  referências bibliográficas que validem a inclusão deste termo.
+
+* `source` também é opcional e permite cadastrar os dados da pessoa
+  jurídica responsável pelo registro.
+
+---------------------------------------------------------------------
+Published or external identifiers for the object.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    tags: Optional[list[str]] = Field(
+        default=None,
+        description="""Lista de palavras-chave que caracterizam o objeto, de modo não estruturado. Recomenda-se usar uma palavra-chave de cada um dos recortes abaixo:
+- Geográfico ; - Cronológico ; - Histórico-cultural ; - Técnico-construtivo ; - Temático ou tipológico ; - Funcional.
+---------------------------------------------------------------------
+Provisional uncontrolled keywords. Prefer `classifications` or `subject` for curated vocabulary terms.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    temporal: Optional[list[Event]] = Field(
+        default=None,
+        description="""Descrição dos eventos associados ao ciclo de vida da edificação ou à existência e/ou uso do objeto ou conceito.
+Ler a respetiva documentação para estruturar este campo.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    repositories: Optional[list[Repository]] = Field(
+        default=None,
+        description="""Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar a inclusão da edificação em perímetros de sítios tombados/classificados do patrimônio, áreas de interesse histórico-cultural, etc.
+O repositório é cadastrado como uma pessoa jurídica dotada de extensão geográfica.
+---------------------------------------------------------------------
+A set of elements for the identification, name and location of the repository that is responsible for the object/work in focus.
+Repeated if there are several designations known, or if former repositories or geographic places should be listed.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+
+
+class LargerContextReference(RelatedObject):
+    """
+    Tipo de relação específica entre obras a ser usado quando o objeto descrito na ficha é ou era parte integrante de outro objeto, físico ou intelectual.
+
+    """
+
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
+        {"from_schema": "https://tradicional.arq.br/schema/resource"}
+    )
+
+    media: Optional[list[MediaObject]] = Field(
+        default=None,
+        description="""Representações iconográficas deste objeto.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["RelatedWork", "LargerContextReference", "Event", "Work"]
+            }
+        },
+    )
+    type: LargerContextType = Field(
+        default=...,
+        description="""O tipo de relação entre os objetos.""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["LargerContextReference"],
+                "slot_uri": "lido:relatedWorkRelType",
+            }
+        },
+    )
+    work_rights: Optional[list[Right]] = Field(
+        default=None,
+        description="""⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobre O OBJETO OU RECURSO QUE ESTÁ SENDO DESCRITO, não sobre o preenchimento da ficha.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["RelatedObject", "Resource"],
+                "slot_uri": "lido:rightsWorkSet",
+            }
+        },
+    )
+    id: Optional[str] = Field(
+        default=None,
+        description="""Identificador globalmente único para este objeto ou recurso.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:identifier"}
+        },
+    )
+    author: Optional[str] = Field(
+        default=None,
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    record_date: Optional[date] = Field(
+        default=None,
+        description="""Data de inclusão da ficha.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
+        },
+    )
+    display: Optional[str] = Field(
+        default=None,
+        description="""A human-readable description for a thing""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "BibliographicCitation",
+                    "TypedReference",
+                    "Measurement",
+                    "RelatedEvent",
+                    "Thing",
+                    "Inscription",
+                    "Topic",
+                ],
+                "exact_mappings": ["schema:description"],
+                "slot_uri": "dcterms:description",
+            }
+        },
+    )
+    category: Literal[
+        "https://tradicional.arq.br/schema/LargerContextReference",
+        "wasth:LargerContextReference",
+    ] = Field(
+        default="wasth:LargerContextReference",
+        description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
+Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
+Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "designates_type": True,
+                "domain_of": ["Thing"],
+                "notes": [
+                    "The LIDO Category Vocabulary is a structured controlled list of "
+                    "terms recommended to use as values in the LIDO Category element.\n"
+                    "Examples are human-made object or natural object."
+                ],
+                "slot_uri": "term:lidoCategory",
+            }
+        },
+    )
+    record_rights: Optional[list[Right]] = Field(
+        default=None,
+        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
+⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "notes": [
+                    "A set of structured information about rights regarding the content "
+                    "provided in this LIDO record."
+                ],
+            }
+        },
+    )
+    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""📚  Cadastro de uma referência bibliográfica.
+O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
+Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
+Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "Measurement",
+                    "Actor",
+                    "Thing",
+                    "Appellation",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                    "Inscription",
+                ],
+                "recommended": True,
+                "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    content: Optional[str] = Field(
+        default=None,
+        description="""Conteúdo textual descritivo ou explicativo.""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing", "Inscription"],
+                "recommended": True,
+                "slot_uri": "lido:descriptiveNoteValue",
+            }
+        },
+    )
+    title: Optional[str] = Field(
+        default=None,
+        description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "exact_mappings": ["schema:name"],
+                "slot_uri": "dcterms:title",
+            }
+        },
+    )
+    title_source: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""A fonte do título title_source é opcional ; um título pode ser atestado em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa com um hífen).""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    alt_name: Optional[list[Appellation]] = Field(
+        default=None,
+        description="""O bloco `alt_name` permite cadastrar outros nomes pelos quais o objeto ou conceito será eventualmente conhecido. É uma lista opcional de itens, e se existir, os campos de cada item da lista devem ser preenchidos como os do título principal.
+O campo `label` ou `description` de cada item contém o texto do título (nome).
+Este bloco pode ser omitido por completo se não houver títulos alternativos.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    identifiers: Optional[list[TypedReference]] = Field(
+        default=None,
+        description="""Números de inventário e demais códigos que identificam este objeto em outras bases de dados.
+Caso esta edificação esteja cadastrada em outras bases de dados (por exemplo, [SICG], [SIPA], [HPIP], [iPatrimonio], etc.), pode preencher a lista `identifiers` como segue.
+:clipboard: O conteúdo de cada bloco é uma lista recuada em dois espaços com respeito à categoria superior. Seus itens são :
+* `type` é o tipo de referência : pode ser `uri` (padrão), `iri` ou
+  `local` — se estiver em dúvida, omita esta linha ;
+
+* `refid` é obrigatório : representa o identificador do conceito no
+  vocabulário controlado ou no repositório de origem — normalmente
+  será uma URI (um link para a página web do cadastro) ;
+
+* `description` deve ser usado para representar textualmente
+  o número de inventário, código identificador ou outra informação
+  que individualize o objeto na base externa (por exemplo, livro do
+  tombo e número do processo de tombamento, no Brasil) ;
+
+* `bibliographic_citation` é opcional e permite citar uma lista de
+  referências bibliográficas que validem a inclusão deste termo.
+
+* `source` também é opcional e permite cadastrar os dados da pessoa
+  jurídica responsável pelo registro.
+
+---------------------------------------------------------------------
+Published or external identifiers for the object.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    tags: Optional[list[str]] = Field(
+        default=None,
+        description="""Lista de palavras-chave que caracterizam o objeto, de modo não estruturado. Recomenda-se usar uma palavra-chave de cada um dos recortes abaixo:
+- Geográfico ; - Cronológico ; - Histórico-cultural ; - Técnico-construtivo ; - Temático ou tipológico ; - Funcional.
+---------------------------------------------------------------------
+Provisional uncontrolled keywords. Prefer `classifications` or `subject` for curated vocabulary terms.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    temporal: Optional[list[Event]] = Field(
+        default=None,
+        description="""Descrição dos eventos associados ao ciclo de vida da edificação ou à existência e/ou uso do objeto ou conceito.
+Ler a respetiva documentação para estruturar este campo.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    repositories: Optional[list[Repository]] = Field(
+        default=None,
+        description="""Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar a inclusão da edificação em perímetros de sítios tombados/classificados do patrimônio, áreas de interesse histórico-cultural, etc.
+O repositório é cadastrado como uma pessoa jurídica dotada de extensão geográfica.
+---------------------------------------------------------------------
+A set of elements for the identification, name and location of the repository that is responsible for the object/work in focus.
+Repeated if there are several designations known, or if former repositories or geographic places should be listed.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+
+
+class Resource(Thing):
+    """
+    Este grupo identifica um recurso visual ou documental que fornece informações técnicas ou uma representação ilustrativa da obra à qual ele se relaciona.
+    Recursos produzidos pela equipe dos Documentários da Arquitetura Tradicional são descritos na ficha de cada edificação, no grupo `resources`. Representações e documentos externos são referidos nos grupos `media` e `related_works`, respetivamente.
+
+    """
+
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
+        {
+            "class_uri": "crm:E31_Document",
+            "close_mappings": ["schema:ArchiveComponent"],
+            "from_schema": "https://tradicional.arq.br/schema/resource",
+            "notes": [
+                "This class comprises identifiable immaterial items that make "
+                "propositions about reality.\n"
+                "These propositions may be expressed in text, graphics, images, "
+                "audiograms, videograms, or by other similar means. Documentation "
+                "databases are regarded as instances of E31 Document. This class "
+                "should not be confused with the concept “document” in Information "
+                "Technology, which is compatible with E73 Information Object."
+            ],
+            "slot_usage": {
+                "category": {
+                    "ifabsent": "string(http://terminology.lido-schema.org/lido01193)",
+                    "name": "category",
+                },
+                "id": {"identifier": True, "name": "id"},
+            },
+        }
+    )
+
+    format: TypedReference = Field(
+        default=...,
+        description="""Campo disciplinado pela especificação [DublinCore] no campo [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/). Esta especificação sugere a lista de tipos de mídia IANA : <https://www.iana.org/assignments/media-types>.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Resource", "MediaObject"],
+                "slot_uri": "dcterms:format",
+            }
+        },
+    )
+    scale: Optional[float] = Field(
+        default=None,
+        description="""Número inverso da escala da imagem ou desenho, se tiver uma resolução ou tamanho de página definidos. Por exemplo, para um desenho na escala 1 : 100, `scale: 100`.""",
+        ge=0,
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+    )
+    unit: Optional[TypedReference] = Field(
+        default=None,
+        description="""Unidade de medida usada no dimensionamento do objeto ou da representação, por exemplo metros, milímetros ou palmos. Usar a [hierarquia de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096) do AAT, ou do nosso próprio [vocabulário controlado].
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Resource", "MediaObject", "Measurement"]}
+        },
+    )
+    preview_image: Optional[str] = Field(
+        default=None,
+        description="""Uma única miniatura da imagem original.
+Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente em caso de ausência da miniatura, nem outros tipos de miniaturas que não imagens. A especificação LIDO admite listar mais de uma miniatura, mas tampouco prevemos essa hipótese.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+    )
+    provided_image: Optional[list[str]] = Field(
+        default=None,
+        description="""Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+    )
+    provided_3d: Optional[list[str]] = Field(
+        default=None,
+        description="""Modelo tridimensional ou IFC da edificação.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+    )
+    service: Optional[list[str]] = Field(
+        default=None,
+        description="""Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal como a especificação [IIIF].
+No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma página web que forneça a respetiva API ou as informações acerca do modelo.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+    )
+    credit: Optional[str] = Field(
+        default=None,
+        description="""Informação sobre autoria ou responsabilidade.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+    )
+    work_rights: Optional[list[Right]] = Field(
+        default=None,
+        description="""⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobre O OBJETO OU RECURSO QUE ESTÁ SENDO DESCRITO, não sobre o preenchimento da ficha.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["RelatedObject", "Resource"],
+                "slot_uri": "lido:rightsWorkSet",
+            }
+        },
+    )
+    type: ResourceType = Field(
+        default=...,
+        description="""Usamos os tipos de relação previstos pelo LIDO em `relatedWorkRelType > Associative relationships > Derivative relationships`. Provavelmente necessitamos apenas de :
+- `planFor` : desenho técnico bidimensional de levantamento
+  (padrão, pode ser omitido) ;
+
+- `modelFor` : modelo tridimensional, com ou sem informações construtivas
+  associadas (BIM) ;
+
+- `imageOf` : outras representações em duas dimensões da edificação ;
+- `preparatoryFor` : representação técnica de projeto para intervenções a
+  serem realizadas (ou já realizadas) na edificação.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Resource"],
+                "slot_uri": "lido:relatedWorkRelType",
+            }
+        },
+    )
+    perspective: int = Field(
+        default=...,
+        description="""Tipo de vista do desenho. Usar a numeração da ISO 19650–2 :
+
+  - 0 = sem projeção ou representação não visual
+  - 1 = planta baixa
+  - 2 = elevação
+  - 3 = corte
+  - 4 = mapa de elementos
+  - 5 = detalhe
+  - 6 = mapa de revestimentos
+  - 7 = planta de forro
+  - 8 = vista ou modelo 3D
+  - 9 = definido pelo agente
+""",
+        ge=0,
+        le=9,
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource"]}},
+    )
+    id: str = Field(
+        default=...,
+        description="""Identificador globalmente único para este objeto ou recurso.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:identifier"}
+        },
+    )
+    author: Optional[str] = Field(
+        default=None,
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    record_date: Optional[date] = Field(
+        default=None,
+        description="""Data de inclusão da ficha.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
+        },
+    )
+    display: Optional[str] = Field(
+        default=None,
+        description="""A human-readable description for a thing""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "BibliographicCitation",
+                    "TypedReference",
+                    "Measurement",
+                    "RelatedEvent",
+                    "Thing",
+                    "Inscription",
+                    "Topic",
+                ],
+                "exact_mappings": ["schema:description"],
+                "slot_uri": "dcterms:description",
+            }
+        },
+    )
+    category: Literal[
+        "https://tradicional.arq.br/schema/Resource",
+        "http://www.cidoc-crm.org/cidoc-crm/E31_Document",
+        "wasth:Resource",
+        "crm:E31_Document",
+    ] = Field(
+        default="crm:E31_Document",
+        description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
+Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
+Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "designates_type": True,
+                "domain_of": ["Thing"],
+                "ifabsent": "string(http://terminology.lido-schema.org/lido01193)",
+                "notes": [
+                    "The LIDO Category Vocabulary is a structured controlled list of "
+                    "terms recommended to use as values in the LIDO Category element.\n"
+                    "Examples are human-made object or natural object."
+                ],
+                "slot_uri": "term:lidoCategory",
+            }
+        },
+    )
+    record_rights: Optional[list[Right]] = Field(
+        default=None,
+        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
+⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "notes": [
+                    "A set of structured information about rights regarding the content "
+                    "provided in this LIDO record."
+                ],
+            }
+        },
+    )
+    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""📚  Cadastro de uma referência bibliográfica.
+O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
+Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
+Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "Measurement",
+                    "Actor",
+                    "Thing",
+                    "Appellation",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                    "Inscription",
+                ],
+                "recommended": True,
+                "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    content: Optional[str] = Field(
+        default=None,
+        description="""Conteúdo textual descritivo ou explicativo.""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing", "Inscription"],
+                "recommended": True,
+                "slot_uri": "lido:descriptiveNoteValue",
+            }
+        },
+    )
+    title: Optional[str] = Field(
+        default=None,
+        description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "exact_mappings": ["schema:name"],
+                "slot_uri": "dcterms:title",
+            }
+        },
+    )
+    title_source: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""A fonte do título title_source é opcional ; um título pode ser atestado em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa com um hífen).""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    alt_name: Optional[list[Appellation]] = Field(
+        default=None,
+        description="""O bloco `alt_name` permite cadastrar outros nomes pelos quais o objeto ou conceito será eventualmente conhecido. É uma lista opcional de itens, e se existir, os campos de cada item da lista devem ser preenchidos como os do título principal.
+O campo `label` ou `description` de cada item contém o texto do título (nome).
+Este bloco pode ser omitido por completo se não houver títulos alternativos.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    identifiers: Optional[list[TypedReference]] = Field(
+        default=None,
+        description="""Números de inventário e demais códigos que identificam este objeto em outras bases de dados.
+Caso esta edificação esteja cadastrada em outras bases de dados (por exemplo, [SICG], [SIPA], [HPIP], [iPatrimonio], etc.), pode preencher a lista `identifiers` como segue.
+:clipboard: O conteúdo de cada bloco é uma lista recuada em dois espaços com respeito à categoria superior. Seus itens são :
+* `type` é o tipo de referência : pode ser `uri` (padrão), `iri` ou
+  `local` — se estiver em dúvida, omita esta linha ;
+
+* `refid` é obrigatório : representa o identificador do conceito no
+  vocabulário controlado ou no repositório de origem — normalmente
+  será uma URI (um link para a página web do cadastro) ;
+
+* `description` deve ser usado para representar textualmente
+  o número de inventário, código identificador ou outra informação
+  que individualize o objeto na base externa (por exemplo, livro do
+  tombo e número do processo de tombamento, no Brasil) ;
+
+* `bibliographic_citation` é opcional e permite citar uma lista de
+  referências bibliográficas que validem a inclusão deste termo.
+
+* `source` também é opcional e permite cadastrar os dados da pessoa
+  jurídica responsável pelo registro.
+
+---------------------------------------------------------------------
+Published or external identifiers for the object.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    tags: Optional[list[str]] = Field(
+        default=None,
+        description="""Lista de palavras-chave que caracterizam o objeto, de modo não estruturado. Recomenda-se usar uma palavra-chave de cada um dos recortes abaixo:
+- Geográfico ; - Cronológico ; - Histórico-cultural ; - Técnico-construtivo ; - Temático ou tipológico ; - Funcional.
+---------------------------------------------------------------------
+Provisional uncontrolled keywords. Prefer `classifications` or `subject` for curated vocabulary terms.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    temporal: Optional[list[Event]] = Field(
+        default=None,
+        description="""Descrição dos eventos associados ao ciclo de vida da edificação ou à existência e/ou uso do objeto ou conceito.
+Ler a respetiva documentação para estruturar este campo.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    repositories: Optional[list[Repository]] = Field(
+        default=None,
+        description="""Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar a inclusão da edificação em perímetros de sítios tombados/classificados do patrimônio, áreas de interesse histórico-cultural, etc.
+O repositório é cadastrado como uma pessoa jurídica dotada de extensão geográfica.
+---------------------------------------------------------------------
+A set of elements for the identification, name and location of the repository that is responsible for the object/work in focus.
+Repeated if there are several designations known, or if former repositories or geographic places should be listed.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+
+
+class MediaObject(RelatedObject):
+    """
+    Descrição e referência a um único arquivo de mídia.
+    O `id` deve ser uma URI apontando para a localização permanente da mídia, não diretamente para um arquivo de imagem.
+    Obrigatoriamente deve conter um link para o recurso online, seja na forma de `provided_image`, `provided_3d` ou `resource_service`. É importante, também, fornecer o link para uma miniatura que será usada como pré-visualização, em `preview_image`.
+    No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma página web que forneça a respetiva API ou as informações acerca do modelo.
+    Por exemplo, no caso de uma imagem hospedada no Wikimedia Commons:
+    ``` id: https://commons.wikimedia.org/wiki/File:BR-DF-Planaltina-Casarao_azul-PP-090421-3018.jpg preview_image: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/BR-DF-Planaltina-Casarao_azul-PP-090421-3018.jpg/330px-BR-DF-Planaltina-Casarao_azul-PP-090421-3018.jpg provided_image:
+      - https://upload.wikimedia.org/wikipedia/commons/8/86/BR-DF-Planaltina-Casarao_azul-PP-090421-3018.jpg
+    resource_service:
+      - https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&format=json&titles=File:BR-DF-Planaltina-Casarao_azul-PP-090421-3018.jpg
+    ```
+    Não armazenamos imagens ou outros arquivos de mídia nos sites dos Documentários da Arquitetura Tradicional.
+
+    """
+
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
+        {
+            "class_uri": "schema:MediaObject",
+            "close_mappings": ["dctypes:Image"],
+            "from_schema": "https://tradicional.arq.br/schema/resource",
+            "slot_usage": {
+                "content": {
+                    "description": "Opcional, para descrever com mais "
+                    "detalhe a representação.\n",
+                    "name": "content",
+                },
+                "description": {
+                    "description": "Texto alternativo para "
+                    "leitores de tela ou outras "
+                    "formas de acessibilidade. "
+                    "Apenas texto sem formatação.\n",
+                    "name": "description",
+                    "required": True,
+                },
+                "title": {
+                    "description": "Título breve para identificar este "
+                    "recurso visual na listagem.\n",
+                    "name": "title",
+                    "required": True,
+                },
+                "work_rights": {"name": "work_rights", "required": True},
+            },
+        }
+    )
+
+    format: TypedReference = Field(
+        default=...,
+        description="""Campo disciplinado pela especificação [DublinCore] no campo [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/). Esta especificação sugere a lista de tipos de mídia IANA : <https://www.iana.org/assignments/media-types>.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Resource", "MediaObject"],
+                "slot_uri": "dcterms:format",
+            }
+        },
+    )
+    scale: Optional[float] = Field(
+        default=None,
+        description="""Número inverso da escala da imagem ou desenho, se tiver uma resolução ou tamanho de página definidos. Por exemplo, para um desenho na escala 1 : 100, `scale: 100`.""",
+        ge=0,
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+    )
+    unit: Optional[TypedReference] = Field(
+        default=None,
+        description="""Unidade de medida usada no dimensionamento do objeto ou da representação, por exemplo metros, milímetros ou palmos. Usar a [hierarquia de unidades de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096) do AAT, ou do nosso próprio [vocabulário controlado].
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Resource", "MediaObject", "Measurement"]}
+        },
+    )
+    preview_image: Optional[str] = Field(
+        default=None,
+        description="""Uma única miniatura da imagem original.
+Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente em caso de ausência da miniatura, nem outros tipos de miniaturas que não imagens. A especificação LIDO admite listar mais de uma miniatura, mas tampouco prevemos essa hipótese.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+    )
+    provided_image: Optional[list[str]] = Field(
+        default=None,
+        description="""Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+    )
+    provided_3d: Optional[list[str]] = Field(
+        default=None,
+        description="""Modelo tridimensional ou IFC da edificação.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+    )
+    service: Optional[list[str]] = Field(
+        default=None,
+        description="""Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal como a especificação [IIIF].
+No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma página web que forneça a respetiva API ou as informações acerca do modelo.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+    )
+    measurements: Optional[list[Measurement]] = Field(
+        default=None,
+        description="""A wrapper for information about the dimensions, or other measurements, of the object/work in focus. May also include extents of the parts of a complex object or work.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["MediaObject", "Event", "Work"]}
+        },
+    )
+    credit: Optional[str] = Field(
+        default=None,
+        description="""Informação sobre autoria ou responsabilidade.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+    )
+    type: DepictionType = Field(
+        default=...,
+        description="""O tipo de representação que a mídia contém. A edificação descrita na ficha é sempre o sujeito da relação.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["MediaObject"],
+                "slot_uri": "lido:relatedWorkRelType",
+            }
+        },
+    )
+    work_rights: list[Right] = Field(
+        default=...,
+        description="""⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobre O OBJETO OU RECURSO QUE ESTÁ SENDO DESCRITO, não sobre o preenchimento da ficha.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["RelatedObject", "Resource"],
+                "slot_uri": "lido:rightsWorkSet",
+            }
+        },
+    )
+    id: Optional[str] = Field(
+        default=None,
+        description="""Identificador globalmente único para este objeto ou recurso.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:identifier"}
+        },
+    )
+    author: Optional[str] = Field(
+        default=None,
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    record_date: Optional[date] = Field(
+        default=None,
+        description="""Data de inclusão da ficha.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
+        },
+    )
+    display: str = Field(
+        default=...,
+        description="""Texto alternativo para leitores de tela ou outras formas de acessibilidade. Apenas texto sem formatação.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "BibliographicCitation",
+                    "TypedReference",
+                    "Measurement",
+                    "RelatedEvent",
+                    "Thing",
+                    "Inscription",
+                    "Topic",
+                ],
+                "exact_mappings": ["schema:description"],
+                "slot_uri": "dcterms:description",
+            }
+        },
+    )
+    category: Literal[
+        "https://tradicional.arq.br/schema/MediaObject",
+        "http://schema.org/MediaObject",
+        "wasth:MediaObject",
+        "schema:MediaObject",
+    ] = Field(
+        default="schema:MediaObject",
+        description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
+Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
+Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "designates_type": True,
+                "domain_of": ["Thing"],
+                "notes": [
+                    "The LIDO Category Vocabulary is a structured controlled list of "
+                    "terms recommended to use as values in the LIDO Category element.\n"
+                    "Examples are human-made object or natural object."
+                ],
+                "slot_uri": "term:lidoCategory",
+            }
+        },
+    )
+    record_rights: Optional[list[Right]] = Field(
+        default=None,
+        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
+⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "notes": [
+                    "A set of structured information about rights regarding the content "
+                    "provided in this LIDO record."
+                ],
+            }
+        },
+    )
+    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""📚  Cadastro de uma referência bibliográfica.
+O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
+Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
+Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "Measurement",
+                    "Actor",
+                    "Thing",
+                    "Appellation",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                    "Inscription",
+                ],
+                "recommended": True,
+                "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    content: Optional[str] = Field(
+        default=None,
+        description="""Opcional, para descrever com mais detalhe a representação.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing", "Inscription"],
+                "recommended": True,
+                "slot_uri": "lido:descriptiveNoteValue",
+            }
+        },
+    )
+    title: str = Field(
+        default=...,
+        description="""Título breve para identificar este recurso visual na listagem.
 """,
         json_schema_extra={
             "linkml_meta": {
@@ -6064,11 +6829,11 @@ The production or manufacturing processes, techniques, and methods incorporated 
     media: Optional[list[MediaObject]] = Field(
         default=None,
         description="""Representações iconográficas deste objeto.
-No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma página web que forneça a respetiva API ou as informações acerca do modelo.
-(A FAZER) Ver [Instruções para carregar imagens e desenhos].
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["RelatedObject", "Event", "Work"]}
+            "linkml_meta": {
+                "domain_of": ["RelatedWork", "LargerContextReference", "Event", "Work"]
+            }
         },
     )
     type: EventType = Field(
@@ -6127,8 +6892,8 @@ Por ora, é responsabilidade de quem preenche a ficha assegurar que `start_date`
         description="""A set of structured information about an event related to the event in focus, indicating the type of relationship where applicable.""",
         json_schema_extra={"linkml_meta": {"domain_of": ["Event"]}},
     )
-    id: str = Field(
-        default=...,
+    id: Optional[str] = Field(
+        default=None,
         description="""Identificador globalmente único para este objeto ou recurso.
 """,
         json_schema_extra={
@@ -6150,16 +6915,14 @@ Por ora, é responsabilidade de quem preenche a ficha assegurar que `start_date`
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
-    display: str = Field(
-        default=...,
+    display: Optional[str] = Field(
+        default=None,
         description="""A human-readable description for a thing""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -6181,7 +6944,7 @@ Por ora, é responsabilidade de quem preenche a ficha assegurar que `start_date`
         default="crm:E5_Event",
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
-No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
+Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
 """,
         json_schema_extra={
             "linkml_meta": {
@@ -6222,8 +6985,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -6245,7 +7006,7 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": ["Thing", "Inscription"],
                 "recommended": True,
-                "slot_uri": "skos:scopeNote",
+                "slot_uri": "lido:descriptiveNoteValue",
             }
         },
     )
@@ -6345,8 +7106,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -6378,6 +7137,8 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
     )
     title_type: Optional[TitleType] = Field(
         default=TitleType("descriptive"),
+        description="""Categoriza a natureza do nome dado ao objeto ou conceito.
+""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": ["Appellation"],
@@ -6411,6 +7172,7 @@ class Repository(Thing):
     )
     repository_type: Optional[RepositoryType] = Field(
         default=RepositoryType("corporate"),
+        description="""Categoriza a natureza física ou jurídica do repositório.""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": ["Repository"],
@@ -6418,8 +7180,8 @@ class Repository(Thing):
             }
         },
     )
-    id: str = Field(
-        default=...,
+    id: Optional[str] = Field(
+        default=None,
         description="""Identificador globalmente único para este objeto ou recurso.
 """,
         json_schema_extra={
@@ -6441,16 +7203,14 @@ class Repository(Thing):
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
-    display: str = Field(
-        default=...,
+    display: Optional[str] = Field(
+        default=None,
         description="""A human-readable description for a thing""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -6472,7 +7232,7 @@ class Repository(Thing):
         default="schema:Organization",
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
-No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
+Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
 """,
         json_schema_extra={
             "linkml_meta": {
@@ -6513,8 +7273,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -6536,7 +7294,7 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": ["Thing", "Inscription"],
                 "recommended": True,
-                "slot_uri": "skos:scopeNote",
+                "slot_uri": "lido:descriptiveNoteValue",
             }
         },
     )
@@ -6667,6 +7425,7 @@ class Work(Thing):
                     '--- nocite: "@*" --- ```\n',
                     "name": "content",
                 },
+                "description": {"name": "description", "required": True},
                 "id": {
                     "description": "Cada edificação terá um identificador "
                     "gerado a partir do seu "
@@ -6675,13 +7434,132 @@ class Work(Thing):
                     "identificador usa o campo `id`, que "
                     "será gerado automaticamente pelo "
                     "programa WASTH.",
+                    "identifier": True,
                     "name": "id",
                     "range": "OlcPlusCode11",
+                },
+                "media": {
+                    "description": "Nos Documentários da Arquitetura "
+                    "Tradicional, desdobramos o grupo "
+                    "LIDO "
+                    "[`relatedWorksWrap`](https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap) "
+                    "em quatro tipos de "
+                    "relacionamentos\u2009:\n"
+                    "1. `part_of`\u2009: a edificação "
+                    "descrita na ficha é intrinsecamente "
+                    "parte\n"
+                    "   de um conjunto arquitetônico ou "
+                    "urbanístico maior, quando se trata\n"
+                    "   de uma parte fisicamente "
+                    "vinculada a outra edificaçao ou um\n"
+                    "   elemento concebido dentro de um "
+                    "projeto de conjunto.\n"
+                    "\n"
+                    "2. `related_works`\u2009: a "
+                    "edificação descrita na ficha pode "
+                    "ser\n"
+                    "   relacionada, por meio de "
+                    "interpretação historiográfica, a "
+                    "outras\n"
+                    "   edificações ou objetos (fontes "
+                    "primárias escritas ou visuais,\n"
+                    "   obras de arte em geral, outras "
+                    "edificações, etc.).\n"
+                    "\n"
+                    "3. `media`\u2009: fotografias ou "
+                    "imagens históricas (desenhos "
+                    "técnicos ou\n"
+                    "   artísticos, pinturas, estampas, "
+                    "etc.) que representem fielmente a\n"
+                    "   aparência da edificação descrita "
+                    "na ficha.\n"
+                    "\n"
+                    "4. `resources`\u2009: desenhos "
+                    "técnicos em formato vetorial e,\n"
+                    "   eventualmente, modelos "
+                    "tridimensionais ou outras formas de\n"
+                    "   informação técnica que não cabem "
+                    "no formato da ficha, mas que\n"
+                    "   foram produzidas pela equipe e "
+                    "colaboradores do projeto de\n"
+                    "   pesquisa.\n",
+                    "name": "media",
                 },
                 "record_author": {"name": "record_author", "required": True},
                 "record_date": {"name": "record_date", "required": True},
                 "record_rights": {"name": "record_rights", "required": True},
+                "resources": {
+                    "description": "Os desenhos ou modelos da "
+                    "edificação são apresentados "
+                    "online por meio de imagens "
+                    "vetoriais ou bitmap.\n"
+                    "Cada desenho ou modelo pode ser "
+                    "apresentado sob várias "
+                    "representações, como "
+                    "pré-visualização, imagem "
+                    "original, ou serviço [IIIF]. "
+                    "Essas imagens devem ser "
+                    "identificadas como segue\u2009:\n"
+                    "As categorias de representação "
+                    "previstas no [LIDO] podem ser "
+                    "consultadas em "
+                    "<http://terminology.lido-schema.org/resourceRepresentation_type> "
+                    "e são inseridas na ficha como um "
+                    "mapa.\n"
+                    "Nos Documentários da Arquitetura "
+                    "Tradicional, desdobramos o grupo "
+                    "LIDO "
+                    "[`relatedWorksWrap`](https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap) "
+                    "em quatro tipos de "
+                    "relacionamentos\u2009:\n"
+                    "1. `part_of`\u2009: a edificação "
+                    "descrita na ficha é "
+                    "intrinsecamente parte\n"
+                    "   de um conjunto arquitetônico "
+                    "ou urbanístico maior, quando se "
+                    "trata\n"
+                    "   de uma parte fisicamente "
+                    "vinculada a outra edificaçao ou "
+                    "um\n"
+                    "   elemento concebido dentro de "
+                    "um projeto de conjunto.\n"
+                    "\n"
+                    "2. `related_works`\u2009: a "
+                    "edificação descrita na ficha "
+                    "pode ser\n"
+                    "   relacionada, por meio de "
+                    "interpretação historiográfica, a "
+                    "outras\n"
+                    "   edificações ou objetos "
+                    "(fontes primárias escritas ou "
+                    "visuais,\n"
+                    "   obras de arte em geral, "
+                    "outras edificações, etc.).\n"
+                    "\n"
+                    "3. `media`\u2009: fotografias ou "
+                    "imagens históricas (desenhos "
+                    "técnicos ou\n"
+                    "   artísticos, pinturas, "
+                    "estampas, etc.) que representem "
+                    "fielmente a\n"
+                    "   aparência da edificação "
+                    "descrita na ficha.\n"
+                    "\n"
+                    "4. `resources`\u2009: desenhos "
+                    "técnicos em formato vetorial e,\n"
+                    "   eventualmente, modelos "
+                    "tridimensionais ou outras formas "
+                    "de\n"
+                    "   informação técnica que não "
+                    "cabem no formato da ficha, mas "
+                    "que\n"
+                    "   foram produzidas pela equipe "
+                    "e colaboradores do projeto de\n"
+                    "   pesquisa.\n",
+                    "name": "resources",
+                },
                 "title": {"name": "title", "required": True},
+                "work_rights": {"name": "work_rights", "required": True},
             },
         }
     )
@@ -6748,64 +7626,67 @@ Examples may be Neolithic for a period, Impressionist for a style, or Cubism for
 An index element for the cultural context from which the object/work in focus originated. Used if the creator or producer is unknown, or if the cultural context is of particular interest. Examples may include the name of a culture, a nation, or an ethnic group.""",
         json_schema_extra={"linkml_meta": {"domain_of": ["Event", "Work"]}},
     )
-    subject: Optional[list[Topic]] = Field(
-        default=None,
-        description="""Recomenda-se articular o tema em três níveis : descrição, identificação e interpretação.
-DESCRIÇÃO se refere a elementos imediatamente reconhecíveis sem necessidade de conhecimento especializado : coluna(ta)s, arcadas, brasões, cunhais, ornamentos em geral.
-IDENTIFICAÇÃO se refere ao reconhecimento das particularidades arquitetônicas ou iconográficas dos elementos : p. ex. as colunas são da ordem toscana, a abóbada é de aresta, o brasão pertence a tal família...
-INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou político dos elementos, incluindo questões de status e estilo.
-""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["Work"], "slot_uri": "lido:subjectSet"}
-        },
-    )
-    related_works: Optional[list[RelatedWork]] = Field(
-        default=None,
-        description="""A wrapper for identifying information about an object or work, including collections, related to the object/work in focus. May include a weblink.
-As formas mais comuns de relação no nosso projeto são :
-
-  - depicted in: A edificação é representada numa pintura ou desenho
-    artístico;
-
-  - documented by: Informações sobre a edificação estão publicadas numa
-    referência bibliográfica, processo administrativo ou outro documento
-    textual impresso, manuscrito ou eletrônico;
-
-  - has plan / has floor plan / has section / has elevation / has
-    rendering: Essas relações mostram a existência de desenhos técnicos
-    da edificação, sejam eles históricos ou recentes, compilados de
-    fontes externas a este projeto de pesquisa.
-
-  - has construction drawing / has design / has sketch: Essas relações se
-    referem a desenhos históricos (fontes primárias) que atestam o
-    processo de projeto da edificação.
-
-ATENÇÃO : OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO resource, MAIS ABAIXO.
-O grupo relation é destinado unicamente a cadastrar relações desta edificação com objetos autônomos, tais como outras edificações, conjuntos urbanos, obras de artes visuais, referências bibliográficas ou acervos arquivísticos.""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["Work"], "slot_uri": "dcterms:related"}
-        },
-    )
     resources: Optional[dict[str, Resource]] = Field(
         default=None,
         description="""Os desenhos ou modelos da edificação são apresentados online por meio de imagens vetoriais ou bitmap.
 Cada desenho ou modelo pode ser apresentado sob várias representações, como pré-visualização, imagem original, ou serviço [IIIF]. Essas imagens devem ser identificadas como segue :
 As categorias de representação previstas no [LIDO] podem ser consultadas em <http://terminology.lido-schema.org/resourceRepresentation_type> e são inseridas na ficha como um mapa.
+Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO [`relatedWorksWrap`](https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap) em quatro tipos de relacionamentos :
+1. `part_of` : a edificação descrita na ficha é intrinsecamente parte
+   de um conjunto arquitetônico ou urbanístico maior, quando se trata
+   de uma parte fisicamente vinculada a outra edificaçao ou um
+   elemento concebido dentro de um projeto de conjunto.
+
+2. `related_works` : a edificação descrita na ficha pode ser
+   relacionada, por meio de interpretação historiográfica, a outras
+   edificações ou objetos (fontes primárias escritas ou visuais,
+   obras de arte em geral, outras edificações, etc.).
+
+3. `media` : fotografias ou imagens históricas (desenhos técnicos ou
+   artísticos, pinturas, estampas, etc.) que representem fielmente a
+   aparência da edificação descrita na ficha.
+
+4. `resources` : desenhos técnicos em formato vetorial e,
+   eventualmente, modelos tridimensionais ou outras formas de
+   informação técnica que não cabem no formato da ficha, mas que
+   foram produzidas pela equipe e colaboradores do projeto de
+   pesquisa.
 """,
-        json_schema_extra={"linkml_meta": {"domain_of": ["RelatedObject", "Work"]}},
+        json_schema_extra={"linkml_meta": {"domain_of": ["Work"]}},
     )
     media: Optional[list[MediaObject]] = Field(
         default=None,
-        description="""Representações iconográficas deste objeto.
-No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma página web que forneça a respetiva API ou as informações acerca do modelo.
-(A FAZER) Ver [Instruções para carregar imagens e desenhos].
+        description="""Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO [`relatedWorksWrap`](https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap) em quatro tipos de relacionamentos :
+1. `part_of` : a edificação descrita na ficha é intrinsecamente parte
+   de um conjunto arquitetônico ou urbanístico maior, quando se trata
+   de uma parte fisicamente vinculada a outra edificaçao ou um
+   elemento concebido dentro de um projeto de conjunto.
+
+2. `related_works` : a edificação descrita na ficha pode ser
+   relacionada, por meio de interpretação historiográfica, a outras
+   edificações ou objetos (fontes primárias escritas ou visuais,
+   obras de arte em geral, outras edificações, etc.).
+
+3. `media` : fotografias ou imagens históricas (desenhos técnicos ou
+   artísticos, pinturas, estampas, etc.) que representem fielmente a
+   aparência da edificação descrita na ficha.
+
+4. `resources` : desenhos técnicos em formato vetorial e,
+   eventualmente, modelos tridimensionais ou outras formas de
+   informação técnica que não cabem no formato da ficha, mas que
+   foram produzidas pela equipe e colaboradores do projeto de
+   pesquisa.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["RelatedObject", "Event", "Work"]}
+            "linkml_meta": {
+                "domain_of": ["RelatedWork", "LargerContextReference", "Event", "Work"]
+            }
         },
     )
     title_type: TitleType = Field(
-        default=..., json_schema_extra={"linkml_meta": {"domain_of": ["Work"]}}
+        default=...,
+        description="""Categoriza a natureza do nome dado ao objeto.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Work"]}},
     )
     work_type_condition: Optional[list[ConceptReference]] = Field(
         default=None,
@@ -6946,9 +7827,29 @@ A classification scheme for grouping objects on the basis of criteria defined wi
             "linkml_meta": {"domain_of": ["Work"], "slot_uri": "term:lido01144"}
         },
     )
-    part_of: Optional[list[TypedReference]] = Field(
+    part_of: Optional[list[LargerContextReference]] = Field(
         default=None,
-        description="""Permite identificar um conjunto arquitetônico, urbanístico ou conceitual (por exemplo, uma série de casas) do qual a edificação faz parte.""",
+        description="""Permite identificar um conjunto arquitetônico, urbanístico ou conceitual (por exemplo, uma série de casas) do qual a edificação faz parte.
+Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO [`relatedWorksWrap`](https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap) em quatro tipos de relacionamentos :
+1. `part_of` : a edificação descrita na ficha é intrinsecamente parte
+   de um conjunto arquitetônico ou urbanístico maior, quando se trata
+   de uma parte fisicamente vinculada a outra edificaçao ou um
+   elemento concebido dentro de um projeto de conjunto.
+
+2. `related_works` : a edificação descrita na ficha pode ser
+   relacionada, por meio de interpretação historiográfica, a outras
+   edificações ou objetos (fontes primárias escritas ou visuais,
+   obras de arte em geral, outras edificações, etc.).
+
+3. `media` : fotografias ou imagens históricas (desenhos técnicos ou
+   artísticos, pinturas, estampas, etc.) que representem fielmente a
+   aparência da edificação descrita na ficha.
+
+4. `resources` : desenhos técnicos em formato vetorial e,
+   eventualmente, modelos tridimensionais ou outras formas de
+   informação técnica que não cabem no formato da ficha, mas que
+   foram produzidas pela equipe e colaboradores do projeto de
+   pesquisa.""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": ["Work", "Site"],
@@ -6981,37 +7882,93 @@ A classification scheme for grouping objects on the basis of criteria defined wi
         description="""Marcas, símbolos ou textos gravados na edificação, especialmente aqueles referentes à estrutura como um todo e não específicos a alguma de suas partes. Não usar para iconografia.""",
         json_schema_extra={"linkml_meta": {"domain_of": ["Work"]}},
     )
-    collection: Optional[list[Union[Concept, Resource, Event, Repository, Work]]] = (
-        Field(
-            default=None,
-            description="""Descreve conjuntos conceituais nos quais a edificação foi incluída, por exemplo catálogos raisonnés, obras de referência, exposições, ou agrupamentos *ad-hoc* para formar coleções temáticas de acordo com as necessidades do projeto de investigação.
+    collection: Optional[list[Collection]] = Field(
+        default=None,
+        description="""Descreve conjuntos conceituais nos quais a edificação foi incluída, por exemplo catálogos raisonnés, obras de referência, exposições, ou agrupamentos *ad-hoc* para formar coleções temáticas de acordo com as necessidades do projeto de investigação.
 Para o pertencimento a perímetros de sítios históricos tombados/classificados, preencher o grupo `identifiers`. Para a identificação de proprietários ou responsáveis, preencher o grupo `work_rights`.
 """,
-            json_schema_extra={
-                "linkml_meta": {
-                    "domain_of": ["Work"],
-                    "notes": [
-                        "A set of identifying and indexing information about the collection "
-                        "the object/work in focus is gathered into or is a member of.\n"
-                        "Collection applies to any accumulated group of physical or digital "
-                        "items, conceptually or physically brought together on the basis of "
-                        "a focal characteristic. Use cases for grouping items into a "
-                        "collection are various and may span curated holdings in museums, "
-                        "departmental collections, sets of items to be displayed in an "
-                        "exhibition, or aggregations bound informally for cataloging and "
-                        "retrieval purposes."
-                    ],
-                    "slot_uri": "lido:collection",
-                }
-            },
-        )
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Work"],
+                "notes": [
+                    "A set of identifying and indexing information about the collection "
+                    "the object/work in focus is gathered into or is a member of.\n"
+                    "Collection applies to any accumulated group of physical or digital "
+                    "items, conceptually or physically brought together on the basis of "
+                    "a focal characteristic. Use cases for grouping items into a "
+                    "collection are various and may span curated holdings in museums, "
+                    "departmental collections, sets of items to be displayed in an "
+                    "exhibition, or aggregations bound informally for cataloging and "
+                    "retrieval purposes."
+                ],
+                "slot_uri": "lido:collection",
+            }
+        },
     )
-    work_rights: list[Right] = Field(
-        default=...,
-        description="""⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobre A EDIFICAÇÃO E O SEU PROJETO, não sobre o conteúdo da ficha, nem sobre a iconografia relacionada.
+    related_works: Optional[list[RelatedWork]] = Field(
+        default=None,
+        description="""O grupo `related_works` é destinado unicamente a cadastrar relações desta edificação com objetos autônomos, tais como outras edificações, conjuntos urbanos, obras de artes visuais, referências bibliográficas ou acervos arquivísticos.
+⚠️  OS DESENHOS PRODUZIDOS POR ESTE PROJETO DE PESQUISA DEVEM SER CADASTRADOS NO GRUPO `resources`.
+As formas mais comuns de relação no nosso projeto são :
+
+  - depicted in: A edificação é representada numa pintura ou desenho
+    artístico;
+
+  - documented by: Informações sobre a edificação estão publicadas numa
+    referência bibliográfica, processo administrativo ou outro documento
+    textual impresso, manuscrito ou eletrônico;
+
+  - has plan / has floor plan / has section / has elevation / has
+    rendering: Essas relações mostram a existência de desenhos técnicos
+    da edificação, sejam eles históricos ou recentes, compilados de
+    fontes externas a este projeto de pesquisa.
+
+  - has construction drawing / has design / has sketch: Essas relações se
+    referem a desenhos históricos (fontes primárias) que atestam o
+    processo de projeto da edificação.
+
+Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO [`relatedWorksWrap`](https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap) em quatro tipos de relacionamentos :
+1. `part_of` : a edificação descrita na ficha é intrinsecamente parte
+   de um conjunto arquitetônico ou urbanístico maior, quando se trata
+   de uma parte fisicamente vinculada a outra edificaçao ou um
+   elemento concebido dentro de um projeto de conjunto.
+
+2. `related_works` : a edificação descrita na ficha pode ser
+   relacionada, por meio de interpretação historiográfica, a outras
+   edificações ou objetos (fontes primárias escritas ou visuais,
+   obras de arte em geral, outras edificações, etc.).
+
+3. `media` : fotografias ou imagens históricas (desenhos técnicos ou
+   artísticos, pinturas, estampas, etc.) que representem fielmente a
+   aparência da edificação descrita na ficha.
+
+4. `resources` : desenhos técnicos em formato vetorial e,
+   eventualmente, modelos tridimensionais ou outras formas de
+   informação técnica que não cabem no formato da ficha, mas que
+   foram produzidas pela equipe e colaboradores do projeto de
+   pesquisa.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Work"], "slot_uri": "lido:rightsWorkSet"}
+            "linkml_meta": {
+                "domain_of": ["Work"],
+                "notes": [
+                    "A wrapper for identifying information about an object or work, "
+                    "including collections, related to the object/work in focus. May "
+                    "include a weblink."
+                ],
+                "slot_uri": "dcterms:related",
+            }
+        },
+    )
+    subject: Optional[list[Topic]] = Field(
+        default=None,
+        description="""Recomenda-se articular o tema em três níveis : descrição, identificação e interpretação.
+DESCRIÇÃO se refere a elementos imediatamente reconhecíveis sem necessidade de conhecimento especializado : coluna(ta)s, arcadas, brasões, cunhais, ornamentos em geral.
+IDENTIFICAÇÃO se refere ao reconhecimento das particularidades arquitetônicas ou iconográficas dos elementos : p. ex. as colunas são da ordem toscana, a abóbada é de aresta, o brasão pertence a tal família...
+INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou político dos elementos, incluindo questões de status e estilo.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Work"], "slot_uri": "lido:subjectSet"}
         },
     )
     id: str = Field(
@@ -7044,8 +8001,6 @@ Para o pertencimento a perímetros de sítios históricos tombados/classificados
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -7067,7 +8022,7 @@ Para o pertencimento a perímetros de sítios históricos tombados/classificados
         default="schema:LandmarksOrHistoricalBuildings",
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
-No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
+Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
 """,
         json_schema_extra={
             "linkml_meta": {
@@ -7109,8 +8064,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -7136,7 +8089,7 @@ Poderá incluir um segundo bloco de metadados para indicar as referências bibli
             "linkml_meta": {
                 "domain_of": ["Thing", "Inscription"],
                 "recommended": True,
-                "slot_uri": "skos:scopeNote",
+                "slot_uri": "lido:descriptiveNoteValue",
             }
         },
     )
@@ -7275,6 +8228,8 @@ A set of structured information about a place that is the broader context for th
     )
     type: Optional[RepositoryType] = Field(
         default=RepositoryType("geographic"),
+        description="""Categoriza a natureza do recorte que define o sítio.
+""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": ["Site"],
@@ -7306,8 +8261,8 @@ Polygonal, multipolygonal, or linear geographic extent associated with the place
 """,
         json_schema_extra={"linkml_meta": {"domain_of": ["Site"]}},
     )
-    id: str = Field(
-        default=...,
+    id: Optional[str] = Field(
+        default=None,
         description="""Identificador globalmente único para este objeto ou recurso.
 """,
         json_schema_extra={
@@ -7329,16 +8284,14 @@ Polygonal, multipolygonal, or linear geographic extent associated with the place
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
-    display: str = Field(
-        default=...,
+    display: Optional[str] = Field(
+        default=None,
         description="""A human-readable description for a thing""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -7360,7 +8313,7 @@ Polygonal, multipolygonal, or linear geographic extent associated with the place
         default="crm:E92_Spacetime_Volume",
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
-No vocabulário controlado, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
+Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
 """,
         json_schema_extra={
             "linkml_meta": {
@@ -7401,8 +8354,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -7424,7 +8375,7 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": ["Thing", "Inscription"],
                 "recommended": True,
-                "slot_uri": "skos:scopeNote",
+                "slot_uri": "lido:descriptiveNoteValue",
             }
         },
     )
@@ -7546,13 +8497,7 @@ class GeographicPoint(ConfiguredBaseModel):
         default=None,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": [
-                    "RelatedObject",
-                    "MediaObject",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
             }
         },
     )
@@ -7567,8 +8512,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -7636,13 +8579,7 @@ class GeographicExtent(ConfiguredBaseModel):
         default=None,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": [
-                    "RelatedObject",
-                    "MediaObject",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
             }
         },
     )
@@ -7657,8 +8594,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -7713,8 +8648,6 @@ class Inscription(ConfiguredBaseModel):
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -7734,7 +8667,7 @@ class Inscription(ConfiguredBaseModel):
             "linkml_meta": {
                 "domain_of": ["Thing", "Inscription"],
                 "recommended": True,
-                "slot_uri": "skos:scopeNote",
+                "slot_uri": "lido:descriptiveNoteValue",
             }
         },
     )
@@ -7749,8 +8682,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             "linkml_meta": {
                 "domain_of": [
                     "ConceptReference",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -7795,8 +8726,6 @@ class Topic(ConfiguredBaseModel):
                 "domain_of": [
                     "ConceptReference",
                     "BibliographicCitation",
-                    "RelatedObject",
-                    "MediaObject",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
@@ -7849,6 +8778,211 @@ class LocationHistoric(ConfiguredBaseModel):
         description="""Identificação do local com referência a um vocabulário controlado ou repositório de topônimos tal como o geonames.
 """,
         json_schema_extra={"linkml_meta": {"domain_of": ["LocationHistoric"]}},
+    )
+
+
+class Collection(Thing):
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
+        {"from_schema": "https://tradicional.arq.br/schema/work"}
+    )
+
+    type: CollectionType = Field(
+        default=...,
+        description="""Descreve a natureza da coleção.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Collection"]}},
+    )
+    id: Optional[str] = Field(
+        default=None,
+        description="""Identificador globalmente único para este objeto ou recurso.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:identifier"}
+        },
+    )
+    author: Optional[str] = Field(
+        default=None,
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    record_date: Optional[date] = Field(
+        default=None,
+        description="""Data de inclusão da ficha.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
+        },
+    )
+    display: Optional[str] = Field(
+        default=None,
+        description="""A human-readable description for a thing""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "BibliographicCitation",
+                    "TypedReference",
+                    "Measurement",
+                    "RelatedEvent",
+                    "Thing",
+                    "Inscription",
+                    "Topic",
+                ],
+                "exact_mappings": ["schema:description"],
+                "slot_uri": "dcterms:description",
+            }
+        },
+    )
+    category: Literal[
+        "https://tradicional.arq.br/schema/Collection", "wasth:Collection"
+    ] = Field(
+        default="wasth:Collection",
+        description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
+Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
+Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "designates_type": True,
+                "domain_of": ["Thing"],
+                "notes": [
+                    "The LIDO Category Vocabulary is a structured controlled list of "
+                    "terms recommended to use as values in the LIDO Category element.\n"
+                    "Examples are human-made object or natural object."
+                ],
+                "slot_uri": "term:lidoCategory",
+            }
+        },
+    )
+    record_rights: Optional[list[Right]] = Field(
+        default=None,
+        description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
+⚠️  Este grupo se refere aos direitos sobre o CONTEÚDO da ficha, não sobre os direitos incidentes sobre o objeto descrito.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "notes": [
+                    "A set of structured information about rights regarding the content "
+                    "provided in this LIDO record."
+                ],
+            }
+        },
+    )
+    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""📚  Cadastro de uma referência bibliográfica.
+O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
+Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
+Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "Measurement",
+                    "Actor",
+                    "Thing",
+                    "Appellation",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                    "Inscription",
+                ],
+                "recommended": True,
+                "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    content: Optional[str] = Field(
+        default=None,
+        description="""Conteúdo textual descritivo ou explicativo.""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing", "Inscription"],
+                "recommended": True,
+                "slot_uri": "lido:descriptiveNoteValue",
+            }
+        },
+    )
+    title: Optional[str] = Field(
+        default=None,
+        description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["Thing"],
+                "exact_mappings": ["schema:name"],
+                "slot_uri": "dcterms:title",
+            }
+        },
+    )
+    title_source: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""A fonte do título title_source é opcional ; um título pode ser atestado em mais de uma fonte, por isso este campo é uma lista de itens (cada item começa com um hífen).""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    alt_name: Optional[list[Appellation]] = Field(
+        default=None,
+        description="""O bloco `alt_name` permite cadastrar outros nomes pelos quais o objeto ou conceito será eventualmente conhecido. É uma lista opcional de itens, e se existir, os campos de cada item da lista devem ser preenchidos como os do título principal.
+O campo `label` ou `description` de cada item contém o texto do título (nome).
+Este bloco pode ser omitido por completo se não houver títulos alternativos.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    identifiers: Optional[list[TypedReference]] = Field(
+        default=None,
+        description="""Números de inventário e demais códigos que identificam este objeto em outras bases de dados.
+Caso esta edificação esteja cadastrada em outras bases de dados (por exemplo, [SICG], [SIPA], [HPIP], [iPatrimonio], etc.), pode preencher a lista `identifiers` como segue.
+:clipboard: O conteúdo de cada bloco é uma lista recuada em dois espaços com respeito à categoria superior. Seus itens são :
+* `type` é o tipo de referência : pode ser `uri` (padrão), `iri` ou
+  `local` — se estiver em dúvida, omita esta linha ;
+
+* `refid` é obrigatório : representa o identificador do conceito no
+  vocabulário controlado ou no repositório de origem — normalmente
+  será uma URI (um link para a página web do cadastro) ;
+
+* `description` deve ser usado para representar textualmente
+  o número de inventário, código identificador ou outra informação
+  que individualize o objeto na base externa (por exemplo, livro do
+  tombo e número do processo de tombamento, no Brasil) ;
+
+* `bibliographic_citation` é opcional e permite citar uma lista de
+  referências bibliográficas que validem a inclusão deste termo.
+
+* `source` também é opcional e permite cadastrar os dados da pessoa
+  jurídica responsável pelo registro.
+
+---------------------------------------------------------------------
+Published or external identifiers for the object.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    tags: Optional[list[str]] = Field(
+        default=None,
+        description="""Lista de palavras-chave que caracterizam o objeto, de modo não estruturado. Recomenda-se usar uma palavra-chave de cada um dos recortes abaixo:
+- Geográfico ; - Cronológico ; - Histórico-cultural ; - Técnico-construtivo ; - Temático ou tipológico ; - Funcional.
+---------------------------------------------------------------------
+Provisional uncontrolled keywords. Prefer `classifications` or `subject` for curated vocabulary terms.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    temporal: Optional[list[Event]] = Field(
+        default=None,
+        description="""Descrição dos eventos associados ao ciclo de vida da edificação ou à existência e/ou uso do objeto ou conceito.
+Ler a respetiva documentação para estruturar este campo.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
+    )
+    repositories: Optional[list[Repository]] = Field(
+        default=None,
+        description="""Nos Documentários da Arquitetura Tradicional, usamos repositórios para indicar a inclusão da edificação em perímetros de sítios tombados/classificados do patrimônio, áreas de interesse histórico-cultural, etc.
+O repositório é cadastrado como uma pessoa jurídica dotada de extensão geográfica.
+---------------------------------------------------------------------
+A set of elements for the identification, name and location of the repository that is responsible for the object/work in focus.
+Repeated if there are several designations known, or if former repositories or geographic places should be listed.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Thing"]}},
     )
 
 
@@ -8202,9 +9336,6 @@ BroaderConceptReference.model_rebuild()
 NarrowerConceptReference.model_rebuild()
 MappingConceptReference.model_rebuild()
 BibliographicCitation.model_rebuild()
-RelatedObject.model_rebuild()
-RelatedWork.model_rebuild()
-MediaObject.model_rebuild()
 TypedReference.model_rebuild()
 Measurement.model_rebuild()
 MaterialTech.model_rebuild()
@@ -8216,7 +9347,11 @@ StylePeriod.model_rebuild()
 RelatedEvent.model_rebuild()
 Thing.model_rebuild()
 Concept.model_rebuild()
+RelatedObject.model_rebuild()
+RelatedWork.model_rebuild()
+LargerContextReference.model_rebuild()
 Resource.model_rebuild()
+MediaObject.model_rebuild()
 Event.model_rebuild()
 Appellation.model_rebuild()
 Repository.model_rebuild()
@@ -8227,5 +9362,6 @@ GeographicExtent.model_rebuild()
 Inscription.model_rebuild()
 Topic.model_rebuild()
 LocationHistoric.model_rebuild()
+Collection.model_rebuild()
 GeonamesFeature.model_rebuild()
 Container.model_rebuild()

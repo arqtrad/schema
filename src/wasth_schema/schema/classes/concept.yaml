@@ -62,6 +62,8 @@ classes:
       concept_type:
         range: ConceptType
         ifabsent: ConceptType(concept)
+        description: >
+          Tipos de termos de vocabulário baseados no Getty AAT.
 
       mapping:
         description: >-
@@ -80,6 +82,11 @@ classes:
         description: >-
           Um conceito com o qual existe um relacionamento semântico associativo.
           Usar em referência ao nosso próprio vocabulário controlado.
+
+    slot_usage:
+      content:
+        slot_uri: skos:scopeNote
+        description: Notas de escopo sobre o conceito.
 
     slots:
       - broader
