@@ -415,6 +415,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -486,10 +497,15 @@
 
 
 <h1 id="slot-rights_statement">Slot: rights_statement</h1>
-<p><em>Referencia, preferencialmente por meio de uma URI, as informações específicas dos direitos autorais incidentes sobre o item descrito.</em></p>
-<p><em>Por padrão, as casas tradicionais pertencem ao domínio público até prova em contrário. Essa informação e a declaração de direitos NKC (Sem direito autoral conhecido) NÃO PODE ser omitida da ficha. Para o domínio público, portanto, indicar a referência : <a href="https://rightsstatements.org/vocab/NKC/1.0/">https://rightsstatements.org/vocab/NKC/1.0/</a>.</em></p>
-<p><em>---------------------------------------------------------------------</em></p>
-<p><em>An index element for rights information being recorded. This can refer to a generic kind of right, such as copyright or a related right, but also be a specific rights or license statement like a standardized statement on copyright, usage, or access rights.</em></p>
+<p><em>Referencia, preferencialmente por meio de uma URI, as informações</em></p>
+<p><em>específicas dos direitos autorais incidentes sobre o item descrito.</em></p>
+<p>__</p>
+<p><em>Por padrão, as casas tradicionais pertencem ao domínio público até</em></p>
+<p><em>prova em contrário.</em></p>
+<p><em>Essa informação e a declaração de direitos NKC (Sem direito autoral</em></p>
+<p><em>conhecido) NÃO PODE ser omitida da ficha.</em></p>
+<p><em>Para o domínio público, portanto, indicar a referência :</em></p>
+<p><em><a href="https://rightsstatements.org/vocab/NKC/1.0/">https://rightsstatements.org/vocab/NKC/1.0/</a>.</em></p>
 <p>__</p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/rights_statement">wasth:rights_statement</a></p>
@@ -564,6 +580,10 @@
 </tr>
 </tbody>
 </table>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>An index element for rights information being recorded. This can refer to a generic kind of right, such as copyright or a related right, but also be a specific rights or license statement like a standardized statement on copyright, usage, or access rights.</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -591,22 +611,29 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rights_statement</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Referencia,</span><span class="nv"> </span><span class="s">preferencialmente</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">URI,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">informações</span><span class="nv"> </span><span class="s">específicas</span>
-<span class="w">  </span><span class="s">dos</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">autorais</span><span class="nv"> </span><span class="s">incidentes</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">descrito.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Referencia,</span><span class="nv"> </span><span class="s">preferencialmente</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">URI,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">informações</span>
 
-<span class="w">  </span><span class="s">Por</span><span class="nv"> </span><span class="s">padrão,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">casas</span><span class="nv"> </span><span class="s">tradicionais</span><span class="nv"> </span><span class="s">pertencem</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">domínio</span><span class="nv"> </span><span class="s">público</span><span class="nv"> </span><span class="s">até</span><span class="nv"> </span><span class="s">prova</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">contrário.</span>
-<span class="w">  </span><span class="s">Essa</span><span class="nv"> </span><span class="s">informação</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">declaração</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">NKC</span><span class="nv"> </span><span class="s">(Sem</span><span class="nv"> </span><span class="s">direito</span><span class="nv"> </span><span class="s">autoral</span><span class="nv"> </span><span class="s">conhecido)</span><span class="nv"> </span><span class="s">NÃO</span>
-<span class="w">  </span><span class="s">PODE</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">omitida</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha.</span><span class="nv"> </span><span class="s">Para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">domínio</span><span class="nv"> </span><span class="s">público,</span><span class="nv"> </span><span class="s">portanto,</span><span class="nv"> </span><span class="s">indicar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">referência</span><span class="err"> </span><span class="s">:</span>
+<span class="w">  </span><span class="s">específicas</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">autorais</span><span class="nv"> </span><span class="s">incidentes</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">descrito.</span>
+
+
+<span class="w">  </span><span class="s">Por</span><span class="nv"> </span><span class="s">padrão,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">casas</span><span class="nv"> </span><span class="s">tradicionais</span><span class="nv"> </span><span class="s">pertencem</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">domínio</span><span class="nv"> </span><span class="s">público</span><span class="nv"> </span><span class="s">até</span>
+
+<span class="w">  </span><span class="s">prova</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">contrário.</span>
+
+<span class="w">  </span><span class="s">Essa</span><span class="nv"> </span><span class="s">informação</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">declaração</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">NKC</span><span class="nv"> </span><span class="s">(Sem</span><span class="nv"> </span><span class="s">direito</span><span class="nv"> </span><span class="s">autoral</span>
+
+<span class="w">  </span><span class="s">conhecido)</span><span class="nv"> </span><span class="s">NÃO</span><span class="nv"> </span><span class="s">PODE</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">omitida</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha.</span>
+
+<span class="w">  </span><span class="s">Para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">domínio</span><span class="nv"> </span><span class="s">público,</span><span class="nv"> </span><span class="s">portanto,</span><span class="nv"> </span><span class="s">indicar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">referência</span><span class="err"> </span><span class="s">:</span>
+
 <span class="w">  </span><span class="s">&lt;https://rightsstatements.org/vocab/NKC/1.0/&gt;.</span>
 
-<span class="w">  </span><span class="s">---------------------------------------------------------------------</span>
-
-<span class="w">  </span><span class="s">An</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">element</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">rights</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">being</span><span class="nv"> </span><span class="s">recorded.</span><span class="nv"> </span><span class="s">This</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">refer</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">generic</span>
-<span class="w">  </span><span class="s">kind</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">right,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">copyright</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">related</span><span class="nv"> </span><span class="s">right,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">also</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">specific</span><span class="nv"> </span><span class="s">rights</span>
-<span class="w">  </span><span class="s">or</span><span class="nv"> </span><span class="s">license</span><span class="nv"> </span><span class="s">statement</span><span class="nv"> </span><span class="s">like</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">standardized</span><span class="nv"> </span><span class="s">statement</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">copyright,</span><span class="nv"> </span><span class="s">usage,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">access</span>
-<span class="w">  </span><span class="s">rights.</span>
-
 <span class="w">  </span><span class="s">'</span>
+<span class="nt">notes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An index element for rights information being recorded. This can refer to a generic</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">kind of right, such as copyright or a related right, but also be a specific rights</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">or license statement like a standardized statement on copyright, usage, or access</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">rights.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>

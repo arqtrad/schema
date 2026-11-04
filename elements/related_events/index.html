@@ -398,17 +398,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#slot-characteristics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slot Characteristics
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -486,7 +475,7 @@
 
 
 <h1 id="slot-related_events">Slot: related_events</h1>
-<p><em>A set of structured information about an event related to the event in focus, indicating the type of relationship where applicable.</em></p>
+<p><em>Indica a ocorrência de outro acontecimento, vinculado ou não à mesma edificação, que apresenta algum tipo de relação com este evento ou com uma informação (por exemplo, a ação que resultou na obtenção da referida informação).</em></p>
 <div>
 <p>URI: <a href="https://tradicional.arq.br/schema/related_events">wasth:related_events</a></p>
 <!-- no inheritance hierarchy -->
@@ -500,6 +489,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../Measurement/">Measurement</a></td>
+<td>Informações estruturadas sobre as dimensões do objeto ou requisitos de condic...</td>
+<td>no</td>
+</tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
 <td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
@@ -523,7 +517,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Event/">Event</a></td>
+<td><a href="../Measurement/">Measurement</a>, <a href="../Event/">Event</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -542,21 +536,6 @@
 <tr>
 <td>Multivalued</td>
 <td>Yes</td>
-</tr>
-</tbody>
-</table>
-<h3 id="slot-characteristics">Slot Characteristics</h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Owner</td>
-<td><a href="../Event/">Event</a></td>
 </tr>
 </tbody>
 </table>
@@ -587,12 +566,13 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">related_events</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A set of structured information about an event related to the event in</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">focus, indicating the type of relationship where applicable.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Indica a ocorrência de outro acontecimento, vinculado ou não à mesma</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">edificação, que apresenta algum tipo de relação com este evento ou com uma informação</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">(por exemplo, a ação que resultou na obtenção da referida informação).</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="nt">domain_of</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

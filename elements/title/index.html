@@ -491,6 +491,16 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../TypedReference/">TypedReference</a></td>
+<td>Permite referenciar um registro local ou externo por meio da sua URI (localiz...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Thing/">Thing</a></td>
+<td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Concept/">Concept</a></td>
 <td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
 <td>no</td>
@@ -521,14 +531,14 @@
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../Event/">Event</a></td>
-<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
+<td><a href="../LegalBody/">LegalBody</a></td>
+<td>Referência a uma pessoa jurídica (pode ser um indivíduo detentor de direitos ...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Thing/">Thing</a></td>
-<td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
-<td>no</td>
+<td><a href="../Event/">Event</a></td>
+<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../Repository/">Repository</a></td>
@@ -568,29 +578,11 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Thing/">Thing</a></td>
+<td><a href="../TypedReference/">TypedReference</a>, <a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
 <td><a href="http://purl.org/dc/terms/title">dcterms:title</a></td>
-</tr>
-<tr>
-<td>### Slot Characteristics</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Owner</td>
-<td><a href="../Thing/">Thing</a></td>
 </tr>
 </tbody>
 </table>
@@ -634,8 +626,8 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:name</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:title</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">domain_of</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </code></pre></div>

@@ -361,8 +361,6 @@
 
       Event : description
 
-      Event : display_date
-
       Event : end_date
 
 
@@ -631,6 +629,12 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../related_events/">related_events</a></td>
+<td>* <br/> <a href="../RelatedEvent/">RelatedEvent</a></td>
+<td>Indica a ocorrência de outro acontecimento, vinculado ou não à mesma edificaç...</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../event_type/">event_type</a></td>
 <td>1 <br/> <a href="../EventType/">EventType</a></td>
 <td>Categoriza o evento segundo os vários tipos de ações, de processos, ou de res...</td>
@@ -640,12 +644,6 @@
 <td><a href="../actor_role/">actor_role</a></td>
 <td>* <br/> <a href="../Actor/">Actor</a></td>
 <td>Identificação de um agente e do seu papel no evento</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../display_date/">display_date</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Permite a expressão descritiva das datas de início e fim do evento, para cont...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -679,10 +677,10 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../related_events/">related_events</a></td>
-<td>* <br/> <a href="../RelatedEvent/">RelatedEvent</a></td>
-<td>A set of structured information about an event related to the event in focus,...</td>
-<td>direct</td>
+<td><a href="../title/">title</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Um nome breve para o evento, sem formatação</td>
+<td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
@@ -705,7 +703,7 @@
 <tr>
 <td><a href="../description/">description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
+<td>Permite a expressão descritiva das datas de início e fim do evento, para cont...</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -729,13 +727,7 @@
 <tr>
 <td><a href="../content/">content</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
-<td>Conteúdo textual descritivo ou explicativo</td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
-<td><a href="../title/">title</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Nome pelo qual este item é mais comumente conhecido</td>
+<td>Descrição textual mais extensa do acontecimento, quando necessário ou relevan...</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -826,6 +818,12 @@
 <tr>
 <td><a href="../Measurement/">Measurement</a></td>
 <td><a href="../measurement_event/">measurement_event</a></td>
+<td>range</td>
+<td><a href="./">Event</a></td>
+</tr>
+<tr>
+<td><a href="../LegalBody/">LegalBody</a></td>
+<td><a href="../temporal/">temporal</a></td>
 <td>range</td>
 <td><a href="./">Event</a></td>
 </tr>
@@ -959,6 +957,27 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">technique</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">related_events</span>
+<span class="nt">slot_usage</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Um</span><span class="nv"> </span><span class="s">nome</span><span class="nv"> </span><span class="s">breve</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">evento,</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">formatação.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Permite</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">expressão</span><span class="nv"> </span><span class="s">descritiva</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">início</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">fim</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">evento,</span>
+<span class="w">      </span><span class="s">para</span><span class="nv"> </span><span class="s">contemplar</span><span class="nv"> </span><span class="s">variados</span><span class="nv"> </span><span class="s">graus</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">incerteza,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">modo</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">representar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">data</span>
+<span class="w">      </span><span class="s">em</span><span class="nv"> </span><span class="s">calendários</span><span class="nv"> </span><span class="s">diferentes</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">gregoriano.</span><span class="nv"> </span><span class="s">Omitir</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">valores</span><span class="nv"> </span><span class="s">numéricos</span>
+<span class="w">      </span><span class="s">das</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">forem</span><span class="nv"> </span><span class="s">exatos.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">  </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Descrição</span><span class="nv"> </span><span class="s">textual</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">extensa</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">acontecimento,</span><span class="nv"> </span><span class="s">quando</span><span class="nv"> </span><span class="s">necessário</span>
+<span class="w">      </span><span class="s">ou</span><span class="nv"> </span><span class="s">relevante.</span><span class="nv"> </span><span class="s">Pode</span><span class="nv"> </span><span class="s">conter</span><span class="nv"> </span><span class="s">texto</span><span class="nv"> </span><span class="s">formatado</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">referências</span><span class="nv"> </span><span class="s">bibliográficas.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">event_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event_type</span>
@@ -983,19 +1002,6 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">display_date</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">display_date</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Permite</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">expressão</span><span class="nv"> </span><span class="s">descritiva</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">início</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">fim</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">evento,</span>
-<span class="w">      </span><span class="s">para</span><span class="nv"> </span><span class="s">contemplar</span><span class="nv"> </span><span class="s">variados</span><span class="nv"> </span><span class="s">graus</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">incerteza,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">modo</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">representar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">data</span>
-<span class="w">      </span><span class="s">em</span><span class="nv"> </span><span class="s">calendários</span><span class="nv"> </span><span class="s">diferentes</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">gregoriano.</span><span class="nv"> </span><span class="s">Omitir</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">valores</span><span class="nv"> </span><span class="s">numéricos</span>
-<span class="w">      </span><span class="s">das</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">forem</span><span class="nv"> </span><span class="s">exatos.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">  </span><span class="nt">start_date</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start_date</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Data</span><span class="nv"> </span><span class="s">inicial</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">antiga</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">presumida</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">seu</span>
@@ -1069,17 +1075,6 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedWork</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">related_events</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">related_events</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A set of structured information about an event related to the event</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">in focus, indicating the type of relationship where applicable.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E5_Event</span>
@@ -1134,6 +1129,26 @@
 <span class="nt">exact_mappings</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:Event</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="nt">slot_usage</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Um</span><span class="nv"> </span><span class="s">nome</span><span class="nv"> </span><span class="s">breve</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">evento,</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">formatação.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Permite</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">expressão</span><span class="nv"> </span><span class="s">descritiva</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">início</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">fim</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">evento,</span>
+<span class="w">      </span><span class="s">para</span><span class="nv"> </span><span class="s">contemplar</span><span class="nv"> </span><span class="s">variados</span><span class="nv"> </span><span class="s">graus</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">incerteza,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">modo</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">representar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">data</span>
+<span class="w">      </span><span class="s">em</span><span class="nv"> </span><span class="s">calendários</span><span class="nv"> </span><span class="s">diferentes</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">gregoriano.</span><span class="nv"> </span><span class="s">Omitir</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">valores</span><span class="nv"> </span><span class="s">numéricos</span>
+<span class="w">      </span><span class="s">das</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">forem</span><span class="nv"> </span><span class="s">exatos.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">  </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Descrição</span><span class="nv"> </span><span class="s">textual</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">extensa</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">acontecimento,</span><span class="nv"> </span><span class="s">quando</span><span class="nv"> </span><span class="s">necessário</span>
+<span class="w">      </span><span class="s">ou</span><span class="nv"> </span><span class="s">relevante.</span><span class="nv"> </span><span class="s">Pode</span><span class="nv"> </span><span class="s">conter</span><span class="nv"> </span><span class="s">texto</span><span class="nv"> </span><span class="s">formatado</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">referências</span><span class="nv"> </span><span class="s">bibliográficas.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">event_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event_type</span>
@@ -1161,20 +1176,6 @@
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">display_date</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">display_date</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Permite</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">expressão</span><span class="nv"> </span><span class="s">descritiva</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">início</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">fim</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">evento,</span>
-<span class="w">      </span><span class="s">para</span><span class="nv"> </span><span class="s">contemplar</span><span class="nv"> </span><span class="s">variados</span><span class="nv"> </span><span class="s">graus</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">incerteza,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">modo</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">representar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">data</span>
-<span class="w">      </span><span class="s">em</span><span class="nv"> </span><span class="s">calendários</span><span class="nv"> </span><span class="s">diferentes</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">gregoriano.</span><span class="nv"> </span><span class="s">Omitir</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">valores</span><span class="nv"> </span><span class="s">numéricos</span>
-<span class="w">      </span><span class="s">das</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">forem</span><span class="nv"> </span><span class="s">exatos.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">  </span><span class="nt">start_date</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start_date</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Data</span><span class="nv"> </span><span class="s">inicial</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">evento</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">antiga</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">presumida</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">seu</span>
@@ -1257,19 +1258,6 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedWork</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">related_events</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">related_events</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A set of structured information about an event related to the event</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">in focus, indicating the type of relationship where applicable.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/temporal</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -1427,6 +1415,36 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">related_events</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">related_events</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Indica a ocorrência de outro acontecimento, vinculado ou não à mesma</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">edificação, que apresenta algum tipo de relação com este evento ou com uma informação</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">(por exemplo, a ação que resultou na obtenção da referida informação).</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Um</span><span class="nv"> </span><span class="s">nome</span><span class="nv"> </span><span class="s">breve</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">evento,</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">formatação.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:name</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:title</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">  </span><span class="nt">id</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Identificador</span><span class="nv"> </span><span class="s">globalmente</span><span class="nv"> </span><span class="s">único</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">recurso.</span>
@@ -1465,13 +1483,17 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A human-readable description for a thing</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Permite</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">expressão</span><span class="nv"> </span><span class="s">descritiva</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">início</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">fim</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">evento,</span>
+<span class="w">      </span><span class="s">para</span><span class="nv"> </span><span class="s">contemplar</span><span class="nv"> </span><span class="s">variados</span><span class="nv"> </span><span class="s">graus</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">incerteza,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">modo</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">representar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">data</span>
+<span class="w">      </span><span class="s">em</span><span class="nv"> </span><span class="s">calendários</span><span class="nv"> </span><span class="s">diferentes</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">gregoriano.</span><span class="nv"> </span><span class="s">Omitir</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">valores</span><span class="nv"> </span><span class="s">numéricos</span>
+<span class="w">      </span><span class="s">das</span><span class="nv"> </span><span class="s">datas</span><span class="nv"> </span><span class="s">forem</span><span class="nv"> </span><span class="s">exatos.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:description</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:description</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">display</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
@@ -1566,7 +1588,10 @@
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">content</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Conteúdo textual descritivo ou explicativo.</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Descrição</span><span class="nv"> </span><span class="s">textual</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">extensa</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">acontecimento,</span><span class="nv"> </span><span class="s">quando</span><span class="nv"> </span><span class="s">necessário</span>
+<span class="w">      </span><span class="s">ou</span><span class="nv"> </span><span class="s">relevante.</span><span class="nv"> </span><span class="s">Pode</span><span class="nv"> </span><span class="s">conter</span><span class="nv"> </span><span class="s">texto</span><span class="nv"> </span><span class="s">formatado</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">referências</span><span class="nv"> </span><span class="s">bibliográficas.</span>
+
+<span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:descriptiveNoteValue</span>
@@ -1576,21 +1601,6 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">    </span><span class="nt">recommended</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">title</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Nome</span><span class="nv"> </span><span class="s">pelo</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">comumente</span><span class="nv"> </span><span class="s">conhecido.</span><span class="nv"> </span><span class="s">Outros</span><span class="nv"> </span><span class="s">nomes</span>
-<span class="w">      </span><span class="s">podem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">cadastrados</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">`alt_name`.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/thing</span>
-<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:name</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:title</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">  </span><span class="nt">title_source</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title_source</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A fonte do título title_source é opcional ; um título pode ser atestado</span>
