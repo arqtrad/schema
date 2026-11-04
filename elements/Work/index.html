@@ -461,8 +461,8 @@
 
 
 
-        Work --&gt; "*" LocationHistoric : location_historic
-        click LocationHistoric href "../LocationHistoric/"
+        Work --&gt; "*" LegalBody : location_historic
+        click LegalBody href "../LegalBody/"
 
 
 
@@ -907,8 +907,8 @@
 </tr>
 <tr>
 <td><a href="../location_historic/">location_historic</a></td>
-<td>* <br/> <a href="../LocationHistoric/">LocationHistoric</a></td>
-<td>Antigas jurisdições ou designações para o lugar onde o objeto se encontra</td>
+<td>* <br/> <a href="../LegalBody/">LegalBody</a></td>
+<td>Designações alternativas ou jurisdições antigas para o mesmo local, NÃO a loc...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -1529,14 +1529,17 @@
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">location_historic</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">location_historic</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Antigas jurisdições ou designações para o lugar onde o objeto se</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">encontra. Para um sítio de onde o objeto foi fisicamente removido, usar a lista</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">`former_site`.</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Designações alternativas ou jurisdições antigas para o mesmo local,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">NÃO a localização original de uma construção fisicamente deslocada (para tanto,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">cadastrar outra localização do tipo `former_site`). Preencher apenas caso a</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">nomenclatura seja relevante, por exemplo para nomear as antigas províncias de</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Portugal ou o Oeste da Bahia, que originalmente pertencia a Pernambuco, ou ainda</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">se for relevante informar uma região física.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/work</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LocationHistoric</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">inscriptions</span><span class="p">:</span>
@@ -2125,15 +2128,18 @@
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">location_historic</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">location_historic</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Antigas jurisdições ou designações para o lugar onde o objeto se</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">encontra. Para um sítio de onde o objeto foi fisicamente removido, usar a lista</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">`former_site`.</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Designações alternativas ou jurisdições antigas para o mesmo local,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">NÃO a localização original de uma construção fisicamente deslocada (para tanto,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">cadastrar outra localização do tipo `former_site`). Preencher apenas caso a</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">nomenclatura seja relevante, por exemplo para nomear as antigas províncias de</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Portugal ou o Oeste da Bahia, que originalmente pertencia a Pernambuco, ou ainda</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">se for relevante informar uma região física.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/work</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LocationHistoric</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

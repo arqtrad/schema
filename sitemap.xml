@@ -193,10 +193,6 @@
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
-         <loc>https://tradicional.arq.br/schema/elements/LocationHistoric/</loc>
-         <lastmod>2026-11-04</lastmod>
-    </url>
-    <url>
          <loc>https://tradicional.arq.br/schema/elements/Longitude/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
@@ -650,14 +646,6 @@
     </url>
     <url>
          <loc>https://tradicional.arq.br/schema/elements/location_historic/</loc>
-         <lastmod>2026-11-04</lastmod>
-    </url>
-    <url>
-         <loc>https://tradicional.arq.br/schema/elements/location_historic_name/</loc>
-         <lastmod>2026-11-04</lastmod>
-    </url>
-    <url>
-         <loc>https://tradicional.arq.br/schema/elements/location_historic_type/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>

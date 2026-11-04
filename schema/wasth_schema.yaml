@@ -7913,16 +7913,20 @@ slots:
     inlined_as_list: true
   work__location_historic:
     name: work__location_historic
-    description: "Antigas jurisdi\xE7\xF5es ou designa\xE7\xF5es para o lugar onde\
-      \ o objeto se encontra. Para um s\xEDtio de onde o objeto foi fisicamente removido,\
-      \ usar a lista `former_site`."
+    description: "Designa\xE7\xF5es alternativas ou jurisdi\xE7\xF5es antigas para\
+      \ o mesmo local, N\xC3O a localiza\xE7\xE3o original de uma constru\xE7\xE3\
+      o fisicamente deslocada (para tanto, cadastrar outra localiza\xE7\xE3o do tipo\
+      \ `former_site`). Preencher apenas caso a nomenclatura seja relevante, por exemplo\
+      \ para nomear as antigas prov\xEDncias de Portugal ou o Oeste da Bahia, que\
+      \ originalmente pertencia a Pernambuco, ou ainda se for relevante informar uma\
+      \ regi\xE3o f\xEDsica."
     from_schema: https://tradicional.arq.br/schema/work
     slot_uri: wasth:location_historic
     alias: location_historic
     owner: Work
     domain_of:
     - Work
-    range: LocationHistoric
+    range: LegalBody
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -8216,32 +8220,6 @@ slots:
     - Topic
     range: SubjectType
     required: true
-  locationHistoric__location_historic_type:
-    name: locationHistoric__location_historic_type
-    description: "Define se o local hist\xF3rico designa uma jurisdi\xE7\xE3o, um\
-      \ top\xF4nimo antigo, ou outro.\n"
-    from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:type
-    alias: type
-    owner: LocationHistoric
-    domain_of:
-    - LocationHistoric
-    range: RepositoryType
-    required: true
-  locationHistoric__location_historic_name:
-    name: locationHistoric__location_historic_name
-    description: "Identifica\xE7\xE3o do local com refer\xEAncia a um vocabul\xE1\
-      rio controlado ou reposit\xF3rio de top\xF4nimos tal como o geonames.\n"
-    from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:name
-    alias: name
-    owner: LocationHistoric
-    domain_of:
-    - LocationHistoric
-    range: TypedReference
-    required: true
-    inlined: true
-    inlined_as_list: false
   collection__collection_type:
     name: collection__collection_type
     description: "Descreve a natureza da cole\xE7\xE3o."
@@ -10431,10 +10409,14 @@ classes:
         inlined_as_list: true
       location_historic:
         name: location_historic
-        description: "Antigas jurisdi\xE7\xF5es ou designa\xE7\xF5es para o lugar\
-          \ onde o objeto se encontra. Para um s\xEDtio de onde o objeto foi fisicamente\
-          \ removido, usar a lista `former_site`."
-        range: LocationHistoric
+        description: "Designa\xE7\xF5es alternativas ou jurisdi\xE7\xF5es antigas\
+          \ para o mesmo local, N\xC3O a localiza\xE7\xE3o original de uma constru\xE7\
+          \xE3o fisicamente deslocada (para tanto, cadastrar outra localiza\xE7\xE3\
+          o do tipo `former_site`). Preencher apenas caso a nomenclatura seja relevante,\
+          \ por exemplo para nomear as antigas prov\xEDncias de Portugal ou o Oeste\
+          \ da Bahia, que originalmente pertencia a Pernambuco, ou ainda se for relevante\
+          \ informar uma regi\xE3o f\xEDsica."
+        range: LegalBody
         multivalued: true
         inlined_as_list: true
       inscriptions:
@@ -10760,37 +10742,6 @@ classes:
         range: SubjectType
         required: true
     class_uri: wasth:Topic
-  LocationHistoric:
-    name: LocationHistoric
-    definition_uri: https://tradicional.arq.br/schema/LocationHistoric
-    description: "Designa\xE7\xF5es alternativas ou jurisdi\xE7\xF5es antigas para\
-      \ o mesmo local, N\xC3O a localiza\xE7\xE3o original de uma constru\xE7\xE3\
-      o fisicamente deslocada (para tanto, cadastrar outra localiza\xE7\xE3o do tipo\
-      \ `former_site`). Preencher apenas caso a nomenclatura seja relevante, por exemplo\
-      \ para nomear as antigas prov\xEDncias de Portugal ou o Oeste da Bahia, que\
-      \ originalmente pertencia a Pernambuco, ou ainda se for relevante informar uma\
-      \ regi\xE3o f\xEDsica."
-    from_schema: https://tradicional.arq.br/schema/work
-    slots:
-    - locationHistoric__location_historic_type
-    - locationHistoric__location_historic_name
-    attributes:
-      location_historic_type:
-        name: location_historic_type
-        description: "Define se o local hist\xF3rico designa uma jurisdi\xE7\xE3o,\
-          \ um top\xF4nimo antigo, ou outro.\n"
-        alias: type
-        range: RepositoryType
-        required: true
-      location_historic_name:
-        name: location_historic_name
-        description: "Identifica\xE7\xE3o do local com refer\xEAncia a um vocabul\xE1\
-          rio controlado ou reposit\xF3rio de top\xF4nimos tal como o geonames.\n"
-        alias: name
-        range: TypedReference
-        required: true
-        inlined: true
-    class_uri: wasth:LocationHistoric
   Collection:
     name: Collection
     definition_uri: https://tradicional.arq.br/schema/Collection
@@ -10850,6 +10801,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-11-04T16:42:27'
+source_file_date: '2026-11-04T17:17:24'
 source_file_size: 56771
 
