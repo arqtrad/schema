@@ -439,7 +439,9 @@
 <p>search:
   boost: 1.0
 ---# Type: OrcidId </p>
-<p><em>ORCID iD, sem o prefixo <a href="https://orcid.org/">https://orcid.org/</a>.</em></p>
+<p><em>ORCID iD, no formato <code>orcid:1234-5678-9012-345X</code> ou</em></p>
+<p><em><code>https://orcid.org/1234-5678-9012-345X</code>.</em></p>
+<p>__</p>
 <div>
 <p>URI: <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p>
 <h2 id="type-properties">Type Properties</h2>
@@ -475,7 +477,7 @@
 <tbody>
 <tr>
 <td>Regex Pattern</td>
-<td><code>^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$</code></td>
+<td><code>^(?:https?://orcid\.org/|orcid:)?\d{4}-\d{4}-\d{4}-\d{3}[\dX]$</code></td>
 </tr>
 </tbody>
 </table>

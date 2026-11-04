@@ -189,11 +189,15 @@ types:
   OrcidId:
     name: OrcidId
     definition_uri: https://tradicional.arq.br/schema/OrcidId
-    description: ORCID iD, sem o prefixo https://orcid.org/.
+    description: 'ORCID iD, no formato `orcid:1234-5678-9012-345X` ou
+
+      `https://orcid.org/1234-5678-9012-345X`.
+
+      '
     from_schema: https://tradicional.arq.br/schema
     base: str
     uri: xsd:string
-    pattern: ^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$
+    pattern: ^(?:https?://orcid\.org/|orcid:)?\d{4}-\d{4}-\d{4}-\d{3}[\dX]$
   OlcPlusCode11:
     name: OlcPlusCode11
     definition_uri: https://tradicional.arq.br/schema/OlcPlusCode11
@@ -202,15 +206,6 @@ types:
     base: str
     uri: xsd:string
     pattern: ^([2-9CFGHJMPQRVWX]{8})\+([2-9CFGHJMPQRVWX]{3})$
-  GeonamesId:
-    name: GeonamesId
-    definition_uri: https://tradicional.arq.br/schema/GeonamesId
-    description: Identificador de lugar no GeoNames, na forma de um CURIE `geonames:1234`.
-    from_schema: https://tradicional.arq.br/schema
-    base: str
-    uri: xsd:anyURI
-    repr: str
-    pattern: ^geonames:[0-9]+$
   string:
     name: string
     definition_uri: https://w3id.org/linkml/String
@@ -5954,10 +5949,9 @@ slots:
     domain_of:
     - Resource
     - MediaObject
-    range: TypedReference
+    range: string
     required: true
     inlined: true
-    inlined_as_list: false
   scale:
     name: scale
     definition_uri: https://tradicional.arq.br/schema/scale
@@ -6269,7 +6263,9 @@ slots:
     name: record_author
     definition_uri: https://tradicional.arq.br/schema/record_author
     description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha. Alterar\
-      \ apenas no caso de a ficha ter sido substancialmente reescrita.\n"
+      \ apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato\
+      \ `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente\
+      \ tamb\xE9m \xE9 aceito o formato `1234-5678-9012-345X`).\n"
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - dcterms:contributor
@@ -8546,7 +8542,9 @@ slots:
     name: Work_record_author
     definition_uri: https://tradicional.arq.br/schema/record_author
     description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha. Alterar\
-      \ apenas no caso de a ficha ter sido substancialmente reescrita.\n"
+      \ apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato\
+      \ `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente\
+      \ tamb\xE9m \xE9 aceito o formato `1234-5678-9012-345X`).\n"
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - dcterms:contributor
@@ -10804,6 +10802,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-11-04T17:28:47'
-source_file_size: 56771
+source_file_date: '2026-11-04T18:02:57'
+source_file_size: 56642
 
