@@ -74,7 +74,6 @@ classes:
     attributes:
 
       event_type:
-        alias: type
         range: EventType
         required: true
         description: >
@@ -116,7 +115,6 @@ classes:
         maximum_cardinality: 2
 
       event_place:
-        alias: place
         range: Site
         multivalued: true
         inlined_as_list: true
@@ -180,13 +178,11 @@ classes:
         description: >
           Define se o agente é uma pessoa, uma organização ou corporação,
           uma oficina, uma família, etc.
-        alias: type
         range: AgentType
         ifabsent: AgentType(personal)
 
       actor_name:
         description: Nome do agente extraído de um vocabulário controlado.
-        alias: name
         range: TypedReference
         inlined: true
 
@@ -200,14 +196,12 @@ classes:
           the [attribution qualifiers
           hierarchy](http://vocab.getty.edu/hier/aat/300404264) of the Art &
           Architecture Thesaurus, or another linked open vocabulary.
-        alias: qualifier
         range: TypedReference
         multivalued: true
         inlined_as_list: true
 
       actor_extent:
         description: Parte da obra sobre a qual o agente interveio.
-        alias: extent
         range: TypedReference
         multivalued: true
         inlined_as_list: true
@@ -223,7 +217,6 @@ classes:
       respetivos graus de confiabilidade e de precisão.
 
     comments:
-
       - ⚠️  Não temos padrão estabelecido para datas anteriores ao calendário
         gregoriano (1583), antes de Cristo, ou convertidas de outros
         calendários. Datas no calendário juliano podem ser expressadas
@@ -238,7 +231,6 @@ classes:
         específico para cada caso.
 
     notes:
-
       - A wrapper for the expression of a date by providing a set of years as
         earliest and latest date delimiting the respective span of time,
         usually given in the proleptic Gregorian calendar.
@@ -249,7 +241,6 @@ classes:
     attributes:
 
       date_type:
-        alias: type
         required: true
         range: DateType
         description: >
@@ -257,7 +248,6 @@ classes:
           A confiabilidade independe do grau de precisão da data.
 
       date_value:
-        alias: value
         range: date
         description: >
           Usar o formato ISO-8601 (AAAA-MM-DD).
@@ -271,7 +261,6 @@ classes:
     attributes:
 
       period_name_type:
-        alias: type
         range: PeriodNameType
         required: true
         # ifabsent: PeriodNameType(term:lido00731)
@@ -282,7 +271,6 @@ classes:
     attributes:
 
       event_name:
-        alias: name
         range: Event
         multivalued: true
         required: true

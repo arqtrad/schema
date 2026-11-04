@@ -2,8 +2,8 @@
 title: Fazenda Malhada Vermelha
 title_type: owner
 id: 684VRX8H+G8H
-record_date: &RECORD_DATE 2024-05-02
-author: &RECORD_AUTHOR "orcid:0009-0006-7479-6365"
+record_date: &RECORD_DATE "2024-05-02"
+author: "orcid:0009-0006-7479-6365"
 
 description: >
   Casa de morada de fazenda no sertão do Seridó potiguar, provavelmente datada
@@ -19,21 +19,21 @@ bibliographic_citation:
 
 identifiers:
   - refid: "https://fazendasserido.wixsite.com/fazendasserido/malhada-vermelha"
-    type: "uri"
+    refid_type: "uri"
     title: "Projeto de pesquisa Fazendas do Seridó"
     description: "Grupo de pesquisa MUsA — Morfologia e Usos da Arquitetura"
     source:
-      - type: "corporate"
-        weblink: "https://musaufrn.wixsite.com/musa"
-        title: "Universidade Federal do Rio Grande do Norte"
-        id: "doi:10.13039/501100008532"
-        identifiers:
-          - type: "uri"
-            refid: "isni:000000009687399X"
-            title: "ISNI"
-          - type: "uri"
-            refid: "wd:Q3847505"
-            title: "Wikidata"
+      legal_body_type: "corporate"
+      weblink: "https://musaufrn.wixsite.com/musa"
+      title: "Universidade Federal do Rio Grande do Norte"
+      id: "doi:10.13039/501100008532"
+      identifiers:
+        - refid_type: "uri"
+          refid: "isni:000000009687399X"
+          title: "ISNI"
+        - refid_type: "uri"
+          refid: "wd:Q3847505"
+          title: "Wikidata"
 
 work_type_condition:
 work_type_function:
@@ -42,7 +42,7 @@ work_type_material_tech:
 work_type_use:
 
 site:
-  type: "corporate"  # Porque o endereço é o nome próprio da fazenda.
+  site_type: "corporate"  # Porque o endereço é o nome próprio da fazenda.
   description: >
     Fazenda Malhada Vermelha
 
@@ -56,10 +56,10 @@ site:
     srs_name: "EPSG:4326"
     source:
       title: "Global Building Atlas LoD1"
-      type: "corporate"
+      legal_body_type: "corporate"
       id: "doi:10.14459/2025MP1782307"
   extent:
-    type: "Polygon"
+    geometry_type: "Polygon"
     coordinates: >-  # O caractere ">" indica que o conteúdo começa na linha seguinte, indentado em dois espaços. O caractere "-" faz o sistema desconsiderar as quebras de linha dentro do campo.
       [[
         [-36.6038005698465,-6.48776522907464],
@@ -70,60 +70,60 @@ site:
       ]]
     srs_name: "EPSG:4326"
     source:
-      type: "corporate"
+      legal_body_type: "corporate"
       title: "Global Building Atlas LoD1"
       id: "doi:10.14459/2025MP1782307"
 
 location_historic:  # A FAZER: Completar com referência a um vocabulário controlado.
-  - type: "geographic"
+  - legal_body_type: "geographic"
     title: "sertão do Seridó"  # Atenção: não é a mesma localidade "Seridó" cadastrada no Getty TGN.
 
 temporal:
-  - type: "production"
+  - event_type: "production"
     title: "Construção da casa da fazenda"
     description: "provavelmente segunda metade do século XIX"
     start_date:
-      - type: estimated
-        value: 1850-01-01
-      - type: estimated
-        value: 1899-12-31
+      - date_type: estimated
+        date_value: "1850-01-01"
+      - date_type: estimated
+        date_value: "1899-12-31"
     bibliographic_citation:
       - refid: "@feijo:2002arquitetura"
         note: "p. 16"
-  - type: "modification_activity"
+  - event_type: "modification_activity"
     title: "Substituição dos esteios em madeira por pilares de alvenaria"
     description: "século XIX ou XX"
     start_date:
-      - type: estimated
-        value: 1830-01-01
-      - type: estimated
-        value: 1999-12-31
+      - date_type: estimated
+        date_value: "1830-01-01"
+      - date_type: estimated
+        date_value: "1999-12-31"
     bibliographic_citation:
       - refid: "@feijo:2002arquitetura"
         note: "p. 85"
-  - type: "addition"
+  - event_type: "addition"
     title: "Construção dos contrafortes em alvenaria nas paredes laterais"
     description: "século XX"
     start_date:
-      - type: estimated
-        value: 1900-01-01
-      - type: estimated
-        value: 1999-12-31
+      - date_type: estimated
+        date_value: "1900-01-01"
+      - date_type: estimated
+        date_value: "1999-12-31"
     bibliographic_citation:
       - refid: "@feijo:2002arquitetura"
         note: "p. 85"
-  - type: "addition"
+  - event_type: "addition"
     title: Construção de um depósito no alpendre
     description: "século XX"
     start_date:
-      - type: estimated
-        value: 1950-01-01
-      - type: estimated
-        value: 1999-12-31
+      - date_type: estimated
+        date_value: "1950-01-01"
+      - date_type: estimated
+        date_value: "1999-12-31"
     bibliographic_citation:
       - refid: "@feijo:2002arquitetura"
         note: "p. 85"
-  - type: "condition_assessment"
+  - event_type: "condition_assessment"
     title: "Inventário da arquitetura rural na microrregião do Seridó"
     description: "1987"
     content: |
@@ -138,130 +138,133 @@ temporal:
     bibliographic_citation:
       - refid: "@feijo:2002arquitetura"
         note: "p. 1"
-  - type: "condition_assessment"
+  - event_type: "condition_assessment"
     start_date:
-      - type: exact
-        value: 1987-01-01
+      - date_type: exact
+        date_value: "1987-01-01"
     end_date:
-      - type: exact
-        value: 1987-12-31
+      - date_type: exact
+        date_value: "1987-12-31"
 
 measurements:
-  - type: proper
-    qualifier: derived
-    extent:
-      type: uri
+  - measurement_qualifier: derived
+    measurement_extent:
+      refid_type: "uri"
       refid: aat:300055621
       title: "área"
-    value: 126.0
+    measurement_value: 126.0
     unit:
-      type: uri
+      refid_type: "uri"
       refid: aat:300404401
       title: "metros quadrados"
 
 resources:
   - id: "BR-RN-ACARI-FAZ_MALHADA_VERMELHA-ARQTRAD-LVO-TER-DA-100"
     title: Planta do pavimento térreo
-    type: architecturalSurvey
+    resource_type: architecturalSurvey
     perspective: 1
     format: "image/vnd.dxf"
     unit:
-      type: "uri"
+      refid_type: "uri"
       refid: "aat:300379097"
       title: "milímetros"
-    provided_image: "https://desenho.tradicional.arq.br/br-rn-acari-faz_malhada_vermelha/BR-RN-ACARI-FAZ_MALHADA_VERMELHA-ARQTRAD-LVO-TER-DA-100.dxf"
+    provided_image:
+      - "https://desenho.tradicional.arq.br/br-rn-acari-faz_malhada_vermelha/BR-RN-ACARI-FAZ_MALHADA_VERMELHA-ARQTRAD-LVO-TER-DA-100.dxf"
     author: "orcid:0009-0006-7479-6365"
     record_date: *RECORD_DATE
   - id: "BR-RN-ACARI-FAZ_MALHADA_VERMELHA-ARQTRAD-LVO-SOB-DA-100"
     title: Planta do pavimento térreo
-    type: architecturalSurvey
+    resource_type: architecturalSurvey
     perspective: 1
     format: "image/vnd.dxf"
     unit:
-      type: "uri"
+      refid_type: "uri"
       refid: "aat:300379097"
       title: "milímetros"
-    provided_image: "https://desenho.tradicional.arq.br/br-rn-acari-faz_malhada_vermelha/BR-RN-ACARI-FAZ_MALHADA_VERMELHA-ARQTRAD-LVO-SOB-DA-100.dxf"
+    provided_image:
+      - "https://desenho.tradicional.arq.br/br-rn-acari-faz_malhada_vermelha/BR-RN-ACARI-FAZ_MALHADA_VERMELHA-ARQTRAD-LVO-SOB-DA-100.dxf"
     author: "orcid:0009-0006-7479-6365"
     record_date: *RECORD_DATE
   - id: "BR-RN-ACARI-FAZ_MALHADA_VERMELHA-ARQTRAD-LVO-F01-DA-100"
     title: Planta do pavimento térreo
-    type: architecturalSurvey
+    resource_type: architecturalSurvey
     perspective: 2
     format: "image/vnd.dxf"
     unit:
-      type: "uri"
+      refid_type: "uri"
       refid: "aat:300379097"
       title: "milímetros"
-    provided_image: "https://desenho.tradicional.arq.br/br-rn-acari-faz_malhada_vermelha/BR-RN-ACARI-FAZ_MALHADA_VERMELHA-ARQTRAD-LVO-F01-DA-100.dxf"
+    provided_image:
+      - "https://desenho.tradicional.arq.br/br-rn-acari-faz_malhada_vermelha/BR-RN-ACARI-FAZ_MALHADA_VERMELHA-ARQTRAD-LVO-F01-DA-100.dxf"
     author: "orcid:0009-0006-7479-6365"
     record_date: *RECORD_DATE
   - id: "BR-RN-ACARI-FAZ_MALHADA_VERMELHA-ARQTRAD-LVO-C01-DA-100"
     title: Planta do pavimento térreo
-    type: architecturalSurvey
+    resource_type: architecturalSurvey
     perspective: 3
     format: "image/vnd.dxf"
     unit:
-      type: "uri"
+      refid_type: "uri"
       refid: "aat:300379097"
       title: "milímetros"
-    provided_image: "https://desenho.tradicional.arq.br/br-rn-acari-faz_malhada_vermelha/BR-RN-ACARI-FAZ_MALHADA_VERMELHA-ARQTRAD-LVO-C01-DA-100.dxf"
+    provided_image:
+      - "https://desenho.tradicional.arq.br/br-rn-acari-faz_malhada_vermelha/BR-RN-ACARI-FAZ_MALHADA_VERMELHA-ARQTRAD-LVO-C01-DA-100.dxf"
     author: "orcid:0009-0006-7479-6365"
     record_date: *RECORD_DATE
 
 media:
 
 work_rights:
-  - type: "specific"
+  - rights_type: "specific"
     statement:
-      type: "uri"
+      refid_type: "uri"
       refid: "https://rightsstatements.org/vocab/NKC/1.0/"
       title: "Sem direito autoral conhecido"
 
 record_rights:
-  - type: "specific"
+  - rights_type: "specific"
     statement:
-      type: "uri"
+      refid_type: "uri"
       refid: "https://creativecommons.org/licenses/by-sa/4.0/"
       title: "Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0)"
-    start_date:
-      - type: exact
-        value: *RECORD_DATE  # Repete a data informada acima.
+    earliest_date:
+      date_type: exact
+      date_value: *RECORD_DATE  # Repete a data informada acima.
     holder:
       id: "doi:10.13039/100008994"
       title: "Fundação Universidade de Brasília"
-      type: "corporate"
+      legal_body_type: "corporate"
       weblink: "https://vereda.unb.br"
       identifiers:
         - refid: "isni:0000000122385157"
-          type: "uri"
+          refid_type: "uri"
           title: "ISNI"
         - refid: "wd:Q1330634"
-          type: "uri"
+          refid_type: "uri"
           title: "Wikidata"
-  - type: "specific"
+  - rights_type: "specific"
     statement:
-      type: "uri"
+      refid_type: "uri"
       refid: "https://creativecommons.org/licenses/by-sa/4.0/"
       title: "Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0)"
-    start_date:
-      - type: exact
-        value: 2025-11-24
-    end_date:
-      - type: exact
-        value: 2028-11-30
+    earliest_date:
+      date_type: exact
+      date_value: "2025-11-24"
+    latest_date:
+      date_type: exact
+      date_value: "2028-11-30"
     holder:
       id: "doi:10.13039/501100003593"
       title: >
         CNPq - Conselho Nacional de Desenvolvimento Científico e Tecnológico
       description: "Termo de outorga 406601/2025-9"
-      type: "corporate"
+      legal_body_type: "corporate"
       weblink: "https://cnpq.br"
       identifiers:
         - refid: "isni:0000000121892026"
-          type: "uri"
+          refid_type: "uri"
         - refid: "wd:Q2994429"
-          type: "uri"
+          refid_type: "uri"
           title: "Wikidata"
 content: |
   > Mantém as características mais representativas de sua fábrica original,

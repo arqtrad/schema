@@ -82,45 +82,6 @@ classes:
         multivalued: true
         inlined_as_list: true
 
-      identifiers:
-        range: TypedReference
-        multivalued: true
-        inlined_as_list: true
-        description: >
-          Números de inventário e demais códigos que identificam este objeto
-          em outras bases de dados.
-
-          Caso esta edificação esteja cadastrada em outras bases de dados (por
-          exemplo, [SICG], [SIPA], [HPIP], [iPatrimonio], etc.), pode preencher
-          a lista `identifiers` como segue.
-
-          :clipboard:
-          O conteúdo de cada bloco é uma lista recuada em dois espaços com
-          respeito à categoria superior.
-          Seus itens são :
-
-          * `type` é o tipo de referência : pode ser `uri` (padrão), `iri` ou
-            `local` — se estiver em dúvida, omita esta linha ;
-
-          * `refid` é obrigatório : representa o identificador do conceito no
-            vocabulário controlado ou no repositório de origem — normalmente
-            será uma URI (um link para a página web do cadastro) ;
-
-          * `description` deve ser usado para representar textualmente
-            o número de inventário, código identificador ou outra informação
-            que individualize o objeto na base externa (por exemplo, livro do
-            tombo e número do processo de tombamento, no Brasil) ;
-
-          * `bibliographic_citation` é opcional e permite citar uma lista de
-            referências bibliográficas que validem a inclusão deste termo.
-
-          * `source` também é opcional e permite cadastrar os dados da pessoa
-            jurídica responsável pelo registro.
-
-          ---------------------------------------------------------------------
-
-          Published or external identifiers for the object.
-
       tags:
         range: string
         multivalued: true
@@ -175,10 +136,11 @@ classes:
     slots:
       - title
       - id
-      - record_author
+      - author
       - record_date
       - description
       - category
+      - identifiers
       - bibliographic_citation
       - content
 
@@ -191,15 +153,13 @@ classes:
         description: Nome ou título (texto sem formatação).
 
       appellation_preference:
-        alias: label_type
         range: LabelType
         ifabsent: LabelType(alternative)
         description: >-
           Indica se o nome em questão deve ser oculto ou não, se é uma versão
           alternativa ou uma variante de grafia, etc.
 
-      appellation_type:
-        alias: title_type
+      title_type:
         range: TitleType
         ifabsent: TitleType(descriptive)
         description: >
@@ -242,8 +202,7 @@ slots:
     description: >
       Identificador globalmente único para este objeto ou recurso.
 
-  record_author:
-    alias: author
+  author:
     range: OrcidId
     slot_uri: dcterms:contributor
     description: >
@@ -279,14 +238,48 @@ slots:
 
       Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE
       com `term:lido01193` ("Objeto conceitual").
-
-
     notes:
-
       - The LIDO Category Vocabulary is a structured controlled list of terms
         recommended to use as values in the LIDO Category element.
 
         Examples are human-made object or natural object.
+
+  identifiers:
+    range: TypedReference
+    multivalued: true
+    inlined_as_list: true
+    description: >
+      Números de inventário e demais códigos que identificam este objeto
+      em outras bases de dados.
+
+      Caso esta edificação esteja cadastrada em outras bases de dados (por
+      exemplo, [SICG], [SIPA], [HPIP], [iPatrimonio], etc.), pode preencher
+      a lista `identifiers` como segue.
+
+      :clipboard:
+      O conteúdo de cada bloco é uma lista recuada em dois espaços com
+      respeito à categoria superior.
+      Seus itens são :
+
+      * `type` é o tipo de referência : pode ser `uri` (padrão), `iri` ou
+        `local` — se estiver em dúvida, omita esta linha ;
+
+      * `refid` é obrigatório : representa o identificador do conceito no
+        vocabulário controlado ou no repositório de origem — normalmente
+        será uma URI (um link para a página web do cadastro) ;
+
+      * `description` deve ser usado para representar textualmente
+        o número de inventário, código identificador ou outra informação
+        que individualize o objeto na base externa (por exemplo, livro do
+        tombo e número do processo de tombamento, no Brasil) ;
+
+      * `bibliographic_citation` é opcional e permite citar uma lista de
+        referências bibliográficas que validem a inclusão deste termo.
+
+      * `source` também é opcional e permite cadastrar os dados da pessoa
+        jurídica responsável pelo registro.
+    notes:
+      - Published or external identifiers for the object.
 
   record_rights:
     range: Right

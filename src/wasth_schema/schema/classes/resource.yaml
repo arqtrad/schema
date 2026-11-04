@@ -99,7 +99,6 @@ classes:
     attributes:
       relation_type:
         slot_uri: lido:relatedWorkRelType
-        alias: rel_type
         range: RelatedWorkRelType
         required: true
         # ifabsent: RelationType(planFor)
@@ -119,9 +118,8 @@ classes:
       intelectual.
 
     attributes:
-      larger_context_type:
+      context_type:
         slot_uri: lido:relatedWorkRelType
-        alias: type
         range: LargerContextType
         required: true
         description: O tipo de relação entre os objetos.
@@ -160,7 +158,6 @@ classes:
 
       resource_type:
         slot_uri: lido:relatedWorkRelType
-        alias: type
         range: ResourceType
         required: true
         description: >
@@ -327,8 +324,7 @@ slots:
   resources:
     range: Resource
     multivalued: true
-    inlined: true
-    inlined_as_list: false
+    inlined_as_list: true
     description: >
       Os desenhos ou modelos da edificação são apresentados online por meio de
       imagens vetoriais ou bitmap.
@@ -372,7 +368,6 @@ slots:
     description: Modelo tridimensional ou IFC da edificação.
 
   resource_service:
-    alias: service
     range: uriorcurie
     multivalued: true
     inlined_as_list: true

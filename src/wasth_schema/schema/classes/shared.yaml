@@ -23,7 +23,6 @@ classes:
       código na base local (não recomendado).
 
     notes:
-
       - Reference to a local record, IRI, URI, or LIDO terminology term.
 
     slot_usage:
@@ -33,7 +32,6 @@ classes:
     slots:
       - refid_type
       - refid
-      - lido_term
       - title
       - description
       - bibliographic_citation
@@ -116,9 +114,15 @@ classes:
     attributes:
 
       measurement_type:
-        alias: type
         range: MeasurementType
         ifabsent: MeasurementType(proper)
+        description: >
+          O tipo de medida pode se referir ao objeto propriamente dito `proper`
+          ou a um requisito para a sua conservação ou uso, `requirement`.
+
+      measurement_extent:
+        range: TypedReference
+        inlined: true
         description: >
           designa a natureza da medida : largura, altura,
           área, etc. — usar um dos [tipos de dimensões
@@ -127,21 +131,18 @@ classes:
           não tivermos um vocabulário controlado próprio.
 
       measurement_value:
-        alias: value
         required: true
         range: float
         minimum_value: 0
         description: Valor numérico, usar ponto como separador decimal.
 
       measurement_qualifier:
-        alias: qualifier
         range: MeasurementQualifier
         ifabsent: MeasurementQualifier(derived)
         description: >
           Indica o grau de confiabilidade das medidas.
 
       measurement_shape:
-        alias: shape
         range: TypedReference
         description: >
           caso relevante, indicar a forma do elemento medido
@@ -150,7 +151,6 @@ classes:
           enquanto não tivermos um vocabulário controlado próprio.
 
       measurement_event:
-        alias: event
         range: Event
         inlined: false
         description: >
@@ -175,7 +175,6 @@ classes:
           Tipo da referência a um material ou técnica usado na obra:
           material de construção (support), revestimento (medium), técnica,
           instrumento, cor, etc.
-        alias: type
         range: MaterialTechType
         required: true
 
@@ -192,7 +191,6 @@ classes:
     attributes:
 
       rights_type:
-        alias: type
         required: true
         range: RightsType
         description: >
@@ -204,7 +202,10 @@ classes:
             specific rights or license statement, for instance, Rights
             Statements or Creative Commons Licenses.
 
-      rights_statement:
+      statement:
+        required: true
+        range: TypedReference
+        inlined: true
         description: |
           Referencia, preferencialmente por meio de uma URI, as informações
           específicas dos direitos autorais incidentes sobre o item descrito.
@@ -220,18 +221,13 @@ classes:
             refer to a generic kind of right, such as copyright or a related
             right, but also be a specific rights or license statement like a
             standardized statement on copyright, usage, or access rights.
-        required: true
-        range: TypedReference
-        inlined: true
 
-      rights_start_date:
-        alias: start_date
+      earliest_date:
         description: Date on which a right is or was current.
         range: EventDate
         inlined: true
 
-      rights_end_date:
-        alias: end_date
+      latest_date:
         description: Date on which a right is or will be no longer current.
         range: EventDate
         inlined: true
@@ -243,7 +239,6 @@ classes:
           copyright and related rights, such as the right to reproduce,
           distribute, exhibit or use the entity in focus, for example, the
           object/work, resource or metadata record.
-        alias: holder
         range: LegalBody
         inlined: true
 
@@ -256,15 +251,13 @@ classes:
     attributes:
 
       legal_body_type:
-        alias: type
         range: RepositoryType
         ifabsent: RepositoryType(corporate)
         description: >
           Define a natureza do ente legal : pessoa jurídica, perímetro
           geográfico de tutela, etc.
 
-      legal_body_weblink:
-        alias: weblink
+      weblink:
         range: uriorcurie
         description: Link para uma página descritiva da entidade.
 
@@ -278,7 +271,6 @@ classes:
 slots:
 
   refid_type:
-    alias: type
     range: ReferenceType
     ifabsent: ReferenceType(uri)
 
@@ -288,12 +280,6 @@ slots:
     exact_mappings:
       - schema:identifier
     description: Local or external identifier.
-
-  lido_term:
-    alias: term
-    range: uriorcurie
-    pattern: '^http://terminology\.lido-schema\.org/lido[0-9]{5}$'
-    description: LIDO terminology term.
 
   measurements:
     range: Measurement
@@ -429,8 +415,7 @@ slots:
 
   source:
     range: LegalBody
-    multivalued: true
-    inlined_as_list: true
+    inlined: true
 
   rights:
     range: Right

@@ -304,7 +304,6 @@ classes:
 
       part_of:
         slot_uri: dcterms:isPartOf
-        alias: name
         range: LargerContextReference
         multivalued: true
         inlined_as_list: true
@@ -346,7 +345,6 @@ classes:
           seja porque foi deslocada ou demolida.
 
       intended_site:
-        alias: intended
         range: Site
         multivalued: true
         inlined_as_list: true
@@ -355,7 +353,6 @@ classes:
           chegou a ser construída.
 
       other_site:
-        alias: other
         range: Site
         multivalued: true
         inlined_as_list: true
@@ -512,7 +509,7 @@ classes:
       title:
         required: true
 
-      record_author:
+      author:
         required: true
 
       record_date:
@@ -624,6 +621,7 @@ classes:
       - culture
       - resources
       - media
+      - work_rights
       - record_rights
 
 
@@ -688,7 +686,6 @@ classes:
             nation to which a city belongs.
 
       site_type:
-        alias: type
         range: RepositoryType
         ifabsent: RepositoryType(geographic)
         description: >
@@ -800,7 +797,6 @@ classes:
 
       geometry_type:
         description: Tipo da geometria descrita pelas coordenadas.
-        alias: type
         required: true
         range: GeometryType
 
@@ -832,11 +828,7 @@ classes:
       qual eles são aplicados.
 
     attributes:
-      # category:
-      #   alias: type
-      #   (The above requires a uriorcurie, not a string)
       inscription_type:
-        alias: type
         required: true
         range: InscriptionType
         ifabsent: string(text)
@@ -854,7 +846,6 @@ classes:
 
     attributes:
       topic_type:
-        alias: type
         required: true
         range: SubjectType
         description: >
@@ -873,7 +864,6 @@ classes:
     is_a: Thing
     attributes:
       collection_type:
-        alias: type
         range: CollectionType
         required: true
         description: >-
