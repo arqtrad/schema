@@ -179,7 +179,6 @@ classes:
       - record_date
       - description
       - category
-      - record_rights
       - bibliographic_citation
       - content
 

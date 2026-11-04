@@ -91,6 +91,7 @@ classes:
     slots:
       - broader
       - narrower
+      - record_rights
 
 
   ConceptReference:

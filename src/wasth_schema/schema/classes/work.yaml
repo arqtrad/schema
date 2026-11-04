@@ -624,6 +624,7 @@ classes:
       - culture
       - resources
       - media
+      - record_rights
 
 
   Site:
@@ -717,11 +718,9 @@ classes:
           Área da implantação da edificação ou sítio cadastrado.
           Usar o sistema de coordenadas geográficas EPSG:4326 (WGS84) sempre
           que possível.
-
-          ---------------------------------------------------------------------
-
-          Polygonal, multipolygonal, or linear geographic extent associated
-          with the place.
+        notes:
+          - Polygonal, multipolygonal, or linear geographic extent associated
+            with the place.
 
       event_place_type:
         range: EventPlaceType
