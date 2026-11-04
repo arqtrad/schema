@@ -388,7 +388,7 @@ slots:
   format:
     slot_uri: dcterms:format
     required: true
-    range: TypedReference
+    range: string
     inlined: true
     description: >
       Campo disciplinado pela especificação [DublinCore] no campo
