@@ -250,7 +250,8 @@ classes:
       date_value:
         range: date
         description: >
-          Usar o formato ISO-8601 (AAAA-MM-DD).
+          Usar o formato ISO-8601 entre aspas `"AAAA-MM-DD"`.
+
           Para datas imprecisas, usar o PRIMEIRO ou o ÚLTIMO dia, mês ou ano do
           período delimitado, conforme se tratar de uma data de corte inicial
           ou final para o evento, e descrever verbalmente o período no campo
