@@ -244,10 +244,20 @@ classes:
 
   LegalBody:
     is_a: Thing
+    class_uri: schema:Organization
+    close_mappings:
+      - crm:E39_Actor
     description: >
       Referência a uma pessoa jurídica (pode ser um indivíduo detentor de
       direitos jurídicos específicos que se queira referenciar) ou entidade
       coletiva histórica.
+    notes:
+      - This class comprises people, either individually or in groups, who have
+        the potential to perform intentional actions of kinds for which they
+        can be held responsible.
+      - O schema.org prevê um atributo `fundedItem` (do tipo `Grant`) para
+        uma `Organization`.
+
     attributes:
 
       legal_body_type:
@@ -266,6 +276,9 @@ classes:
         description: >
           Referencia a identidade do ente legal num vocabulário controlado ou
           repositório de identidades, tal como o ISNI.
+
+      category:
+        ifabsent: string(term:lido00413)
 
 
 slots:

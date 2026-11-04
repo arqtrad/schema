@@ -519,7 +519,7 @@ classes:
         required: true
 
       category:
-        ifabsent: string(http://terminology.lido-schema.org/lido00096)
+        ifabsent: string(term:lido00096)
 
 
       resources:
