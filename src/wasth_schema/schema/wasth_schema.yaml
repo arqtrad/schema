@@ -1431,23 +1431,15 @@ types:
     maximum_value: 180
 
   OrcidId:
-    description: >-
-      ORCID iD, sem o prefixo https://orcid.org/.
+    description: |
+      ORCID iD, no formato `orcid:1234-5678-9012-345X` ou
+      `https://orcid.org/1234-5678-9012-345X`.
     uri: xsd:string
     base: str
-    pattern: '^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$'
+    pattern: '^(?:https?://orcid\.org/|orcid:)?\d{4}-\d{4}-\d{4}-\d{3}[\dX]$'
 
   OlcPlusCode11:
     description: Open Location Code (Plus Code) com resolução de 11 dígitos.
     uri: xsd:string
     base: str
     pattern: '^([2-9CFGHJMPQRVWX]{8})\+([2-9CFGHJMPQRVWX]{3})$'
-
-  GeonamesId:
-    description: >-
-      Identificador de lugar no GeoNames, na forma de um CURIE
-      `geonames:1234`.
-    uri: xsd:anyURI
-    base: str
-    pattern: '^geonames:[0-9]+$'
-    repr: str

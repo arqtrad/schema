@@ -251,6 +251,9 @@ slots:
       ORCID iD da pessoa que escreveu a versão original da ficha.
       Alterar apenas no caso de a ficha ter sido substancialmente
       reescrita.
+      Usar o formato `orcid:1234-5678-9012-345X` ou
+      `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito
+      o formato `1234-5678-9012-345X`).
 
   record_date:
     range: date
