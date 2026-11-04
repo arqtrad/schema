@@ -347,7 +347,6 @@ slots:
       incorporated in the fabrication or alteration of the work or image.
 
   format_extent:
-    alias: extent
     range: TypedReference
     inlined: true
     description: >

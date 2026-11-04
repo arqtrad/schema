@@ -4023,7 +4023,7 @@ class BroaderConceptReference(ConceptReference):
         {"from_schema": "https://tradicional.arq.br/schema/concept"}
     )
 
-    match: SkosBroaderRelation = Field(
+    broader_match: SkosBroaderRelation = Field(
         default=...,
         description="""Tipo da relação.""",
         json_schema_extra={"linkml_meta": {"domain_of": ["BroaderConceptReference"]}},
@@ -4088,7 +4088,7 @@ class NarrowerConceptReference(ConceptReference):
         {"from_schema": "https://tradicional.arq.br/schema/concept"}
     )
 
-    match: SkosNarrowerRelation = Field(
+    narrower_match: SkosNarrowerRelation = Field(
         default=...,
         description="""Tipo da relação.""",
         json_schema_extra={"linkml_meta": {"domain_of": ["NarrowerConceptReference"]}},
@@ -4153,7 +4153,7 @@ class MappingConceptReference(ConceptReference):
         {"from_schema": "https://tradicional.arq.br/schema/concept"}
     )
 
-    match: SkosMappingRelation = Field(
+    mapping_match: SkosMappingRelation = Field(
         default=...,
         description="""Tipo da relação.""",
         json_schema_extra={"linkml_meta": {"domain_of": ["MappingConceptReference"]}},
@@ -4449,7 +4449,7 @@ class Measurement(ConfiguredBaseModel):
             }
         },
     )
-    extent: Optional[TypedReference] = Field(
+    format_extent: Optional[TypedReference] = Field(
         default=None,
         description="""Indica a parte do objeto que está sendo medida — por exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc. — usar a `uri` de um vocabulário controlado.
 """,
@@ -6469,7 +6469,7 @@ No caso de `preview_image` ou `provided_image`, o link deve referenciar diretame
         description="""Informação sobre autoria ou responsabilidade.""",
         json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
     )
-    type: DepictionType = Field(
+    depiction_type: DepictionType = Field(
         default=...,
         description="""O tipo de representação que a mídia contém. A edificação descrita na ficha é sempre o sujeito da relação.
 """,
@@ -8817,7 +8817,7 @@ class Inscription(ConfiguredBaseModel):
         {"from_schema": "https://tradicional.arq.br/schema/work"}
     )
 
-    extent: Optional[TypedReference] = Field(
+    format_extent: Optional[TypedReference] = Field(
         default=None,
         description="""Indica a parte do objeto que está sendo medida — por exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc. — usar a `uri` de um vocabulário controlado.
 """,
@@ -8923,7 +8923,7 @@ class Topic(ConfiguredBaseModel):
             }
         },
     )
-    extent: Optional[TypedReference] = Field(
+    format_extent: Optional[TypedReference] = Field(
         default=None,
         description="""Indica a parte do objeto que está sendo medida — por exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc. — usar a `uri` de um vocabulário controlado.
 """,

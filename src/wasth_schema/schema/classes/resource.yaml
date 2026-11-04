@@ -30,9 +30,9 @@ classes:
 
     attributes:
 
-      citation_refid:
+      citekey:
         alias: refid
-        identifier: true
+        key: true
         range: CslCitekey
         description: >
           Se a fonte for cadastrada, o campo `refid` deve conter a chave de
@@ -252,7 +252,6 @@ classes:
     attributes:
       depiction_type:
         slot_uri: lido:relatedWorkRelType
-        alias: type
         range: DepictionType
         required: true
         description: >
