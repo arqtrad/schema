@@ -307,6 +307,8 @@
 
 
 
+      LegalBody : author
+
       LegalBody : bibliographic_citation
 
 
@@ -348,10 +350,6 @@
 
 
 
-      LegalBody : legal_body_weblink
-
-      LegalBody : record_author
-
       LegalBody : record_date
 
       LegalBody : repositories
@@ -391,6 +389,8 @@
 
 
 
+      LegalBody : weblink
+
 </code></pre>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
@@ -417,7 +417,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../legal_body_weblink/">legal_body_weblink</a></td>
+<td><a href="../weblink/">weblink</a></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>Link para uma página descritiva da entidade</td>
 <td>direct</td>
@@ -435,7 +435,7 @@
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
-<td><a href="../record_author/">record_author</a></td>
+<td><a href="../author/">author</a></td>
 <td>0..1 <br/> <a href="../OrcidId/">OrcidId</a></td>
 <td>ORCID iD da pessoa que escreveu a versão original da ficha</td>
 <td><a href="../Thing/">Thing</a></td>
@@ -456,6 +456,12 @@
 <td><a href="../category/">category</a></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário...</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
+<td><a href="../identifiers/">identifiers</a></td>
+<td>* <br/> <a href="../TypedReference/">TypedReference</a></td>
+<td>Referencia a identidade do ente legal num vocabulário controlado ou repositór...</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -480,12 +486,6 @@
 <td><a href="../alt_name/">alt_name</a></td>
 <td>* <br/> <a href="../Appellation/">Appellation</a></td>
 <td>O bloco <code>alt_name</code> permite cadastrar outros nomes pelos quais o objeto ou con...</td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
-<td><a href="../identifiers/">identifiers</a></td>
-<td>* <br/> <a href="../TypedReference/">TypedReference</a></td>
-<td>Referencia a identidade do ente legal num vocabulário controlado ou repositór...</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -609,16 +609,14 @@
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RepositoryType(corporate)</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RepositoryType</span>
-<span class="w">  </span><span class="nt">legal_body_weblink</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">legal_body_weblink</span>
+<span class="w">  </span><span class="nt">weblink</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">weblink</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Link para uma página descritiva da entidade.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">weblink</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
@@ -650,17 +648,15 @@
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RepositoryType(corporate)</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RepositoryType</span>
-<span class="w">  </span><span class="nt">legal_body_weblink</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">legal_body_weblink</span>
+<span class="w">  </span><span class="nt">weblink</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">weblink</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Link para uma página descritiva da entidade.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">weblink</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
@@ -693,8 +689,8 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
-<span class="w">  </span><span class="nt">record_author</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_author</span>
+<span class="w">  </span><span class="nt">author</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">author</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'ORCID</span><span class="nv"> </span><span class="s">iD</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">pessoa</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">escreveu</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">versão</span><span class="nv"> </span><span class="s">original</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha.</span><span class="nv"> </span><span class="s">Alterar</span>
 <span class="w">      </span><span class="s">apenas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">ter</span><span class="nv"> </span><span class="s">sido</span><span class="nv"> </span><span class="s">substancialmente</span><span class="nv"> </span><span class="s">reescrita.</span><span class="nv"> </span><span class="s">Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span>
 <span class="w">      </span><span class="s">`orcid:1234-5678-9012-345X`</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">`https://orcid.org/1234-5678-9012-345X`</span><span class="nv"> </span><span class="s">(temporariamente</span>
@@ -704,7 +700,6 @@
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:contributor</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">author</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
@@ -763,6 +758,23 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
+<span class="w">  </span><span class="nt">identifiers</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">identifiers</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Referencia</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">identidade</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">ente</span><span class="nv"> </span><span class="s">legal</span><span class="nv"> </span><span class="s">num</span><span class="nv"> </span><span class="s">vocabulário</span><span class="nv"> </span><span class="s">controlado</span>
+<span class="w">      </span><span class="s">ou</span><span class="nv"> </span><span class="s">repositório</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">identidades,</span><span class="nv"> </span><span class="s">tal</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">ISNI.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">notes</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Published or external identifiers for the object.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">bibliographic_citation</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'📚</span><span class="nv">  </span><span class="s">Cadastro</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">bibliográfica.</span>
@@ -842,21 +854,6 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">identifiers</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">identifiers</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Referencia</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">identidade</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">ente</span><span class="nv"> </span><span class="s">legal</span><span class="nv"> </span><span class="s">num</span><span class="nv"> </span><span class="s">vocabulário</span><span class="nv"> </span><span class="s">controlado</span>
-<span class="w">      </span><span class="s">ou</span><span class="nv"> </span><span class="s">repositório</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">identidades,</span><span class="nv"> </span><span class="s">tal</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">ISNI.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

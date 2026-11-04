@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/rights_statement/">
+        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/measurement_extent/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: rights_statement - wasth_schema</title>
+        <title>Slot: measurement_extent - wasth_schema</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-rights_statement" class="md-skip">
+        <a href="#slot-measurement_extent" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: rights_statement
+              Slot: measurement_extent
             
           </span>
         </div>
@@ -398,30 +398,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#slot-characteristics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slot Characteristics
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
   
 </li>
       
@@ -496,19 +474,11 @@
   
 
 
-<h1 id="slot-rights_statement">Slot: rights_statement</h1>
-<p><em>Referencia, preferencialmente por meio de uma URI, as informações</em></p>
-<p><em>específicas dos direitos autorais incidentes sobre o item descrito.</em></p>
-<p>__</p>
-<p><em>Por padrão, as casas tradicionais pertencem ao domínio público até</em></p>
-<p><em>prova em contrário.</em></p>
-<p><em>Essa informação e a declaração de direitos NKC (Sem direito autoral</em></p>
-<p><em>conhecido) NÃO PODE ser omitida da ficha.</em></p>
-<p><em>Para o domínio público, portanto, indicar a referência :</em></p>
-<p><em><a href="https://rightsstatements.org/vocab/NKC/1.0/">https://rightsstatements.org/vocab/NKC/1.0/</a>.</em></p>
+<h1 id="slot-measurement_extent">Slot: measurement_extent</h1>
+<p><em>designa a natureza da medida : largura, altura, área, etc. — usar um dos <a href="https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300226820">tipos de dimensões </a> do Art and Architecture Thesaurus do Instituto Getty (AAT), enquanto não tivermos um vocabulário controlado próprio.</em></p>
 <p>__</p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/rights_statement">wasth:rights_statement</a></p>
+<p>URI: <a href="https://tradicional.arq.br/schema/measurement_extent">wasth:measurement_extent</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -521,8 +491,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Right/">Right</a></td>
-<td>* Preencher <code>earliest_date</code> com a data de início da vigência dos</td>
+<td><a href="../Measurement/">Measurement</a></td>
+<td>Informações estruturadas sobre as dimensões do objeto ou requisitos de condic...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -543,10 +513,10 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Right/">Right</a></td>
+<td><a href="../Measurement/">Measurement</a></td>
 </tr>
 <tr>
-<td>### Cardinality and Requirements</td>
+<td>### Slot Characteristics</td>
 <td></td>
 </tr>
 </tbody>
@@ -560,30 +530,11 @@
 </thead>
 <tbody>
 <tr>
-<td>Required</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
-<h3 id="slot-characteristics">Slot Characteristics</h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
 <td>Owner</td>
-<td><a href="../Right/">Right</a></td>
+<td><a href="../Measurement/">Measurement</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="notes">Notes</h2>
-<ul>
-<li>An index element for rights information being recorded. This can refer to a generic kind of right, such as copyright or a related right, but also be a specific rights or license statement like a standardized statement on copyright, usage, or access rights.</li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -600,47 +551,29 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:rights_statement</td>
+<td>wasth:measurement_extent</td>
 </tr>
 <tr>
 <td>native</td>
-<td>wasth:rights_statement</td>
+<td>wasth:measurement_extent</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rights_statement</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Referencia,</span><span class="nv"> </span><span class="s">preferencialmente</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">URI,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">informações</span>
-
-<span class="w">  </span><span class="s">específicas</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">autorais</span><span class="nv"> </span><span class="s">incidentes</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">descrito.</span>
-
-
-<span class="w">  </span><span class="s">Por</span><span class="nv"> </span><span class="s">padrão,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">casas</span><span class="nv"> </span><span class="s">tradicionais</span><span class="nv"> </span><span class="s">pertencem</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">domínio</span><span class="nv"> </span><span class="s">público</span><span class="nv"> </span><span class="s">até</span>
-
-<span class="w">  </span><span class="s">prova</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">contrário.</span>
-
-<span class="w">  </span><span class="s">Essa</span><span class="nv"> </span><span class="s">informação</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">declaração</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">NKC</span><span class="nv"> </span><span class="s">(Sem</span><span class="nv"> </span><span class="s">direito</span><span class="nv"> </span><span class="s">autoral</span>
-
-<span class="w">  </span><span class="s">conhecido)</span><span class="nv"> </span><span class="s">NÃO</span><span class="nv"> </span><span class="s">PODE</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">omitida</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha.</span>
-
-<span class="w">  </span><span class="s">Para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">domínio</span><span class="nv"> </span><span class="s">público,</span><span class="nv"> </span><span class="s">portanto,</span><span class="nv"> </span><span class="s">indicar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">referência</span><span class="err"> </span><span class="s">:</span>
-
-<span class="w">  </span><span class="s">&lt;https://rightsstatements.org/vocab/NKC/1.0/&gt;.</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_extent</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'designa</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">natureza</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">medida</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">largura,</span><span class="nv"> </span><span class="s">altura,</span><span class="nv"> </span><span class="s">área,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">usar</span><span class="nv"> </span><span class="s">um</span>
+<span class="w">  </span><span class="s">dos</span><span class="nv"> </span><span class="s">[tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">dimensões</span><span class="nv"> </span><span class="s">](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300226820)</span>
+<span class="w">  </span><span class="s">do</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Architecture</span><span class="nv"> </span><span class="s">Thesaurus</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">Instituto</span><span class="nv"> </span><span class="s">Getty</span><span class="nv"> </span><span class="s">(AAT),</span><span class="nv"> </span><span class="s">enquanto</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">tivermos</span>
+<span class="w">  </span><span class="s">um</span><span class="nv"> </span><span class="s">vocabulário</span><span class="nv"> </span><span class="s">controlado</span><span class="nv"> </span><span class="s">próprio.</span>
 
 <span class="w">  </span><span class="s">'</span>
-<span class="nt">notes</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An index element for rights information being recorded. This can refer to a generic</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">kind of right, such as copyright or a related right, but also be a specific rights</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">or license statement like a standardized statement on copyright, usage, or access</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">rights.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>

@@ -417,11 +417,11 @@
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
-         <loc>https://tradicional.arq.br/schema/elements/appellation_type/</loc>
+         <loc>https://tradicional.arq.br/schema/elements/asciiname/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
-         <loc>https://tradicional.arq.br/schema/elements/asciiname/</loc>
+         <loc>https://tradicional.arq.br/schema/elements/author/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
@@ -489,6 +489,10 @@
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
+         <loc>https://tradicional.arq.br/schema/elements/context_type/</loc>
+         <lastmod>2026-11-04</lastmod>
+    </url>
+    <url>
          <loc>https://tradicional.arq.br/schema/elements/coordinates/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
@@ -522,6 +526,10 @@
     </url>
     <url>
          <loc>https://tradicional.arq.br/schema/elements/description/</loc>
+         <lastmod>2026-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://tradicional.arq.br/schema/elements/earliest_date/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
@@ -609,11 +617,11 @@
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
-         <loc>https://tradicional.arq.br/schema/elements/larger_context_type/</loc>
+         <loc>https://tradicional.arq.br/schema/elements/lat/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
-         <loc>https://tradicional.arq.br/schema/elements/lat/</loc>
+         <loc>https://tradicional.arq.br/schema/elements/latest_date/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
@@ -626,14 +634,6 @@
     </url>
     <url>
          <loc>https://tradicional.arq.br/schema/elements/legal_body_type/</loc>
-         <lastmod>2026-11-04</lastmod>
-    </url>
-    <url>
-         <loc>https://tradicional.arq.br/schema/elements/legal_body_weblink/</loc>
-         <lastmod>2026-11-04</lastmod>
-    </url>
-    <url>
-         <loc>https://tradicional.arq.br/schema/elements/lido_term/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
@@ -670,6 +670,10 @@
     </url>
     <url>
          <loc>https://tradicional.arq.br/schema/elements/measurement_event/</loc>
+         <lastmod>2026-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://tradicional.arq.br/schema/elements/measurement_extent/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
@@ -757,10 +761,6 @@
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
-         <loc>https://tradicional.arq.br/schema/elements/record_author/</loc>
-         <lastmod>2026-11-04</lastmod>
-    </url>
-    <url>
          <loc>https://tradicional.arq.br/schema/elements/record_date/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
@@ -817,18 +817,6 @@
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
-         <loc>https://tradicional.arq.br/schema/elements/rights_end_date/</loc>
-         <lastmod>2026-11-04</lastmod>
-    </url>
-    <url>
-         <loc>https://tradicional.arq.br/schema/elements/rights_start_date/</loc>
-         <lastmod>2026-11-04</lastmod>
-    </url>
-    <url>
-         <loc>https://tradicional.arq.br/schema/elements/rights_statement/</loc>
-         <lastmod>2026-11-04</lastmod>
-    </url>
-    <url>
          <loc>https://tradicional.arq.br/schema/elements/rights_type/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
@@ -858,6 +846,10 @@
     </url>
     <url>
          <loc>https://tradicional.arq.br/schema/elements/start_date/</loc>
+         <lastmod>2026-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://tradicional.arq.br/schema/elements/statement/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>
@@ -910,6 +902,10 @@
     </url>
     <url>
          <loc>https://tradicional.arq.br/schema/elements/wasth_schema/</loc>
+         <lastmod>2026-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://tradicional.arq.br/schema/elements/weblink/</loc>
          <lastmod>2026-11-04</lastmod>
     </url>
     <url>

@@ -305,8 +305,6 @@
 
       TypedReference : description
 
-      TypedReference : lido_term
-
       TypedReference : refid
 
       TypedReference : refid_type
@@ -326,7 +324,7 @@
 
 
 
-        TypedReference --&gt; "*" LegalBody : source
+        TypedReference --&gt; "0..1" LegalBody : source
         click LegalBody href "../LegalBody/"
 
 
@@ -359,12 +357,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../lido_term/">lido_term</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>LIDO terminology term</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../title/">title</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Nome pelo qual este item é mais comumente conhecido</td>
@@ -384,7 +376,7 @@
 </tr>
 <tr>
 <td><a href="../source/">source</a></td>
-<td>* <br/> <a href="../LegalBody/">LegalBody</a></td>
+<td>0..1 <br/> <a href="../LegalBody/">LegalBody</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -463,13 +455,19 @@
 </tr>
 <tr>
 <td><a href="../Measurement/">Measurement</a></td>
+<td><a href="../measurement_extent/">measurement_extent</a></td>
+<td>range</td>
+<td><a href="./">TypedReference</a></td>
+</tr>
+<tr>
+<td><a href="../Measurement/">Measurement</a></td>
 <td><a href="../measurement_shape/">measurement_shape</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
 </tr>
 <tr>
 <td><a href="../Right/">Right</a></td>
-<td><a href="../rights_statement/">rights_statement</a></td>
+<td><a href="../statement/">statement</a></td>
 <td>range</td>
 <td><a href="./">TypedReference</a></td>
 </tr>
@@ -601,7 +599,6 @@
 <span class="nt">slots</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refid_type</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refid</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido_term</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
@@ -631,7 +628,6 @@
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReferenceType(uri)</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
@@ -650,17 +646,6 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">lido_term</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido_term</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LIDO terminology term.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
-<span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^http://terminology\.lido-schema\.org/lido[0-9]{5}$</span>
 <span class="w">  </span><span class="nt">title</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Nome</span><span class="nv"> </span><span class="s">pelo</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">comumente</span><span class="nv"> </span><span class="s">conhecido.</span><span class="nv"> </span><span class="s">Outros</span><span class="nv"> </span><span class="s">nomes</span>
@@ -741,9 +726,7 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicPoint</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeographicExtent</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>

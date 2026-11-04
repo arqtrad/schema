@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/lido_term/">
+        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/statement/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: lido_term - wasth_schema</title>
+        <title>Slot: statement - wasth_schema</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-lido_term" class="md-skip">
+        <a href="#slot-statement" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: lido_term
+              Slot: statement
             
           </span>
         </div>
@@ -398,8 +398,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
   
 </li>
       
@@ -474,11 +496,19 @@
   
 
 
-<h1 id="slot-lido_term">Slot: lido_term</h1>
-<p><em>LIDO terminology term.</em></p>
+<h1 id="slot-statement">Slot: statement</h1>
+<p><em>Referencia, preferencialmente por meio de uma URI, as informações</em></p>
+<p><em>específicas dos direitos autorais incidentes sobre o item descrito.</em></p>
+<p>__</p>
+<p><em>Por padrão, as casas tradicionais pertencem ao domínio público até</em></p>
+<p><em>prova em contrário.</em></p>
+<p><em>Essa informação e a declaração de direitos NKC (Sem direito autoral</em></p>
+<p><em>conhecido) NÃO PODE ser omitida da ficha.</em></p>
+<p><em>Para o domínio público, portanto, indicar a referência :</em></p>
+<p><em><a href="https://rightsstatements.org/vocab/NKC/1.0/">https://rightsstatements.org/vocab/NKC/1.0/</a>.</em></p>
+<p>__</p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/lido_term">wasth:lido_term</a>
-Alias: term</p>
+<p>URI: <a href="https://tradicional.arq.br/schema/statement">wasth:statement</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -491,8 +521,8 @@ Alias: term</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../TypedReference/">TypedReference</a></td>
-<td>Permite referenciar um registro local ou externo por meio da sua URI (localiz...</td>
+<td><a href="../Right/">Right</a></td>
+<td>* Preencher <code>earliest_date</code> com a data de início da vigência dos</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -509,14 +539,14 @@ Alias: term</p>
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../Uriorcurie/">Uriorcurie</a></td>
-</tr>
-<tr>
-<td>Domain Of</td>
 <td><a href="../TypedReference/">TypedReference</a></td>
 </tr>
 <tr>
-<td>### Value Constraints</td>
+<td>Domain Of</td>
+<td><a href="../Right/">Right</a></td>
+</tr>
+<tr>
+<td>### Cardinality and Requirements</td>
 <td></td>
 </tr>
 </tbody>
@@ -530,11 +560,30 @@ Alias: term</p>
 </thead>
 <tbody>
 <tr>
-<td>Regex Pattern</td>
-<td><code>^http://terminology\.lido-schema\.org/lido[0-9]{5}$</code></td>
+<td>Required</td>
+<td>Yes</td>
 </tr>
 </tbody>
 </table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td><a href="../Right/">Right</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>An index element for rights information being recorded. This can refer to a generic kind of right, such as copyright or a related right, but also be a specific rights or license statement like a standardized statement on copyright, usage, or access rights.</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -551,25 +600,48 @@ Alias: term</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:lido_term</td>
+<td>wasth:statement</td>
 </tr>
 <tr>
 <td>native</td>
-<td>wasth:lido_term</td>
+<td>wasth:statement</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido_term</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LIDO terminology term.</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">statement</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Referencia,</span><span class="nv"> </span><span class="s">preferencialmente</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">URI,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">informações</span>
+
+<span class="w">  </span><span class="s">específicas</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">autorais</span><span class="nv"> </span><span class="s">incidentes</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">descrito.</span>
+
+
+<span class="w">  </span><span class="s">Por</span><span class="nv"> </span><span class="s">padrão,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">casas</span><span class="nv"> </span><span class="s">tradicionais</span><span class="nv"> </span><span class="s">pertencem</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">domínio</span><span class="nv"> </span><span class="s">público</span><span class="nv"> </span><span class="s">até</span>
+
+<span class="w">  </span><span class="s">prova</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">contrário.</span>
+
+<span class="w">  </span><span class="s">Essa</span><span class="nv"> </span><span class="s">informação</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">declaração</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">NKC</span><span class="nv"> </span><span class="s">(Sem</span><span class="nv"> </span><span class="s">direito</span><span class="nv"> </span><span class="s">autoral</span>
+
+<span class="w">  </span><span class="s">conhecido)</span><span class="nv"> </span><span class="s">NÃO</span><span class="nv"> </span><span class="s">PODE</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">omitida</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha.</span>
+
+<span class="w">  </span><span class="s">Para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">domínio</span><span class="nv"> </span><span class="s">público,</span><span class="nv"> </span><span class="s">portanto,</span><span class="nv"> </span><span class="s">indicar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">referência</span><span class="err"> </span><span class="s">:</span>
+
+<span class="w">  </span><span class="s">&lt;https://rightsstatements.org/vocab/NKC/1.0/&gt;.</span>
+
+<span class="w">  </span><span class="s">'</span>
+<span class="nt">notes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An index element for rights information being recorded. This can refer to a generic</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">kind of right, such as copyright or a related right, but also be a specific rights</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">or license statement like a standardized statement on copyright, usage, or access</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">rights.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
-<span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^http://terminology\.lido-schema\.org/lido[0-9]{5}$</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>

@@ -339,6 +339,17 @@
 
 
 
+      Measurement : measurement_extent
+
+
+
+
+
+        Measurement --&gt; "0..1" TypedReference : measurement_extent
+        click TypedReference href "../TypedReference/"
+
+
+
       Measurement : measurement_qualifier
 
 
@@ -457,6 +468,12 @@
 <tr>
 <td><a href="../measurement_type/">measurement_type</a></td>
 <td>0..1 <br/> <a href="../MeasurementType/">MeasurementType</a></td>
+<td>O tipo de medida pode se referir ao objeto propriamente dito <code>proper</code> ou a um...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../measurement_extent/">measurement_extent</a></td>
+<td>0..1 <br/> <a href="../TypedReference/">TypedReference</a></td>
 <td>designa a natureza da medida : largura, altura, área, etc</td>
 <td>direct</td>
 </tr>
@@ -618,6 +635,18 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">measurement_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'O</span><span class="nv"> </span><span class="s">tipo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">medida</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">referir</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">propriamente</span><span class="nv"> </span><span class="s">dito</span><span class="nv"> </span><span class="s">`proper`</span>
+<span class="w">      </span><span class="s">ou</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">requisito</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">sua</span><span class="nv"> </span><span class="s">conservação</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">uso,</span><span class="nv"> </span><span class="s">`requirement`.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementType(proper)</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementType</span>
+<span class="w">  </span><span class="nt">measurement_extent</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_extent</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'designa</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">natureza</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">medida</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">largura,</span><span class="nv"> </span><span class="s">altura,</span><span class="nv"> </span><span class="s">área,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">usar</span>
 <span class="w">      </span><span class="s">um</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">[tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">dimensões</span><span class="nv"> </span><span class="s">](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300226820)</span>
 <span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Architecture</span><span class="nv"> </span><span class="s">Thesaurus</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">Instituto</span><span class="nv"> </span><span class="s">Getty</span><span class="nv"> </span><span class="s">(AAT),</span><span class="nv"> </span><span class="s">enquanto</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">tivermos</span>
@@ -626,17 +655,15 @@
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementType(proper)</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementType</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">measurement_value</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_value</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Valor numérico, usar ponto como separador decimal.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
@@ -650,7 +677,6 @@
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementQualifier(derived)</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qualifier</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementQualifier</span>
@@ -663,7 +689,6 @@
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shape</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
@@ -678,7 +703,6 @@
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
@@ -745,6 +769,19 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">measurement_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'O</span><span class="nv"> </span><span class="s">tipo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">medida</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">referir</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">propriamente</span><span class="nv"> </span><span class="s">dito</span><span class="nv"> </span><span class="s">`proper`</span>
+<span class="w">      </span><span class="s">ou</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">requisito</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">sua</span><span class="nv"> </span><span class="s">conservação</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">uso,</span><span class="nv"> </span><span class="s">`requirement`.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementType(proper)</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementType</span>
+<span class="w">  </span><span class="nt">measurement_extent</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_extent</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'designa</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">natureza</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">medida</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">largura,</span><span class="nv"> </span><span class="s">altura,</span><span class="nv"> </span><span class="s">área,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">usar</span>
 <span class="w">      </span><span class="s">um</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">[tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">dimensões</span><span class="nv"> </span><span class="s">](https://www.getty.edu/vow/AATHierarchy?find=&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300226820)</span>
 <span class="w">      </span><span class="s">do</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Architecture</span><span class="nv"> </span><span class="s">Thesaurus</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">Instituto</span><span class="nv"> </span><span class="s">Getty</span><span class="nv"> </span><span class="s">(AAT),</span><span class="nv"> </span><span class="s">enquanto</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">tivermos</span>
@@ -753,18 +790,16 @@
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementType(proper)</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementType</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">measurement_value</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_value</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Valor numérico, usar ponto como separador decimal.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
@@ -779,7 +814,6 @@
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementQualifier(derived)</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qualifier</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
@@ -793,7 +827,6 @@
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shape</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
@@ -809,7 +842,6 @@
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>

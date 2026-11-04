@@ -876,12 +876,12 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Indica se o nome em questão deve ser oculto ou não, se é uma versão alternati...</td>
 </tr>
 <tr>
-<td><a href="appellation_type/">appellation_type</a></td>
-<td>Categoriza a natureza do nome dado ao objeto ou conceito</td>
-</tr>
-<tr>
 <td><a href="asciiname/">asciiname</a></td>
 <td>Name of geographical point in plain ascii characters, varchar(200)</td>
+</tr>
+<tr>
+<td><a href="author/">author</a></td>
+<td>ORCID iD da pessoa que escreveu a versão original da ficha</td>
 </tr>
 <tr>
 <td><a href="bibliographic_citation/">bibliographic_citation</a></td>
@@ -948,6 +948,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Conteúdo textual descritivo ou explicativo</td>
 </tr>
 <tr>
+<td><a href="context_type/">context_type</a></td>
+<td>O tipo de relação entre os objetos</td>
+</tr>
+<tr>
 <td><a href="coordinates/">coordinates</a></td>
 <td>No QGIS, usar a ferramenta <code>Get WKT</code> para obter as coordenadas do polígono (`...</td>
 </tr>
@@ -982,6 +986,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="description/">description</a></td>
 <td>A human-readable description for a thing</td>
+</tr>
+<tr>
+<td><a href="earliest_date/">earliest_date</a></td>
+<td>Date on which a right is or was current</td>
 </tr>
 <tr>
 <td><a href="elevation/">elevation</a></td>
@@ -1068,12 +1076,12 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Nome ou título (texto sem formatação)</td>
 </tr>
 <tr>
-<td><a href="larger_context_type/">larger_context_type</a></td>
-<td>O tipo de relação entre os objetos</td>
-</tr>
-<tr>
 <td><a href="lat/">lat</a></td>
 <td>Latitude em graus decimais (separador decimal: ponto)</td>
+</tr>
+<tr>
+<td><a href="latest_date/">latest_date</a></td>
+<td>Date on which a right is or will be no longer current</td>
 </tr>
 <tr>
 <td><a href="latitude/">latitude</a></td>
@@ -1086,14 +1094,6 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="legal_body_type/">legal_body_type</a></td>
 <td>Define a natureza do ente legal : pessoa jurídica, perímetro geográfico de tu...</td>
-</tr>
-<tr>
-<td><a href="legal_body_weblink/">legal_body_weblink</a></td>
-<td>Link para uma página descritiva da entidade</td>
-</tr>
-<tr>
-<td><a href="lido_term/">lido_term</a></td>
-<td>LIDO terminology term</td>
 </tr>
 <tr>
 <td><a href="location/">location</a></td>
@@ -1132,6 +1132,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Descreve a ocasião em que as medidas foram aferidas, caso essa informação sej...</td>
 </tr>
 <tr>
+<td><a href="measurement_extent/">measurement_extent</a></td>
+<td>designa a natureza da medida : largura, altura, área, etc</td>
+</tr>
+<tr>
 <td><a href="measurement_qualifier/">measurement_qualifier</a></td>
 <td>Indica o grau de confiabilidade das medidas</td>
 </tr>
@@ -1141,7 +1145,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="measurement_type/">measurement_type</a></td>
-<td>designa a natureza da medida : largura, altura, área, etc</td>
+<td>O tipo de medida pode se referir ao objeto propriamente dito <code>proper</code> ou a um...</td>
 </tr>
 <tr>
 <td><a href="measurement_value/">measurement_value</a></td>
@@ -1216,10 +1220,6 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td>Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap</td>
 </tr>
 <tr>
-<td><a href="record_author/">record_author</a></td>
-<td>ORCID iD da pessoa que escreveu a versão original da ficha</td>
-</tr>
-<tr>
 <td><a href="record_date/">record_date</a></td>
 <td>Data de inclusão da ficha</td>
 </tr>
@@ -1276,18 +1276,6 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <td></td>
 </tr>
 <tr>
-<td><a href="rights_end_date/">rights_end_date</a></td>
-<td>Date on which a right is or will be no longer current</td>
-</tr>
-<tr>
-<td><a href="rights_start_date/">rights_start_date</a></td>
-<td>Date on which a right is or was current</td>
-</tr>
-<tr>
-<td><a href="rights_statement/">rights_statement</a></td>
-<td>Referencia, preferencialmente por meio de uma URI, as informações</td>
-</tr>
-<tr>
 <td><a href="rights_type/">rights_type</a></td>
 <td>Determina se os direitos ora descritos são uma licença específica (padrão) ou...</td>
 </tr>
@@ -1318,6 +1306,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="start_date/">start_date</a></td>
 <td>Data inicial do evento ou mais antiga data presumida para o seu decurso</td>
+</tr>
+<tr>
+<td><a href="statement/">statement</a></td>
+<td>Referencia, preferencialmente por meio de uma URI, as informações</td>
 </tr>
 <tr>
 <td><a href="style_period/">style_period</a></td>
@@ -1357,7 +1349,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 </tr>
 <tr>
 <td><a href="title_type/">title_type</a></td>
-<td>Categoriza a natureza do nome dado ao objeto</td>
+<td>Categoriza a natureza do nome dado ao objeto ou conceito</td>
 </tr>
 <tr>
 <td><a href="topic_type/">topic_type</a></td>
@@ -1366,6 +1358,10 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.</p>
 <tr>
 <td><a href="unit/">unit</a></td>
 <td>Unidade de medida usada no dimensionamento do objeto ou da representação, por...</td>
+</tr>
+<tr>
+<td><a href="weblink/">weblink</a></td>
+<td>Link para uma página descritiva da entidade</td>
 </tr>
 <tr>
 <td><a href="work_rights/">work_rights</a></td>

@@ -297,6 +297,17 @@
 <pre class="mermaid"><code> classDiagram
     class Right
     click Right href "../Right/"
+      Right : earliest_date
+
+
+
+
+
+        Right --&gt; "0..1" EventDate : earliest_date
+        click EventDate href "../EventDate/"
+
+
+
       Right : holder
 
 
@@ -308,36 +319,14 @@
 
 
 
-      Right : rights_end_date
+      Right : latest_date
 
 
 
 
 
-        Right --&gt; "0..1" EventDate : rights_end_date
+        Right --&gt; "0..1" EventDate : latest_date
         click EventDate href "../EventDate/"
-
-
-
-      Right : rights_start_date
-
-
-
-
-
-        Right --&gt; "0..1" EventDate : rights_start_date
-        click EventDate href "../EventDate/"
-
-
-
-      Right : rights_statement
-
-
-
-
-
-        Right --&gt; "1" TypedReference : rights_statement
-        click TypedReference href "../TypedReference/"
 
 
 
@@ -349,6 +338,17 @@
 
         Right --&gt; "1" RightsType : rights_type
         click RightsType href "../RightsType/"
+
+
+
+      Right : statement
+
+
+
+
+
+        Right --&gt; "1" TypedReference : statement
+        click TypedReference href "../TypedReference/"
 
 
 
@@ -387,19 +387,19 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rights_statement/">rights_statement</a></td>
+<td><a href="../statement/">statement</a></td>
 <td>1 <br/> <a href="../TypedReference/">TypedReference</a></td>
 <td>Referencia, preferencialmente por meio de uma URI, as informações</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rights_start_date/">rights_start_date</a></td>
+<td><a href="../earliest_date/">earliest_date</a></td>
 <td>0..1 <br/> <a href="../EventDate/">EventDate</a></td>
 <td>Date on which a right is or was current</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rights_end_date/">rights_end_date</a></td>
+<td><a href="../latest_date/">latest_date</a></td>
 <td>0..1 <br/> <a href="../EventDate/">EventDate</a></td>
 <td>Date on which a right is or will be no longer current</td>
 <td>direct</td>
@@ -461,6 +461,12 @@
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
+<td><a href="../work_rights/">work_rights</a></td>
+<td>range</td>
+<td><a href="./">Right</a></td>
+</tr>
+<tr>
+<td><a href="../Work/">Work</a></td>
 <td><a href="../record_rights/">record_rights</a></td>
 <td>range</td>
 <td><a href="./">Right</a></td>
@@ -514,13 +520,12 @@
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for instance, Rights Statements or Creative Commons Licenses.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RightsType</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">rights_statement</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rights_statement</span>
+<span class="w">  </span><span class="nt">statement</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">statement</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Referencia,</span><span class="nv"> </span><span class="s">preferencialmente</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">URI,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">informações</span>
 
 <span class="w">      </span><span class="s">específicas</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">autorais</span><span class="nv"> </span><span class="s">incidentes</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">descrito.</span>
@@ -551,22 +556,20 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">rights_start_date</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rights_start_date</span>
+<span class="w">  </span><span class="nt">earliest_date</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">earliest_date</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Date on which a right is or was current.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start_date</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">rights_end_date</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rights_end_date</span>
+<span class="w">  </span><span class="nt">latest_date</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest_date</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Date on which a right is or will be no longer current.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end_date</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
@@ -581,7 +584,6 @@
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">holder</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
@@ -610,14 +612,13 @@
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for instance, Rights Statements or Creative Commons Licenses.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RightsType</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">rights_statement</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rights_statement</span>
+<span class="w">  </span><span class="nt">statement</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">statement</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Referencia,</span><span class="nv"> </span><span class="s">preferencialmente</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">URI,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">informações</span>
 
 <span class="w">      </span><span class="s">específicas</span><span class="nv"> </span><span class="s">dos</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">autorais</span><span class="nv"> </span><span class="s">incidentes</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">descrito.</span>
@@ -649,23 +650,21 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">rights_start_date</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rights_start_date</span>
+<span class="w">  </span><span class="nt">earliest_date</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">earliest_date</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Date on which a right is or was current.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start_date</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">rights_end_date</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rights_end_date</span>
+<span class="w">  </span><span class="nt">latest_date</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest_date</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Date on which a right is or will be no longer current.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end_date</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
@@ -681,7 +680,6 @@
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/shared</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">holder</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>

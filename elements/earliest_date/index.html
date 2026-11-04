@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/appellation_type/">
+        <link rel="canonical" href="https://tradicional.arq.br/schema/elements/earliest_date/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: appellation_type - wasth_schema</title>
+        <title>Slot: earliest_date - wasth_schema</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-appellation_type" class="md-skip">
+        <a href="#slot-earliest_date" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: appellation_type
+              Slot: earliest_date
             
           </span>
         </div>
@@ -474,12 +474,10 @@
   
 
 
-<h1 id="slot-appellation_type">Slot: appellation_type</h1>
-<p><em>Categoriza a natureza do nome dado ao objeto ou conceito.</em></p>
-<p>__</p>
+<h1 id="slot-earliest_date">Slot: earliest_date</h1>
+<p><em>Date on which a right is or was current.</em></p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/appellation_type">wasth:appellation_type</a>
-Alias: title_type</p>
+<p>URI: <a href="https://tradicional.arq.br/schema/earliest_date">wasth:earliest_date</a></p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -492,8 +490,8 @@ Alias: title_type</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Appellation/">Appellation</a></td>
-<td></td>
+<td><a href="../Right/">Right</a></td>
+<td>* Preencher <code>earliest_date</code> com a data de início da vigência dos</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -510,11 +508,11 @@ Alias: title_type</p>
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../TitleType/">TitleType</a></td>
+<td><a href="../EventDate/">EventDate</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Appellation/">Appellation</a></td>
+<td><a href="../Right/">Right</a></td>
 </tr>
 <tr>
 <td>### Slot Characteristics</td>
@@ -531,12 +529,8 @@ Alias: title_type</p>
 </thead>
 <tbody>
 <tr>
-<td>If Absent</td>
-<td><code>TitleType(descriptive)</code></td>
-</tr>
-<tr>
 <td>Owner</td>
-<td><a href="../Appellation/">Appellation</a></td>
+<td><a href="../Right/">Right</a></td>
 </tr>
 </tbody>
 </table>
@@ -556,28 +550,25 @@ Alias: title_type</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:appellation_type</td>
+<td>wasth:earliest_date</td>
 </tr>
 <tr>
 <td>native</td>
-<td>wasth:appellation_type</td>
+<td>wasth:earliest_date</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">appellation_type</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Categoriza</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">natureza</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">nome</span><span class="nv"> </span><span class="s">dado</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">conceito.</span>
-
-<span class="w">  </span><span class="s">'</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">earliest_date</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Date on which a right is or was current.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TitleType(descriptive)</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title_type</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appellation</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TitleType</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EventDate</span>
+<span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>
