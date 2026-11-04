@@ -59,7 +59,7 @@ site:
       type: "corporate"
       id: "doi:10.14459/2025MP1782307"
   extent:
-    geometry_type: "Polygon"
+    type: "Polygon"
     coordinates: >-  # O caractere ">" indica que o conteúdo começa na linha seguinte, indentado em dois espaços. O caractere "-" faz o sistema desconsiderar as quebras de linha dentro do campo.
       [[
         [-36.6038005698465,-6.48776522907464],
