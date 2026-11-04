@@ -6104,8 +6104,7 @@ slots:
       \ se a altura \xE9 at\xE9 a linha de coroamento ou at\xE9 a cumeeira, etc. \u2014\
       \ usar a `uri` de um vocabul\xE1rio controlado.\n"
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:extent
-    alias: extent
+    slot_uri: wasth:format_extent
     owner: Topic
     domain_of:
     - Measurement
@@ -6879,8 +6878,8 @@ slots:
     name: broaderConceptReference__broader_match
     description: "Tipo da rela\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: wasth:match
-    alias: match
+    slot_uri: wasth:broader_match
+    alias: broader_match
     owner: BroaderConceptReference
     domain_of:
     - BroaderConceptReference
@@ -6890,8 +6889,8 @@ slots:
     name: narrowerConceptReference__narrower_match
     description: "Tipo da rela\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: wasth:match
-    alias: match
+    slot_uri: wasth:narrower_match
+    alias: narrower_match
     owner: NarrowerConceptReference
     domain_of:
     - NarrowerConceptReference
@@ -6901,15 +6900,15 @@ slots:
     name: mappingConceptReference__mapping_match
     description: "Tipo da rela\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: wasth:match
-    alias: match
+    slot_uri: wasth:mapping_match
+    alias: mapping_match
     owner: MappingConceptReference
     domain_of:
     - MappingConceptReference
     range: SkosMappingRelation
     required: true
-  bibliographicCitation__citation_refid:
-    name: bibliographicCitation__citation_refid
+  bibliographicCitation__citekey:
+    name: bibliographicCitation__citekey
     description: "Se a fonte for cadastrada, o campo `refid` deve conter a chave de\
       \ cita\xE7\xE3o (`citation key`) que consta do registro bibliogr\xE1fico na\
       \ biblioteca do nosso projeto de pesquisa no [Zotero]. Em geral, a chave de\
@@ -6919,7 +6918,7 @@ slots:
       \ de cita\xE7\xE3o.\n"
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:refid
-    identifier: true
+    key: true
     alias: refid
     owner: BibliographicCitation
     domain_of:
@@ -7012,7 +7011,7 @@ slots:
     mappings:
     - lido:relatedWorkRelType
     slot_uri: lido:relatedWorkRelType
-    alias: type
+    alias: depiction_type
     owner: MediaObject
     domain_of:
     - MediaObject
@@ -8926,7 +8925,6 @@ classes:
       broader_match:
         name: broader_match
         description: "Tipo da rela\xE7\xE3o."
-        alias: match
         range: SkosBroaderRelation
         required: true
     class_uri: wasth:BroaderConceptReference
@@ -8945,7 +8943,6 @@ classes:
       narrower_match:
         name: narrower_match
         description: "Tipo da rela\xE7\xE3o."
-        alias: match
         range: SkosNarrowerRelation
         required: true
     class_uri: wasth:NarrowerConceptReference
@@ -8964,7 +8961,6 @@ classes:
       mapping_match:
         name: mapping_match
         description: "Tipo da rela\xE7\xE3o."
-        alias: match
         range: SkosMappingRelation
         required: true
     class_uri: wasth:MappingConceptReference
@@ -8982,11 +8978,11 @@ classes:
     - schema:CreativeWork
     slots:
     - description
-    - bibliographicCitation__citation_refid
+    - bibliographicCitation__citekey
     - bibliographicCitation__note
     attributes:
-      citation_refid:
-        name: citation_refid
+      citekey:
+        name: citekey
         description: "Se a fonte for cadastrada, o campo `refid` deve conter a chave\
           \ de cita\xE7\xE3o (`citation key`) que consta do registro bibliogr\xE1\
           fico na biblioteca do nosso projeto de pesquisa no [Zotero]. Em geral, a\
@@ -8994,7 +8990,7 @@ classes:
           \ ser diferente.\nSe a refer\xEAncia que necessita citar n\xE3o constar\
           \ da biblioteca do Zotero, deve cadastr\xE1-la primeiro nessa biblioteca\
           \ para ent\xE3o extrair a chave de cita\xE7\xE3o.\n"
-        identifier: true
+        key: true
         alias: refid
         range: CslCitekey
       note:
@@ -9274,7 +9270,6 @@ classes:
         description: "O tipo de representa\xE7\xE3o que a m\xEDdia cont\xE9m. A edifica\xE7\
           \xE3o descrita na ficha \xE9 sempre o sujeito da rela\xE7\xE3o.\n"
         slot_uri: lido:relatedWorkRelType
-        alias: type
         range: DepictionType
         required: true
     class_uri: schema:MediaObject
@@ -10742,6 +10737,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-11-04T19:37:32'
+source_file_date: '2026-11-04T19:49:42'
 source_file_size: 56642
 
