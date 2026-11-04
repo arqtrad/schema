@@ -7088,8 +7088,8 @@ slots:
       like copyright or performance rights, or is a specific rights or license statement,
       for instance, Rights Statements or Creative Commons Licenses.
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:rights_type
-    alias: rights_type
+    slot_uri: wasth:type
+    alias: type
     owner: Right
     domain_of:
     - Right
@@ -9459,6 +9459,7 @@ classes:
         - Qualifies the kind of rights type, whether it refers to a generic kind of
           right, like copyright or performance rights, or is a specific rights or
           license statement, for instance, Rights Statements or Creative Commons Licenses.
+        alias: type
         range: RightsType
         required: true
       rights_statement:
@@ -10794,6 +10795,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-11-04T18:13:33'
+source_file_date: '2026-11-04T18:16:07'
 source_file_size: 56642
 
