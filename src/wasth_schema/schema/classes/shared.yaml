@@ -192,6 +192,9 @@ classes:
     attributes:
 
       rights_type:
+        alias: type
+        required: true
+        range: RightsType
         description: >
           Determina se os direitos ora descritos são uma licença específica
           (padrão) ou expressão genérica de copyright.
@@ -200,8 +203,6 @@ classes:
             kind of right, like copyright or performance rights, or is a
             specific rights or license statement, for instance, Rights
             Statements or Creative Commons Licenses.
-        required: true
-        range: RightsType
 
       rights_statement:
         description: |
