@@ -137,6 +137,7 @@ classes:
       - title
       - id
       - author
+      - authors
       - record_date
       - description
       - category
@@ -206,7 +207,28 @@ slots:
     range: OrcidId
     slot_uri: dcterms:contributor
     description: >
-      ORCID iD da pessoa que escreveu a versão original da ficha.
+      ORCID iD da pessoa que escreveu a versão original da ficha, no caso de
+      uma única pessoa ser responsável.
+      Este campo foi mantido apenas por compatibilidade, preferir `authors`
+      daqui para a frente mesmo quando houver uma só pessoa responsável
+      pela ficha.
+
+      Usar o formato `orcid:1234-5678-9012-345X` ou
+      `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito
+      o formato `1234-5678-9012-345X`).
+
+      Alterar apenas no caso de a ficha ter sido substancialmente
+      reescrita.
+
+  authors:
+    slot_uri: dcterms:contributor
+    range: OrcidId
+    multivalued: true
+    inlined_as_list: true
+    description: >
+      ORCID iD das pessoas que escreveram a versão original da ficha, no caso
+      de várias pessoas terem contribuído igualmente.
+
       Usar o formato `orcid:1234-5678-9012-345X` ou
       `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito
       o formato `1234-5678-9012-345X`).
