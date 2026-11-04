@@ -672,21 +672,19 @@ classes:
 
     attributes:
 
-      part_of:
+      name:
         slot_uri: lido:partOfPlace
         range: GeonamesFeature
         inlined: true
-        description: >
+        description: |
           Permite identificar o contexto geográfico ou administrativo ao qual
-          a edificação se subordina.
+          a edificação se subordina, usando a base <https://geonames.org>.
           Referenciar a localidade por meio do código identificador na forma:
           `geonameid: 1234`
-
-          ---------------------------------------------------------------------
-
-          A set of structured information about a place that is the broader
-          context for the place in focus, such as the district, state, or
-          nation to which a city belongs.
+        notes:
+          - A set of structured information about a place that is the broader
+            context for the place in focus, such as the district, state, or
+            nation to which a city belongs.
 
       site_type:
         alias: type
