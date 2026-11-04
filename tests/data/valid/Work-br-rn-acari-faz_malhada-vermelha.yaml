@@ -55,11 +55,9 @@ site:
     zoom: 9
     srs_name: "EPSG:4326"
     source:
+      title: "Global Building Atlas LoD1"
       type: "corporate"
-      name:
-        type: "uri"
-        refid: "https://doi.org/10.14459/2025MP1782307"
-        description: "Global Building Atlas LoD1"
+      id: "doi:10.14459/2025MP1782307"
   extent:
     geometry_type: "Polygon"
     coordinates: >-  # O caractere ">" indica que o conteúdo começa na linha seguinte, indentado em dois espaços. O caractere "-" faz o sistema desconsiderar as quebras de linha dentro do campo.
@@ -73,15 +71,12 @@ site:
     srs_name: "EPSG:4326"
     source:
       type: "corporate"
-      name:
-        type: "uri"
-        refid: "https://doi.org/10.14459/2025MP1782307"
-        description: "Global Building Atlas LoD1"
+      title: "Global Building Atlas LoD1"
+      id: "doi:10.14459/2025MP1782307"
 
-location_historic:
+location_historic:  # A FAZER: Completar com referência a um vocabulário controlado.
   - type: "geographic"
-    name:  # A FAZER: Completar com referência a um vocabulário controlado.
-      title: "sertão do Seridó"  # Atenção: não é a mesma localidade "Seridó" cadastrada no Getty TGN.
+    title: "sertão do Seridó"  # Atenção: não é a mesma localidade "Seridó" cadastrada no Getty TGN.
 
 temporal:
   - type: "production"
@@ -182,19 +177,17 @@ record_rights:
       - type: exact
         value: *RECORD_DATE  # Repete a data informada acima.
     holder:
+      id: "doi:10.13039/100008994"
+      title: "Fundação Universidade de Brasília"
       type: "corporate"
-      name:
-        id: "doi:10.13039/100008994"
-        title: "Fundação Universidade de Brasília"
-        type: "corporate"
-        weblink: "https://vereda.unb.br"
-        identifiers:
-          - refid: "isni:0000000122385157"
-            type: "uri"
-            title: "ISNI"
-          - refid: "wd:Q1330634"
-            type: "uri"
-            title: "Wikidata"
+      weblink: "https://vereda.unb.br"
+      identifiers:
+        - refid: "isni:0000000122385157"
+          type: "uri"
+          title: "ISNI"
+        - refid: "wd:Q1330634"
+          type: "uri"
+          title: "Wikidata"
   - type: "specific"
     statement:
       type: "uri"
@@ -207,21 +200,18 @@ record_rights:
       - type: exact
         value: 2028-11-30
     holder:
+      id: "doi:10.13039/501100003593"
+      title: >
+        CNPq - Conselho Nacional de Desenvolvimento Científico e Tecnológico
+      description: "Termo de outorga 406601/2025-9"
       type: "corporate"
-      name:
-        id: "doi:10.13039/501100003593"
-        title: >
-          CNPq - Conselho Nacional de Desenvolvimento Científico e Tecnológico
-        description: "Termo de outorga 406601/2025-9"
-        type: "corporate"
-        weblink: "https://cnpq.br"
-        identifiers:
-          - refid: "isni:0000000121892026"
-            type: "uri"
-          - refid: "wd:Q2994429"
-            type: "uri"
-            title: "Wikidata"
-
+      weblink: "https://cnpq.br"
+      identifiers:
+        - refid: "isni:0000000121892026"
+          type: "uri"
+        - refid: "wd:Q2994429"
+          type: "uri"
+          title: "Wikidata"
 content: |
   > Mantém as características mais representativas de sua fábrica original,
   > sendo
