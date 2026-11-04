@@ -150,7 +150,7 @@ classes:
         range: ConceptReference
         multivalued: true
         inlined_as_list: true
-        description: >-
+        description: |
           Nos Documentários de edificações, designa sobretudo o contexto
           imediato de implantação de uma edificação : urbana, rural, isolada,
           em correnteza, etc.
@@ -159,15 +159,15 @@ classes:
           populacional : sítio isolado, povoação rural, vila ou cidade,
           por exemplo.
 
-          ---------------------------------------------------------------------
+        notes:
 
-          Descriptors for objects that are distinguishable by their use or
-          application within a particular physical location. If an object is
-          identifiable by association with specific surroundings, it is
-          qualified by location or context.
+          - Descriptors for objects that are distinguishable by their use or
+            application within a particular physical location. If an object is
+            identifiable by association with specific surroundings, it is
+            qualified by location or context.
 
-          Based on [AAT Guidelines "Types of Guide
-          Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
+            Based on [AAT Guidelines "Types of Guide
+            Terms"](https://www.getty.edu/research/tools/vocabularies/guidelines/aat_3_1_hierarchical_rels.html)
 
       work_type_material_tech:
         slot_uri: term:lido00789
@@ -234,20 +234,18 @@ classes:
           Talvez ele não seja relevante para o documentário de arquitetura
           doméstica, e não é obrigatório no padrão LIDO nem no perfil de
           aplicação para arquitetura.
+        notes:
+          - A broad category for grouping objects on the basis of shared
+            intrinsic characteristics. The relationship between an object/work
+            and the object genre is a generic is-a-relation rather than a
+            membership based on ascription to a subject group.
 
-          ---------------------------------------------------------------------
-
-          A broad category for grouping objects on the basis of shared
-          intrinsic characteristics. The relationship between an object/work
-          and the object genre is a generic is-a-relation rather than a
-          membership based on ascription to a subject group.
-
-          Note that the
-          [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711)
-          hierarchy differs in its scope from Object genre here in that the AAT
-          includes more specific terms grouped by various aspects. In general,
-          AAT descriptors are not intended to be used as indexing terms for
-          classification.
+            Note that the
+            [AAT Object Genres](http://vocab.getty.edu/page/aat/300185711)
+            hierarchy differs in its scope from Object genre here in that the AAT
+            includes more specific terms grouped by various aspects. In general,
+            AAT descriptors are not intended to be used as indexing terms for
+            classification.
 
       classification_subject:
         slot_uri: term:lido00932
@@ -259,14 +257,12 @@ classes:
           Talvez ele não seja relevante para o documentário de arquitetura
           doméstica, e não é obrigatório no padrão LIDO nem no perfil de
           aplicação para arquitetura.
-
-          ---------------------------------------------------------------------
-
-          A broad category for grouping objects or works on the basis of a
-          topical association, including thematic or systematic classification,
-          or an assignment by discipline. The relationship between an
-          object/work and a subject category is a kind of membership based on
-          ascription rather than a generic is-a relation.
+        notes:
+          - A broad category for grouping objects or works on the basis of a
+            topical association, including thematic or systematic classification,
+            or an assignment by discipline. The relationship between an
+            object/work and a subject category is a kind of membership based on
+            ascription rather than a generic is-a relation.
 
       classification_local:
         slot_uri: term:lido01135
@@ -278,15 +274,13 @@ classes:
           Talvez ele não seja relevante para o documentário de arquitetura
           doméstica, e não é obrigatório no padrão LIDO nem no perfil de
           aplicação para arquitetura.
-
-          ---------------------------------------------------------------------
-
-          A classification scheme for grouping objects on the basis of locally
-          defined criteria, including categories corresponding to the
-          curatorial departments of the repository, such as "prints and
-          drawings", "decorative arts", "North America", "invertebrates",
-          "Bronze Age" or "textiles". [Based on CCO
-          "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)
+        notes:
+          - A classification scheme for grouping objects on the basis of locally
+            defined criteria, including categories corresponding to the
+            curatorial departments of the repository, such as "prints and
+            drawings", "decorative arts", "North America", "invertebrates",
+            "Bronze Age" or "textiles". [Based on CCO
+            "Class"](https://vraweb.org/wp-content/uploads/2020/04/CatalogingCulturalObjectsFullv2.pdf)
 
       classification_special:
         slot_uri: term:lido01144
@@ -298,20 +292,19 @@ classes:
           Talvez ele não seja relevante para o documentário de arquitetura
           doméstica, e não é obrigatório no padrão LIDO nem no perfil de
           aplicação para arquitetura.
-
-          ---------------------------------------------------------------------
-
-          A classification scheme for grouping objects on the basis of criteria
-          defined within specific academic disciplines or cultural domains,
-          such as the "Hornbostel-Sachs Classification of Musical Instruments",
-          the "Nickel-Strunz classification", biological taxonomies etc. Refers
-          to classification schemes that group objects on the basis of object
-          characteristics, not on the basis of themes or topics which the
-          objects or works are related to.
+        notes:
+          - A classification scheme for grouping objects on the basis of criteria
+            defined within specific academic disciplines or cultural domains,
+            such as the "Hornbostel-Sachs Classification of Musical Instruments",
+            the "Nickel-Strunz classification", biological taxonomies etc. Refers
+            to classification schemes that group objects on the basis of object
+            characteristics, not on the basis of themes or topics which the
+            objects or works are related to.
 
 
       part_of:
         slot_uri: dcterms:isPartOf
+        alias: name
         range: LargerContextReference
         multivalued: true
         inlined_as_list: true

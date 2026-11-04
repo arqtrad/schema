@@ -70,6 +70,7 @@ classes:
       rise to a noteworthy overall effect and are thus not instances of E5
       Event.
 
+
     attributes:
 
       event_type:
@@ -85,14 +86,6 @@ classes:
         range: Actor
         multivalued: true
         inlined_as_list: true
-
-      display_date:
-        range: string
-        description: >
-          Permite a expressão descritiva das datas de início e fim do evento,
-          para contemplar variados graus de incerteza, ou de modo a representar
-          a data em calendários diferentes do gregoriano. Omitir apenas se os
-          valores numéricos das datas forem exatos.
 
       start_date:
         description: >
@@ -149,13 +142,24 @@ classes:
         multivalued: true
         inlined_as_list: true
 
-      related_events:
-        description: >-
-          A set of structured information about an event related to the event
-          in focus, indicating the type of relationship where applicable.
-        range: RelatedEvent
-        multivalued: true
-        inlined_as_list: true
+
+    slot_usage:
+      title:
+        description: >
+          Um nome breve para o evento, sem formatação.
+
+      description:
+        description: >
+          Permite a expressão descritiva das datas de início e fim do evento,
+          para contemplar variados graus de incerteza, ou de modo a representar
+          a data em calendários diferentes do gregoriano. Omitir apenas se os
+          valores numéricos das datas forem exatos.
+
+      content:
+        description: >
+          Descrição textual mais extensa do acontecimento, quando necessário ou
+          relevante. Pode conter texto formatado e referências bibliográficas.
+
 
     slots:
       - style_period
@@ -164,6 +168,7 @@ classes:
       - material
       - technique
       - media
+      - related_events
 
 
   Actor:
@@ -252,6 +257,7 @@ classes:
           A confiabilidade independe do grau de precisão da data.
 
       date_value:
+        alias: value
         range: date
         description: >
           Usar o formato ISO-8601 (AAAA-MM-DD).
@@ -276,6 +282,7 @@ classes:
     attributes:
 
       event_name:
+        alias: name
         range: Event
         multivalued: true
         required: true
@@ -286,3 +293,16 @@ classes:
 
     slots:
       - description
+
+
+slots:
+
+  related_events:
+    description: >-
+      Indica a ocorrência de outro acontecimento, vinculado ou não à mesma
+      edificação, que apresenta algum tipo de relação com este evento ou com
+      uma informação (por exemplo, a ação que resultou na obtenção da referida
+      informação).
+    range: RelatedEvent
+    multivalued: true
+    inlined_as_list: true

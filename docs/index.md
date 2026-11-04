@@ -85,7 +85,8 @@ pode também abrir uma [*issue* no repositório da Casa].
 
 ## Por onde começo ?
 
-Leia a especificação da ficha [Work](Work/) para saber como preencher as
+Leia a especificação da ficha [Work](elements/Work/) para saber como preencher
+as
 fichas de edificações dos Documentários da Arquitetura Tradicional.
 
 

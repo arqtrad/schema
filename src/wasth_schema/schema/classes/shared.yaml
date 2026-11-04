@@ -34,6 +34,7 @@ classes:
       - refid_type
       - refid
       - lido_term
+      - title
       - description
       - bibliographic_citation
       - source
@@ -110,6 +111,7 @@ classes:
       - description
       - format_extent
       - bibliographic_citation
+      - related_events
 
     attributes:
 
@@ -193,18 +195,16 @@ classes:
         description: >
           Determina se os direitos ora descritos são uma licença específica
           (padrão) ou expressão genérica de copyright.
-
-          ---------------------------------------------------------------------
-
-          Qualifies the kind of rights type, whether it refers to a generic
-          kind of right, like copyright or performance rights, or is a specific
-          rights or license statement, for instance, Rights Statements or
-          Creative Commons Licenses.
+        notes:
+          - Qualifies the kind of rights type, whether it refers to a generic
+            kind of right, like copyright or performance rights, or is a
+            specific rights or license statement, for instance, Rights
+            Statements or Creative Commons Licenses.
         required: true
         range: RightsType
 
       rights_statement:
-        description: >
+        description: |
           Referencia, preferencialmente por meio de uma URI, as informações
           específicas dos direitos autorais incidentes sobre o item descrito.
 
@@ -214,13 +214,11 @@ classes:
           conhecido) NÃO PODE ser omitida da ficha.
           Para o domínio público, portanto, indicar a referência :
           <https://rightsstatements.org/vocab/NKC/1.0/>.
-
-          ---------------------------------------------------------------------
-
-          An index element for rights information being recorded. This can
-          refer to a generic kind of right, such as copyright or a related
-          right, but also be a specific rights or license statement like a
-          standardized statement on copyright, usage, or access rights.
+        notes:
+          - An index element for rights information being recorded. This can
+            refer to a generic kind of right, such as copyright or a related
+            right, but also be a specific rights or license statement like a
+            standardized statement on copyright, usage, or access rights.
         required: true
         range: TypedReference
         inlined: true
@@ -249,6 +247,7 @@ classes:
         inlined: true
 
   LegalBody:
+    is_a: Thing
     description: >
       Referência a uma pessoa jurídica (pode ser um indivíduo detentor de
       direitos jurídicos específicos que se queira referenciar) ou entidade
@@ -263,16 +262,24 @@ classes:
           Define a natureza do ente legal : pessoa jurídica, perímetro
           geográfico de tutela, etc.
 
-      legal_body_name:
-        alias: name
-        range: TypedReference
-        inlined: true
+      legal_body_weblink:
+        alias: weblink
+        range: uriorcurie
+        description: Link para uma página descritiva da entidade.
+
+    slot_usage:
+      identifiers:
         description: >
           Referencia a identidade do ente legal num vocabulário controlado ou
           repositório de identidades, tal como o ISNI.
 
 
 slots:
+
+  refid_type:
+    alias: type
+    range: ReferenceType
+    ifabsent: ReferenceType(uri)
 
   refid:
     range: uriorcurie
@@ -281,25 +288,11 @@ slots:
       - schema:identifier
     description: Local or external identifier.
 
-  description:
-    alias: display
-    range: string
-    slot_uri: dcterms:description
-    exact_mappings:
-      - schema:description
-    description: A human-readable description for a thing
-
-  refid_type:
-    alias: type
-    range: ReferenceType
-    ifabsent: ReferenceType(uri)
-
   lido_term:
     alias: term
     range: uriorcurie
     pattern: '^http://terminology\.lido-schema\.org/lido[0-9]{5}$'
     description: LIDO terminology term.
-
 
   measurements:
     range: Measurement

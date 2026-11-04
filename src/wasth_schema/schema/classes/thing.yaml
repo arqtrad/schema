@@ -57,15 +57,6 @@ classes:
 
     attributes:
 
-      title:
-        slot_uri: dcterms:title
-        range: string
-        exact_mappings:
-          - schema:name
-        description: >
-          Nome pelo qual este item é mais comumente conhecido.
-          Outros nomes podem ser cadastrados em `alt_name`.
-
       title_source:
         description: >-
           A fonte do título title_source é opcional ; um título pode ser
@@ -182,6 +173,7 @@ classes:
           repositories or geographic places should be listed.
 
     slots:
+      - title
       - id
       - record_author
       - record_date
@@ -236,6 +228,15 @@ classes:
 
 slots:
 
+  title:
+    slot_uri: dcterms:title
+    range: string
+    exact_mappings:
+      - schema:name
+    description: >
+      Nome pelo qual este item é mais comumente conhecido.
+      Outros nomes podem ser cadastrados em `alt_name`.
+
   id:
     range: uriorcurie
     slot_uri: dcterms:identifier
@@ -255,6 +256,13 @@ slots:
     range: date
     slot_uri: dcterms:created
     description: Data de inclusão da ficha.
+
+  description:
+    range: string
+    slot_uri: dcterms:description
+    exact_mappings:
+      - schema:description
+    description: A human-readable description for a thing
 
   category:
     slot_uri: term:lidoCategory

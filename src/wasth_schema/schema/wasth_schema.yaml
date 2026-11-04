@@ -135,11 +135,13 @@ prefixes:
   crm: http://www.cidoc-crm.org/cidoc-crm/
   dcterms: http://purl.org/dc/terms/
   dctypes: http://purl.org/dc/dcmitype/
+  doi: https://doi.org/
   schema: http://schema.org/
   lido: http://www.lido-schema.org/
   term: http://terminology.lido-schema.org/
   skos: http://www.w3.org/2004/02/skos/core#
   iso: http://purl.org/iso25964/skos-thes#
+  isni: https://isni.org/isni/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   geo: http://www.opengis.net/ont/geosparql#
   geonames: https://www.geonames.org/ontology#
@@ -147,6 +149,7 @@ prefixes:
   aat: http://vocab.getty.edu/aat/
   tgn: http://vocab.getty.edu/tgn/
   ulan: http://vocab.getty.edu/ulan/
+  ucum: http://purl.oclc.org/NET/muo/ucum/
   unesco: http://vocabularies.unesco.org/thesaurus/
   vra: http://purl.org/vra/
   wd: http://www.wikidata.org/entity/
@@ -273,6 +276,19 @@ enums:
           but the date when the object was found is known, there is evidence
           that the production must have taken place before the finding of the
           object.
+
+  DepictionType:
+    description: >
+      Designa a relação que a edificação descrita na ficha tem com a mídia
+      relacionada.
+    permissible_values:  # http://terminology.lido-schema.org/lido00583
+      depictedIn:
+        title: representado em
+        meaning: term:lido00998
+        description: >
+          A obra descrita na ficha está representada na mídia relacionada,
+          que será geralmente uma obra de arte ou fotografia depositada num
+          repositório externo (catálogo de museu, Wikimedia Commons, etc.).
 
   EventType:
     description: >
@@ -429,7 +445,7 @@ enums:
           destruída num incêndio).
     # Alteração
       modification_activity:
-        title: modificação
+        title: alteração
         meaning: term:lido00006
         source: crm:E11_Modification
         exact_mappings:
@@ -493,7 +509,7 @@ enums:
           Particularmente, refere-se à desmontagem cuidadosa de modo a evitar
           danos ao material removido, visando à sua reutilização, reciclagem
           ou gestão de resíduos.
-      part_addition:
+      addition:
         title: acréscimo
         meaning: term:lido00008
         source: crm:E79_Part_Addition
@@ -504,7 +520,7 @@ enums:
           fundamentalmente a identidade, por meio da ampliação ou do acréscimo
           de elementos. O conjunto resultante continuará a ser identificado
           como a mesma obra anterior ao acréscimo.
-      part_removal:
+      removal:
         title: eliminação parcial
         meaning: term:lido00021
         source: crm:E80_Part_Removal
@@ -678,6 +694,11 @@ enums:
       attribute_assignment:
       assignment_to_curated_holding:
       condition_assessment:
+        title: levantamento e avaliação do estado de conservação
+        meaning: term:lido00931
+        description: >
+          Ação que analisa as características físicas do objeto, seu estado de
+          conservação e integridade formal.
       cultural_context_assignment:
       designation:
       deciphering:
@@ -868,6 +889,113 @@ enums:
           O nome, termo ou título preferencial. Normalmente não usaremos esta
           opção pois o campo `title` já contempla a opção preferencial.
 
+  LargerContextType:
+    description: |
+      Tipos de relações entre partes e todo previstas no vocabulário controlado
+      do LIDO. Inclui as categorias de relações hierárquicas e de relações
+      associativas de parte ao todo.
+
+      Ver <http://terminology.lido-schema.org/relatedWorkRelType>
+    permissible_values:
+      physical_part_of:
+        title: fisicamente contido em
+        meaning: term:lido00255
+        description: >
+          Usar quando um objeto físico fizer parte integrante de um objeto ou
+          complexo físico maior. Se o conjunto mais amplo for um construto
+          interpretativo, usar a relação `has_borader_conceptual_context`.
+      conceptual_part_of:
+        title: parte conceitual de
+        meaning: term:lido00572
+        description: >
+          Usar quando um objeto intelectual for parte de uma entidade
+          conceitual maior ou mais ampla.
+      has_borader_conceptual_context:
+        title: tem contexto conceitual mais amplo
+        meaning: term:lido00575
+        description: >
+          Usar quando um objeto físico for incluído segundo critérios
+          interpretativos num conjunto conceitual mais amplo. Se o conjunto
+          mais amplo for uma extensão física que compreende inequivocamente o
+          objeto, usar a relação `physical_part_of`.
+      example_of:
+        title: exemplar de
+        meaning: term:lido00627
+        description: >
+          Usar quando o objeto construído é a manifestação física de um
+          conteúdo intelectual, podendo abarcar desde instâncias específicas de
+          um projeto seriado (por exemplo, um exemplar das casas da SHIS —
+          Sociedade de Habitações de Interesse Social — produzidas em Brasília
+          a partir de 1969) até a realização edificada de um programa teórico
+          específico (por exemplo, a Cité Radieuse de Marselha como
+          exemplo da unité d'habitation de Le Corbusier).
+
+          Vinculações teóricas ou conceituais com maior distância
+          interpretativa (por exemplo, o Jardim América como exemplar de
+          cidade–jardim) devem ser cadastradas no grupo `subject`.
+      has_arch_context:
+        title: tem como contexto arquitetônico
+        meaning: term:lido00616
+        description: >
+          O objeto em causa foi concebido para integrar ou está situado no
+          referido conjunto edificado, ou integra o contexto funcional deste.
+      had_arch_context:
+        title: tinha como contexto arquitetônico
+        meaning: term:lido01051
+        description: >
+          O objeto em causa foi concebido para integrar ou esteve situado no
+          referido conjunto edificado, mas não tem mais esse contexto por ter
+          sido trasladado ou removido, ou porque o contexto foi destruído ou
+          descaracterizado.
+      in_conceptual_whole_with:
+        title: pertence ao mesmo contexto conceitual que
+        meaning: term:lido00578
+        description: >
+          Relação simétrica entre dois objetos que pertencem ao mesmo contexto
+          conceitual. Usar apenas nos casos em que o conjunto conceitual
+          maior não for cadastrado no documentário, por motivos técnicos ou
+          decisão científica.
+      in_physical_whole_with:
+        title: pertence ao mesmo contexto material que
+        meaning: term:lido00577
+        description: >
+          Relação simétrica entre dois objetos que pertencem ao mesmo contexto
+          material ou espacial. Usar apenas nos casos em que o conjunto
+          arquitetônico maior não for cadastrado no documentário, por motivos
+          técnicos ou decisão científica.
+      was_part_of_whole_with:
+        title: pertenceu ao mesmo contexto que
+        meaning: term:lido01059
+        description: >
+          Relação simétrica entre dois objetos que pertenceram ao mesmo
+          contexto conceitual, material ou espacial, mas já não pertencem
+          devido a remoção, traslado, destruição ou reclassificação. Usar
+          apenas nos casos em que o conjunto maior não for cadastrado no
+          documentário, por motivos técnicos ou decisão científica.
+      was_antedated:
+        title: foi precedido no mesmo sítio por
+        meaning: term:lido01189
+      is_part_of:
+        title: faz parte de
+        meaning: term:lido00574
+        description: >
+          Relação genérica entre parte e todo. Sempre que possível, usar os
+          tipos de relação mais específicos.
+      formerly_part_of:
+        title: anteriormente parte de
+        meaning: term:lido01085
+        description: >
+          O objeto físico em questão era anteriormente compreendido num
+          conjunto edificado maior que não mais existe, seja porque o conjunto
+          foi parcialmente demolido ou descaracterizado, ou porque suas outras
+          partes foram trasladadas ou removidas.
+      is_was_part_of:
+        title: parte de
+        meaning: term:lido01088
+        description: >
+          O objeto faz ou fazia parte de um conjunto físico maior, mas não é
+          possível determinar se esse conjunto ainda existe ou não.
+
   MaterialTechType:
     description: >
       A materialidade e as técnicas de produção ou intervenção na edificação
@@ -1033,126 +1161,6 @@ enums:
       requirement:
         meaning: term:lido00923
 
-  DepictionType:
-    description: >
-      Designa a relação que a edificação descrita na ficha tem com a mídia
-      relacionada.
-    permissible_values:  # http://terminology.lido-schema.org/lido00583
-      depictedIn:
-        title: representado em
-        meaning: term:lido00998
-        description: >
-          A obra descrita na ficha está representada na mídia relacionada,
-          que será geralmente uma obra de arte ou fotografia depositada num
-          repositório externo (catálogo de museu, Wikimedia Commons, etc.).
-
-  LargerContextType:
-    description: >-
-      Tipos de relações entre partes e todo previstas no vocabulário controlado
-      do LIDO. Inclui as categorias de relações hierárquicas e de relações
-      associativas de parte ao todo.
-
-      Ver <http://terminology.lido-schema.org/relatedWorkRelType>
-    permissible_values:
-      physical_part_of:
-        title: fisicamente contido em
-        meaning: term:lido00255
-        description: >
-          Usar quando um objeto físico fizer parte integrante de um objeto ou
-          complexo físico maior. Se o conjunto mais amplo for um construto
-          interpretativo, usar a relação `has_borader_conceptual_context`.
-      conceptual_part_of:
-        title: parte conceitual de
-        meaning: term:lido00572
-        description: >
-          Usar quando um objeto intelectual for parte de uma entidade
-          conceitual maior ou mais ampla.
-      has_borader_conceptual_context:
-        title: tem contexto conceitual mais amplo
-        meaning: term:lido00575
-        description: >
-          Usar quando um objeto físico for incluído segundo critérios
-          interpretativos num conjunto conceitual mais amplo. Se o conjunto
-          mais amplo for uma extensão física que compreende inequivocamente o
-          objeto, usar a relação `physical_part_of`.
-      example_of:
-        title: exemplar de
-        meaning: term:lido00627
-        description: >
-          Usar quando o objeto construído é a manifestação física de um
-          conteúdo intelectual, podendo abarcar desde instâncias específicas de
-          um projeto seriado (por exemplo, um exemplar das casas da SHIS —
-          Sociedade de Habitações de Interesse Social — produzidas em Brasília
-          a partir de 1969) até a realização edificada de um programa teórico
-          específico (por exemplo, a Cité Radieuse de Marselha como
-          exemplo da unité d'habitation de Le Corbusier).
-
-          Vinculações teóricas ou conceituais com maior distância
-          interpretativa (por exemplo, o Jardim América como exemplar de
-          cidade–jardim) devem ser cadastradas no grupo `subject`.
-      has_arch_context:
-        title: tem como contexto arquitetônico
-        meaning: term:lido00616
-        description: >
-          O objeto em causa foi concebido para integrar ou está situado no
-          referido conjunto edificado, ou integra o contexto funcional deste.
-      had_arch_context:
-        title: tinha como contexto arquitetônico
-        meaning: term:lido01051
-        description: >
-          O objeto em causa foi concebido para integrar ou esteve situado no
-          referido conjunto edificado, mas não tem mais esse contexto por ter
-          sido trasladado ou removido, ou porque o contexto foi destruído ou
-          descaracterizado.
-      in_conceptual_whole_with:
-        title: pertence ao mesmo contexto conceitual que
-        meaning: term:lido00578
-        description: >
-          Relação simétrica entre dois objetos que pertencem ao mesmo contexto
-          conceitual. Usar apenas nos casos em que o conjunto conceitual
-          maior não for cadastrado no documentário, por motivos técnicos ou
-          decisão científica.
-      in_physical_whole_with:
-        title: pertence ao mesmo contexto material que
-        meaning: term:lido00577
-        description: >
-          Relação simétrica entre dois objetos que pertencem ao mesmo contexto
-          material ou espacial. Usar apenas nos casos em que o conjunto
-          arquitetônico maior não for cadastrado no documentário, por motivos
-          técnicos ou decisão científica.
-      was_part_of_whole_with:
-        title: pertenceu ao mesmo contexto que
-        meaning: term:lido01059
-        description: >
-          Relação simétrica entre dois objetos que pertenceram ao mesmo
-          contexto conceitual, material ou espacial, mas já não pertencem
-          devido a remoção, traslado, destruição ou reclassificação. Usar
-          apenas nos casos em que o conjunto maior não for cadastrado no
-          documentário, por motivos técnicos ou decisão científica.
-      was_antedated:
-        title: foi precedido no mesmo sítio por
-        meaning: term:lido01189
-      is_part_of:
-        title: faz parte de
-        meaning: term:lido00574
-        description: >
-          Relação genérica entre parte e todo. Sempre que possível, usar os
-          tipos de relação mais específicos.
-      formerly_part_of:
-        title: anteriormente parte de
-        meaning: term:lido01085
-        description: >
-          O objeto físico em questão era anteriormente compreendido num
-          conjunto edificado maior que não mais existe, seja porque o conjunto
-          foi parcialmente demolido ou descaracterizado, ou porque suas outras
-          partes foram trasladadas ou removidas.
-      is_was_part_of:
-        title: parte de
-        meaning: term:lido01088
-        description: >
-          O objeto faz ou fazia parte de um conjunto físico maior, mas não é
-          possível determinar se esse conjunto ainda existe ou não.
-
   ReferenceType:
     description: >
       Tipos de referências a objetos externos previstos no LIDO.
@@ -1168,7 +1176,7 @@ enums:
         meaning: term:lido00100
 
   RelatedWorkRelType:
-    description: >-
+    description: |
       Relações associativas entre objetos físicos ou criações intelectuais,
       definidas segundo o vocabulário do LIDO.
       Compreende as relações associativas, exceto aquelas de partes com o todo.
@@ -1238,9 +1246,6 @@ enums:
 
   RightsType:
     description: LIDO expressions for rights types.
-  # reachable_from:
-    # source_ontology: http://terminology.lido-schema.org/rightsType_type
-    # include_self: false
     permissible_values:
       generic:
         meaning: term:lido00920
