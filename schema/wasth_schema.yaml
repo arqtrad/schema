@@ -6247,10 +6247,10 @@ slots:
   author:
     name: author
     definition_uri: https://tradicional.arq.br/schema/author
-    description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha. Alterar\
-      \ apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato\
-      \ `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente\
-      \ tamb\xE9m \xE9 aceito o formato `1234-5678-9012-345X`).\n"
+    description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha. Usar\
+      \ o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X`\
+      \ (temporariamente tamb\xE9m \xE9 aceito o formato `1234-5678-9012-345X`).\n\
+      Alterar apenas no caso de a ficha ter sido substancialmente reescrita.\n"
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - dcterms:contributor
@@ -6262,7 +6262,9 @@ slots:
   record_date:
     name: record_date
     definition_uri: https://tradicional.arq.br/schema/record_date
-    description: "Data de inclus\xE3o da ficha."
+    description: "Data de inclus\xE3o da ficha. Usar o formato ISO-8601 entre aspas\
+      \ `\"AAAA-MM-DD\"`.\nAlterar apenas no caso de a ficha ter sido substancialmente\
+      \ reescrita.\n"
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - dcterms:created
@@ -8544,10 +8546,10 @@ slots:
   Work_author:
     name: Work_author
     definition_uri: https://tradicional.arq.br/schema/author
-    description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha. Alterar\
-      \ apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato\
-      \ `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente\
-      \ tamb\xE9m \xE9 aceito o formato `1234-5678-9012-345X`).\n"
+    description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha. Usar\
+      \ o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X`\
+      \ (temporariamente tamb\xE9m \xE9 aceito o formato `1234-5678-9012-345X`).\n\
+      Alterar apenas no caso de a ficha ter sido substancialmente reescrita.\n"
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - dcterms:contributor
@@ -8565,7 +8567,9 @@ slots:
   Work_record_date:
     name: Work_record_date
     definition_uri: https://tradicional.arq.br/schema/record_date
-    description: "Data de inclus\xE3o da ficha."
+    description: "Data de inclus\xE3o da ficha. Usar o formato ISO-8601 entre aspas\
+      \ `\"AAAA-MM-DD\"`.\nAlterar apenas no caso de a ficha ter sido substancialmente\
+      \ reescrita.\n"
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - dcterms:created
@@ -10737,6 +10741,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-11-04T19:49:42'
+source_file_date: '2026-11-04T20:20:35'
 source_file_size: 56642
 
