@@ -199,6 +199,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#class-properties">
+<span class="md-ellipsis">
+      
+        Class Properties
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
 <span class="md-ellipsis">
       
@@ -212,6 +221,15 @@
 <span class="md-ellipsis">
       
         Usages
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#notes">
+<span class="md-ellipsis">
+      
+        Notes
       
     </span>
 </a>
@@ -289,7 +307,7 @@
 <p><em>Referência a uma pessoa jurídica (pode ser um indivíduo detentor de direitos jurídicos específicos que se queira referenciar) ou entidade coletiva histórica.</em></p>
 <p>__</p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/LegalBody">wasth:LegalBody</a></p>
+<p>URI: <a href="http://schema.org/Organization">schema:Organization</a></p>
 <pre class="mermaid"><code> classDiagram
     class LegalBody
     click LegalBody href "../LegalBody/"
@@ -308,6 +326,8 @@
 
 
       LegalBody : author
+
+      LegalBody : authors
 
       LegalBody : bibliographic_citation
 
@@ -399,6 +419,21 @@
 </ul>
 </li>
 </ul>
+<h2 id="class-properties">Class Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Class URI</td>
+<td><a href="http://schema.org/Organization">schema:Organization</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -437,7 +472,13 @@
 <tr>
 <td><a href="../author/">author</a></td>
 <td>0..1 <br/> <a href="../OrcidId/">OrcidId</a></td>
-<td>ORCID iD da pessoa que escreveu a versão original da ficha</td>
+<td>ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma ún...</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
+<td><a href="../authors/">authors</a></td>
+<td>* <br/> <a href="../OrcidId/">OrcidId</a></td>
+<td>ORCID iD das pessoas que escreveram a versão original da ficha, no caso de vá...</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -557,6 +598,11 @@
 </tr>
 </tbody>
 </table>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which they can be held responsible.</li>
+<li>O schema.org prevê um atributo <code>fundedItem</code> (do tipo <code>Grant</code>) para uma <code>Organization</code>.</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -573,11 +619,15 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:LegalBody</td>
+<td>schema:Organization</td>
 </tr>
 <tr>
 <td>native</td>
 <td>wasth:LegalBody</td>
+</tr>
+<tr>
+<td>close</td>
+<td>crm:E39_Actor</td>
 </tr>
 </tbody>
 </table>
@@ -590,7 +640,13 @@
 <span class="w">  </span><span class="s">direitos</span><span class="nv"> </span><span class="s">jurídicos</span><span class="nv"> </span><span class="s">específicos</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">queira</span><span class="nv"> </span><span class="s">referenciar)</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">entidade</span><span class="nv"> </span><span class="s">coletiva</span><span class="nv"> </span><span class="s">histórica.</span>
 
 <span class="w">  </span><span class="s">'</span>
+<span class="nt">notes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This class comprises people, either individually or in groups, who have the potential</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">to perform intentional actions of kinds for which they can be held responsible.</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">O schema.org prevê um atributo `fundedItem` (do tipo `Grant`) para uma `Organization`.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">close_mappings</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E39_Actor</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">slot_usage</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">identifiers</span><span class="p">:</span>
@@ -599,6 +655,9 @@
 <span class="w">      </span><span class="s">ou</span><span class="nv"> </span><span class="s">repositório</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">identidades,</span><span class="nv"> </span><span class="s">tal</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">ISNI.</span>
 
 <span class="w">      </span><span class="s">'</span>
+<span class="w">  </span><span class="nt">category</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">category</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string(term:lido00413)</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">legal_body_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">legal_body_type</span>
@@ -620,6 +679,7 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:Organization</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
@@ -629,7 +689,13 @@
 <span class="w">  </span><span class="s">direitos</span><span class="nv"> </span><span class="s">jurídicos</span><span class="nv"> </span><span class="s">específicos</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">queira</span><span class="nv"> </span><span class="s">referenciar)</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">entidade</span><span class="nv"> </span><span class="s">coletiva</span><span class="nv"> </span><span class="s">histórica.</span>
 
 <span class="w">  </span><span class="s">'</span>
+<span class="nt">notes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This class comprises people, either individually or in groups, who have the potential</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">to perform intentional actions of kinds for which they can be held responsible.</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">O schema.org prevê um atributo `fundedItem` (do tipo `Grant`) para uma `Organization`.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">close_mappings</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">crm:E39_Actor</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">slot_usage</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">identifiers</span><span class="p">:</span>
@@ -638,6 +704,9 @@
 <span class="w">      </span><span class="s">ou</span><span class="nv"> </span><span class="s">repositório</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">identidades,</span><span class="nv"> </span><span class="s">tal</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">ISNI.</span>
 
 <span class="w">      </span><span class="s">'</span>
+<span class="w">  </span><span class="nt">category</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">category</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string(term:lido00413)</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">legal_body_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">legal_body_type</span>
@@ -691,8 +760,12 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
 <span class="w">  </span><span class="nt">author</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">author</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'ORCID</span><span class="nv"> </span><span class="s">iD</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">pessoa</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">escreveu</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">versão</span><span class="nv"> </span><span class="s">original</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha.</span><span class="nv"> </span><span class="s">Usar</span>
-<span class="w">      </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">`orcid:1234-5678-9012-345X`</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">`https://orcid.org/1234-5678-9012-345X`</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'ORCID</span><span class="nv"> </span><span class="s">iD</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">pessoa</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">escreveu</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">versão</span><span class="nv"> </span><span class="s">original</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha,</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">caso</span>
+<span class="w">      </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">única</span><span class="nv"> </span><span class="s">pessoa</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">responsável.</span><span class="nv"> </span><span class="s">Este</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">foi</span><span class="nv"> </span><span class="s">mantido</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">compatibilidade,</span>
+<span class="w">      </span><span class="s">preferir</span><span class="nv"> </span><span class="s">`authors`</span><span class="nv"> </span><span class="s">daqui</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">frente</span><span class="nv"> </span><span class="s">mesmo</span><span class="nv"> </span><span class="s">quando</span><span class="nv"> </span><span class="s">houver</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">só</span><span class="nv"> </span><span class="s">pessoa</span><span class="nv"> </span><span class="s">responsável</span>
+<span class="w">      </span><span class="s">pela</span><span class="nv"> </span><span class="s">ficha.</span>
+
+<span class="w">      </span><span class="s">Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">`orcid:1234-5678-9012-345X`</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">`https://orcid.org/1234-5678-9012-345X`</span>
 <span class="w">      </span><span class="s">(temporariamente</span><span class="nv"> </span><span class="s">também</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">aceito</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">`1234-5678-9012-345X`).</span>
 
 <span class="w">      </span><span class="s">Alterar</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">ter</span><span class="nv"> </span><span class="s">sido</span><span class="nv"> </span><span class="s">substancialmente</span><span class="nv"> </span><span class="s">reescrita.</span>
@@ -705,6 +778,27 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrcidId</span>
+<span class="w">  </span><span class="nt">authors</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">authors</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'ORCID</span><span class="nv"> </span><span class="s">iD</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">pessoas</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">escreveram</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">versão</span><span class="nv"> </span><span class="s">original</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha,</span>
+<span class="w">      </span><span class="s">no</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">várias</span><span class="nv"> </span><span class="s">pessoas</span><span class="nv"> </span><span class="s">terem</span><span class="nv"> </span><span class="s">contribuído</span><span class="nv"> </span><span class="s">igualmente.</span>
+
+<span class="w">      </span><span class="s">Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">`orcid:1234-5678-9012-345X`</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">`https://orcid.org/1234-5678-9012-345X`</span>
+<span class="w">      </span><span class="s">(temporariamente</span><span class="nv"> </span><span class="s">também</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">aceito</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">`1234-5678-9012-345X`).</span>
+
+<span class="w">      </span><span class="s">Alterar</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">ter</span><span class="nv"> </span><span class="s">sido</span><span class="nv"> </span><span class="s">substancialmente</span><span class="nv"> </span><span class="s">reescrita.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:contributor</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrcidId</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">record_date</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_date</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Data</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">inclusão</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha.</span><span class="nv"> </span><span class="s">Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">ISO-8601</span><span class="nv"> </span><span class="s">entre</span><span class="nv"> </span><span class="s">aspas</span><span class="nv"> </span><span class="s">`"AAAA-MM-DD"`.</span>
@@ -758,6 +852,7 @@
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">term:lidoCategory</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string(term:lido00413)</span>
 <span class="w">    </span><span class="nt">designates_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LegalBody</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
@@ -924,6 +1019,7 @@
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:Organization</span>
 </code></pre></div>
 </details>
 </div>

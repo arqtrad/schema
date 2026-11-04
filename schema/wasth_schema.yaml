@@ -6247,10 +6247,13 @@ slots:
   author:
     name: author
     definition_uri: https://tradicional.arq.br/schema/author
-    description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha. Usar\
-      \ o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X`\
-      \ (temporariamente tamb\xE9m \xE9 aceito o formato `1234-5678-9012-345X`).\n\
-      Alterar apenas no caso de a ficha ter sido substancialmente reescrita.\n"
+    description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha, no\
+      \ caso de uma \xFAnica pessoa ser respons\xE1vel. Este campo foi mantido apenas\
+      \ por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver\
+      \ uma s\xF3 pessoa respons\xE1vel pela ficha.\nUsar o formato `orcid:1234-5678-9012-345X`\
+      \ ou `https://orcid.org/1234-5678-9012-345X` (temporariamente tamb\xE9m \xE9\
+      \ aceito o formato `1234-5678-9012-345X`).\nAlterar apenas no caso de a ficha\
+      \ ter sido substancialmente reescrita.\n"
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - dcterms:contributor
@@ -6259,6 +6262,24 @@ slots:
     domain_of:
     - Thing
     range: OrcidId
+  authors:
+    name: authors
+    definition_uri: https://tradicional.arq.br/schema/authors
+    description: "ORCID iD das pessoas que escreveram a vers\xE3o original da ficha,\
+      \ no caso de v\xE1rias pessoas terem contribu\xEDdo igualmente.\nUsar o formato\
+      \ `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente\
+      \ tamb\xE9m \xE9 aceito o formato `1234-5678-9012-345X`).\nAlterar apenas no\
+      \ caso de a ficha ter sido substancialmente reescrita.\n"
+    from_schema: https://tradicional.arq.br/schema/thing
+    mappings:
+    - dcterms:contributor
+    slot_uri: dcterms:contributor
+    owner: Thing
+    domain_of:
+    - Thing
+    range: OrcidId
+    multivalued: true
+    inlined_as_list: true
   record_date:
     name: record_date
     definition_uri: https://tradicional.arq.br/schema/record_date
@@ -7395,10 +7416,10 @@ slots:
     required: true
   eventDate__date_value:
     name: eventDate__date_value
-    description: "Usar o formato ISO-8601 (AAAA-MM-DD). Para datas imprecisas, usar\
-      \ o PRIMEIRO ou o \xDALTIMO dia, m\xEAs ou ano do per\xEDodo delimitado, conforme\
-      \ se tratar de uma data de corte inicial ou final para o evento, e descrever\
-      \ verbalmente o per\xEDodo no campo `display_date`.\n"
+    description: "Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.\nPara datas\
+      \ imprecisas, usar o PRIMEIRO ou o \xDALTIMO dia, m\xEAs ou ano do per\xEDodo\
+      \ delimitado, conforme se tratar de uma data de corte inicial ou final para\
+      \ o evento, e descrever verbalmente o per\xEDodo no campo `display_date`.\n"
     from_schema: https://tradicional.arq.br/schema/temporal
     slot_uri: wasth:date_value
     alias: date_value
@@ -8440,6 +8461,34 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  LegalBody_category:
+    name: LegalBody_category
+    definition_uri: https://tradicional.arq.br/schema/category
+    description: "Uma classifica\xE7\xE3o ampla para o objeto descrito na ficha, usando\
+      \ o vocabul\xE1rio controlado do LIDO.\nNos document\xE1rios de edifica\xE7\xF5\
+      es, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\"\
+      ).\nNos recursos gr\xE1ficos de uma obra, preencher este campo OBRIGATORIAMENTE\
+      \ com `term:lido01193` (\"Objeto conceitual\").\n"
+    notes:
+    - 'The LIDO Category Vocabulary is a structured controlled list of terms recommended
+      to use as values in the LIDO Category element.
+
+      Examples are human-made object or natural object.'
+    from_schema: https://tradicional.arq.br/schema/thing
+    mappings:
+    - term:lidoCategory
+    is_a: category
+    domain: LegalBody
+    slot_uri: term:lidoCategory
+    ifabsent: string(term:lido00413)
+    designates_type: true
+    alias: category
+    owner: LegalBody
+    domain_of:
+    - LegalBody
+    is_usage_slot: true
+    usage_slot_name: category
+    range: uriorcurie
   Event_title:
     name: Event_title
     definition_uri: https://tradicional.arq.br/schema/title
@@ -8546,10 +8595,13 @@ slots:
   Work_author:
     name: Work_author
     definition_uri: https://tradicional.arq.br/schema/author
-    description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha. Usar\
-      \ o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X`\
-      \ (temporariamente tamb\xE9m \xE9 aceito o formato `1234-5678-9012-345X`).\n\
-      Alterar apenas no caso de a ficha ter sido substancialmente reescrita.\n"
+    description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha, no\
+      \ caso de uma \xFAnica pessoa ser respons\xE1vel. Este campo foi mantido apenas\
+      \ por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver\
+      \ uma s\xF3 pessoa respons\xE1vel pela ficha.\nUsar o formato `orcid:1234-5678-9012-345X`\
+      \ ou `https://orcid.org/1234-5678-9012-345X` (temporariamente tamb\xE9m \xE9\
+      \ aceito o formato `1234-5678-9012-345X`).\nAlterar apenas no caso de a ficha\
+      \ ter sido substancialmente reescrita.\n"
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - dcterms:contributor
@@ -8623,7 +8675,7 @@ slots:
     is_a: category
     domain: Work
     slot_uri: term:lidoCategory
-    ifabsent: string(http://terminology.lido-schema.org/lido00096)
+    ifabsent: string(term:lido00096)
     designates_type: true
     alias: category
     owner: Work
@@ -8857,6 +8909,7 @@ classes:
     - title
     - id
     - author
+    - authors
     - record_date
     - description
     - category
@@ -9020,6 +9073,7 @@ classes:
     - title
     - id
     - author
+    - authors
     - record_date
     - description
     - category
@@ -9059,6 +9113,7 @@ classes:
     - title
     - id
     - author
+    - authors
     - record_date
     - description
     - category
@@ -9095,6 +9150,7 @@ classes:
     - title
     - id
     - author
+    - authors
     - record_date
     - description
     - category
@@ -9142,6 +9198,7 @@ classes:
     slots:
     - title
     - author
+    - authors
     - record_date
     - description
     - identifiers
@@ -9228,6 +9285,7 @@ classes:
     slots:
     - id
     - author
+    - authors
     - record_date
     - category
     - identifiers
@@ -9504,15 +9562,24 @@ classes:
     description: "Refer\xEAncia a uma pessoa jur\xEDdica (pode ser um indiv\xEDduo\
       \ detentor de direitos jur\xEDdicos espec\xEDficos que se queira referenciar)\
       \ ou entidade coletiva hist\xF3rica.\n"
+    notes:
+    - This class comprises people, either individually or in groups, who have the
+      potential to perform intentional actions of kinds for which they can be held
+      responsible.
+    - "O schema.org prev\xEA um atributo `fundedItem` (do tipo `Grant`) para uma `Organization`."
     from_schema: https://tradicional.arq.br/schema/shared
+    exact_mappings:
+    - schema:Organization
+    close_mappings:
+    - crm:E39_Actor
     is_a: Thing
     slots:
     - title
     - id
     - author
+    - authors
     - record_date
     - description
-    - category
     - bibliographic_citation
     - content
     - thing__title_source
@@ -9523,11 +9590,15 @@ classes:
     - legalBody__legal_body_type
     - legalBody__weblink
     - LegalBody_identifiers
+    - LegalBody_category
     slot_usage:
       identifiers:
         name: identifiers
         description: "Referencia a identidade do ente legal num vocabul\xE1rio controlado\
           \ ou reposit\xF3rio de identidades, tal como o ISNI.\n"
+      category:
+        name: category
+        ifabsent: string(term:lido00413)
     attributes:
       legal_body_type:
         name: legal_body_type
@@ -9539,7 +9610,7 @@ classes:
         name: weblink
         description: "Link para uma p\xE1gina descritiva da entidade."
         range: uriorcurie
-    class_uri: wasth:LegalBody
+    class_uri: schema:Organization
   Event:
     name: Event
     definition_uri: https://tradicional.arq.br/schema/Event
@@ -9585,6 +9656,7 @@ classes:
     slots:
     - id
     - author
+    - authors
     - record_date
     - category
     - identifiers
@@ -9770,10 +9842,11 @@ classes:
         required: true
       date_value:
         name: date_value
-        description: "Usar o formato ISO-8601 (AAAA-MM-DD). Para datas imprecisas,\
-          \ usar o PRIMEIRO ou o \xDALTIMO dia, m\xEAs ou ano do per\xEDodo delimitado,\
-          \ conforme se tratar de uma data de corte inicial ou final para o evento,\
-          \ e descrever verbalmente o per\xEDodo no campo `display_date`.\n"
+        description: "Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.\nPara\
+          \ datas imprecisas, usar o PRIMEIRO ou o \xDALTIMO dia, m\xEAs ou ano do\
+          \ per\xEDodo delimitado, conforme se tratar de uma data de corte inicial\
+          \ ou final para o evento, e descrever verbalmente o per\xEDodo no campo\
+          \ `display_date`.\n"
         range: date
     class_uri: wasth:EventDate
   StylePeriod:
@@ -9841,6 +9914,7 @@ classes:
     - title
     - id
     - author
+    - authors
     - record_date
     - description
     - category
@@ -9946,6 +10020,7 @@ classes:
     - title
     - id
     - author
+    - authors
     - record_date
     - description
     - category
@@ -9996,6 +10071,7 @@ classes:
     - crm:E22_Human-Made_Object
     is_a: Thing
     slots:
+    - authors
     - identifiers
     - bibliographic_citation
     - thing__title_source
@@ -10064,7 +10140,7 @@ classes:
         required: true
       category:
         name: category
-        ifabsent: string(http://terminology.lido-schema.org/lido00096)
+        ifabsent: string(term:lido00096)
       resources:
         name: resources
         description: "Os desenhos ou modelos da edifica\xE7\xE3o s\xE3o apresentados\
@@ -10494,6 +10570,7 @@ classes:
     - title
     - id
     - author
+    - authors
     - record_date
     - description
     - category
@@ -10693,6 +10770,7 @@ classes:
     - title
     - id
     - author
+    - authors
     - record_date
     - description
     - category
@@ -10741,6 +10819,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-11-04T20:20:35'
+source_file_date: '2026-11-04T22:30:55'
 source_file_size: 56642
 
