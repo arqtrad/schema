@@ -8048,19 +8048,20 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  site__part_of:
-    name: site__part_of
+  site__name:
+    name: site__name
     description: "Permite identificar o contexto geogr\xE1fico ou administrativo ao\
-      \ qual a edifica\xE7\xE3o se subordina. Referenciar a localidade por meio do\
-      \ c\xF3digo identificador na forma: `geonameid: 1234`\n---------------------------------------------------------------------\n\
-      A set of structured information about a place that is the broader context for\
-      \ the place in focus, such as the district, state, or nation to which a city\
-      \ belongs.\n"
+      \ qual\na edifica\xE7\xE3o se subordina, usando a base <https://geonames.org>.\n\
+      Referenciar a localidade por meio do c\xF3digo identificador na forma:\n`geonameid:\
+      \ 1234`\n"
+    notes:
+    - A set of structured information about a place that is the broader context for
+      the place in focus, such as the district, state, or nation to which a city belongs.
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
     - lido:partOfPlace
     slot_uri: lido:partOfPlace
-    alias: part_of
+    alias: name
     owner: Site
     domain_of:
     - Site
@@ -10562,20 +10563,22 @@ classes:
     - thing__tags
     - thing__temporal
     - thing__repositories
-    - site__part_of
+    - site__name
     - site__site_type
     - site__location
     - site__extent
     - site__event_place_type
     attributes:
-      part_of:
-        name: part_of
+      name:
+        name: name
         description: "Permite identificar o contexto geogr\xE1fico ou administrativo\
-          \ ao qual a edifica\xE7\xE3o se subordina. Referenciar a localidade por\
-          \ meio do c\xF3digo identificador na forma: `geonameid: 1234`\n---------------------------------------------------------------------\n\
-          A set of structured information about a place that is the broader context\
-          \ for the place in focus, such as the district, state, or nation to which\
-          \ a city belongs.\n"
+          \ ao qual\na edifica\xE7\xE3o se subordina, usando a base <https://geonames.org>.\n\
+          Referenciar a localidade por meio do c\xF3digo identificador na forma:\n\
+          `geonameid: 1234`\n"
+        notes:
+        - A set of structured information about a place that is the broader context
+          for the place in focus, such as the district, state, or nation to which
+          a city belongs.
         slot_uri: lido:partOfPlace
         range: GeonamesFeature
         inlined: true
@@ -10801,6 +10804,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-11-04T17:17:24'
+source_file_date: '2026-11-04T17:28:47'
 source_file_size: 56771
 

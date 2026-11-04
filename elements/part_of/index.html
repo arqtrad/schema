@@ -398,6 +398,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -411,6 +422,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Source
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -458,8 +486,30 @@
 
 
 <h1 id="slot-part_of">Slot: part_of</h1>
+<p><em>Permite identificar um conjunto arquitetônico, urbanístico ou conceitual (por exemplo, uma série de casas) do qual a edificação faz parte.</em></p>
+<p><em>Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO <a href="https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap"><code>relatedWorksWrap</code></a> em quatro tipos de relacionamentos :</em></p>
+<p><em>1. <code>part_of</code> : a edificação descrita na ficha é intrinsecamente parte</em></p>
+<p>_   de um conjunto arquitetônico ou urbanístico maior, quando se trata_</p>
+<p>_   de uma parte fisicamente vinculada a outra edificaçao ou um_</p>
+<p>_   elemento concebido dentro de um projeto de conjunto._</p>
+<p>__</p>
+<p><em>2. <code>related_works</code> : a edificação descrita na ficha pode ser</em></p>
+<p>_   relacionada, por meio de interpretação historiográfica, a outras_</p>
+<p>_   edificações ou objetos (fontes primárias escritas ou visuais,_</p>
+<p>_   obras de arte em geral, outras edificações, etc.)._</p>
+<p>__</p>
+<p><em>3. <code>media</code> : fotografias ou imagens históricas (desenhos técnicos ou</em></p>
+<p>_   artísticos, pinturas, estampas, etc.) que representem fielmente a_</p>
+<p>_   aparência da edificação descrita na ficha._</p>
+<p>__</p>
+<p><em>4. <code>resources</code> : desenhos técnicos em formato vetorial e,</em></p>
+<p>_   eventualmente, modelos tridimensionais ou outras formas de_</p>
+<p>_   informação técnica que não cabem no formato da ficha, mas que_</p>
+<p>_   foram produzidas pela equipe e colaboradores do projeto de_</p>
+<p>_   pesquisa._</p>
 <div>
-<p>URI: <a href="https://tradicional.arq.br/schema/part_of">wasth:part_of</a></p>
+<p>URI: <a href="http://purl.org/dc/terms/isPartOf">dcterms:isPartOf</a>
+Alias: name</p>
 <!-- no inheritance hierarchy -->
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
@@ -476,11 +526,6 @@
 <td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>no</td>
 </tr>
-<tr>
-<td><a href="../Site/">Site</a></td>
-<td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
-<td>no</td>
-</tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
@@ -495,15 +540,56 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../String/">String</a></td>
+<td><a href="../LargerContextReference/">LargerContextReference</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Work/">Work</a>, <a href="../Site/">Site</a></td>
+<td><a href="../Work/">Work</a></td>
+</tr>
+<tr>
+<td>Slot URI</td>
+<td><a href="http://purl.org/dc/terms/isPartOf">dcterms:isPartOf</a></td>
+</tr>
+<tr>
+<td>### Cardinality and Requirements</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multivalued</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner</td>
+<td><a href="../Work/">Work</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: <a href="https://tradicional.arq.br/schema">https://tradicional.arq.br/schema</a></li>
+</ul>
 <h2 id="mappings">Mappings</h2>
 <table>
 <thead>
@@ -515,7 +601,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:part_of</td>
+<td>dcterms:isPartOf</td>
 </tr>
 <tr>
 <td>native</td>
@@ -526,10 +612,33 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">part_of</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Permite</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">conjunto</span><span class="nv"> </span><span class="s">arquitetônico,</span><span class="nv"> </span><span class="s">urbanístico</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">conceitual\</span>
+<span class="w">  </span><span class="s">\ (por</span><span class="nv"> </span><span class="s">exemplo,</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">série</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">casas)</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">faz</span><span class="nv"> </span><span class="s">parte.\nNos</span><span class="nv"> </span><span class="s">Documentários\</span>
+<span class="w">  </span><span class="s">\ da</span><span class="nv"> </span><span class="s">Arquitetura</span><span class="nv"> </span><span class="s">Tradicional,</span><span class="nv"> </span><span class="s">desdobramos</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">grupo</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">[`relatedWorksWrap`](https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap)\</span>
+<span class="w">  </span><span class="s">\ em</span><span class="nv"> </span><span class="s">quatro</span><span class="nv"> </span><span class="s">tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">relacionamentos</span><span class="err"> </span><span class="s">:\n1.</span><span class="nv"> </span><span class="s">`part_of`</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">descrita</span><span class="nv"> </span><span class="s">na\</span>
+<span class="w">  </span><span class="s">\ ficha</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">intrinsecamente</span><span class="nv"> </span><span class="s">parte\n</span><span class="nv">   </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">conjunto</span><span class="nv"> </span><span class="s">arquitetônico</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">urbanístico\</span>
+<span class="w">  </span><span class="s">\ maior,</span><span class="nv"> </span><span class="s">quando</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">trata\n</span><span class="nv">   </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">parte</span><span class="nv"> </span><span class="s">fisicamente</span><span class="nv"> </span><span class="s">vinculada</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">outra</span><span class="nv"> </span><span class="s">edificaçao\</span>
+<span class="w">  </span><span class="s">\ ou</span><span class="nv"> </span><span class="s">um\n</span><span class="nv">   </span><span class="s">elemento</span><span class="nv"> </span><span class="s">concebido</span><span class="nv"> </span><span class="s">dentro</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">conjunto.\n\n2.</span><span class="nv"> </span><span class="s">`related_works`</span><span class="err"> </span><span class="s">:\</span>
+<span class="w">  </span><span class="s">\ a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">descrita</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser\n</span><span class="nv">   </span><span class="s">relacionada,</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">interpretação\</span>
+<span class="w">  </span><span class="s">\ historiográfica,</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">outras\n</span><span class="nv">   </span><span class="s">edificações</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">objetos</span><span class="nv"> </span><span class="s">(fontes</span><span class="nv"> </span><span class="s">primárias</span><span class="nv"> </span><span class="s">escritas\</span>
+<span class="w">  </span><span class="s">\ ou</span><span class="nv"> </span><span class="s">visuais,\n</span><span class="nv">   </span><span class="s">obras</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">arte</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">geral,</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">edificações,</span><span class="nv"> </span><span class="s">etc.).\n\n3.</span><span class="nv"> </span><span class="s">`media`</span><span class="err"> </span><span class="s">:\</span>
+<span class="w">  </span><span class="s">\ fotografias</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">imagens</span><span class="nv"> </span><span class="s">históricas</span><span class="nv"> </span><span class="s">(desenhos</span><span class="nv"> </span><span class="s">técnicos</span><span class="nv"> </span><span class="s">ou\n</span><span class="nv">   </span><span class="s">artísticos,</span><span class="nv"> </span><span class="s">pinturas,\</span>
+<span class="w">  </span><span class="s">\ estampas,</span><span class="nv"> </span><span class="s">etc.)</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">representem</span><span class="nv"> </span><span class="s">fielmente</span><span class="nv"> </span><span class="s">a\n</span><span class="nv">   </span><span class="s">aparência</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">descrita\</span>
+<span class="w">  </span><span class="s">\ na</span><span class="nv"> </span><span class="s">ficha.\n\n4.</span><span class="nv"> </span><span class="s">`resources`</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">desenhos</span><span class="nv"> </span><span class="s">técnicos</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">vetorial</span><span class="nv"> </span><span class="s">e,\n</span><span class="nv">   </span><span class="s">eventualmente,\</span>
+<span class="w">  </span><span class="s">\ modelos</span><span class="nv"> </span><span class="s">tridimensionais</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">formas</span><span class="nv"> </span><span class="s">de\n</span><span class="nv">   </span><span class="s">informação</span><span class="nv"> </span><span class="s">técnica</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">cabem\</span>
+<span class="w">  </span><span class="s">\ no</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha,</span><span class="nv"> </span><span class="s">mas</span><span class="nv"> </span><span class="s">que\n</span><span class="nv">   </span><span class="s">foram</span><span class="nv"> </span><span class="s">produzidas</span><span class="nv"> </span><span class="s">pela</span><span class="nv"> </span><span class="s">equipe</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">colaboradores\</span>
+<span class="w">  </span><span class="s">\ do</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">de\n</span><span class="nv">   </span><span class="s">pesquisa."</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
+<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:isPartOf</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LargerContextReference</span>
+<span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>

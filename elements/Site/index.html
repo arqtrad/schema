@@ -401,13 +401,13 @@
 
 
 
-      Site : part_of
+      Site : name
 
 
 
 
 
-        Site --&gt; "0..1" GeonamesFeature : part_of
+        Site --&gt; "0..1" GeonamesFeature : name
         click GeonamesFeature href "../GeonamesFeature/"
 
 
@@ -510,9 +510,9 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../part_of/">part_of</a></td>
+<td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../GeonamesFeature/">GeonamesFeature</a></td>
-<td>Permite identificar o contexto geográfico ou administrativo ao qual a edifica...</td>
+<td>Permite identificar o contexto geográfico ou administrativo ao qual</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -754,23 +754,25 @@
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">attributes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">part_of</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">part_of</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Permite</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">geográfico</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">administrativo</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">qual</span>
-<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">subordina.</span><span class="nv"> </span><span class="s">Referenciar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">localidade</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">código</span><span class="nv"> </span><span class="s">identificador</span>
-<span class="w">      </span><span class="s">na</span><span class="nv"> </span><span class="s">forma:</span><span class="nv"> </span><span class="s">`geonameid:</span><span class="nv"> </span><span class="s">1234`</span>
 
-<span class="w">      </span><span class="s">---------------------------------------------------------------------</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">subordina,</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">base</span><span class="nv"> </span><span class="s">&lt;https://geonames.org&gt;.</span>
 
-<span class="w">      </span><span class="s">A</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">place</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">broader</span><span class="nv"> </span><span class="s">context</span><span class="nv"> </span><span class="s">for</span>
-<span class="w">      </span><span class="s">the</span><span class="nv"> </span><span class="s">place</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">focus,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">district,</span><span class="nv"> </span><span class="s">state,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">nation</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">city</span><span class="nv"> </span><span class="s">belongs.</span>
+<span class="w">      </span><span class="s">Referenciar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">localidade</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">código</span><span class="nv"> </span><span class="s">identificador</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">forma:</span>
+
+<span class="w">      </span><span class="s">`geonameid:</span><span class="nv"> </span><span class="s">1234`</span>
 
 <span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">notes</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A set of structured information about a place that is the broader context for</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">the place in focus, such as the district, state, or nation to which a city belongs.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/work</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:partOfPlace</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesFeature</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesFeature</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">site_type</span><span class="p">:</span>
@@ -868,24 +870,26 @@
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">attributes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">part_of</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">part_of</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Permite</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">geográfico</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">administrativo</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">qual</span>
-<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">subordina.</span><span class="nv"> </span><span class="s">Referenciar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">localidade</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">código</span><span class="nv"> </span><span class="s">identificador</span>
-<span class="w">      </span><span class="s">na</span><span class="nv"> </span><span class="s">forma:</span><span class="nv"> </span><span class="s">`geonameid:</span><span class="nv"> </span><span class="s">1234`</span>
 
-<span class="w">      </span><span class="s">---------------------------------------------------------------------</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">subordina,</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">base</span><span class="nv"> </span><span class="s">&lt;https://geonames.org&gt;.</span>
 
-<span class="w">      </span><span class="s">A</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">structured</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">place</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">broader</span><span class="nv"> </span><span class="s">context</span><span class="nv"> </span><span class="s">for</span>
-<span class="w">      </span><span class="s">the</span><span class="nv"> </span><span class="s">place</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">focus,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">district,</span><span class="nv"> </span><span class="s">state,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">nation</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">city</span><span class="nv"> </span><span class="s">belongs.</span>
+<span class="w">      </span><span class="s">Referenciar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">localidade</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">código</span><span class="nv"> </span><span class="s">identificador</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">forma:</span>
+
+<span class="w">      </span><span class="s">`geonameid:</span><span class="nv"> </span><span class="s">1234`</span>
 
 <span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">notes</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A set of structured information about a place that is the broader context for</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">the place in focus, such as the district, state, or nation to which a city belongs.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/work</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:partOfPlace</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesFeature</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesFeature</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">site_type</span><span class="p">:</span>
