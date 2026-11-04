@@ -381,17 +381,6 @@
 
       Thing : record_date
 
-      Thing : record_rights
-
-
-
-
-
-        Thing --&gt; "*" Right : record_rights
-        click Right href "../Right/"
-
-
-
       Thing : repositories
 
 
@@ -508,12 +497,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../record_rights/">record_rights</a></td>
-<td>* <br/> <a href="../Right/">Right</a></td>
-<td>Informações estruturadas sobre os direitos que incidem sobre o conteúdo textu...</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../bibliographic_citation/">bibliographic_citation</a></td>
 <td>* <em>recommended</em> <br/> <a href="../BibliographicCitation/">BibliographicCitation</a></td>
 <td>📚  Cadastro de uma referência bibliográfica</td>
@@ -623,7 +606,6 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_date</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">category</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_rights</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content</span>
 <span class="nt">attributes</span><span class="p">:</span>
@@ -991,27 +973,6 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
-<span class="w">  </span><span class="nt">record_rights</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_rights</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Informações</span><span class="nv"> </span><span class="s">estruturadas</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">incidem</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">conteúdo</span>
-<span class="w">      </span><span class="s">textual</span><span class="nv"> </span><span class="s">desta</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">detentor</span><span class="nv"> </span><span class="s">desses</span><span class="nv"> </span><span class="s">direitos.</span>
-
-<span class="w">      </span><span class="s">⚠️</span><span class="nv">  </span><span class="s">Este</span><span class="nv"> </span><span class="s">grupo</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">refere</span><span class="nv"> </span><span class="s">aos</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">CONTEÚDO</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha,</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">os</span>
-<span class="w">      </span><span class="s">direitos</span><span class="nv"> </span><span class="s">incidentes</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">descrito.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">notes</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A set of structured information about rights regarding the content provided</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">in this LIDO record.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">bibliographic_citation</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bibliographic_citation</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'📚</span><span class="nv">  </span><span class="s">Cadastro</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">referência</span><span class="nv"> </span><span class="s">bibliográfica.</span>

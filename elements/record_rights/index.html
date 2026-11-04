@@ -503,69 +503,14 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Thing/">Thing</a></td>
-<td>Esta classe compreende todas as coisas no universo do CIDOC CRM</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../Concept/">Concept</a></td>
 <td>Um conceito é uma unidade de conhecimento ou entendimento delimitada e defini...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../RelatedObject/">RelatedObject</a></td>
-<td>A set of structured information about an object or work, or a group of object...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../RelatedWork/">RelatedWork</a></td>
-<td>As formas mais comuns de relação no nosso projeto são :</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../LargerContextReference/">LargerContextReference</a></td>
-<td>Tipo de relação específica entre obras a ser usado quando o objeto descrito n...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Resource/">Resource</a></td>
-<td>Este grupo identifica um recurso visual ou documental que fornece informações...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MediaObject/">MediaObject</a></td>
-<td>Descrição e referência a um único arquivo de mídia</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../LegalBody/">LegalBody</a></td>
-<td>Referência a uma pessoa jurídica (pode ser um indivíduo detentor de direitos ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Event/">Event</a></td>
-<td>Um evento é um processo específico e coerente, delimitável, de interações ent...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Repository/">Repository</a></td>
-<td>Entidade com existência jurídica e espacial</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Work/">Work</a></td>
 <td>Nos Documentários da Arquitetura Tradicional, esta ficha é usada para cadastr...</td>
 <td>yes</td>
-</tr>
-<tr>
-<td><a href="../Site/">Site</a></td>
-<td>O georreferenciamento é o cerne do projeto dos Documentários da Arquitetura T...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Collection/">Collection</a></td>
-<td></td>
-<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -585,7 +530,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../Thing/">Thing</a></td>
+<td><a href="../Concept/">Concept</a>, <a href="../Work/">Work</a></td>
 </tr>
 <tr>
 <td>### Cardinality and Requirements</td>
@@ -651,7 +596,8 @@
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Work</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Right</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

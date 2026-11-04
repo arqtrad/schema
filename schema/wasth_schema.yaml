@@ -6342,9 +6342,10 @@ slots:
       in this LIDO record.
     from_schema: https://tradicional.arq.br/schema/thing
     slot_uri: wasth:record_rights
-    owner: Thing
+    owner: Work
     domain_of:
-    - Thing
+    - Concept
+    - Work
     range: Right
     multivalued: true
     inlined: true
@@ -8097,8 +8098,9 @@ slots:
     name: site__extent
     description: "\xC1rea da implanta\xE7\xE3o da edifica\xE7\xE3o ou s\xEDtio cadastrado.\
       \ Usar o sistema de coordenadas geogr\xE1ficas EPSG:4326 (WGS84) sempre que\
-      \ poss\xEDvel.\n---------------------------------------------------------------------\n\
-      Polygonal, multipolygonal, or linear geographic extent associated with the place."
+      \ poss\xEDvel."
+    notes:
+    - Polygonal, multipolygonal, or linear geographic extent associated with the place.
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
     - geo:hasGeometry
@@ -8853,7 +8855,6 @@ classes:
     - record_date
     - description
     - category
-    - record_rights
     - bibliographic_citation
     - thing__title_source
     - thing__alt_name
@@ -8863,6 +8864,7 @@ classes:
     - thing__repositories
     - broader
     - narrower
+    - record_rights
     - concept__concept_type
     - concept__mapping
     - concept__relation
@@ -9019,7 +9021,6 @@ classes:
     - record_date
     - description
     - category
-    - record_rights
     - bibliographic_citation
     - content
     - thing__title_source
@@ -9059,7 +9060,6 @@ classes:
     - record_date
     - description
     - category
-    - record_rights
     - bibliographic_citation
     - content
     - thing__title_source
@@ -9097,7 +9097,6 @@ classes:
     - record_date
     - description
     - category
-    - record_rights
     - bibliographic_citation
     - content
     - thing__title_source
@@ -9145,7 +9144,6 @@ classes:
     - record_author
     - record_date
     - description
-    - record_rights
     - bibliographic_citation
     - content
     - thing__title_source
@@ -9233,7 +9231,6 @@ classes:
     - record_author
     - record_date
     - category
-    - record_rights
     - bibliographic_citation
     - thing__title_source
     - thing__alt_name
@@ -9521,7 +9518,6 @@ classes:
     - record_date
     - description
     - category
-    - record_rights
     - bibliographic_citation
     - content
     - thing__title_source
@@ -9599,7 +9595,6 @@ classes:
     - record_author
     - record_date
     - category
-    - record_rights
     - bibliographic_citation
     - thing__title_source
     - thing__alt_name
@@ -9867,7 +9862,6 @@ classes:
     - record_date
     - description
     - category
-    - record_rights
     - bibliographic_citation
     - content
     - thing__title_source
@@ -10000,7 +9994,6 @@ classes:
     - record_date
     - description
     - category
-    - record_rights
     - bibliographic_citation
     - content
     - thing__title_source
@@ -10063,6 +10056,7 @@ classes:
     - culture
     - Work_resources
     - Work_media
+    - Work_record_rights
     - work__title_type
     - work__work_type_condition
     - work__work_type_form
@@ -10090,7 +10084,6 @@ classes:
     - Work_record_date
     - Work_description
     - Work_category
-    - Work_record_rights
     - Work_work_rights
     - Work_content
     slot_usage:
@@ -10552,7 +10545,6 @@ classes:
     - record_date
     - description
     - category
-    - record_rights
     - bibliographic_citation
     - content
     - thing__title_source
@@ -10601,9 +10593,10 @@ classes:
         name: extent
         description: "\xC1rea da implanta\xE7\xE3o da edifica\xE7\xE3o ou s\xEDtio\
           \ cadastrado. Usar o sistema de coordenadas geogr\xE1ficas EPSG:4326 (WGS84)\
-          \ sempre que poss\xEDvel.\n---------------------------------------------------------------------\n\
-          Polygonal, multipolygonal, or linear geographic extent associated with the\
-          \ place."
+          \ sempre que poss\xEDvel."
+        notes:
+        - Polygonal, multipolygonal, or linear geographic extent associated with the
+          place.
         slot_uri: geo:hasGeometry
         range: GeographicExtent
         inlined: true
@@ -10755,7 +10748,6 @@ classes:
     - record_date
     - description
     - category
-    - record_rights
     - bibliographic_citation
     - content
     - thing__title_source
@@ -10802,6 +10794,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-11-04T18:04:22'
+source_file_date: '2026-11-04T18:13:33'
 source_file_size: 56642
 
