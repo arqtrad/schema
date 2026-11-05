@@ -53,17 +53,17 @@ classes:
 
       Campos não preenchidos também devem ser apagadas das fichas.
 
-      -------------------------------------------------------------------------
+    notes:
 
-      An historical landmark or building.
+      - An historical landmark or building.
 
-    # This class comprises all persistent physical objects of any size that are
-    # purposely created by human activity and have physical boundaries that
-    # separate them completely in an objective way from other objects.
+      - This class comprises all persistent physical objects of any size that are
+        purposely created by human activity and have physical boundaries that
+        separate them completely in an objective way from other objects.
 
-    # The class also includes all aggregates of objects made for functional
-    # purposes of whatever kind, independent of physical coherence, such as a
-    # set of chessmen.
+        The class also includes all aggregates of objects made for functional
+        purposes of whatever kind, independent of physical coherence, such as a
+        set of chessmen.
 
     attributes:
 
@@ -87,16 +87,16 @@ classes:
           [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.html)
           "estado de preservação" e "estado de conservação".
 
-          ---------------------------------------------------------------------
+        notes:
 
-          Descriptors for objects that are distinguishable by their overall state
-          such as appearance, level of damage, completeness, or quality. If an
-          object is identified by its prevailing physical state, then it is
-          qualified by condition.
+          - Descriptors for objects that are distinguishable by their overall
+            state such as appearance, level of damage, completeness, or
+            quality. If an object is identified by its prevailing physical
+            state, then it is qualified by condition.
 
-          Based on [AAT "conditions"](http://vocab.getty.edu/page/aat/300389724)
-          and [CIDOC CRM "E3 Condition
-          State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)
+            Based on [AAT "conditions"](http://vocab.getty.edu/page/aat/300389724)
+            and [CIDOC CRM "E3 Condition
+            State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)
 
       work_type_form:
         slot_uri: term:lido00766

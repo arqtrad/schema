@@ -100,6 +100,7 @@ classes:
       - concept_name
       - description
       - bibliographic_citation
+      - source
 
   BroaderConceptReference:
     is_a: ConceptReference
