@@ -6184,6 +6184,7 @@ slots:
     slot_uri: wasth:source
     owner: GeographicExtent
     domain_of:
+    - ConceptReference
     - TypedReference
     - GeographicPoint
     - GeographicExtent
@@ -7602,12 +7603,14 @@ slots:
     description: "Descreve o estado f\xEDsico da edifica\xE7\xE3o quanto \xE0 sua\
       \ apar\xEAncia de completude, deteriora\xE7\xE3o ou capacidade de desempenhar\
       \ sua fun\xE7\xE3o.\nAtende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.html)\
-      \ \"estado de preserva\xE7\xE3o\" e \"estado de conserva\xE7\xE3o\".\n---------------------------------------------------------------------\n\
-      Descriptors for objects that are distinguishable by their overall state such\
-      \ as appearance, level of damage, completeness, or quality. If an object is\
-      \ identified by its prevailing physical state, then it is qualified by condition.\n\
-      Based on [AAT \"conditions\"](http://vocab.getty.edu/page/aat/300389724) and\
-      \ [CIDOC CRM \"E3 Condition State\"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)"
+      \ \"estado de preserva\xE7\xE3o\" e \"estado de conserva\xE7\xE3o\"."
+    notes:
+    - 'Descriptors for objects that are distinguishable by their overall state such
+      as appearance, level of damage, completeness, or quality. If an object is identified
+      by its prevailing physical state, then it is qualified by condition.
+
+      Based on [AAT "conditions"](http://vocab.getty.edu/page/aat/300389724) and [CIDOC
+      CRM "E3 Condition State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)'
     from_schema: https://tradicional.arq.br/schema/work
     mappings:
     - term:lido00937
@@ -8966,6 +8969,7 @@ classes:
     - concept_name
     - description
     - bibliographic_citation
+    - source
     class_uri: wasth:ConceptReference
   BroaderConceptReference:
     name: BroaderConceptReference
@@ -8977,6 +8981,7 @@ classes:
     - concept_name
     - description
     - bibliographic_citation
+    - source
     - broaderConceptReference__broader_match
     attributes:
       broader_match:
@@ -8995,6 +9000,7 @@ classes:
     - concept_name
     - description
     - bibliographic_citation
+    - source
     - narrowerConceptReference__narrower_match
     attributes:
       narrower_match:
@@ -9013,6 +9019,7 @@ classes:
     - concept_name
     - description
     - bibliographic_citation
+    - source
     - mappingConceptReference__mapping_match
     attributes:
       mapping_match:
@@ -9480,6 +9487,7 @@ classes:
     - concept_name
     - description
     - bibliographic_citation
+    - source
     - materialTech__material_tech_type
     attributes:
       material_tech_type:
@@ -9858,6 +9866,7 @@ classes:
     - concept_name
     - description
     - bibliographic_citation
+    - source
     - stylePeriod__period_name_type
     attributes:
       period_name_type:
@@ -10061,9 +10070,15 @@ classes:
       os por n\xEDvel hier\xE1rquico, sim.\nO caractere `#` indica o in\xEDcio de\
       \ um coment\xE1rio, que prossegue at\xE9 o final da linha. Os coment\xE1rios\
       \ e as linhas que cont\xEAm apenas coment\xE1rios devem ser apagados das fichas\
-      \ preenchidas.\nCampos n\xE3o preenchidos tamb\xE9m devem ser apagadas das fichas.\n\
-      -------------------------------------------------------------------------\n\
-      An historical landmark or building.\n"
+      \ preenchidas.\nCampos n\xE3o preenchidos tamb\xE9m devem ser apagadas das fichas.\n"
+    notes:
+    - An historical landmark or building.
+    - 'This class comprises all persistent physical objects of any size that are purposely
+      created by human activity and have physical boundaries that separate them completely
+      in an objective way from other objects.
+
+      The class also includes all aggregates of objects made for functional purposes
+      of whatever kind, independent of physical coherence, such as a set of chessmen.'
     from_schema: https://tradicional.arq.br/schema/work
     exact_mappings:
     - schema:LandmarksOrHistoricalBuildings
@@ -10214,12 +10229,15 @@ classes:
         description: "Descreve o estado f\xEDsico da edifica\xE7\xE3o quanto \xE0\
           \ sua apar\xEAncia de completude, deteriora\xE7\xE3o ou capacidade de desempenhar\
           \ sua fun\xE7\xE3o.\nAtende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.html)\
-          \ \"estado de preserva\xE7\xE3o\" e \"estado de conserva\xE7\xE3o\".\n---------------------------------------------------------------------\n\
-          Descriptors for objects that are distinguishable by their overall state\
-          \ such as appearance, level of damage, completeness, or quality. If an object\
-          \ is identified by its prevailing physical state, then it is qualified by\
-          \ condition.\nBased on [AAT \"conditions\"](http://vocab.getty.edu/page/aat/300389724)\
-          \ and [CIDOC CRM \"E3 Condition State\"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)"
+          \ \"estado de preserva\xE7\xE3o\" e \"estado de conserva\xE7\xE3o\"."
+        notes:
+        - 'Descriptors for objects that are distinguishable by their overall state
+          such as appearance, level of damage, completeness, or quality. If an object
+          is identified by its prevailing physical state, then it is qualified by
+          condition.
+
+          Based on [AAT "conditions"](http://vocab.getty.edu/page/aat/300389724) and
+          [CIDOC CRM "E3 Condition State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)'
         slot_uri: term:lido00937
         range: ConceptReference
         recommended: true
@@ -10819,6 +10837,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: wasth_schema.yaml
-source_file_date: '2026-11-04T22:30:55'
+source_file_date: '2026-11-05T15:04:22'
 source_file_size: 56642
 
