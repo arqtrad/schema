@@ -1,0 +1,230 @@
+name: SICG
+description: Sistema Integrado de Conhecimento e Gestão
+id: https://w3id.org/SICG
+imports:
+  - linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  MySchema: https://w3id.org/SICG
+default_prefix: SICG
+enums:
+  Natureza_enum:
+    permissible_values:
+      "Bem Imóvel":
+        description: "Bem Imóvel"
+  Tipo_enum:
+    permissible_values:
+      "Edificação":
+        description: "Edificação"
+  "Classificação_enum":
+    permissible_values:
+      Arquitetura civil:
+        description: Arquitetura civil
+  "Estado_de_Conservação_enum":
+    permissible_values:
+      Bom:
+        description: Bom
+      "Péssimo":
+        description: "Péssimo"
+      Ruim:
+        description: Ruim
+      Regular:
+        description: Regular
+  "Estado_de_Preservação_enum":
+    permissible_values:
+      Descaracterizado:
+        description: Descaracterizado
+      "Íntegro":
+        description: "Íntegro"
+      Muito Alterado:
+        description: Muito Alterado
+      Pouco Alterado:
+        description: Pouco Alterado
+  Propriedade_enum:
+    permissible_values:
+      "Pública":
+        description: "Pública"
+      Outra:
+        description: Outra
+      Mista:
+        description: Mista
+      Privada:
+        description: Privada
+  Uso_do_solo_enum:
+    permissible_values:
+      Rural:
+        description: Rural
+      Urbano:
+        description: Urbano
+  Entorno_enum:
+    permissible_values:
+      Preservado:
+        description: Preservado
+      Alterado:
+        description: Alterado
+  UF_enum:
+    permissible_values:
+      PI:
+        description: PI
+  "Município_enum":
+    permissible_values:
+      Oeiras:
+        description: Oeiras
+      Floriano:
+        description: Floriano
+      Piracuruca:
+        description: Piracuruca
+      "Parnaíba":
+        description: "Parnaíba"
+      Teresina:
+        description: Teresina
+      "Campinas do Piauí":
+        description: "Campinas do Piauí"
+slots:
+  "Código IPHAN":
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '782'
+    examples:
+      - value: PI2207009BIED00274
+    identifier: true
+    range: string
+  Nome do Bem:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '713'
+    examples:
+      - value: Rua Brigadeiro Manoel Clementino
+    range: string
+  Natureza:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '1'
+    examples:
+      - value: "Bem Imóvel"
+    range: Natureza_enum
+  Tipo:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '1'
+    examples:
+      - value: "Edificação"
+    range: Tipo_enum
+  "Classificação":
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '1'
+    examples:
+      - value: Arquitetura civil
+    range: "Classificação_enum"
+  "Classificação - 2º nível":
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '0'
+    range: string
+  "Estado de Conservação":
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '4'
+    examples:
+      - value: Regular
+    range: "Estado_de_Conservação_enum"
+  "Estado de Preservação":
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '4'
+    examples:
+      - value: Pouco Alterado
+    range: "Estado_de_Preservação_enum"
+  Propriedade:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '4'
+    examples:
+      - value: Privada
+    range: Propriedade_enum
+  Uso do solo:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '2'
+    examples:
+      - value: Urbano
+    range: Uso_do_solo_enum
+  Entorno:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '2'
+    examples:
+      - value: Alterado
+    range: Entorno_enum
+  "Tipo de Proteção":
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '0'
+    range: string
+  Natureza Administrativa:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '0'
+    range: string
+  "Condição":
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '0'
+    range: string
+  UF:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '1'
+    examples:
+      - value: PI
+    range: UF_enum
+  "Município":
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '6'
+    examples:
+      - value: Oeiras
+    range: "Município_enum"
+  "Número do SEI":
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '0'
+    range: string
+classes:
+  BemImovel:
+    slots:
+      - "Código IPHAN"
+      - Nome do Bem
+      - Natureza
+      - Tipo
+      - "Classificação"
+      - "Classificação - 2º nível"
+      - "Estado de Conservação"
+      - "Estado de Preservação"
+      - Propriedade
+      - Uso do solo
+      - Entorno
+      - "Tipo de Proteção"
+      - Natureza Administrativa
+      - "Condição"
+      - UF
+      - "Município"
+      - "Número do SEI"

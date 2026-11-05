@@ -1,0 +1,72 @@
+id: https://tradicional.arq.br/mappings/sicg-bem-imovel-to-wasth-work
+name: sicg_bem_imovel_to_wasth_work
+prefixes:
+  linkml: https://w3id.org/linkml/
+  wasth: https://tradicional.arq.br/schema/
+  sicg: https://sicg.iphan.gov.br/
+  dcterms: http://purl.org/dc/terms/
+  term: http://terminology.lido-schema.org/
+source_schema: sicg_bem_imovel.yaml
+target_schema: schema/wasth_schema.yaml
+
+class_mappings:
+  - source_class: sicg:BemImovel
+    target_class: wasth:Work
+    slot_mappings:
+      - source_slot: sicg:Nome do Bem
+        target_slot: wasth:title
+
+      - source_slot: sicg:Código IPHAN
+        target_slot: wasth:identifiers
+        expression:
+          - value:
+              refid: "https://sicg.iphan.gov.br/sicg/detalhe/{Código IPHAN}"
+              description: "{Código IPHAN}"
+
+      - source_slot: sicg:Número do SEI
+        target_slot: wasth:identifiers
+        expression:
+          - value:
+              refid: "{Número do SEI}"
+              description: "Número do SEI"
+
+      - source_slot: sicg:Estado de Conservação
+        target_slot: wasth:work_type_condition
+        expression:
+          - value:
+              concept_name: "{Estado de Conservação}"
+
+      - source_slot: sicg:Estado de Preservação
+        target_slot: wasth:work_type_condition
+        expression:
+          - value:
+              concept_name: "{Estado de Preservação}"
+
+      - source_slot: sicg:Classificação
+        target_slot: wasth:work_type_form
+        expression:
+          - value:
+              concept_name: "{Classificação}"
+
+      - source_slot: sicg:Classificação - 2º nível
+        target_slot: wasth:work_type_form
+        expression:
+          - value:
+              concept_name: "{Classificação - 2º nível}"
+
+      - source_slot: sicg:Uso do solo
+        target_slot: wasth:work_type_context
+        expression:
+          - value:
+              concept_name: "{Uso do solo}"
+
+      - source_slot: sicg:Entorno
+        target_slot: wasth:work_type_context
+        expression:
+          - value:
+              concept_name: "{Entorno}"
+
+      - source_slot: sicg:Município
+        target_slot: wasth:site.name
+        expression:
+          - value: "{Município}"
