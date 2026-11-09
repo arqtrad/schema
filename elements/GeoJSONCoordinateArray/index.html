@@ -452,6 +452,10 @@
 </thead>
 <tbody>
 <tr>
+<td>Type Of</td>
+<td><a href="../String/">String</a></td>
+</tr>
+<tr>
 <td>Base</td>
 <td><code>str</code></td>
 </tr>
@@ -459,8 +463,34 @@
 <td>Type URI</td>
 <td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
 </tr>
+<tr>
+<td>## Value Constraints</td>
+<td></td>
+</tr>
 </tbody>
 </table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regex Pattern</td>
+<td><code>^(?:^(?:\[\s*{geojson_ring}(?:\s*,\s*{geojson_ring})*\s*\]|\[\s*{geojson_poly}(?:\s*,\s*{geojson_poly})*\s*\])$)$</code></td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Additional Constraints</summary>
+**Structured Pattern:**
+
+- **Syntax:** `^(?:{geojson_poly}|{geojson_multi})$`
+- **Interpolated:** True
+
+</details>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -477,7 +507,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>xsd:string</td>
+<td>wasth:GeoJSONCoordinateArray</td>
 </tr>
 <tr>
 <td>native</td>

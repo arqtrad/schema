@@ -25,30 +25,30 @@ description: "## Orienta\xE7\xF5es gerais\n\nTodas as fichas dos projetos dos Do
   ar\n\nPara contribuir com os Document\xE1rios da Arquitetura Tradicional, voc\xEA\
   \ ou\no seu grupo de pesquisa precisa ter sua pr\xF3pria vers\xE3o dos reposit\xF3\
   rios.\n\nComece aprendendo um pouco sobre como trabalhar com controle de vers\xE3\
-  o no Git e\nno GitHub, estudando\n[estes tutoriais em portugu\xEAs](https://programminghistorian.org/pt/licoes/git-ferramenta-metodologica-projetos-historia-1)\n\
+  o no Git e\nno GitHub, estudando [estes tutoriais em\nportugu\xEAs](https://programminghistorian.org/pt/licoes/git-ferramenta-metodologica-projetos-historia-1)\n\
   no site [Programming Historian].\nEm Windows ou MacOS, o jeito mais f\xE1cil de\
   \ trabalhar com reposit\xF3rios de dados\nno GitHub \xE9 instalando o [GitHub Desktop].\n\
   No Linux, h\xE1 outras op\xE7\xF5es, como o [SmartGit]\n(tamb\xE9m dispon\xEDvel\
   \ para Windows e MacOS).\n\nEm seguida, precisa **bifurcar** (fork) o reposit\xF3\
   rio no qual vai trabalhar,\nprovavelmente \xE0 partida o reposit\xF3rio da\n[Casa\
   \ tradicional](https://github.com/arqtrad/casa/),\nusando o bot\xE3o `Fork \U0001F53D\
-  ` como ilustrado abaixo\u2009:\n\n<img alt=\"Captura de tela\" src=\"https://github.com/user-attachments/assets/6c22dcec-b8e1-4688-a504-d9ea640bdc43\"\
-  \ />\n\nA partir da\xED, pode trabalhar livremente na sua pr\xF3pria c\xF3pia do\
+  ` como ilustrado abaixo\u2009:\n\n<img alt=\"Captura de tela\"\n src=\"https://github.com/user-attachments/assets/6c22dcec-b8e1-4688-a504-d9ea640bdc43\"\
+  \n/>\n\nA partir da\xED, pode trabalhar livremente na sua pr\xF3pria c\xF3pia do\
   \ reposit\xF3rio,\nusando as ferramentas `\U0001F504 Sync fork` e  `\u2934\uFE0F\
   \ Contribute` para, respectivamente,\nobter periodicamente atualiza\xE7\xF5es *vindas\
   \ do* reposit\xF3rio principal e\npropor as suas contribui\xE7\xF5es *para o* reposit\xF3\
-  rio principal.\n\n<img alt=\"Captura de tela\" src=\"https://github.com/user-attachments/assets/25905e40-99ef-4b23-b33e-cfe586c41001\"\
-  \ />\n\n<img alt=\"Captura de tela\" src=\"https://github.com/user-attachments/assets/b5f6ef50-c122-4f01-8ec9-b16207a9b63d\"\
-  \ />\n\nPoder\xE1 ent\xE3o abrir uma solicita\xE7\xE3o de integra\xE7\xE3o das suas\
+  rio principal.\n\n<img alt=\"Captura de tela\"\n src=\"https://github.com/user-attachments/assets/25905e40-99ef-4b23-b33e-cfe586c41001\"\
+  \n/>\n\n<img alt=\"Captura de tela\"\n src=\"https://github.com/user-attachments/assets/b5f6ef50-c122-4f01-8ec9-b16207a9b63d\"\
+  \n/>\n\nPoder\xE1 ent\xE3o abrir uma solicita\xE7\xE3o de integra\xE7\xE3o das suas\
   \ altera\xE7\xF5es\nao reposit\xF3rio principal (**pull request**):\n\n<img alt=\"\
-  Captura de tela\" src=\"https://github.com/user-attachments/assets/56de1236-6fa0-47f3-9e94-06218dace0a8\"\
-  \ />\n\nSe n\xE3o estiver \xE0 vontade para manipular diretamente os reposit\xF3\
+  Captura de tela\"\n src=\"https://github.com/user-attachments/assets/56de1236-6fa0-47f3-9e94-06218dace0a8\"\
+  \n/>\n\nSe n\xE3o estiver \xE0 vontade para manipular diretamente os reposit\xF3\
   rios do GitHub,\nsempre pode contribuir informa\xE7\xF5es, sugest\xF5es ou desejos\
   \ no\n[F\xF3rum de discuss\xE3o] deste projeto de pesquisa.\nSe tiver contribui\xE7\
   \xF5es pontuais sobre fichas espec\xEDficas, formatos ou lacunas,\npode tamb\xE9\
   m abrir uma [*issue* no reposit\xF3rio da Casa].\n\n\n## Por onde come\xE7o\u2009\
-  ?\n\nLeia a especifica\xE7\xE3o da ficha [Work](Work/) para saber como preencher\
-  \ as\nfichas de edifica\xE7\xF5es dos Document\xE1rios da Arquitetura Tradicional.\n\
+  ?\n\n> Leia a especifica\xE7\xE3o da ficha **[Work](Work/)** para saber como preencher\n\
+  > as fichas de edifica\xE7\xF5es dos Document\xE1rios da Arquitetura Tradicional.\n\
   \n\n[Programming Historian]: https://programminghistorian.org/pt/\n\n[GitHub Desktop]:\
   \ https://github.com/apps/desktop?locale=pt-br\n\n[SmartGit]: https://www.smartgit.dev/\n\
   \n[F\xF3rum de discuss\xE3o]: https://github.com/orgs/arqtrad/discussions\n\n[*issue*\
@@ -59,8 +59,7 @@ description: "## Orienta\xE7\xF5es gerais\n\nTodas as fichas dos projetos dos Do
   \n[HPIP]: https://hpip.org/\n\n[iPatrimonio]: https://ipatrimonio.org/\n\n[VRA Core]:\
   \ https://www.loc.gov/standards/vracore/\n\n[ULAN]: https://www.getty.edu/research/tools/vocabularies/ulan\n\
   \n[IIIF]: https://iiif.io/\n\n[lista de tipos de m\xEDdia IANA]: https://www.iana.org/assignments/media-types\n"
-title: "Esquema de dados do WASTH (Web App para S\xEDtios Tradicionais e Hist\xF3\
-  ricos)"
+title: "Esquema de dados dos Document\xE1rios da Arquitetura Tradicional"
 see_also:
 - https://tradicional.arq.br/schema
 id: https://tradicional.arq.br/schema
@@ -157,6 +156,7 @@ types:
       \ come\xE7ando com '@'. Obter as chaves de cita\xE7\xE3o das refer\xEAncias\
       \ bibliogr\xE1ficas consultando a nossa biblioteca compartilhada no Zotero.\n"
     from_schema: https://tradicional.arq.br/schema
+    typeof: string
     base: str
     uri: xsd:string
     pattern: ^@[a-zA-Z0-9_][\w:.#$%&\-+?<>~/]*$
@@ -166,13 +166,19 @@ types:
     description: JSON array of GeoJSON positions. The valid nesting depends on the
       associated geometry type.
     from_schema: https://tradicional.arq.br/schema
+    typeof: string
     base: str
     uri: xsd:string
+    structured_pattern:
+      syntax: ^(?:{geojson_poly}|{geojson_multi})$
+      interpolated: true
+      partial_match: false
   Latitude:
     name: Latitude
     definition_uri: https://tradicional.arq.br/schema/Latitude
     description: 'Latitude em graus decimais (separador: ponto).'
     from_schema: https://tradicional.arq.br/schema
+    typeof: double
     base: float
     uri: xsd:double
     minimum_value: -90
@@ -182,6 +188,7 @@ types:
     definition_uri: https://tradicional.arq.br/schema/Longitude
     description: 'Longitude em graus decimais (separador: ponto).'
     from_schema: https://tradicional.arq.br/schema
+    typeof: double
     base: float
     uri: xsd:double
     minimum_value: -180
@@ -195,6 +202,7 @@ types:
 
       '
     from_schema: https://tradicional.arq.br/schema
+    typeof: string
     base: str
     uri: xsd:string
     pattern: ^(?:https?://orcid\.org/|orcid:)?\d{4}-\d{4}-\d{4}-\d{3}[\dX]$
@@ -203,6 +211,7 @@ types:
     definition_uri: https://tradicional.arq.br/schema/OlcPlusCode11
     description: "Open Location Code (Plus Code) com resolu\xE7\xE3o de 11 d\xEDgitos."
     from_schema: https://tradicional.arq.br/schema
+    typeof: string
     base: str
     uri: xsd:string
     pattern: ^([2-9CFGHJMPQRVWX]{8})\+([2-9CFGHJMPQRVWX]{3})$
@@ -10837,6 +10846,22 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-09T13:47:34'
-source_file_size: 56644
+source_file_date: '2026-11-09T14:09:30'
+source_file_size: 56779
+settings:
+  geojson_num:
+    setting_key: geojson_num
+    setting_value: -?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?
+  geojson_pos:
+    setting_key: geojson_pos
+    setting_value: \[\s*{geojson_num}\s*,\s*{geojson_num}(?:\s*,\s*{geojson_num})?\s*\]
+  geojson_ring:
+    setting_key: geojson_ring
+    setting_value: \[\s*{geojson_pos}(?:\s*,\s*{geojson_pos}){3,}\s*\]
+  geojson_poly:
+    setting_key: geojson_poly
+    setting_value: \[\s*{geojson_ring}(?:\s*,\s*{geojson_ring})*\s*\]
+  geojson_multi:
+    setting_key: geojson_multi
+    setting_value: \[\s*{geojson_poly}(?:\s*,\s*{geojson_poly})*\s*\]
 
