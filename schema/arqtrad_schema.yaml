@@ -1,4 +1,4 @@
-name: wasth_schema
+name: arqtrad_schema
 description: "## Orienta\xE7\xF5es gerais\n\nTodas as fichas dos projetos dos Document\xE1\
   rios da arquitetura tradicional s\xE3o\narquivos de texto sem formata\xE7\xE3o,\
   \ que podem ser criados e editados em\nprogramas como o Notepad++, Sublime Text,\
@@ -10836,7 +10836,7 @@ classes:
     - modification date
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
-source_file: wasth_schema.yaml
-source_file_date: '2026-11-05T16:51:06'
-source_file_size: 56642
+source_file: arqtrad_schema.yaml
+source_file_date: '2026-11-09T13:47:34'
+source_file_size: 56644
 
