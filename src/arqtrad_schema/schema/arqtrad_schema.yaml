@@ -1,7 +1,7 @@
 ---
 id: https://tradicional.arq.br/schema
 name: arqtrad_schema
-title: Esquema de dados do WASTH (Web App para Sítios Tradicionais e Históricos)
+title: Esquema de dados dos Documentários da Arquitetura Tradicional
 description: |
   ## Orientações gerais
 
@@ -50,8 +50,8 @@ description: |
   o seu grupo de pesquisa precisa ter sua própria versão dos repositórios.
 
   Comece aprendendo um pouco sobre como trabalhar com controle de versão no Git e
-  no GitHub, estudando
-  [estes tutoriais em português](https://programminghistorian.org/pt/licoes/git-ferramenta-metodologica-projetos-historia-1)
+  no GitHub, estudando [estes tutoriais em
+  português](https://programminghistorian.org/pt/licoes/git-ferramenta-metodologica-projetos-historia-1)
   no site [Programming Historian].
   Em Windows ou MacOS, o jeito mais fácil de trabalhar com repositórios de dados
   no GitHub é instalando o [GitHub Desktop].
@@ -63,21 +63,29 @@ description: |
   [Casa tradicional](https://github.com/arqtrad/casa/),
   usando o botão `Fork 🔽` como ilustrado abaixo :
 
-  <img alt="Captura de tela" src="https://github.com/user-attachments/assets/6c22dcec-b8e1-4688-a504-d9ea640bdc43" />
+  <img alt="Captura de tela"
+   src="https://github.com/user-attachments/assets/6c22dcec-b8e1-4688-a504-d9ea640bdc43"
+  />
 
   A partir daí, pode trabalhar livremente na sua própria cópia do repositório,
   usando as ferramentas `🔄 Sync fork` e  `⤴️ Contribute` para, respectivamente,
   obter periodicamente atualizações *vindas do* repositório principal e
   propor as suas contribuições *para o* repositório principal.
 
-  <img alt="Captura de tela" src="https://github.com/user-attachments/assets/25905e40-99ef-4b23-b33e-cfe586c41001" />
+  <img alt="Captura de tela"
+   src="https://github.com/user-attachments/assets/25905e40-99ef-4b23-b33e-cfe586c41001"
+  />
 
-  <img alt="Captura de tela" src="https://github.com/user-attachments/assets/b5f6ef50-c122-4f01-8ec9-b16207a9b63d" />
+  <img alt="Captura de tela"
+   src="https://github.com/user-attachments/assets/b5f6ef50-c122-4f01-8ec9-b16207a9b63d"
+  />
 
   Poderá então abrir uma solicitação de integração das suas alterações
   ao repositório principal (**pull request**):
 
-  <img alt="Captura de tela" src="https://github.com/user-attachments/assets/56de1236-6fa0-47f3-9e94-06218dace0a8" />
+  <img alt="Captura de tela"
+   src="https://github.com/user-attachments/assets/56de1236-6fa0-47f3-9e94-06218dace0a8"
+  />
 
   Se não estiver à vontade para manipular diretamente os repositórios do GitHub,
   sempre pode contribuir informações, sugestões ou desejos no
@@ -88,8 +96,8 @@ description: |
 
   ## Por onde começo ?
 
-  Leia a especificação da ficha [Work](Work/) para saber como preencher as
-  fichas de edificações dos Documentários da Arquitetura Tradicional.
+  > Leia a especificação da ficha **[Work](Work/)** para saber como preencher
+  > as fichas de edificações dos Documentários da Arquitetura Tradicional.
 
 
   [Programming Historian]: https://programminghistorian.org/pt/
@@ -224,7 +232,7 @@ enums:
           familiares socialmente sancionadas no seu contexto de origem.
       other:
         title: outro
-        meaning: term:lido00165 # Other groups of persons
+        meaning: term:lido00165
 
   CollectionType:
     description: >-
@@ -295,7 +303,7 @@ enums:
       O tipo de incidência sobre a edificação que o evento descreve. Usa a
       terminologia do LIDO em <http://terminology.lido-schema.org/eventType>.
     permissible_values:
-    # Creation
+      # Creation
       creation:
         title: criação
         meaning: term:lido0001
@@ -308,7 +316,7 @@ enums:
           Não usar para a produção de bens materiais. Quando a conceção desses
           bens, como uma edificação, passa por um processo de criação
           intelectual atestada, usar para tanto o termo `designing` ("projeto").
-    # Production
+      # Production
       designing:
         title: projeto
         meaning: term:lido00224
@@ -387,7 +395,7 @@ enums:
         description: >
           Ação de produzir um objeto com base num projeto, por oposição ao
           processo de projeto.
-    # Transformation
+      # Transformation
       transformation:
         title: transformação
         meaning: term:lido00029
@@ -443,7 +451,7 @@ enums:
           Egito, ou ainda aquela da casa Erbo Stenzel em Curitiba do seu
           lote original para o parque São Lourenço (onde foi posteriormente
           destruída num incêndio).
-    # Alteração
+      # Alteração
       modification_activity:
         title: alteração
         meaning: term:lido00006
@@ -637,7 +645,7 @@ enums:
           causado por condições ambientais continuadas, mas pode ser agravado
           por desastres naturais. A deterioração pode levar ao
           `destruction_process` ("arruinamento") da edificação.
-    # Activity
+      # Activity
       adaptive_reuse:
         title: reutilização adaptada
         meaning: term:lido01161
@@ -690,7 +698,7 @@ enums:
         description: >
           Ação que acompanha ou sinaliza o encerramento da utilização de um
           objeto, geralmente associado à interdição física da edificação.
-    # Attribute Assignment
+      # Attribute Assignment
       attribute_assignment:
       assignment_to_curated_holding:
       condition_assessment:
@@ -705,13 +713,13 @@ enums:
       meaning_assignment:
       name_assignment:
       type_assignment:
-    # Ceremony
+      # Ceremony
       ceremony:
       cornerstone:
       groundbreaking:
       consecration:
       deconsecration:
-    # Change of physical control or legal title
+      # Change of physical control or legal title
       change_control_or_title:
       change_control_and_title:
       change_legal_title:
@@ -720,7 +728,7 @@ enums:
       collecting:
       loss:
       # repatriation:
-    # Commissioning
+      # Commissioning
       commissioning:
         exact_mappings:
           - vra:wasCommission
@@ -733,7 +741,7 @@ enums:
           - vra:wasDiscovered
       marketing:
       move:
-    # Object requirement assessment
+      # Object requirement assessment
       req_assess:
       display_assess:
       # loan_assess:
@@ -747,23 +755,18 @@ enums:
         exact_mappings:
           - vra:wasPublished
       use:
-    # End of Existence
+      # End of Existence
       end_existence:
       destruction:
       destruction_activity:
       destruction_process:
       unknown:
 
-
-      #broadcast:
-        #meaning: vra:wasBroadcast
-      #destroyed:
-        #meaning: vra:wasDestroyed
-
   EventPlaceType:
     description: >-
       Para eventos que implicam a deslocação do bem, indica se o local se
       refere ao descobrimento, à origem ou ao destino da obra.
+    # http://terminology.lido-schema.org/eventPlace_type
     permissible_values:
       discovery:
         meaning: term:lido01037
@@ -771,9 +774,6 @@ enums:
         meaning: term:lido00220
       destination:
         meaning: term:lido00221
-#   reachable_from:
-#     source_ontology: http://terminology.lido-schema.org/eventPlace_type
-#     include_self: false
 
   PeriodNameType:
     description: >
@@ -853,9 +853,6 @@ enums:
       No SKOS, caracteriza se cada termo deve ser considerado preferencial ou
       alternativo, usado para indexação, oculto da visualização (usado apenas
       para buscas), etc.
-   # reachable_from:
-     # source_ontology: term:pref
-     # include_self: false
     permissible_values:
       alternative:
         meaning: skos:altLabel  # term:lido00170
@@ -1010,21 +1007,22 @@ enums:
         object and any support to which the media are applied.
 
         Based on [AAT "materials (matter)"](http://vocab.getty.edu/page/aat/300010358);
-        [CDWA "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#RTFToC2)
+        [CDWA
+        "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#RTFToC2)
 
         Use the most specific term for the material that is appropriate. It is
         strongly recommended to take the indexing term from a published
         controlled vocabulary, preferably a Linked Open Vocabulary, for example
-        the Art & Architecture Thesaurus, specifically its
-        [Materials hierarchy](http://www.getty.edu/vow/AATFullDisplay?find=materials&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300010357).
+        the Art & Architecture Thesaurus, specifically its [Materials
+        hierarchy](http://www.getty.edu/vow/AATFullDisplay?find=materials&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300010357).
 
       - Medium, as a value for the type attribute of the LIDO Term
         Materials/Techniques element, designates the material that is applied to
         a support in the making of an object or a work of art, such as ink on
         paper or oil paint on canvas; often a particular technique or techniques
-        are closely associated with the media.
-        Based on [AAT "media (artists' materials)"](http://vocab.getty.edu/page/aat/300163343);
-        [CDWA Materials/Techniques](https://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#implement).
+        are closely associated with the media. Based on [AAT "media (artists'
+        materials)"](http://vocab.getty.edu/page/aat/300163343); [CDWA
+        Materials/Techniques](https://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#implement).
 
         In many forms of art, a distinction is made between materials used as the
         media, and materials used as the support. Medium is the material applied
@@ -1043,7 +1041,8 @@ enums:
         the concept may apply to any work.
 
         Based on [AAT "supports"](http://vocab.getty.edu/page/aat/300014844);
-        [CDWA "Materials/Techniques"](https://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#implement)
+        [CDWA
+        "Materials/Techniques"](https://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#implement)
 
       - Record a term specifying the color, tint, or hue of the material,
         particularly if color is an unusual or important characteristic of the
@@ -1053,10 +1052,12 @@ enums:
 
         It is recommended to use internationally approved standard color charts,
         codes and terminology such as the Universal Color Language (UCL). Use
-        preferably [color names as specified by the Art & Architecture Thesaurus](http://vocab.getty.edu/aat/300080438)
-        (AAT). Centroid color numbers, which refer to the appropriate
-        color-blocks on the
-        [Inter-Society Color Council and National Bureau of Standards (ISCC-NBS) color name charts](https://en.wikipedia.org/wiki/ISCC%E2%80%93NBS_system),
+        preferably [color names as specified by the Art & Architecture
+        Thesaurus](http://vocab.getty.edu/aat/300080438) (AAT).
+        Centroid color numbers, which refer to the appropriate color-blocks on
+        the [Inter-Society Color Council and National Bureau of Standards
+        (ISCC-NBS) color name
+        charts](https://en.wikipedia.org/wiki/ISCC%E2%80%93NBS_system),
         are also provided by the AAT.
 
       - Implement, as a value for the type attribute of the LIDO Term
@@ -1066,21 +1067,24 @@ enums:
         trade or used in executing a task or work.
 
         Based on
-        [CDWA "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#RTFToC2);
+        [CDWA
+        "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#RTFToC2);
         [AAT "implements"](http://vocab.getty.edu/page/aat/300404585)
 
       - Technique, as a value for the type attribute of the LIDO Term
         Materials/Techniques element, designates the manner, method, or process
         applied in the creation, design, or modification of an object.
 
-        Based on [CDWA "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#RTFToC2).
+        Based on [CDWA
+        "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#RTFToC2).
 
         Use the most specific term for indexing that is appropriate. It is
         strongly recommended to take the indexing term from a published
         controlled vocabulary, preferably a
         [Linked Open Vocabulary](http://lov.okfn.org/dataset/lov/), for example
         the Art & Architecture Thesaurus, specifically its
-        [Processes and Techniques hierarchy](http://www.getty.edu/vow/AATHierarchy?find=techniques&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300053001).
+        [Processes and Techniques
+        hierarchy](http://www.getty.edu/vow/AATHierarchy?find=techniques&amp;logic=AND&amp;note=&amp;page=1&amp;subjectid=300053001).
 
         For information about scientific methods by which an object was found or
         collected, such as field collection methods in archaeology, use the LIDO
@@ -1093,19 +1097,23 @@ enums:
         authenticity for documents and banknotes. The mark is visible through
         transmitted light, appearing as translucent or shaded area.
 
-        Based on [CDWA "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#WatermarkIdentification);
+        Based on [CDWA
+        "Materials/Techniques"](http://www.getty.edu/research/publications/electronic_publications/cdwa/8materials.html#WatermarkIdentification);
         [AAT "watermarks"](http://vocab.getty.edu/aat/300028749)
 
         It is recommended to use as indexing terms descriptors of internationally
-        or nationally approved classifications, such as the
-        [Watermark Information System](http://www.wasserzeichen-online.de/wzis/index.php),
-        the [Index of watermark classes and subclasses](http://www.paperhistory.org/Standards/IPHN2.1.1_en.pdf),
-        provided as a
-        [Registration Standard](http://www.paperhistory.org/Standards/) of the
-        [International Association of Paper Historians (IPH)](http://www.paperhistory.org/index.php),
-        or the [Watermark Descriptor Tables](http://www.gravell.org/descriptors.php?&amp;&amp;offset=&amp;rectotal=&amp;query=),
-        provided by the
-        [Thomas L. Gravell Watermark Archive](http://www.gravell.org/).
+        or nationally approved classifications, such as the [Watermark
+        Information System](http://www.wasserzeichen-online.de/wzis/index.php),
+        the [Index of watermark classes and
+        subclasses](http://www.paperhistory.org/Standards/IPHN2.1.1_en.pdf),
+        provided as a [Registration
+        Standard](http://www.paperhistory.org/Standards/) of the [International
+        Association of Paper Historians
+        (IPH)](http://www.paperhistory.org/index.php),
+        or the [Watermark Descriptor
+        Tables](http://www.gravell.org/descriptors.php?&amp;&amp;offset=&amp;rectotal=&amp;query=),
+        provided by the [Thomas L. Gravell Watermark
+        Archive](http://www.gravell.org/).
 
     permissible_values:
       material:
@@ -1382,10 +1390,7 @@ enums:
       Note that "Iconclass notations" are distinguished from other index terms
       for subject type in order to consider the impact of the type of indexing
       vocabulary with respect to information retrieval facilities.
-  # reachable_from:
-  #   source_ontology: http://terminology.lido-schema.org/subject_type
-  #   include_self: false
-  # description: VRA Core topic types.
+    #  http://terminology.lido-schema.org/subject_type
     permissible_values:
       descriptive:
         meaning: term:lido00525
@@ -1396,6 +1401,12 @@ enums:
       other:
         meaning: term:lido00136
 
+settings:
+  geojson_num: '-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?'
+  geojson_pos: '\[\s*{geojson_num}\s*,\s*{geojson_num}(?:\s*,\s*{geojson_num})?\s*\]'
+  geojson_ring: '\[\s*{geojson_pos}(?:\s*,\s*{geojson_pos}){3,}\s*\]'
+  geojson_poly: '\[\s*{geojson_ring}(?:\s*,\s*{geojson_ring})*\s*\]'
+  geojson_multi: '\[\s*{geojson_poly}(?:\s*,\s*{geojson_poly})*\s*\]'
 
 types:
 
@@ -1405,28 +1416,28 @@ types:
       começando com '@'.
       Obter as chaves de citação das referências bibliográficas consultando
       a nossa biblioteca compartilhada no Zotero.
-    uri: xsd:string
-    base: str
+    typeof: string
     pattern: '^@[a-zA-Z0-9_][\w:.#$%&\-+?<>~/]*$'
 
   GeoJSONCoordinateArray:
     description: >-
       JSON array of GeoJSON positions. The valid nesting depends on the
       associated geometry type.
-    uri: xsd:string
-    base: str
+    typeof: string
+    structured_pattern:
+      syntax: '^(?:{geojson_poly}|{geojson_multi})$'
+      interpolated: true
+      partial_match: false
 
   Latitude:
     description: "Latitude em graus decimais (separador: ponto)."
-    uri: xsd:double
-    base: float
+    typeof: double
     minimum_value: -90
     maximum_value: 90
 
   Longitude:
     description: "Longitude em graus decimais (separador: ponto)."
-    uri: xsd:double
-    base: float
+    typeof: double
     minimum_value: -180
     maximum_value: 180
 
@@ -1434,12 +1445,10 @@ types:
     description: |
       ORCID iD, no formato `orcid:1234-5678-9012-345X` ou
       `https://orcid.org/1234-5678-9012-345X`.
-    uri: xsd:string
-    base: str
+    typeof: string
     pattern: '^(?:https?://orcid\.org/|orcid:)?\d{4}-\d{4}-\d{4}-\d{3}[\dX]$'
 
   OlcPlusCode11:
     description: Open Location Code (Plus Code) com resolução de 11 dígitos.
-    uri: xsd:string
-    base: str
+    typeof: string
     pattern: '^([2-9CFGHJMPQRVWX]{8})\+([2-9CFGHJMPQRVWX]{3})$'

@@ -49,8 +49,8 @@
 #   o seu grupo de pesquisa precisa ter sua própria versão dos repositórios.
 #
 #   Comece aprendendo um pouco sobre como trabalhar com controle de versão no Git e
-#   no GitHub, estudando
-#   [estes tutoriais em português](https://programminghistorian.org/pt/licoes/git-ferramenta-metodologica-projetos-historia-1)
+#   no GitHub, estudando [estes tutoriais em
+#   português](https://programminghistorian.org/pt/licoes/git-ferramenta-metodologica-projetos-historia-1)
 #   no site [Programming Historian].
 #   Em Windows ou MacOS, o jeito mais fácil de trabalhar com repositórios de dados
 #   no GitHub é instalando o [GitHub Desktop].
@@ -62,21 +62,29 @@
 #   [Casa tradicional](https://github.com/arqtrad/casa/),
 #   usando o botão `Fork 🔽` como ilustrado abaixo :
 #
-#   <img alt="Captura de tela" src="https://github.com/user-attachments/assets/6c22dcec-b8e1-4688-a504-d9ea640bdc43" />
+#   <img alt="Captura de tela"
+#    src="https://github.com/user-attachments/assets/6c22dcec-b8e1-4688-a504-d9ea640bdc43"
+#   />
 #
 #   A partir daí, pode trabalhar livremente na sua própria cópia do repositório,
 #   usando as ferramentas `🔄 Sync fork` e  `⤴️ Contribute` para, respectivamente,
 #   obter periodicamente atualizações *vindas do* repositório principal e
 #   propor as suas contribuições *para o* repositório principal.
 #
-#   <img alt="Captura de tela" src="https://github.com/user-attachments/assets/25905e40-99ef-4b23-b33e-cfe586c41001" />
+#   <img alt="Captura de tela"
+#    src="https://github.com/user-attachments/assets/25905e40-99ef-4b23-b33e-cfe586c41001"
+#   />
 #
-#   <img alt="Captura de tela" src="https://github.com/user-attachments/assets/b5f6ef50-c122-4f01-8ec9-b16207a9b63d" />
+#   <img alt="Captura de tela"
+#    src="https://github.com/user-attachments/assets/b5f6ef50-c122-4f01-8ec9-b16207a9b63d"
+#   />
 #
 #   Poderá então abrir uma solicitação de integração das suas alterações
 #   ao repositório principal (**pull request**):
 #
-#   <img alt="Captura de tela" src="https://github.com/user-attachments/assets/56de1236-6fa0-47f3-9e94-06218dace0a8" />
+#   <img alt="Captura de tela"
+#    src="https://github.com/user-attachments/assets/56de1236-6fa0-47f3-9e94-06218dace0a8"
+#   />
 #
 #   Se não estiver à vontade para manipular diretamente os repositórios do GitHub,
 #   sempre pode contribuir informações, sugestões ou desejos no
@@ -87,8 +95,8 @@
 #
 #   ## Por onde começo ?
 #
-#   Leia a especificação da ficha [Work](Work/) para saber como preencher as
-#   fichas de edificações dos Documentários da Arquitetura Tradicional.
+#   > Leia a especificação da ficha **[Work](Work/)** para saber como preencher
+#   > as fichas de edificações dos Documentários da Arquitetura Tradicional.
 #
 #
 #   [Programming Historian]: https://programminghistorian.org/pt/
@@ -134,9 +142,10 @@ from linkml_runtime.utils.curienamespace import CurieNamespace
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from linkml_runtime.utils.metamodelcore import empty_dict, empty_list
 from linkml_runtime.utils.slot import Slot
-from linkml_runtime.utils.yamlutils import YAMLRoot, extended_int, extended_str
+from linkml_runtime.utils.yamlutils import YAMLRoot, extended_int
 from rdflib import URIRef
 
+from linkml_runtime.linkml_model.types import Double, String
 from linkml_runtime.utils.metamodelcore import URIorCURIE, XSDDate
 
 metamodel_version = "1.12.0"
@@ -173,7 +182,7 @@ DEFAULT_ = WASTH
 
 
 # Types
-class CslCitekey(str):
+class CslCitekey(String):
     """Chave de citação compatível com o Citation Style Language, começando com '@'. Obter as chaves de citação das referências bibliográficas consultando a nossa biblioteca compartilhada no Zotero."""
 
     type_class_uri = XSD["string"]
@@ -182,7 +191,7 @@ class CslCitekey(str):
     type_model_uri = WASTH.CslCitekey
 
 
-class GeoJSONCoordinateArray(str):
+class GeoJSONCoordinateArray(String):
     """JSON array of GeoJSON positions. The valid nesting depends on the associated geometry type."""
 
     type_class_uri = XSD["string"]
@@ -191,7 +200,7 @@ class GeoJSONCoordinateArray(str):
     type_model_uri = WASTH.GeoJSONCoordinateArray
 
 
-class Latitude(float):
+class Latitude(Double):
     """Latitude em graus decimais (separador: ponto)."""
 
     type_class_uri = XSD["double"]
@@ -200,7 +209,7 @@ class Latitude(float):
     type_model_uri = WASTH.Latitude
 
 
-class Longitude(float):
+class Longitude(Double):
     """Longitude em graus decimais (separador: ponto)."""
 
     type_class_uri = XSD["double"]
@@ -209,7 +218,7 @@ class Longitude(float):
     type_model_uri = WASTH.Longitude
 
 
-class OrcidId(str):
+class OrcidId(String):
     """ORCID iD, no formato `orcid:1234-5678-9012-345X` ou
     `https://orcid.org/1234-5678-9012-345X`.
     """
@@ -220,7 +229,7 @@ class OrcidId(str):
     type_model_uri = WASTH.OrcidId
 
 
-class OlcPlusCode11(str):
+class OlcPlusCode11(String):
     """Open Location Code (Plus Code) com resolução de 11 dígitos."""
 
     type_class_uri = XSD["string"]
@@ -230,7 +239,7 @@ class OlcPlusCode11(str):
 
 
 # Class references
-class BibliographicCitationRefid(extended_str):
+class BibliographicCitationRefid(CslCitekey):
     pass
 
 
@@ -242,7 +251,7 @@ class ResourceId(URIorCURIE):
     pass
 
 
-class WorkId(extended_str):
+class WorkId(OlcPlusCode11):
     pass
 
 
@@ -874,8 +883,10 @@ class Thing(YAMLRoot):
 
     title: Optional[str] = None
     id: Optional[Union[str, URIorCURIE]] = None
-    author: Optional[str] = None
-    authors: Optional[Union[str, list[str]]] = empty_list()
+    author: Optional[Union[str, OrcidId]] = None
+    authors: Optional[Union[Union[str, OrcidId], list[Union[str, OrcidId]]]] = (
+        empty_list()
+    )
     record_date: Optional[Union[str, XSDDate]] = None
     description: Optional[str] = None
     category: Optional[Union[str, URIorCURIE]] = None
@@ -922,12 +933,14 @@ class Thing(YAMLRoot):
         if self.id is not None and not isinstance(self.id, URIorCURIE):
             self.id = URIorCURIE(self.id)
 
-        if self.author is not None and not isinstance(self.author, str):
-            self.author = str(self.author)
+        if self.author is not None and not isinstance(self.author, OrcidId):
+            self.author = OrcidId(self.author)
 
         if not isinstance(self.authors, list):
             self.authors = [self.authors] if self.authors is not None else []
-        self.authors = [v if isinstance(v, str) else str(v) for v in self.authors]
+        self.authors = [
+            v if isinstance(v, OrcidId) else OrcidId(v) for v in self.authors
+        ]
 
         if self.record_date is not None and not isinstance(self.record_date, XSDDate):
             self.record_date = XSDDate(self.record_date)
@@ -1874,7 +1887,7 @@ class Work(Thing):
     record_rights: Union[Union[dict, Right], list[Union[dict, Right]]] = None
     title_type: Union[str, "TitleType"] = None
     title: str = None
-    author: str = None
+    author: Union[str, OrcidId] = None
     record_date: Union[str, XSDDate] = None
     description: str = None
     measurements: Optional[
@@ -2011,8 +2024,8 @@ class Work(Thing):
 
         if self._is_empty(self.author):
             self.MissingRequiredField("author")
-        if not isinstance(self.author, str):
-            self.author = str(self.author)
+        if not isinstance(self.author, OrcidId):
+            self.author = OrcidId(self.author)
 
         if self._is_empty(self.record_date):
             self.MissingRequiredField("record_date")
@@ -2337,8 +2350,8 @@ class GeographicPoint(YAMLRoot):
     class_name: ClassVar[str] = "GeographicPoint"
     class_model_uri: ClassVar[URIRef] = WASTH.GeographicPoint
 
-    lat: float = None
-    lon: float = None
+    lat: Union[float, Latitude] = None
+    lon: Union[float, Longitude] = None
     srs_name: Optional[Union[str, URIorCURIE]] = None
     source: Optional[Union[dict, LegalBody]] = None
     bibliographic_citation: Optional[
@@ -2356,13 +2369,13 @@ class GeographicPoint(YAMLRoot):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.lat):
             self.MissingRequiredField("lat")
-        if not isinstance(self.lat, float):
-            self.lat = float(self.lat)
+        if not isinstance(self.lat, Latitude):
+            self.lat = Latitude(self.lat)
 
         if self._is_empty(self.lon):
             self.MissingRequiredField("lon")
-        if not isinstance(self.lon, float):
-            self.lon = float(self.lon)
+        if not isinstance(self.lon, Longitude):
+            self.lon = Longitude(self.lon)
 
         if self.srs_name is not None and not isinstance(self.srs_name, URIorCURIE):
             self.srs_name = URIorCURIE(self.srs_name)
@@ -2400,7 +2413,7 @@ class GeographicExtent(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = WASTH.GeographicExtent
 
     geometry_type: Union[str, "GeometryType"] = None
-    coordinates: str = None
+    coordinates: Union[str, GeoJSONCoordinateArray] = None
     srs_name: Optional[Union[str, URIorCURIE]] = None
     source: Optional[Union[dict, LegalBody]] = None
     bibliographic_citation: Optional[
@@ -2421,8 +2434,8 @@ class GeographicExtent(YAMLRoot):
 
         if self._is_empty(self.coordinates):
             self.MissingRequiredField("coordinates")
-        if not isinstance(self.coordinates, str):
-            self.coordinates = str(self.coordinates)
+        if not isinstance(self.coordinates, GeoJSONCoordinateArray):
+            self.coordinates = GeoJSONCoordinateArray(self.coordinates)
 
         if self.srs_name is not None and not isinstance(self.srs_name, URIorCURIE):
             self.srs_name = URIorCURIE(self.srs_name)
@@ -2573,8 +2586,8 @@ class GeonamesFeature(YAMLRoot):
     name: Optional[str] = None
     asciiname: Optional[str] = None
     alternatenames: Optional[str] = None
-    latitude: Optional[float] = None
-    longitude: Optional[float] = None
+    latitude: Optional[Union[float, Latitude]] = None
+    longitude: Optional[Union[float, Longitude]] = None
     feature_class: Optional[Union[str, "FeatureClassEnum"]] = None
     feature_code: Optional[Union[str, "FeatureCodeEnum"]] = None
     country_code: Optional[Union[str, "CountryCodeEnum"]] = None
@@ -2604,11 +2617,11 @@ class GeonamesFeature(YAMLRoot):
         if self.alternatenames is not None and not isinstance(self.alternatenames, str):
             self.alternatenames = str(self.alternatenames)
 
-        if self.latitude is not None and not isinstance(self.latitude, float):
-            self.latitude = float(self.latitude)
+        if self.latitude is not None and not isinstance(self.latitude, Latitude):
+            self.latitude = Latitude(self.latitude)
 
-        if self.longitude is not None and not isinstance(self.longitude, float):
-            self.longitude = float(self.longitude)
+        if self.longitude is not None and not isinstance(self.longitude, Longitude):
+            self.longitude = Longitude(self.longitude)
 
         if self.feature_class is not None and not isinstance(
             self.feature_class, FeatureClassEnum
@@ -7350,7 +7363,7 @@ slots.author = Slot(
     curie=DCTERMS.curie("contributor"),
     model_uri=WASTH.author,
     domain=None,
-    range=Optional[str],
+    range=Optional[Union[str, OrcidId]],
 )
 
 slots.authors = Slot(
@@ -7359,7 +7372,7 @@ slots.authors = Slot(
     curie=DCTERMS.curie("contributor"),
     model_uri=WASTH.authors,
     domain=None,
-    range=Optional[Union[str, list[str]]],
+    range=Optional[Union[Union[str, OrcidId], list[Union[str, OrcidId]]]],
 )
 
 slots.record_date = Slot(
@@ -7490,7 +7503,7 @@ slots.latitude = Slot(
     curie=WGS84.curie("lat"),
     model_uri=WASTH.latitude,
     domain=None,
-    range=Optional[float],
+    range=Optional[Union[float, Latitude]],
 )
 
 slots.longitude = Slot(
@@ -7499,7 +7512,7 @@ slots.longitude = Slot(
     curie=WGS84.curie("long"),
     model_uri=WASTH.longitude,
     domain=None,
-    range=Optional[float],
+    range=Optional[Union[float, Longitude]],
 )
 
 slots.feature_class = Slot(
@@ -8413,7 +8426,7 @@ slots.geographicPoint__lat = Slot(
     curie=WASTH.curie("lat"),
     model_uri=WASTH.geographicPoint__lat,
     domain=None,
-    range=float,
+    range=Union[float, Latitude],
 )
 
 slots.geographicPoint__lon = Slot(
@@ -8422,7 +8435,7 @@ slots.geographicPoint__lon = Slot(
     curie=WASTH.curie("lon"),
     model_uri=WASTH.geographicPoint__lon,
     domain=None,
-    range=float,
+    range=Union[float, Longitude],
 )
 
 slots.geographicPoint__alt = Slot(
@@ -8458,7 +8471,7 @@ slots.geographicExtent__coordinates = Slot(
     curie=WASTH.curie("coordinates"),
     model_uri=WASTH.geographicExtent__coordinates,
     domain=None,
-    range=str,
+    range=Union[str, GeoJSONCoordinateArray],
 )
 
 slots.inscription__inscription_type = Slot(
@@ -8643,7 +8656,7 @@ slots.Work_author = Slot(
     curie=DCTERMS.curie("contributor"),
     model_uri=WASTH.Work_author,
     domain=Work,
-    range=str,
+    range=Union[str, OrcidId],
 )
 
 slots.Work_record_date = Slot(

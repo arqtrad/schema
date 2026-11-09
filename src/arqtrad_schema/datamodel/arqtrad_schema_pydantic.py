@@ -111,8 +111,7 @@ linkml_meta = LinkMLMeta(
         "\n"
         "Comece aprendendo um pouco sobre como trabalhar com controle "
         "de versão no Git e\n"
-        "no GitHub, estudando\n"
-        "[estes tutoriais em "
+        "no GitHub, estudando [estes tutoriais em\n"
         "português](https://programminghistorian.org/pt/licoes/git-ferramenta-metodologica-projetos-historia-1)\n"
         "no site [Programming Historian].\n"
         "Em Windows ou MacOS, o jeito mais fácil de trabalhar com "
@@ -127,8 +126,9 @@ linkml_meta = LinkMLMeta(
         "[Casa tradicional](https://github.com/arqtrad/casa/),\n"
         "usando o botão `Fork 🔽` como ilustrado abaixo\u2009:\n"
         "\n"
-        '<img alt="Captura de tela" '
-        'src="https://github.com/user-attachments/assets/6c22dcec-b8e1-4688-a504-d9ea640bdc43" '
+        '<img alt="Captura de tela"\n'
+        " "
+        'src="https://github.com/user-attachments/assets/6c22dcec-b8e1-4688-a504-d9ea640bdc43"\n'
         "/>\n"
         "\n"
         "A partir daí, pode trabalhar livremente na sua própria cópia "
@@ -139,20 +139,23 @@ linkml_meta = LinkMLMeta(
         "principal e\n"
         "propor as suas contribuições *para o* repositório principal.\n"
         "\n"
-        '<img alt="Captura de tela" '
-        'src="https://github.com/user-attachments/assets/25905e40-99ef-4b23-b33e-cfe586c41001" '
+        '<img alt="Captura de tela"\n'
+        " "
+        'src="https://github.com/user-attachments/assets/25905e40-99ef-4b23-b33e-cfe586c41001"\n'
         "/>\n"
         "\n"
-        '<img alt="Captura de tela" '
-        'src="https://github.com/user-attachments/assets/b5f6ef50-c122-4f01-8ec9-b16207a9b63d" '
+        '<img alt="Captura de tela"\n'
+        " "
+        'src="https://github.com/user-attachments/assets/b5f6ef50-c122-4f01-8ec9-b16207a9b63d"\n'
         "/>\n"
         "\n"
         "Poderá então abrir uma solicitação de integração das suas "
         "alterações\n"
         "ao repositório principal (**pull request**):\n"
         "\n"
-        '<img alt="Captura de tela" '
-        'src="https://github.com/user-attachments/assets/56de1236-6fa0-47f3-9e94-06218dace0a8" '
+        '<img alt="Captura de tela"\n'
+        " "
+        'src="https://github.com/user-attachments/assets/56de1236-6fa0-47f3-9e94-06218dace0a8"\n'
         "/>\n"
         "\n"
         "Se não estiver à vontade para manipular diretamente os "
@@ -166,9 +169,9 @@ linkml_meta = LinkMLMeta(
         "\n"
         "## Por onde começo\u2009?\n"
         "\n"
-        "Leia a especificação da ficha [Work](Work/) para saber como "
-        "preencher as\n"
-        "fichas de edificações dos Documentários da Arquitetura "
+        "> Leia a especificação da ficha **[Work](Work/)** para saber "
+        "como preencher\n"
+        "> as fichas de edificações dos Documentários da Arquitetura "
         "Tradicional.\n"
         "\n"
         "\n"
@@ -317,12 +320,32 @@ linkml_meta = LinkMLMeta(
             },
         },
         "see_also": ["https://tradicional.arq.br/schema"],
+        "settings": {
+            "geojson_multi": {
+                "setting_key": "geojson_multi",
+                "setting_value": "\\[\\s*{geojson_poly}(?:\\s*,\\s*{geojson_poly})*\\s*\\]",
+            },
+            "geojson_num": {
+                "setting_key": "geojson_num",
+                "setting_value": "-?\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?",
+            },
+            "geojson_poly": {
+                "setting_key": "geojson_poly",
+                "setting_value": "\\[\\s*{geojson_ring}(?:\\s*,\\s*{geojson_ring})*\\s*\\]",
+            },
+            "geojson_pos": {
+                "setting_key": "geojson_pos",
+                "setting_value": "\\[\\s*{geojson_num}\\s*,\\s*{geojson_num}(?:\\s*,\\s*{geojson_num})?\\s*\\]",
+            },
+            "geojson_ring": {
+                "setting_key": "geojson_ring",
+                "setting_value": "\\[\\s*{geojson_pos}(?:\\s*,\\s*{geojson_pos}){3,}\\s*\\]",
+            },
+        },
         "source_file": "src/arqtrad_schema/schema/arqtrad_schema.yaml",
-        "title": "Esquema de dados do WASTH (Web App para Sítios Tradicionais e "
-        "Históricos)",
+        "title": "Esquema de dados dos Documentários da Arquitetura Tradicional",
         "types": {
             "CslCitekey": {
-                "base": "str",
                 "description": "Chave de citação compatível com o "
                 "Citation Style Language, começando "
                 "com '@'. Obter as chaves de citação "
@@ -332,10 +355,9 @@ linkml_meta = LinkMLMeta(
                 "from_schema": "https://tradicional.arq.br/schema",
                 "name": "CslCitekey",
                 "pattern": "^@[a-zA-Z0-9_][\\w:.#$%&\\-+?<>~/]*$",
-                "uri": "xsd:string",
+                "typeof": "string",
             },
             "GeoJSONCoordinateArray": {
-                "base": "str",
                 "description": "JSON array of GeoJSON "
                 "positions. The valid "
                 "nesting depends on the "
@@ -343,44 +365,45 @@ linkml_meta = LinkMLMeta(
                 "type.",
                 "from_schema": "https://tradicional.arq.br/schema",
                 "name": "GeoJSONCoordinateArray",
-                "uri": "xsd:string",
+                "structured_pattern": {
+                    "interpolated": True,
+                    "partial_match": False,
+                    "syntax": "^(?:{geojson_poly}|{geojson_multi})$",
+                },
+                "typeof": "string",
             },
             "Latitude": {
-                "base": "float",
                 "description": "Latitude em graus decimais (separador: ponto).",
                 "from_schema": "https://tradicional.arq.br/schema",
                 "maximum_value": 90,
                 "minimum_value": -90,
                 "name": "Latitude",
-                "uri": "xsd:double",
+                "typeof": "double",
             },
             "Longitude": {
-                "base": "float",
                 "description": "Longitude em graus decimais (separador: ponto).",
                 "from_schema": "https://tradicional.arq.br/schema",
                 "maximum_value": 180,
                 "minimum_value": -180,
                 "name": "Longitude",
-                "uri": "xsd:double",
+                "typeof": "double",
             },
             "OlcPlusCode11": {
-                "base": "str",
                 "description": "Open Location Code (Plus Code) "
                 "com resolução de 11 dígitos.",
                 "from_schema": "https://tradicional.arq.br/schema",
                 "name": "OlcPlusCode11",
                 "pattern": "^([2-9CFGHJMPQRVWX]{8})\\+([2-9CFGHJMPQRVWX]{3})$",
-                "uri": "xsd:string",
+                "typeof": "string",
             },
             "OrcidId": {
-                "base": "str",
                 "description": "ORCID iD, no formato "
                 "`orcid:1234-5678-9012-345X` ou\n"
                 "`https://orcid.org/1234-5678-9012-345X`.\n",
                 "from_schema": "https://tradicional.arq.br/schema",
                 "name": "OrcidId",
                 "pattern": "^(?:https?://orcid\\.org/|orcid:)?\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$",
-                "uri": "xsd:string",
+                "typeof": "string",
             },
         },
     }
