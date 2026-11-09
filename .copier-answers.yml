@@ -11,6 +11,6 @@ gh_action_pypi: false
 github_org: arqtrad
 license: MIT
 project_description: Esquemas LinkML para os Documentários da Arquitetura Tradicional.
-project_name: wasth_schema
-project_slug: wasth_schema
+project_name: arqtrad_schema
+project_slug: arqtrad_schema
 

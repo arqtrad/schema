@@ -1,4 +1,7 @@
-# Esquema de dados do WASTH (Web App para Sítios Tradicionais e Históricos)
+# Esquema de dados dos Documentários da Arquitetura Tradicional
+
+Este esquema de dados serve como referência para os Documentários da
+Arquitetura Tradicional disponíveis no portal <https://tradicional.arq.br>.
 
 ## Orientações gerais
 
@@ -85,10 +88,13 @@ pode também abrir uma [*issue* no repositório da Casa].
 
 ## Por onde começo ?
 
-Leia a especificação da ficha [Work](elements/Work/) para saber como preencher
-as
-fichas de edificações dos Documentários da Arquitetura Tradicional.
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
+> Leia a especificação da ficha **[Work](elements/Work/)** para saber como
+> preencher as fichas de edificações dos Documentários da Arquitetura
+> Tradicional.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 [Programming Historian]: https://programminghistorian.org/pt/
 
@@ -125,7 +131,7 @@ fichas de edificações dos Documentários da Arquitetura Tradicional.
 
 URI: https://tradicional.arq.br/schema
 
-Name: wasth_schema
+Name: arqtrad_schema
 
 
 

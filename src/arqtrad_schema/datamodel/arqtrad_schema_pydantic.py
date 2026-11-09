@@ -223,7 +223,7 @@ linkml_meta = LinkMLMeta(
             "classes/geonames",
         ],
         "license": "MIT",
-        "name": "wasth_schema",
+        "name": "arqtrad_schema",
         "prefixes": {
             "EPSG": {
                 "prefix_prefix": "EPSG",
@@ -317,7 +317,7 @@ linkml_meta = LinkMLMeta(
             },
         },
         "see_also": ["https://tradicional.arq.br/schema"],
-        "source_file": "src/wasth_schema/schema/wasth_schema.yaml",
+        "source_file": "src/arqtrad_schema/schema/arqtrad_schema.yaml",
         "title": "Esquema de dados do WASTH (Web App para Sítios Tradicionais e "
         "Históricos)",
         "types": {
@@ -4012,6 +4012,19 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             }
         },
     )
+    source: Optional[LegalBody] = Field(
+        default=None,
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                ]
+            }
+        },
+    )
 
 
 class BroaderConceptReference(ConceptReference):
@@ -4074,6 +4087,19 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
                 ],
                 "recommended": True,
                 "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    source: Optional[LegalBody] = Field(
+        default=None,
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                ]
             }
         },
     )
@@ -4142,6 +4168,19 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             }
         },
     )
+    source: Optional[LegalBody] = Field(
+        default=None,
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                ]
+            }
+        },
+    )
 
 
 class MappingConceptReference(ConceptReference):
@@ -4204,6 +4243,19 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
                 ],
                 "recommended": True,
                 "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    source: Optional[LegalBody] = Field(
+        default=None,
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                ]
             }
         },
     )
@@ -4355,7 +4407,12 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         default=None,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                ]
             }
         },
     )
@@ -4601,6 +4658,19 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
             }
         },
     )
+    source: Optional[LegalBody] = Field(
+        default=None,
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                ]
+            }
+        },
+    )
 
 
 class Right(ConfiguredBaseModel):
@@ -4783,7 +4853,8 @@ class EventDate(ConfiguredBaseModel):
     )
     date_value: Optional[date] = Field(
         default=None,
-        description="""Usar o formato ISO-8601 (AAAA-MM-DD). Para datas imprecisas, usar o PRIMEIRO ou o ÚLTIMO dia, mês ou ano do período delimitado, conforme se tratar de uma data de corte inicial ou final para o evento, e descrever verbalmente o período no campo `display_date`.
+        description="""Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Para datas imprecisas, usar o PRIMEIRO ou o ÚLTIMO dia, mês ou ano do período delimitado, conforme se tratar de uma data de corte inicial ou final para o evento, e descrever verbalmente o período no campo `display_date`.
 """,
         json_schema_extra={"linkml_meta": {"domain_of": ["EventDate"]}},
     )
@@ -4846,6 +4917,19 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
                 ],
                 "recommended": True,
                 "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    source: Optional[LegalBody] = Field(
+        default=None,
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                ]
             }
         },
     )
@@ -4944,7 +5028,19 @@ class Thing(ConfiguredBaseModel):
     )
     author: Optional[str] = Field(
         default=None,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -4952,7 +5048,9 @@ class Thing(ConfiguredBaseModel):
     )
     record_date: Optional[date] = Field(
         default=None,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
@@ -5210,7 +5308,19 @@ Derivado automaticamente das relações `broader` em outras fichas. NÃO preench
     )
     author: Optional[str] = Field(
         default=None,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -5218,7 +5328,9 @@ Derivado automaticamente das relações `broader` em outras fichas. NÃO preench
     )
     record_date: Optional[date] = Field(
         default=None,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
@@ -5416,7 +5528,19 @@ class RelatedObject(Thing):
     )
     author: Optional[str] = Field(
         default=None,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -5424,7 +5548,9 @@ class RelatedObject(Thing):
     )
     record_date: Optional[date] = Field(
         default=None,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
@@ -5658,7 +5784,19 @@ class RelatedWork(RelatedObject):
     )
     author: Optional[str] = Field(
         default=None,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -5666,7 +5804,9 @@ class RelatedWork(RelatedObject):
     )
     record_date: Optional[date] = Field(
         default=None,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
@@ -5881,7 +6021,19 @@ class LargerContextReference(RelatedObject):
     )
     author: Optional[str] = Field(
         default=None,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -5889,7 +6041,9 @@ class LargerContextReference(RelatedObject):
     )
     record_date: Optional[date] = Field(
         default=None,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
@@ -6198,7 +6352,19 @@ No caso de `preview_image` ou `provided_image`, o link deve referenciar diretame
     )
     author: Optional[str] = Field(
         default=None,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -6206,7 +6372,9 @@ No caso de `preview_image` ou `provided_image`, o link deve referenciar diretame
     )
     record_date: Optional[date] = Field(
         default=None,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
@@ -6513,7 +6681,19 @@ No caso de `preview_image` ou `provided_image`, o link deve referenciar diretame
     )
     author: Optional[str] = Field(
         default=None,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -6521,7 +6701,9 @@ No caso de `preview_image` ou `provided_image`, o link deve referenciar diretame
     )
     record_date: Optional[date] = Field(
         default=None,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
@@ -6686,8 +6868,18 @@ class LegalBody(Thing):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
+            "class_uri": "schema:Organization",
+            "close_mappings": ["crm:E39_Actor"],
             "from_schema": "https://tradicional.arq.br/schema/shared",
+            "notes": [
+                "This class comprises people, either individually or in groups, who "
+                "have the potential to perform intentional actions of kinds for "
+                "which they can be held responsible.",
+                "O schema.org prevê um atributo `fundedItem` (do tipo `Grant`) para "
+                "uma `Organization`.",
+            ],
             "slot_usage": {
+                "category": {"ifabsent": "string(term:lido00413)", "name": "category"},
                 "identifiers": {
                     "description": "Referencia a identidade do "
                     "ente legal num vocabulário "
@@ -6695,7 +6887,7 @@ class LegalBody(Thing):
                     "identidades, tal como o "
                     "ISNI.\n",
                     "name": "identifiers",
-                }
+                },
             },
         }
     )
@@ -6738,7 +6930,19 @@ class LegalBody(Thing):
     )
     author: Optional[str] = Field(
         default=None,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -6746,7 +6950,9 @@ class LegalBody(Thing):
     )
     record_date: Optional[date] = Field(
         default=None,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
@@ -6772,9 +6978,12 @@ class LegalBody(Thing):
         },
     )
     category: Literal[
-        "https://tradicional.arq.br/schema/LegalBody", "wasth:LegalBody"
+        "https://tradicional.arq.br/schema/LegalBody",
+        "http://schema.org/Organization",
+        "wasth:LegalBody",
+        "schema:Organization",
     ] = Field(
-        default="wasth:LegalBody",
+        default="schema:Organization",
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
 Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
@@ -6783,6 +6992,7 @@ Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `t
             "linkml_meta": {
                 "designates_type": True,
                 "domain_of": ["Thing"],
+                "ifabsent": "string(term:lido00413)",
                 "notes": [
                     "The LIDO Category Vocabulary is a structured controlled list of "
                     "terms recommended to use as values in the LIDO Category element.\n"
@@ -7064,7 +7274,19 @@ Por ora, é responsabilidade de quem preenche a ficha assegurar que `start_date`
     )
     author: Optional[str] = Field(
         default=None,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -7072,7 +7294,9 @@ Por ora, é responsabilidade de quem preenche a ficha assegurar que `start_date`
     )
     record_date: Optional[date] = Field(
         default=None,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
@@ -7341,7 +7565,19 @@ class Repository(Thing):
     )
     author: Optional[str] = Field(
         default=None,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -7349,7 +7585,9 @@ class Repository(Thing):
     )
     record_date: Optional[date] = Field(
         default=None,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
@@ -7515,8 +7753,6 @@ class Work(Thing):
     A ordem dos blocos não é importante, mas a hierarquia dentro de cada bloco e a indentação de dois espaços por nível hierárquico, sim.
     O caractere `#` indica o início de um comentário, que prossegue até o final da linha. Os comentários e as linhas que contêm apenas comentários devem ser apagados das fichas preenchidas.
     Campos não preenchidos também devem ser apagadas das fichas.
-    -------------------------------------------------------------------------
-    An historical landmark or building.
 
     """
 
@@ -7525,12 +7761,19 @@ class Work(Thing):
             "class_uri": "schema:LandmarksOrHistoricalBuildings",
             "close_mappings": ["crm:E22_Human-Made_Object"],
             "from_schema": "https://tradicional.arq.br/schema/work",
+            "notes": [
+                "An historical landmark or building.",
+                "This class comprises all persistent physical objects of any size "
+                "that are purposely created by human activity and have physical "
+                "boundaries that separate them completely in an objective way from "
+                "other objects.\n"
+                "The class also includes all aggregates of objects made for "
+                "functional purposes of whatever kind, independent of physical "
+                "coherence, such as a set of chessmen.",
+            ],
             "slot_usage": {
                 "author": {"name": "author", "required": True},
-                "category": {
-                    "ifabsent": "string(http://terminology.lido-schema.org/lido00096)",
-                    "name": "category",
-                },
+                "category": {"ifabsent": "string(term:lido00096)", "name": "category"},
                 "content": {
                     "description": "Deixe uma linha em branco após o "
                     "fechamento dos metadados e inclua "
@@ -7843,13 +8086,20 @@ Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO [`relate
     work_type_condition: Optional[list[ConceptReference]] = Field(
         default=None,
         description="""Descreve o estado físico da edificação quanto à sua aparência de completude, deterioração ou capacidade de desempenhar sua função.
-Atende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.html) \"estado de preservação\" e \"estado de conservação\".
----------------------------------------------------------------------
-Descriptors for objects that are distinguishable by their overall state such as appearance, level of damage, completeness, or quality. If an object is identified by its prevailing physical state, then it is qualified by condition.
-Based on [AAT \"conditions\"](http://vocab.getty.edu/page/aat/300389724) and [CIDOC CRM \"E3 Condition State\"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)""",
+Atende aos campos do [SICG](https://sicg.iphan.gov.br/sicg/manual/manual.html) \"estado de preservação\" e \"estado de conservação\".""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": ["Work"],
+                "notes": [
+                    "Descriptors for objects that are distinguishable by their overall "
+                    "state such as appearance, level of damage, completeness, or "
+                    "quality. If an object is identified by its prevailing physical "
+                    "state, then it is qualified by condition.\n"
+                    "Based on [AAT "
+                    '"conditions"](http://vocab.getty.edu/page/aat/300389724) and '
+                    '[CIDOC CRM "E3 Condition '
+                    'State"](http://cidoc-crm.org/html/cidoc_crm_v7.1.1_with_translations.html#E3)'
+                ],
                 "recommended": True,
                 "slot_uri": "term:lido00937",
             }
@@ -8192,7 +8442,19 @@ INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou polític
     )
     author: str = Field(
         default=...,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -8200,7 +8462,9 @@ INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou polític
     )
     record_date: date = Field(
         default=...,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
@@ -8240,7 +8504,7 @@ Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `t
             "linkml_meta": {
                 "designates_type": True,
                 "domain_of": ["Thing"],
-                "ifabsent": "string(http://terminology.lido-schema.org/lido00096)",
+                "ifabsent": "string(term:lido00096)",
                 "notes": [
                     "The LIDO Category Vocabulary is a structured controlled list of "
                     "terms recommended to use as values in the LIDO Category element.\n"
@@ -8481,7 +8745,19 @@ Representative point location for the place, normally in EPSG:4326 (WGS 84).""",
     )
     author: Optional[str] = Field(
         default=None,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -8489,7 +8765,9 @@ Representative point location for the place, normally in EPSG:4326 (WGS 84).""",
     )
     record_date: Optional[date] = Field(
         default=None,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
@@ -8682,7 +8960,12 @@ class GeographicPoint(ConfiguredBaseModel):
         default=None,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                ]
             }
         },
     )
@@ -8764,7 +9047,12 @@ class GeographicExtent(ConfiguredBaseModel):
         default=None,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
+                "domain_of": [
+                    "ConceptReference",
+                    "TypedReference",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                ]
             }
         },
     )
@@ -8975,7 +9263,19 @@ class Collection(Thing):
     )
     author: Optional[str] = Field(
         default=None,
-        description="""ORCID iD da pessoa que escreveu a versão original da ficha. Alterar apenas no caso de a ficha ter sido substancialmente reescrita. Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+        description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+        },
+    )
+    authors: Optional[list[str]] = Field(
+        default=None,
+        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -8983,7 +9283,9 @@ class Collection(Thing):
     )
     record_date: Optional[date] = Field(
         default=None,
-        description="""Data de inclusão da ficha.""",
+        description="""Data de inclusão da ficha. Usar o formato ISO-8601 entre aspas `\"AAAA-MM-DD\"`.
+Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },

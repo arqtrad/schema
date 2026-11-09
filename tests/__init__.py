@@ -1,1 +1,1 @@
-"""Tests for wasth_schema."""
+"""Tests for arqtrad_schema."""

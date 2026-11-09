@@ -1,4 +1,4 @@
-# Examples of using wasth_schema
+# Examples of using arqtrad_schema
 
 This folder contains examples using the datamodel.
 

@@ -1,6 +1,6 @@
 <a href="https://github.com/linkml/linkml-project-copier"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-teal.json" alt="Copier Badge" style="max-width:100%;"/></a>
 
-# wasth_schema
+# arqtrad_schema
 
 Esquemas LinkML para os Documentários da Arquitetura Tradicional.
 
@@ -15,10 +15,10 @@ Esquemas LinkML para os Documentários da Arquitetura Tradicional.
 * [examples/](examples/) - Examples of using the schema
 * [project/](project/) - project files (these files are auto-generated, do not edit)
 * [src/](src/) - source files (edit these)
-  * [wasth_schema](src/wasth_schema)
-    * [schema/](src/wasth_schema/schema) -- LinkML schema
+  * [arqtrad_schema](src/arqtrad_schema)
+    * [schema/](src/arqtrad_schema/schema) -- LinkML schema
       (edit this)
-    * [datamodel/](src/wasth_schema/datamodel) -- generated
+    * [datamodel/](src/arqtrad_schema/datamodel) -- generated
       Python datamodel
 * [tests/](tests/) - Python tests
   * [data/](tests/data) - Example data

@@ -1,5 +1,5 @@
 id: https://tradicional.arq.br/mappings/sicg-bem-imovel-to-wasth-work
-name: sicg_bem_imovel_to_wasth_work
+name: sicg_bem_imovel_to_arqtrad_work
 prefixes:
   linkml: https://w3id.org/linkml/
   wasth: https://tradicional.arq.br/schema/
@@ -7,7 +7,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   term: http://terminology.lido-schema.org/
 source_schema: sicg_bem_imovel.yaml
-target_schema: schema/wasth_schema.yaml
+target_schema: schema/arqtrad_schema.yaml
 
 class_mappings:
   - source_class: sicg:BemImovel

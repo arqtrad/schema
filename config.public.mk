@@ -6,10 +6,10 @@
 
 # Note:
 # - just works fine with quoted variables of dot-env files like this one
-LINKML_SCHEMA_NAME="wasth_schema"
+LINKML_SCHEMA_NAME="arqtrad_schema"
 LINKML_SCHEMA_AUTHOR="Pedro P. Palazzo <palazzo@unb.br>"
 LINKML_SCHEMA_DESCRIPTION="Esquemas LinkML para os Documentários da Arquitetura Tradicional."
-LINKML_SCHEMA_SOURCE_DIR="src/wasth_schema/schema"
+LINKML_SCHEMA_SOURCE_DIR="src/arqtrad_schema/schema"
 
 ###### linkml generator variables, used by justfile
 

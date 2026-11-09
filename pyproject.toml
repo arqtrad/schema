@@ -3,7 +3,7 @@ requires = ["hatchling", "uv-dynamic-versioning"]
 build-backend = "hatchling.build"
 
 [project]
-name = "wasth_schema"
+name = "arqtrad_schema"
 description = "Esquemas LinkML para os Documentários da Arquitetura Tradicional."
 authors = [
   {name = "Pedro P. Palazzo", email = "palazzo@unb.br"},
@@ -51,7 +51,7 @@ testpaths = ["tests"]
 # https://docs.astral.sh/ruff/configuration/
 [tool.ruff]
 exclude = [
-    "src/wasth_schema/_version.py",
+    "src/arqtrad_schema/_version.py",
 ]
 # Set oldest supported Python version
 target-version = "py310"
@@ -63,8 +63,8 @@ skip = [
   "pyproject.toml",
   "uv.lock",
   "project/*",
-  "src/wasth_schema/datamodel/wasth_schema_pydantic.py",
-  "src/wasth_schema/datamodel/wasth_schema.py",
+  "src/arqtrad_schema/datamodel/arqtrad_schema_pydantic.py",
+  "src/arqtrad_schema/datamodel/arqtrad_schema.py",
 ]
 
 # Reminder: words have to be lowercased for the ignore-words-list
@@ -81,6 +81,6 @@ extend-exclude = [
   "uv.lock",
   "pyproject.toml",
   "project/*",
-  "src/wasth_schema/datamodel/wasth_schema_pydantic.py",
-  "src/wasth_schema/datamodel/wasth_schema.py",
+  "src/arqtrad_schema/datamodel/arqtrad_schema_pydantic.py",
+  "src/arqtrad_schema/datamodel/arqtrad_schema.py",
 ]

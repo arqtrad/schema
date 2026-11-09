@@ -4273,4 +4273,4 @@ classes:
       - timezone
       - modification date
 
-source_file: src/wasth_schema/schema/classes/geonames.yaml
+source_file: src/arqtrad_schema/schema/classes/geonames.yaml

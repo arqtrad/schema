@@ -1,5 +1,5 @@
 ---
-site_name: "wasth_schema"
+site_name: "arqtrad_schema"
 theme:
   # https://www.mkdocs.org/user-guide/configuration/#theme
   name: material
@@ -57,7 +57,7 @@ markdown_extensions:
   - md_in_html
 
 watch:
-  - src/wasth_schema/schema
+  - src/arqtrad_schema/schema
 
 nav:
   - Home: index.md
@@ -68,7 +68,7 @@ exclude_docs: |
   /templates-linkml/
 
 site_url: https://tradicional.arq.br/schema
-repo_url: https://github.com/arqtrad/wasth_schema
+repo_url: https://github.com/arqtrad/schema
 
 # Uncomment this block to enable use of Google Analytics.
 # Replace the property value with your own ID.
