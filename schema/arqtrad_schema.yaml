@@ -5770,8 +5770,7 @@ slots:
     - ConceptReference
     - Topic
     range: Concept
-    inlined: true
-    inlined_as_list: true
+    inlined: false
   broader:
     name: broader
     definition_uri: https://tradicional.arq.br/schema/broader
@@ -5788,7 +5787,7 @@ slots:
     range: BroaderConceptReference
     multivalued: true
     inlined: true
-    inlined_as_list: true
+    inlined_as_list: false
   narrower:
     name: narrower
     definition_uri: https://tradicional.arq.br/schema/narrower
@@ -5806,7 +5805,7 @@ slots:
     range: NarrowerConceptReference
     multivalued: true
     inlined: true
-    inlined_as_list: true
+    inlined_as_list: false
   bibliographic_citation:
     name: bibliographic_citation
     definition_uri: https://tradicional.arq.br/schema/bibliographic_citation
@@ -8263,6 +8262,25 @@ slots:
     - Collection
     range: CollectionType
     required: true
+  Concept_id:
+    name: Concept_id
+    definition_uri: https://tradicional.arq.br/schema/id
+    description: "Identificador globalmente \xFAnico para este objeto ou recurso.\n"
+    from_schema: https://tradicional.arq.br/schema/thing
+    mappings:
+    - dcterms:identifier
+    is_a: id
+    domain: Concept
+    slot_uri: dcterms:identifier
+    identifier: true
+    alias: id
+    owner: Concept
+    domain_of:
+    - Concept
+    is_usage_slot: true
+    usage_slot_name: id
+    range: uriorcurie
+    required: true
   Concept_content:
     name: Concept_content
     definition_uri: https://tradicional.arq.br/schema/content
@@ -8834,8 +8852,7 @@ slots:
     usage_slot_name: concept_name
     range: Concept
     required: true
-    inlined: true
-    inlined_as_list: true
+    inlined: false
 classes:
   Container:
     name: Container
@@ -8895,7 +8912,6 @@ classes:
     is_a: Thing
     slots:
     - title
-    - id
     - author
     - authors
     - record_date
@@ -8914,8 +8930,12 @@ classes:
     - concept__concept_type
     - concept__mapping
     - concept__relation
+    - Concept_id
     - Concept_content
     slot_usage:
+      id:
+        name: id
+        identifier: true
       content:
         name: content
         description: Notas de escopo sobre o conceito.
@@ -10837,6 +10857,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-10T17:34:18'
+source_file_date: '2026-11-10T22:32:22'
 source_file_size: 56410
 
