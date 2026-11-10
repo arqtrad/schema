@@ -170,7 +170,7 @@ types:
     base: str
     uri: xsd:string
     structured_pattern:
-      syntax: ^(?:{geojson_poly}|{geojson_multi})$
+      syntax: ^\[[\s\[\]\d.,eE+-]+\]$
       interpolated: true
       partial_match: false
   Latitude:
@@ -8944,6 +8944,15 @@ classes:
         multivalued: true
         inlined_as_list: true
     class_uri: skos:Concept
+    exactly_one_of:
+    - slot_conditions:
+        author:
+          name: author
+          required: true
+    - slot_conditions:
+        authors:
+          name: authors
+          required: true
   ConceptReference:
     name: ConceptReference
     definition_uri: https://tradicional.arq.br/schema/ConceptReference
@@ -10828,22 +10837,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-10T16:14:23'
-source_file_size: 56779
-settings:
-  geojson_num:
-    setting_key: geojson_num
-    setting_value: -?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?
-  geojson_pos:
-    setting_key: geojson_pos
-    setting_value: \[\s*{geojson_num}\s*,\s*{geojson_num}(?:\s*,\s*{geojson_num})?\s*\]
-  geojson_ring:
-    setting_key: geojson_ring
-    setting_value: \[\s*{geojson_pos}(?:\s*,\s*{geojson_pos}){3,}\s*\]
-  geojson_poly:
-    setting_key: geojson_poly
-    setting_value: \[\s*{geojson_ring}(?:\s*,\s*{geojson_ring})*\s*\]
-  geojson_multi:
-    setting_key: geojson_multi
-    setting_value: \[\s*{geojson_poly}(?:\s*,\s*{geojson_poly})*\s*\]
+source_file_date: '2026-11-10T17:34:18'
+source_file_size: 56410
 
