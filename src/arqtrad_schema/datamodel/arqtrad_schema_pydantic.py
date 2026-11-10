@@ -320,28 +320,6 @@ linkml_meta = LinkMLMeta(
             },
         },
         "see_also": ["https://tradicional.arq.br/schema"],
-        "settings": {
-            "geojson_multi": {
-                "setting_key": "geojson_multi",
-                "setting_value": "\\[\\s*{geojson_poly}(?:\\s*,\\s*{geojson_poly})*\\s*\\]",
-            },
-            "geojson_num": {
-                "setting_key": "geojson_num",
-                "setting_value": "-?\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?",
-            },
-            "geojson_poly": {
-                "setting_key": "geojson_poly",
-                "setting_value": "\\[\\s*{geojson_ring}(?:\\s*,\\s*{geojson_ring})*\\s*\\]",
-            },
-            "geojson_pos": {
-                "setting_key": "geojson_pos",
-                "setting_value": "\\[\\s*{geojson_num}\\s*,\\s*{geojson_num}(?:\\s*,\\s*{geojson_num})?\\s*\\]",
-            },
-            "geojson_ring": {
-                "setting_key": "geojson_ring",
-                "setting_value": "\\[\\s*{geojson_pos}(?:\\s*,\\s*{geojson_pos}){3,}\\s*\\]",
-            },
-        },
         "source_file": "src/arqtrad_schema/schema/arqtrad_schema.yaml",
         "title": "Esquema de dados dos Documentários da Arquitetura Tradicional",
         "types": {
@@ -368,7 +346,7 @@ linkml_meta = LinkMLMeta(
                 "structured_pattern": {
                     "interpolated": True,
                     "partial_match": False,
-                    "syntax": "^(?:{geojson_poly}|{geojson_multi})$",
+                    "syntax": "^\\[[\\s\\[\\]\\d.,eE+-]+\\]$",
                 },
                 "typeof": "string",
             },
@@ -5244,6 +5222,10 @@ class Concept(Thing):
         {
             "class_uri": "skos:Concept",
             "exact_mappings": ["schema:DefinedTerm"],
+            "exactly_one_of": [
+                {"slot_conditions": {"author": {"name": "author", "required": True}}},
+                {"slot_conditions": {"authors": {"name": "authors", "required": True}}},
+            ],
             "from_schema": "https://tradicional.arq.br/schema/concept",
             "slot_usage": {
                 "content": {

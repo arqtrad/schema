@@ -1401,13 +1401,6 @@ enums:
       other:
         meaning: term:lido00136
 
-settings:
-  geojson_num: '-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?'
-  geojson_pos: '\[\s*{geojson_num}\s*,\s*{geojson_num}(?:\s*,\s*{geojson_num})?\s*\]'
-  geojson_ring: '\[\s*{geojson_pos}(?:\s*,\s*{geojson_pos}){3,}\s*\]'
-  geojson_poly: '\[\s*{geojson_ring}(?:\s*,\s*{geojson_ring})*\s*\]'
-  geojson_multi: '\[\s*{geojson_poly}(?:\s*,\s*{geojson_poly})*\s*\]'
-
 types:
 
   CslCitekey:
@@ -1425,7 +1418,7 @@ types:
       associated geometry type.
     typeof: string
     structured_pattern:
-      syntax: '^(?:{geojson_poly}|{geojson_multi})$'
+      syntax: '^\[[\s\[\]\d.,eE+-]+\]$'
       interpolated: true
       partial_match: false
 
