@@ -7726,8 +7726,8 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  work__work_type_subject_type:
-    name: work__work_type_subject_type
+  work__work_type_subject:
+    name: work__work_type_subject
     description: "Nos Document\xE1rios da Arquitetura Tradicional, indica, se houver,\
       \ uma classifica\xE7\xE3o iconogr\xE1fica mais espec\xEDfica do que `form` ou\
       \ `function`.\n---------------------------------------------------------------------\n\
@@ -7738,7 +7738,7 @@ slots:
     mappings:
     - term:lido00768
     slot_uri: term:lido00768
-    alias: work_type_subject_type
+    alias: work_type_subject
     owner: Work
     domain_of:
     - Work
@@ -8603,30 +8603,6 @@ slots:
     is_usage_slot: true
     usage_slot_name: title
     range: string
-    required: true
-  Work_author:
-    name: Work_author
-    definition_uri: https://tradicional.arq.br/schema/author
-    description: "ORCID iD da pessoa que escreveu a vers\xE3o original da ficha, no\
-      \ caso de uma \xFAnica pessoa ser respons\xE1vel. Este campo foi mantido apenas\
-      \ por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver\
-      \ uma s\xF3 pessoa respons\xE1vel pela ficha.\nUsar o formato `orcid:1234-5678-9012-345X`\
-      \ ou `https://orcid.org/1234-5678-9012-345X` (temporariamente tamb\xE9m \xE9\
-      \ aceito o formato `1234-5678-9012-345X`).\nAlterar apenas no caso de a ficha\
-      \ ter sido substancialmente reescrita.\n"
-    from_schema: https://tradicional.arq.br/schema/thing
-    mappings:
-    - dcterms:contributor
-    is_a: author
-    domain: Work
-    slot_uri: dcterms:contributor
-    alias: author
-    owner: Work
-    domain_of:
-    - Work
-    is_usage_slot: true
-    usage_slot_name: author
-    range: OrcidId
     required: true
   Work_record_date:
     name: Work_record_date
@@ -10095,6 +10071,7 @@ classes:
     - crm:E22_Human-Made_Object
     is_a: Thing
     slots:
+    - author
     - authors
     - identifiers
     - bibliographic_citation
@@ -10119,7 +10096,7 @@ classes:
     - work__work_type_function
     - work__work_type_context
     - work__work_type_material_tech
-    - work__work_type_subject_type
+    - work__work_type_subject
     - work__work_type_use
     - work__classification_genre
     - work__classification_subject
@@ -10136,7 +10113,6 @@ classes:
     - work__subject
     - Work_id
     - Work_title
-    - Work_author
     - Work_record_date
     - Work_description
     - Work_category
@@ -10152,9 +10128,6 @@ classes:
         range: OlcPlusCode11
       title:
         name: title
-        required: true
-      author:
-        name: author
         required: true
       record_date:
         name: record_date
@@ -10313,8 +10286,8 @@ classes:
         recommended: true
         multivalued: true
         inlined_as_list: true
-      work_type_subject_type:
-        name: work_type_subject_type
+      work_type_subject:
+        name: work_type_subject
         description: "Nos Document\xE1rios da Arquitetura Tradicional, indica, se\
           \ houver, uma classifica\xE7\xE3o iconogr\xE1fica mais espec\xEDfica do\
           \ que `form` ou `function`.\n---------------------------------------------------------------------\n\
@@ -10558,6 +10531,15 @@ classes:
         multivalued: true
         inlined_as_list: true
     class_uri: schema:LandmarksOrHistoricalBuildings
+    exactly_one_of:
+    - slot_conditions:
+        author:
+          name: author
+          required: true
+    - slot_conditions:
+        authors:
+          name: authors
+          required: true
   Site:
     name: Site
     definition_uri: https://tradicional.arq.br/schema/Site
@@ -10846,7 +10828,7 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-09T14:09:30'
+source_file_date: '2026-11-10T16:14:23'
 source_file_size: 56779
 settings:
   geojson_num:
