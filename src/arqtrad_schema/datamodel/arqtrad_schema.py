@@ -247,6 +247,10 @@ class TypedReferenceRefid(URIorCURIE):
     pass
 
 
+class ConceptId(URIorCURIE):
+    pass
+
+
 class ResourceId(URIorCURIE):
     pass
 
@@ -275,9 +279,12 @@ class Container(YAMLRoot):
     works: Optional[
         Union[dict[Union[str, WorkId], Union[dict, "Work"]], list[Union[dict, "Work"]]]
     ] = empty_dict()
-    concepts: Optional[Union[Union[dict, "Concept"], list[Union[dict, "Concept"]]]] = (
-        empty_list()
-    )
+    concepts: Optional[
+        Union[
+            dict[Union[str, ConceptId], Union[dict, "Concept"]],
+            list[Union[dict, "Concept"]],
+        ]
+    ] = empty_dict()
     places: Optional[
         Union[
             dict[Union[int, GeonamesFeatureGeonameid], Union[dict, "GeonamesFeature"]],
@@ -290,12 +297,9 @@ class Container(YAMLRoot):
             slot_name="works", slot_type=Work, key_name="id", keyed=True
         )
 
-        if not isinstance(self.concepts, list):
-            self.concepts = [self.concepts] if self.concepts is not None else []
-        self.concepts = [
-            v if isinstance(v, Concept) else Concept(**as_dict(v))
-            for v in self.concepts
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="concepts", slot_type=Concept, key_name="id", keyed=True
+        )
 
         self._normalize_inlined_as_list(
             slot_name="places",
@@ -320,7 +324,7 @@ class ConceptReference(YAMLRoot):
     class_name: ClassVar[str] = "ConceptReference"
     class_model_uri: ClassVar[URIRef] = WASTH.ConceptReference
 
-    concept_name: Optional[Union[dict, "Concept"]] = None
+    concept_name: Optional[Union[str, ConceptId]] = None
     description: Optional[str] = None
     bibliographic_citation: Optional[
         Union[
@@ -334,8 +338,10 @@ class ConceptReference(YAMLRoot):
     source: Optional[Union[dict, "LegalBody"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self.concept_name is not None and not isinstance(self.concept_name, Concept):
-            self.concept_name = Concept(**as_dict(self.concept_name))
+        if self.concept_name is not None and not isinstance(
+            self.concept_name, ConceptId
+        ):
+            self.concept_name = ConceptId(self.concept_name)
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
@@ -1053,6 +1059,7 @@ class Concept(Thing):
     class_name: ClassVar[str] = "Concept"
     class_model_uri: ClassVar[URIRef] = WASTH.Concept
 
+    id: Union[str, ConceptId] = None
     broader: Optional[
         Union[
             Union[dict, BroaderConceptReference],
@@ -1081,14 +1088,19 @@ class Concept(Thing):
     content: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        self._normalize_inlined_as_list(
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ConceptId):
+            self.id = ConceptId(self.id)
+
+        self._normalize_inlined_as_dict(
             slot_name="broader",
             slot_type=BroaderConceptReference,
             key_name="broader_match",
             keyed=False,
         )
 
-        self._normalize_inlined_as_list(
+        self._normalize_inlined_as_dict(
             slot_name="narrower",
             slot_type=NarrowerConceptReference,
             key_name="narrower_match",
@@ -2517,7 +2529,7 @@ class Topic(YAMLRoot):
     class_name: ClassVar[str] = "Topic"
     class_model_uri: ClassVar[URIRef] = WASTH.Topic
 
-    concept_name: Union[dict, Concept] = None
+    concept_name: Union[str, ConceptId] = None
     topic_type: Union[str, "SubjectType"] = None
     description: Optional[str] = None
     format_extent: Optional[Union[dict, TypedReference]] = None
@@ -2525,8 +2537,8 @@ class Topic(YAMLRoot):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.concept_name):
             self.MissingRequiredField("concept_name")
-        if not isinstance(self.concept_name, Concept):
-            self.concept_name = Concept(**as_dict(self.concept_name))
+        if not isinstance(self.concept_name, ConceptId):
+            self.concept_name = ConceptId(self.concept_name)
 
         if self._is_empty(self.topic_type):
             self.MissingRequiredField("topic_type")
@@ -7066,7 +7078,7 @@ slots.concept_name = Slot(
     curie=WASTH.curie("concept_name"),
     model_uri=WASTH.concept_name,
     domain=None,
-    range=Optional[Union[dict, Concept]],
+    range=Optional[Union[str, ConceptId]],
 )
 
 slots.broader = Slot(
@@ -7641,7 +7653,12 @@ slots.container__concepts = Slot(
     curie=WASTH.curie("concepts"),
     model_uri=WASTH.container__concepts,
     domain=None,
-    range=Optional[Union[Union[dict, Concept], list[Union[dict, Concept]]]],
+    range=Optional[
+        Union[
+            dict[Union[str, ConceptId], Union[dict, Concept]],
+            list[Union[dict, Concept]],
+        ]
+    ],
 )
 
 slots.container__places = Slot(
@@ -8493,6 +8510,15 @@ slots.collection__collection_type = Slot(
     range=Union[str, "CollectionType"],
 )
 
+slots.Concept_id = Slot(
+    uri=DCTERMS.identifier,
+    name="Concept_id",
+    curie=DCTERMS.curie("identifier"),
+    model_uri=WASTH.Concept_id,
+    domain=Concept,
+    range=Union[str, ConceptId],
+)
+
 slots.Concept_content = Slot(
     uri=SKOS.scopeNote,
     name="Concept_content",
@@ -8725,5 +8751,5 @@ slots.Topic_concept_name = Slot(
     curie=WASTH.curie("concept_name"),
     model_uri=WASTH.Topic_concept_name,
     domain=Topic,
-    range=Union[dict, Concept],
+    range=Union[str, ConceptId],
 )
