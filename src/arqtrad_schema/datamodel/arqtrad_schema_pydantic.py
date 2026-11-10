@@ -7783,6 +7783,10 @@ class Work(Thing):
         {
             "class_uri": "schema:LandmarksOrHistoricalBuildings",
             "close_mappings": ["crm:E22_Human-Made_Object"],
+            "exactly_one_of": [
+                {"slot_conditions": {"author": {"name": "author", "required": True}}},
+                {"slot_conditions": {"authors": {"name": "authors", "required": True}}},
+            ],
             "from_schema": "https://tradicional.arq.br/schema/work",
             "notes": [
                 "An historical landmark or building.",
@@ -7795,7 +7799,6 @@ class Work(Thing):
                 "coherence, such as a set of chessmen.",
             ],
             "slot_usage": {
-                "author": {"name": "author", "required": True},
                 "category": {"ifabsent": "string(term:lido00096)", "name": "category"},
                 "content": {
                     "description": "Deixe uma linha em branco após o "
@@ -8197,7 +8200,7 @@ Descriptors for objects that are distinguishable by their materials encorporated
             }
         },
     )
-    work_type_subject_type: Optional[list[ConceptReference]] = Field(
+    work_type_subject: Optional[list[ConceptReference]] = Field(
         default=None,
         description="""Nos Documentários da Arquitetura Tradicional, indica, se houver, uma classificação iconográfica mais específica do que `form` ou `function`.
 ---------------------------------------------------------------------
@@ -8463,8 +8466,8 @@ INTERPRETAÇÃO diz respeito ao significado iconológico, alegórico ou polític
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:identifier"}
         },
     )
-    author: str = Field(
-        default=...,
+    author: Optional[str] = Field(
+        default=None,
         description="""ORCID iD da pessoa que escreveu a versão original da ficha, no caso de uma única pessoa ser responsável. Este campo foi mantido apenas por compatibilidade, preferir `authors` daqui para a frente mesmo quando houver uma só pessoa responsável pela ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.

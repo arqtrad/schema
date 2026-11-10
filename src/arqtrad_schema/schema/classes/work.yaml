@@ -186,7 +186,7 @@ classes:
           If an object is identified by the substances detected and/or the
           processes employed, then it is qualified by material or technique.
 
-      work_type_subject_type:
+      work_type_subject:
         slot_uri: term:lido00768
         recommended: true
         range: ConceptReference
@@ -509,9 +509,6 @@ classes:
       title:
         required: true
 
-      author:
-        required: true
-
       record_date:
         required: true
 
@@ -623,6 +620,15 @@ classes:
       - media
       - work_rights
       - record_rights
+
+
+    exactly_one_of:
+      - slot_conditions:
+          author:
+            required: true
+      - slot_conditions:
+          authors:
+            required: true
 
 
   Site:

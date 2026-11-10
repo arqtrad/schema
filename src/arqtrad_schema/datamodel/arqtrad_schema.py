@@ -1887,7 +1887,6 @@ class Work(Thing):
     record_rights: Union[Union[dict, Right], list[Union[dict, Right]]] = None
     title_type: Union[str, "TitleType"] = None
     title: str = None
-    author: Union[str, OrcidId] = None
     record_date: Union[str, XSDDate] = None
     description: str = None
     measurements: Optional[
@@ -1932,7 +1931,7 @@ class Work(Thing):
     work_type_material_tech: Optional[
         Union[Union[dict, MaterialTech], list[Union[dict, MaterialTech]]]
     ] = empty_list()
-    work_type_subject_type: Optional[
+    work_type_subject: Optional[
         Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
     ] = empty_list()
     work_type_use: Optional[
@@ -2021,11 +2020,6 @@ class Work(Thing):
             self.MissingRequiredField("title")
         if not isinstance(self.title, str):
             self.title = str(self.title)
-
-        if self._is_empty(self.author):
-            self.MissingRequiredField("author")
-        if not isinstance(self.author, OrcidId):
-            self.author = OrcidId(self.author)
 
         if self._is_empty(self.record_date):
             self.MissingRequiredField("record_date")
@@ -2122,15 +2116,13 @@ class Work(Thing):
             keyed=False,
         )
 
-        if not isinstance(self.work_type_subject_type, list):
-            self.work_type_subject_type = (
-                [self.work_type_subject_type]
-                if self.work_type_subject_type is not None
-                else []
+        if not isinstance(self.work_type_subject, list):
+            self.work_type_subject = (
+                [self.work_type_subject] if self.work_type_subject is not None else []
             )
-        self.work_type_subject_type = [
+        self.work_type_subject = [
             v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.work_type_subject_type
+            for v in self.work_type_subject
         ]
 
         if not isinstance(self.work_type_use, list):
@@ -8223,11 +8215,11 @@ slots.work__work_type_material_tech = Slot(
     range=Optional[Union[Union[dict, MaterialTech], list[Union[dict, MaterialTech]]]],
 )
 
-slots.work__work_type_subject_type = Slot(
+slots.work__work_type_subject = Slot(
     uri=TERM.lido00768,
-    name="work__work_type_subject_type",
+    name="work__work_type_subject",
     curie=TERM.curie("lido00768"),
-    model_uri=WASTH.work__work_type_subject_type,
+    model_uri=WASTH.work__work_type_subject,
     domain=None,
     range=Optional[
         Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
@@ -8648,15 +8640,6 @@ slots.Work_title = Slot(
     model_uri=WASTH.Work_title,
     domain=Work,
     range=str,
-)
-
-slots.Work_author = Slot(
-    uri=DCTERMS.contributor,
-    name="Work_author",
-    curie=DCTERMS.curie("contributor"),
-    model_uri=WASTH.Work_author,
-    domain=Work,
-    range=Union[str, OrcidId],
 )
 
 slots.Work_record_date = Slot(
