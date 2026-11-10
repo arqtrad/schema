@@ -93,6 +93,15 @@ classes:
       - narrower
       - record_rights
 
+    exactly_one_of:
+
+      - slot_conditions:
+          author:
+            required: true
+      - slot_conditions:
+          authors:
+            required: true
+
 
   ConceptReference:
     description: Atribuição de vocabulário controlado com citação de apoio.

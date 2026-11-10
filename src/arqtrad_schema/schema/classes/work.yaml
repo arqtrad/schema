@@ -623,6 +623,7 @@ classes:
 
 
     exactly_one_of:
+
       - slot_conditions:
           author:
             required: true
