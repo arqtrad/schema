@@ -5,6 +5,8 @@ theme:
   name: material
   icon:
     logo: material/book-open-page-variant
+  locale: pt_BR
+  lang: pt
   # palette:
   #  scheme: slate
   #  primary: cyan
