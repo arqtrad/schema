@@ -5787,7 +5787,6 @@ slots:
     range: BroaderConceptReference
     multivalued: true
     inlined: true
-    inlined_as_list: false
   narrower:
     name: narrower
     definition_uri: https://tradicional.arq.br/schema/narrower
@@ -5805,7 +5804,6 @@ slots:
     range: NarrowerConceptReference
     multivalued: true
     inlined: true
-    inlined_as_list: false
   bibliographic_citation:
     name: bibliographic_citation
     definition_uri: https://tradicional.arq.br/schema/bibliographic_citation
@@ -6263,6 +6261,7 @@ slots:
       \ ou `https://orcid.org/1234-5678-9012-345X` (temporariamente tamb\xE9m \xE9\
       \ aceito o formato `1234-5678-9012-345X`).\nAlterar apenas no caso de a ficha\
       \ ter sido substancialmente reescrita.\n"
+    deprecated: 'True'
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - dcterms:contributor
@@ -6274,11 +6273,12 @@ slots:
   authors:
     name: authors
     definition_uri: https://tradicional.arq.br/schema/authors
-    description: "ORCID iD das pessoas que escreveram a vers\xE3o original da ficha,\
-      \ no caso de v\xE1rias pessoas terem contribu\xEDdo igualmente.\nUsar o formato\
-      \ `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente\
-      \ tamb\xE9m \xE9 aceito o formato `1234-5678-9012-345X`).\nAlterar apenas no\
-      \ caso de a ficha ter sido substancialmente reescrita.\n"
+    description: "ORCID iD das pessoas que contribu\xEDram com o conte\xFAdo da ficha.\n\
+      Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X`\
+      \ (temporariamente tamb\xE9m \xE9 aceito o formato `1234-5678-9012-345X`).\n\
+      Adicionar novos autores que contribu\xEDram substancialmente para o conte\xFA\
+      do da ficha conforme necess\xE1rio. N\xE3o remover autores exceto por decis\xE3\
+      o fundamentada da coordena\xE7\xE3o do projeto.\n"
     from_schema: https://tradicional.arq.br/schema/thing
     mappings:
     - dcterms:contributor
@@ -10857,6 +10857,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-10T22:32:22'
-source_file_size: 56410
+source_file_date: '2026-11-11T12:09:02'
+source_file_size: 56411
 

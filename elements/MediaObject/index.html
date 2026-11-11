@@ -581,7 +581,7 @@
 <tr>
 <td><a href="../authors/">authors</a></td>
 <td>* <br/> <a href="../OrcidId/">OrcidId</a></td>
-<td>ORCID iD das pessoas que escreveram a versão original da ficha, no caso de vá...</td>
+<td>ORCID iD das pessoas que contribuíram com o conteúdo da ficha</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -1046,6 +1046,7 @@
 <span class="w">      </span><span class="s">Alterar</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">ter</span><span class="nv"> </span><span class="s">sido</span><span class="nv"> </span><span class="s">substancialmente</span><span class="nv"> </span><span class="s">reescrita.</span>
 
 <span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">deprecated</span><span class="p">:</span><span class="w"> </span><span class="s">'True'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:contributor</span>
@@ -1055,13 +1056,14 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrcidId</span>
 <span class="w">  </span><span class="nt">authors</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">authors</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'ORCID</span><span class="nv"> </span><span class="s">iD</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">pessoas</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">escreveram</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">versão</span><span class="nv"> </span><span class="s">original</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha,</span>
-<span class="w">      </span><span class="s">no</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">várias</span><span class="nv"> </span><span class="s">pessoas</span><span class="nv"> </span><span class="s">terem</span><span class="nv"> </span><span class="s">contribuído</span><span class="nv"> </span><span class="s">igualmente.</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'ORCID</span><span class="nv"> </span><span class="s">iD</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">pessoas</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">contribuíram</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">conteúdo</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha.</span>
 
 <span class="w">      </span><span class="s">Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">`orcid:1234-5678-9012-345X`</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">`https://orcid.org/1234-5678-9012-345X`</span>
 <span class="w">      </span><span class="s">(temporariamente</span><span class="nv"> </span><span class="s">também</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">aceito</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">`1234-5678-9012-345X`).</span>
 
-<span class="w">      </span><span class="s">Alterar</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">caso</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">ter</span><span class="nv"> </span><span class="s">sido</span><span class="nv"> </span><span class="s">substancialmente</span><span class="nv"> </span><span class="s">reescrita.</span>
+<span class="w">      </span><span class="s">Adicionar</span><span class="nv"> </span><span class="s">novos</span><span class="nv"> </span><span class="s">autores</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">contribuíram</span><span class="nv"> </span><span class="s">substancialmente</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">conteúdo</span><span class="nv"> </span><span class="s">da</span>
+<span class="w">      </span><span class="s">ficha</span><span class="nv"> </span><span class="s">conforme</span><span class="nv"> </span><span class="s">necessário.</span><span class="nv"> </span><span class="s">Não</span><span class="nv"> </span><span class="s">remover</span><span class="nv"> </span><span class="s">autores</span><span class="nv"> </span><span class="s">exceto</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">decisão</span><span class="nv"> </span><span class="s">fundamentada</span>
+<span class="w">      </span><span class="s">da</span><span class="nv"> </span><span class="s">coordenação</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">projeto.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
