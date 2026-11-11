@@ -160,7 +160,7 @@ slots:
       Preenchimento manual.
     range: BroaderConceptReference
     multivalued: true
-    inlined_as_list: false
+    inlined: false
 
   narrower:
     slot_uri: skos:narrower
@@ -173,4 +173,4 @@ slots:
       NÃO preencher manualmente.
     range: NarrowerConceptReference
     multivalued: true
-    inlined_as_list: false
+    inlined: false

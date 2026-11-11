@@ -5034,14 +5034,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -5319,14 +5323,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -5539,14 +5547,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -5795,14 +5807,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -6032,14 +6048,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -6363,14 +6383,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -6692,14 +6716,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -6941,14 +6969,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -7285,14 +7317,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -7576,14 +7612,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -8456,14 +8496,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -8759,14 +8803,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
@@ -9277,14 +9325,18 @@ Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-
 Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
 """,
         json_schema_extra={
-            "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
+            "linkml_meta": {
+                "deprecated": "True",
+                "domain_of": ["Thing"],
+                "slot_uri": "dcterms:contributor",
+            }
         },
     )
     authors: Optional[list[str]] = Field(
         default=None,
-        description="""ORCID iD das pessoas que escreveram a versão original da ficha, no caso de várias pessoas terem contribuído igualmente.
+        description="""ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 Usar o formato `orcid:1234-5678-9012-345X` ou `https://orcid.org/1234-5678-9012-345X` (temporariamente também é aceito o formato `1234-5678-9012-345X`).
-Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
+Adicionar novos autores que contribuíram substancialmente para o conteúdo da ficha conforme necessário. Não remover autores exceto por decisão fundamentada da coordenação do projeto.
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:contributor"}
