@@ -378,9 +378,8 @@ enums:
           Egito, ou ainda aquela da casa Erbo Stenzel em Curitiba do seu
           lote original para o parque São Lourenço (onde foi posteriormente
           destruída num incêndio).
-      # Alteração
       modification_activity:
-        title: alteração
+        title: alteração (ação)
         meaning: term:lido00006
         source: crm:E11_Modification
         exact_mappings:
@@ -529,7 +528,7 @@ enums:
           `part_removal` --- "eliminação parcial" se a intenção dominante da
           eliminação tiver sido a restauração a um estado anterior).
       modification_process:
-        title: alteração
+        title: alteração (processo)
         meaning: term:lido01155
         source: aat:300105442
         broad_mappings:

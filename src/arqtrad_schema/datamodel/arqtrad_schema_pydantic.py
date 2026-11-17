@@ -3333,9 +3333,9 @@ class EventType(str, Enum):
     Exemplos de remoção são aquela do templo de Abu Simbel, no Egito, ou ainda aquela da casa Erbo Stenzel em Curitiba do seu lote original para o parque São Lourenço (onde foi posteriormente destruída num incêndio).
 
     """
-    alteração = "modification_process"
+    alteração_LEFT_PARENTHESISaçãoRIGHT_PARENTHESIS = "modification_activity"
     """
-    Processo não deliberado de alteração nas características, aparência ou desempenho dos materiais que constituem um objeto. Por exemplo, corrosão, formação de cristais salinos, etc.
+    Ação intencional que cria, altera ou modifica um objeto ou obra em um ou mais dos seus aspectos mas não em outros. Usar para ações que não possam ser definidas como tipos mais específicos de alteração.
 
     """
     conservação = "conservation"
@@ -3382,6 +3382,11 @@ class EventType(str, Enum):
     restauração = "restoration"
     """
     Alterações a um objeto que têm por objetivo restabelecer um estado original ou anterior conhecido ou presumido (usar em vez de `part_removal` --- "eliminação parcial" se a intenção dominante da eliminação tiver sido a restauração a um estado anterior).
+
+    """
+    alteração_LEFT_PARENTHESISprocessoRIGHT_PARENTHESIS = "modification_process"
+    """
+    Processo não deliberado de alteração nas características, aparência ou desempenho dos materiais que constituem um objeto. Por exemplo, corrosão, formação de cristais salinos, etc.
 
     """
     perda_parcial = "partial_destruction_process"
