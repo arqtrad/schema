@@ -713,7 +713,7 @@ enums:
           \ a\xE7\xF5es que n\xE3o possam ser definidas como tipos mais espec\xED\
           ficos de altera\xE7\xE3o.\n"
         meaning: term:lido00006
-        title: "altera\xE7\xE3o"
+        title: "altera\xE7\xE3o (a\xE7\xE3o)"
         source: crm:E11_Modification
         exact_mappings:
         - vra:wasAlteration
@@ -863,7 +863,7 @@ enums:
           sticas, apar\xEAncia ou desempenho dos materiais que constituem um objeto.\
           \ Por exemplo, corros\xE3o, forma\xE7\xE3o de cristais salinos, etc.\n"
         meaning: term:lido01155
-        title: "altera\xE7\xE3o"
+        title: "altera\xE7\xE3o (processo)"
         source: aat:300105442
         close_mappings:
         - crm:E11_Modification
@@ -10827,6 +10827,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-17T23:29:40'
+source_file_date: '2026-11-17T23:34:47'
 source_file_size: 53750
 
