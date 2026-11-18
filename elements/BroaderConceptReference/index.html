@@ -317,6 +317,8 @@
 
 
 
+      BroaderConceptReference : broader_preferred
+
       BroaderConceptReference : concept_name
 
 
@@ -364,6 +366,12 @@
 <td><a href="../broader_match/">broader_match</a></td>
 <td>1 <br/> <a href="../SkosBroaderRelation/">SkosBroaderRelation</a></td>
 <td>Tipo da relação</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../broader_preferred/">broader_preferred</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>Informa qual é o conceito preferencial</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -453,6 +461,21 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BroaderConceptReference</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SkosBroaderRelation</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">broader_preferred</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">broader_preferred</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Informa</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">conceito</span><span class="nv"> </span><span class="s">preferencial.</span><span class="nv"> </span><span class="s">Somente</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">conceito</span><span class="nv"> </span><span class="s">mais</span>
+<span class="w">      </span><span class="s">amplo</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">marcado</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">preferencial</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">ficha!</span>
+
+<span class="w">      </span><span class="s">Esta</span><span class="nv"> </span><span class="s">propriedade</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">reversível,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">seja,</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">existe</span><span class="nv"> </span><span class="s">"preferência"</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">um</span>
+<span class="w">      </span><span class="s">conceito</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">específico</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">detrimento</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">outros.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/concept</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="s">'False'</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BroaderConceptReference</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">boolean</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
@@ -472,6 +495,22 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BroaderConceptReference</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SkosBroaderRelation</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">broader_preferred</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">broader_preferred</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Informa</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">conceito</span><span class="nv"> </span><span class="s">preferencial.</span><span class="nv"> </span><span class="s">Somente</span><span class="nv"> </span><span class="s">um</span><span class="nv"> </span><span class="s">conceito</span><span class="nv"> </span><span class="s">mais</span>
+<span class="w">      </span><span class="s">amplo</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">marcado</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">preferencial</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">cada</span><span class="nv"> </span><span class="s">ficha!</span>
+
+<span class="w">      </span><span class="s">Esta</span><span class="nv"> </span><span class="s">propriedade</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">reversível,</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">seja,</span><span class="nv"> </span><span class="s">não</span><span class="nv"> </span><span class="s">existe</span><span class="nv"> </span><span class="s">"preferência"</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">um</span>
+<span class="w">      </span><span class="s">conceito</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">específico</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">detrimento</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">outros.</span>
+
+<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema/concept</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">ifabsent</span><span class="p">:</span><span class="w"> </span><span class="s">'False'</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BroaderConceptReference</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BroaderConceptReference</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">boolean</span>
 <span class="w">  </span><span class="nt">concept_name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concept_name</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>

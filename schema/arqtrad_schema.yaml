@@ -578,6 +578,22 @@ enums:
         source: crm:E65_Creation
         exact_mappings:
         - vra:wasCreated
+      commissioning:
+        text: commissioning
+        description: "Atividade associada \xE0 encomenda ou autoriza\xE7\xE3o, frequentemente\
+          \ formalizada por contrato, para a produ\xE7\xE3o de uma coisa, performance,\
+          \ obra escrita ou outra atividade.\n"
+        meaning: term:lido00226
+        title: encomenda
+        source: aat:300393199
+        exact_mappings:
+        - vra:wasCommission
+        close_mappings:
+        - https://d-nb.info/gnd/4003557-8
+        - wd:Q566889
+        - aat:300393199
+        broad_mappings:
+        - term:lido00004
       designing:
         text: designing
         description: "O projeto, na classifica\xE7\xE3o de tipos de eventos do LIDO,\
@@ -956,8 +972,22 @@ enums:
         - term:lido01161
       attribute_assignment:
         text: attribute_assignment
+        description: "A\xE7\xE3o de formular afirma\xE7\xF5es sobre uma propriedade\
+          \ de um objeto ou sobre uma rela\xE7\xE3o entre dois itens, por exemplo,\
+          \ ao registrar uma condi\xE7\xE3o, atribuir um identificador ou medir o\
+          \ objeto.\n"
+        meaning: term:lido00024
+        title: "atribui\xE7\xE3o de atributo"
+        source: crm:E13_Attribute_Assignment
       assignment_to_curated_holding:
         text: assignment_to_curated_holding
+        description: "Atividade de atribuir conceitualmente objetos a uma cole\xE7\
+          \xE3o com base em caracter\xEDsticas comuns, refer\xEAncias regionais ou\
+          \ de grupo, ou na atribui\xE7\xE3o a um colecionador.\n"
+        meaning: term:lido01146
+        title: "atribui\xE7\xE3o a acervo curado"
+        broad_mappings:
+        - aat:300443858
       condition_assessment:
         text: condition_assessment
         description: "A\xE7\xE3o que analisa as caracter\xEDsticas f\xEDsicas do objeto,\
@@ -966,88 +996,443 @@ enums:
         title: "levantamento e avalia\xE7\xE3o do estado de conserva\xE7\xE3o"
       cultural_context_assignment:
         text: cultural_context_assignment
+        description: "Atividade de atribuir diretamente um objeto a um contexto cultural\
+          \ ou de reconstruir cientificamente o contexto cultural em que foi produzido\
+          \ ou utilizado. O contexto pode ser definido pelo pr\xF3prio grupo ou por\
+          \ terceiros, com base em categorias como l\xEDngua, regi\xE3o ou religi\xE3\
+          o.\n"
+        meaning: term:lido01145
+        title: "atribui\xE7\xE3o de contexto cultural"
       designation:
         text: designation
+        description: "Atividade pela qual um objeto recebe um status jur\xEDdico espec\xED\
+          fico em raz\xE3o de seu valor cultural, hist\xF3rico, ambiental ou natural.\
+          \ No contexto de edifica\xE7\xF5es, corresponde em geral ao tombamento,\
+          \ ao registro ou a outra forma de prote\xE7\xE3o patrimonial.\n"
+        meaning: term:lido01181
+        title: "prote\xE7\xE3o legal"
       deciphering:
         text: deciphering
+        description: "Atividade de transcrever e transliterar para o alfabeto latino\
+          \ caracteres presentes no pr\xF3prio objeto e de traduzi-los para uma l\xED\
+          ngua moderna com base em an\xE1lise lingu\xEDstica.\n"
+        meaning: term:lido01150
+        title: "decifra\xE7\xE3o de inscri\xE7\xE3o"
+        narrow_mappings:
+        - https://d-nb.info/gnd/4297957-2
       meaning_assignment:
         text: meaning_assignment
+        description: "Atividade de atribuir ou reconstruir cientificamente o significado\
+          \ que um objeto teve nas comunidades associadas \xE0 sua produ\xE7\xE3o\
+          \ ou uso.\n"
+        meaning: term:lido01147
+        title: "atribui\xE7\xE3o de significado no contexto de origem"
       name_assignment:
         text: name_assignment
+        description: "Atividade que resulta na atribui\xE7\xE3o de um nome a um objeto.\
+          \ O nome \xE9 uma sequ\xEAncia de signos que identifica individualmente\
+          \ o objeto em um determinado contexto, por conven\xE7\xE3o, tradi\xE7\xE3\
+          o ou acordo.\n"
+        meaning: term:lido01149
+        title: "atribui\xE7\xE3o de nome"
+        narrow_mappings:
+        - aat:300411672
+        broad_mappings:
+        - https://d-nb.info/gnd/4226500-9
+        - https://d-nb.info/gnd/4261654-2
+        - wd:Q83478504
       type_assignment:
         text: type_assignment
+        description: "Atividade de classificar itens de qualquer natureza, podendo\
+          \ tamb\xE9m ser aplicada a pessoas, a\xE7\xF5es e conceitos. No contexto\
+          \ de edifica\xE7\xF5es, refere-se \xE0 tipifica\xE7\xE3o ou classifica\xE7\
+          \xE3o da obra com base em caracter\xEDsticas convergentes.\n"
+        meaning: term:lido00023
+        title: "atribui\xE7\xE3o de tipo"
+        source: crm:E17_Type_Assignment
       ceremony:
         text: ceremony
+        description: "Ato formal, especialmente quando conduzido de modo solene e\
+          \ conforme a rituais ou protocolos religiosos, estatais, cortes\xE3os ou\
+          \ sociais.\n"
+        meaning: term:lido01182
+        title: "cerim\xF4nia"
+        source: aat:300054754
+        exact_mappings:
+        - https://d-nb.info/gnd/4190741-3
+        - aat:300054754
+        - wd:Q2627975
       cornerstone:
         text: cornerstone
+        description: "Ato cerimonial de coloca\xE7\xE3o da pedra fundamental ou de\
+          \ uma pedra simb\xF3lica sobre a qual a nova edifica\xE7\xE3o ser\xE1 constru\xED\
+          da. A coloca\xE7\xE3o da pedra fundamental n\xE3o coincide necessariamente\
+          \ com o in\xEDcio efetivo das obras.\n"
+        meaning: term:lido01168
+        title: "cerim\xF4nia de coloca\xE7\xE3o da pedra fundamental"
+        source: https://pt.wikipedia.org/wiki/Pedra_fundamental
+        exact_mappings:
+        - https://d-nb.info/gnd/4158410-7
+        broad_mappings:
+        - term:lido01182
       groundbreaking:
         text: groundbreaking
+        description: "Ato cerimonial que marca o in\xEDcio da movimenta\xE7\xE3o de\
+          \ terra no local onde a edifica\xE7\xE3o ser\xE1 constru\xEDda. Distinguir\
+          \ da cerim\xF4nia de coloca\xE7\xE3o da pedra fundamental, que pode ocorrer\
+          \ em momento diverso.\n"
+        meaning: term:lido01167
+        title: "cerim\xF4nia de lan\xE7amento da primeira pedra"
+        source: aat:300251861
+        exact_mappings:
+        - aat:300251861
+        broad_mappings:
+        - term:lido01182
       consecration:
         text: consecration
+        description: "Atividade pela qual uma autoridade religiosa consagra e dedica\
+          \ formalmente edifica\xE7\xF5es, terrenos ou objetos a fins cerimoniais\
+          \ ou religiosos.\n"
+        meaning: term:lido00728
+        title: "consagra\xE7\xE3o"
+        source: aat:300069272
+        exact_mappings:
+        - wd:Q1762010
+        - aat:300069272
+        close_mappings:
+        - https://d-nb.info/gnd/4126445-9
+        broad_mappings:
+        - term:lido01182
       deconsecration:
         text: deconsecration
+        description: "Ato formal pelo qual uma edifica\xE7\xE3o, terreno ou objeto\
+          \ deixa de ser consagrado ou destinado a fins religiosos.\n"
+        meaning: term:lido01158
+        title: "desconsagra\xE7\xE3o"
+        source: aat:300069276
+        exact_mappings:
+        - aat:300069276
+        - wd:Q16635429
+        close_mappings:
+        - https://d-nb.info/gnd/4275750-2
+        broad_mappings:
+        - term:lido01182
       change_control_or_title:
         text: change_control_or_title
+        description: "Atividade que envolve altera\xE7\xE3o do status de um objeto\
+          \ quanto \xE0 posse f\xEDsica ou ao t\xEDtulo jur\xEDdico, quando n\xE3\
+          o \xE9 poss\xEDvel ou n\xE3o \xE9 relevante distinguir qual dos aspectos\
+          \ ocorreu. Usar quando houver altera\xE7\xE3o de posse, de propriedade ou\
+          \ de ambos, sem especifica\xE7\xE3o mais precisa.\n"
+        meaning: term:lido01151
+        title: "altera\xE7\xE3o de posse ou t\xEDtulo"
       change_control_and_title:
         text: change_control_and_title
+        description: "Atividade que envolve altera\xE7\xE3o simult\xE2nea da posse\
+          \ f\xEDsica e do t\xEDtulo jur\xEDdico de um objeto, como na conclus\xE3\
+          o de uma compra seguida da entrega da coisa.\n"
+        meaning: term:lido01184
+        title: "altera\xE7\xE3o de posse e t\xEDtulo"
+        broad_mappings:
+        - term:lido01151
       change_legal_title:
         text: change_legal_title
+        description: "Atividade que resulta em altera\xE7\xE3o do status jur\xEDdico\
+          \ de um objeto quanto ao seu t\xEDtulo de propriedade, incluindo transfer\xEA\
+          ncias de propriedade consensuais ou n\xE3o consensuais.\n"
+        meaning: term:lido00001
+        title: "altera\xE7\xE3o de t\xEDtulo jur\xEDdico"
+        source: crm:E10_Transfer_of_Custody
+        narrow_mappings:
+        - https://d-nb.info/gnd/4015451-8
+        - aat:300157782
+        - https://d-nb.info/gnd/4212536-4
+        - wd:Q3604747
+        broad_mappings:
+        - term:lido01151
       restitution:
         text: restitution
+        description: "Atividade de restituir um objeto a seu anterior propriet\xE1\
+          rio leg\xEDtimo ou a seus sucessores diretos ou indiretos. Aplica-se, por\
+          \ exemplo, \xE0 devolu\xE7\xE3o de bens culturais subtra\xEDdos ilicitamente\
+          \ ou retornados em raz\xE3o de sua relev\xE2ncia cultural.\n"
+        meaning: term:lido01152
+        title: "restitui\xE7\xE3o"
+        close_mappings:
+        - aat:300417843
+        broad_mappings:
+        - https://d-nb.info/gnd/4322105-1
+        - term:lido00001
       change_physical_control:
         text: change_physical_control
+        description: "Atividade que resulta em altera\xE7\xE3o do status de um objeto\
+          \ quanto \xE0 sua posse f\xEDsica ou controle material, sem altera\xE7\xE3\
+          o necess\xE1ria do t\xEDtulo jur\xEDdico.\n"
+        meaning: term:lido00005
+        title: "altera\xE7\xE3o de posse"
+        source: crm:E10_Transfer_of_Custody
+        broad_mappings:
+        - term:lido01151
       collecting:
         text: collecting
+        description: "Atividade de reunir objetos com o objetivo de ret\xEA-los, incluindo\
+          \ coleta de campo. Em contextos coloniais, explicitar as circunst\xE2ncias\
+          \ da coleta na descri\xE7\xE3o do evento.\n"
+        meaning: term:lido00010
+        title: coleta
+        source: aat:300077121
+        exact_mappings:
+        - aat:300077121
+        - https://d-nb.info/gnd/4051494-8
+        - wd:Q208165
+        broad_mappings:
+        - term:lido00005
       loss:
         text: loss
-      commissioning:
-        text: commissioning
-        exact_mappings:
-        - vra:wasCommission
+        description: "Declara\xE7\xE3o de altera\xE7\xE3o da posse f\xEDsica de um\
+          \ objeto, afastando-o de seu atual detentor sem indica\xE7\xE3o de destinat\xE1\
+          rio. Inclui furto, roubo e a perda de rastreabilidade do objeto, mas n\xE3\
+          o implica altera\xE7\xE3o do t\xEDtulo de propriedade.\n"
+        meaning: term:lido00009
+        title: perda
+        source: crm:E10_Transfer_of_Custody
+        close_mappings:
+        - https://d-nb.info/gnd/4187879-6
+        - https://d-nb.info/gnd/4327498-5
+        broad_mappings:
+        - term:lido00005
       excavation:
         text: excavation
+        description: "A\xE7\xE3o ou processo de escavar uma cavidade no solo; especificamente,\
+          \ a escava\xE7\xE3o e documenta\xE7\xE3o sistem\xE1tica de um s\xEDtio arqueol\xF3\
+          gico.\n"
+        meaning: term:lido00033
+        title: "escava\xE7\xE3o"
+        source: aat:300053702
+        close_mappings:
+        - https://d-nb.info/gnd/4129464-6
+        - aat:300053702
+        - wd:Q959782
+        broad_mappings:
+        - term:lido00004
       exhibition:
         text: exhibition
+        description: "Exibi\xE7\xE3o p\xFAblica tempor\xE1ria, geralmente nomeada\
+          \ e organizada, de obras de arte, artesanato, hist\xF3ria natural, ci\xEA\
+          ncia ou outros itens de interesse cultural.\n"
+        meaning: term:lido00225
+        title: "exposi\xE7\xE3o"
+        source: aat:300054766
+        exact_mappings:
+        - aat:300054766
+        - wd:Q464980
         close_mappings:
+        - https://d-nb.info/gnd/4129601-1
         - vra:wasPresented
+        broad_mappings:
+        - term:lido00004
       finding:
         text: finding
+        description: "Atividade de encontrar ou tomar consci\xEAncia de um objeto\
+          \ considerado potencialmente relevante no contexto de uma observa\xE7\xE3\
+          o ou pesquisa, incluindo objetos perdidos, esquecidos ou previamente desconhecidos.\
+          \ Aplica-se, por exemplo, ao encontro de vest\xEDgios arqueol\xF3gicos,\
+          \ de edifica\xE7\xF5es perdidas ou de s\xEDtios.\n"
+        meaning: term:lido00002
+        title: descoberta
+        source: crm:S19_Encounter_Event
         exact_mappings:
         - vra:wasDiscovered
+        broad_mappings:
+        - term:lido00004
       marketing:
         text: marketing
+        description: "Atividade pela qual se efetiva a transfer\xEAncia do t\xEDtulo\
+          \ ou da posse de bens, ou o fornecimento de servi\xE7os, do vendedor ao\
+          \ comprador, incluindo publicidade, expedi\xE7\xE3o, armazenagem e venda.\n"
+        meaning: term:lido00401
+        title: "comercializa\xE7\xE3o"
+        source: aat:300054673
+        close_mappings:
+        - aat:300054673
+        - https://d-nb.info/gnd/4127117-8
+        broad_mappings:
+        - term:lido00004
       move:
         text: move
+        description: "Altera\xE7\xE3o da localiza\xE7\xE3o f\xEDsica de um objeto\
+          \ ou obra de uma resid\xEAncia a outra. Usar para deslocamentos que n\xE3\
+          o envolvam o desmantelamento da edifica\xE7\xE3o; para este \xFAltimo caso,\
+          \ usar `translocation` (\"remo\xE7\xE3o\").\n"
+        meaning: term:lido00223
+        title: "desloca\xE7\xE3o"
+        source: crm:E9_Move
+        close_mappings:
+        - aat:300149370
+        broad_mappings:
+        - term:lido00004
       req_assess:
         text: req_assess
+        description: "Ato de examinar um objeto para determinar as condi\xE7\xF5es\
+          \ e requisitos necess\xE1rios ao seu armazenamento, exibi\xE7\xE3o, empr\xE9\
+          stimo, deslocamento ou outra forma de manuseio.\n"
+        meaning: term:lido00792
+        title: "avalia\xE7\xE3o de requisitos do objeto"
+        broad_mappings:
+        - term:lido00004
       display_assess:
         text: display_assess
+        description: "Ato de examinar um objeto para determinar sua adequa\xE7\xE3\
+          o \xE0 exibi\xE7\xE3o e as condi\xE7\xF5es necess\xE1rias para garantir\
+          \ sua preserva\xE7\xE3o, seguran\xE7a e a responsabiliza\xE7\xE3o do local\
+          \ de exibi\xE7\xE3o.\n"
+        meaning: term:lido00794
+        title: "avalia\xE7\xE3o para exibi\xE7\xE3o"
+        broad_mappings:
+        - term:lido00792
       move_assess:
         text: move_assess
+        description: "Ato de examinar um objeto para determinar sua adequa\xE7\xE3\
+          o ao deslocamento e as condi\xE7\xF5es necess\xE1rias para garantir sua\
+          \ preserva\xE7\xE3o e seguran\xE7a, bem como a responsabiliza\xE7\xE3o dos\
+          \ respons\xE1veis pelo manuseio ou transporte.\n"
+        meaning: term:lido00793
+        title: "avalia\xE7\xE3o para desloca\xE7\xE3o"
+        broad_mappings:
+        - term:lido00792
       performance:
         text: performance
+        description: "Inst\xE2ncia individual da execu\xE7\xE3o de uma a\xE7\xE3o,\
+          \ opera\xE7\xE3o ou processo na realiza\xE7\xE3o de uma obra liter\xE1ria,\
+          \ art\xEDstica, musical, teatral ou outra obra criativa, destinada a comunicar\
+          \ direta ou indiretamente a um p\xFAblico.\n"
+        meaning: term:lido00030
+        title: performance
+        source: aat:300069200
         exact_mappings:
         - vra:wasPerformed
+        close_mappings:
+        - https://d-nb.info/gnd/4143388-9
+        - aat:300069200
+        - wd:Q35140
+        broad_mappings:
+        - term:lido00004
       planning:
         text: planning
+        description: "Atividade de determinar objetivos e delinear ou organizar os\
+          \ procedimentos e recursos necess\xE1rios para alcan\xE7\xE1-los, especialmente\
+          \ em uma proposta ou programa formal de projeto.\n"
+        meaning: term:lido00032
+        title: planejamento
+        source: aat:300054425
+        close_mappings:
+        - wd:Q309100
+        - https://d-nb.info/gnd/4046235-3
+        - aat:300054425
+        broad_mappings:
+        - term:lido00004
       protection:
         text: protection
+        description: "Atividade de manter um objeto a salvo de danos, altera\xE7\xF5\
+          es adicionais ou deteriora\xE7\xE3o. Em edifica\xE7\xF5es, pode incluir\
+          \ medidas emergenciais como impermeabiliza\xE7\xE3o provis\xF3ria, escoramento,\
+          \ veda\xE7\xE3o, prote\xE7\xE3o contra vandalismo e conten\xE7\xE3o de elementos\
+          \ em risco.\n"
+        meaning: term:lido01175
+        title: "prote\xE7\xE3o"
+        source: aat:300164923
+        close_mappings:
+        - aat:300164923
+        - aat:300105444
+        broad_mappings:
+        - term:lido00004
       publishing:
         text: publishing
+        description: "A\xE7\xF5es, fun\xE7\xF5es ou evento de emitir registros de\
+          \ conhecimento ou obras visuais reproduzidos em suporte impresso, gravado\
+          \ ou outro meio, para venda ou distribui\xE7\xE3o ao p\xFAblico.\n"
+        meaning: term:lido00228
+        title: "publica\xE7\xE3o"
+        source: aat:300054686
         exact_mappings:
         - vra:wasPublished
+        close_mappings:
+        - https://d-nb.info/gnd/4187925-9
+        - aat:300054686
+        broad_mappings:
+        - term:lido00004
       use:
         text: use
+        description: "Atividade baseada na capacidade ou permiss\xE3o de empregar,\
+          \ ocupar, aplicar ou explorar o valor de algo, ou no modo como isso \xE9\
+          \ feito. Ocorre em um per\xEDodo determinado em rela\xE7\xE3o a um objeto\
+          \ criado pelo ser humano, cuja presen\xE7a \xE9 condi\xE7\xE3o necess\xE1\
+          ria para a a\xE7\xE3o.\n"
+        meaning: term:lido00011
+        title: uso
+        source: crm:P16_used_specific_object
+        close_mappings:
+        - https://d-nb.info/gnd/4275659-5
+        - aat:300068844
+        - https://d-nb.info/gnd/4120814-6
+        broad_mappings:
+        - term:lido00004
       end_existence:
         text: end_existence
+        description: "Evento que encerra a exist\xEAncia de qualquer tipo de entidade,\
+          \ como um objeto f\xEDsico, um produto intelectual ou um ser vivo.\n"
+        meaning: term:lido00027
+        title: "fim da exist\xEAncia"
+        source: crm:E64_End_of_Existence
+        broad_mappings:
+        - term:lido00222
       destruction:
         text: destruction
+        description: "Evento que destr\xF3i um objeto a ponto de ele perder sua identidade\
+          \ como sujeito de documenta\xE7\xE3o. Pode decorrer de atividade humana\
+          \ intencional ou de processos independentes dela, e pode tamb\xE9m se referir\
+          \ \xE0 destrui\xE7\xE3o de uma entidade imaterial. Usar `destruction_activity`\
+          \ ou `destruction_process` quando for relevante distinguir a natureza intencional\
+          \ ou n\xE3o intencional do evento.\n"
+        meaning: term:lido00026
+        title: "destrui\xE7\xE3o"
+        source: crm:E6_Destruction
+        close_mappings:
+        - aat:300053087
+        - https://d-nb.info/gnd/4222882-7
+        broad_mappings:
+        - term:lido00027
       destruction_activity:
         text: destruction_activity
+        description: "Evento causado por atividade humana intencional que destr\xF3\
+          i um objeto a ponto de ele perder sua identidade como sujeito de documenta\xE7\
+          \xE3o. Inclui arruinar, demolir, desmontar, reduzir a fragmentos, inutilizar\
+          \ ou otherwise por fim a um objeto, estrutura ou outra coisa material.\n"
+        meaning: term:lido01186
+        title: "destrui\xE7\xE3o (a\xE7\xE3o)"
+        source: crm:E6_Destruction
+        broad_mappings:
+        - term:lido00026
       destruction_process:
         text: destruction_process
+        description: "Processo n\xE3o intencional que destr\xF3i um objeto a ponto\
+          \ de ele perder sua identidade como sujeito de documenta\xE7\xE3o. Pode\
+          \ ser causado por deteriora\xE7\xE3o, apodrecimento, a\xE7\xE3o de animais,\
+          \ desastres naturais ou outra exposi\xE7\xE3o aos elementos.\n"
+        meaning: term:lido01156
+        title: arruinamento
+        source: crm:E6_Destruction
+        broad_mappings:
+        - term:lido00026
       unknown:
         text: unknown
+        description: "Evento ou atividade para o qual h\xE1 evid\xEAncia de que ocorreu,\
+          \ mas que n\xE3o pode ser mais especificado.\n"
+        meaning: term:lido00003
+        title: evento desconhecido
+        source: crm:E7_Activity
+        broad_mappings:
+        - term:lido00222
   EventPlaceType:
     name: EventPlaceType
     definition_uri: https://tradicional.arq.br/schema/EventPlaceType
@@ -6887,6 +7272,20 @@ slots:
     - BroaderConceptReference
     range: SkosBroaderRelation
     required: true
+  broaderConceptReference__broader_preferred:
+    name: broaderConceptReference__broader_preferred
+    description: "Informa qual \xE9 o conceito preferencial. Somente um conceito mais\
+      \ amplo pode ser marcado como preferencial em cada ficha!\nEsta propriedade\
+      \ n\xE3o \xE9 revers\xEDvel, ou seja, n\xE3o existe \"prefer\xEAncia\" por um\
+      \ conceito mais espec\xEDfico em detrimento de outros.\n"
+    from_schema: https://tradicional.arq.br/schema/concept
+    slot_uri: wasth:broader_preferred
+    ifabsent: 'False'
+    alias: broader_preferred
+    owner: BroaderConceptReference
+    domain_of:
+    - BroaderConceptReference
+    range: boolean
   narrowerConceptReference__narrower_match:
     name: narrowerConceptReference__narrower_match
     description: "Tipo da rela\xE7\xE3o."
@@ -8967,12 +9366,21 @@ classes:
     - bibliographic_citation
     - source
     - broaderConceptReference__broader_match
+    - broaderConceptReference__broader_preferred
     attributes:
       broader_match:
         name: broader_match
         description: "Tipo da rela\xE7\xE3o."
         range: SkosBroaderRelation
         required: true
+      broader_preferred:
+        name: broader_preferred
+        description: "Informa qual \xE9 o conceito preferencial. Somente um conceito\
+          \ mais amplo pode ser marcado como preferencial em cada ficha!\nEsta propriedade\
+          \ n\xE3o \xE9 revers\xEDvel, ou seja, n\xE3o existe \"prefer\xEAncia\" por\
+          \ um conceito mais espec\xEDfico em detrimento de outros.\n"
+        ifabsent: 'False'
+        range: boolean
     class_uri: wasth:BroaderConceptReference
   NarrowerConceptReference:
     name: NarrowerConceptReference
@@ -10827,6 +11235,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-17T23:34:47'
-source_file_size: 53750
+source_file_date: '2026-11-18T23:37:42'
+source_file_size: 71552
 
