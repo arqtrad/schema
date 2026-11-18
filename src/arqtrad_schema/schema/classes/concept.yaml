@@ -125,6 +125,17 @@ classes:
         description: Tipo da relação.
         range: SkosBroaderRelation
 
+      broader_preferred:
+        range: boolean
+        ifabsent: false
+        description: >
+          Informa qual é o conceito preferencial.
+          Somente um conceito mais amplo pode ser marcado como preferencial
+          em cada ficha!
+
+          Esta propriedade não é reversível, ou seja, não existe "preferência"
+          por um conceito mais específico em detrimento de outros.
+
   NarrowerConceptReference:
     is_a: ConceptReference
     description: Relações hierárquicas.

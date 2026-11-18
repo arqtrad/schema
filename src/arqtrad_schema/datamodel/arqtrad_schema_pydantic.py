@@ -3290,6 +3290,11 @@ class EventType(str, Enum):
     Designa um acontecimento que leva à conceção de itens ou produtos de natureza imaterial, como obras literárias ou imagens. Não usar para a produção de bens materiais. Quando a conceção desses bens, como uma edificação, passa por um processo de criação intelectual atestada, usar para tanto o termo `designing` ("projeto").
 
     """
+    encomenda = "commissioning"
+    """
+    Atividade associada à encomenda ou autorização, frequentemente formalizada por contrato, para a produção de uma coisa, performance, obra escrita ou outra atividade.
+
+    """
     projeto = "designing"
     """
     O projeto, na classificação de tipos de eventos do LIDO, designa a criação de um arcabouço conceitual para a organização da aparência de objetos tridimensionais, obras visuais, obras de arquitetura, ou sistemas técnicos.
@@ -3414,50 +3419,201 @@ class EventType(str, Enum):
     Ação que acompanha ou sinaliza o encerramento da utilização de um objeto, geralmente associado à interdição física da edificação.
 
     """
-    attribute_assignment = "attribute_assignment"
-    assignment_to_curated_holding = "assignment_to_curated_holding"
+    atribuição_de_atributo = "attribute_assignment"
+    """
+    Ação de formular afirmações sobre uma propriedade de um objeto ou sobre uma relação entre dois itens, por exemplo, ao registrar uma condição, atribuir um identificador ou medir o objeto.
+
+    """
+    atribuição_a_acervo_curado = "assignment_to_curated_holding"
+    """
+    Atividade de atribuir conceitualmente objetos a uma coleção com base em características comuns, referências regionais ou de grupo, ou na atribuição a um colecionador.
+
+    """
     levantamento_e_avaliação_do_estado_de_conservação = "condition_assessment"
     """
     Ação que analisa as características físicas do objeto, seu estado de conservação e integridade formal.
 
     """
-    cultural_context_assignment = "cultural_context_assignment"
-    designation = "designation"
-    deciphering = "deciphering"
-    meaning_assignment = "meaning_assignment"
-    name_assignment = "name_assignment"
-    type_assignment = "type_assignment"
-    ceremony = "ceremony"
-    cornerstone = "cornerstone"
-    groundbreaking = "groundbreaking"
-    consecration = "consecration"
-    deconsecration = "deconsecration"
-    change_control_or_title = "change_control_or_title"
-    change_control_and_title = "change_control_and_title"
-    change_legal_title = "change_legal_title"
-    restitution = "restitution"
-    change_physical_control = "change_physical_control"
-    collecting = "collecting"
-    loss = "loss"
-    commissioning = "commissioning"
-    excavation = "excavation"
-    exhibition = "exhibition"
-    finding = "finding"
-    marketing = "marketing"
-    move = "move"
-    req_assess = "req_assess"
-    display_assess = "display_assess"
-    move_assess = "move_assess"
+    atribuição_de_contexto_cultural = "cultural_context_assignment"
+    """
+    Atividade de atribuir diretamente um objeto a um contexto cultural ou de reconstruir cientificamente o contexto cultural em que foi produzido ou utilizado. O contexto pode ser definido pelo próprio grupo ou por terceiros, com base em categorias como língua, região ou religião.
+
+    """
+    proteção_legal = "designation"
+    """
+    Atividade pela qual um objeto recebe um status jurídico específico em razão de seu valor cultural, histórico, ambiental ou natural. No contexto de edificações, corresponde em geral ao tombamento, ao registro ou a outra forma de proteção patrimonial.
+
+    """
+    decifração_de_inscrição = "deciphering"
+    """
+    Atividade de transcrever e transliterar para o alfabeto latino caracteres presentes no próprio objeto e de traduzi-los para uma língua moderna com base em análise linguística.
+
+    """
+    atribuição_de_significado_no_contexto_de_origem = "meaning_assignment"
+    """
+    Atividade de atribuir ou reconstruir cientificamente o significado que um objeto teve nas comunidades associadas à sua produção ou uso.
+
+    """
+    atribuição_de_nome = "name_assignment"
+    """
+    Atividade que resulta na atribuição de um nome a um objeto. O nome é uma sequência de signos que identifica individualmente o objeto em um determinado contexto, por convenção, tradição ou acordo.
+
+    """
+    atribuição_de_tipo = "type_assignment"
+    """
+    Atividade de classificar itens de qualquer natureza, podendo também ser aplicada a pessoas, ações e conceitos. No contexto de edificações, refere-se à tipificação ou classificação da obra com base em características convergentes.
+
+    """
+    cerimônia = "ceremony"
+    """
+    Ato formal, especialmente quando conduzido de modo solene e conforme a rituais ou protocolos religiosos, estatais, cortesãos ou sociais.
+
+    """
+    cerimônia_de_colocação_da_pedra_fundamental = "cornerstone"
+    """
+    Ato cerimonial de colocação da pedra fundamental ou de uma pedra simbólica sobre a qual a nova edificação será construída. A colocação da pedra fundamental não coincide necessariamente com o início efetivo das obras.
+
+    """
+    cerimônia_de_lançamento_da_primeira_pedra = "groundbreaking"
+    """
+    Ato cerimonial que marca o início da movimentação de terra no local onde a edificação será construída. Distinguir da cerimônia de colocação da pedra fundamental, que pode ocorrer em momento diverso.
+
+    """
+    consagração = "consecration"
+    """
+    Atividade pela qual uma autoridade religiosa consagra e dedica formalmente edificações, terrenos ou objetos a fins cerimoniais ou religiosos.
+
+    """
+    desconsagração = "deconsecration"
+    """
+    Ato formal pelo qual uma edificação, terreno ou objeto deixa de ser consagrado ou destinado a fins religiosos.
+
+    """
+    alteração_de_posse_ou_título = "change_control_or_title"
+    """
+    Atividade que envolve alteração do status de um objeto quanto à posse física ou ao título jurídico, quando não é possível ou não é relevante distinguir qual dos aspectos ocorreu. Usar quando houver alteração de posse, de propriedade ou de ambos, sem especificação mais precisa.
+
+    """
+    alteração_de_posse_e_título = "change_control_and_title"
+    """
+    Atividade que envolve alteração simultânea da posse física e do título jurídico de um objeto, como na conclusão de uma compra seguida da entrega da coisa.
+
+    """
+    alteração_de_título_jurídico = "change_legal_title"
+    """
+    Atividade que resulta em alteração do status jurídico de um objeto quanto ao seu título de propriedade, incluindo transferências de propriedade consensuais ou não consensuais.
+
+    """
+    restituição = "restitution"
+    """
+    Atividade de restituir um objeto a seu anterior proprietário legítimo ou a seus sucessores diretos ou indiretos. Aplica-se, por exemplo, à devolução de bens culturais subtraídos ilicitamente ou retornados em razão de sua relevância cultural.
+
+    """
+    alteração_de_posse = "change_physical_control"
+    """
+    Atividade que resulta em alteração do status de um objeto quanto à sua posse física ou controle material, sem alteração necessária do título jurídico.
+
+    """
+    coleta = "collecting"
+    """
+    Atividade de reunir objetos com o objetivo de retê-los, incluindo coleta de campo. Em contextos coloniais, explicitar as circunstâncias da coleta na descrição do evento.
+
+    """
+    perda = "loss"
+    """
+    Declaração de alteração da posse física de um objeto, afastando-o de seu atual detentor sem indicação de destinatário. Inclui furto, roubo e a perda de rastreabilidade do objeto, mas não implica alteração do título de propriedade.
+
+    """
+    escavação = "excavation"
+    """
+    Ação ou processo de escavar uma cavidade no solo; especificamente, a escavação e documentação sistemática de um sítio arqueológico.
+
+    """
+    exposição = "exhibition"
+    """
+    Exibição pública temporária, geralmente nomeada e organizada, de obras de arte, artesanato, história natural, ciência ou outros itens de interesse cultural.
+
+    """
+    descoberta = "finding"
+    """
+    Atividade de encontrar ou tomar consciência de um objeto considerado potencialmente relevante no contexto de uma observação ou pesquisa, incluindo objetos perdidos, esquecidos ou previamente desconhecidos. Aplica-se, por exemplo, ao encontro de vestígios arqueológicos, de edificações perdidas ou de sítios.
+
+    """
+    comercialização = "marketing"
+    """
+    Atividade pela qual se efetiva a transferência do título ou da posse de bens, ou o fornecimento de serviços, do vendedor ao comprador, incluindo publicidade, expedição, armazenagem e venda.
+
+    """
+    deslocação = "move"
+    """
+    Alteração da localização física de um objeto ou obra de uma residência a outra. Usar para deslocamentos que não envolvam o desmantelamento da edificação; para este último caso, usar `translocation` ("remoção").
+
+    """
+    avaliação_de_requisitos_do_objeto = "req_assess"
+    """
+    Ato de examinar um objeto para determinar as condições e requisitos necessários ao seu armazenamento, exibição, empréstimo, deslocamento ou outra forma de manuseio.
+
+    """
+    avaliação_para_exibição = "display_assess"
+    """
+    Ato de examinar um objeto para determinar sua adequação à exibição e as condições necessárias para garantir sua preservação, segurança e a responsabilização do local de exibição.
+
+    """
+    avaliação_para_deslocação = "move_assess"
+    """
+    Ato de examinar um objeto para determinar sua adequação ao deslocamento e as condições necessárias para garantir sua preservação e segurança, bem como a responsabilização dos responsáveis pelo manuseio ou transporte.
+
+    """
     performance = "performance"
-    planning = "planning"
-    protection = "protection"
-    publishing = "publishing"
-    use = "use"
-    end_existence = "end_existence"
-    destruction = "destruction"
-    destruction_activity = "destruction_activity"
-    destruction_process = "destruction_process"
-    unknown = "unknown"
+    """
+    Instância individual da execução de uma ação, operação ou processo na realização de uma obra literária, artística, musical, teatral ou outra obra criativa, destinada a comunicar direta ou indiretamente a um público.
+
+    """
+    planejamento = "planning"
+    """
+    Atividade de determinar objetivos e delinear ou organizar os procedimentos e recursos necessários para alcançá-los, especialmente em uma proposta ou programa formal de projeto.
+
+    """
+    proteção = "protection"
+    """
+    Atividade de manter um objeto a salvo de danos, alterações adicionais ou deterioração. Em edificações, pode incluir medidas emergenciais como impermeabilização provisória, escoramento, vedação, proteção contra vandalismo e contenção de elementos em risco.
+
+    """
+    publicação = "publishing"
+    """
+    Ações, funções ou evento de emitir registros de conhecimento ou obras visuais reproduzidos em suporte impresso, gravado ou outro meio, para venda ou distribuição ao público.
+
+    """
+    uso = "use"
+    """
+    Atividade baseada na capacidade ou permissão de empregar, ocupar, aplicar ou explorar o valor de algo, ou no modo como isso é feito. Ocorre em um período determinado em relação a um objeto criado pelo ser humano, cuja presença é condição necessária para a ação.
+
+    """
+    fim_da_existência = "end_existence"
+    """
+    Evento que encerra a existência de qualquer tipo de entidade, como um objeto físico, um produto intelectual ou um ser vivo.
+
+    """
+    destruição = "destruction"
+    """
+    Evento que destrói um objeto a ponto de ele perder sua identidade como sujeito de documentação. Pode decorrer de atividade humana intencional ou de processos independentes dela, e pode também se referir à destruição de uma entidade imaterial. Usar `destruction_activity` ou `destruction_process` quando for relevante distinguir a natureza intencional ou não intencional do evento.
+
+    """
+    destruição_LEFT_PARENTHESISaçãoRIGHT_PARENTHESIS = "destruction_activity"
+    """
+    Evento causado por atividade humana intencional que destrói um objeto a ponto de ele perder sua identidade como sujeito de documentação. Inclui arruinar, demolir, desmontar, reduzir a fragmentos, inutilizar ou otherwise por fim a um objeto, estrutura ou outra coisa material.
+
+    """
+    arruinamento = "destruction_process"
+    """
+    Processo não intencional que destrói um objeto a ponto de ele perder sua identidade como sujeito de documentação. Pode ser causado por deterioração, apodrecimento, ação de animais, desastres naturais ou outra exposição aos elementos.
+
+    """
+    evento_desconhecido = "unknown"
+    """
+    Evento ou atividade para o qual há evidência de que ocorreu, mas que não pode ser mais especificado.
+
+    """
 
 
 class EventPlaceType(str, Enum):
@@ -3955,6 +4111,18 @@ class BroaderConceptReference(ConceptReference):
         default=...,
         description="""Tipo da relação.""",
         json_schema_extra={"linkml_meta": {"domain_of": ["BroaderConceptReference"]}},
+    )
+    broader_preferred: Optional[bool] = Field(
+        default=False,
+        description="""Informa qual é o conceito preferencial. Somente um conceito mais amplo pode ser marcado como preferencial em cada ficha!
+Esta propriedade não é reversível, ou seja, não existe \"preferência\" por um conceito mais específico em detrimento de outros.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["BroaderConceptReference"],
+                "ifabsent": "False",
+            }
+        },
     )
     concept_name: Optional[str] = Field(
         default=None,
