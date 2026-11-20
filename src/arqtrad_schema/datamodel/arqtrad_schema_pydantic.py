@@ -229,7 +229,7 @@ linkml_meta = LinkMLMeta(
             },
         },
         "see_also": ["https://tradicional.arq.br/schema"],
-        "source_file": "/Users/palazzo/src/github.com/arqtrad/schema/src/arqtrad_schema/schema/arqtrad_schema.yaml",
+        "source_file": "src/arqtrad_schema/schema/arqtrad_schema.yaml",
         "title": "Esquema de dados dos Documentários da Arquitetura Tradicional",
         "types": {
             "CslCitekey": {
@@ -5588,7 +5588,11 @@ class RelatedObject(Thing):
     """
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {"abstract": True, "from_schema": "https://tradicional.arq.br/schema/resource"}
+        {
+            "abstract": True,
+            "class_uri": "schema:CreativeWork",
+            "from_schema": "https://tradicional.arq.br/schema/resource",
+        }
     )
 
     work_rights: Optional[list[Right]] = Field(
@@ -5676,9 +5680,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         },
     )
     category: Literal[
-        "https://tradicional.arq.br/schema/RelatedObject", "wasth:RelatedObject"
+        "https://tradicional.arq.br/schema/RelatedObject",
+        "http://schema.org/CreativeWork",
+        "wasth:RelatedObject",
+        "schema:CreativeWork",
     ] = Field(
-        default="wasth:RelatedObject",
+        default="schema:CreativeWork",
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
 Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
@@ -5830,7 +5837,7 @@ class RelatedWork(RelatedObject):
         {"from_schema": "https://tradicional.arq.br/schema/resource"}
     )
 
-    media: Optional[list[MediaObject]] = Field(
+    media: Optional[list[str]] = Field(
         default=None,
         description="""Representações iconográficas deste objeto.
 """,
@@ -6072,7 +6079,7 @@ class LargerContextReference(RelatedObject):
         {"from_schema": "https://tradicional.arq.br/schema/resource"}
     )
 
-    media: Optional[list[MediaObject]] = Field(
+    media: Optional[list[str]] = Field(
         default=None,
         description="""Representações iconográficas deste objeto.
 """,
@@ -6365,28 +6372,28 @@ class Resource(Thing):
         description="""Uma única miniatura da imagem original.
 Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente em caso de ausência da miniatura, nem outros tipos de miniaturas que não imagens. A especificação LIDO admite listar mais de uma miniatura, mas tampouco prevemos essa hipótese.
 """,
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource"]}},
     )
-    provided_image: Optional[list[str]] = Field(
+    provided_image: Optional[list[MediaObject]] = Field(
         default=None,
         description="""Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource"]}},
     )
     provided_3d: Optional[list[str]] = Field(
         default=None,
         description="""Modelo tridimensional ou IFC da edificação.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource"]}},
     )
     resource_service: Optional[list[str]] = Field(
         default=None,
         description="""Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal como a especificação [IIIF].
 No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma página web que forneça a respetiva API ou as informações acerca do modelo.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource"]}},
     )
     credit: Optional[str] = Field(
         default=None,
         description="""Informação sobre autoria ou responsabilidade.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource"]}},
     )
     work_rights: Optional[list[Right]] = Field(
         default=None,
@@ -6642,7 +6649,7 @@ Repeated if there are several designations known, or if former repositories or g
     )
 
 
-class MediaObject(RelatedObject):
+class MediaObject(Thing):
     """
     Descrição e referência a um único arquivo de mídia.
     O `id` deve ser uma URI apontando para a localização permanente da mídia, não diretamente para um arquivo de imagem.
@@ -6713,28 +6720,10 @@ class MediaObject(RelatedObject):
             "linkml_meta": {"domain_of": ["Resource", "MediaObject", "Measurement"]}
         },
     )
-    preview_image: Optional[str] = Field(
+    content_url: Optional[list[str]] = Field(
         default=None,
-        description="""Uma única miniatura da imagem original.
-Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente em caso de ausência da miniatura, nem outros tipos de miniaturas que não imagens. A especificação LIDO admite listar mais de uma miniatura, mas tampouco prevemos essa hipótese.
-""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    provided_image: Optional[list[str]] = Field(
-        default=None,
-        description="""Lista de versões ampliadas ou originais da imagem, vetorial ou bitmap.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    provided_3d: Optional[list[str]] = Field(
-        default=None,
-        description="""Modelo tridimensional ou IFC da edificação.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
-    resource_service: Optional[list[str]] = Field(
-        default=None,
-        description="""Apenas no caso de a imagem ser fornecida como um serviço dinâmico online, tal como a especificação [IIIF].
-No caso de `preview_image` ou `provided_image`, o link deve referenciar diretamente o arquivo (ficheiro) da imagem. Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma página web que forneça a respetiva API ou as informações acerca do modelo.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
+        description="""Link direto para o arquivo/ficheiro.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["MediaObject"]}},
     )
     measurements: Optional[list[Measurement]] = Field(
         default=None,
@@ -6744,11 +6733,6 @@ No caso de `preview_image` ou `provided_image`, o link deve referenciar diretame
             "linkml_meta": {"domain_of": ["MediaObject", "Event", "Work"]}
         },
     )
-    credit: Optional[str] = Field(
-        default=None,
-        description="""Informação sobre autoria ou responsabilidade.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
-    )
     depiction_type: DepictionType = Field(
         default=...,
         description="""O tipo de representação que a mídia contém. A edificação descrita na ficha é sempre o sujeito da relação.
@@ -6757,17 +6741,6 @@ No caso de `preview_image` ou `provided_image`, o link deve referenciar diretame
             "linkml_meta": {
                 "domain_of": ["MediaObject"],
                 "slot_uri": "lido:relatedWorkRelType",
-            }
-        },
-    )
-    work_rights: list[Right] = Field(
-        default=...,
-        description="""⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobre O OBJETO OU RECURSO QUE ESTÁ SENDO DESCRITO, não sobre o preenchimento da ficha.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": ["RelatedObject", "Resource", "Work"],
-                "slot_uri": "lido:rightsWorkSet",
             }
         },
     )
@@ -7312,7 +7285,7 @@ The production or manufacturing processes, techniques, and methods incorporated 
             }
         },
     )
-    media: Optional[list[MediaObject]] = Field(
+    media: Optional[list[str]] = Field(
         default=None,
         description="""Representações iconográficas deste objeto.
 """,
@@ -8154,7 +8127,7 @@ Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO [`relate
 """,
         json_schema_extra={"linkml_meta": {"domain_of": ["Work"]}},
     )
-    media: Optional[list[MediaObject]] = Field(
+    media: Optional[list[str]] = Field(
         default=None,
         description="""Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO [`relatedWorksWrap`](https://lido-schema.org/schema/v1.1/lido-v1.1.html#relatedWorksWrap) em quatro tipos de relacionamentos :
 1. `part_of` : a edificação descrita na ficha é intrinsecamente parte

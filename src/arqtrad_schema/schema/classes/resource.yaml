@@ -57,6 +57,7 @@ classes:
 
   RelatedObject:
     is_a: Thing
+    class_uri: schema:CreativeWork
     abstract: true
     description: >
       A set of structured information about an object or work, or a group of
@@ -215,7 +216,7 @@ classes:
       - work_rights
 
   MediaObject:
-    is_a: RelatedObject
+    is_a: Thing
     class_uri: schema:MediaObject
     close_mappings:
       - dctypes:Image
@@ -281,12 +282,8 @@ classes:
       - format
       - scale
       - unit
-      - preview_image
-      - provided_image
-      - provided_3d
-      - resource_service
+      - content_url
       - measurements
-      - credit
 
 
 slots:
@@ -336,8 +333,13 @@ slots:
       em <http://terminology.lido-schema.org/resourceRepresentation_type>
       e são inseridas na ficha como um mapa.
 
+  content_url:
+    range: uriorcurie
+    multivalued: true
+    description: Link direto para o arquivo/ficheiro.
+
   media:
-    range: MediaObject
+    range: Resource
     multivalued: true
     description: >
       Representações iconográficas deste objeto.
@@ -354,7 +356,7 @@ slots:
       prevemos essa hipótese.
 
   provided_image:
-    range: uriorcurie
+    range: MediaObject
     multivalued: true
     inlined_as_list: true
     description: >-
