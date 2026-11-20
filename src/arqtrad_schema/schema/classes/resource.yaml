@@ -236,7 +236,7 @@ classes:
           Opcional, para descrever com mais detalhe a representação.
 
       work_rights:
-        required: true
+        recommended: true
 
     slots:
       - format

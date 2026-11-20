@@ -6735,7 +6735,7 @@ class MediaObject(Thing):
                     "name": "title",
                     "required": True,
                 },
-                "work_rights": {"name": "work_rights", "required": True},
+                "work_rights": {"name": "work_rights", "recommended": True},
             },
         }
     )
