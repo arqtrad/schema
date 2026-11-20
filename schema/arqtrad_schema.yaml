@@ -8783,7 +8783,7 @@ slots:
     is_usage_slot: true
     usage_slot_name: work_rights
     range: Right
-    required: true
+    recommended: true
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -9690,7 +9690,7 @@ classes:
           o.\n"
       work_rights:
         name: work_rights
-        required: true
+        recommended: true
     class_uri: schema:MediaObject
   TypedReference:
     name: TypedReference
@@ -11193,6 +11193,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-20T21:58:18'
+source_file_date: '2026-11-20T22:29:10'
 source_file_size: 71344
 
