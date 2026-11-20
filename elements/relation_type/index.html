@@ -398,17 +398,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#slot-characteristics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slot Characteristics
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -487,6 +476,16 @@
 
 <h1 id="slot-relation_type">Slot: relation_type</h1>
 <p><em>Indica o tipo de relação entre a edificação descrita na ficha e o objeto relacionado. O sujeito do tipo é sempre a obra titular da ficha.</em></p>
+<p><em>Usamos os tipos de relação previstos pelo LIDO em <code>relatedWorkRelType &gt; Associative relationships &gt; Derivative relationships</code>. Provavelmente necessitamos apenas de :</em></p>
+<p><em>- <code>planFor</code> : desenho técnico bidimensional de levantamento</em></p>
+<p>_  (padrão, pode ser omitido) ;_</p>
+<p>__</p>
+<p><em>- <code>modelFor</code> : modelo tridimensional, com ou sem informações construtivas</em></p>
+<p>_  associadas (BIM) ;_</p>
+<p>__</p>
+<p><em>- <code>imageOf</code> : outras representações em duas dimensões da edificação ;</em></p>
+<p><em>- <code>preparatoryFor</code> : representação técnica de projeto para intervenções a</em></p>
+<p>_  serem realizadas (ou já realizadas) na edificação._</p>
 <p>__</p>
 <div>
 <p>URI: <a href="http://www.lido-schema.org/relatedWorkRelType">lido:relatedWorkRelType</a></p>
@@ -502,8 +501,23 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../RelatedObject/">RelatedObject</a></td>
+<td>A set of structured information about an object or work, or a group of object...</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../RelatedWork/">RelatedWork</a></td>
 <td>As formas mais comuns de relação no nosso projeto são :</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../LargerContextReference/">LargerContextReference</a></td>
+<td>Tipo de relação específica entre obras a ser usado quando o objeto descrito n...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Resource/">Resource</a></td>
+<td>Este grupo identifica um recurso visual ou documental que fornece informações...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -524,7 +538,7 @@
 </tr>
 <tr>
 <td>Domain Of</td>
-<td><a href="../RelatedWork/">RelatedWork</a></td>
+<td><a href="../RelatedObject/">RelatedObject</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
@@ -547,21 +561,6 @@
 <tr>
 <td>Required</td>
 <td>Yes</td>
-</tr>
-</tbody>
-</table>
-<h3 id="slot-characteristics">Slot Characteristics</h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Owner</td>
-<td><a href="../RelatedWork/">RelatedWork</a></td>
 </tr>
 </tbody>
 </table>
@@ -592,16 +591,20 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">relation_type</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Indica</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">tipo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">relação</span><span class="nv"> </span><span class="s">entre</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">descrita</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span>
-<span class="w">  </span><span class="s">relacionado.</span><span class="nv"> </span><span class="s">O</span><span class="nv"> </span><span class="s">sujeito</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">tipo</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">sempre</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">obra</span><span class="nv"> </span><span class="s">titular</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha.</span>
-
-<span class="w">  </span><span class="s">'</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Indica</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">tipo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">relação</span><span class="nv"> </span><span class="s">entre</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">descrita</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">ficha</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto\</span>
+<span class="w">  </span><span class="s">\ relacionado.</span><span class="nv"> </span><span class="s">O</span><span class="nv"> </span><span class="s">sujeito</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">tipo</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">sempre</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">obra</span><span class="nv"> </span><span class="s">titular</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha.\nUsamos</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">tipos\</span>
+<span class="w">  </span><span class="s">\ de</span><span class="nv"> </span><span class="s">relação</span><span class="nv"> </span><span class="s">previstos</span><span class="nv"> </span><span class="s">pelo</span><span class="nv"> </span><span class="s">LIDO</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">`relatedWorkRelType</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">Associative</span><span class="nv"> </span><span class="s">relationships\</span>
+<span class="w">  </span><span class="s">\ &gt;</span><span class="nv"> </span><span class="s">Derivative</span><span class="nv"> </span><span class="s">relationships`.</span><span class="nv"> </span><span class="s">Provavelmente</span><span class="nv"> </span><span class="s">necessitamos</span><span class="nv"> </span><span class="s">apenas</span><span class="nv"> </span><span class="s">de</span><span class="err"> </span><span class="s">:\n-</span><span class="nv"> </span><span class="s">`planFor`</span><span class="err"> </span><span class="s">:\</span>
+<span class="w">  </span><span class="s">\ desenho</span><span class="nv"> </span><span class="s">técnico</span><span class="nv"> </span><span class="s">bidimensional</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">levantamento\n</span><span class="nv">  </span><span class="s">(padrão,</span><span class="nv"> </span><span class="s">pode</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">omitido)</span><span class="err"> </span><span class="s">;\n\</span>
+<span class="w">  </span><span class="s">\n-</span><span class="nv"> </span><span class="s">`modelFor`</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">modelo</span><span class="nv"> </span><span class="s">tridimensional,</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">informações</span><span class="nv"> </span><span class="s">construtivas\n</span><span class="nv">  </span><span class="s">associadas\</span>
+<span class="w">  </span><span class="s">\ (BIM)</span><span class="err"> </span><span class="s">;\n\n-</span><span class="nv"> </span><span class="s">`imageOf`</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">representações</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">duas</span><span class="nv"> </span><span class="s">dimensões</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">edificação</span><span class="err"> </span><span class="s">;\n\</span>
+<span class="w">  </span><span class="s">-</span><span class="nv"> </span><span class="s">`preparatoryFor`</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">representação</span><span class="nv"> </span><span class="s">técnica</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">projeto</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">intervenções</span><span class="nv"> </span><span class="s">a\n</span><span class="nv">  </span><span class="s">serem\</span>
+<span class="w">  </span><span class="s">\ realizadas</span><span class="nv"> </span><span class="s">(ou</span><span class="nv"> </span><span class="s">já</span><span class="nv"> </span><span class="s">realizadas)</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">edificação.\n"</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:relatedWorkRelType</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedWork</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedWork</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedWorkRelType</span>
 <span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>

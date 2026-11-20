@@ -544,20 +544,6 @@ enums:
           '
         meaning: term:lido00529
         title: "prov\xE1vel"
-  DepictionType:
-    name: DepictionType
-    definition_uri: https://tradicional.arq.br/schema/DepictionType
-    description: "Designa a rela\xE7\xE3o que a edifica\xE7\xE3o descrita na ficha\
-      \ tem com a m\xEDdia relacionada.\n"
-    from_schema: https://tradicional.arq.br/schema
-    permissible_values:
-      depictedIn:
-        text: depictedIn
-        description: "A obra descrita na ficha est\xE1 representada na m\xEDdia relacionada,\
-          \ que ser\xE1 geralmente uma obra de arte ou fotografia depositada num reposit\xF3\
-          rio externo (cat\xE1logo de museu, Wikimedia Commons, etc.).\n"
-        meaning: term:lido00998
-        title: representado em
   EventType:
     name: EventType
     definition_uri: https://tradicional.arq.br/schema/EventType
@@ -1876,6 +1862,13 @@ enums:
       \ <http://terminology.lido-schema.org/relatedWorkRelType>\n"
     from_schema: https://tradicional.arq.br/schema
     permissible_values:
+      depictedIn:
+        text: depictedIn
+        description: "A obra descrita na ficha est\xE1 representada na m\xEDdia relacionada,\
+          \ que ser\xE1 geralmente uma obra de arte ou fotografia depositada num reposit\xF3\
+          rio externo (cat\xE1logo de museu, Wikimedia Commons, etc.).\n"
+        meaning: term:lido00998
+        title: representado em
       documentedIn:
         text: documentedIn
         description: "A obra descrita na ficha est\xE1 documentada, discutida ou descrita\
@@ -6222,14 +6215,50 @@ slots:
   content_url:
     name: content_url
     definition_uri: https://tradicional.arq.br/schema/content_url
-    description: Link direto para o arquivo/ficheiro.
+    description: 'Link direto para o arquivo/ficheiro. Usado em `provided_image` e
+      `provided_3d`.
+
+      '
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:content_url
+    mappings:
+    - schema:contentUrl
+    slot_uri: schema:contentUrl
     owner: MediaObject
     domain_of:
     - MediaObject
     range: uriorcurie
-    multivalued: true
+    multivalued: false
+  embed_url:
+    name: embed_url
+    definition_uri: https://tradicional.arq.br/schema/embed_url
+    description: "Link para um servi\xE7o de reprodu\xE7\xE3o do conte\xFAdo. Usado\
+      \ em `provided_service` e `provided_3d`.\n"
+    from_schema: https://tradicional.arq.br/schema/resource
+    mappings:
+    - schema:embedUrl
+    slot_uri: schema:embedUrl
+    owner: MediaObject
+    domain_of:
+    - MediaObject
+    range: uriorcurie
+    multivalued: false
+  format:
+    name: format
+    definition_uri: https://tradicional.arq.br/schema/format
+    description: "Campo disciplinado pela especifica\xE7\xE3o [DublinCore] no campo\
+      \ [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).\
+      \ Esta especifica\xE7\xE3o sugere a lista de tipos de m\xEDdia IANA\u2009: <https://www.iana.org/assignments/media-types>.\n"
+    from_schema: https://tradicional.arq.br/schema/resource
+    mappings:
+    - dcterms:format
+    slot_uri: dcterms:format
+    owner: MediaObject
+    domain_of:
+    - Resource
+    - MediaObject
+    range: string
+    required: true
+    inlined: true
   media:
     name: media
     definition_uri: https://tradicional.arq.br/schema/media
@@ -6254,9 +6283,10 @@ slots:
       \ prevemos essa hip\xF3tese.\n"
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:preview_image
-    owner: Resource
+    owner: MediaObject
     domain_of:
     - Resource
+    - MediaObject
     range: uriorcurie
   provided_image:
     name: provided_image
@@ -6301,23 +6331,29 @@ slots:
     range: uriorcurie
     multivalued: true
     inlined_as_list: true
-  format:
-    name: format
-    definition_uri: https://tradicional.arq.br/schema/format
-    description: "Campo disciplinado pela especifica\xE7\xE3o [DublinCore] no campo\
-      \ [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).\
-      \ Esta especifica\xE7\xE3o sugere a lista de tipos de m\xEDdia IANA\u2009: <https://www.iana.org/assignments/media-types>.\n"
+  relation_type:
+    name: relation_type
+    definition_uri: https://tradicional.arq.br/schema/relation_type
+    description: "Indica o tipo de rela\xE7\xE3o entre a edifica\xE7\xE3o descrita\
+      \ na ficha e o objeto relacionado. O sujeito do tipo \xE9 sempre a obra titular\
+      \ da ficha.\nUsamos os tipos de rela\xE7\xE3o previstos pelo LIDO em `relatedWorkRelType\
+      \ > Associative relationships > Derivative relationships`. Provavelmente necessitamos\
+      \ apenas de\u2009:\n- `planFor`\u2009: desenho t\xE9cnico bidimensional de levantamento\n\
+      \  (padr\xE3o, pode ser omitido)\u2009;\n\n- `modelFor`\u2009: modelo tridimensional,\
+      \ com ou sem informa\xE7\xF5es construtivas\n  associadas (BIM)\u2009;\n\n-\
+      \ `imageOf`\u2009: outras representa\xE7\xF5es em duas dimens\xF5es da edifica\xE7\
+      \xE3o\u2009;\n- `preparatoryFor`\u2009: representa\xE7\xE3o t\xE9cnica de projeto\
+      \ para interven\xE7\xF5es a\n  serem realizadas (ou j\xE1 realizadas) na edifica\xE7\
+      \xE3o.\n"
     from_schema: https://tradicional.arq.br/schema/resource
     mappings:
-    - dcterms:format
-    slot_uri: dcterms:format
-    owner: MediaObject
+    - lido:relatedWorkRelType
+    slot_uri: lido:relatedWorkRelType
+    owner: RelatedObject
     domain_of:
-    - Resource
-    - MediaObject
-    range: string
+    - RelatedObject
+    range: RelatedWorkRelType
     required: true
-    inlined: true
   scale:
     name: scale
     definition_uri: https://tradicional.arq.br/schema/scale
@@ -6345,7 +6381,6 @@ slots:
     owner: Work
     domain_of:
     - RelatedObject
-    - Resource
     - Work
     range: Right
     multivalued: true
@@ -7343,21 +7378,6 @@ slots:
     domain_of:
     - BibliographicCitation
     range: string
-  relatedWork__relation_type:
-    name: relatedWork__relation_type
-    description: "Indica o tipo de rela\xE7\xE3o entre a edifica\xE7\xE3o descrita\
-      \ na ficha e o objeto relacionado. O sujeito do tipo \xE9 sempre a obra titular\
-      \ da ficha.\n"
-    from_schema: https://tradicional.arq.br/schema/resource
-    mappings:
-    - lido:relatedWorkRelType
-    slot_uri: lido:relatedWorkRelType
-    alias: relation_type
-    owner: RelatedWork
-    domain_of:
-    - RelatedWork
-    range: RelatedWorkRelType
-    required: true
   largerContextReference__context_type:
     name: largerContextReference__context_type
     description: "O tipo de rela\xE7\xE3o entre os objetos."
@@ -7370,27 +7390,6 @@ slots:
     domain_of:
     - LargerContextReference
     range: LargerContextType
-    required: true
-  resource__resource_type:
-    name: resource__resource_type
-    description: "Usamos os tipos de rela\xE7\xE3o previstos pelo LIDO em `relatedWorkRelType\
-      \ > Associative relationships > Derivative relationships`. Provavelmente necessitamos\
-      \ apenas de\u2009:\n- `planFor`\u2009: desenho t\xE9cnico bidimensional de levantamento\n\
-      \  (padr\xE3o, pode ser omitido)\u2009;\n\n- `modelFor`\u2009: modelo tridimensional,\
-      \ com ou sem informa\xE7\xF5es construtivas\n  associadas (BIM)\u2009;\n\n-\
-      \ `imageOf`\u2009: outras representa\xE7\xF5es em duas dimens\xF5es da edifica\xE7\
-      \xE3o\u2009;\n- `preparatoryFor`\u2009: representa\xE7\xE3o t\xE9cnica de projeto\
-      \ para interven\xE7\xF5es a\n  serem realizadas (ou j\xE1 realizadas) na edifica\xE7\
-      \xE3o.\n"
-    from_schema: https://tradicional.arq.br/schema/resource
-    mappings:
-    - lido:relatedWorkRelType
-    slot_uri: lido:relatedWorkRelType
-    alias: resource_type
-    owner: Resource
-    domain_of:
-    - Resource
-    range: ResourceType
     required: true
   resource__perspective:
     name: resource__perspective
@@ -7409,20 +7408,6 @@ slots:
     required: true
     minimum_value: 0
     maximum_value: 9
-  mediaObject__depiction_type:
-    name: mediaObject__depiction_type
-    description: "O tipo de representa\xE7\xE3o que a m\xEDdia cont\xE9m. A edifica\xE7\
-      \xE3o descrita na ficha \xE9 sempre o sujeito da rela\xE7\xE3o.\n"
-    from_schema: https://tradicional.arq.br/schema/resource
-    mappings:
-    - lido:relatedWorkRelType
-    slot_uri: lido:relatedWorkRelType
-    alias: depiction_type
-    owner: MediaObject
-    domain_of:
-    - MediaObject
-    range: DepictionType
-    required: true
   measurement__measurement_type:
     name: measurement__measurement_type
     description: "O tipo de medida pode se referir ao objeto propriamente dito `proper`\
@@ -9490,6 +9475,7 @@ classes:
     - thing__temporal
     - thing__repositories
     - work_rights
+    - relation_type
     class_uri: schema:CreativeWork
   RelatedWork:
     name: RelatedWork
@@ -9530,17 +9516,8 @@ classes:
     - thing__temporal
     - thing__repositories
     - work_rights
+    - relation_type
     - media
-    - relatedWork__relation_type
-    attributes:
-      relation_type:
-        name: relation_type
-        description: "Indica o tipo de rela\xE7\xE3o entre a edifica\xE7\xE3o descrita\
-          \ na ficha e o objeto relacionado. O sujeito do tipo \xE9 sempre a obra\
-          \ titular da ficha.\n"
-        slot_uri: lido:relatedWorkRelType
-        range: RelatedWorkRelType
-        required: true
     class_uri: wasth:RelatedWork
   LargerContextReference:
     name: LargerContextReference
@@ -9567,6 +9544,7 @@ classes:
     - thing__temporal
     - thing__repositories
     - work_rights
+    - relation_type
     - media
     - largerContextReference__context_type
     attributes:
@@ -9598,7 +9576,7 @@ classes:
     - crm:E31_Document
     close_mappings:
     - schema:ArchiveComponent
-    is_a: Thing
+    is_a: RelatedObject
     slots:
     - title
     - author
@@ -9613,6 +9591,8 @@ classes:
     - thing__tags
     - thing__temporal
     - thing__repositories
+    - work_rights
+    - relation_type
     - format
     - scale
     - unit
@@ -9621,8 +9601,6 @@ classes:
     - provided_3d
     - resource_service
     - credit
-    - work_rights
-    - resource__resource_type
     - resource__perspective
     - Resource_id
     - Resource_category
@@ -9634,20 +9612,6 @@ classes:
         name: category
         ifabsent: string(http://terminology.lido-schema.org/lido01193)
     attributes:
-      resource_type:
-        name: resource_type
-        description: "Usamos os tipos de rela\xE7\xE3o previstos pelo LIDO em `relatedWorkRelType\
-          \ > Associative relationships > Derivative relationships`. Provavelmente\
-          \ necessitamos apenas de\u2009:\n- `planFor`\u2009: desenho t\xE9cnico bidimensional\
-          \ de levantamento\n  (padr\xE3o, pode ser omitido)\u2009;\n\n- `modelFor`\u2009\
-          : modelo tridimensional, com ou sem informa\xE7\xF5es construtivas\n  associadas\
-          \ (BIM)\u2009;\n\n- `imageOf`\u2009: outras representa\xE7\xF5es em duas\
-          \ dimens\xF5es da edifica\xE7\xE3o\u2009;\n- `preparatoryFor`\u2009: representa\xE7\
-          \xE3o t\xE9cnica de projeto para interven\xE7\xF5es a\n  serem realizadas\
-          \ (ou j\xE1 realizadas) na edifica\xE7\xE3o.\n"
-        slot_uri: lido:relatedWorkRelType
-        range: ResourceType
-        required: true
       perspective:
         name: perspective
         description: "Tipo de vista do desenho. Usar a numera\xE7\xE3o da ISO\u2009\
@@ -9703,8 +9667,9 @@ classes:
     - scale
     - unit
     - content_url
+    - embed_url
+    - preview_image
     - measurements
-    - mediaObject__depiction_type
     - MediaObject_title
     - MediaObject_description
     - MediaObject_content
@@ -9725,14 +9690,6 @@ classes:
           o.\n"
       work_rights:
         name: work_rights
-        required: true
-    attributes:
-      depiction_type:
-        name: depiction_type
-        description: "O tipo de representa\xE7\xE3o que a m\xEDdia cont\xE9m. A edifica\xE7\
-          \xE3o descrita na ficha \xE9 sempre o sujeito da rela\xE7\xE3o.\n"
-        slot_uri: lido:relatedWorkRelType
-        range: DepictionType
         required: true
     class_uri: schema:MediaObject
   TypedReference:
@@ -11236,6 +11193,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-20T19:00:15'
-source_file_size: 71552
+source_file_date: '2026-11-20T21:58:18'
+source_file_size: 71344
 

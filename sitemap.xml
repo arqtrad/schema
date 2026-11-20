@@ -93,10 +93,6 @@
          <lastmod>2026-11-20</lastmod>
     </url>
     <url>
-         <loc>https://tradicional.arq.br/schema/elements/DepictionType/</loc>
-         <lastmod>2026-11-20</lastmod>
-    </url>
-    <url>
          <loc>https://tradicional.arq.br/schema/elements/Double/</loc>
          <lastmod>2026-11-20</lastmod>
     </url>
@@ -537,10 +533,6 @@
          <lastmod>2026-11-20</lastmod>
     </url>
     <url>
-         <loc>https://tradicional.arq.br/schema/elements/depiction_type/</loc>
-         <lastmod>2026-11-20</lastmod>
-    </url>
-    <url>
          <loc>https://tradicional.arq.br/schema/elements/description/</loc>
          <lastmod>2026-11-20</lastmod>
     </url>
@@ -550,6 +542,10 @@
     </url>
     <url>
          <loc>https://tradicional.arq.br/schema/elements/elevation/</loc>
+         <lastmod>2026-11-20</lastmod>
+    </url>
+    <url>
+         <loc>https://tradicional.arq.br/schema/elements/embed_url/</loc>
          <lastmod>2026-11-20</lastmod>
     </url>
     <url>
@@ -818,10 +814,6 @@
     </url>
     <url>
          <loc>https://tradicional.arq.br/schema/elements/resource_service/</loc>
-         <lastmod>2026-11-20</lastmod>
-    </url>
-    <url>
-         <loc>https://tradicional.arq.br/schema/elements/resource_type/</loc>
          <lastmod>2026-11-20</lastmod>
     </url>
     <url>
