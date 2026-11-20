@@ -199,6 +199,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#class-properties">
+<span class="md-ellipsis">
+      
+        Class Properties
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
 <span class="md-ellipsis">
       
@@ -283,7 +292,7 @@
 <ul>
 <li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
 </ul>
-<p>URI: <a href="https://tradicional.arq.br/schema/RelatedObject">wasth:RelatedObject</a></p>
+<p>URI: <a href="http://schema.org/CreativeWork">schema:CreativeWork</a></p>
 <pre class="mermaid"><code> classDiagram
     class RelatedObject
     click RelatedObject href "../RelatedObject/"
@@ -295,8 +304,6 @@
         click RelatedWork href "../RelatedWork/"
       RelatedObject &lt;|-- LargerContextReference
         click LargerContextReference href "../LargerContextReference/"
-      RelatedObject &lt;|-- MediaObject
-        click MediaObject href "../MediaObject/"
 
 
       RelatedObject : alt_name
@@ -401,12 +408,26 @@
 <li><strong>RelatedObject</strong><ul>
 <li><a href="../RelatedWork/">RelatedWork</a></li>
 <li><a href="../LargerContextReference/">LargerContextReference</a></li>
-<li><a href="../MediaObject/">MediaObject</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<h2 id="class-properties">Class Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Class URI</td>
+<td><a href="http://schema.org/CreativeWork">schema:CreativeWork</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -532,7 +553,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>wasth:RelatedObject</td>
+<td>schema:CreativeWork</td>
 </tr>
 <tr>
 <td>native</td>
@@ -556,6 +577,7 @@
 <span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">slots</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">work_rights</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:CreativeWork</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
@@ -892,6 +914,7 @@
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:CreativeWork</span>
 </code></pre></div>
 </details>
 </div>

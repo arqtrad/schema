@@ -6219,6 +6219,17 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  content_url:
+    name: content_url
+    definition_uri: https://tradicional.arq.br/schema/content_url
+    description: Link direto para o arquivo/ficheiro.
+    from_schema: https://tradicional.arq.br/schema/resource
+    slot_uri: wasth:content_url
+    owner: MediaObject
+    domain_of:
+    - MediaObject
+    range: uriorcurie
+    multivalued: true
   media:
     name: media
     definition_uri: https://tradicional.arq.br/schema/media
@@ -6231,10 +6242,8 @@ slots:
     - LargerContextReference
     - Event
     - Work
-    range: MediaObject
+    range: Resource
     multivalued: true
-    inlined: true
-    inlined_as_list: true
   preview_image:
     name: preview_image
     definition_uri: https://tradicional.arq.br/schema/preview_image
@@ -6245,10 +6254,9 @@ slots:
       \ prevemos essa hip\xF3tese.\n"
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:preview_image
-    owner: MediaObject
+    owner: Resource
     domain_of:
     - Resource
-    - MediaObject
     range: uriorcurie
   provided_image:
     name: provided_image
@@ -6257,12 +6265,12 @@ slots:
       \ bitmap."
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:provided_image
-    owner: MediaObject
+    owner: Resource
     domain_of:
     - Resource
-    - MediaObject
-    range: uriorcurie
+    range: MediaObject
     multivalued: true
+    inlined: true
     inlined_as_list: true
   provided_3d:
     name: provided_3d
@@ -6270,10 +6278,9 @@ slots:
     description: "Modelo tridimensional ou IFC da edifica\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:provided_3d
-    owner: MediaObject
+    owner: Resource
     domain_of:
     - Resource
-    - MediaObject
     range: uriorcurie
     multivalued: true
     inlined_as_list: true
@@ -6288,10 +6295,9 @@ slots:
       \ acerca do modelo."
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:resource_service
-    owner: MediaObject
+    owner: Resource
     domain_of:
     - Resource
-    - MediaObject
     range: uriorcurie
     multivalued: true
     inlined_as_list: true
@@ -6351,10 +6357,9 @@ slots:
     description: "Informa\xE7\xE3o sobre autoria ou responsabilidade."
     from_schema: https://tradicional.arq.br/schema/resource
     slot_uri: wasth:credit
-    owner: MediaObject
+    owner: Resource
     domain_of:
     - Resource
-    - MediaObject
     range: string
   refid_type:
     name: refid_type
@@ -9129,10 +9134,8 @@ slots:
     - Work
     is_usage_slot: true
     usage_slot_name: media
-    range: MediaObject
+    range: Resource
     multivalued: true
-    inlined: true
-    inlined_as_list: true
   Work_record_rights:
     name: Work_record_rights
     definition_uri: https://tradicional.arq.br/schema/record_rights
@@ -9466,6 +9469,8 @@ classes:
 
       '
     from_schema: https://tradicional.arq.br/schema/resource
+    exact_mappings:
+    - schema:CreativeWork
     is_a: Thing
     abstract: true
     slots:
@@ -9485,7 +9490,7 @@ classes:
     - thing__temporal
     - thing__repositories
     - work_rights
-    class_uri: wasth:RelatedObject
+    class_uri: schema:CreativeWork
   RelatedWork:
     name: RelatedWork
     definition_uri: https://tradicional.arq.br/schema/RelatedWork
@@ -9680,7 +9685,7 @@ classes:
     - schema:MediaObject
     close_mappings:
     - dctypes:Image
-    is_a: RelatedObject
+    is_a: Thing
     slots:
     - id
     - author
@@ -9697,12 +9702,8 @@ classes:
     - format
     - scale
     - unit
-    - preview_image
-    - provided_image
-    - provided_3d
-    - resource_service
+    - content_url
     - measurements
-    - credit
     - mediaObject__depiction_type
     - MediaObject_title
     - MediaObject_description
@@ -11235,6 +11236,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-18T23:37:42'
+source_file_date: '2026-11-20T19:00:15'
 source_file_size: 71552
 
