@@ -212,19 +212,6 @@ enums:
           that the production must have taken place before the finding of the
           object.
 
-  DepictionType:
-    description: >
-      Designa a relação que a edificação descrita na ficha tem com a mídia
-      relacionada.
-    permissible_values:  # http://terminology.lido-schema.org/lido00583
-      depictedIn:
-        title: representado em
-        meaning: term:lido00998
-        description: >
-          A obra descrita na ficha está representada na mídia relacionada,
-          que será geralmente uma obra de arte ou fotografia depositada num
-          repositório externo (catálogo de museu, Wikimedia Commons, etc.).
-
   EventType:
     description: >
       O tipo de incidência sobre a edificação que o evento descreve. Usa a
@@ -1533,6 +1520,13 @@ enums:
 
       Ver <http://terminology.lido-schema.org/relatedWorkRelType>
     permissible_values:  # http://terminology.lido-schema.org/lido00583
+      depictedIn:
+        title: representado em
+        meaning: term:lido00998
+        description: >
+          A obra descrita na ficha está representada na mídia relacionada,
+          que será geralmente uma obra de arte ou fotografia depositada num
+          repositório externo (catálogo de museu, Wikimedia Commons, etc.).
       documentedIn:
         title: documentado em
         meaning: term:lido00617

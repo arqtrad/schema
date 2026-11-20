@@ -3266,19 +3266,6 @@ class DateType(str, Enum):
     """
 
 
-class DepictionType(str, Enum):
-    """
-    Designa a relação que a edificação descrita na ficha tem com a mídia relacionada.
-
-    """
-
-    representado_em = "depictedIn"
-    """
-    A obra descrita na ficha está representada na mídia relacionada, que será geralmente uma obra de arte ou fotografia depositada num repositório externo (catálogo de museu, Wikimedia Commons, etc.).
-
-    """
-
-
 class EventType(str, Enum):
     """
     O tipo de incidência sobre a edificação que o evento descreve. Usa a terminologia do LIDO em <http://terminology.lido-schema.org/eventType>.
@@ -3863,6 +3850,11 @@ class RelatedWorkRelType(str, Enum):
 
     """
 
+    representado_em = "depictedIn"
+    """
+    A obra descrita na ficha está representada na mídia relacionada, que será geralmente uma obra de arte ou fotografia depositada num repositório externo (catálogo de museu, Wikimedia Commons, etc.).
+
+    """
     documentado_em = "documentedIn"
     """
     A obra descrita na ficha está documentada, discutida ou descrita na mídia relacionada, que em geral será um texto.
@@ -5601,8 +5593,29 @@ class RelatedObject(Thing):
 """,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": ["RelatedObject", "Resource", "Work"],
+                "domain_of": ["RelatedObject", "Work"],
                 "slot_uri": "lido:rightsWorkSet",
+            }
+        },
+    )
+    relation_type: RelatedWorkRelType = Field(
+        default=...,
+        description="""Indica o tipo de relação entre a edificação descrita na ficha e o objeto relacionado. O sujeito do tipo é sempre a obra titular da ficha.
+Usamos os tipos de relação previstos pelo LIDO em `relatedWorkRelType > Associative relationships > Derivative relationships`. Provavelmente necessitamos apenas de :
+- `planFor` : desenho técnico bidimensional de levantamento
+  (padrão, pode ser omitido) ;
+
+- `modelFor` : modelo tridimensional, com ou sem informações construtivas
+  associadas (BIM) ;
+
+- `imageOf` : outras representações em duas dimensões da edificação ;
+- `preparatoryFor` : representação técnica de projeto para intervenções a
+  serem realizadas (ou já realizadas) na edificação.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["RelatedObject"],
+                "slot_uri": "lido:relatedWorkRelType",
             }
         },
     )
@@ -5847,25 +5860,35 @@ class RelatedWork(RelatedObject):
             }
         },
     )
-    relation_type: RelatedWorkRelType = Field(
-        default=...,
-        description="""Indica o tipo de relação entre a edificação descrita na ficha e o objeto relacionado. O sujeito do tipo é sempre a obra titular da ficha.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": ["RelatedWork"],
-                "slot_uri": "lido:relatedWorkRelType",
-            }
-        },
-    )
     work_rights: Optional[list[Right]] = Field(
         default=None,
         description="""⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobre O OBJETO OU RECURSO QUE ESTÁ SENDO DESCRITO, não sobre o preenchimento da ficha.
 """,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": ["RelatedObject", "Resource", "Work"],
+                "domain_of": ["RelatedObject", "Work"],
                 "slot_uri": "lido:rightsWorkSet",
+            }
+        },
+    )
+    relation_type: RelatedWorkRelType = Field(
+        default=...,
+        description="""Indica o tipo de relação entre a edificação descrita na ficha e o objeto relacionado. O sujeito do tipo é sempre a obra titular da ficha.
+Usamos os tipos de relação previstos pelo LIDO em `relatedWorkRelType > Associative relationships > Derivative relationships`. Provavelmente necessitamos apenas de :
+- `planFor` : desenho técnico bidimensional de levantamento
+  (padrão, pode ser omitido) ;
+
+- `modelFor` : modelo tridimensional, com ou sem informações construtivas
+  associadas (BIM) ;
+
+- `imageOf` : outras representações em duas dimensões da edificação ;
+- `preparatoryFor` : representação técnica de projeto para intervenções a
+  serem realizadas (ou já realizadas) na edificação.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["RelatedObject"],
+                "slot_uri": "lido:relatedWorkRelType",
             }
         },
     )
@@ -6105,8 +6128,29 @@ class LargerContextReference(RelatedObject):
 """,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": ["RelatedObject", "Resource", "Work"],
+                "domain_of": ["RelatedObject", "Work"],
                 "slot_uri": "lido:rightsWorkSet",
+            }
+        },
+    )
+    relation_type: RelatedWorkRelType = Field(
+        default=...,
+        description="""Indica o tipo de relação entre a edificação descrita na ficha e o objeto relacionado. O sujeito do tipo é sempre a obra titular da ficha.
+Usamos os tipos de relação previstos pelo LIDO em `relatedWorkRelType > Associative relationships > Derivative relationships`. Provavelmente necessitamos apenas de :
+- `planFor` : desenho técnico bidimensional de levantamento
+  (padrão, pode ser omitido) ;
+
+- `modelFor` : modelo tridimensional, com ou sem informações construtivas
+  associadas (BIM) ;
+
+- `imageOf` : outras representações em duas dimensões da edificação ;
+- `preparatoryFor` : representação técnica de projeto para intervenções a
+  serem realizadas (ou já realizadas) na edificação.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["RelatedObject"],
+                "slot_uri": "lido:relatedWorkRelType",
             }
         },
     )
@@ -6311,7 +6355,7 @@ Repeated if there are several designations known, or if former repositories or g
     )
 
 
-class Resource(Thing):
+class Resource(RelatedObject):
     """
     Este grupo identifica um recurso visual ou documental que fornece informações técnicas ou uma representação ilustrativa da obra à qual ele se relaciona.
     Recursos produzidos pela equipe dos Documentários da Arquitetura Tradicional são descritos na ficha de cada edificação, no grupo `resources`. Representações e documentos externos são referidos nos grupos `media` e `related_works`, respetivamente.
@@ -6372,7 +6416,7 @@ class Resource(Thing):
         description="""Uma única miniatura da imagem original.
 Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente em caso de ausência da miniatura, nem outros tipos de miniaturas que não imagens. A especificação LIDO admite listar mais de uma miniatura, mas tampouco prevemos essa hipótese.
 """,
-        json_schema_extra={"linkml_meta": {"domain_of": ["Resource"]}},
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
     )
     provided_image: Optional[list[MediaObject]] = Field(
         default=None,
@@ -6395,37 +6439,6 @@ No caso de `preview_image` ou `provided_image`, o link deve referenciar diretame
         description="""Informação sobre autoria ou responsabilidade.""",
         json_schema_extra={"linkml_meta": {"domain_of": ["Resource"]}},
     )
-    work_rights: Optional[list[Right]] = Field(
-        default=None,
-        description="""⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobre O OBJETO OU RECURSO QUE ESTÁ SENDO DESCRITO, não sobre o preenchimento da ficha.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": ["RelatedObject", "Resource", "Work"],
-                "slot_uri": "lido:rightsWorkSet",
-            }
-        },
-    )
-    resource_type: ResourceType = Field(
-        default=...,
-        description="""Usamos os tipos de relação previstos pelo LIDO em `relatedWorkRelType > Associative relationships > Derivative relationships`. Provavelmente necessitamos apenas de :
-- `planFor` : desenho técnico bidimensional de levantamento
-  (padrão, pode ser omitido) ;
-
-- `modelFor` : modelo tridimensional, com ou sem informações construtivas
-  associadas (BIM) ;
-
-- `imageOf` : outras representações em duas dimensões da edificação ;
-- `preparatoryFor` : representação técnica de projeto para intervenções a
-  serem realizadas (ou já realizadas) na edificação.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": ["Resource"],
-                "slot_uri": "lido:relatedWorkRelType",
-            }
-        },
-    )
     perspective: int = Field(
         default=...,
         description="""Tipo de vista do desenho. Usar a numeração da ISO 19650–2 :
@@ -6444,6 +6457,38 @@ No caso de `preview_image` ou `provided_image`, o link deve referenciar diretame
         ge=0,
         le=9,
         json_schema_extra={"linkml_meta": {"domain_of": ["Resource"]}},
+    )
+    work_rights: Optional[list[Right]] = Field(
+        default=None,
+        description="""⚠️  Este bloco se refere a eventuais direitos autorais ou de propriedade sobre O OBJETO OU RECURSO QUE ESTÁ SENDO DESCRITO, não sobre o preenchimento da ficha.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["RelatedObject", "Work"],
+                "slot_uri": "lido:rightsWorkSet",
+            }
+        },
+    )
+    relation_type: RelatedWorkRelType = Field(
+        default=...,
+        description="""Indica o tipo de relação entre a edificação descrita na ficha e o objeto relacionado. O sujeito do tipo é sempre a obra titular da ficha.
+Usamos os tipos de relação previstos pelo LIDO em `relatedWorkRelType > Associative relationships > Derivative relationships`. Provavelmente necessitamos apenas de :
+- `planFor` : desenho técnico bidimensional de levantamento
+  (padrão, pode ser omitido) ;
+
+- `modelFor` : modelo tridimensional, com ou sem informações construtivas
+  associadas (BIM) ;
+
+- `imageOf` : outras representações em duas dimensões da edificação ;
+- `preparatoryFor` : representação técnica de projeto para intervenções a
+  serem realizadas (ou já realizadas) na edificação.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["RelatedObject"],
+                "slot_uri": "lido:relatedWorkRelType",
+            }
+        },
     )
     title: Optional[str] = Field(
         default=None,
@@ -6720,10 +6765,31 @@ class MediaObject(Thing):
             "linkml_meta": {"domain_of": ["Resource", "MediaObject", "Measurement"]}
         },
     )
-    content_url: Optional[list[str]] = Field(
+    content_url: Optional[str] = Field(
         default=None,
-        description="""Link direto para o arquivo/ficheiro.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["MediaObject"]}},
+        description="""Link direto para o arquivo/ficheiro. Usado em `provided_image` e `provided_3d`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["MediaObject"],
+                "slot_uri": "schema:contentUrl",
+            }
+        },
+    )
+    embed_url: Optional[str] = Field(
+        default=None,
+        description="""Link para um serviço de reprodução do conteúdo. Usado em `provided_service` e `provided_3d`.
+""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["MediaObject"], "slot_uri": "schema:embedUrl"}
+        },
+    )
+    preview_image: Optional[str] = Field(
+        default=None,
+        description="""Uma única miniatura da imagem original.
+Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente em caso de ausência da miniatura, nem outros tipos de miniaturas que não imagens. A especificação LIDO admite listar mais de uma miniatura, mas tampouco prevemos essa hipótese.
+""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["Resource", "MediaObject"]}},
     )
     measurements: Optional[list[Measurement]] = Field(
         default=None,
@@ -6731,17 +6797,6 @@ class MediaObject(Thing):
 """,
         json_schema_extra={
             "linkml_meta": {"domain_of": ["MediaObject", "Event", "Work"]}
-        },
-    )
-    depiction_type: DepictionType = Field(
-        default=...,
-        description="""O tipo de representação que a mídia contém. A edificação descrita na ficha é sempre o sujeito da relação.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": ["MediaObject"],
-                "slot_uri": "lido:relatedWorkRelType",
-            }
         },
     )
     title: str = Field(
@@ -8162,7 +8217,7 @@ Nos Documentários da Arquitetura Tradicional, desdobramos o grupo LIDO [`relate
 """,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": ["RelatedObject", "Resource", "Work"],
+                "domain_of": ["RelatedObject", "Work"],
                 "slot_uri": "lido:rightsWorkSet",
             }
         },

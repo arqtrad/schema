@@ -67,6 +67,7 @@ classes:
 
     slots:
       - work_rights
+      - relation_type
 
   RelatedWork:
     is_a: RelatedObject
@@ -97,17 +98,6 @@ classes:
       urbanos, obras de artes visuais, referências bibliográficas ou acervos
       arquivísticos.
 
-    attributes:
-      relation_type:
-        slot_uri: lido:relatedWorkRelType
-        range: RelatedWorkRelType
-        required: true
-        # ifabsent: RelationType(planFor)
-        description: >
-          Indica o tipo de relação entre a edificação descrita na ficha e o
-          objeto relacionado. O sujeito do tipo é sempre a obra titular da
-          ficha.
-
     slots:
       - media
 
@@ -129,7 +119,7 @@ classes:
       - media
 
   Resource:
-    is_a: Thing
+    is_a: RelatedObject
     class_uri: crm:E31_Document
     close_mappings:
       - schema:ArchiveComponent
@@ -156,26 +146,6 @@ classes:
         which is compatible with E73 Information Object.
 
     attributes:
-
-      resource_type:
-        slot_uri: lido:relatedWorkRelType
-        range: ResourceType
-        required: true
-        description: >
-          Usamos os tipos de relação previstos pelo LIDO em
-          `relatedWorkRelType > Associative relationships > Derivative relationships`.
-          Provavelmente necessitamos apenas de :
-
-          - `planFor` : desenho técnico bidimensional de levantamento
-            (padrão, pode ser omitido) ;
-
-          - `modelFor` : modelo tridimensional, com ou sem informações construtivas
-            associadas (BIM) ;
-
-          - `imageOf` : outras representações em duas dimensões da edificação ;
-
-          - `preparatoryFor` : representação técnica de projeto para intervenções a
-            serem realizadas (ou já realizadas) na edificação.
 
       perspective:
         required: true
@@ -213,7 +183,6 @@ classes:
       - provided_3d
       - resource_service
       - credit
-      - work_rights
 
   MediaObject:
     is_a: Thing
@@ -250,15 +219,6 @@ classes:
       Não armazenamos imagens ou outros arquivos de mídia nos sites dos
       Documentários da Arquitetura Tradicional.
 
-    attributes:
-      depiction_type:
-        slot_uri: lido:relatedWorkRelType
-        range: DepictionType
-        required: true
-        description: >
-          O tipo de representação que a mídia contém. A edificação descrita na
-          ficha é sempre o sujeito da relação.
-
     slot_usage:
       title:
         required: true
@@ -283,6 +243,8 @@ classes:
       - scale
       - unit
       - content_url
+      - embed_url
+      - preview_image
       - measurements
 
 
@@ -334,9 +296,31 @@ slots:
       e são inseridas na ficha como um mapa.
 
   content_url:
+    slot_uri: schema:contentUrl
     range: uriorcurie
-    multivalued: true
-    description: Link direto para o arquivo/ficheiro.
+    multivalued: false
+    description: >
+      Link direto para o arquivo/ficheiro.
+      Usado em `provided_image` e `provided_3d`.
+
+  embed_url:
+    slot_uri: schema:embedUrl
+    range: uriorcurie
+    multivalued: false
+    description: >
+      Link para um serviço de reprodução do conteúdo.
+      Usado em `provided_service` e `provided_3d`.
+
+  format:
+    slot_uri: dcterms:format
+    required: true
+    range: string
+    inlined: true
+    description: >
+      Campo disciplinado pela especificação [DublinCore] no campo
+      [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).
+      Esta especificação sugere a lista de tipos de mídia IANA :
+      <https://www.iana.org/assignments/media-types>.
 
   media:
     range: Resource
@@ -381,16 +365,29 @@ slots:
       Em se tratando de `provided_3d` ou `service`, o link deve remeter a uma
       página web que forneça a respetiva API ou as informações acerca do modelo.
 
-  format:
-    slot_uri: dcterms:format
+  relation_type:
+    slot_uri: lido:relatedWorkRelType
+    range: RelatedWorkRelType
     required: true
-    range: string
-    inlined: true
     description: >
-      Campo disciplinado pela especificação [DublinCore] no campo
-      [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).
-      Esta especificação sugere a lista de tipos de mídia IANA :
-      <https://www.iana.org/assignments/media-types>.
+      Indica o tipo de relação entre a edificação descrita na ficha e o
+      objeto relacionado. O sujeito do tipo é sempre a obra titular da
+      ficha.
+
+      Usamos os tipos de relação previstos pelo LIDO em
+      `relatedWorkRelType > Associative relationships > Derivative relationships`.
+      Provavelmente necessitamos apenas de :
+
+      - `planFor` : desenho técnico bidimensional de levantamento
+        (padrão, pode ser omitido) ;
+
+      - `modelFor` : modelo tridimensional, com ou sem informações construtivas
+        associadas (BIM) ;
+
+      - `imageOf` : outras representações em duas dimensões da edificação ;
+
+      - `preparatoryFor` : representação técnica de projeto para intervenções a
+        serem realizadas (ou já realizadas) na edificação.
 
   scale:
     range: float
