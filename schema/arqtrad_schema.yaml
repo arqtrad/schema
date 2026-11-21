@@ -1872,7 +1872,7 @@ enums:
           \ ser preparat\xF3ria ou um registro feito ap\xF3s a constru\xE7\xE3o. Para\
           \ a planta de um pavimento, usar `floorPlanOf`.\n"
         meaning: term:lido00592
-        title: "\xE9 planta de"
+        title: planta de
       floorPlanOf:
         text: floorPlanOf
         description: "A obra descrita na ficha, um desenho ou outra proje\xE7\xE3\
@@ -1880,7 +1880,7 @@ enums:
           \xE3o relacionada, tomado pr\xF3ximo ao n\xEDvel do solo ou acima de um\
           \ pavimento.\n"
         meaning: term:lido00694
-        title: "\xE9 planta baixa de"
+        title: planta baixa de
         broad_mappings:
         - term:lido00592
       elevationOf:
@@ -1890,21 +1890,21 @@ enums:
           \ objeto espacial (por exemplo, uma edifica\xE7\xE3o), exterior ou interior,\
           \ em vista direta e frontal.\n"
         meaning: term:lido00692
-        title: "\xE9 eleva\xE7\xE3o de"
+        title: "eleva\xE7\xE3o de"
       sectionOf:
         text: sectionOf
         description: "A obra descrita na ficha, um desenho ortogr\xE1fico ou objeto\
           \ em outra m\xEDdia, mostra uma edifica\xE7\xE3o, objeto ou s\xEDtio como\
           \ se estivesse seccionado e exposto num plano espec\xEDfico.\n"
         meaning: term:lido00696
-        title: "\xE9 corte de"
+        title: corte de
       architecturalSurveyOf:
         text: architecturalSurveyOf
         description: "A obra descrita na ficha \xE9 um levantamento que avalia o estado\
           \ de conserva\xE7\xE3o de uma edifica\xE7\xE3o hist\xF3rica e fundamenta\
           \ a prioriza\xE7\xE3o de a\xE7\xF5es de preserva\xE7\xE3o e reparo.\n"
         meaning: term:lido00702
-        title: "\xE9 levantamento arquitet\xF4nico de"
+        title: "levantamento arquitet\xF4nico de"
         broad_mappings:
         - term:lido00603
       renderingOf:
@@ -1913,7 +1913,7 @@ enums:
           \ renderiza\xE7\xE3o) ou um registro fiel da concep\xE7\xE3o do objeto relacionado,\
           \ em geral em contexto arquitet\xF4nico.\n"
         meaning: term:lido00261
-        title: "\xE9 visualiza\xE7\xE3o de"
+        title: "visualiza\xE7\xE3o de"
       depicts:
         text: depicts
         description: "A obra descrita na ficha \xE9 uma obra de arte que representa\
@@ -1938,7 +1938,7 @@ enums:
           \ N\xE3o confundir com o evento `reconstruction` (reconstru\xE7\xE3o f\xED\
           sica da edifica\xE7\xE3o).\n"
         meaning: term:lido00698
-        title: "\xE9 reconstitui\xE7\xE3o hipot\xE9tica de"
+        title: "reconstitui\xE7\xE3o hipot\xE9tica de"
         broad_mappings:
         - term:lido00603
       illustrationOf:
@@ -1949,7 +1949,7 @@ enums:
 
           '
         meaning: term:lido00619
-        title: "\xE9 ilustra\xE7\xE3o de"
+        title: "ilustra\xE7\xE3o de"
         broad_mappings:
         - term:lido00579
       hasRendering:
@@ -2006,7 +2006,7 @@ enums:
           \ em geral tridimensional (maquete), preparat\xF3ria para outro objeto mais\
           \ acabado.\n"
         meaning: term:lido00258
-        title: "\xE9 modelo para"
+        title: modelo para
         broad_mappings:
         - term:lido00586
       preparatoryStudyFor:
@@ -2017,7 +2017,7 @@ enums:
           nicos, usar `sketchFor`, `designFor` ou `constructionDrawingFor`; para o\
           \ estudo detalhado de aspectos de uma edifica\xE7\xE3o existente, usar `studyAfter`.\n"
         meaning: term:lido00260
-        title: "\xE9 estudo preparat\xF3rio para"
+        title: "estudo preparat\xF3rio para"
         broad_mappings:
         - term:lido00586
       sketchFor:
@@ -2026,7 +2026,7 @@ enums:
           \ de modo inicial e aproximado o projeto de outro objeto. Os esbo\xE7os\
           \ s\xE3o menos acabados que os projetos e os estudos.\n"
         meaning: term:lido00588
-        title: "\xE9 esbo\xE7o para"
+        title: "esbo\xE7o para"
         broad_mappings:
         - term:lido00586
       cartoonFor:
@@ -2656,19 +2656,6 @@ enums:
           \ outra), usar `predecessorOf`.\n"
         meaning: term:lido01189
         title: "foi precedido no mesmo s\xEDtio por"
-  ResourceType:
-    name: ResourceType
-    definition_uri: https://tradicional.arq.br/schema/ResourceType
-    description: "Rela\xE7\xF5es associativas entre objetos f\xEDsicos ou cria\xE7\
-      \xF5es intelectuais, definidas segundo o vocabul\xE1rio do LIDO. Compreende\
-      \ as rela\xE7\xF5es de documenta\xE7\xE3o t\xE9cnica das edifica\xE7\xF5es.\n\
-      Ver <http://terminology.lido-schema.org/relatedWorkRelType>"
-    from_schema: https://tradicional.arq.br/schema
-    permissible_values:
-      architecturalSurvey:
-        text: architecturalSurvey
-      planFor:
-        text: planFor
   RepositoryType:
     name: RepositoryType
     definition_uri: https://tradicional.arq.br/schema/RepositoryType
@@ -11894,6 +11881,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-21T14:20:37'
-source_file_size: 103107
+source_file_date: '2026-11-21T14:25:45'
+source_file_size: 102698
 
