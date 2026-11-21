@@ -219,20 +219,11 @@ classes:
       Documentários da Arquitetura Tradicional.
 
     slot_usage:
-      title:
-        required: true
-        description: >
-          Título breve para identificar este recurso visual na listagem.
 
       description:
-        required: true
         description: >
           Texto alternativo para leitores de tela ou outras formas de
           acessibilidade. Apenas texto sem formatação.
-
-      content:
-        description: >
-          Opcional, para descrever com mais detalhe a representação.
 
       work_rights:
         recommended: true
