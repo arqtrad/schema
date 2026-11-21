@@ -175,7 +175,6 @@ classes:
         ifabsent: string(http://terminology.lido-schema.org/lido01193)
 
     slots:
-      - format
       - scale
       - unit
       - preview_image

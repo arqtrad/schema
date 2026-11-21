@@ -225,7 +225,7 @@ slots:
     slot_uri: dcterms:contributor
     range: OrcidId
     multivalued: true
-    inlined_as_list: true
+    inlined_as_list: false
     description: >
       ORCID iD das pessoas que contribuíram com o conteúdo da ficha.
 

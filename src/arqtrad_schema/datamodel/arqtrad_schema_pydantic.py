@@ -6386,17 +6386,6 @@ class Resource(RelatedObject):
         }
     )
 
-    format: str = Field(
-        default=...,
-        description="""Campo disciplinado pela especificação [DublinCore] no campo [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/). Esta especificação sugere a lista de tipos de mídia IANA : <https://www.iana.org/assignments/media-types>.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": ["Resource", "MediaObject"],
-                "slot_uri": "dcterms:format",
-            }
-        },
-    )
     scale: Optional[float] = Field(
         default=None,
         description="""Número inverso da escala da imagem ou desenho, se tiver uma resolução ou tamanho de página definidos. Por exemplo, para um desenho na escala 1 : 100, `scale: 100`.""",
@@ -6745,10 +6734,7 @@ class MediaObject(Thing):
         description="""Campo disciplinado pela especificação [DublinCore] no campo [format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/). Esta especificação sugere a lista de tipos de mídia IANA : <https://www.iana.org/assignments/media-types>.
 """,
         json_schema_extra={
-            "linkml_meta": {
-                "domain_of": ["Resource", "MediaObject"],
-                "slot_uri": "dcterms:format",
-            }
+            "linkml_meta": {"domain_of": ["MediaObject"], "slot_uri": "dcterms:format"}
         },
     )
     scale: Optional[float] = Field(
