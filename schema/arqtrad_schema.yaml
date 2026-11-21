@@ -6254,7 +6254,6 @@ slots:
     slot_uri: dcterms:format
     owner: MediaObject
     domain_of:
-    - Resource
     - MediaObject
     range: string
     required: true
@@ -6683,7 +6682,7 @@ slots:
     - Thing
     range: OrcidId
     multivalued: true
-    inlined_as_list: true
+    inlined_as_list: false
   record_date:
     name: record_date
     definition_uri: https://tradicional.arq.br/schema/record_date
@@ -9593,7 +9592,6 @@ classes:
     - thing__repositories
     - work_rights
     - relation_type
-    - format
     - scale
     - unit
     - preview_image
@@ -11193,6 +11191,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-20T22:29:10'
+source_file_date: '2026-11-21T12:39:25'
 source_file_size: 71344
 

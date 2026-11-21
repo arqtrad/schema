@@ -349,8 +349,6 @@
 
       Resource : description
 
-      Resource : format
-
       Resource : id
 
       Resource : identifiers
@@ -494,12 +492,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../format/">format</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Campo disciplinado pela especificação [DublinCore] no campo [format](https://...</td>
-<td>direct</td>
-</tr>
 <tr>
 <td><a href="../scale/">scale</a></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
@@ -754,7 +746,6 @@ These propositions may be expressed in text, graphics, images, audiograms, video
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:ArchiveComponent</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedObject</span>
 <span class="nt">slots</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">format</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scale</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">preview_image</span>
@@ -835,22 +826,6 @@ These propositions may be expressed in text, graphics, images, audiograms, video
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 <span class="w">    </span><span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9</span>
-<span class="w">  </span><span class="nt">format</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">format</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Campo</span><span class="nv"> </span><span class="s">disciplinado</span><span class="nv"> </span><span class="s">pela</span><span class="nv"> </span><span class="s">especificação</span><span class="nv"> </span><span class="s">[DublinCore]</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">campo</span><span class="nv"> </span><span class="s">[format](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/).</span>
-<span class="w">      </span><span class="s">Esta</span><span class="nv"> </span><span class="s">especificação</span><span class="nv"> </span><span class="s">sugere</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">lista</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">tipos</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">mídia</span><span class="nv"> </span><span class="s">IANA</span><span class="err"> </span><span class="s">:</span><span class="nv"> </span><span class="s">&lt;https://www.iana.org/assignments/media-types&gt;.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:format</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MediaObject</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">scale</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scale</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Número</span><span class="nv"> </span><span class="s">inverso</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">escala</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">imagem</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">desenho,</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">tiver</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">resolução</span>
@@ -1057,8 +1032,7 @@ These propositions may be expressed in text, graphics, images, audiograms, video
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrcidId</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">record_date</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_date</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Data</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">inclusão</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">ficha.</span><span class="nv"> </span><span class="s">Usar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">formato</span><span class="nv"> </span><span class="s">ISO-8601</span><span class="nv"> </span><span class="s">entre</span><span class="nv"> </span><span class="s">aspas</span><span class="nv"> </span><span class="s">`"AAAA-MM-DD"`.</span>
