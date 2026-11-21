@@ -1298,9 +1298,6 @@ enums:
           devido a remoção, traslado, destruição ou reclassificação. Usar
           apenas nos casos em que o conjunto maior não for cadastrado no
           documentário, por motivos técnicos ou decisão científica.
-      was_antedated:
-        title: foi precedido no mesmo sítio por
-        meaning: term:lido01189
       is_part_of:
         title: faz parte de
         meaning: term:lido00574
@@ -1516,36 +1513,338 @@ enums:
     description: |
       Relações associativas entre objetos físicos ou criações intelectuais,
       definidas segundo o vocabulário do LIDO.
-      Compreende as relações associativas, exceto aquelas de partes com o todo.
+      Compreende as relações associativas, exceto aquelas de partes com o todo
+      (grupo `lido01074`, tratado em `LargerContextType`).
 
       Ver <http://terminology.lido-schema.org/relatedWorkRelType>
     permissible_values:  # http://terminology.lido-schema.org/lido00583
+      # Relações gerais, de representação e de documentação
+      relatedTo:
+        title: relacionado a
+        meaning: term:lido00263
+        description: >
+          Relação geral e simétrica, usada quando não se conhece ou não cabe
+          uma relação mais específica. Sempre que possível, preferir um dos
+          tipos mais específicos.
+      planOf:
+        title: é planta de
+        meaning: term:lido00592
+        description: >
+          A obra descrita na ficha é uma concepção formal da disposição dos
+          espaços e elementos do objeto relacionado. Pode ser preparatória ou
+          um registro feito após a construção. Para a planta de um pavimento,
+          usar `floorPlanOf`.
+      floorPlanOf:
+        title: é planta baixa de
+        meaning: term:lido00694
+        broad_mappings:
+          - term:lido00592
+        description: >
+          A obra descrita na ficha, um desenho ou outra projeção ortográfica
+          bidimensional, representa um corte horizontal da edificação
+          relacionada, tomado próximo ao nível do solo ou acima de um
+          pavimento.
+      elevationOf:
+        title: é elevação de
+        meaning: term:lido00692
+        description: >
+          A obra descrita na ficha, um desenho ou outra projeção ortográfica,
+          mostra a disposição dos elementos verticais de um objeto espacial
+          (por exemplo, uma edificação), exterior ou interior, em vista direta
+          e frontal.
+      sectionOf:
+        title: é corte de
+        meaning: term:lido00696
+        description: >
+          A obra descrita na ficha, um desenho ortográfico ou objeto em outra
+          mídia, mostra uma edificação, objeto ou sítio como se estivesse
+          seccionado e exposto num plano específico.
+      architecturalSurveyOf:
+        title: é levantamento arquitetônico de
+        meaning: term:lido00702
+        broad_mappings:
+          - term:lido00603
+        description: >
+          A obra descrita na ficha é um levantamento que avalia o estado de
+          conservação de uma edificação histórica e fundamenta a priorização de
+          ações de preservação e reparo.
+      renderingOf:
+        title: é visualização de
+        meaning: term:lido00261
+        description: >
+          A obra descrita na ficha é uma visualização (perspectiva,
+          renderização) ou um registro fiel da concepção do objeto relacionado,
+          em geral em contexto arquitetônico.
+      depicts:
+        title: representa
+        meaning: term:lido00645
+        description: >
+          A obra descrita na ficha é uma obra de arte que representa outra
+          obra, em geral num contexto histórico relevante. Reservar para as
+          representações mais importantes; para a simples presença da
+          edificação como assunto de outra obra, usar o grupo `subject`.
+      documents:
+        title: documenta
+        meaning: term:lido00618
+        description: >
+          A obra descrita na ficha, em geral um texto, documenta, discute ou
+          descreve o objeto relacionado em sentido acadêmico ou científico. A
+          relação é feita com a entidade conceitual do documento, não com um
+          exemplar físico específico.
+      reconstructionOf:
+        title: é reconstituição hipotética de
+        meaning: term:lido00698
+        broad_mappings:
+          - term:lido00603
+        description: >
+          A obra descrita na ficha é um desenho, modelo digital ou objeto em
+          outra mídia que propõe como outro objeto pode ter sido em um momento
+          anterior, ou que o reconstitui a partir de evidências. Não confundir
+          com o evento `reconstruction` (reconstrução física da edificação).
+      illustrationOf:
+        title: é ilustração de
+        meaning: term:lido00619
+        broad_mappings:
+          - term:lido00579
+        description: >
+          A obra descrita na ficha, em geral uma imagem ou diagrama que
+          esclarece, exemplifica ou visualiza, acompanha o objeto relacionado,
+          em geral um texto.
+      hasRendering:
+        title: tem visualização
+        meaning: term:lido00681
+        description: >
+          O objeto relacionado é uma visualização (perspectiva, renderização)
+          ou um registro fiel da concepção da obra descrita na ficha, em geral
+          em contexto arquitetônico.
       depictedIn:
         title: representado em
         meaning: term:lido00998
         description: >
-          A obra descrita na ficha está representada na mídia relacionada,
-          que será geralmente uma obra de arte ou fotografia depositada num
+          A obra descrita na ficha está representada na mídia relacionada, que
+          será geralmente uma obra de arte ou fotografia depositada num
           repositório externo (catálogo de museu, Wikimedia Commons, etc.).
       documentedIn:
         title: documentado em
         meaning: term:lido00617
         description: >
           A obra descrita na ficha está documentada, discutida ou descrita na
-          mídia relacionada, que em geral será um texto.
-      complements:
-        title: complementa
-        meaning: term:lido00580
+          mídia relacionada, que em geral será um texto. A relação é feita com
+          a entidade conceitual do documento, não com um exemplar físico
+          específico que o contenha.
+      hasSpeciesDescriptionIn:
+        title: tem descrição de espécie em
+        meaning: term:lido00674
+        broad_mappings:
+          - term:lido00617
         description: >
-          Relação entre obras criadas independentemente uma da outra, mas que
-          mais tarde passaram a ser consideradas ou usadas conjuntamente.
-      complemented:
-        title: complementava
-        meaning: term:lido01095
+          Aplica-se a objetos naturais, em geral uma espécie recém-descoberta,
+          que recebem descrição formal detalhada em artigo científico ou outra
+          publicação reconhecida. Raramente relevante para edificações.
+      isSpeciesDescriptionOf:
+        title: é descrição de espécie de
+        meaning: term:lido00673
+        broad_mappings:
+          - term:lido00618
         description: >
-          Relação entre obras criadas independentemente uma da outra, mas que
-          mais tarde passaram a ser consideradas ou usadas conjuntamente, sendo
-          essa associação posteriormente desfeita.
+          A obra descrita na ficha, em geral um artigo científico, apresenta a
+          descrição formal detalhada de uma espécie recém-descoberta. Raramente
+          relevante para edificações.
+      # Relações entre etapas de produção
+      preparatoryFor:
+        title: preparatório para
+        meaning: term:lido00586
+        description: >
+          A obra descrita na ficha foi criada para preparar outro objeto; por
+          exemplo, um desenho de projeto ou de execução é preparatório para a
+          obra construída. Preferir os tipos mais específicos abaixo.
+      modelFor:
+        title: é modelo para
+        meaning: term:lido00258
+        broad_mappings:
+          - term:lido00586
+        description: >
+          A obra descrita na ficha é uma representação em escala, em geral
+          tridimensional (maquete), preparatória para outro objeto mais
+          acabado.
+      preparatoryStudyFor:
+        title: é estudo preparatório para
+        meaning: term:lido00260
+        broad_mappings:
+          - term:lido00586
+        description: >
+          A obra descrita na ficha é um estudo preliminar de aspectos
+          específicos de outro objeto mais acabado. Não é apropriado para
+          arquitetura: para objetos das fases preparatórias de projetos
+          arquitetônicos, usar `sketchFor`, `designFor` ou
+          `constructionDrawingFor`; para o estudo detalhado de aspectos de uma
+          edificação existente, usar `studyAfter`.
+      sketchFor:
+        title: é esboço para
+        meaning: term:lido00588
+        broad_mappings:
+          - term:lido00586
+        description: >
+          A obra descrita na ficha é um esboço (croqui) que visualiza de modo
+          inicial e aproximado o projeto de outro objeto. Os esboços são menos
+          acabados que os projetos e os estudos.
+      cartoonFor:
+        title: é cartão para
+        meaning: term:lido00590
+        broad_mappings:
+          - term:lido00586
+        description: >
+          A obra descrita na ficha é um desenho preparatório, em geral em
+          tamanho real, destinado a transferir um projeto para a superfície de
+          trabalho do outro objeto (por exemplo, um mural ou uma tapeçaria).
+      designFor:
+        title: é projeto para
+        meaning: term:lido00594
+        broad_mappings:
+          - term:lido00586
+        description: >
+          A obra descrita na ficha desenvolve o esquema de um projeto
+          (artístico ou arquitetônico) e é preliminar a outro objeto mais
+          acabado. Em geral é um desenho, mas não necessariamente. Os projetos
+          são mais acabados que os esboços.
+      bozzettoFor:
+        title: é bozzetto para
+        meaning: term:lido00704
+        broad_mappings:
+          - term:lido00594
+        description: >
+          A obra descrita na ficha é um bozzetto: modelo preliminar, em geral
+          escultórico, de outro objeto mais acabado.
+      printingSurfaceFor:
+        title: é matriz de impressão para
+        meaning: term:lido00596
+        broad_mappings:
+          - term:lido00586
+        description: >
+          A obra descrita na ficha é uma superfície plana (placa, bloco, chapa)
+          usada para imprimir textos ou imagens que constituem o objeto
+          relacionado.
+      negativeFor:
+        title: é negativo para
+        meaning: term:lido00598
+        broad_mappings:
+          - term:lido00586
+        description: >
+          A obra descrita na ficha é um negativo fotográfico utilizado para
+          produzir uma ou mais cópias fotográficas.
+      constructionDrawingFor:
+        title: é desenho executivo para
+        meaning: term:lido00690
+        broad_mappings:
+          - term:lido00586
+        description: >
+          A obra descrita na ficha é um desenho que comunica as informações
+          necessárias à construção do objeto relacionado (edificação ou
+          similar), em especial a mecânica da sua execução, e é usado pelos
+          responsáveis pela obra.
+      moldFor:
+        title: é molde para
+        meaning: term:lido01133
+        broad_mappings:
+          - term:lido00586
+        description: >
+          A obra descrita na ficha é um molde usado para produzir o objeto
+          relacionado, por fundição ou conformação.
+      basedOn:
+        title: baseado em
+        meaning: term:lido00587
+        description: >
+          A criação ou produção da obra descrita na ficha baseou-se em outro
+          objeto preparatório. Preferir os tipos mais específicos abaixo.
+      hasModel:
+        title: tem modelo
+        meaning: term:lido00257
+        broad_mappings:
+          - term:lido00587
+        description: >
+          A obra descrita na ficha foi preparada por um modelo em escala, em
+          geral tridimensional (maquete), que é o objeto relacionado.
+      hasPreparatoryStudy:
+        title: tem estudo preparatório
+        meaning: term:lido00259
+        broad_mappings:
+          - term:lido00587
+        description: >
+          A obra descrita na ficha é a versão mais acabada de outro objeto
+          preliminar, que explora aspectos específicos dela. Não é apropriado
+          para arquitetura: para as fases preparatórias de projetos
+          arquitetônicos, usar `hasSketch`, `hasDesign` ou
+          `hasConstructionDrawing`; para o estudo detalhado de uma edificação
+          existente, usar `hasStudy`.
+      hasSketch:
+        title: tem esboço
+        meaning: term:lido00589
+        broad_mappings:
+          - term:lido00587
+        description: >
+          A obra descrita na ficha é a versão mais acabada de outro objeto
+          preliminar, que visualizou de modo inicial e aproximado o seu projeto
+          (croqui).
+      hasCartoon:
+        title: tem cartão
+        meaning: term:lido00591
+        broad_mappings:
+          - term:lido00587
+        description: >
+          A obra descrita na ficha, em geral uma obra bidimensional de grande
+          escala como um mural ou uma tapeçaria, é a versão mais acabada de um
+          desenho preparatório em tamanho real (cartão).
+      hasDesign:
+        title: tem projeto
+        meaning: term:lido00595
+        broad_mappings:
+          - term:lido00587
+        description: >
+          A obra descrita na ficha é a versão mais acabada de outro objeto
+          preliminar que desenvolveu o esquema do seu projeto. Em geral o
+          projeto é um desenho, mas não necessariamente.
+      hasBozzetto:
+        title: tem bozzetto
+        meaning: term:lido00705
+        broad_mappings:
+          - term:lido00595
+        description: >
+          A obra descrita na ficha, em geral escultórica, é a versão mais
+          acabada de um modelo preliminar (bozzetto).
+      printedFromPrintingSurface:
+        title: foi impresso a partir da matriz
+        meaning: term:lido00597
+        broad_mappings:
+          - term:lido00587
+        description: >
+          A obra descrita na ficha é uma impressão produzida a partir de uma
+          matriz específica (placa, bloco, chapa), que é o objeto relacionado.
+      printedFromNegative:
+        title: foi copiado do negativo
+        meaning: term:lido00599
+        broad_mappings:
+          - term:lido00587
+        description: >
+          A obra descrita na ficha é uma cópia fotográfica produzida a partir
+          de um negativo específico, que é o objeto relacionado.
+      hasConstructionDrawing:
+        title: tem desenho executivo
+        meaning: term:lido00691
+        broad_mappings:
+          - term:lido00587
+        description: >
+          A obra descrita na ficha, em geral uma edificação, possui um desenho
+          executivo que comunica as informações necessárias à sua construção. O
+          desenho é o objeto relacionado.
+      castOrFormedFromMold:
+        title: foi moldado a partir do molde
+        meaning: term:lido01132
+        broad_mappings:
+          - term:lido00587
+        description: >
+          A obra descrita na ficha foi fundida ou conformada a partir de um
+          molde específico, que é o objeto relacionado.
+      # Relações de derivação
       derivedFrom:
         title: derivado de
         meaning: term:lido00603
@@ -1557,6 +1856,426 @@ enums:
           possível. A relação `derivedFrom` deve ser reservada para casos em
           que a relação seja de variações e influências. Essas relações devem
           ser fundamentadas em interpretação bibliográfica.
+      copyAfter:
+        title: é cópia de
+        meaning: term:lido00262
+        broad_mappings:
+          - term:lido00603
+        description: >
+          A obra descrita na ficha copia outro objeto, assemelhando-se
+          fortemente a ele ou reproduzindo a sua aparência ou o seu conteúdo.
+          Implica imitação menos precisa e fiel que `reproductionOf`.
+      tracingOf:
+        title: é decalque de
+        meaning: term:lido00862
+        broad_mappings:
+          - term:lido00262
+        description: >
+          A obra descrita na ficha foi copiada de outro objeto por decalque, em
+          geral pelo mesmo artista, artífice ou ateliê que produziu o original.
+      forgeryOf:
+        title: é falsificação de
+        meaning: term:lido00601
+        broad_mappings:
+          - term:lido00603
+        description: >
+          A obra descrita na ficha imita outro objeto com intenção de enganar.
+      replicaOf:
+        title: é réplica de
+        meaning: term:lido00605
+        broad_mappings:
+          - term:lido00603
+        description: >
+          A obra descrita na ficha é uma reprodução precisa de outro objeto
+          valorizado, em geral nas mesmas dimensões do original. Usar também
+          quando mais de uma réplica semelhante é produzida de um mesmo
+          original.
+      reproductionOf:
+        title: é reprodução de
+        meaning: term:lido00607
+        broad_mappings:
+          - term:lido00603
+        description: >
+          A obra descrita na ficha é uma cópia de outro objeto feita de modo
+          mais ou menos mecânico e sem intenção de enganar. Implica imitação
+          mais precisa e fiel que `copyAfter`.
+      facsimileOf:
+        title: é fac-símile de
+        meaning: term:lido00623
+        broad_mappings:
+          - term:lido00607
+        description: >
+          A obra descrita na ficha é uma cópia exata de um objeto físico, em
+          geral nas mesmas dimensões do original, especialmente de livros,
+          documentos, gravuras e desenhos.
+      counterproofFrom:
+        title: é contraprova de
+        meaning: term:lido00609
+        broad_mappings:
+          - term:lido00603
+        description: >
+          A obra descrita na ficha é uma impressão tirada de uma obra original,
+          em geral uma gravura ou um desenho, mas às vezes um texto.
+      versionOf:
+        title: é versão de
+        meaning: term:lido00700
+        broad_mappings:
+          - term:lido00603
+        description: >
+          A obra descrita na ficha foi feita pelo mesmo artista, artífice ou
+          ateliê que criou outro objeto no qual aquela se baseia de perto, mas
+          resultando numa obra com características próprias.
+      studyAfter:
+        title: é estudo a partir de
+        meaning: term:lido00706
+        broad_mappings:
+          - term:lido00603
+        description: >
+          A obra descrita na ficha explora em detalhe certos aspectos
+          específicos de outro objeto (por exemplo, uma edificação existente).
+      pasticheCopyAfter:
+        title: é cópia em pastiche de
+        meaning: term:lido00611
+        description: >
+          A obra descrita na ficha copia parcialmente outro objeto, mas contém
+          características ou partes copiadas de uma segunda obra ou
+          acrescentadas como originais.
+      sourceFor:
+        title: é fonte para
+        meaning: term:lido00604
+        description: >
+          A obra descrita na ficha influenciou fortemente ou é a fonte da
+          criação ou produção do objeto relacionado. Preferir os tipos mais
+          específicos abaixo sempre que o objeto relacionado puder ser
+          designado como cópia, réplica, reprodução, falsificação, versão, etc.
+      hasCopy:
+        title: tem cópia
+        meaning: term:lido00600
+        broad_mappings:
+          - term:lido00604
+        description: >
+          A obra descrita na ficha foi copiada pelo objeto relacionado, que se
+          assemelha fortemente a ela ou reproduz a sua aparência ou o seu
+          conteúdo.
+      hasTracing:
+        title: tem decalque
+        meaning: term:lido00863
+        broad_mappings:
+          - term:lido00600
+        description: >
+          A obra descrita na ficha foi copiada pelo objeto relacionado por
+          decalque, em geral pelo mesmo artista, artífice ou ateliê que a
+          produziu.
+      hasForgery:
+        title: tem falsificação
+        meaning: term:lido00602
+        broad_mappings:
+          - term:lido00604
+        description: >
+          A obra descrita na ficha foi imitada pelo objeto relacionado, feito
+          com intenção de enganar.
+      hasReplica:
+        title: tem réplica
+        meaning: term:lido00606
+        broad_mappings:
+          - term:lido00604
+        description: >
+          A obra descrita na ficha é um objeto valorizado que foi reproduzido
+          com precisão pelo objeto relacionado, em geral nas mesmas dimensões.
+      hasReproduction:
+        title: tem reprodução
+        meaning: term:lido00608
+        broad_mappings:
+          - term:lido00604
+        description: >
+          A obra descrita na ficha foi copiada pelo objeto relacionado de modo
+          mais ou menos mecânico e sem intenção de enganar.
+      hasFacsimile:
+        title: tem fac-símile
+        meaning: term:lido00624
+        broad_mappings:
+          - term:lido00608
+        description: >
+          A obra descrita na ficha, objeto físico, foi reproduzida por uma
+          cópia exata, em geral nas mesmas dimensões do original, especialmente
+          no caso de livros, documentos, gravuras e desenhos.
+      hasCounterproof:
+        title: tem contraprova
+        meaning: term:lido00610
+        broad_mappings:
+          - term:lido00604
+        description: >
+          A obra descrita na ficha é o original do qual se tirou uma impressão
+          (contraprova), em geral uma gravura ou um desenho, mas às vezes um
+          texto.
+      hasReconstruction:
+        title: tem reconstituição hipotética
+        meaning: term:lido00699
+        broad_mappings:
+          - term:lido00604
+        description: >
+          A aparência anterior da obra descrita na ficha é proposta por um
+          desenho, modelo digital ou objeto em outra mídia, que é o objeto
+          relacionado. Não confundir com o evento `reconstruction`
+          (reconstrução física da edificação).
+      hasVersion:
+        title: tem versão
+        meaning: term:lido00729
+        broad_mappings:
+          - term:lido00604
+        description: >
+          O objeto relacionado foi feito pelo mesmo artista, artífice ou ateliê
+          que criou a obra descrita na ficha, baseando-se nela de perto, mas
+          resultando numa obra com características próprias.
+      hasArchitecturalSurvey:
+        title: tem levantamento arquitetônico
+        meaning: term:lido00703
+        broad_mappings:
+          - term:lido00604
+        description: >
+          A obra descrita na ficha é uma edificação histórica cujo estado de
+          conservação é avaliado por um levantamento arquitetônico (o objeto
+          relacionado), que fundamenta a priorização de ações de preservação e
+          reparo.
+      hasStudy:
+        title: tem estudo
+        meaning: term:lido00707
+        broad_mappings:
+          - term:lido00604
+        description: >
+          Certos aspectos específicos da obra descrita na ficha são explorados
+          em detalhe pelo objeto relacionado.
+      hasPasticheCopy:
+        title: tem cópia em pastiche
+        meaning: term:lido00612
+        description: >
+          A obra descrita na ficha foi parcialmente copiada pelo objeto
+          relacionado, que contém características ou partes copiadas de uma
+          segunda obra ou acrescentadas como originais.
+      # Plantas e projeções ortográficas
+      hasPlan:
+        title: tem planta
+        meaning: term:lido00593
+        description: >
+          A obra descrita na ficha possui uma planta (objeto relacionado), que
+          é uma concepção formal da disposição dos seus espaços e elementos.
+          Pode ser preparatória ou um registro feito após a construção.
+      hasFloorPlan:
+        title: tem planta baixa
+        meaning: term:lido00695
+        broad_mappings:
+          - term:lido00593
+        description: >
+          A obra descrita na ficha, em geral uma edificação, é representada por
+          um desenho ou outra projeção ortográfica bidimensional que mostra um
+          corte horizontal tomado próximo ao nível do solo ou acima de um
+          pavimento.
+      hasElevation:
+        title: tem elevação
+        meaning: term:lido00693
+        description: >
+          A obra descrita na ficha, um objeto espacial como uma edificação, é
+          representada por um desenho ou outra projeção ortográfica que mostra
+          a disposição dos seus elementos verticais, exterior ou interior.
+      hasSection:
+        title: tem corte
+        meaning: term:lido00697
+        description: >
+          A obra descrita na ficha, uma edificação, sítio ou objeto semelhante,
+          é mostrada por um desenho ortográfico ou objeto em outra mídia como
+          se estivesse seccionada e exposta num plano específico.
+      # Faces, duplicatas e reproduções
+      versoOf:
+        title: é verso de
+        meaning: term:lido00613
+        description: >
+          A obra descrita na ficha ocupa o lado reverso ou secundário de uma
+          folha cujo lado principal (recto) contém outro(s) objeto(s).
+      rectoOf:
+        title: é recto de
+        meaning: term:lido00614
+        description: >
+          A obra descrita na ficha ocupa o lado principal ou frontal de uma
+          folha cujo lado reverso (verso) contém outro(s) objeto(s).
+      obverseOf:
+        title: é anverso de
+        meaning: term:lido00928
+        description: >
+          A obra descrita na ficha ocupa a face frontal, superior ou principal
+          de moedas, medalhas, selos ou outros objetos de duas faces.
+      reverseOf:
+        title: é reverso de
+        meaning: term:lido00929
+        description: >
+          A obra descrita na ficha ocupa a face posterior, inferior ou
+          secundária de moedas, medalhas, selos ou cédulas.
+      duplicateOf:
+        title: é duplicata de
+        meaning: term:lido00622
+        description: >
+          Relação simétrica entre exemplares adicionais de um mesmo objeto, no
+          mesmo formato e na mesma mídia, no contexto de uma coleção específica
+          (cópias fotográficas, livros, fundições, etc.).
+      distinguishedFrom:
+        title: é distinto de
+        meaning: term:lido00621
+        description: >
+          Relação simétrica entre dois objetos que costumam ser confundidos
+          entre si, em geral em contexto histórico ou em trabalhos acadêmicos
+          antigos, para evitar a confusão.
+      containsReproductionOf:
+        title: contém reprodução de
+        meaning: term:lido00625
+        description: >
+          A obra descrita na ficha, em geral um livro, revista ou jornal,
+          contém uma reprodução impressa ou fotográfica do objeto relacionado.
+      reproducedIn:
+        title: é reproduzido em
+        meaning: term:lido00626
+        description: >
+          A obra descrita na ficha é reproduzida, por impressão ou fotografia,
+          no objeto relacionado, em geral um livro, revista ou jornal. A
+          reprodução numa edição impressa pode ser prova essencial da
+          existência ou do estado anterior da obra.
+      fromSameModel:
+        title: é do mesmo modelo que
+        meaning: term:lido01036
+        description: >
+          Relação simétrica entre obras fundidas ou criadas a partir do mesmo
+          modelo, como as casas de um projeto seriado. Usar quando a relação
+          hierárquica de parte e todo não for possível.
+      castFromSameMold:
+        title: foi moldado a partir do mesmo molde que
+        meaning: term:lido01078
+        description: >
+          Relação simétrica entre obras fundidas ou criadas a partir do mesmo
+          molde. Usar quando a relação hierárquica de parte e todo não for
+          possível.
+      # Peças companheiras e complementos
+      isOrWasCompanionPieceOf:
+        title: é ou foi peça companheira de
+        meaning: term:lido01090
+        description: >
+          Relação simétrica entre a obra descrita e outro objeto concebido para
+          ser exibido ou usado com ela, em qualquer momento, atual ou passado.
+          Os objetos não correspondem necessariamente entre si, nem são apenas
+          dois.
+      companionPieceOf:
+        title: é peça companheira de
+        meaning: term:lido00579
+        broad_mappings:
+          - term:lido01090
+        description: >
+          Relação simétrica entre a obra descrita e outro objeto concebido para
+          ser exibido ou usado com ela. Os objetos não correspondem
+          necessariamente entre si, nem são apenas dois. Usar apenas se os
+          objetos não forem partes de um todo maior que possa ser designado por
+          um termo apropriado.
+      hasIllustration:
+        title: tem ilustração
+        meaning: term:lido00620
+        broad_mappings:
+          - term:lido00579
+        description: >
+          A obra descrita na ficha, em geral um texto, é acompanhada pelo
+          objeto relacionado, uma imagem ou diagrama que a esclarece,
+          exemplifica ou visualiza.
+      pendantOf:
+        title: é pendant de
+        meaning: term:lido00628
+        broad_mappings:
+          - term:lido00579
+        description: >
+          Relação simétrica entre pares de objetos concebidos, ou escolhidos
+          propositalmente, para serem exibidos juntos, em geral lado a lado.
+      wasFormerlyCompanionPieceOf:
+        title: foi peça companheira de
+        meaning: term:lido01091
+        broad_mappings:
+          - term:lido01090
+        description: >
+          Relação simétrica e já extinta entre a obra descrita e outro objeto
+          concebido para ser exibido ou usado com ela. Os objetos não
+          correspondem necessariamente entre si, nem são apenas dois.
+      isOrWasComplementedBy:
+        title: é ou foi complementado por
+        meaning: term:lido01092
+        description: >
+          A obra descrita na ficha foi criada independentemente do objeto
+          relacionado, mas posteriormente foi associada a ele, para serem
+          usados em conjunto ou para agregar valor a ambos. Cobre qualquer
+          momento, atual ou passado.
+      complementedBy:
+        title: é complementado por
+        meaning: term:lido00581
+        broad_mappings:
+          - term:lido01092
+        description: >
+          A obra descrita na ficha foi criada independentemente do objeto
+          relacionado, mas posteriormente foi associada a ele, para serem
+          usados em conjunto ou para agregar valor a ambos.
+      wasFormerlyComplementedBy:
+        title: foi complementado por
+        meaning: term:lido01093
+        broad_mappings:
+          - term:lido01092
+        description: >
+          A obra descrita na ficha foi criada independentemente do objeto
+          relacionado e posteriormente foi associada a ele, mas essa associação
+          foi desfeita.
+      complementsOrFormerlyComplemented:
+        title: complementa ou complementava
+        meaning: term:lido01094
+        description: >
+          O objeto relacionado foi criado independentemente da obra descrita na
+          ficha, mas posteriormente foi associado a ela, para serem usados em
+          conjunto ou para agregar valor a ambos. Cobre qualquer momento, atual
+          ou passado.
+      complements:
+        title: complementa
+        meaning: term:lido00580
+        broad_mappings:
+          - term:lido01094
+        description: >
+          Relação entre obras criadas independentemente uma da outra, mas que
+          mais tarde passaram a ser consideradas ou usadas conjuntamente.
+      formerlyComplemented:
+        title: complementava
+        meaning: term:lido01095
+        broad_mappings:
+          - term:lido01094
+        description: >
+          Relação entre obras criadas independentemente uma da outra, mas que
+          mais tarde passaram a ser consideradas ou usadas conjuntamente, sendo
+          essa associação posteriormente desfeita.
+      # Sucessão, citação e localização
+      predecessorOf:
+        title: é predecessor de
+        meaning: term:lido01098
+        description: >
+          A obra descrita na ficha foi substituída pelo objeto relacionado no
+          uso, não necessariamente na posição. Uso reservado sobretudo à
+          arquitetura.
+      hasReplaced:
+        title: substituiu
+        meaning: term:lido01099
+        description: >
+          A obra descrita na ficha substituiu o objeto relacionado no uso, não
+          necessariamente na posição. Uso reservado sobretudo à arquitetura.
+      visualQuotationOf:
+        title: é citação visual de
+        meaning: term:lido01102
+        description: >
+          A obra descrita na ficha é ou contém uma citação visual de outra
+          obra, isto é, a adoção de um único elemento formal de outra obra como
+          referência consciente a ela.
+      hasVisualQuotation:
+        title: tem citação visual
+        meaning: term:lido01103
+        description: >
+          A obra descrita na ficha é citada visualmente no objeto relacionado,
+          isto é, um único elemento formal dela é adotado como referência
+          consciente a ela.
       positionedNear:
         title: próximo a
         meaning: term:lido01136
@@ -1564,6 +2283,29 @@ enums:
           Relação simétrica entre dois objetos situados em proximidade
           espacial, quando esta proximidade for significativa por razões
           compositivas, históricas ou funcionais.
+
+          Se o objeto foi concebido para, ou colocado dentro de, ou está em
+          contexto funcional diretamente relacionado com uma edificação ou
+          outro objeto monumental, usar `has_arch_context` (grupo
+          `larger_context`).
+      builtOnSiteOf:
+        title: foi construído no sítio de
+        meaning: term:lido01188
+        description: >
+          A obra descrita na ficha foi construída no sítio onde esteve outra
+          obra. Usar apenas quando as duas obras têm funções diferentes; se a
+          nova obra foi feita para substituir a antiga, com função igual ou
+          semelhante (por exemplo, uma nova catedral no sítio de uma catedral
+          anterior), usar `hasReplaced`.
+      wasAntedatedOnSameSiteAs:
+        title: foi precedido no mesmo sítio por
+        meaning: term:lido01189
+        description: >
+          A obra descrita na ficha foi precedida, no mesmo sítio, por outra
+          obra. Usar apenas quando as duas obras têm funções diferentes; se a
+          obra anterior foi substituída por outra de função igual ou semelhante
+          (por exemplo, uma catedral demolida e substituída por outra), usar
+          `predecessorOf`.
 
   ResourceType:
     description: >-

@@ -3755,7 +3755,6 @@ class LargerContextType(str, Enum):
     Relação simétrica entre dois objetos que pertenceram ao mesmo contexto conceitual, material ou espacial, mas já não pertencem devido a remoção, traslado, destruição ou reclassificação. Usar apenas nos casos em que o conjunto maior não for cadastrado no documentário, por motivos técnicos ou decisão científica.
 
     """
-    foi_precedido_no_mesmo_sítio_por = "was_antedated"
     faz_parte_de = "is_part_of"
     """
     Relação genérica entre parte e todo. Sempre que possível, usar os tipos de relação mais específicos.
@@ -3844,12 +3843,73 @@ class RelatedWorkRelType(str, Enum):
     """
         Relações associativas entre objetos físicos ou criações intelectuais,
     definidas segundo o vocabulário do LIDO.
-    Compreende as relações associativas, exceto aquelas de partes com o todo.
+    Compreende as relações associativas, exceto aquelas de partes com o todo
+    (grupo `lido01074`, tratado em `LargerContextType`).
 
     Ver <http://terminology.lido-schema.org/relatedWorkRelType>
 
     """
 
+    relacionado_a = "relatedTo"
+    """
+    Relação geral e simétrica, usada quando não se conhece ou não cabe uma relação mais específica. Sempre que possível, preferir um dos tipos mais específicos.
+
+    """
+    é_planta_de = "planOf"
+    """
+    A obra descrita na ficha é uma concepção formal da disposição dos espaços e elementos do objeto relacionado. Pode ser preparatória ou um registro feito após a construção. Para a planta de um pavimento, usar `floorPlanOf`.
+
+    """
+    é_planta_baixa_de = "floorPlanOf"
+    """
+    A obra descrita na ficha, um desenho ou outra projeção ortográfica bidimensional, representa um corte horizontal da edificação relacionada, tomado próximo ao nível do solo ou acima de um pavimento.
+
+    """
+    é_elevação_de = "elevationOf"
+    """
+    A obra descrita na ficha, um desenho ou outra projeção ortográfica, mostra a disposição dos elementos verticais de um objeto espacial (por exemplo, uma edificação), exterior ou interior, em vista direta e frontal.
+
+    """
+    é_corte_de = "sectionOf"
+    """
+    A obra descrita na ficha, um desenho ortográfico ou objeto em outra mídia, mostra uma edificação, objeto ou sítio como se estivesse seccionado e exposto num plano específico.
+
+    """
+    é_levantamento_arquitetônico_de = "architecturalSurveyOf"
+    """
+    A obra descrita na ficha é um levantamento que avalia o estado de conservação de uma edificação histórica e fundamenta a priorização de ações de preservação e reparo.
+
+    """
+    é_visualização_de = "renderingOf"
+    """
+    A obra descrita na ficha é uma visualização (perspectiva, renderização) ou um registro fiel da concepção do objeto relacionado, em geral em contexto arquitetônico.
+
+    """
+    representa = "depicts"
+    """
+    A obra descrita na ficha é uma obra de arte que representa outra obra, em geral num contexto histórico relevante. Reservar para as representações mais importantes; para a simples presença da edificação como assunto de outra obra, usar o grupo `subject`.
+
+    """
+    documenta = "documents"
+    """
+    A obra descrita na ficha, em geral um texto, documenta, discute ou descreve o objeto relacionado em sentido acadêmico ou científico. A relação é feita com a entidade conceitual do documento, não com um exemplar físico específico.
+
+    """
+    é_reconstituição_hipotética_de = "reconstructionOf"
+    """
+    A obra descrita na ficha é um desenho, modelo digital ou objeto em outra mídia que propõe como outro objeto pode ter sido em um momento anterior, ou que o reconstitui a partir de evidências. Não confundir com o evento `reconstruction` (reconstrução física da edificação).
+
+    """
+    é_ilustração_de = "illustrationOf"
+    """
+    A obra descrita na ficha, em geral uma imagem ou diagrama que esclarece, exemplifica ou visualiza, acompanha o objeto relacionado, em geral um texto.
+
+    """
+    tem_visualização = "hasRendering"
+    """
+    O objeto relacionado é uma visualização (perspectiva, renderização) ou um registro fiel da concepção da obra descrita na ficha, em geral em contexto arquitetônico.
+
+    """
     representado_em = "depictedIn"
     """
     A obra descrita na ficha está representada na mídia relacionada, que será geralmente uma obra de arte ou fotografia depositada num repositório externo (catálogo de museu, Wikimedia Commons, etc.).
@@ -3857,17 +3917,127 @@ class RelatedWorkRelType(str, Enum):
     """
     documentado_em = "documentedIn"
     """
-    A obra descrita na ficha está documentada, discutida ou descrita na mídia relacionada, que em geral será um texto.
+    A obra descrita na ficha está documentada, discutida ou descrita na mídia relacionada, que em geral será um texto. A relação é feita com a entidade conceitual do documento, não com um exemplar físico específico que o contenha.
 
     """
-    complementa = "complements"
+    tem_descrição_de_espécie_em = "hasSpeciesDescriptionIn"
     """
-    Relação entre obras criadas independentemente uma da outra, mas que mais tarde passaram a ser consideradas ou usadas conjuntamente.
+    Aplica-se a objetos naturais, em geral uma espécie recém-descoberta, que recebem descrição formal detalhada em artigo científico ou outra publicação reconhecida. Raramente relevante para edificações.
 
     """
-    complementava = "complemented"
+    é_descrição_de_espécie_de = "isSpeciesDescriptionOf"
     """
-    Relação entre obras criadas independentemente uma da outra, mas que mais tarde passaram a ser consideradas ou usadas conjuntamente, sendo essa associação posteriormente desfeita.
+    A obra descrita na ficha, em geral um artigo científico, apresenta a descrição formal detalhada de uma espécie recém-descoberta. Raramente relevante para edificações.
+
+    """
+    preparatório_para = "preparatoryFor"
+    """
+    A obra descrita na ficha foi criada para preparar outro objeto; por exemplo, um desenho de projeto ou de execução é preparatório para a obra construída. Preferir os tipos mais específicos abaixo.
+
+    """
+    é_modelo_para = "modelFor"
+    """
+    A obra descrita na ficha é uma representação em escala, em geral tridimensional (maquete), preparatória para outro objeto mais acabado.
+
+    """
+    é_estudo_preparatório_para = "preparatoryStudyFor"
+    """
+    A obra descrita na ficha é um estudo preliminar de aspectos específicos de outro objeto mais acabado. Não é apropriado para arquitetura: para objetos das fases preparatórias de projetos arquitetônicos, usar `sketchFor`, `designFor` ou `constructionDrawingFor`; para o estudo detalhado de aspectos de uma edificação existente, usar `studyAfter`.
+
+    """
+    é_esboço_para = "sketchFor"
+    """
+    A obra descrita na ficha é um esboço (croqui) que visualiza de modo inicial e aproximado o projeto de outro objeto. Os esboços são menos acabados que os projetos e os estudos.
+
+    """
+    é_cartão_para = "cartoonFor"
+    """
+    A obra descrita na ficha é um desenho preparatório, em geral em tamanho real, destinado a transferir um projeto para a superfície de trabalho do outro objeto (por exemplo, um mural ou uma tapeçaria).
+
+    """
+    é_projeto_para = "designFor"
+    """
+    A obra descrita na ficha desenvolve o esquema de um projeto (artístico ou arquitetônico) e é preliminar a outro objeto mais acabado. Em geral é um desenho, mas não necessariamente. Os projetos são mais acabados que os esboços.
+
+    """
+    é_bozzetto_para = "bozzettoFor"
+    """
+    A obra descrita na ficha é um bozzetto: modelo preliminar, em geral escultórico, de outro objeto mais acabado.
+
+    """
+    é_matriz_de_impressão_para = "printingSurfaceFor"
+    """
+    A obra descrita na ficha é uma superfície plana (placa, bloco, chapa) usada para imprimir textos ou imagens que constituem o objeto relacionado.
+
+    """
+    é_negativo_para = "negativeFor"
+    """
+    A obra descrita na ficha é um negativo fotográfico utilizado para produzir uma ou mais cópias fotográficas.
+
+    """
+    é_desenho_executivo_para = "constructionDrawingFor"
+    """
+    A obra descrita na ficha é um desenho que comunica as informações necessárias à construção do objeto relacionado (edificação ou similar), em especial a mecânica da sua execução, e é usado pelos responsáveis pela obra.
+
+    """
+    é_molde_para = "moldFor"
+    """
+    A obra descrita na ficha é um molde usado para produzir o objeto relacionado, por fundição ou conformação.
+
+    """
+    baseado_em = "basedOn"
+    """
+    A criação ou produção da obra descrita na ficha baseou-se em outro objeto preparatório. Preferir os tipos mais específicos abaixo.
+
+    """
+    tem_modelo = "hasModel"
+    """
+    A obra descrita na ficha foi preparada por um modelo em escala, em geral tridimensional (maquete), que é o objeto relacionado.
+
+    """
+    tem_estudo_preparatório = "hasPreparatoryStudy"
+    """
+    A obra descrita na ficha é a versão mais acabada de outro objeto preliminar, que explora aspectos específicos dela. Não é apropriado para arquitetura: para as fases preparatórias de projetos arquitetônicos, usar `hasSketch`, `hasDesign` ou `hasConstructionDrawing`; para o estudo detalhado de uma edificação existente, usar `hasStudy`.
+
+    """
+    tem_esboço = "hasSketch"
+    """
+    A obra descrita na ficha é a versão mais acabada de outro objeto preliminar, que visualizou de modo inicial e aproximado o seu projeto (croqui).
+
+    """
+    tem_cartão = "hasCartoon"
+    """
+    A obra descrita na ficha, em geral uma obra bidimensional de grande escala como um mural ou uma tapeçaria, é a versão mais acabada de um desenho preparatório em tamanho real (cartão).
+
+    """
+    tem_projeto = "hasDesign"
+    """
+    A obra descrita na ficha é a versão mais acabada de outro objeto preliminar que desenvolveu o esquema do seu projeto. Em geral o projeto é um desenho, mas não necessariamente.
+
+    """
+    tem_bozzetto = "hasBozzetto"
+    """
+    A obra descrita na ficha, em geral escultórica, é a versão mais acabada de um modelo preliminar (bozzetto).
+
+    """
+    foi_impresso_a_partir_da_matriz = "printedFromPrintingSurface"
+    """
+    A obra descrita na ficha é uma impressão produzida a partir de uma matriz específica (placa, bloco, chapa), que é o objeto relacionado.
+
+    """
+    foi_copiado_do_negativo = "printedFromNegative"
+    """
+    A obra descrita na ficha é uma cópia fotográfica produzida a partir de um negativo específico, que é o objeto relacionado.
+
+    """
+    tem_desenho_executivo = "hasConstructionDrawing"
+    """
+    A obra descrita na ficha, em geral uma edificação, possui um desenho executivo que comunica as informações necessárias à sua construção. O desenho é o objeto relacionado.
+
+    """
+    foi_moldado_a_partir_do_molde = "castOrFormedFromMold"
+    """
+    A obra descrita na ficha foi fundida ou conformada a partir de um molde específico, que é o objeto relacionado.
 
     """
     derivado_de = "derivedFrom"
@@ -3876,9 +4046,280 @@ class RelatedWorkRelType(str, Enum):
     Preferir outras expressões de relação mais específicas sempre que possível. A relação `derivedFrom` deve ser reservada para casos em que a relação seja de variações e influências. Essas relações devem ser fundamentadas em interpretação bibliográfica.
 
     """
+    é_cópia_de = "copyAfter"
+    """
+    A obra descrita na ficha copia outro objeto, assemelhando-se fortemente a ele ou reproduzindo a sua aparência ou o seu conteúdo. Implica imitação menos precisa e fiel que `reproductionOf`.
+
+    """
+    é_decalque_de = "tracingOf"
+    """
+    A obra descrita na ficha foi copiada de outro objeto por decalque, em geral pelo mesmo artista, artífice ou ateliê que produziu o original.
+
+    """
+    é_falsificação_de = "forgeryOf"
+    """
+    A obra descrita na ficha imita outro objeto com intenção de enganar.
+
+    """
+    é_réplica_de = "replicaOf"
+    """
+    A obra descrita na ficha é uma reprodução precisa de outro objeto valorizado, em geral nas mesmas dimensões do original. Usar também quando mais de uma réplica semelhante é produzida de um mesmo original.
+
+    """
+    é_reprodução_de = "reproductionOf"
+    """
+    A obra descrita na ficha é uma cópia de outro objeto feita de modo mais ou menos mecânico e sem intenção de enganar. Implica imitação mais precisa e fiel que `copyAfter`.
+
+    """
+    é_fac_símile_de = "facsimileOf"
+    """
+    A obra descrita na ficha é uma cópia exata de um objeto físico, em geral nas mesmas dimensões do original, especialmente de livros, documentos, gravuras e desenhos.
+
+    """
+    é_contraprova_de = "counterproofFrom"
+    """
+    A obra descrita na ficha é uma impressão tirada de uma obra original, em geral uma gravura ou um desenho, mas às vezes um texto.
+
+    """
+    é_versão_de = "versionOf"
+    """
+    A obra descrita na ficha foi feita pelo mesmo artista, artífice ou ateliê que criou outro objeto no qual aquela se baseia de perto, mas resultando numa obra com características próprias.
+
+    """
+    é_estudo_a_partir_de = "studyAfter"
+    """
+    A obra descrita na ficha explora em detalhe certos aspectos específicos de outro objeto (por exemplo, uma edificação existente).
+
+    """
+    é_cópia_em_pastiche_de = "pasticheCopyAfter"
+    """
+    A obra descrita na ficha copia parcialmente outro objeto, mas contém características ou partes copiadas de uma segunda obra ou acrescentadas como originais.
+
+    """
+    é_fonte_para = "sourceFor"
+    """
+    A obra descrita na ficha influenciou fortemente ou é a fonte da criação ou produção do objeto relacionado. Preferir os tipos mais específicos abaixo sempre que o objeto relacionado puder ser designado como cópia, réplica, reprodução, falsificação, versão, etc.
+
+    """
+    tem_cópia = "hasCopy"
+    """
+    A obra descrita na ficha foi copiada pelo objeto relacionado, que se assemelha fortemente a ela ou reproduz a sua aparência ou o seu conteúdo.
+
+    """
+    tem_decalque = "hasTracing"
+    """
+    A obra descrita na ficha foi copiada pelo objeto relacionado por decalque, em geral pelo mesmo artista, artífice ou ateliê que a produziu.
+
+    """
+    tem_falsificação = "hasForgery"
+    """
+    A obra descrita na ficha foi imitada pelo objeto relacionado, feito com intenção de enganar.
+
+    """
+    tem_réplica = "hasReplica"
+    """
+    A obra descrita na ficha é um objeto valorizado que foi reproduzido com precisão pelo objeto relacionado, em geral nas mesmas dimensões.
+
+    """
+    tem_reprodução = "hasReproduction"
+    """
+    A obra descrita na ficha foi copiada pelo objeto relacionado de modo mais ou menos mecânico e sem intenção de enganar.
+
+    """
+    tem_fac_símile = "hasFacsimile"
+    """
+    A obra descrita na ficha, objeto físico, foi reproduzida por uma cópia exata, em geral nas mesmas dimensões do original, especialmente no caso de livros, documentos, gravuras e desenhos.
+
+    """
+    tem_contraprova = "hasCounterproof"
+    """
+    A obra descrita na ficha é o original do qual se tirou uma impressão (contraprova), em geral uma gravura ou um desenho, mas às vezes um texto.
+
+    """
+    tem_reconstituição_hipotética = "hasReconstruction"
+    """
+    A aparência anterior da obra descrita na ficha é proposta por um desenho, modelo digital ou objeto em outra mídia, que é o objeto relacionado. Não confundir com o evento `reconstruction` (reconstrução física da edificação).
+
+    """
+    tem_versão = "hasVersion"
+    """
+    O objeto relacionado foi feito pelo mesmo artista, artífice ou ateliê que criou a obra descrita na ficha, baseando-se nela de perto, mas resultando numa obra com características próprias.
+
+    """
+    tem_levantamento_arquitetônico = "hasArchitecturalSurvey"
+    """
+    A obra descrita na ficha é uma edificação histórica cujo estado de conservação é avaliado por um levantamento arquitetônico (o objeto relacionado), que fundamenta a priorização de ações de preservação e reparo.
+
+    """
+    tem_estudo = "hasStudy"
+    """
+    Certos aspectos específicos da obra descrita na ficha são explorados em detalhe pelo objeto relacionado.
+
+    """
+    tem_cópia_em_pastiche = "hasPasticheCopy"
+    """
+    A obra descrita na ficha foi parcialmente copiada pelo objeto relacionado, que contém características ou partes copiadas de uma segunda obra ou acrescentadas como originais.
+
+    """
+    tem_planta = "hasPlan"
+    """
+    A obra descrita na ficha possui uma planta (objeto relacionado), que é uma concepção formal da disposição dos seus espaços e elementos. Pode ser preparatória ou um registro feito após a construção.
+
+    """
+    tem_planta_baixa = "hasFloorPlan"
+    """
+    A obra descrita na ficha, em geral uma edificação, é representada por um desenho ou outra projeção ortográfica bidimensional que mostra um corte horizontal tomado próximo ao nível do solo ou acima de um pavimento.
+
+    """
+    tem_elevação = "hasElevation"
+    """
+    A obra descrita na ficha, um objeto espacial como uma edificação, é representada por um desenho ou outra projeção ortográfica que mostra a disposição dos seus elementos verticais, exterior ou interior.
+
+    """
+    tem_corte = "hasSection"
+    """
+    A obra descrita na ficha, uma edificação, sítio ou objeto semelhante, é mostrada por um desenho ortográfico ou objeto em outra mídia como se estivesse seccionada e exposta num plano específico.
+
+    """
+    é_verso_de = "versoOf"
+    """
+    A obra descrita na ficha ocupa o lado reverso ou secundário de uma folha cujo lado principal (recto) contém outro(s) objeto(s).
+
+    """
+    é_recto_de = "rectoOf"
+    """
+    A obra descrita na ficha ocupa o lado principal ou frontal de uma folha cujo lado reverso (verso) contém outro(s) objeto(s).
+
+    """
+    é_anverso_de = "obverseOf"
+    """
+    A obra descrita na ficha ocupa a face frontal, superior ou principal de moedas, medalhas, selos ou outros objetos de duas faces.
+
+    """
+    é_reverso_de = "reverseOf"
+    """
+    A obra descrita na ficha ocupa a face posterior, inferior ou secundária de moedas, medalhas, selos ou cédulas.
+
+    """
+    é_duplicata_de = "duplicateOf"
+    """
+    Relação simétrica entre exemplares adicionais de um mesmo objeto, no mesmo formato e na mesma mídia, no contexto de uma coleção específica (cópias fotográficas, livros, fundições, etc.).
+
+    """
+    é_distinto_de = "distinguishedFrom"
+    """
+    Relação simétrica entre dois objetos que costumam ser confundidos entre si, em geral em contexto histórico ou em trabalhos acadêmicos antigos, para evitar a confusão.
+
+    """
+    contém_reprodução_de = "containsReproductionOf"
+    """
+    A obra descrita na ficha, em geral um livro, revista ou jornal, contém uma reprodução impressa ou fotográfica do objeto relacionado.
+
+    """
+    é_reproduzido_em = "reproducedIn"
+    """
+    A obra descrita na ficha é reproduzida, por impressão ou fotografia, no objeto relacionado, em geral um livro, revista ou jornal. A reprodução numa edição impressa pode ser prova essencial da existência ou do estado anterior da obra.
+
+    """
+    é_do_mesmo_modelo_que = "fromSameModel"
+    """
+    Relação simétrica entre obras fundidas ou criadas a partir do mesmo modelo, como as casas de um projeto seriado. Usar quando a relação hierárquica de parte e todo não for possível.
+
+    """
+    foi_moldado_a_partir_do_mesmo_molde_que = "castFromSameMold"
+    """
+    Relação simétrica entre obras fundidas ou criadas a partir do mesmo molde. Usar quando a relação hierárquica de parte e todo não for possível.
+
+    """
+    é_ou_foi_peça_companheira_de = "isOrWasCompanionPieceOf"
+    """
+    Relação simétrica entre a obra descrita e outro objeto concebido para ser exibido ou usado com ela, em qualquer momento, atual ou passado. Os objetos não correspondem necessariamente entre si, nem são apenas dois.
+
+    """
+    é_peça_companheira_de = "companionPieceOf"
+    """
+    Relação simétrica entre a obra descrita e outro objeto concebido para ser exibido ou usado com ela. Os objetos não correspondem necessariamente entre si, nem são apenas dois. Usar apenas se os objetos não forem partes de um todo maior que possa ser designado por um termo apropriado.
+
+    """
+    tem_ilustração = "hasIllustration"
+    """
+    A obra descrita na ficha, em geral um texto, é acompanhada pelo objeto relacionado, uma imagem ou diagrama que a esclarece, exemplifica ou visualiza.
+
+    """
+    é_pendant_de = "pendantOf"
+    """
+    Relação simétrica entre pares de objetos concebidos, ou escolhidos propositalmente, para serem exibidos juntos, em geral lado a lado.
+
+    """
+    foi_peça_companheira_de = "wasFormerlyCompanionPieceOf"
+    """
+    Relação simétrica e já extinta entre a obra descrita e outro objeto concebido para ser exibido ou usado com ela. Os objetos não correspondem necessariamente entre si, nem são apenas dois.
+
+    """
+    é_ou_foi_complementado_por = "isOrWasComplementedBy"
+    """
+    A obra descrita na ficha foi criada independentemente do objeto relacionado, mas posteriormente foi associada a ele, para serem usados em conjunto ou para agregar valor a ambos. Cobre qualquer momento, atual ou passado.
+
+    """
+    é_complementado_por = "complementedBy"
+    """
+    A obra descrita na ficha foi criada independentemente do objeto relacionado, mas posteriormente foi associada a ele, para serem usados em conjunto ou para agregar valor a ambos.
+
+    """
+    foi_complementado_por = "wasFormerlyComplementedBy"
+    """
+    A obra descrita na ficha foi criada independentemente do objeto relacionado e posteriormente foi associada a ele, mas essa associação foi desfeita.
+
+    """
+    complementa_ou_complementava = "complementsOrFormerlyComplemented"
+    """
+    O objeto relacionado foi criado independentemente da obra descrita na ficha, mas posteriormente foi associado a ela, para serem usados em conjunto ou para agregar valor a ambos. Cobre qualquer momento, atual ou passado.
+
+    """
+    complementa = "complements"
+    """
+    Relação entre obras criadas independentemente uma da outra, mas que mais tarde passaram a ser consideradas ou usadas conjuntamente.
+
+    """
+    complementava = "formerlyComplemented"
+    """
+    Relação entre obras criadas independentemente uma da outra, mas que mais tarde passaram a ser consideradas ou usadas conjuntamente, sendo essa associação posteriormente desfeita.
+
+    """
+    é_predecessor_de = "predecessorOf"
+    """
+    A obra descrita na ficha foi substituída pelo objeto relacionado no uso, não necessariamente na posição. Uso reservado sobretudo à arquitetura.
+
+    """
+    substituiu = "hasReplaced"
+    """
+    A obra descrita na ficha substituiu o objeto relacionado no uso, não necessariamente na posição. Uso reservado sobretudo à arquitetura.
+
+    """
+    é_citação_visual_de = "visualQuotationOf"
+    """
+    A obra descrita na ficha é ou contém uma citação visual de outra obra, isto é, a adoção de um único elemento formal de outra obra como referência consciente a ela.
+
+    """
+    tem_citação_visual = "hasVisualQuotation"
+    """
+    A obra descrita na ficha é citada visualmente no objeto relacionado, isto é, um único elemento formal dela é adotado como referência consciente a ela.
+
+    """
     próximo_a = "positionedNear"
     """
     Relação simétrica entre dois objetos situados em proximidade espacial, quando esta proximidade for significativa por razões compositivas, históricas ou funcionais.
+    Se o objeto foi concebido para, ou colocado dentro de, ou está em contexto funcional diretamente relacionado com uma edificação ou outro objeto monumental, usar `has_arch_context` (grupo `larger_context`).
+
+    """
+    foi_construído_no_sítio_de = "builtOnSiteOf"
+    """
+    A obra descrita na ficha foi construída no sítio onde esteve outra obra. Usar apenas quando as duas obras têm funções diferentes; se a nova obra foi feita para substituir a antiga, com função igual ou semelhante (por exemplo, uma nova catedral no sítio de uma catedral anterior), usar `hasReplaced`.
+
+    """
+    foi_precedido_no_mesmo_sítio_por = "wasAntedatedOnSameSiteAs"
+    """
+    A obra descrita na ficha foi precedida, no mesmo sítio, por outra obra. Usar apenas quando as duas obras têm funções diferentes; se a obra anterior foi substituída por outra de função igual ou semelhante (por exemplo, uma catedral demolida e substituída por outra), usar `predecessorOf`.
 
     """
 
@@ -6705,24 +7146,12 @@ class MediaObject(Thing):
             "close_mappings": ["dctypes:Image"],
             "from_schema": "https://tradicional.arq.br/schema/resource",
             "slot_usage": {
-                "content": {
-                    "description": "Opcional, para descrever com mais "
-                    "detalhe a representação.\n",
-                    "name": "content",
-                },
                 "description": {
                     "description": "Texto alternativo para "
                     "leitores de tela ou outras "
                     "formas de acessibilidade. "
                     "Apenas texto sem formatação.\n",
                     "name": "description",
-                    "required": True,
-                },
-                "title": {
-                    "description": "Título breve para identificar este "
-                    "recurso visual na listagem.\n",
-                    "name": "title",
-                    "required": True,
                 },
                 "work_rights": {"name": "work_rights", "recommended": True},
             },
@@ -6785,9 +7214,9 @@ Obs.: não usamos a opção `placeholder`, ela será preenchida automaticamente 
             "linkml_meta": {"domain_of": ["MediaObject", "Event", "Work"]}
         },
     )
-    title: str = Field(
-        default=...,
-        description="""Título breve para identificar este recurso visual na listagem.
+    title: Optional[str] = Field(
+        default=None,
+        description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
 """,
         json_schema_extra={
             "linkml_meta": {
@@ -6838,8 +7267,8 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
             "linkml_meta": {"domain_of": ["Thing"], "slot_uri": "dcterms:created"}
         },
     )
-    description: str = Field(
-        default=...,
+    description: Optional[str] = Field(
+        default=None,
         description="""Texto alternativo para leitores de tela ou outras formas de acessibilidade. Apenas texto sem formatação.
 """,
         json_schema_extra={
@@ -6940,8 +7369,7 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
     )
     content: Optional[str] = Field(
         default=None,
-        description="""Opcional, para descrever com mais detalhe a representação.
-""",
+        description="""Conteúdo textual descritivo ou explicativo.""",
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": ["Thing", "Inscription"],

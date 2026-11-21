@@ -2,95 +2,29 @@
 # Schema: arqtrad_schema
 #
 # id: https://tradicional.arq.br/schema
-# description: ## Orientações gerais
+# description: O elemento central dos Documentários da Arquitetura Tradicional é a ficha
+#   **[Work](Work/)**, que descreve uma edificação usando elementos dos padrões
+#   [LIDO] e [DublinCore].
 #
-#   Todas as fichas dos projetos dos Documentários da arquitetura tradicional são
-#   arquivos de texto sem formatação, que podem ser criados e editados em
-#   programas como o Notepad++, Sublime Text, ou Zettlr, entre muitos outros.
-#   Elas podem, também, ser criadas e editadas diretamente online no repositório
-#   do GitHub.
+#   A especificação deste esquema permite validar bancos de dados de edificações
+#   constituídos em diversos sistemas, incluindo bases de dados relacionais
+#   (como aquelas que alimentam diversos sistemas de produção de sites, incluindo
+#   o WordPress, Tainacan, Arches, etc.) e fichas em formato de texto.
+#   Atualmente, contudo, os Documentários da Arquitetura Tradicional usam
+#   unicamente fichas em formato de texto sem formatação, combinando
+#   metadados estruturados segundo a especificação YAML
+#   ([explicação introdutória aqui][1] e [tutorial técnico aqui][2]) e conteúdo
+#   descritivo podendo usar as convenções de formatação do Markdown
+#   (inclusive especificidades do [Pandoc]).
 #
-#   > ⚠️ As fichas **não** devem ser criadas nem editadas em processadores
-#   > de texto formatado, tais como Microsoft Word, Google Docs, ou LibreOffice.
+#   Além de um editor de texto, recomendamos também que use um programa de
+#   geoprocessamento como o [QGIS] para incluir os dados georreferenciados nas
+#   fichas.
 #
-#   A ficha se divide em dois blocos :
-#   um bloco de metadados delimitado por linhas contendo apenas três hífens `---` e
-#   um bloco de conteúdo com texto livre.
-#
-#   Os metadados são formatados segundo a especificação [YAML].
-#   O conteúdo é formatado segundo a especificação [Markdown],
-#   e pode incluir formatação específica do [Pandoc].
-#
-#   Quanto às informações que devem ser inseridas na ficha,
-#   (quase) todos os campos são definidos pela especificação [LIDO] e,
-#   na medida do possível, têm uma equivalência com o [DublinCore].
-#
-#   Na medida do possível, buscamos também adequar o conteúdo das fichas às
-#   normas de preenchimento das fichas de Cadastro (M301, M302) do
-#   Sistema Integrado de Conhecimento e Gestão ([SICG]) do
-#   Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN).
-#
-#   [YAML]: https://www.yaml.info/learn/index.html
-#
-#   [Markdown]: https://programminghistorian.org/pt/licoes/introducao-ao-markdown
-#
-#   [Pandoc]: https://programminghistorian.org/pt/licoes/autoria-sustentavel-texto-simples-pandoc-markdown
-#
-#   [LIDO]: https://icom-documentation.mini.icom.museum/working-groups/lido/lido-overview/
-#
-#   [DublinCore]: https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
-#
-#   [SICG]: https://sicg.iphan.gov.br/sicg/manual/manual.html
-#
-#
-#   ## Antes de começar
-#
-#   Para contribuir com os Documentários da Arquitetura Tradicional, você ou
-#   o seu grupo de pesquisa precisa ter sua própria versão dos repositórios.
-#
-#   Comece aprendendo um pouco sobre como trabalhar com controle de versão no Git e
-#   no GitHub, estudando [estes tutoriais em
-#   português](https://programminghistorian.org/pt/licoes/git-ferramenta-metodologica-projetos-historia-1)
-#   no site [Programming Historian].
-#   Em Windows ou MacOS, o jeito mais fácil de trabalhar com repositórios de dados
-#   no GitHub é instalando o [GitHub Desktop].
-#   No Linux, há outras opções, como o [SmartGit]
-#   (também disponível para Windows e MacOS).
-#
-#   Em seguida, precisa **bifurcar** (fork) o repositório no qual vai trabalhar,
-#   provavelmente à partida o repositório da
-#   [Casa tradicional](https://github.com/arqtrad/casa/),
-#   usando o botão `Fork 🔽` como ilustrado abaixo :
-#
-#   <img alt="Captura de tela"
-#    src="https://github.com/user-attachments/assets/6c22dcec-b8e1-4688-a504-d9ea640bdc43"
-#   />
-#
-#   A partir daí, pode trabalhar livremente na sua própria cópia do repositório,
-#   usando as ferramentas `🔄 Sync fork` e  `⤴️ Contribute` para, respectivamente,
-#   obter periodicamente atualizações *vindas do* repositório principal e
-#   propor as suas contribuições *para o* repositório principal.
-#
-#   <img alt="Captura de tela"
-#    src="https://github.com/user-attachments/assets/25905e40-99ef-4b23-b33e-cfe586c41001"
-#   />
-#
-#   <img alt="Captura de tela"
-#    src="https://github.com/user-attachments/assets/b5f6ef50-c122-4f01-8ec9-b16207a9b63d"
-#   />
-#
-#   Poderá então abrir uma solicitação de integração das suas alterações
-#   ao repositório principal (**pull request**):
-#
-#   <img alt="Captura de tela"
-#    src="https://github.com/user-attachments/assets/56de1236-6fa0-47f3-9e94-06218dace0a8"
-#   />
-#
-#   Se não estiver à vontade para manipular diretamente os repositórios do GitHub,
-#   sempre pode contribuir informações, sugestões ou desejos no
-#   [Fórum de discussão] deste projeto de pesquisa.
-#   Se tiver contribuições pontuais sobre fichas específicas, formatos ou lacunas,
-#   pode também abrir uma [*issue* no repositório da Casa].
+#   Os metadados das fichas dependem do vocabulário controlado que está em
+#   contrução no nosso [Thesaurus da arquitetura tradicional][4] e de outros
+#   vocabulários controlados, tais como o Getty Art and Architecture Thesaurus
+#   ou a lista de unidades de medida do UCUM.
 #
 #
 #   ## Por onde começo ?
@@ -98,38 +32,31 @@
 #   > Leia a especificação da ficha **[Work](Work/)** para saber como preencher
 #   > as fichas de edificações dos Documentários da Arquitetura Tradicional.
 #
+#   Se não estiver à vontade para manipular diretamente os repositórios do GitHub,
+#   sempre pode contribuir informações, sugestões ou desejos no
+#   [Fórum de discussão] deste projeto de pesquisa.
+#   Se tiver contribuições pontuais sobre fichas específicas, formatos ou lacunas,
+#   pode também abrir uma [*issue* no repositório da Casa].
 #
-#   [Programming Historian]: https://programminghistorian.org/pt/
+#   [LIDO]: https://lido-schema.org/
 #
-#   [GitHub Desktop]: https://github.com/apps/desktop?locale=pt-br
+#   [DublinCore]: https://www.dublincore.org/resources/userguide/creating_metadata/
 #
-#   [SmartGit]: https://www.smartgit.dev/
+#   [1]: https://www.linkedin.com/pulse/xml-json-markdown-e-yaml-explicação-simples-vitor-martins-ufv5e
+#
+#   [2]: https://www.yaml.info/learn/index.html
+#
+#   [3]: https://dublincore.org
+#
+#   [Pandoc]: https://pandoc.org
+#
+#   [QGIS]: https://qgis.org
+#
+#   [4]: https://vocabulario.tradicional.arq.br
 #
 #   [Fórum de discussão]: https://github.com/orgs/arqtrad/discussions
 #
 #   [*issue* no repositório da Casa]: https://github.com/arqtrad/casa/issues
-#
-#   [Zotero]: https://www.zotero.org/groups/2495935/arquitetura_tradicional_luso-brasileira/
-#
-#   [Global Building Atlas]: https://github.com/zhu-xlab/GlobalBuildingAtlas
-#
-#   [QGIS]: https://qgis.org/
-#
-#   [ORCiD]: https://orcid.org/
-#
-#   [SIPA]: https://monumentos.gov.pt/
-#
-#   [HPIP]: https://hpip.org/
-#
-#   [iPatrimonio]: https://ipatrimonio.org/
-#
-#   [VRA Core]: https://www.loc.gov/standards/vracore/
-#
-#   [ULAN]: https://www.getty.edu/research/tools/vocabularies/ulan
-#
-#   [IIIF]: https://iiif.io/
-#
-#   [lista de tipos de mídia IANA]: https://www.iana.org/assignments/media-types
 #
 # license: MIT
 
@@ -146,7 +73,7 @@ from linkml_runtime.utils.yamlutils import YAMLRoot, extended_int
 from rdflib import URIRef
 
 from linkml_runtime.linkml_model.types import Double, String
-from linkml_runtime.utils.metamodelcore import URIorCURIE, XSDDate
+from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate
 
 metamodel_version = "1.12.0"
 version = None
@@ -373,12 +300,18 @@ class BroaderConceptReference(ConceptReference):
     class_model_uri: ClassVar[URIRef] = WASTH.BroaderConceptReference
 
     broader_match: Union[str, "SkosBroaderRelation"] = None
+    broader_preferred: Optional[Union[bool, Bool]] = False
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.broader_match):
             self.MissingRequiredField("broader_match")
         if not isinstance(self.broader_match, SkosBroaderRelation):
             self.broader_match = SkosBroaderRelation(self.broader_match)
+
+        if self.broader_preferred is not None and not isinstance(
+            self.broader_preferred, Bool
+        ):
+            self.broader_preferred = Bool(self.broader_preferred)
 
         super().__post_init__(**kwargs)
 
@@ -1154,16 +1087,22 @@ class RelatedObject(Thing):
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["RelatedObject"]
-    class_class_curie: ClassVar[str] = "wasth:RelatedObject"
+    class_class_uri: ClassVar[URIRef] = SCHEMA["CreativeWork"]
+    class_class_curie: ClassVar[str] = "schema:CreativeWork"
     class_name: ClassVar[str] = "RelatedObject"
     class_model_uri: ClassVar[URIRef] = WASTH.RelatedObject
 
+    relation_type: Union[str, "RelatedWorkRelType"] = None
     work_rights: Optional[Union[Union[dict, Right], list[Union[dict, Right]]]] = (
         empty_list()
     )
 
     def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.relation_type):
+            self.MissingRequiredField("relation_type")
+        if not isinstance(self.relation_type, RelatedWorkRelType):
+            self.relation_type = RelatedWorkRelType(self.relation_type)
+
         self._normalize_inlined_as_list(
             slot_name="work_rights",
             slot_type=Right,
@@ -1214,19 +1153,16 @@ class RelatedWork(RelatedObject):
     class_model_uri: ClassVar[URIRef] = WASTH.RelatedWork
 
     relation_type: Union[str, "RelatedWorkRelType"] = None
-    media: Optional[
-        Union[Union[dict, "MediaObject"], list[Union[dict, "MediaObject"]]]
-    ] = empty_list()
+    media: Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]] = (
+        empty_list()
+    )
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.relation_type):
-            self.MissingRequiredField("relation_type")
-        if not isinstance(self.relation_type, RelatedWorkRelType):
-            self.relation_type = RelatedWorkRelType(self.relation_type)
-
-        self._normalize_inlined_as_list(
-            slot_name="media", slot_type=MediaObject, key_name="format", keyed=False
-        )
+        if not isinstance(self.media, list):
+            self.media = [self.media] if self.media is not None else []
+        self.media = [
+            v if isinstance(v, ResourceId) else ResourceId(v) for v in self.media
+        ]
 
         super().__post_init__(**kwargs)
         self.category = str(
@@ -1250,10 +1186,11 @@ class LargerContextReference(RelatedObject):
     class_name: ClassVar[str] = "LargerContextReference"
     class_model_uri: ClassVar[URIRef] = WASTH.LargerContextReference
 
+    relation_type: Union[str, "RelatedWorkRelType"] = None
     context_type: Union[str, "LargerContextType"] = None
-    media: Optional[
-        Union[Union[dict, "MediaObject"], list[Union[dict, "MediaObject"]]]
-    ] = empty_list()
+    media: Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]] = (
+        empty_list()
+    )
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.context_type):
@@ -1261,9 +1198,11 @@ class LargerContextReference(RelatedObject):
         if not isinstance(self.context_type, LargerContextType):
             self.context_type = LargerContextType(self.context_type)
 
-        self._normalize_inlined_as_list(
-            slot_name="media", slot_type=MediaObject, key_name="format", keyed=False
-        )
+        if not isinstance(self.media, list):
+            self.media = [self.media] if self.media is not None else []
+        self.media = [
+            v if isinstance(v, ResourceId) else ResourceId(v) for v in self.media
+        ]
 
         super().__post_init__(**kwargs)
         self.category = str(
@@ -1274,7 +1213,7 @@ class LargerContextReference(RelatedObject):
 
 
 @dataclass(repr=False)
-class Resource(Thing):
+class Resource(RelatedObject):
     """
     Este grupo identifica um recurso visual ou documental que fornece informações técnicas ou uma representação
     ilustrativa da obra à qual ele se relaciona.
@@ -1291,14 +1230,13 @@ class Resource(Thing):
     class_model_uri: ClassVar[URIRef] = WASTH.Resource
 
     id: Union[str, ResourceId] = None
-    format: str = None
-    resource_type: Union[str, "ResourceType"] = None
+    relation_type: Union[str, "RelatedWorkRelType"] = None
     perspective: int = None
     scale: Optional[float] = None
     unit: Optional[Union[dict, TypedReference]] = None
     preview_image: Optional[Union[str, URIorCURIE]] = None
     provided_image: Optional[
-        Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]
+        Union[Union[dict, "MediaObject"], list[Union[dict, "MediaObject"]]]
     ] = empty_list()
     provided_3d: Optional[
         Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]
@@ -1307,9 +1245,6 @@ class Resource(Thing):
         Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]
     ] = empty_list()
     credit: Optional[str] = None
-    work_rights: Optional[Union[Union[dict, Right], list[Union[dict, Right]]]] = (
-        empty_list()
-    )
     category: Optional[Union[str, URIorCURIE]] = TERM["lido01193"]
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1317,16 +1252,6 @@ class Resource(Thing):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ResourceId):
             self.id = ResourceId(self.id)
-
-        if self._is_empty(self.format):
-            self.MissingRequiredField("format")
-        if not isinstance(self.format, str):
-            self.format = str(self.format)
-
-        if self._is_empty(self.resource_type):
-            self.MissingRequiredField("resource_type")
-        if not isinstance(self.resource_type, ResourceType):
-            self.resource_type = ResourceType(self.resource_type)
 
         if self._is_empty(self.perspective):
             self.MissingRequiredField("perspective")
@@ -1344,14 +1269,12 @@ class Resource(Thing):
         ):
             self.preview_image = URIorCURIE(self.preview_image)
 
-        if not isinstance(self.provided_image, list):
-            self.provided_image = (
-                [self.provided_image] if self.provided_image is not None else []
-            )
-        self.provided_image = [
-            v if isinstance(v, URIorCURIE) else URIorCURIE(v)
-            for v in self.provided_image
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="provided_image",
+            slot_type=MediaObject,
+            key_name="format",
+            keyed=False,
+        )
 
         if not isinstance(self.provided_3d, list):
             self.provided_3d = (
@@ -1373,13 +1296,6 @@ class Resource(Thing):
         if self.credit is not None and not isinstance(self.credit, str):
             self.credit = str(self.credit)
 
-        self._normalize_inlined_as_list(
-            slot_name="work_rights",
-            slot_type=Right,
-            key_name="rights_type",
-            keyed=False,
-        )
-
         self.category = str(
             self.class_class_curie
             if self.class_class_curie is not None
@@ -1395,7 +1311,7 @@ class Resource(Thing):
 
 
 @dataclass(repr=False)
-class MediaObject(RelatedObject):
+class MediaObject(Thing):
     """
     Descrição e referência a um único arquivo de mídia.
     O `id` deve ser uma URI apontando para a localização permanente da mídia, não diretamente para um arquivo de
@@ -1426,27 +1342,18 @@ class MediaObject(RelatedObject):
     class_model_uri: ClassVar[URIRef] = WASTH.MediaObject
 
     format: str = None
-    depiction_type: Union[str, "DepictionType"] = None
-    title: str = None
-    description: str = None
-    work_rights: Union[Union[dict, Right], list[Union[dict, Right]]] = None
     scale: Optional[float] = None
     unit: Optional[Union[dict, TypedReference]] = None
+    content_url: Optional[Union[str, URIorCURIE]] = None
+    embed_url: Optional[Union[str, URIorCURIE]] = None
     preview_image: Optional[Union[str, URIorCURIE]] = None
-    provided_image: Optional[
-        Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]
-    ] = empty_list()
-    provided_3d: Optional[
-        Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]
-    ] = empty_list()
-    resource_service: Optional[
-        Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]
-    ] = empty_list()
     measurements: Optional[
         Union[Union[dict, Measurement], list[Union[dict, Measurement]]]
     ] = empty_list()
-    credit: Optional[str] = None
-    content: Optional[str] = None
+    description: Optional[str] = None
+    work_rights: Optional[Union[Union[dict, Right], list[Union[dict, Right]]]] = (
+        empty_list()
+    )
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.format):
@@ -1454,66 +1361,24 @@ class MediaObject(RelatedObject):
         if not isinstance(self.format, str):
             self.format = str(self.format)
 
-        if self._is_empty(self.depiction_type):
-            self.MissingRequiredField("depiction_type")
-        if not isinstance(self.depiction_type, DepictionType):
-            self.depiction_type = DepictionType(self.depiction_type)
-
-        if self._is_empty(self.title):
-            self.MissingRequiredField("title")
-        if not isinstance(self.title, str):
-            self.title = str(self.title)
-
-        if self._is_empty(self.description):
-            self.MissingRequiredField("description")
-        if not isinstance(self.description, str):
-            self.description = str(self.description)
-
-        if self._is_empty(self.work_rights):
-            self.MissingRequiredField("work_rights")
-        self._normalize_inlined_as_list(
-            slot_name="work_rights",
-            slot_type=Right,
-            key_name="rights_type",
-            keyed=False,
-        )
-
         if self.scale is not None and not isinstance(self.scale, float):
             self.scale = float(self.scale)
 
         if self.unit is not None and not isinstance(self.unit, TypedReference):
             self.unit = TypedReference(**as_dict(self.unit))
 
+        if self.content_url is not None and not isinstance(
+            self.content_url, URIorCURIE
+        ):
+            self.content_url = URIorCURIE(self.content_url)
+
+        if self.embed_url is not None and not isinstance(self.embed_url, URIorCURIE):
+            self.embed_url = URIorCURIE(self.embed_url)
+
         if self.preview_image is not None and not isinstance(
             self.preview_image, URIorCURIE
         ):
             self.preview_image = URIorCURIE(self.preview_image)
-
-        if not isinstance(self.provided_image, list):
-            self.provided_image = (
-                [self.provided_image] if self.provided_image is not None else []
-            )
-        self.provided_image = [
-            v if isinstance(v, URIorCURIE) else URIorCURIE(v)
-            for v in self.provided_image
-        ]
-
-        if not isinstance(self.provided_3d, list):
-            self.provided_3d = (
-                [self.provided_3d] if self.provided_3d is not None else []
-            )
-        self.provided_3d = [
-            v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.provided_3d
-        ]
-
-        if not isinstance(self.resource_service, list):
-            self.resource_service = (
-                [self.resource_service] if self.resource_service is not None else []
-            )
-        self.resource_service = [
-            v if isinstance(v, URIorCURIE) else URIorCURIE(v)
-            for v in self.resource_service
-        ]
 
         self._normalize_inlined_as_list(
             slot_name="measurements",
@@ -1522,11 +1387,15 @@ class MediaObject(RelatedObject):
             keyed=False,
         )
 
-        if self.credit is not None and not isinstance(self.credit, str):
-            self.credit = str(self.credit)
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
 
-        if self.content is not None and not isinstance(self.content, str):
-            self.content = str(self.content)
+        self._normalize_inlined_as_list(
+            slot_name="work_rights",
+            slot_type=Right,
+            key_name="rights_type",
+            keyed=False,
+        )
 
         super().__post_init__(**kwargs)
         self.category = str(
@@ -1647,7 +1516,7 @@ class Event(Thing):
     technique: Optional[
         Union[Union[dict, MaterialTech], list[Union[dict, MaterialTech]]]
     ] = empty_list()
-    media: Optional[Union[Union[dict, MediaObject], list[Union[dict, MediaObject]]]] = (
+    media: Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]] = (
         empty_list()
     )
     related_events: Optional[
@@ -1713,9 +1582,11 @@ class Event(Thing):
             keyed=False,
         )
 
-        self._normalize_inlined_as_list(
-            slot_name="media", slot_type=MediaObject, key_name="format", keyed=False
-        )
+        if not isinstance(self.media, list):
+            self.media = [self.media] if self.media is not None else []
+        self.media = [
+            v if isinstance(v, ResourceId) else ResourceId(v) for v in self.media
+        ]
 
         if not isinstance(self.related_events, list):
             self.related_events = (
@@ -1925,7 +1796,7 @@ class Work(Thing):
             list[Union[dict, Resource]],
         ]
     ] = empty_dict()
-    media: Optional[Union[Union[dict, MediaObject], list[Union[dict, MediaObject]]]] = (
+    media: Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]] = (
         empty_list()
     )
     work_type_condition: Optional[
@@ -2079,9 +1950,11 @@ class Work(Thing):
             slot_name="resources", slot_type=Resource, key_name="id", keyed=True
         )
 
-        self._normalize_inlined_as_list(
-            slot_name="media", slot_type=MediaObject, key_name="format", keyed=False
-        )
+        if not isinstance(self.media, list):
+            self.media = [self.media] if self.media is not None else []
+        self.media = [
+            v if isinstance(v, ResourceId) else ResourceId(v) for v in self.media
+        ]
 
         if not isinstance(self.work_type_condition, list):
             self.work_type_condition = (
@@ -2193,7 +2066,7 @@ class Work(Thing):
         self._normalize_inlined_as_list(
             slot_name="part_of",
             slot_type=LargerContextReference,
-            key_name="context_type",
+            key_name="relation_type",
             keyed=False,
         )
 
@@ -2763,24 +2636,6 @@ Included are also dates that are inferred from known dates associated with the o
     )
 
 
-class DepictionType(EnumDefinitionImpl):
-    """
-    Designa a relação que a edificação descrita na ficha tem com a mídia relacionada.
-    """
-
-    depictedIn = PermissibleValue(
-        text="depictedIn",
-        title="representado em",
-        description="""A obra descrita na ficha está representada na mídia relacionada, que será geralmente uma obra de arte ou fotografia depositada num repositório externo (catálogo de museu, Wikimedia Commons, etc.).""",
-        meaning=TERM["lido00998"],
-    )
-
-    _defn = EnumDefinition(
-        name="DepictionType",
-        description="""Designa a relação que a edificação descrita na ficha tem com a mídia relacionada.""",
-    )
-
-
 class EventType(EnumDefinitionImpl):
     """
     O tipo de incidência sobre a edificação que o evento descreve. Usa a terminologia do LIDO em
@@ -2792,6 +2647,12 @@ class EventType(EnumDefinitionImpl):
         title="criação",
         description="""Designa um acontecimento que leva à conceção de itens ou produtos de natureza imaterial, como obras literárias ou imagens. Não usar para a produção de bens materiais. Quando a conceção desses bens, como uma edificação, passa por um processo de criação intelectual atestada, usar para tanto o termo `designing` (\"projeto\").""",
         meaning=TERM["lido0001"],
+    )
+    commissioning = PermissibleValue(
+        text="commissioning",
+        title="encomenda",
+        description="""Atividade associada à encomenda ou autorização, frequentemente formalizada por contrato, para a produção de uma coisa, performance, obra escrita ou outra atividade.""",
+        meaning=TERM["lido00226"],
     )
     designing = PermissibleValue(
         text="designing",
@@ -2846,7 +2707,7 @@ Exemplos de remoção são aquela do templo de Abu Simbel, no Egito, ou ainda aq
     )
     modification_activity = PermissibleValue(
         text="modification_activity",
-        title="alteração",
+        title="alteração (ação)",
         description="""Ação intencional que cria, altera ou modifica um objeto ou obra em um ou mais dos seus aspectos mas não em outros. Usar para ações que não possam ser definidas como tipos mais específicos de alteração.""",
         meaning=TERM["lido00006"],
     )
@@ -2907,7 +2768,7 @@ Sempre que possível, preferir designações mais específicas, tais como `addit
     )
     modification_process = PermissibleValue(
         text="modification_process",
-        title="alteração",
+        title="alteração (processo)",
         description="""Processo não deliberado de alteração nas características, aparência ou desempenho dos materiais que constituem um objeto. Por exemplo, corrosão, formação de cristais salinos, etc.""",
         meaning=TERM["lido01155"],
     )
@@ -2941,9 +2802,17 @@ Sempre que possível, preferir designações mais específicas, tais como `addit
         description="""Ação que acompanha ou sinaliza o encerramento da utilização de um objeto, geralmente associado à interdição física da edificação.""",
         meaning=TERM["lido01170"],
     )
-    attribute_assignment = PermissibleValue(text="attribute_assignment")
+    attribute_assignment = PermissibleValue(
+        text="attribute_assignment",
+        title="atribuição de atributo",
+        description="""Ação de formular afirmações sobre uma propriedade de um objeto ou sobre uma relação entre dois itens, por exemplo, ao registrar uma condição, atribuir um identificador ou medir o objeto.""",
+        meaning=TERM["lido00024"],
+    )
     assignment_to_curated_holding = PermissibleValue(
-        text="assignment_to_curated_holding"
+        text="assignment_to_curated_holding",
+        title="atribuição a acervo curado",
+        description="""Atividade de atribuir conceitualmente objetos a uma coleção com base em características comuns, referências regionais ou de grupo, ou na atribuição a um colecionador.""",
+        meaning=TERM["lido01146"],
     )
     condition_assessment = PermissibleValue(
         text="condition_assessment",
@@ -2951,43 +2820,222 @@ Sempre que possível, preferir designações mais específicas, tais como `addit
         description="""Ação que analisa as características físicas do objeto, seu estado de conservação e integridade formal.""",
         meaning=TERM["lido00931"],
     )
-    cultural_context_assignment = PermissibleValue(text="cultural_context_assignment")
-    designation = PermissibleValue(text="designation")
-    deciphering = PermissibleValue(text="deciphering")
-    meaning_assignment = PermissibleValue(text="meaning_assignment")
-    name_assignment = PermissibleValue(text="name_assignment")
-    type_assignment = PermissibleValue(text="type_assignment")
-    ceremony = PermissibleValue(text="ceremony")
-    cornerstone = PermissibleValue(text="cornerstone")
-    groundbreaking = PermissibleValue(text="groundbreaking")
-    consecration = PermissibleValue(text="consecration")
-    deconsecration = PermissibleValue(text="deconsecration")
-    change_control_or_title = PermissibleValue(text="change_control_or_title")
-    change_control_and_title = PermissibleValue(text="change_control_and_title")
-    change_legal_title = PermissibleValue(text="change_legal_title")
-    restitution = PermissibleValue(text="restitution")
-    change_physical_control = PermissibleValue(text="change_physical_control")
-    collecting = PermissibleValue(text="collecting")
-    loss = PermissibleValue(text="loss")
-    commissioning = PermissibleValue(text="commissioning")
-    excavation = PermissibleValue(text="excavation")
-    exhibition = PermissibleValue(text="exhibition")
-    finding = PermissibleValue(text="finding")
-    marketing = PermissibleValue(text="marketing")
-    move = PermissibleValue(text="move")
-    req_assess = PermissibleValue(text="req_assess")
-    display_assess = PermissibleValue(text="display_assess")
-    move_assess = PermissibleValue(text="move_assess")
-    performance = PermissibleValue(text="performance")
-    planning = PermissibleValue(text="planning")
-    protection = PermissibleValue(text="protection")
-    publishing = PermissibleValue(text="publishing")
-    use = PermissibleValue(text="use")
-    end_existence = PermissibleValue(text="end_existence")
-    destruction = PermissibleValue(text="destruction")
-    destruction_activity = PermissibleValue(text="destruction_activity")
-    destruction_process = PermissibleValue(text="destruction_process")
-    unknown = PermissibleValue(text="unknown")
+    cultural_context_assignment = PermissibleValue(
+        text="cultural_context_assignment",
+        title="atribuição de contexto cultural",
+        description="""Atividade de atribuir diretamente um objeto a um contexto cultural ou de reconstruir cientificamente o contexto cultural em que foi produzido ou utilizado. O contexto pode ser definido pelo próprio grupo ou por terceiros, com base em categorias como língua, região ou religião.""",
+        meaning=TERM["lido01145"],
+    )
+    designation = PermissibleValue(
+        text="designation",
+        title="proteção legal",
+        description="""Atividade pela qual um objeto recebe um status jurídico específico em razão de seu valor cultural, histórico, ambiental ou natural. No contexto de edificações, corresponde em geral ao tombamento, ao registro ou a outra forma de proteção patrimonial.""",
+        meaning=TERM["lido01181"],
+    )
+    deciphering = PermissibleValue(
+        text="deciphering",
+        title="decifração de inscrição",
+        description="""Atividade de transcrever e transliterar para o alfabeto latino caracteres presentes no próprio objeto e de traduzi-los para uma língua moderna com base em análise linguística.""",
+        meaning=TERM["lido01150"],
+    )
+    meaning_assignment = PermissibleValue(
+        text="meaning_assignment",
+        title="atribuição de significado no contexto de origem",
+        description="""Atividade de atribuir ou reconstruir cientificamente o significado que um objeto teve nas comunidades associadas à sua produção ou uso.""",
+        meaning=TERM["lido01147"],
+    )
+    name_assignment = PermissibleValue(
+        text="name_assignment",
+        title="atribuição de nome",
+        description="""Atividade que resulta na atribuição de um nome a um objeto. O nome é uma sequência de signos que identifica individualmente o objeto em um determinado contexto, por convenção, tradição ou acordo.""",
+        meaning=TERM["lido01149"],
+    )
+    type_assignment = PermissibleValue(
+        text="type_assignment",
+        title="atribuição de tipo",
+        description="""Atividade de classificar itens de qualquer natureza, podendo também ser aplicada a pessoas, ações e conceitos. No contexto de edificações, refere-se à tipificação ou classificação da obra com base em características convergentes.""",
+        meaning=TERM["lido00023"],
+    )
+    ceremony = PermissibleValue(
+        text="ceremony",
+        title="cerimônia",
+        description="""Ato formal, especialmente quando conduzido de modo solene e conforme a rituais ou protocolos religiosos, estatais, cortesãos ou sociais.""",
+        meaning=TERM["lido01182"],
+    )
+    cornerstone = PermissibleValue(
+        text="cornerstone",
+        title="cerimônia de colocação da pedra fundamental",
+        description="""Ato cerimonial de colocação da pedra fundamental ou de uma pedra simbólica sobre a qual a nova edificação será construída. A colocação da pedra fundamental não coincide necessariamente com o início efetivo das obras.""",
+        meaning=TERM["lido01168"],
+    )
+    groundbreaking = PermissibleValue(
+        text="groundbreaking",
+        title="cerimônia de lançamento da primeira pedra",
+        description="""Ato cerimonial que marca o início da movimentação de terra no local onde a edificação será construída. Distinguir da cerimônia de colocação da pedra fundamental, que pode ocorrer em momento diverso.""",
+        meaning=TERM["lido01167"],
+    )
+    consecration = PermissibleValue(
+        text="consecration",
+        title="consagração",
+        description="""Atividade pela qual uma autoridade religiosa consagra e dedica formalmente edificações, terrenos ou objetos a fins cerimoniais ou religiosos.""",
+        meaning=TERM["lido00728"],
+    )
+    deconsecration = PermissibleValue(
+        text="deconsecration",
+        title="desconsagração",
+        description="""Ato formal pelo qual uma edificação, terreno ou objeto deixa de ser consagrado ou destinado a fins religiosos.""",
+        meaning=TERM["lido01158"],
+    )
+    change_control_or_title = PermissibleValue(
+        text="change_control_or_title",
+        title="alteração de posse ou título",
+        description="""Atividade que envolve alteração do status de um objeto quanto à posse física ou ao título jurídico, quando não é possível ou não é relevante distinguir qual dos aspectos ocorreu. Usar quando houver alteração de posse, de propriedade ou de ambos, sem especificação mais precisa.""",
+        meaning=TERM["lido01151"],
+    )
+    change_control_and_title = PermissibleValue(
+        text="change_control_and_title",
+        title="alteração de posse e título",
+        description="""Atividade que envolve alteração simultânea da posse física e do título jurídico de um objeto, como na conclusão de uma compra seguida da entrega da coisa.""",
+        meaning=TERM["lido01184"],
+    )
+    change_legal_title = PermissibleValue(
+        text="change_legal_title",
+        title="alteração de título jurídico",
+        description="""Atividade que resulta em alteração do status jurídico de um objeto quanto ao seu título de propriedade, incluindo transferências de propriedade consensuais ou não consensuais.""",
+        meaning=TERM["lido00001"],
+    )
+    restitution = PermissibleValue(
+        text="restitution",
+        title="restituição",
+        description="""Atividade de restituir um objeto a seu anterior proprietário legítimo ou a seus sucessores diretos ou indiretos. Aplica-se, por exemplo, à devolução de bens culturais subtraídos ilicitamente ou retornados em razão de sua relevância cultural.""",
+        meaning=TERM["lido01152"],
+    )
+    change_physical_control = PermissibleValue(
+        text="change_physical_control",
+        title="alteração de posse",
+        description="""Atividade que resulta em alteração do status de um objeto quanto à sua posse física ou controle material, sem alteração necessária do título jurídico.""",
+        meaning=TERM["lido00005"],
+    )
+    collecting = PermissibleValue(
+        text="collecting",
+        title="coleta",
+        description="""Atividade de reunir objetos com o objetivo de retê-los, incluindo coleta de campo. Em contextos coloniais, explicitar as circunstâncias da coleta na descrição do evento.""",
+        meaning=TERM["lido00010"],
+    )
+    loss = PermissibleValue(
+        text="loss",
+        title="perda",
+        description="""Declaração de alteração da posse física de um objeto, afastando-o de seu atual detentor sem indicação de destinatário. Inclui furto, roubo e a perda de rastreabilidade do objeto, mas não implica alteração do título de propriedade.""",
+        meaning=TERM["lido00009"],
+    )
+    excavation = PermissibleValue(
+        text="excavation",
+        title="escavação",
+        description="""Ação ou processo de escavar uma cavidade no solo; especificamente, a escavação e documentação sistemática de um sítio arqueológico.""",
+        meaning=TERM["lido00033"],
+    )
+    exhibition = PermissibleValue(
+        text="exhibition",
+        title="exposição",
+        description="""Exibição pública temporária, geralmente nomeada e organizada, de obras de arte, artesanato, história natural, ciência ou outros itens de interesse cultural.""",
+        meaning=TERM["lido00225"],
+    )
+    finding = PermissibleValue(
+        text="finding",
+        title="descoberta",
+        description="""Atividade de encontrar ou tomar consciência de um objeto considerado potencialmente relevante no contexto de uma observação ou pesquisa, incluindo objetos perdidos, esquecidos ou previamente desconhecidos. Aplica-se, por exemplo, ao encontro de vestígios arqueológicos, de edificações perdidas ou de sítios.""",
+        meaning=TERM["lido00002"],
+    )
+    marketing = PermissibleValue(
+        text="marketing",
+        title="comercialização",
+        description="""Atividade pela qual se efetiva a transferência do título ou da posse de bens, ou o fornecimento de serviços, do vendedor ao comprador, incluindo publicidade, expedição, armazenagem e venda.""",
+        meaning=TERM["lido00401"],
+    )
+    move = PermissibleValue(
+        text="move",
+        title="deslocação",
+        description="""Alteração da localização física de um objeto ou obra de uma residência a outra. Usar para deslocamentos que não envolvam o desmantelamento da edificação; para este último caso, usar `translocation` (\"remoção\").""",
+        meaning=TERM["lido00223"],
+    )
+    req_assess = PermissibleValue(
+        text="req_assess",
+        title="avaliação de requisitos do objeto",
+        description="""Ato de examinar um objeto para determinar as condições e requisitos necessários ao seu armazenamento, exibição, empréstimo, deslocamento ou outra forma de manuseio.""",
+        meaning=TERM["lido00792"],
+    )
+    display_assess = PermissibleValue(
+        text="display_assess",
+        title="avaliação para exibição",
+        description="""Ato de examinar um objeto para determinar sua adequação à exibição e as condições necessárias para garantir sua preservação, segurança e a responsabilização do local de exibição.""",
+        meaning=TERM["lido00794"],
+    )
+    move_assess = PermissibleValue(
+        text="move_assess",
+        title="avaliação para deslocação",
+        description="""Ato de examinar um objeto para determinar sua adequação ao deslocamento e as condições necessárias para garantir sua preservação e segurança, bem como a responsabilização dos responsáveis pelo manuseio ou transporte.""",
+        meaning=TERM["lido00793"],
+    )
+    performance = PermissibleValue(
+        text="performance",
+        title="performance",
+        description="""Instância individual da execução de uma ação, operação ou processo na realização de uma obra literária, artística, musical, teatral ou outra obra criativa, destinada a comunicar direta ou indiretamente a um público.""",
+        meaning=TERM["lido00030"],
+    )
+    planning = PermissibleValue(
+        text="planning",
+        title="planejamento",
+        description="""Atividade de determinar objetivos e delinear ou organizar os procedimentos e recursos necessários para alcançá-los, especialmente em uma proposta ou programa formal de projeto.""",
+        meaning=TERM["lido00032"],
+    )
+    protection = PermissibleValue(
+        text="protection",
+        title="proteção",
+        description="""Atividade de manter um objeto a salvo de danos, alterações adicionais ou deterioração. Em edificações, pode incluir medidas emergenciais como impermeabilização provisória, escoramento, vedação, proteção contra vandalismo e contenção de elementos em risco.""",
+        meaning=TERM["lido01175"],
+    )
+    publishing = PermissibleValue(
+        text="publishing",
+        title="publicação",
+        description="""Ações, funções ou evento de emitir registros de conhecimento ou obras visuais reproduzidos em suporte impresso, gravado ou outro meio, para venda ou distribuição ao público.""",
+        meaning=TERM["lido00228"],
+    )
+    use = PermissibleValue(
+        text="use",
+        title="uso",
+        description="""Atividade baseada na capacidade ou permissão de empregar, ocupar, aplicar ou explorar o valor de algo, ou no modo como isso é feito. Ocorre em um período determinado em relação a um objeto criado pelo ser humano, cuja presença é condição necessária para a ação.""",
+        meaning=TERM["lido00011"],
+    )
+    end_existence = PermissibleValue(
+        text="end_existence",
+        title="fim da existência",
+        description="""Evento que encerra a existência de qualquer tipo de entidade, como um objeto físico, um produto intelectual ou um ser vivo.""",
+        meaning=TERM["lido00027"],
+    )
+    destruction = PermissibleValue(
+        text="destruction",
+        title="destruição",
+        description="""Evento que destrói um objeto a ponto de ele perder sua identidade como sujeito de documentação. Pode decorrer de atividade humana intencional ou de processos independentes dela, e pode também se referir à destruição de uma entidade imaterial. Usar `destruction_activity` ou `destruction_process` quando for relevante distinguir a natureza intencional ou não intencional do evento.""",
+        meaning=TERM["lido00026"],
+    )
+    destruction_activity = PermissibleValue(
+        text="destruction_activity",
+        title="destruição (ação)",
+        description="""Evento causado por atividade humana intencional que destrói um objeto a ponto de ele perder sua identidade como sujeito de documentação. Inclui arruinar, demolir, desmontar, reduzir a fragmentos, inutilizar ou otherwise por fim a um objeto, estrutura ou outra coisa material.""",
+        meaning=TERM["lido01186"],
+    )
+    destruction_process = PermissibleValue(
+        text="destruction_process",
+        title="arruinamento",
+        description="""Processo não intencional que destrói um objeto a ponto de ele perder sua identidade como sujeito de documentação. Pode ser causado por deterioração, apodrecimento, ação de animais, desastres naturais ou outra exposição aos elementos.""",
+        meaning=TERM["lido01156"],
+    )
+    unknown = PermissibleValue(
+        text="unknown",
+        title="evento desconhecido",
+        description="""Evento ou atividade para o qual há evidência de que ocorreu, mas que não pode ser mais especificado.""",
+        meaning=TERM["lido00003"],
+    )
 
     _defn = EnumDefinition(
         name="EventType",
@@ -3190,11 +3238,6 @@ Vinculações teóricas ou conceituais com maior distância interpretativa (por 
         description="""Relação simétrica entre dois objetos que pertenceram ao mesmo contexto conceitual, material ou espacial, mas já não pertencem devido a remoção, traslado, destruição ou reclassificação. Usar apenas nos casos em que o conjunto maior não for cadastrado no documentário, por motivos técnicos ou decisão científica.""",
         meaning=TERM["lido01059"],
     )
-    was_antedated = PermissibleValue(
-        text="was_antedated",
-        title="foi precedido no mesmo sítio por",
-        meaning=TERM["lido01189"],
-    )
     is_part_of = PermissibleValue(
         text="is_part_of",
         title="faz parte de",
@@ -3318,28 +3361,239 @@ class RelatedWorkRelType(EnumDefinitionImpl):
     """
     Relações associativas entre objetos físicos ou criações intelectuais,
     definidas segundo o vocabulário do LIDO.
-    Compreende as relações associativas, exceto aquelas de partes com o todo.
+    Compreende as relações associativas, exceto aquelas de partes com o todo
+    (grupo `lido01074`, tratado em `LargerContextType`).
 
     Ver <http://terminology.lido-schema.org/relatedWorkRelType>
     """
 
+    relatedTo = PermissibleValue(
+        text="relatedTo",
+        title="relacionado a",
+        description="""Relação geral e simétrica, usada quando não se conhece ou não cabe uma relação mais específica. Sempre que possível, preferir um dos tipos mais específicos.""",
+        meaning=TERM["lido00263"],
+    )
+    planOf = PermissibleValue(
+        text="planOf",
+        title="é planta de",
+        description="""A obra descrita na ficha é uma concepção formal da disposição dos espaços e elementos do objeto relacionado. Pode ser preparatória ou um registro feito após a construção. Para a planta de um pavimento, usar `floorPlanOf`.""",
+        meaning=TERM["lido00592"],
+    )
+    floorPlanOf = PermissibleValue(
+        text="floorPlanOf",
+        title="é planta baixa de",
+        description="""A obra descrita na ficha, um desenho ou outra projeção ortográfica bidimensional, representa um corte horizontal da edificação relacionada, tomado próximo ao nível do solo ou acima de um pavimento.""",
+        meaning=TERM["lido00694"],
+    )
+    elevationOf = PermissibleValue(
+        text="elevationOf",
+        title="é elevação de",
+        description="""A obra descrita na ficha, um desenho ou outra projeção ortográfica, mostra a disposição dos elementos verticais de um objeto espacial (por exemplo, uma edificação), exterior ou interior, em vista direta e frontal.""",
+        meaning=TERM["lido00692"],
+    )
+    sectionOf = PermissibleValue(
+        text="sectionOf",
+        title="é corte de",
+        description="""A obra descrita na ficha, um desenho ortográfico ou objeto em outra mídia, mostra uma edificação, objeto ou sítio como se estivesse seccionado e exposto num plano específico.""",
+        meaning=TERM["lido00696"],
+    )
+    architecturalSurveyOf = PermissibleValue(
+        text="architecturalSurveyOf",
+        title="é levantamento arquitetônico de",
+        description="""A obra descrita na ficha é um levantamento que avalia o estado de conservação de uma edificação histórica e fundamenta a priorização de ações de preservação e reparo.""",
+        meaning=TERM["lido00702"],
+    )
+    renderingOf = PermissibleValue(
+        text="renderingOf",
+        title="é visualização de",
+        description="""A obra descrita na ficha é uma visualização (perspectiva, renderização) ou um registro fiel da concepção do objeto relacionado, em geral em contexto arquitetônico.""",
+        meaning=TERM["lido00261"],
+    )
+    depicts = PermissibleValue(
+        text="depicts",
+        title="representa",
+        description="""A obra descrita na ficha é uma obra de arte que representa outra obra, em geral num contexto histórico relevante. Reservar para as representações mais importantes; para a simples presença da edificação como assunto de outra obra, usar o grupo `subject`.""",
+        meaning=TERM["lido00645"],
+    )
+    documents = PermissibleValue(
+        text="documents",
+        title="documenta",
+        description="""A obra descrita na ficha, em geral um texto, documenta, discute ou descreve o objeto relacionado em sentido acadêmico ou científico. A relação é feita com a entidade conceitual do documento, não com um exemplar físico específico.""",
+        meaning=TERM["lido00618"],
+    )
+    reconstructionOf = PermissibleValue(
+        text="reconstructionOf",
+        title="é reconstituição hipotética de",
+        description="""A obra descrita na ficha é um desenho, modelo digital ou objeto em outra mídia que propõe como outro objeto pode ter sido em um momento anterior, ou que o reconstitui a partir de evidências. Não confundir com o evento `reconstruction` (reconstrução física da edificação).""",
+        meaning=TERM["lido00698"],
+    )
+    illustrationOf = PermissibleValue(
+        text="illustrationOf",
+        title="é ilustração de",
+        description="""A obra descrita na ficha, em geral uma imagem ou diagrama que esclarece, exemplifica ou visualiza, acompanha o objeto relacionado, em geral um texto.""",
+        meaning=TERM["lido00619"],
+    )
+    hasRendering = PermissibleValue(
+        text="hasRendering",
+        title="tem visualização",
+        description="""O objeto relacionado é uma visualização (perspectiva, renderização) ou um registro fiel da concepção da obra descrita na ficha, em geral em contexto arquitetônico.""",
+        meaning=TERM["lido00681"],
+    )
+    depictedIn = PermissibleValue(
+        text="depictedIn",
+        title="representado em",
+        description="""A obra descrita na ficha está representada na mídia relacionada, que será geralmente uma obra de arte ou fotografia depositada num repositório externo (catálogo de museu, Wikimedia Commons, etc.).""",
+        meaning=TERM["lido00998"],
+    )
     documentedIn = PermissibleValue(
         text="documentedIn",
         title="documentado em",
-        description="""A obra descrita na ficha está documentada, discutida ou descrita na mídia relacionada, que em geral será um texto.""",
+        description="""A obra descrita na ficha está documentada, discutida ou descrita na mídia relacionada, que em geral será um texto. A relação é feita com a entidade conceitual do documento, não com um exemplar físico específico que o contenha.""",
         meaning=TERM["lido00617"],
     )
-    complements = PermissibleValue(
-        text="complements",
-        title="complementa",
-        description="""Relação entre obras criadas independentemente uma da outra, mas que mais tarde passaram a ser consideradas ou usadas conjuntamente.""",
-        meaning=TERM["lido00580"],
+    hasSpeciesDescriptionIn = PermissibleValue(
+        text="hasSpeciesDescriptionIn",
+        title="tem descrição de espécie em",
+        description="""Aplica-se a objetos naturais, em geral uma espécie recém-descoberta, que recebem descrição formal detalhada em artigo científico ou outra publicação reconhecida. Raramente relevante para edificações.""",
+        meaning=TERM["lido00674"],
     )
-    complemented = PermissibleValue(
-        text="complemented",
-        title="complementava",
-        description="""Relação entre obras criadas independentemente uma da outra, mas que mais tarde passaram a ser consideradas ou usadas conjuntamente, sendo essa associação posteriormente desfeita.""",
-        meaning=TERM["lido01095"],
+    isSpeciesDescriptionOf = PermissibleValue(
+        text="isSpeciesDescriptionOf",
+        title="é descrição de espécie de",
+        description="""A obra descrita na ficha, em geral um artigo científico, apresenta a descrição formal detalhada de uma espécie recém-descoberta. Raramente relevante para edificações.""",
+        meaning=TERM["lido00673"],
+    )
+    preparatoryFor = PermissibleValue(
+        text="preparatoryFor",
+        title="preparatório para",
+        description="""A obra descrita na ficha foi criada para preparar outro objeto; por exemplo, um desenho de projeto ou de execução é preparatório para a obra construída. Preferir os tipos mais específicos abaixo.""",
+        meaning=TERM["lido00586"],
+    )
+    modelFor = PermissibleValue(
+        text="modelFor",
+        title="é modelo para",
+        description="""A obra descrita na ficha é uma representação em escala, em geral tridimensional (maquete), preparatória para outro objeto mais acabado.""",
+        meaning=TERM["lido00258"],
+    )
+    preparatoryStudyFor = PermissibleValue(
+        text="preparatoryStudyFor",
+        title="é estudo preparatório para",
+        description="""A obra descrita na ficha é um estudo preliminar de aspectos específicos de outro objeto mais acabado. Não é apropriado para arquitetura: para objetos das fases preparatórias de projetos arquitetônicos, usar `sketchFor`, `designFor` ou `constructionDrawingFor`; para o estudo detalhado de aspectos de uma edificação existente, usar `studyAfter`.""",
+        meaning=TERM["lido00260"],
+    )
+    sketchFor = PermissibleValue(
+        text="sketchFor",
+        title="é esboço para",
+        description="""A obra descrita na ficha é um esboço (croqui) que visualiza de modo inicial e aproximado o projeto de outro objeto. Os esboços são menos acabados que os projetos e os estudos.""",
+        meaning=TERM["lido00588"],
+    )
+    cartoonFor = PermissibleValue(
+        text="cartoonFor",
+        title="é cartão para",
+        description="""A obra descrita na ficha é um desenho preparatório, em geral em tamanho real, destinado a transferir um projeto para a superfície de trabalho do outro objeto (por exemplo, um mural ou uma tapeçaria).""",
+        meaning=TERM["lido00590"],
+    )
+    designFor = PermissibleValue(
+        text="designFor",
+        title="é projeto para",
+        description="""A obra descrita na ficha desenvolve o esquema de um projeto (artístico ou arquitetônico) e é preliminar a outro objeto mais acabado. Em geral é um desenho, mas não necessariamente. Os projetos são mais acabados que os esboços.""",
+        meaning=TERM["lido00594"],
+    )
+    bozzettoFor = PermissibleValue(
+        text="bozzettoFor",
+        title="é bozzetto para",
+        description="""A obra descrita na ficha é um bozzetto: modelo preliminar, em geral escultórico, de outro objeto mais acabado.""",
+        meaning=TERM["lido00704"],
+    )
+    printingSurfaceFor = PermissibleValue(
+        text="printingSurfaceFor",
+        title="é matriz de impressão para",
+        description="""A obra descrita na ficha é uma superfície plana (placa, bloco, chapa) usada para imprimir textos ou imagens que constituem o objeto relacionado.""",
+        meaning=TERM["lido00596"],
+    )
+    negativeFor = PermissibleValue(
+        text="negativeFor",
+        title="é negativo para",
+        description="""A obra descrita na ficha é um negativo fotográfico utilizado para produzir uma ou mais cópias fotográficas.""",
+        meaning=TERM["lido00598"],
+    )
+    constructionDrawingFor = PermissibleValue(
+        text="constructionDrawingFor",
+        title="é desenho executivo para",
+        description="""A obra descrita na ficha é um desenho que comunica as informações necessárias à construção do objeto relacionado (edificação ou similar), em especial a mecânica da sua execução, e é usado pelos responsáveis pela obra.""",
+        meaning=TERM["lido00690"],
+    )
+    moldFor = PermissibleValue(
+        text="moldFor",
+        title="é molde para",
+        description="""A obra descrita na ficha é um molde usado para produzir o objeto relacionado, por fundição ou conformação.""",
+        meaning=TERM["lido01133"],
+    )
+    basedOn = PermissibleValue(
+        text="basedOn",
+        title="baseado em",
+        description="""A criação ou produção da obra descrita na ficha baseou-se em outro objeto preparatório. Preferir os tipos mais específicos abaixo.""",
+        meaning=TERM["lido00587"],
+    )
+    hasModel = PermissibleValue(
+        text="hasModel",
+        title="tem modelo",
+        description="""A obra descrita na ficha foi preparada por um modelo em escala, em geral tridimensional (maquete), que é o objeto relacionado.""",
+        meaning=TERM["lido00257"],
+    )
+    hasPreparatoryStudy = PermissibleValue(
+        text="hasPreparatoryStudy",
+        title="tem estudo preparatório",
+        description="""A obra descrita na ficha é a versão mais acabada de outro objeto preliminar, que explora aspectos específicos dela. Não é apropriado para arquitetura: para as fases preparatórias de projetos arquitetônicos, usar `hasSketch`, `hasDesign` ou `hasConstructionDrawing`; para o estudo detalhado de uma edificação existente, usar `hasStudy`.""",
+        meaning=TERM["lido00259"],
+    )
+    hasSketch = PermissibleValue(
+        text="hasSketch",
+        title="tem esboço",
+        description="""A obra descrita na ficha é a versão mais acabada de outro objeto preliminar, que visualizou de modo inicial e aproximado o seu projeto (croqui).""",
+        meaning=TERM["lido00589"],
+    )
+    hasCartoon = PermissibleValue(
+        text="hasCartoon",
+        title="tem cartão",
+        description="""A obra descrita na ficha, em geral uma obra bidimensional de grande escala como um mural ou uma tapeçaria, é a versão mais acabada de um desenho preparatório em tamanho real (cartão).""",
+        meaning=TERM["lido00591"],
+    )
+    hasDesign = PermissibleValue(
+        text="hasDesign",
+        title="tem projeto",
+        description="""A obra descrita na ficha é a versão mais acabada de outro objeto preliminar que desenvolveu o esquema do seu projeto. Em geral o projeto é um desenho, mas não necessariamente.""",
+        meaning=TERM["lido00595"],
+    )
+    hasBozzetto = PermissibleValue(
+        text="hasBozzetto",
+        title="tem bozzetto",
+        description="""A obra descrita na ficha, em geral escultórica, é a versão mais acabada de um modelo preliminar (bozzetto).""",
+        meaning=TERM["lido00705"],
+    )
+    printedFromPrintingSurface = PermissibleValue(
+        text="printedFromPrintingSurface",
+        title="foi impresso a partir da matriz",
+        description="""A obra descrita na ficha é uma impressão produzida a partir de uma matriz específica (placa, bloco, chapa), que é o objeto relacionado.""",
+        meaning=TERM["lido00597"],
+    )
+    printedFromNegative = PermissibleValue(
+        text="printedFromNegative",
+        title="foi copiado do negativo",
+        description="""A obra descrita na ficha é uma cópia fotográfica produzida a partir de um negativo específico, que é o objeto relacionado.""",
+        meaning=TERM["lido00599"],
+    )
+    hasConstructionDrawing = PermissibleValue(
+        text="hasConstructionDrawing",
+        title="tem desenho executivo",
+        description="""A obra descrita na ficha, em geral uma edificação, possui um desenho executivo que comunica as informações necessárias à sua construção. O desenho é o objeto relacionado.""",
+        meaning=TERM["lido00691"],
+    )
+    castOrFormedFromMold = PermissibleValue(
+        text="castOrFormedFromMold",
+        title="foi moldado a partir do molde",
+        description="""A obra descrita na ficha foi fundida ou conformada a partir de um molde específico, que é o objeto relacionado.""",
+        meaning=TERM["lido01132"],
     )
     derivedFrom = PermissibleValue(
         text="derivedFrom",
@@ -3348,18 +3602,344 @@ class RelatedWorkRelType(EnumDefinitionImpl):
 Preferir outras expressões de relação mais específicas sempre que possível. A relação `derivedFrom` deve ser reservada para casos em que a relação seja de variações e influências. Essas relações devem ser fundamentadas em interpretação bibliográfica.""",
         meaning=TERM["lido00603"],
     )
+    copyAfter = PermissibleValue(
+        text="copyAfter",
+        title="é cópia de",
+        description="""A obra descrita na ficha copia outro objeto, assemelhando-se fortemente a ele ou reproduzindo a sua aparência ou o seu conteúdo. Implica imitação menos precisa e fiel que `reproductionOf`.""",
+        meaning=TERM["lido00262"],
+    )
+    tracingOf = PermissibleValue(
+        text="tracingOf",
+        title="é decalque de",
+        description="""A obra descrita na ficha foi copiada de outro objeto por decalque, em geral pelo mesmo artista, artífice ou ateliê que produziu o original.""",
+        meaning=TERM["lido00862"],
+    )
+    forgeryOf = PermissibleValue(
+        text="forgeryOf",
+        title="é falsificação de",
+        description="""A obra descrita na ficha imita outro objeto com intenção de enganar.""",
+        meaning=TERM["lido00601"],
+    )
+    replicaOf = PermissibleValue(
+        text="replicaOf",
+        title="é réplica de",
+        description="""A obra descrita na ficha é uma reprodução precisa de outro objeto valorizado, em geral nas mesmas dimensões do original. Usar também quando mais de uma réplica semelhante é produzida de um mesmo original.""",
+        meaning=TERM["lido00605"],
+    )
+    reproductionOf = PermissibleValue(
+        text="reproductionOf",
+        title="é reprodução de",
+        description="""A obra descrita na ficha é uma cópia de outro objeto feita de modo mais ou menos mecânico e sem intenção de enganar. Implica imitação mais precisa e fiel que `copyAfter`.""",
+        meaning=TERM["lido00607"],
+    )
+    facsimileOf = PermissibleValue(
+        text="facsimileOf",
+        title="é fac-símile de",
+        description="""A obra descrita na ficha é uma cópia exata de um objeto físico, em geral nas mesmas dimensões do original, especialmente de livros, documentos, gravuras e desenhos.""",
+        meaning=TERM["lido00623"],
+    )
+    counterproofFrom = PermissibleValue(
+        text="counterproofFrom",
+        title="é contraprova de",
+        description="""A obra descrita na ficha é uma impressão tirada de uma obra original, em geral uma gravura ou um desenho, mas às vezes um texto.""",
+        meaning=TERM["lido00609"],
+    )
+    versionOf = PermissibleValue(
+        text="versionOf",
+        title="é versão de",
+        description="""A obra descrita na ficha foi feita pelo mesmo artista, artífice ou ateliê que criou outro objeto no qual aquela se baseia de perto, mas resultando numa obra com características próprias.""",
+        meaning=TERM["lido00700"],
+    )
+    studyAfter = PermissibleValue(
+        text="studyAfter",
+        title="é estudo a partir de",
+        description="""A obra descrita na ficha explora em detalhe certos aspectos específicos de outro objeto (por exemplo, uma edificação existente).""",
+        meaning=TERM["lido00706"],
+    )
+    pasticheCopyAfter = PermissibleValue(
+        text="pasticheCopyAfter",
+        title="é cópia em pastiche de",
+        description="""A obra descrita na ficha copia parcialmente outro objeto, mas contém características ou partes copiadas de uma segunda obra ou acrescentadas como originais.""",
+        meaning=TERM["lido00611"],
+    )
+    sourceFor = PermissibleValue(
+        text="sourceFor",
+        title="é fonte para",
+        description="""A obra descrita na ficha influenciou fortemente ou é a fonte da criação ou produção do objeto relacionado. Preferir os tipos mais específicos abaixo sempre que o objeto relacionado puder ser designado como cópia, réplica, reprodução, falsificação, versão, etc.""",
+        meaning=TERM["lido00604"],
+    )
+    hasCopy = PermissibleValue(
+        text="hasCopy",
+        title="tem cópia",
+        description="""A obra descrita na ficha foi copiada pelo objeto relacionado, que se assemelha fortemente a ela ou reproduz a sua aparência ou o seu conteúdo.""",
+        meaning=TERM["lido00600"],
+    )
+    hasTracing = PermissibleValue(
+        text="hasTracing",
+        title="tem decalque",
+        description="""A obra descrita na ficha foi copiada pelo objeto relacionado por decalque, em geral pelo mesmo artista, artífice ou ateliê que a produziu.""",
+        meaning=TERM["lido00863"],
+    )
+    hasForgery = PermissibleValue(
+        text="hasForgery",
+        title="tem falsificação",
+        description="""A obra descrita na ficha foi imitada pelo objeto relacionado, feito com intenção de enganar.""",
+        meaning=TERM["lido00602"],
+    )
+    hasReplica = PermissibleValue(
+        text="hasReplica",
+        title="tem réplica",
+        description="""A obra descrita na ficha é um objeto valorizado que foi reproduzido com precisão pelo objeto relacionado, em geral nas mesmas dimensões.""",
+        meaning=TERM["lido00606"],
+    )
+    hasReproduction = PermissibleValue(
+        text="hasReproduction",
+        title="tem reprodução",
+        description="""A obra descrita na ficha foi copiada pelo objeto relacionado de modo mais ou menos mecânico e sem intenção de enganar.""",
+        meaning=TERM["lido00608"],
+    )
+    hasFacsimile = PermissibleValue(
+        text="hasFacsimile",
+        title="tem fac-símile",
+        description="""A obra descrita na ficha, objeto físico, foi reproduzida por uma cópia exata, em geral nas mesmas dimensões do original, especialmente no caso de livros, documentos, gravuras e desenhos.""",
+        meaning=TERM["lido00624"],
+    )
+    hasCounterproof = PermissibleValue(
+        text="hasCounterproof",
+        title="tem contraprova",
+        description="""A obra descrita na ficha é o original do qual se tirou uma impressão (contraprova), em geral uma gravura ou um desenho, mas às vezes um texto.""",
+        meaning=TERM["lido00610"],
+    )
+    hasReconstruction = PermissibleValue(
+        text="hasReconstruction",
+        title="tem reconstituição hipotética",
+        description="""A aparência anterior da obra descrita na ficha é proposta por um desenho, modelo digital ou objeto em outra mídia, que é o objeto relacionado. Não confundir com o evento `reconstruction` (reconstrução física da edificação).""",
+        meaning=TERM["lido00699"],
+    )
+    hasVersion = PermissibleValue(
+        text="hasVersion",
+        title="tem versão",
+        description="""O objeto relacionado foi feito pelo mesmo artista, artífice ou ateliê que criou a obra descrita na ficha, baseando-se nela de perto, mas resultando numa obra com características próprias.""",
+        meaning=TERM["lido00729"],
+    )
+    hasArchitecturalSurvey = PermissibleValue(
+        text="hasArchitecturalSurvey",
+        title="tem levantamento arquitetônico",
+        description="""A obra descrita na ficha é uma edificação histórica cujo estado de conservação é avaliado por um levantamento arquitetônico (o objeto relacionado), que fundamenta a priorização de ações de preservação e reparo.""",
+        meaning=TERM["lido00703"],
+    )
+    hasStudy = PermissibleValue(
+        text="hasStudy",
+        title="tem estudo",
+        description="""Certos aspectos específicos da obra descrita na ficha são explorados em detalhe pelo objeto relacionado.""",
+        meaning=TERM["lido00707"],
+    )
+    hasPasticheCopy = PermissibleValue(
+        text="hasPasticheCopy",
+        title="tem cópia em pastiche",
+        description="""A obra descrita na ficha foi parcialmente copiada pelo objeto relacionado, que contém características ou partes copiadas de uma segunda obra ou acrescentadas como originais.""",
+        meaning=TERM["lido00612"],
+    )
+    hasPlan = PermissibleValue(
+        text="hasPlan",
+        title="tem planta",
+        description="""A obra descrita na ficha possui uma planta (objeto relacionado), que é uma concepção formal da disposição dos seus espaços e elementos. Pode ser preparatória ou um registro feito após a construção.""",
+        meaning=TERM["lido00593"],
+    )
+    hasFloorPlan = PermissibleValue(
+        text="hasFloorPlan",
+        title="tem planta baixa",
+        description="""A obra descrita na ficha, em geral uma edificação, é representada por um desenho ou outra projeção ortográfica bidimensional que mostra um corte horizontal tomado próximo ao nível do solo ou acima de um pavimento.""",
+        meaning=TERM["lido00695"],
+    )
+    hasElevation = PermissibleValue(
+        text="hasElevation",
+        title="tem elevação",
+        description="""A obra descrita na ficha, um objeto espacial como uma edificação, é representada por um desenho ou outra projeção ortográfica que mostra a disposição dos seus elementos verticais, exterior ou interior.""",
+        meaning=TERM["lido00693"],
+    )
+    hasSection = PermissibleValue(
+        text="hasSection",
+        title="tem corte",
+        description="""A obra descrita na ficha, uma edificação, sítio ou objeto semelhante, é mostrada por um desenho ortográfico ou objeto em outra mídia como se estivesse seccionada e exposta num plano específico.""",
+        meaning=TERM["lido00697"],
+    )
+    versoOf = PermissibleValue(
+        text="versoOf",
+        title="é verso de",
+        description="""A obra descrita na ficha ocupa o lado reverso ou secundário de uma folha cujo lado principal (recto) contém outro(s) objeto(s).""",
+        meaning=TERM["lido00613"],
+    )
+    rectoOf = PermissibleValue(
+        text="rectoOf",
+        title="é recto de",
+        description="""A obra descrita na ficha ocupa o lado principal ou frontal de uma folha cujo lado reverso (verso) contém outro(s) objeto(s).""",
+        meaning=TERM["lido00614"],
+    )
+    obverseOf = PermissibleValue(
+        text="obverseOf",
+        title="é anverso de",
+        description="""A obra descrita na ficha ocupa a face frontal, superior ou principal de moedas, medalhas, selos ou outros objetos de duas faces.""",
+        meaning=TERM["lido00928"],
+    )
+    reverseOf = PermissibleValue(
+        text="reverseOf",
+        title="é reverso de",
+        description="""A obra descrita na ficha ocupa a face posterior, inferior ou secundária de moedas, medalhas, selos ou cédulas.""",
+        meaning=TERM["lido00929"],
+    )
+    duplicateOf = PermissibleValue(
+        text="duplicateOf",
+        title="é duplicata de",
+        description="""Relação simétrica entre exemplares adicionais de um mesmo objeto, no mesmo formato e na mesma mídia, no contexto de uma coleção específica (cópias fotográficas, livros, fundições, etc.).""",
+        meaning=TERM["lido00622"],
+    )
+    distinguishedFrom = PermissibleValue(
+        text="distinguishedFrom",
+        title="é distinto de",
+        description="""Relação simétrica entre dois objetos que costumam ser confundidos entre si, em geral em contexto histórico ou em trabalhos acadêmicos antigos, para evitar a confusão.""",
+        meaning=TERM["lido00621"],
+    )
+    containsReproductionOf = PermissibleValue(
+        text="containsReproductionOf",
+        title="contém reprodução de",
+        description="""A obra descrita na ficha, em geral um livro, revista ou jornal, contém uma reprodução impressa ou fotográfica do objeto relacionado.""",
+        meaning=TERM["lido00625"],
+    )
+    reproducedIn = PermissibleValue(
+        text="reproducedIn",
+        title="é reproduzido em",
+        description="""A obra descrita na ficha é reproduzida, por impressão ou fotografia, no objeto relacionado, em geral um livro, revista ou jornal. A reprodução numa edição impressa pode ser prova essencial da existência ou do estado anterior da obra.""",
+        meaning=TERM["lido00626"],
+    )
+    fromSameModel = PermissibleValue(
+        text="fromSameModel",
+        title="é do mesmo modelo que",
+        description="""Relação simétrica entre obras fundidas ou criadas a partir do mesmo modelo, como as casas de um projeto seriado. Usar quando a relação hierárquica de parte e todo não for possível.""",
+        meaning=TERM["lido01036"],
+    )
+    castFromSameMold = PermissibleValue(
+        text="castFromSameMold",
+        title="foi moldado a partir do mesmo molde que",
+        description="""Relação simétrica entre obras fundidas ou criadas a partir do mesmo molde. Usar quando a relação hierárquica de parte e todo não for possível.""",
+        meaning=TERM["lido01078"],
+    )
+    isOrWasCompanionPieceOf = PermissibleValue(
+        text="isOrWasCompanionPieceOf",
+        title="é ou foi peça companheira de",
+        description="""Relação simétrica entre a obra descrita e outro objeto concebido para ser exibido ou usado com ela, em qualquer momento, atual ou passado. Os objetos não correspondem necessariamente entre si, nem são apenas dois.""",
+        meaning=TERM["lido01090"],
+    )
+    companionPieceOf = PermissibleValue(
+        text="companionPieceOf",
+        title="é peça companheira de",
+        description="""Relação simétrica entre a obra descrita e outro objeto concebido para ser exibido ou usado com ela. Os objetos não correspondem necessariamente entre si, nem são apenas dois. Usar apenas se os objetos não forem partes de um todo maior que possa ser designado por um termo apropriado.""",
+        meaning=TERM["lido00579"],
+    )
+    hasIllustration = PermissibleValue(
+        text="hasIllustration",
+        title="tem ilustração",
+        description="""A obra descrita na ficha, em geral um texto, é acompanhada pelo objeto relacionado, uma imagem ou diagrama que a esclarece, exemplifica ou visualiza.""",
+        meaning=TERM["lido00620"],
+    )
+    pendantOf = PermissibleValue(
+        text="pendantOf",
+        title="é pendant de",
+        description="""Relação simétrica entre pares de objetos concebidos, ou escolhidos propositalmente, para serem exibidos juntos, em geral lado a lado.""",
+        meaning=TERM["lido00628"],
+    )
+    wasFormerlyCompanionPieceOf = PermissibleValue(
+        text="wasFormerlyCompanionPieceOf",
+        title="foi peça companheira de",
+        description="""Relação simétrica e já extinta entre a obra descrita e outro objeto concebido para ser exibido ou usado com ela. Os objetos não correspondem necessariamente entre si, nem são apenas dois.""",
+        meaning=TERM["lido01091"],
+    )
+    isOrWasComplementedBy = PermissibleValue(
+        text="isOrWasComplementedBy",
+        title="é ou foi complementado por",
+        description="""A obra descrita na ficha foi criada independentemente do objeto relacionado, mas posteriormente foi associada a ele, para serem usados em conjunto ou para agregar valor a ambos. Cobre qualquer momento, atual ou passado.""",
+        meaning=TERM["lido01092"],
+    )
+    complementedBy = PermissibleValue(
+        text="complementedBy",
+        title="é complementado por",
+        description="""A obra descrita na ficha foi criada independentemente do objeto relacionado, mas posteriormente foi associada a ele, para serem usados em conjunto ou para agregar valor a ambos.""",
+        meaning=TERM["lido00581"],
+    )
+    wasFormerlyComplementedBy = PermissibleValue(
+        text="wasFormerlyComplementedBy",
+        title="foi complementado por",
+        description="""A obra descrita na ficha foi criada independentemente do objeto relacionado e posteriormente foi associada a ele, mas essa associação foi desfeita.""",
+        meaning=TERM["lido01093"],
+    )
+    complementsOrFormerlyComplemented = PermissibleValue(
+        text="complementsOrFormerlyComplemented",
+        title="complementa ou complementava",
+        description="""O objeto relacionado foi criado independentemente da obra descrita na ficha, mas posteriormente foi associado a ela, para serem usados em conjunto ou para agregar valor a ambos. Cobre qualquer momento, atual ou passado.""",
+        meaning=TERM["lido01094"],
+    )
+    complements = PermissibleValue(
+        text="complements",
+        title="complementa",
+        description="""Relação entre obras criadas independentemente uma da outra, mas que mais tarde passaram a ser consideradas ou usadas conjuntamente.""",
+        meaning=TERM["lido00580"],
+    )
+    formerlyComplemented = PermissibleValue(
+        text="formerlyComplemented",
+        title="complementava",
+        description="""Relação entre obras criadas independentemente uma da outra, mas que mais tarde passaram a ser consideradas ou usadas conjuntamente, sendo essa associação posteriormente desfeita.""",
+        meaning=TERM["lido01095"],
+    )
+    predecessorOf = PermissibleValue(
+        text="predecessorOf",
+        title="é predecessor de",
+        description="""A obra descrita na ficha foi substituída pelo objeto relacionado no uso, não necessariamente na posição. Uso reservado sobretudo à arquitetura.""",
+        meaning=TERM["lido01098"],
+    )
+    hasReplaced = PermissibleValue(
+        text="hasReplaced",
+        title="substituiu",
+        description="""A obra descrita na ficha substituiu o objeto relacionado no uso, não necessariamente na posição. Uso reservado sobretudo à arquitetura.""",
+        meaning=TERM["lido01099"],
+    )
+    visualQuotationOf = PermissibleValue(
+        text="visualQuotationOf",
+        title="é citação visual de",
+        description="""A obra descrita na ficha é ou contém uma citação visual de outra obra, isto é, a adoção de um único elemento formal de outra obra como referência consciente a ela.""",
+        meaning=TERM["lido01102"],
+    )
+    hasVisualQuotation = PermissibleValue(
+        text="hasVisualQuotation",
+        title="tem citação visual",
+        description="""A obra descrita na ficha é citada visualmente no objeto relacionado, isto é, um único elemento formal dela é adotado como referência consciente a ela.""",
+        meaning=TERM["lido01103"],
+    )
     positionedNear = PermissibleValue(
         text="positionedNear",
         title="próximo a",
-        description="""Relação simétrica entre dois objetos situados em proximidade espacial, quando esta proximidade for significativa por razões compositivas, históricas ou funcionais.""",
+        description="""Relação simétrica entre dois objetos situados em proximidade espacial, quando esta proximidade for significativa por razões compositivas, históricas ou funcionais.
+Se o objeto foi concebido para, ou colocado dentro de, ou está em contexto funcional diretamente relacionado com uma edificação ou outro objeto monumental, usar `has_arch_context` (grupo `larger_context`).""",
         meaning=TERM["lido01136"],
+    )
+    builtOnSiteOf = PermissibleValue(
+        text="builtOnSiteOf",
+        title="foi construído no sítio de",
+        description="""A obra descrita na ficha foi construída no sítio onde esteve outra obra. Usar apenas quando as duas obras têm funções diferentes; se a nova obra foi feita para substituir a antiga, com função igual ou semelhante (por exemplo, uma nova catedral no sítio de uma catedral anterior), usar `hasReplaced`.""",
+        meaning=TERM["lido01188"],
+    )
+    wasAntedatedOnSameSiteAs = PermissibleValue(
+        text="wasAntedatedOnSameSiteAs",
+        title="foi precedido no mesmo sítio por",
+        description="""A obra descrita na ficha foi precedida, no mesmo sítio, por outra obra. Usar apenas quando as duas obras têm funções diferentes; se a obra anterior foi substituída por outra de função igual ou semelhante (por exemplo, uma catedral demolida e substituída por outra), usar `predecessorOf`.""",
+        meaning=TERM["lido01189"],
     )
 
     _defn = EnumDefinition(
         name="RelatedWorkRelType",
         description="""Relações associativas entre objetos físicos ou criações intelectuais,
 definidas segundo o vocabulário do LIDO.
-Compreende as relações associativas, exceto aquelas de partes com o todo.
+Compreende as relações associativas, exceto aquelas de partes com o todo
+(grupo `lido01074`, tratado em `LargerContextType`).
 
 Ver <http://terminology.lido-schema.org/relatedWorkRelType>""",
     )
@@ -7149,13 +7729,40 @@ slots.resources = Slot(
     ],
 )
 
+slots.content_url = Slot(
+    uri=SCHEMA.contentUrl,
+    name="content_url",
+    curie=SCHEMA.curie("contentUrl"),
+    model_uri=WASTH.content_url,
+    domain=None,
+    range=Optional[Union[str, URIorCURIE]],
+)
+
+slots.embed_url = Slot(
+    uri=SCHEMA.embedUrl,
+    name="embed_url",
+    curie=SCHEMA.curie("embedUrl"),
+    model_uri=WASTH.embed_url,
+    domain=None,
+    range=Optional[Union[str, URIorCURIE]],
+)
+
+slots.format = Slot(
+    uri=DCTERMS.format,
+    name="format",
+    curie=DCTERMS.curie("format"),
+    model_uri=WASTH.format,
+    domain=None,
+    range=str,
+)
+
 slots.media = Slot(
     uri=WASTH.media,
     name="media",
     curie=WASTH.curie("media"),
     model_uri=WASTH.media,
     domain=None,
-    range=Optional[Union[Union[dict, MediaObject], list[Union[dict, MediaObject]]]],
+    range=Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]],
 )
 
 slots.preview_image = Slot(
@@ -7173,7 +7780,7 @@ slots.provided_image = Slot(
     curie=WASTH.curie("provided_image"),
     model_uri=WASTH.provided_image,
     domain=None,
-    range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]],
+    range=Optional[Union[Union[dict, MediaObject], list[Union[dict, MediaObject]]]],
 )
 
 slots.provided_3d = Slot(
@@ -7194,13 +7801,13 @@ slots.resource_service = Slot(
     range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]],
 )
 
-slots.format = Slot(
-    uri=DCTERMS.format,
-    name="format",
-    curie=DCTERMS.curie("format"),
-    model_uri=WASTH.format,
+slots.relation_type = Slot(
+    uri=LIDO.relatedWorkRelType,
+    name="relation_type",
+    curie=LIDO.curie("relatedWorkRelType"),
+    model_uri=WASTH.relation_type,
     domain=None,
-    range=str,
+    range=Union[str, "RelatedWorkRelType"],
 )
 
 slots.scale = Slot(
@@ -7718,6 +8325,15 @@ slots.broaderConceptReference__broader_match = Slot(
     range=Union[str, "SkosBroaderRelation"],
 )
 
+slots.broaderConceptReference__broader_preferred = Slot(
+    uri=WASTH.broader_preferred,
+    name="broaderConceptReference__broader_preferred",
+    curie=WASTH.curie("broader_preferred"),
+    model_uri=WASTH.broaderConceptReference__broader_preferred,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
 slots.narrowerConceptReference__narrower_match = Slot(
     uri=WASTH.narrower_match,
     name="narrowerConceptReference__narrower_match",
@@ -7754,15 +8370,6 @@ slots.bibliographicCitation__note = Slot(
     range=Optional[str],
 )
 
-slots.relatedWork__relation_type = Slot(
-    uri=LIDO.relatedWorkRelType,
-    name="relatedWork__relation_type",
-    curie=LIDO.curie("relatedWorkRelType"),
-    model_uri=WASTH.relatedWork__relation_type,
-    domain=None,
-    range=Union[str, "RelatedWorkRelType"],
-)
-
 slots.largerContextReference__context_type = Slot(
     uri=LIDO.relatedWorkRelType,
     name="largerContextReference__context_type",
@@ -7772,15 +8379,6 @@ slots.largerContextReference__context_type = Slot(
     range=Union[str, "LargerContextType"],
 )
 
-slots.resource__resource_type = Slot(
-    uri=LIDO.relatedWorkRelType,
-    name="resource__resource_type",
-    curie=LIDO.curie("relatedWorkRelType"),
-    model_uri=WASTH.resource__resource_type,
-    domain=None,
-    range=Union[str, "ResourceType"],
-)
-
 slots.resource__perspective = Slot(
     uri=WASTH.perspective,
     name="resource__perspective",
@@ -7788,15 +8386,6 @@ slots.resource__perspective = Slot(
     model_uri=WASTH.resource__perspective,
     domain=None,
     range=int,
-)
-
-slots.mediaObject__depiction_type = Slot(
-    uri=LIDO.relatedWorkRelType,
-    name="mediaObject__depiction_type",
-    curie=LIDO.curie("relatedWorkRelType"),
-    model_uri=WASTH.mediaObject__depiction_type,
-    domain=None,
-    range=Union[str, "DepictionType"],
 )
 
 slots.measurement__measurement_type = Slot(
@@ -8546,29 +9135,11 @@ slots.Resource_category = Slot(
     range=Optional[Union[str, URIorCURIE]],
 )
 
-slots.MediaObject_title = Slot(
-    uri=DCTERMS.title,
-    name="MediaObject_title",
-    curie=DCTERMS.curie("title"),
-    model_uri=WASTH.MediaObject_title,
-    domain=MediaObject,
-    range=str,
-)
-
 slots.MediaObject_description = Slot(
     uri=DCTERMS.description,
     name="MediaObject_description",
     curie=DCTERMS.curie("description"),
     model_uri=WASTH.MediaObject_description,
-    domain=MediaObject,
-    range=str,
-)
-
-slots.MediaObject_content = Slot(
-    uri=LIDO.descriptiveNoteValue,
-    name="MediaObject_content",
-    curie=LIDO.curie("descriptiveNoteValue"),
-    model_uri=WASTH.MediaObject_content,
     domain=MediaObject,
     range=Optional[str],
 )
@@ -8579,7 +9150,7 @@ slots.MediaObject_work_rights = Slot(
     curie=LIDO.curie("rightsWorkSet"),
     model_uri=WASTH.MediaObject_work_rights,
     domain=MediaObject,
-    range=Union[Union[dict, Right], list[Union[dict, Right]]],
+    range=Optional[Union[Union[dict, Right], list[Union[dict, Right]]]],
 )
 
 slots.TypedReference_refid = Slot(
@@ -8715,7 +9286,7 @@ slots.Work_media = Slot(
     curie=WASTH.curie("media"),
     model_uri=WASTH.Work_media,
     domain=Work,
-    range=Optional[Union[Union[dict, MediaObject], list[Union[dict, MediaObject]]]],
+    range=Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]],
 )
 
 slots.Work_record_rights = Slot(
