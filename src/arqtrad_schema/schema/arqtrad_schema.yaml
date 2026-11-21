@@ -1545,7 +1545,7 @@ enums:
           relacionada, tomado próximo ao nível do solo ou acima de um
           pavimento.
       elevationOf:
-        title: elevação de
+        title: alçado de
         meaning: term:lido00692
         description: >
           A obra descrita na ficha, um desenho ou outra projeção ortográfica,
@@ -2071,7 +2071,7 @@ enums:
           corte horizontal tomado próximo ao nível do solo ou acima de um
           pavimento.
       hasElevation:
-        title: tem elevação
+        title: tem alçado
         meaning: term:lido00693
         description: >
           A obra descrita na ficha, um objeto espacial como uma edificação, é

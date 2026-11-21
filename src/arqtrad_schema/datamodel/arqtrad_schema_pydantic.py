@@ -3865,7 +3865,7 @@ class RelatedWorkRelType(str, Enum):
     A obra descrita na ficha, um desenho ou outra projeção ortográfica bidimensional, representa um corte horizontal da edificação relacionada, tomado próximo ao nível do solo ou acima de um pavimento.
 
     """
-    elevação_de = "elevationOf"
+    alçado_de = "elevationOf"
     """
     A obra descrita na ficha, um desenho ou outra projeção ortográfica, mostra a disposição dos elementos verticais de um objeto espacial (por exemplo, uma edificação), exterior ou interior, em vista direta e frontal.
 
@@ -4171,7 +4171,7 @@ class RelatedWorkRelType(str, Enum):
     A obra descrita na ficha, em geral uma edificação, é representada por um desenho ou outra projeção ortográfica bidimensional que mostra um corte horizontal tomado próximo ao nível do solo ou acima de um pavimento.
 
     """
-    tem_elevação = "hasElevation"
+    tem_alçado = "hasElevation"
     """
     A obra descrita na ficha, um objeto espacial como uma edificação, é representada por um desenho ou outra projeção ortográfica que mostra a disposição dos seus elementos verticais, exterior ou interior.
 

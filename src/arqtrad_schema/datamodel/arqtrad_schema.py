@@ -3387,7 +3387,7 @@ class RelatedWorkRelType(EnumDefinitionImpl):
     )
     elevationOf = PermissibleValue(
         text="elevationOf",
-        title="elevação de",
+        title="alçado de",
         description="""A obra descrita na ficha, um desenho ou outra projeção ortográfica, mostra a disposição dos elementos verticais de um objeto espacial (por exemplo, uma edificação), exterior ou interior, em vista direta e frontal.""",
         meaning=TERM["lido00692"],
     )
@@ -3754,7 +3754,7 @@ Preferir outras expressões de relação mais específicas sempre que possível.
     )
     hasElevation = PermissibleValue(
         text="hasElevation",
-        title="tem elevação",
+        title="tem alçado",
         description="""A obra descrita na ficha, um objeto espacial como uma edificação, é representada por um desenho ou outra projeção ortográfica que mostra a disposição dos seus elementos verticais, exterior ou interior.""",
         meaning=TERM["lido00693"],
     )
