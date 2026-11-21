@@ -1527,7 +1527,7 @@ enums:
           uma relação mais específica. Sempre que possível, preferir um dos
           tipos mais específicos.
       planOf:
-        title: é planta de
+        title: planta de
         meaning: term:lido00592
         description: >
           A obra descrita na ficha é uma concepção formal da disposição dos
@@ -1535,7 +1535,7 @@ enums:
           um registro feito após a construção. Para a planta de um pavimento,
           usar `floorPlanOf`.
       floorPlanOf:
-        title: é planta baixa de
+        title: planta baixa de
         meaning: term:lido00694
         broad_mappings:
           - term:lido00592
@@ -1545,7 +1545,7 @@ enums:
           relacionada, tomado próximo ao nível do solo ou acima de um
           pavimento.
       elevationOf:
-        title: é elevação de
+        title: elevação de
         meaning: term:lido00692
         description: >
           A obra descrita na ficha, um desenho ou outra projeção ortográfica,
@@ -1553,14 +1553,14 @@ enums:
           (por exemplo, uma edificação), exterior ou interior, em vista direta
           e frontal.
       sectionOf:
-        title: é corte de
+        title: corte de
         meaning: term:lido00696
         description: >
           A obra descrita na ficha, um desenho ortográfico ou objeto em outra
           mídia, mostra uma edificação, objeto ou sítio como se estivesse
           seccionado e exposto num plano específico.
       architecturalSurveyOf:
-        title: é levantamento arquitetônico de
+        title: levantamento arquitetônico de
         meaning: term:lido00702
         broad_mappings:
           - term:lido00603
@@ -1569,7 +1569,7 @@ enums:
           conservação de uma edificação histórica e fundamenta a priorização de
           ações de preservação e reparo.
       renderingOf:
-        title: é visualização de
+        title: visualização de
         meaning: term:lido00261
         description: >
           A obra descrita na ficha é uma visualização (perspectiva,
@@ -1592,7 +1592,7 @@ enums:
           relação é feita com a entidade conceitual do documento, não com um
           exemplar físico específico.
       reconstructionOf:
-        title: é reconstituição hipotética de
+        title: reconstituição hipotética de
         meaning: term:lido00698
         broad_mappings:
           - term:lido00603
@@ -1602,7 +1602,7 @@ enums:
           anterior, ou que o reconstitui a partir de evidências. Não confundir
           com o evento `reconstruction` (reconstrução física da edificação).
       illustrationOf:
-        title: é ilustração de
+        title: ilustração de
         meaning: term:lido00619
         broad_mappings:
           - term:lido00579
@@ -1659,7 +1659,7 @@ enums:
           exemplo, um desenho de projeto ou de execução é preparatório para a
           obra construída. Preferir os tipos mais específicos abaixo.
       modelFor:
-        title: é modelo para
+        title: modelo para
         meaning: term:lido00258
         broad_mappings:
           - term:lido00586
@@ -1668,7 +1668,7 @@ enums:
           tridimensional (maquete), preparatória para outro objeto mais
           acabado.
       preparatoryStudyFor:
-        title: é estudo preparatório para
+        title: estudo preparatório para
         meaning: term:lido00260
         broad_mappings:
           - term:lido00586
@@ -1680,7 +1680,7 @@ enums:
           `constructionDrawingFor`; para o estudo detalhado de aspectos de uma
           edificação existente, usar `studyAfter`.
       sketchFor:
-        title: é esboço para
+        title: esboço para
         meaning: term:lido00588
         broad_mappings:
           - term:lido00586
@@ -2306,17 +2306,6 @@ enums:
           obra anterior foi substituída por outra de função igual ou semelhante
           (por exemplo, uma catedral demolida e substituída por outra), usar
           `predecessorOf`.
-
-  ResourceType:
-    description: >-
-      Relações associativas entre objetos físicos ou criações intelectuais,
-      definidas segundo o vocabulário do LIDO.
-      Compreende as relações de documentação técnica das edificações.
-
-      Ver <http://terminology.lido-schema.org/relatedWorkRelType>
-    permissible_values:
-      architecturalSurvey:
-      planFor:
 
   RepositoryType:
     description: Type of repository or legal body.

@@ -3855,32 +3855,32 @@ class RelatedWorkRelType(str, Enum):
     Relação geral e simétrica, usada quando não se conhece ou não cabe uma relação mais específica. Sempre que possível, preferir um dos tipos mais específicos.
 
     """
-    é_planta_de = "planOf"
+    planta_de = "planOf"
     """
     A obra descrita na ficha é uma concepção formal da disposição dos espaços e elementos do objeto relacionado. Pode ser preparatória ou um registro feito após a construção. Para a planta de um pavimento, usar `floorPlanOf`.
 
     """
-    é_planta_baixa_de = "floorPlanOf"
+    planta_baixa_de = "floorPlanOf"
     """
     A obra descrita na ficha, um desenho ou outra projeção ortográfica bidimensional, representa um corte horizontal da edificação relacionada, tomado próximo ao nível do solo ou acima de um pavimento.
 
     """
-    é_elevação_de = "elevationOf"
+    elevação_de = "elevationOf"
     """
     A obra descrita na ficha, um desenho ou outra projeção ortográfica, mostra a disposição dos elementos verticais de um objeto espacial (por exemplo, uma edificação), exterior ou interior, em vista direta e frontal.
 
     """
-    é_corte_de = "sectionOf"
+    corte_de = "sectionOf"
     """
     A obra descrita na ficha, um desenho ortográfico ou objeto em outra mídia, mostra uma edificação, objeto ou sítio como se estivesse seccionado e exposto num plano específico.
 
     """
-    é_levantamento_arquitetônico_de = "architecturalSurveyOf"
+    levantamento_arquitetônico_de = "architecturalSurveyOf"
     """
     A obra descrita na ficha é um levantamento que avalia o estado de conservação de uma edificação histórica e fundamenta a priorização de ações de preservação e reparo.
 
     """
-    é_visualização_de = "renderingOf"
+    visualização_de = "renderingOf"
     """
     A obra descrita na ficha é uma visualização (perspectiva, renderização) ou um registro fiel da concepção do objeto relacionado, em geral em contexto arquitetônico.
 
@@ -3895,12 +3895,12 @@ class RelatedWorkRelType(str, Enum):
     A obra descrita na ficha, em geral um texto, documenta, discute ou descreve o objeto relacionado em sentido acadêmico ou científico. A relação é feita com a entidade conceitual do documento, não com um exemplar físico específico.
 
     """
-    é_reconstituição_hipotética_de = "reconstructionOf"
+    reconstituição_hipotética_de = "reconstructionOf"
     """
     A obra descrita na ficha é um desenho, modelo digital ou objeto em outra mídia que propõe como outro objeto pode ter sido em um momento anterior, ou que o reconstitui a partir de evidências. Não confundir com o evento `reconstruction` (reconstrução física da edificação).
 
     """
-    é_ilustração_de = "illustrationOf"
+    ilustração_de = "illustrationOf"
     """
     A obra descrita na ficha, em geral uma imagem ou diagrama que esclarece, exemplifica ou visualiza, acompanha o objeto relacionado, em geral um texto.
 
@@ -3935,17 +3935,17 @@ class RelatedWorkRelType(str, Enum):
     A obra descrita na ficha foi criada para preparar outro objeto; por exemplo, um desenho de projeto ou de execução é preparatório para a obra construída. Preferir os tipos mais específicos abaixo.
 
     """
-    é_modelo_para = "modelFor"
+    modelo_para = "modelFor"
     """
     A obra descrita na ficha é uma representação em escala, em geral tridimensional (maquete), preparatória para outro objeto mais acabado.
 
     """
-    é_estudo_preparatório_para = "preparatoryStudyFor"
+    estudo_preparatório_para = "preparatoryStudyFor"
     """
     A obra descrita na ficha é um estudo preliminar de aspectos específicos de outro objeto mais acabado. Não é apropriado para arquitetura: para objetos das fases preparatórias de projetos arquitetônicos, usar `sketchFor`, `designFor` ou `constructionDrawingFor`; para o estudo detalhado de aspectos de uma edificação existente, usar `studyAfter`.
 
     """
-    é_esboço_para = "sketchFor"
+    esboço_para = "sketchFor"
     """
     A obra descrita na ficha é um esboço (croqui) que visualiza de modo inicial e aproximado o projeto de outro objeto. Os esboços são menos acabados que os projetos e os estudos.
 
@@ -4322,16 +4322,6 @@ class RelatedWorkRelType(str, Enum):
     A obra descrita na ficha foi precedida, no mesmo sítio, por outra obra. Usar apenas quando as duas obras têm funções diferentes; se a obra anterior foi substituída por outra de função igual ou semelhante (por exemplo, uma catedral demolida e substituída por outra), usar `predecessorOf`.
 
     """
-
-
-class ResourceType(str, Enum):
-    """
-        Relações associativas entre objetos físicos ou criações intelectuais, definidas segundo o vocabulário do LIDO. Compreende as relações de documentação técnica das edificações.
-    Ver <http://terminology.lido-schema.org/relatedWorkRelType>
-    """
-
-    architecturalSurvey = "architecturalSurvey"
-    planFor = "planFor"
 
 
 class RepositoryType(str, Enum):

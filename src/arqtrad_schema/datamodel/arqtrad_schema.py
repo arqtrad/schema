@@ -3375,37 +3375,37 @@ class RelatedWorkRelType(EnumDefinitionImpl):
     )
     planOf = PermissibleValue(
         text="planOf",
-        title="é planta de",
+        title="planta de",
         description="""A obra descrita na ficha é uma concepção formal da disposição dos espaços e elementos do objeto relacionado. Pode ser preparatória ou um registro feito após a construção. Para a planta de um pavimento, usar `floorPlanOf`.""",
         meaning=TERM["lido00592"],
     )
     floorPlanOf = PermissibleValue(
         text="floorPlanOf",
-        title="é planta baixa de",
+        title="planta baixa de",
         description="""A obra descrita na ficha, um desenho ou outra projeção ortográfica bidimensional, representa um corte horizontal da edificação relacionada, tomado próximo ao nível do solo ou acima de um pavimento.""",
         meaning=TERM["lido00694"],
     )
     elevationOf = PermissibleValue(
         text="elevationOf",
-        title="é elevação de",
+        title="elevação de",
         description="""A obra descrita na ficha, um desenho ou outra projeção ortográfica, mostra a disposição dos elementos verticais de um objeto espacial (por exemplo, uma edificação), exterior ou interior, em vista direta e frontal.""",
         meaning=TERM["lido00692"],
     )
     sectionOf = PermissibleValue(
         text="sectionOf",
-        title="é corte de",
+        title="corte de",
         description="""A obra descrita na ficha, um desenho ortográfico ou objeto em outra mídia, mostra uma edificação, objeto ou sítio como se estivesse seccionado e exposto num plano específico.""",
         meaning=TERM["lido00696"],
     )
     architecturalSurveyOf = PermissibleValue(
         text="architecturalSurveyOf",
-        title="é levantamento arquitetônico de",
+        title="levantamento arquitetônico de",
         description="""A obra descrita na ficha é um levantamento que avalia o estado de conservação de uma edificação histórica e fundamenta a priorização de ações de preservação e reparo.""",
         meaning=TERM["lido00702"],
     )
     renderingOf = PermissibleValue(
         text="renderingOf",
-        title="é visualização de",
+        title="visualização de",
         description="""A obra descrita na ficha é uma visualização (perspectiva, renderização) ou um registro fiel da concepção do objeto relacionado, em geral em contexto arquitetônico.""",
         meaning=TERM["lido00261"],
     )
@@ -3423,13 +3423,13 @@ class RelatedWorkRelType(EnumDefinitionImpl):
     )
     reconstructionOf = PermissibleValue(
         text="reconstructionOf",
-        title="é reconstituição hipotética de",
+        title="reconstituição hipotética de",
         description="""A obra descrita na ficha é um desenho, modelo digital ou objeto em outra mídia que propõe como outro objeto pode ter sido em um momento anterior, ou que o reconstitui a partir de evidências. Não confundir com o evento `reconstruction` (reconstrução física da edificação).""",
         meaning=TERM["lido00698"],
     )
     illustrationOf = PermissibleValue(
         text="illustrationOf",
-        title="é ilustração de",
+        title="ilustração de",
         description="""A obra descrita na ficha, em geral uma imagem ou diagrama que esclarece, exemplifica ou visualiza, acompanha o objeto relacionado, em geral um texto.""",
         meaning=TERM["lido00619"],
     )
@@ -3471,19 +3471,19 @@ class RelatedWorkRelType(EnumDefinitionImpl):
     )
     modelFor = PermissibleValue(
         text="modelFor",
-        title="é modelo para",
+        title="modelo para",
         description="""A obra descrita na ficha é uma representação em escala, em geral tridimensional (maquete), preparatória para outro objeto mais acabado.""",
         meaning=TERM["lido00258"],
     )
     preparatoryStudyFor = PermissibleValue(
         text="preparatoryStudyFor",
-        title="é estudo preparatório para",
+        title="estudo preparatório para",
         description="""A obra descrita na ficha é um estudo preliminar de aspectos específicos de outro objeto mais acabado. Não é apropriado para arquitetura: para objetos das fases preparatórias de projetos arquitetônicos, usar `sketchFor`, `designFor` ou `constructionDrawingFor`; para o estudo detalhado de aspectos de uma edificação existente, usar `studyAfter`.""",
         meaning=TERM["lido00260"],
     )
     sketchFor = PermissibleValue(
         text="sketchFor",
-        title="é esboço para",
+        title="esboço para",
         description="""A obra descrita na ficha é um esboço (croqui) que visualiza de modo inicial e aproximado o projeto de outro objeto. Os esboços são menos acabados que os projetos e os estudos.""",
         meaning=TERM["lido00588"],
     )
@@ -3941,23 +3941,6 @@ definidas segundo o vocabulário do LIDO.
 Compreende as relações associativas, exceto aquelas de partes com o todo
 (grupo `lido01074`, tratado em `LargerContextType`).
 
-Ver <http://terminology.lido-schema.org/relatedWorkRelType>""",
-    )
-
-
-class ResourceType(EnumDefinitionImpl):
-    """
-    Relações associativas entre objetos físicos ou criações intelectuais, definidas segundo o vocabulário do LIDO.
-    Compreende as relações de documentação técnica das edificações.
-    Ver <http://terminology.lido-schema.org/relatedWorkRelType>
-    """
-
-    architecturalSurvey = PermissibleValue(text="architecturalSurvey")
-    planFor = PermissibleValue(text="planFor")
-
-    _defn = EnumDefinition(
-        name="ResourceType",
-        description="""Relações associativas entre objetos físicos ou criações intelectuais, definidas segundo o vocabulário do LIDO. Compreende as relações de documentação técnica das edificações.
 Ver <http://terminology.lido-schema.org/relatedWorkRelType>""",
     )
 
