@@ -1890,7 +1890,7 @@ enums:
           \ objeto espacial (por exemplo, uma edifica\xE7\xE3o), exterior ou interior,\
           \ em vista direta e frontal.\n"
         meaning: term:lido00692
-        title: "eleva\xE7\xE3o de"
+        title: "al\xE7ado de"
       sectionOf:
         text: sectionOf
         description: "A obra descrita na ficha, um desenho ortogr\xE1fico ou objeto\
@@ -2420,7 +2420,7 @@ enums:
           fica que mostra a disposi\xE7\xE3o dos seus elementos verticais, exterior\
           \ ou interior.\n"
         meaning: term:lido00693
-        title: "tem eleva\xE7\xE3o"
+        title: "tem al\xE7ado"
       hasSection:
         text: hasSection
         description: "A obra descrita na ficha, uma edifica\xE7\xE3o, s\xEDtio ou\
@@ -11881,6 +11881,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-21T14:25:45'
-source_file_size: 102698
+source_file_date: '2026-11-21T14:28:18'
+source_file_size: 102692
 
