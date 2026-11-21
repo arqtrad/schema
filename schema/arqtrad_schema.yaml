@@ -1646,10 +1646,6 @@ enums:
           \ no document\xE1rio, por motivos t\xE9cnicos ou decis\xE3o cient\xEDfica.\n"
         meaning: term:lido01059
         title: pertenceu ao mesmo contexto que
-      was_antedated:
-        text: was_antedated
-        meaning: term:lido01189
-        title: "foi precedido no mesmo s\xEDtio por"
       is_part_of:
         text: is_part_of
         description: "Rela\xE7\xE3o gen\xE9rica entre parte e todo. Sempre que poss\xED\
@@ -1858,10 +1854,111 @@ enums:
     definition_uri: https://tradicional.arq.br/schema/RelatedWorkRelType
     description: "Rela\xE7\xF5es associativas entre objetos f\xEDsicos ou cria\xE7\
       \xF5es intelectuais,\ndefinidas segundo o vocabul\xE1rio do LIDO.\nCompreende\
-      \ as rela\xE7\xF5es associativas, exceto aquelas de partes com o todo.\n\nVer\
-      \ <http://terminology.lido-schema.org/relatedWorkRelType>\n"
+      \ as rela\xE7\xF5es associativas, exceto aquelas de partes com o todo\n(grupo\
+      \ `lido01074`, tratado em `LargerContextType`).\n\nVer <http://terminology.lido-schema.org/relatedWorkRelType>\n"
     from_schema: https://tradicional.arq.br/schema
     permissible_values:
+      relatedTo:
+        text: relatedTo
+        description: "Rela\xE7\xE3o geral e sim\xE9trica, usada quando n\xE3o se conhece\
+          \ ou n\xE3o cabe uma rela\xE7\xE3o mais espec\xEDfica. Sempre que poss\xED\
+          vel, preferir um dos tipos mais espec\xEDficos.\n"
+        meaning: term:lido00263
+        title: relacionado a
+      planOf:
+        text: planOf
+        description: "A obra descrita na ficha \xE9 uma concep\xE7\xE3o formal da\
+          \ disposi\xE7\xE3o dos espa\xE7os e elementos do objeto relacionado. Pode\
+          \ ser preparat\xF3ria ou um registro feito ap\xF3s a constru\xE7\xE3o. Para\
+          \ a planta de um pavimento, usar `floorPlanOf`.\n"
+        meaning: term:lido00592
+        title: "\xE9 planta de"
+      floorPlanOf:
+        text: floorPlanOf
+        description: "A obra descrita na ficha, um desenho ou outra proje\xE7\xE3\
+          o ortogr\xE1fica bidimensional, representa um corte horizontal da edifica\xE7\
+          \xE3o relacionada, tomado pr\xF3ximo ao n\xEDvel do solo ou acima de um\
+          \ pavimento.\n"
+        meaning: term:lido00694
+        title: "\xE9 planta baixa de"
+        broad_mappings:
+        - term:lido00592
+      elevationOf:
+        text: elevationOf
+        description: "A obra descrita na ficha, um desenho ou outra proje\xE7\xE3\
+          o ortogr\xE1fica, mostra a disposi\xE7\xE3o dos elementos verticais de um\
+          \ objeto espacial (por exemplo, uma edifica\xE7\xE3o), exterior ou interior,\
+          \ em vista direta e frontal.\n"
+        meaning: term:lido00692
+        title: "\xE9 eleva\xE7\xE3o de"
+      sectionOf:
+        text: sectionOf
+        description: "A obra descrita na ficha, um desenho ortogr\xE1fico ou objeto\
+          \ em outra m\xEDdia, mostra uma edifica\xE7\xE3o, objeto ou s\xEDtio como\
+          \ se estivesse seccionado e exposto num plano espec\xEDfico.\n"
+        meaning: term:lido00696
+        title: "\xE9 corte de"
+      architecturalSurveyOf:
+        text: architecturalSurveyOf
+        description: "A obra descrita na ficha \xE9 um levantamento que avalia o estado\
+          \ de conserva\xE7\xE3o de uma edifica\xE7\xE3o hist\xF3rica e fundamenta\
+          \ a prioriza\xE7\xE3o de a\xE7\xF5es de preserva\xE7\xE3o e reparo.\n"
+        meaning: term:lido00702
+        title: "\xE9 levantamento arquitet\xF4nico de"
+        broad_mappings:
+        - term:lido00603
+      renderingOf:
+        text: renderingOf
+        description: "A obra descrita na ficha \xE9 uma visualiza\xE7\xE3o (perspectiva,\
+          \ renderiza\xE7\xE3o) ou um registro fiel da concep\xE7\xE3o do objeto relacionado,\
+          \ em geral em contexto arquitet\xF4nico.\n"
+        meaning: term:lido00261
+        title: "\xE9 visualiza\xE7\xE3o de"
+      depicts:
+        text: depicts
+        description: "A obra descrita na ficha \xE9 uma obra de arte que representa\
+          \ outra obra, em geral num contexto hist\xF3rico relevante. Reservar para\
+          \ as representa\xE7\xF5es mais importantes; para a simples presen\xE7a da\
+          \ edifica\xE7\xE3o como assunto de outra obra, usar o grupo `subject`.\n"
+        meaning: term:lido00645
+        title: representa
+      documents:
+        text: documents
+        description: "A obra descrita na ficha, em geral um texto, documenta, discute\
+          \ ou descreve o objeto relacionado em sentido acad\xEAmico ou cient\xED\
+          fico. A rela\xE7\xE3o \xE9 feita com a entidade conceitual do documento,\
+          \ n\xE3o com um exemplar f\xEDsico espec\xEDfico.\n"
+        meaning: term:lido00618
+        title: documenta
+      reconstructionOf:
+        text: reconstructionOf
+        description: "A obra descrita na ficha \xE9 um desenho, modelo digital ou\
+          \ objeto em outra m\xEDdia que prop\xF5e como outro objeto pode ter sido\
+          \ em um momento anterior, ou que o reconstitui a partir de evid\xEAncias.\
+          \ N\xE3o confundir com o evento `reconstruction` (reconstru\xE7\xE3o f\xED\
+          sica da edifica\xE7\xE3o).\n"
+        meaning: term:lido00698
+        title: "\xE9 reconstitui\xE7\xE3o hipot\xE9tica de"
+        broad_mappings:
+        - term:lido00603
+      illustrationOf:
+        text: illustrationOf
+        description: 'A obra descrita na ficha, em geral uma imagem ou diagrama que
+          esclarece, exemplifica ou visualiza, acompanha o objeto relacionado, em
+          geral um texto.
+
+          '
+        meaning: term:lido00619
+        title: "\xE9 ilustra\xE7\xE3o de"
+        broad_mappings:
+        - term:lido00579
+      hasRendering:
+        text: hasRendering
+        description: "O objeto relacionado \xE9 uma visualiza\xE7\xE3o (perspectiva,\
+          \ renderiza\xE7\xE3o) ou um registro fiel da concep\xE7\xE3o da obra descrita\
+          \ na ficha, em geral em contexto arquitet\xF4nico.\n"
+        meaning: term:lido00681
+        title: "tem visualiza\xE7\xE3o"
       depictedIn:
         text: depictedIn
         description: "A obra descrita na ficha est\xE1 representada na m\xEDdia relacionada,\
@@ -1872,22 +1969,222 @@ enums:
       documentedIn:
         text: documentedIn
         description: "A obra descrita na ficha est\xE1 documentada, discutida ou descrita\
-          \ na m\xEDdia relacionada, que em geral ser\xE1 um texto.\n"
+          \ na m\xEDdia relacionada, que em geral ser\xE1 um texto. A rela\xE7\xE3\
+          o \xE9 feita com a entidade conceitual do documento, n\xE3o com um exemplar\
+          \ f\xEDsico espec\xEDfico que o contenha.\n"
         meaning: term:lido00617
         title: documentado em
-      complements:
-        text: complements
-        description: "Rela\xE7\xE3o entre obras criadas independentemente uma da outra,\
-          \ mas que mais tarde passaram a ser consideradas ou usadas conjuntamente.\n"
-        meaning: term:lido00580
-        title: complementa
-      complemented:
-        text: complemented
-        description: "Rela\xE7\xE3o entre obras criadas independentemente uma da outra,\
-          \ mas que mais tarde passaram a ser consideradas ou usadas conjuntamente,\
-          \ sendo essa associa\xE7\xE3o posteriormente desfeita.\n"
-        meaning: term:lido01095
-        title: complementava
+      hasSpeciesDescriptionIn:
+        text: hasSpeciesDescriptionIn
+        description: "Aplica-se a objetos naturais, em geral uma esp\xE9cie rec\xE9\
+          m-descoberta, que recebem descri\xE7\xE3o formal detalhada em artigo cient\xED\
+          fico ou outra publica\xE7\xE3o reconhecida. Raramente relevante para edifica\xE7\
+          \xF5es.\n"
+        meaning: term:lido00674
+        title: "tem descri\xE7\xE3o de esp\xE9cie em"
+        broad_mappings:
+        - term:lido00617
+      isSpeciesDescriptionOf:
+        text: isSpeciesDescriptionOf
+        description: "A obra descrita na ficha, em geral um artigo cient\xEDfico,\
+          \ apresenta a descri\xE7\xE3o formal detalhada de uma esp\xE9cie rec\xE9\
+          m-descoberta. Raramente relevante para edifica\xE7\xF5es.\n"
+        meaning: term:lido00673
+        title: "\xE9 descri\xE7\xE3o de esp\xE9cie de"
+        broad_mappings:
+        - term:lido00618
+      preparatoryFor:
+        text: preparatoryFor
+        description: "A obra descrita na ficha foi criada para preparar outro objeto;\
+          \ por exemplo, um desenho de projeto ou de execu\xE7\xE3o \xE9 preparat\xF3\
+          rio para a obra constru\xEDda. Preferir os tipos mais espec\xEDficos abaixo.\n"
+        meaning: term:lido00586
+        title: "preparat\xF3rio para"
+      modelFor:
+        text: modelFor
+        description: "A obra descrita na ficha \xE9 uma representa\xE7\xE3o em escala,\
+          \ em geral tridimensional (maquete), preparat\xF3ria para outro objeto mais\
+          \ acabado.\n"
+        meaning: term:lido00258
+        title: "\xE9 modelo para"
+        broad_mappings:
+        - term:lido00586
+      preparatoryStudyFor:
+        text: preparatoryStudyFor
+        description: "A obra descrita na ficha \xE9 um estudo preliminar de aspectos\
+          \ espec\xEDficos de outro objeto mais acabado. N\xE3o \xE9 apropriado para\
+          \ arquitetura: para objetos das fases preparat\xF3rias de projetos arquitet\xF4\
+          nicos, usar `sketchFor`, `designFor` ou `constructionDrawingFor`; para o\
+          \ estudo detalhado de aspectos de uma edifica\xE7\xE3o existente, usar `studyAfter`.\n"
+        meaning: term:lido00260
+        title: "\xE9 estudo preparat\xF3rio para"
+        broad_mappings:
+        - term:lido00586
+      sketchFor:
+        text: sketchFor
+        description: "A obra descrita na ficha \xE9 um esbo\xE7o (croqui) que visualiza\
+          \ de modo inicial e aproximado o projeto de outro objeto. Os esbo\xE7os\
+          \ s\xE3o menos acabados que os projetos e os estudos.\n"
+        meaning: term:lido00588
+        title: "\xE9 esbo\xE7o para"
+        broad_mappings:
+        - term:lido00586
+      cartoonFor:
+        text: cartoonFor
+        description: "A obra descrita na ficha \xE9 um desenho preparat\xF3rio, em\
+          \ geral em tamanho real, destinado a transferir um projeto para a superf\xED\
+          cie de trabalho do outro objeto (por exemplo, um mural ou uma tape\xE7aria).\n"
+        meaning: term:lido00590
+        title: "\xE9 cart\xE3o para"
+        broad_mappings:
+        - term:lido00586
+      designFor:
+        text: designFor
+        description: "A obra descrita na ficha desenvolve o esquema de um projeto\
+          \ (art\xEDstico ou arquitet\xF4nico) e \xE9 preliminar a outro objeto mais\
+          \ acabado. Em geral \xE9 um desenho, mas n\xE3o necessariamente. Os projetos\
+          \ s\xE3o mais acabados que os esbo\xE7os.\n"
+        meaning: term:lido00594
+        title: "\xE9 projeto para"
+        broad_mappings:
+        - term:lido00586
+      bozzettoFor:
+        text: bozzettoFor
+        description: "A obra descrita na ficha \xE9 um bozzetto: modelo preliminar,\
+          \ em geral escult\xF3rico, de outro objeto mais acabado.\n"
+        meaning: term:lido00704
+        title: "\xE9 bozzetto para"
+        broad_mappings:
+        - term:lido00594
+      printingSurfaceFor:
+        text: printingSurfaceFor
+        description: "A obra descrita na ficha \xE9 uma superf\xEDcie plana (placa,\
+          \ bloco, chapa) usada para imprimir textos ou imagens que constituem o objeto\
+          \ relacionado.\n"
+        meaning: term:lido00596
+        title: "\xE9 matriz de impress\xE3o para"
+        broad_mappings:
+        - term:lido00586
+      negativeFor:
+        text: negativeFor
+        description: "A obra descrita na ficha \xE9 um negativo fotogr\xE1fico utilizado\
+          \ para produzir uma ou mais c\xF3pias fotogr\xE1ficas.\n"
+        meaning: term:lido00598
+        title: "\xE9 negativo para"
+        broad_mappings:
+        - term:lido00586
+      constructionDrawingFor:
+        text: constructionDrawingFor
+        description: "A obra descrita na ficha \xE9 um desenho que comunica as informa\xE7\
+          \xF5es necess\xE1rias \xE0 constru\xE7\xE3o do objeto relacionado (edifica\xE7\
+          \xE3o ou similar), em especial a mec\xE2nica da sua execu\xE7\xE3o, e \xE9\
+          \ usado pelos respons\xE1veis pela obra.\n"
+        meaning: term:lido00690
+        title: "\xE9 desenho executivo para"
+        broad_mappings:
+        - term:lido00586
+      moldFor:
+        text: moldFor
+        description: "A obra descrita na ficha \xE9 um molde usado para produzir o\
+          \ objeto relacionado, por fundi\xE7\xE3o ou conforma\xE7\xE3o.\n"
+        meaning: term:lido01133
+        title: "\xE9 molde para"
+        broad_mappings:
+        - term:lido00586
+      basedOn:
+        text: basedOn
+        description: "A cria\xE7\xE3o ou produ\xE7\xE3o da obra descrita na ficha\
+          \ baseou-se em outro objeto preparat\xF3rio. Preferir os tipos mais espec\xED\
+          ficos abaixo.\n"
+        meaning: term:lido00587
+        title: baseado em
+      hasModel:
+        text: hasModel
+        description: "A obra descrita na ficha foi preparada por um modelo em escala,\
+          \ em geral tridimensional (maquete), que \xE9 o objeto relacionado.\n"
+        meaning: term:lido00257
+        title: tem modelo
+        broad_mappings:
+        - term:lido00587
+      hasPreparatoryStudy:
+        text: hasPreparatoryStudy
+        description: "A obra descrita na ficha \xE9 a vers\xE3o mais acabada de outro\
+          \ objeto preliminar, que explora aspectos espec\xEDficos dela. N\xE3o \xE9\
+          \ apropriado para arquitetura: para as fases preparat\xF3rias de projetos\
+          \ arquitet\xF4nicos, usar `hasSketch`, `hasDesign` ou `hasConstructionDrawing`;\
+          \ para o estudo detalhado de uma edifica\xE7\xE3o existente, usar `hasStudy`.\n"
+        meaning: term:lido00259
+        title: "tem estudo preparat\xF3rio"
+        broad_mappings:
+        - term:lido00587
+      hasSketch:
+        text: hasSketch
+        description: "A obra descrita na ficha \xE9 a vers\xE3o mais acabada de outro\
+          \ objeto preliminar, que visualizou de modo inicial e aproximado o seu projeto\
+          \ (croqui).\n"
+        meaning: term:lido00589
+        title: "tem esbo\xE7o"
+        broad_mappings:
+        - term:lido00587
+      hasCartoon:
+        text: hasCartoon
+        description: "A obra descrita na ficha, em geral uma obra bidimensional de\
+          \ grande escala como um mural ou uma tape\xE7aria, \xE9 a vers\xE3o mais\
+          \ acabada de um desenho preparat\xF3rio em tamanho real (cart\xE3o).\n"
+        meaning: term:lido00591
+        title: "tem cart\xE3o"
+        broad_mappings:
+        - term:lido00587
+      hasDesign:
+        text: hasDesign
+        description: "A obra descrita na ficha \xE9 a vers\xE3o mais acabada de outro\
+          \ objeto preliminar que desenvolveu o esquema do seu projeto. Em geral o\
+          \ projeto \xE9 um desenho, mas n\xE3o necessariamente.\n"
+        meaning: term:lido00595
+        title: tem projeto
+        broad_mappings:
+        - term:lido00587
+      hasBozzetto:
+        text: hasBozzetto
+        description: "A obra descrita na ficha, em geral escult\xF3rica, \xE9 a vers\xE3\
+          o mais acabada de um modelo preliminar (bozzetto).\n"
+        meaning: term:lido00705
+        title: tem bozzetto
+        broad_mappings:
+        - term:lido00595
+      printedFromPrintingSurface:
+        text: printedFromPrintingSurface
+        description: "A obra descrita na ficha \xE9 uma impress\xE3o produzida a partir\
+          \ de uma matriz espec\xEDfica (placa, bloco, chapa), que \xE9 o objeto relacionado.\n"
+        meaning: term:lido00597
+        title: foi impresso a partir da matriz
+        broad_mappings:
+        - term:lido00587
+      printedFromNegative:
+        text: printedFromNegative
+        description: "A obra descrita na ficha \xE9 uma c\xF3pia fotogr\xE1fica produzida\
+          \ a partir de um negativo espec\xEDfico, que \xE9 o objeto relacionado.\n"
+        meaning: term:lido00599
+        title: foi copiado do negativo
+        broad_mappings:
+        - term:lido00587
+      hasConstructionDrawing:
+        text: hasConstructionDrawing
+        description: "A obra descrita na ficha, em geral uma edifica\xE7\xE3o, possui\
+          \ um desenho executivo que comunica as informa\xE7\xF5es necess\xE1rias\
+          \ \xE0 sua constru\xE7\xE3o. O desenho \xE9 o objeto relacionado.\n"
+        meaning: term:lido00691
+        title: tem desenho executivo
+        broad_mappings:
+        - term:lido00587
+      castOrFormedFromMold:
+        text: castOrFormedFromMold
+        description: "A obra descrita na ficha foi fundida ou conformada a partir\
+          \ de um molde espec\xEDfico, que \xE9 o objeto relacionado.\n"
+        meaning: term:lido01132
+        title: foi moldado a partir do molde
+        broad_mappings:
+        - term:lido00587
       derivedFrom:
         text: derivedFrom
         description: "A obra descrita \xE9 derivada ou sensivelmente influenciada\
@@ -1898,13 +2195,467 @@ enums:
           \ interpreta\xE7\xE3o bibliogr\xE1fica.\n"
         meaning: term:lido00603
         title: derivado de
+      copyAfter:
+        text: copyAfter
+        description: "A obra descrita na ficha copia outro objeto, assemelhando-se\
+          \ fortemente a ele ou reproduzindo a sua apar\xEAncia ou o seu conte\xFA\
+          do. Implica imita\xE7\xE3o menos precisa e fiel que `reproductionOf`.\n"
+        meaning: term:lido00262
+        title: "\xE9 c\xF3pia de"
+        broad_mappings:
+        - term:lido00603
+      tracingOf:
+        text: tracingOf
+        description: "A obra descrita na ficha foi copiada de outro objeto por decalque,\
+          \ em geral pelo mesmo artista, art\xEDfice ou ateli\xEA que produziu o original.\n"
+        meaning: term:lido00862
+        title: "\xE9 decalque de"
+        broad_mappings:
+        - term:lido00262
+      forgeryOf:
+        text: forgeryOf
+        description: "A obra descrita na ficha imita outro objeto com inten\xE7\xE3\
+          o de enganar.\n"
+        meaning: term:lido00601
+        title: "\xE9 falsifica\xE7\xE3o de"
+        broad_mappings:
+        - term:lido00603
+      replicaOf:
+        text: replicaOf
+        description: "A obra descrita na ficha \xE9 uma reprodu\xE7\xE3o precisa de\
+          \ outro objeto valorizado, em geral nas mesmas dimens\xF5es do original.\
+          \ Usar tamb\xE9m quando mais de uma r\xE9plica semelhante \xE9 produzida\
+          \ de um mesmo original.\n"
+        meaning: term:lido00605
+        title: "\xE9 r\xE9plica de"
+        broad_mappings:
+        - term:lido00603
+      reproductionOf:
+        text: reproductionOf
+        description: "A obra descrita na ficha \xE9 uma c\xF3pia de outro objeto feita\
+          \ de modo mais ou menos mec\xE2nico e sem inten\xE7\xE3o de enganar. Implica\
+          \ imita\xE7\xE3o mais precisa e fiel que `copyAfter`.\n"
+        meaning: term:lido00607
+        title: "\xE9 reprodu\xE7\xE3o de"
+        broad_mappings:
+        - term:lido00603
+      facsimileOf:
+        text: facsimileOf
+        description: "A obra descrita na ficha \xE9 uma c\xF3pia exata de um objeto\
+          \ f\xEDsico, em geral nas mesmas dimens\xF5es do original, especialmente\
+          \ de livros, documentos, gravuras e desenhos.\n"
+        meaning: term:lido00623
+        title: "\xE9 fac-s\xEDmile de"
+        broad_mappings:
+        - term:lido00607
+      counterproofFrom:
+        text: counterproofFrom
+        description: "A obra descrita na ficha \xE9 uma impress\xE3o tirada de uma\
+          \ obra original, em geral uma gravura ou um desenho, mas \xE0s vezes um\
+          \ texto.\n"
+        meaning: term:lido00609
+        title: "\xE9 contraprova de"
+        broad_mappings:
+        - term:lido00603
+      versionOf:
+        text: versionOf
+        description: "A obra descrita na ficha foi feita pelo mesmo artista, art\xED\
+          fice ou ateli\xEA que criou outro objeto no qual aquela se baseia de perto,\
+          \ mas resultando numa obra com caracter\xEDsticas pr\xF3prias.\n"
+        meaning: term:lido00700
+        title: "\xE9 vers\xE3o de"
+        broad_mappings:
+        - term:lido00603
+      studyAfter:
+        text: studyAfter
+        description: "A obra descrita na ficha explora em detalhe certos aspectos\
+          \ espec\xEDficos de outro objeto (por exemplo, uma edifica\xE7\xE3o existente).\n"
+        meaning: term:lido00706
+        title: "\xE9 estudo a partir de"
+        broad_mappings:
+        - term:lido00603
+      pasticheCopyAfter:
+        text: pasticheCopyAfter
+        description: "A obra descrita na ficha copia parcialmente outro objeto, mas\
+          \ cont\xE9m caracter\xEDsticas ou partes copiadas de uma segunda obra ou\
+          \ acrescentadas como originais.\n"
+        meaning: term:lido00611
+        title: "\xE9 c\xF3pia em pastiche de"
+      sourceFor:
+        text: sourceFor
+        description: "A obra descrita na ficha influenciou fortemente ou \xE9 a fonte\
+          \ da cria\xE7\xE3o ou produ\xE7\xE3o do objeto relacionado. Preferir os\
+          \ tipos mais espec\xEDficos abaixo sempre que o objeto relacionado puder\
+          \ ser designado como c\xF3pia, r\xE9plica, reprodu\xE7\xE3o, falsifica\xE7\
+          \xE3o, vers\xE3o, etc.\n"
+        meaning: term:lido00604
+        title: "\xE9 fonte para"
+      hasCopy:
+        text: hasCopy
+        description: "A obra descrita na ficha foi copiada pelo objeto relacionado,\
+          \ que se assemelha fortemente a ela ou reproduz a sua apar\xEAncia ou o\
+          \ seu conte\xFAdo.\n"
+        meaning: term:lido00600
+        title: "tem c\xF3pia"
+        broad_mappings:
+        - term:lido00604
+      hasTracing:
+        text: hasTracing
+        description: "A obra descrita na ficha foi copiada pelo objeto relacionado\
+          \ por decalque, em geral pelo mesmo artista, art\xEDfice ou ateli\xEA que\
+          \ a produziu.\n"
+        meaning: term:lido00863
+        title: tem decalque
+        broad_mappings:
+        - term:lido00600
+      hasForgery:
+        text: hasForgery
+        description: "A obra descrita na ficha foi imitada pelo objeto relacionado,\
+          \ feito com inten\xE7\xE3o de enganar.\n"
+        meaning: term:lido00602
+        title: "tem falsifica\xE7\xE3o"
+        broad_mappings:
+        - term:lido00604
+      hasReplica:
+        text: hasReplica
+        description: "A obra descrita na ficha \xE9 um objeto valorizado que foi reproduzido\
+          \ com precis\xE3o pelo objeto relacionado, em geral nas mesmas dimens\xF5\
+          es.\n"
+        meaning: term:lido00606
+        title: "tem r\xE9plica"
+        broad_mappings:
+        - term:lido00604
+      hasReproduction:
+        text: hasReproduction
+        description: "A obra descrita na ficha foi copiada pelo objeto relacionado\
+          \ de modo mais ou menos mec\xE2nico e sem inten\xE7\xE3o de enganar.\n"
+        meaning: term:lido00608
+        title: "tem reprodu\xE7\xE3o"
+        broad_mappings:
+        - term:lido00604
+      hasFacsimile:
+        text: hasFacsimile
+        description: "A obra descrita na ficha, objeto f\xEDsico, foi reproduzida\
+          \ por uma c\xF3pia exata, em geral nas mesmas dimens\xF5es do original,\
+          \ especialmente no caso de livros, documentos, gravuras e desenhos.\n"
+        meaning: term:lido00624
+        title: "tem fac-s\xEDmile"
+        broad_mappings:
+        - term:lido00608
+      hasCounterproof:
+        text: hasCounterproof
+        description: "A obra descrita na ficha \xE9 o original do qual se tirou uma\
+          \ impress\xE3o (contraprova), em geral uma gravura ou um desenho, mas \xE0\
+          s vezes um texto.\n"
+        meaning: term:lido00610
+        title: tem contraprova
+        broad_mappings:
+        - term:lido00604
+      hasReconstruction:
+        text: hasReconstruction
+        description: "A apar\xEAncia anterior da obra descrita na ficha \xE9 proposta\
+          \ por um desenho, modelo digital ou objeto em outra m\xEDdia, que \xE9 o\
+          \ objeto relacionado. N\xE3o confundir com o evento `reconstruction` (reconstru\xE7\
+          \xE3o f\xEDsica da edifica\xE7\xE3o).\n"
+        meaning: term:lido00699
+        title: "tem reconstitui\xE7\xE3o hipot\xE9tica"
+        broad_mappings:
+        - term:lido00604
+      hasVersion:
+        text: hasVersion
+        description: "O objeto relacionado foi feito pelo mesmo artista, art\xEDfice\
+          \ ou ateli\xEA que criou a obra descrita na ficha, baseando-se nela de perto,\
+          \ mas resultando numa obra com caracter\xEDsticas pr\xF3prias.\n"
+        meaning: term:lido00729
+        title: "tem vers\xE3o"
+        broad_mappings:
+        - term:lido00604
+      hasArchitecturalSurvey:
+        text: hasArchitecturalSurvey
+        description: "A obra descrita na ficha \xE9 uma edifica\xE7\xE3o hist\xF3\
+          rica cujo estado de conserva\xE7\xE3o \xE9 avaliado por um levantamento\
+          \ arquitet\xF4nico (o objeto relacionado), que fundamenta a prioriza\xE7\
+          \xE3o de a\xE7\xF5es de preserva\xE7\xE3o e reparo.\n"
+        meaning: term:lido00703
+        title: "tem levantamento arquitet\xF4nico"
+        broad_mappings:
+        - term:lido00604
+      hasStudy:
+        text: hasStudy
+        description: "Certos aspectos espec\xEDficos da obra descrita na ficha s\xE3\
+          o explorados em detalhe pelo objeto relacionado.\n"
+        meaning: term:lido00707
+        title: tem estudo
+        broad_mappings:
+        - term:lido00604
+      hasPasticheCopy:
+        text: hasPasticheCopy
+        description: "A obra descrita na ficha foi parcialmente copiada pelo objeto\
+          \ relacionado, que cont\xE9m caracter\xEDsticas ou partes copiadas de uma\
+          \ segunda obra ou acrescentadas como originais.\n"
+        meaning: term:lido00612
+        title: "tem c\xF3pia em pastiche"
+      hasPlan:
+        text: hasPlan
+        description: "A obra descrita na ficha possui uma planta (objeto relacionado),\
+          \ que \xE9 uma concep\xE7\xE3o formal da disposi\xE7\xE3o dos seus espa\xE7\
+          os e elementos. Pode ser preparat\xF3ria ou um registro feito ap\xF3s a\
+          \ constru\xE7\xE3o.\n"
+        meaning: term:lido00593
+        title: tem planta
+      hasFloorPlan:
+        text: hasFloorPlan
+        description: "A obra descrita na ficha, em geral uma edifica\xE7\xE3o, \xE9\
+          \ representada por um desenho ou outra proje\xE7\xE3o ortogr\xE1fica bidimensional\
+          \ que mostra um corte horizontal tomado pr\xF3ximo ao n\xEDvel do solo ou\
+          \ acima de um pavimento.\n"
+        meaning: term:lido00695
+        title: tem planta baixa
+        broad_mappings:
+        - term:lido00593
+      hasElevation:
+        text: hasElevation
+        description: "A obra descrita na ficha, um objeto espacial como uma edifica\xE7\
+          \xE3o, \xE9 representada por um desenho ou outra proje\xE7\xE3o ortogr\xE1\
+          fica que mostra a disposi\xE7\xE3o dos seus elementos verticais, exterior\
+          \ ou interior.\n"
+        meaning: term:lido00693
+        title: "tem eleva\xE7\xE3o"
+      hasSection:
+        text: hasSection
+        description: "A obra descrita na ficha, uma edifica\xE7\xE3o, s\xEDtio ou\
+          \ objeto semelhante, \xE9 mostrada por um desenho ortogr\xE1fico ou objeto\
+          \ em outra m\xEDdia como se estivesse seccionada e exposta num plano espec\xED\
+          fico.\n"
+        meaning: term:lido00697
+        title: tem corte
+      versoOf:
+        text: versoOf
+        description: "A obra descrita na ficha ocupa o lado reverso ou secund\xE1\
+          rio de uma folha cujo lado principal (recto) cont\xE9m outro(s) objeto(s).\n"
+        meaning: term:lido00613
+        title: "\xE9 verso de"
+      rectoOf:
+        text: rectoOf
+        description: "A obra descrita na ficha ocupa o lado principal ou frontal de\
+          \ uma folha cujo lado reverso (verso) cont\xE9m outro(s) objeto(s).\n"
+        meaning: term:lido00614
+        title: "\xE9 recto de"
+      obverseOf:
+        text: obverseOf
+        description: 'A obra descrita na ficha ocupa a face frontal, superior ou principal
+          de moedas, medalhas, selos ou outros objetos de duas faces.
+
+          '
+        meaning: term:lido00928
+        title: "\xE9 anverso de"
+      reverseOf:
+        text: reverseOf
+        description: "A obra descrita na ficha ocupa a face posterior, inferior ou\
+          \ secund\xE1ria de moedas, medalhas, selos ou c\xE9dulas.\n"
+        meaning: term:lido00929
+        title: "\xE9 reverso de"
+      duplicateOf:
+        text: duplicateOf
+        description: "Rela\xE7\xE3o sim\xE9trica entre exemplares adicionais de um\
+          \ mesmo objeto, no mesmo formato e na mesma m\xEDdia, no contexto de uma\
+          \ cole\xE7\xE3o espec\xEDfica (c\xF3pias fotogr\xE1ficas, livros, fundi\xE7\
+          \xF5es, etc.).\n"
+        meaning: term:lido00622
+        title: "\xE9 duplicata de"
+      distinguishedFrom:
+        text: distinguishedFrom
+        description: "Rela\xE7\xE3o sim\xE9trica entre dois objetos que costumam ser\
+          \ confundidos entre si, em geral em contexto hist\xF3rico ou em trabalhos\
+          \ acad\xEAmicos antigos, para evitar a confus\xE3o.\n"
+        meaning: term:lido00621
+        title: "\xE9 distinto de"
+      containsReproductionOf:
+        text: containsReproductionOf
+        description: "A obra descrita na ficha, em geral um livro, revista ou jornal,\
+          \ cont\xE9m uma reprodu\xE7\xE3o impressa ou fotogr\xE1fica do objeto relacionado.\n"
+        meaning: term:lido00625
+        title: "cont\xE9m reprodu\xE7\xE3o de"
+      reproducedIn:
+        text: reproducedIn
+        description: "A obra descrita na ficha \xE9 reproduzida, por impress\xE3o\
+          \ ou fotografia, no objeto relacionado, em geral um livro, revista ou jornal.\
+          \ A reprodu\xE7\xE3o numa edi\xE7\xE3o impressa pode ser prova essencial\
+          \ da exist\xEAncia ou do estado anterior da obra.\n"
+        meaning: term:lido00626
+        title: "\xE9 reproduzido em"
+      fromSameModel:
+        text: fromSameModel
+        description: "Rela\xE7\xE3o sim\xE9trica entre obras fundidas ou criadas a\
+          \ partir do mesmo modelo, como as casas de um projeto seriado. Usar quando\
+          \ a rela\xE7\xE3o hier\xE1rquica de parte e todo n\xE3o for poss\xEDvel.\n"
+        meaning: term:lido01036
+        title: "\xE9 do mesmo modelo que"
+      castFromSameMold:
+        text: castFromSameMold
+        description: "Rela\xE7\xE3o sim\xE9trica entre obras fundidas ou criadas a\
+          \ partir do mesmo molde. Usar quando a rela\xE7\xE3o hier\xE1rquica de parte\
+          \ e todo n\xE3o for poss\xEDvel.\n"
+        meaning: term:lido01078
+        title: foi moldado a partir do mesmo molde que
+      isOrWasCompanionPieceOf:
+        text: isOrWasCompanionPieceOf
+        description: "Rela\xE7\xE3o sim\xE9trica entre a obra descrita e outro objeto\
+          \ concebido para ser exibido ou usado com ela, em qualquer momento, atual\
+          \ ou passado. Os objetos n\xE3o correspondem necessariamente entre si, nem\
+          \ s\xE3o apenas dois.\n"
+        meaning: term:lido01090
+        title: "\xE9 ou foi pe\xE7a companheira de"
+      companionPieceOf:
+        text: companionPieceOf
+        description: "Rela\xE7\xE3o sim\xE9trica entre a obra descrita e outro objeto\
+          \ concebido para ser exibido ou usado com ela. Os objetos n\xE3o correspondem\
+          \ necessariamente entre si, nem s\xE3o apenas dois. Usar apenas se os objetos\
+          \ n\xE3o forem partes de um todo maior que possa ser designado por um termo\
+          \ apropriado.\n"
+        meaning: term:lido00579
+        title: "\xE9 pe\xE7a companheira de"
+        broad_mappings:
+        - term:lido01090
+      hasIllustration:
+        text: hasIllustration
+        description: "A obra descrita na ficha, em geral um texto, \xE9 acompanhada\
+          \ pelo objeto relacionado, uma imagem ou diagrama que a esclarece, exemplifica\
+          \ ou visualiza.\n"
+        meaning: term:lido00620
+        title: "tem ilustra\xE7\xE3o"
+        broad_mappings:
+        - term:lido00579
+      pendantOf:
+        text: pendantOf
+        description: "Rela\xE7\xE3o sim\xE9trica entre pares de objetos concebidos,\
+          \ ou escolhidos propositalmente, para serem exibidos juntos, em geral lado\
+          \ a lado.\n"
+        meaning: term:lido00628
+        title: "\xE9 pendant de"
+        broad_mappings:
+        - term:lido00579
+      wasFormerlyCompanionPieceOf:
+        text: wasFormerlyCompanionPieceOf
+        description: "Rela\xE7\xE3o sim\xE9trica e j\xE1 extinta entre a obra descrita\
+          \ e outro objeto concebido para ser exibido ou usado com ela. Os objetos\
+          \ n\xE3o correspondem necessariamente entre si, nem s\xE3o apenas dois.\n"
+        meaning: term:lido01091
+        title: "foi pe\xE7a companheira de"
+        broad_mappings:
+        - term:lido01090
+      isOrWasComplementedBy:
+        text: isOrWasComplementedBy
+        description: 'A obra descrita na ficha foi criada independentemente do objeto
+          relacionado, mas posteriormente foi associada a ele, para serem usados em
+          conjunto ou para agregar valor a ambos. Cobre qualquer momento, atual ou
+          passado.
+
+          '
+        meaning: term:lido01092
+        title: "\xE9 ou foi complementado por"
+      complementedBy:
+        text: complementedBy
+        description: 'A obra descrita na ficha foi criada independentemente do objeto
+          relacionado, mas posteriormente foi associada a ele, para serem usados em
+          conjunto ou para agregar valor a ambos.
+
+          '
+        meaning: term:lido00581
+        title: "\xE9 complementado por"
+        broad_mappings:
+        - term:lido01092
+      wasFormerlyComplementedBy:
+        text: wasFormerlyComplementedBy
+        description: "A obra descrita na ficha foi criada independentemente do objeto\
+          \ relacionado e posteriormente foi associada a ele, mas essa associa\xE7\
+          \xE3o foi desfeita.\n"
+        meaning: term:lido01093
+        title: foi complementado por
+        broad_mappings:
+        - term:lido01092
+      complementsOrFormerlyComplemented:
+        text: complementsOrFormerlyComplemented
+        description: 'O objeto relacionado foi criado independentemente da obra descrita
+          na ficha, mas posteriormente foi associado a ela, para serem usados em conjunto
+          ou para agregar valor a ambos. Cobre qualquer momento, atual ou passado.
+
+          '
+        meaning: term:lido01094
+        title: complementa ou complementava
+      complements:
+        text: complements
+        description: "Rela\xE7\xE3o entre obras criadas independentemente uma da outra,\
+          \ mas que mais tarde passaram a ser consideradas ou usadas conjuntamente.\n"
+        meaning: term:lido00580
+        title: complementa
+        broad_mappings:
+        - term:lido01094
+      formerlyComplemented:
+        text: formerlyComplemented
+        description: "Rela\xE7\xE3o entre obras criadas independentemente uma da outra,\
+          \ mas que mais tarde passaram a ser consideradas ou usadas conjuntamente,\
+          \ sendo essa associa\xE7\xE3o posteriormente desfeita.\n"
+        meaning: term:lido01095
+        title: complementava
+        broad_mappings:
+        - term:lido01094
+      predecessorOf:
+        text: predecessorOf
+        description: "A obra descrita na ficha foi substitu\xEDda pelo objeto relacionado\
+          \ no uso, n\xE3o necessariamente na posi\xE7\xE3o. Uso reservado sobretudo\
+          \ \xE0 arquitetura.\n"
+        meaning: term:lido01098
+        title: "\xE9 predecessor de"
+      hasReplaced:
+        text: hasReplaced
+        description: "A obra descrita na ficha substituiu o objeto relacionado no\
+          \ uso, n\xE3o necessariamente na posi\xE7\xE3o. Uso reservado sobretudo\
+          \ \xE0 arquitetura.\n"
+        meaning: term:lido01099
+        title: substituiu
+      visualQuotationOf:
+        text: visualQuotationOf
+        description: "A obra descrita na ficha \xE9 ou cont\xE9m uma cita\xE7\xE3\
+          o visual de outra obra, isto \xE9, a ado\xE7\xE3o de um \xFAnico elemento\
+          \ formal de outra obra como refer\xEAncia consciente a ela.\n"
+        meaning: term:lido01102
+        title: "\xE9 cita\xE7\xE3o visual de"
+      hasVisualQuotation:
+        text: hasVisualQuotation
+        description: "A obra descrita na ficha \xE9 citada visualmente no objeto relacionado,\
+          \ isto \xE9, um \xFAnico elemento formal dela \xE9 adotado como refer\xEA\
+          ncia consciente a ela.\n"
+        meaning: term:lido01103
+        title: "tem cita\xE7\xE3o visual"
       positionedNear:
         text: positionedNear
         description: "Rela\xE7\xE3o sim\xE9trica entre dois objetos situados em proximidade\
           \ espacial, quando esta proximidade for significativa por raz\xF5es compositivas,\
-          \ hist\xF3ricas ou funcionais.\n"
+          \ hist\xF3ricas ou funcionais.\nSe o objeto foi concebido para, ou colocado\
+          \ dentro de, ou est\xE1 em contexto funcional diretamente relacionado com\
+          \ uma edifica\xE7\xE3o ou outro objeto monumental, usar `has_arch_context`\
+          \ (grupo `larger_context`).\n"
         meaning: term:lido01136
         title: "pr\xF3ximo a"
+      builtOnSiteOf:
+        text: builtOnSiteOf
+        description: "A obra descrita na ficha foi constru\xEDda no s\xEDtio onde\
+          \ esteve outra obra. Usar apenas quando as duas obras t\xEAm fun\xE7\xF5\
+          es diferentes; se a nova obra foi feita para substituir a antiga, com fun\xE7\
+          \xE3o igual ou semelhante (por exemplo, uma nova catedral no s\xEDtio de\
+          \ uma catedral anterior), usar `hasReplaced`.\n"
+        meaning: term:lido01188
+        title: "foi constru\xEDdo no s\xEDtio de"
+      wasAntedatedOnSameSiteAs:
+        text: wasAntedatedOnSameSiteAs
+        description: "A obra descrita na ficha foi precedida, no mesmo s\xEDtio, por\
+          \ outra obra. Usar apenas quando as duas obras t\xEAm fun\xE7\xF5es diferentes;\
+          \ se a obra anterior foi substitu\xEDda por outra de fun\xE7\xE3o igual\
+          \ ou semelhante (por exemplo, uma catedral demolida e substitu\xEDda por\
+          \ outra), usar `predecessorOf`.\n"
+        meaning: term:lido01189
+        title: "foi precedido no mesmo s\xEDtio por"
   ResourceType:
     name: ResourceType
     definition_uri: https://tradicional.arq.br/schema/ResourceType
@@ -8704,26 +9455,6 @@ slots:
     is_usage_slot: true
     usage_slot_name: category
     range: uriorcurie
-  MediaObject_title:
-    name: MediaObject_title
-    definition_uri: https://tradicional.arq.br/schema/title
-    description: "T\xEDtulo breve para identificar este recurso visual na listagem.\n"
-    from_schema: https://tradicional.arq.br/schema/thing
-    mappings:
-    - dcterms:title
-    exact_mappings:
-    - schema:name
-    is_a: title
-    domain: MediaObject
-    slot_uri: dcterms:title
-    alias: title
-    owner: MediaObject
-    domain_of:
-    - MediaObject
-    is_usage_slot: true
-    usage_slot_name: title
-    range: string
-    required: true
   MediaObject_description:
     name: MediaObject_description
     definition_uri: https://tradicional.arq.br/schema/description
@@ -8744,25 +9475,6 @@ slots:
     is_usage_slot: true
     usage_slot_name: description
     range: string
-    required: true
-  MediaObject_content:
-    name: MediaObject_content
-    definition_uri: https://tradicional.arq.br/schema/content
-    description: "Opcional, para descrever com mais detalhe a representa\xE7\xE3o.\n"
-    from_schema: https://tradicional.arq.br/schema/thing
-    mappings:
-    - lido:descriptiveNoteValue
-    is_a: content
-    domain: MediaObject
-    slot_uri: lido:descriptiveNoteValue
-    alias: content
-    owner: MediaObject
-    domain_of:
-    - MediaObject
-    is_usage_slot: true
-    usage_slot_name: content
-    range: string
-    recommended: true
   MediaObject_work_rights:
     name: MediaObject_work_rights
     definition_uri: https://tradicional.arq.br/schema/work_rights
@@ -9649,6 +10361,7 @@ classes:
     - dctypes:Image
     is_a: Thing
     slots:
+    - title
     - id
     - author
     - authors
@@ -9656,6 +10369,7 @@ classes:
     - category
     - identifiers
     - bibliographic_citation
+    - content
     - thing__title_source
     - thing__alt_name
     - thing__tags
@@ -9668,24 +10382,13 @@ classes:
     - embed_url
     - preview_image
     - measurements
-    - MediaObject_title
     - MediaObject_description
-    - MediaObject_content
     - MediaObject_work_rights
     slot_usage:
-      title:
-        name: title
-        description: "T\xEDtulo breve para identificar este recurso visual na listagem.\n"
-        required: true
       description:
         name: description
         description: "Texto alternativo para leitores de tela ou outras formas de\
           \ acessibilidade. Apenas texto sem formata\xE7\xE3o.\n"
-        required: true
-      content:
-        name: content
-        description: "Opcional, para descrever com mais detalhe a representa\xE7\xE3\
-          o.\n"
       work_rights:
         name: work_rights
         recommended: true
@@ -11191,6 +11894,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-21T12:39:25'
-source_file_size: 71344
+source_file_date: '2026-11-21T14:20:37'
+source_file_size: 103107
 

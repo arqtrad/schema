@@ -509,8 +509,8 @@
 </tr>
 <tr>
 <td><a href="../title/">title</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Título breve para identificar este recurso visual na listagem</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nome pelo qual este item é mais comumente conhecido</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -539,7 +539,7 @@
 </tr>
 <tr>
 <td><a href="../description/">description</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Texto alternativo para leitores de tela ou outras formas de acessibilidade</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
@@ -564,7 +564,7 @@
 <tr>
 <td><a href="../content/">content</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
-<td>Opcional, para descrever com mais detalhe a representação</td>
+<td>Conteúdo textual descritivo ou explicativo</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -679,22 +679,10 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">preview_image</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurements</span>
 <span class="nt">slot_usage</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">title</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Título</span><span class="nv"> </span><span class="s">breve</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">recurso</span><span class="nv"> </span><span class="s">visual</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">listagem.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Texto</span><span class="nv"> </span><span class="s">alternativo</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">leitores</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">tela</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">formas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">acessibilidade.</span>
 <span class="w">      </span><span class="s">Apenas</span><span class="nv"> </span><span class="s">texto</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">formatação.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">content</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Opcional,</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">descrever</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">detalhe</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">representação.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">  </span><span class="nt">work_rights</span><span class="p">:</span>
@@ -726,22 +714,10 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dctypes:Image</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">slot_usage</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">title</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Título</span><span class="nv"> </span><span class="s">breve</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">recurso</span><span class="nv"> </span><span class="s">visual</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">listagem.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Texto</span><span class="nv"> </span><span class="s">alternativo</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">leitores</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">tela</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">formas</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">acessibilidade.</span>
 <span class="w">      </span><span class="s">Apenas</span><span class="nv"> </span><span class="s">texto</span><span class="nv"> </span><span class="s">sem</span><span class="nv"> </span><span class="s">formatação.</span>
-
-<span class="w">      </span><span class="s">'</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">content</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Opcional,</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">descrever</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">detalhe</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">representação.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">  </span><span class="nt">work_rights</span><span class="p">:</span>
@@ -858,7 +834,8 @@
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">title</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">title</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Título</span><span class="nv"> </span><span class="s">breve</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">recurso</span><span class="nv"> </span><span class="s">visual</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">listagem.</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Nome</span><span class="nv"> </span><span class="s">pelo</span><span class="nv"> </span><span class="s">qual</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">é</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">comumente</span><span class="nv"> </span><span class="s">conhecido.</span><span class="nv"> </span><span class="s">Outros</span><span class="nv"> </span><span class="s">nomes</span>
+<span class="w">      </span><span class="s">podem</span><span class="nv"> </span><span class="s">ser</span><span class="nv"> </span><span class="s">cadastrados</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">`alt_name`.</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
@@ -871,7 +848,6 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">id</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Identificador</span><span class="nv"> </span><span class="s">globalmente</span><span class="nv"> </span><span class="s">único</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">este</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">recurso.</span>
@@ -962,7 +938,6 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">category</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">category</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Uma</span><span class="nv"> </span><span class="s">classificação</span><span class="nv"> </span><span class="s">ampla</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">objeto</span><span class="nv"> </span><span class="s">descrito</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">ficha,</span><span class="nv"> </span><span class="s">usando</span>
@@ -1054,9 +1029,7 @@
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">content</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Opcional,</span><span class="nv"> </span><span class="s">para</span><span class="nv"> </span><span class="s">descrever</span><span class="nv"> </span><span class="s">com</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">detalhe</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">representação.</span>
-
-<span class="w">      </span><span class="s">'</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Conteúdo textual descritivo ou explicativo.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lido:descriptiveNoteValue</span>
