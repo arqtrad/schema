@@ -160,6 +160,7 @@ slots:
   concept_name:
     range: Concept
     inlined: false
+    required: true
 
   broader:
     slot_uri: skos:broader

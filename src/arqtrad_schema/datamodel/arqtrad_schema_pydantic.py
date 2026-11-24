@@ -4432,8 +4432,8 @@ class ConceptReference(ConfiguredBaseModel):
         {"from_schema": "https://tradicional.arq.br/schema/concept"}
     )
 
-    concept_name: Optional[str] = Field(
-        default=None,
+    concept_name: str = Field(
+        default=...,
         json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
     )
     description: Optional[str] = Field(
@@ -4522,8 +4522,8 @@ Esta propriedade não é reversível, ou seja, não existe \"preferência\" por 
             }
         },
     )
-    concept_name: Optional[str] = Field(
-        default=None,
+    concept_name: str = Field(
+        default=...,
         json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
     )
     description: Optional[str] = Field(
@@ -4600,8 +4600,8 @@ class NarrowerConceptReference(ConceptReference):
         description="""Tipo da relação.""",
         json_schema_extra={"linkml_meta": {"domain_of": ["NarrowerConceptReference"]}},
     )
-    concept_name: Optional[str] = Field(
-        default=None,
+    concept_name: str = Field(
+        default=...,
         json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
     )
     description: Optional[str] = Field(
@@ -4678,8 +4678,8 @@ class MappingConceptReference(ConceptReference):
         description="""Tipo da relação.""",
         json_schema_extra={"linkml_meta": {"domain_of": ["MappingConceptReference"]}},
     )
-    concept_name: Optional[str] = Field(
-        default=None,
+    concept_name: str = Field(
+        default=...,
         json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
     )
     description: Optional[str] = Field(
@@ -5090,8 +5090,8 @@ class MaterialTech(ConceptReference):
 """,
         json_schema_extra={"linkml_meta": {"domain_of": ["MaterialTech"]}},
     )
-    concept_name: Optional[str] = Field(
-        default=None,
+    concept_name: str = Field(
+        default=...,
         json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
     )
     description: Optional[str] = Field(
@@ -5352,8 +5352,8 @@ class StylePeriod(ConceptReference):
 """,
         json_schema_extra={"linkml_meta": {"domain_of": ["StylePeriod"]}},
     )
-    concept_name: Optional[str] = Field(
-        default=None,
+    concept_name: str = Field(
+        default=...,
         json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
     )
     description: Optional[str] = Field(
