@@ -43,84 +43,55 @@ class LinkMLMeta(RootModel):
 
 linkml_meta = LinkMLMeta(
     {
-        "default_prefix": "wasth",
+        "default_prefix": "arqtrad",
         "default_range": "string",
         "description": "O elemento central dos Documentários da Arquitetura "
-        "Tradicional é a ficha\n"
-        "**[Work](Work/)**, que descreve uma edificação usando "
-        "elementos dos padrões\n"
-        "[LIDO] e [DublinCore].\n"
-        "\n"
+        "Tradicional é a ficha **[Work](elements/Work/)**, que "
+        "descreve uma edificação usando elementos dos padrões [LIDO] e "
+        "[DublinCore].\n"
         "A especificação deste esquema permite validar bancos de dados "
-        "de edificações\n"
-        "constituídos em diversos sistemas, incluindo bases de dados "
-        "relacionais\n"
-        "(como aquelas que alimentam diversos sistemas de produção de "
-        "sites, incluindo\n"
-        "o WordPress, Tainacan, Arches, etc.) e fichas em formato de "
-        "texto.\n"
-        "Atualmente, contudo, os Documentários da Arquitetura "
-        "Tradicional usam\n"
-        "unicamente fichas em formato de texto sem formatação, "
-        "combinando\n"
-        "metadados estruturados segundo a especificação YAML\n"
-        "([explicação introdutória aqui][1] e [tutorial técnico "
-        "aqui][2]) e conteúdo\n"
-        "descritivo podendo usar as convenções de formatação do "
-        "Markdown\n"
-        "(inclusive especificidades do [Pandoc]).\n"
-        "\n"
+        "de edificações constituídos em diversos sistemas, incluindo "
+        "bases de dados relacionais (como aquelas que alimentam "
+        "diversos sistemas de produção de sites, incluindo o "
+        "WordPress, Tainacan, Arches, etc.) e fichas em formato de "
+        "texto. Atualmente, contudo, os Documentários da Arquitetura "
+        "Tradicional usam unicamente fichas em formato de texto sem "
+        "formatação, combinando metadados estruturados segundo a "
+        "especificação YAML ([explicação introdutória aqui][1] e "
+        "[tutorial técnico aqui][2]) e conteúdo descritivo podendo "
+        "usar as convenções de formatação do Markdown (inclusive "
+        "especificidades do [Pandoc]).\n"
         "Além de um editor de texto, recomendamos também que use um "
-        "programa de\n"
-        "geoprocessamento como o [QGIS] para incluir os dados "
-        "georreferenciados nas\n"
-        "fichas.\n"
-        "\n"
+        "programa de geoprocessamento como o [QGIS] para incluir os "
+        "dados georreferenciados nas fichas.\n"
         "Os metadados das fichas dependem do vocabulário controlado "
-        "que está em\n"
-        "contrução no nosso [Thesaurus da arquitetura tradicional][4] "
-        "e de outros\n"
-        "vocabulários controlados, tais como o Getty Art and "
-        "Architecture Thesaurus\n"
-        "ou a lista de unidades de medida do UCUM.\n"
-        "\n"
+        "que está em contrução no nosso [Thesaurus da arquitetura "
+        "tradicional][4] e de outros vocabulários controlados, tais "
+        "como o Getty Art and Architecture Thesaurus ou a lista de "
+        "unidades de medida do UCUM.\n"
         "\n"
         "## Por onde começo\u2009?\n"
-        "\n"
-        "> Leia a especificação da ficha **[Work](Work/)** para saber "
-        "como preencher\n"
-        "> as fichas de edificações dos Documentários da Arquitetura "
-        "Tradicional.\n"
-        "\n"
+        "> Leia a especificação da ficha **[Work](elements/Work/)** "
+        "para saber como preencher > as fichas de edificações dos "
+        "Documentários da Arquitetura Tradicional.\n"
         "Se não estiver à vontade para manipular diretamente os "
-        "repositórios do GitHub,\n"
-        "sempre pode contribuir informações, sugestões ou desejos no\n"
-        "[Fórum de discussão] deste projeto de pesquisa.\n"
-        "Se tiver contribuições pontuais sobre fichas específicas, "
-        "formatos ou lacunas,\n"
-        "pode também abrir uma [*issue* no repositório da Casa].\n"
-        "\n"
+        "repositórios do GitHub, sempre pode contribuir informações, "
+        "sugestões ou desejos no [Fórum de discussão] deste projeto de "
+        "pesquisa. Se tiver contribuições pontuais sobre fichas "
+        "específicas, formatos ou lacunas, pode também abrir uma "
+        "[*issue* no repositório da Casa].\n"
         "[LIDO]: https://lido-schema.org/\n"
-        "\n"
         "[DublinCore]: "
         "https://www.dublincore.org/resources/userguide/creating_metadata/\n"
-        "\n"
         "[1]: "
         "https://www.linkedin.com/pulse/xml-json-markdown-e-yaml-explicação-simples-vitor-martins-ufv5e\n"
-        "\n"
         "[2]: https://www.yaml.info/learn/index.html\n"
-        "\n"
         "[3]: https://dublincore.org\n"
-        "\n"
         "[Pandoc]: https://pandoc.org\n"
-        "\n"
         "[QGIS]: https://qgis.org\n"
-        "\n"
         "[4]: https://vocabulario.tradicional.arq.br\n"
-        "\n"
         "[Fórum de discussão]: "
         "https://github.com/orgs/arqtrad/discussions\n"
-        "\n"
         "[*issue* no repositório da Casa]: "
         "https://github.com/arqtrad/casa/issues\n",
         "id": "https://tradicional.arq.br/schema",
@@ -144,6 +115,10 @@ linkml_meta = LinkMLMeta(
             "aat": {
                 "prefix_prefix": "aat",
                 "prefix_reference": "http://vocab.getty.edu/aat/",
+            },
+            "arqtrad": {
+                "prefix_prefix": "arqtrad",
+                "prefix_reference": "https://tradicional.arq.br/schema/",
             },
             "crm": {
                 "prefix_prefix": "crm",
@@ -218,11 +193,11 @@ linkml_meta = LinkMLMeta(
                 "prefix_prefix": "unesco",
                 "prefix_reference": "http://vocabularies.unesco.org/thesaurus/",
             },
-            "vra": {"prefix_prefix": "vra", "prefix_reference": "http://purl.org/vra/"},
-            "wasth": {
-                "prefix_prefix": "wasth",
-                "prefix_reference": "https://tradicional.arq.br/schema/",
+            "vascon": {
+                "prefix_prefix": "vascon",
+                "prefix_reference": "https://vocabulario.tradicional.arq.br/w/",
             },
+            "vra": {"prefix_prefix": "vra", "prefix_reference": "http://purl.org/vra/"},
             "wd": {
                 "prefix_prefix": "wd",
                 "prefix_reference": "http://www.wikidata.org/entity/",
