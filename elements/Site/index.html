@@ -317,9 +317,6 @@
 <p><em>As instruções de preenchimento específicas se encontram na documentação das classes que fornecem os dados para o sítio. Consulte também o <a href="https://github.com/arqtrad/.github/wiki/Tutorial-de-georreferenciamento">Tutorial de georreferenciamento</a> para saber como localizar edificações não cadastradas nas bases de dados do patrimônio cultural (SICG ou SIPA).</em></p>
 <p>__</p>
 <div>
-<ul>
-<li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
-</ul>
 <p>URI: <a href="http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume">crm:E92_Spacetime_Volume</a></p>
 <pre class="mermaid"><code> classDiagram
     class Site
@@ -407,15 +404,6 @@
 
       Site : name
 
-
-
-
-
-        Site --&gt; "0..1" GeonamesFeature : name
-        click GeonamesFeature href "../GeonamesFeature/"
-
-
-
       Site : record_date
 
       Site : repositories
@@ -502,8 +490,8 @@
 <tbody>
 <tr>
 <td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../GeonamesFeature/">GeonamesFeature</a></td>
-<td>Permite identificar o contexto geográfico ou administrativo ao qual</td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>Permite identificar o contexto geográfico ou administrativo ao qual a edifica...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -743,17 +731,12 @@
 <span class="nt">exact_mappings</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:DefinedRegion</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Permite</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">geográfico</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">administrativo</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">qual</span>
-
-<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">subordina,</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">base</span><span class="nv"> </span><span class="s">&lt;https://geonames.org&gt;.</span>
-
-<span class="w">      </span><span class="s">Referenciar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">localidade</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">código</span><span class="nv"> </span><span class="s">identificador</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">forma:</span>
-
-<span class="w">      </span><span class="s">`geonameid:</span><span class="nv"> </span><span class="s">1234`</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">subordina,</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">base</span><span class="nv"> </span><span class="s">&lt;https://geonames.org&gt;.</span><span class="nv"> </span><span class="s">Referenciar</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">localidade</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">código</span><span class="nv"> </span><span class="s">identificador</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">forma:</span><span class="nv"> </span><span class="s">`name:</span><span class="nv"> </span><span class="s">"geonames:1234"`</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">notes</span><span class="p">:</span>
@@ -764,8 +747,7 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesFeature</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesFeature</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
 <span class="w">  </span><span class="nt">site_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_type</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Categoriza</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">natureza</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">recorte</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">define</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">sítio.</span>
@@ -856,17 +838,12 @@
 <span class="nt">exact_mappings</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:DefinedRegion</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
-<span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Permite</span><span class="nv"> </span><span class="s">identificar</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">contexto</span><span class="nv"> </span><span class="s">geográfico</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">administrativo</span><span class="nv"> </span><span class="s">ao</span><span class="nv"> </span><span class="s">qual</span>
-
-<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">subordina,</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">base</span><span class="nv"> </span><span class="s">&lt;https://geonames.org&gt;.</span>
-
-<span class="w">      </span><span class="s">Referenciar</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">localidade</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">código</span><span class="nv"> </span><span class="s">identificador</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">forma:</span>
-
-<span class="w">      </span><span class="s">`geonameid:</span><span class="nv"> </span><span class="s">1234`</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">edificação</span><span class="nv"> </span><span class="s">se</span><span class="nv"> </span><span class="s">subordina,</span><span class="nv"> </span><span class="s">usando</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">base</span><span class="nv"> </span><span class="s">&lt;https://geonames.org&gt;.</span><span class="nv"> </span><span class="s">Referenciar</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">localidade</span><span class="nv"> </span><span class="s">por</span><span class="nv"> </span><span class="s">meio</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">código</span><span class="nv"> </span><span class="s">identificador</span><span class="nv"> </span><span class="s">na</span><span class="nv"> </span><span class="s">forma:</span><span class="nv"> </span><span class="s">`name:</span><span class="nv"> </span><span class="s">"geonames:1234"`</span>
 
 <span class="w">      </span><span class="s">'</span>
 <span class="w">    </span><span class="nt">notes</span><span class="p">:</span>
@@ -878,8 +855,7 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesFeature</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeonamesFeature</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
 <span class="w">  </span><span class="nt">site_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_type</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Categoriza</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">natureza</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">recorte</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">define</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">sítio.</span>

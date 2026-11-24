@@ -91,7 +91,7 @@ prefixes:
     prefix_reference: http://www.opengis.net/ont/geosparql#
   geonames:
     prefix_prefix: geonames
-    prefix_reference: https://www.geonames.org/ontology#
+    prefix_reference: https://sws.geonames.org/
   la:
     prefix_prefix: la
     prefix_reference: https://linked.art/ns/terms/
@@ -9179,9 +9179,9 @@ slots:
   site__name:
     name: site__name
     description: "Permite identificar o contexto geogr\xE1fico ou administrativo ao\
-      \ qual\na edifica\xE7\xE3o se subordina, usando a base <https://geonames.org>.\n\
-      Referenciar a localidade por meio do c\xF3digo identificador na forma:\n`geonameid:\
-      \ 1234`\n"
+      \ qual a edifica\xE7\xE3o se subordina, usando a base <https://geonames.org>.\
+      \ Referenciar a localidade por meio do c\xF3digo identificador na forma: `name:\
+      \ \"geonames:1234\"`\n"
     notes:
     - A set of structured information about a place that is the broader context for
       the place in focus, such as the district, state, or nation to which a city belongs.
@@ -9193,9 +9193,7 @@ slots:
     owner: Site
     domain_of:
     - Site
-    range: GeonamesFeature
-    inlined: true
-    inlined_as_list: false
+    range: uriorcurie
   site__site_type:
     name: site__site_type
     description: "Categoriza a natureza do recorte que define o s\xEDtio.\n"
@@ -11630,7 +11628,6 @@ classes:
     - crm:E92_Spacetime_Volume
     - schema:DefinedRegion
     is_a: Thing
-    abstract: true
     slots:
     - title
     - id
@@ -11656,16 +11653,15 @@ classes:
       name:
         name: name
         description: "Permite identificar o contexto geogr\xE1fico ou administrativo\
-          \ ao qual\na edifica\xE7\xE3o se subordina, usando a base <https://geonames.org>.\n\
-          Referenciar a localidade por meio do c\xF3digo identificador na forma:\n\
-          `geonameid: 1234`\n"
+          \ ao qual a edifica\xE7\xE3o se subordina, usando a base <https://geonames.org>.\
+          \ Referenciar a localidade por meio do c\xF3digo identificador na forma:\
+          \ `name: \"geonames:1234\"`\n"
         notes:
         - A set of structured information about a place that is the broader context
           for the place in focus, such as the district, state, or nation to which
           a city belongs.
         slot_uri: lido:partOfPlace
-        range: GeonamesFeature
-        inlined: true
+        range: uriorcurie
       site_type:
         name: site_type
         description: "Categoriza a natureza do recorte que define o s\xEDtio.\n"
@@ -11884,6 +11880,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-24T18:45:57'
-source_file_size: 102766
+source_file_date: '2026-11-24T19:51:41'
+source_file_size: 102757
 
