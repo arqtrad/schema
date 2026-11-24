@@ -2,9 +2,9 @@
 id: https://tradicional.arq.br/schema
 name: arqtrad_schema
 title: Esquema de dados dos Documentários da Arquitetura Tradicional
-description: |
+description: >
   O elemento central dos Documentários da Arquitetura Tradicional é a ficha
-  **[Work](Work/)**, que descreve uma edificação usando elementos dos padrões
+  **[Work](elements/Work/)**, que descreve uma edificação usando elementos dos padrões
   [LIDO] e [DublinCore].
 
   A especificação deste esquema permite validar bancos de dados de edificações
@@ -30,7 +30,7 @@ description: |
 
   ## Por onde começo ?
 
-  > Leia a especificação da ficha **[Work](Work/)** para saber como preencher
+  > Leia a especificação da ficha **[Work](elements/Work/)** para saber como preencher
   > as fichas de edificações dos Documentários da Arquitetura Tradicional.
 
   Se não estiver à vontade para manipular diretamente os repositórios do GitHub,
