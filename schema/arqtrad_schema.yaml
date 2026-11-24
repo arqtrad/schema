@@ -8099,9 +8099,9 @@ slots:
       \ deve cadastr\xE1-la primeiro nessa biblioteca para ent\xE3o extrair a chave\
       \ de cita\xE7\xE3o.\n"
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: arqtrad:refid
+    slot_uri: arqtrad:citekey
     key: true
-    alias: refid
+    alias: citekey
     owner: BibliographicCitation
     domain_of:
     - BibliographicCitation
@@ -10135,7 +10135,6 @@ classes:
           \ da biblioteca do Zotero, deve cadastr\xE1-la primeiro nessa biblioteca\
           \ para ent\xE3o extrair a chave de cita\xE7\xE3o.\n"
         key: true
-        alias: refid
         range: CslCitekey
       note:
         name: note
@@ -11881,6 +11880,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-24T21:06:13'
+source_file_date: '2026-11-24T21:12:57'
 source_file_size: 102760
 
