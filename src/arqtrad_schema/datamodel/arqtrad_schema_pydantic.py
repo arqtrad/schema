@@ -5563,7 +5563,7 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
     category: Literal[
         "https://tradicional.arq.br/schema/Thing",
         "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
-        "wasth:Thing",
+        "arqtrad:Thing",
         "crm:E1_CRM_Entity",
     ] = Field(
         default="crm:E1_CRM_Entity",
@@ -5852,7 +5852,7 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
     category: Literal[
         "https://tradicional.arq.br/schema/Concept",
         "http://www.w3.org/2004/02/skos/core#Concept",
-        "wasth:Concept",
+        "arqtrad:Concept",
         "skos:Concept",
     ] = Field(
         default="skos:Concept",
@@ -6101,7 +6101,7 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
     category: Literal[
         "https://tradicional.arq.br/schema/RelatedObject",
         "http://schema.org/CreativeWork",
-        "wasth:RelatedObject",
+        "arqtrad:RelatedObject",
         "schema:CreativeWork",
     ] = Field(
         default="schema:CreativeWork",
@@ -6372,9 +6372,9 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         },
     )
     category: Literal[
-        "https://tradicional.arq.br/schema/RelatedWork", "wasth:RelatedWork"
+        "https://tradicional.arq.br/schema/RelatedWork", "arqtrad:RelatedWork"
     ] = Field(
-        default="wasth:RelatedWork",
+        default="arqtrad:RelatedWork",
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
 Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
@@ -6635,9 +6635,9 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
     )
     category: Literal[
         "https://tradicional.arq.br/schema/LargerContextReference",
-        "wasth:LargerContextReference",
+        "arqtrad:LargerContextReference",
     ] = Field(
-        default="wasth:LargerContextReference",
+        default="arqtrad:LargerContextReference",
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
 Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").
@@ -6961,7 +6961,7 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
     category: Literal[
         "https://tradicional.arq.br/schema/Resource",
         "http://www.cidoc-crm.org/cidoc-crm/E31_Document",
-        "wasth:Resource",
+        "arqtrad:Resource",
         "crm:E31_Document",
     ] = Field(
         default="crm:E31_Document",
@@ -7256,7 +7256,7 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
     category: Literal[
         "https://tradicional.arq.br/schema/MediaObject",
         "http://schema.org/MediaObject",
-        "wasth:MediaObject",
+        "arqtrad:MediaObject",
         "schema:MediaObject",
     ] = Field(
         default="schema:MediaObject",
@@ -7507,7 +7507,7 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
     category: Literal[
         "https://tradicional.arq.br/schema/LegalBody",
         "http://schema.org/Organization",
-        "wasth:LegalBody",
+        "arqtrad:LegalBody",
         "schema:Organization",
     ] = Field(
         default="schema:Organization",
@@ -7856,7 +7856,7 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
     category: Literal[
         "https://tradicional.arq.br/schema/Event",
         "http://www.cidoc-crm.org/cidoc-crm/E5_Event",
-        "wasth:Event",
+        "arqtrad:Event",
         "crm:E5_Event",
     ] = Field(
         default="crm:E5_Event",
@@ -8150,7 +8150,7 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
     category: Literal[
         "https://tradicional.arq.br/schema/Repository",
         "http://schema.org/Organization",
-        "wasth:Repository",
+        "arqtrad:Repository",
         "schema:Organization",
     ] = Field(
         default="schema:Organization",
@@ -9034,7 +9034,7 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
     category: Literal[
         "https://tradicional.arq.br/schema/Work",
         "http://schema.org/LandmarksOrHistoricalBuildings",
-        "wasth:Work",
+        "arqtrad:Work",
         "schema:LandmarksOrHistoricalBuildings",
     ] = Field(
         default="schema:LandmarksOrHistoricalBuildings",
@@ -9337,7 +9337,7 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
     category: Literal[
         "https://tradicional.arq.br/schema/Site",
         "http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume",
-        "wasth:Site",
+        "arqtrad:Site",
         "crm:E92_Spacetime_Volume",
     ] = Field(
         default="crm:E92_Spacetime_Volume",
@@ -9857,9 +9857,9 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         },
     )
     category: Literal[
-        "https://tradicional.arq.br/schema/Collection", "wasth:Collection"
+        "https://tradicional.arq.br/schema/Collection", "arqtrad:Collection"
     ] = Field(
-        default="wasth:Collection",
+        default="arqtrad:Collection",
         description="""Uma classificação ampla para o objeto descrito na ficha, usando o vocabulário controlado do LIDO.
 Nos documentários de edificações, preencher este campo OBRIGATORIAMENTE com `term:lido00096` (\"Objeto manufaturado\").
 Nos recursos gráficos de uma obra, preencher este campo OBRIGATORIAMENTE com `term:lido01193` (\"Objeto conceitual\").

@@ -4,14 +4,14 @@ title: WASTH resources, media, and physical description
 
 prefixes:
   linkml: https://w3id.org/linkml/
-  wasth: https://tradicional.arq.br/schema/
+  arqtrad: https://tradicional.arq.br/schema/
   schema: http://schema.org/
   crm: http://www.cidoc-crm.org/cidoc-crm/
   dcterms: http://purl.org/dc/terms/
   dctypes: http://purl.org/dc/dcmitype/
   lido: http://www.lido-schema.org/
 
-default_prefix: wasth
+default_prefix: arqtrad
 default_range: string
 
 classes:

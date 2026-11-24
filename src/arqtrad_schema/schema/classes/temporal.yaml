@@ -4,15 +4,15 @@ title: WASTH events, subjects, and related objects
 
 prefixes:
   linkml: https://w3id.org/linkml/
-  wasth: https://tradicional.arq.br/schema/
+  arqtrad: https://tradicional.arq.br/schema/
   crm: http://www.cidoc-crm.org/cidoc-crm/
   dcterms: http://purl.org/dc/terms/
   lido: http://www.lido-schema.org/
   schema: http://schema.org/
-  ulan: http://vocab.getty.edu/ulan/
+  ulan: https://vocab.getty.edu/ulan/
   wd: http://www.wikidata.org/entity/
 
-default_prefix: wasth
+default_prefix: arqtrad
 default_range: string
 
 classes:

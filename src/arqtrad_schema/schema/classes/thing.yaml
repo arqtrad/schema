@@ -4,14 +4,14 @@ title: WASTH common object model
 
 prefixes:
   linkml: https://w3id.org/linkml/
-  wasth: https://tradicional.arq.br/schema/
+  arqtrad: https://tradicional.arq.br/schema/
   dcterms: http://purl.org/dc/terms/
   schema: http://schema.org/
   lido: http://www.lido-schema.org/
   term: http://terminology.lido-schema.org/
   skos: http://www.w3.org/2004/02/skos/core#
 
-default_prefix: wasth
+default_prefix: arqtrad
 default_range: string
 
 classes:

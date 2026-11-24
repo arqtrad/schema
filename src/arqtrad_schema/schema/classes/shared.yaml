@@ -4,14 +4,14 @@ title: WASTH shared structures
 
 prefixes:
   linkml: https://w3id.org/linkml/
+  arqtrad: https://tradicional.arq.br/schema/
   crm: http://www.cidoc-crm.org/cidoc-crm/
   dcterms: http://purl.org/dc/terms/
   lido: http://www.lido-schema.org/
   schema: http://schema.org/
   vra: http://purl.org/vra/
-  wasth: https://tradicional.arq.br/schema/
 
-default_prefix: wasth
+default_prefix: arqtrad
 default_range: string
 
 classes:
