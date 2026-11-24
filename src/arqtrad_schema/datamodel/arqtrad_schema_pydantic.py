@@ -4777,7 +4777,7 @@ class BibliographicCitation(ConfiguredBaseModel):
             }
         },
     )
-    refid: str = Field(
+    citekey: str = Field(
         default=...,
         description="""Se a fonte for cadastrada, o campo `refid` deve conter a chave de citação (`citation key`) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no [Zotero]. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
 Se a referência que necessita citar não constar da biblioteca do Zotero, deve cadastrá-la primeiro nessa biblioteca para então extrair a chave de citação.

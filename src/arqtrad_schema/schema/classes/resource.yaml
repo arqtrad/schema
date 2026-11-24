@@ -31,7 +31,6 @@ classes:
     attributes:
 
       citekey:
-        alias: refid
         key: true
         range: CslCitekey
         description: >
