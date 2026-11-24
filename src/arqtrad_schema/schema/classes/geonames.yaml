@@ -5,7 +5,7 @@ imports:
   - linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
-  geonames: https://www.geonames.org/ontology#
+  geonames: https://sws.geonames.org/
   wgs84: http://www.w3.org/2003/01/geo/wgs84_pos#
 # default_prefix: geonames
 default_range: string

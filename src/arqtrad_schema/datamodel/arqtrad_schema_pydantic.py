@@ -9175,7 +9175,6 @@ class Site(Thing):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "abstract": True,
             "class_uri": "crm:E92_Spacetime_Volume",
             "comments": [
                 "Este bloco corresponde à terminologia do [DublinCore] `coverage "
@@ -9206,12 +9205,9 @@ class Site(Thing):
         }
     )
 
-    name: Optional[GeonamesFeature] = Field(
+    name: Optional[str] = Field(
         default=None,
-        description="""Permite identificar o contexto geográfico ou administrativo ao qual
-a edificação se subordina, usando a base <https://geonames.org>.
-Referenciar a localidade por meio do código identificador na forma:
-`geonameid: 1234`
+        description="""Permite identificar o contexto geográfico ou administrativo ao qual a edificação se subordina, usando a base <https://geonames.org>. Referenciar a localidade por meio do código identificador na forma: `name: \"geonames:1234\"`
 """,
         json_schema_extra={
             "linkml_meta": {

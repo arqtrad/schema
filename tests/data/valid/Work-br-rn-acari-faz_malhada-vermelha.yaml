@@ -47,8 +47,7 @@ site:
     Fazenda Malhada Vermelha
 
     Acari
-  name:
-    geonameid: 3408360
+  name: "geonames:3408360"
   location:
     lat: -6.487795049446586
     lon: -36.60386321586019
