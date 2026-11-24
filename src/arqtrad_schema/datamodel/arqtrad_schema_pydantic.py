@@ -139,7 +139,7 @@ linkml_meta = LinkMLMeta(
             },
             "geonames": {
                 "prefix_prefix": "geonames",
-                "prefix_reference": "https://www.geonames.org/ontology#",
+                "prefix_reference": "https://www.geonames.org/",
             },
             "isni": {
                 "prefix_prefix": "isni",

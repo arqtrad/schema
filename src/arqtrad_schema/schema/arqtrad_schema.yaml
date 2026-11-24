@@ -80,7 +80,7 @@ prefixes:
   isni: https://isni.org/isni/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   geo: http://www.opengis.net/ont/geosparql#
-  geonames: https://www.geonames.org/ontology#
+  geonames: https://www.geonames.org/
   la: https://linked.art/ns/terms/
   aat: http://vocab.getty.edu/aat/
   tgn: http://vocab.getty.edu/tgn/
