@@ -114,7 +114,7 @@ linkml_meta = LinkMLMeta(
             },
             "aat": {
                 "prefix_prefix": "aat",
-                "prefix_reference": "http://vocab.getty.edu/aat/",
+                "prefix_reference": "https://vocab.getty.edu/aat/",
             },
             "arqtrad": {
                 "prefix_prefix": "arqtrad",
@@ -179,7 +179,7 @@ linkml_meta = LinkMLMeta(
             },
             "tgn": {
                 "prefix_prefix": "tgn",
-                "prefix_reference": "http://vocab.getty.edu/tgn/",
+                "prefix_reference": "https://vocab.getty.edu/tgn/",
             },
             "ucum": {
                 "prefix_prefix": "ucum",
@@ -187,7 +187,7 @@ linkml_meta = LinkMLMeta(
             },
             "ulan": {
                 "prefix_prefix": "ulan",
-                "prefix_reference": "http://vocab.getty.edu/ulan/",
+                "prefix_reference": "https://vocab.getty.edu/ulan/",
             },
             "unesco": {
                 "prefix_prefix": "unesco",

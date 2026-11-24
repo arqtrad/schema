@@ -82,9 +82,9 @@ prefixes:
   geo: http://www.opengis.net/ont/geosparql#
   geonames: https://sws.geonames.org/
   la: https://linked.art/ns/terms/
-  aat: http://vocab.getty.edu/aat/
-  tgn: http://vocab.getty.edu/tgn/
-  ulan: http://vocab.getty.edu/ulan/
+  aat: https://vocab.getty.edu/aat/
+  tgn: https://vocab.getty.edu/tgn/
+  ulan: https://vocab.getty.edu/ulan/
   ucum: http://purl.oclc.org/NET/muo/ucum/
   unesco: http://vocabularies.unesco.org/thesaurus/
   vra: http://purl.org/vra/
