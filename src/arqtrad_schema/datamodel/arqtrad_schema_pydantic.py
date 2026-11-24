@@ -161,6 +161,10 @@ linkml_meta = LinkMLMeta(
                 "prefix_prefix": "linkml",
                 "prefix_reference": "https://w3id.org/linkml/",
             },
+            "orcid": {
+                "prefix_prefix": "orcid",
+                "prefix_reference": "https://orcid.org/",
+            },
             "rdfs": {
                 "prefix_prefix": "rdfs",
                 "prefix_reference": "http://www.w3.org/2000/01/rdf-schema#",
