@@ -97,13 +97,13 @@ prefixes:
     prefix_reference: https://linked.art/ns/terms/
   aat:
     prefix_prefix: aat
-    prefix_reference: http://vocab.getty.edu/aat/
+    prefix_reference: https://vocab.getty.edu/aat/
   tgn:
     prefix_prefix: tgn
-    prefix_reference: http://vocab.getty.edu/tgn/
+    prefix_reference: https://vocab.getty.edu/tgn/
   ulan:
     prefix_prefix: ulan
-    prefix_reference: http://vocab.getty.edu/ulan/
+    prefix_reference: https://vocab.getty.edu/ulan/
   ucum:
     prefix_prefix: ucum
     prefix_reference: http://purl.oclc.org/NET/muo/ucum/
@@ -6853,7 +6853,7 @@ slots:
     name: concept_name
     definition_uri: https://tradicional.arq.br/schema/concept_name
     from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: wasth:concept_name
+    slot_uri: arqtrad:concept_name
     owner: Topic
     domain_of:
     - ConceptReference
@@ -6932,7 +6932,7 @@ slots:
       \xE3o, por exemplo as hierarquias do Getty AAT [obras visuais](http://vocab.getty.edu/hier/aat/300191086).\
       \ ou [formatos de informa\xE7\xE3o](http://vocab.getty.edu/hier/aat/300220751)\n"
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:collection_type
+    slot_uri: arqtrad:collection_type
     range: CollectionType
   resources:
     name: resources
@@ -6945,7 +6945,7 @@ slots:
       \ podem ser consultadas em <http://terminology.lido-schema.org/resourceRepresentation_type>\
       \ e s\xE3o inseridas na ficha como um mapa.\n"
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:resources
+    slot_uri: arqtrad:resources
     owner: Work
     domain_of:
     - Work
@@ -7004,7 +7004,7 @@ slots:
     definition_uri: https://tradicional.arq.br/schema/media
     description: "Representa\xE7\xF5es iconogr\xE1ficas deste objeto.\n"
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:media
+    slot_uri: arqtrad:media
     owner: Work
     domain_of:
     - RelatedWork
@@ -7022,7 +7022,7 @@ slots:
       \ A especifica\xE7\xE3o LIDO admite listar mais de uma miniatura, mas tampouco\
       \ prevemos essa hip\xF3tese.\n"
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:preview_image
+    slot_uri: arqtrad:preview_image
     owner: MediaObject
     domain_of:
     - Resource
@@ -7034,7 +7034,7 @@ slots:
     description: "Lista de vers\xF5es ampliadas ou originais da imagem, vetorial ou\
       \ bitmap."
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:provided_image
+    slot_uri: arqtrad:provided_image
     owner: Resource
     domain_of:
     - Resource
@@ -7047,7 +7047,7 @@ slots:
     definition_uri: https://tradicional.arq.br/schema/provided_3d
     description: "Modelo tridimensional ou IFC da edifica\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:provided_3d
+    slot_uri: arqtrad:provided_3d
     owner: Resource
     domain_of:
     - Resource
@@ -7064,7 +7064,7 @@ slots:
       \ a uma p\xE1gina web que forne\xE7a a respetiva API ou as informa\xE7\xF5es\
       \ acerca do modelo."
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:resource_service
+    slot_uri: arqtrad:resource_service
     owner: Resource
     domain_of:
     - Resource
@@ -7101,7 +7101,7 @@ slots:
       \xE3o ou tamanho de p\xE1gina definidos. Por exemplo, para um desenho na escala\
       \ 1\u2009:\u2009100, `scale: 100`."
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:scale
+    slot_uri: arqtrad:scale
     owner: MediaObject
     domain_of:
     - Resource
@@ -7131,7 +7131,7 @@ slots:
     definition_uri: https://tradicional.arq.br/schema/credit
     description: "Informa\xE7\xE3o sobre autoria ou responsabilidade."
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:credit
+    slot_uri: arqtrad:credit
     owner: Resource
     domain_of:
     - Resource
@@ -7140,7 +7140,7 @@ slots:
     name: refid_type
     definition_uri: https://tradicional.arq.br/schema/refid_type
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:refid_type
+    slot_uri: arqtrad:refid_type
     ifabsent: ReferenceType(uri)
     owner: TypedReference
     domain_of:
@@ -7169,7 +7169,7 @@ slots:
 
       '
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:measurements
+    slot_uri: arqtrad:measurements
     owner: Work
     domain_of:
     - MediaObject
@@ -7245,7 +7245,7 @@ slots:
       \ se a altura \xE9 at\xE9 a linha de coroamento ou at\xE9 a cumeeira, etc. \u2014\
       \ usar a `uri` de um vocabul\xE1rio controlado.\n"
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:format_extent
+    slot_uri: arqtrad:format_extent
     owner: Topic
     domain_of:
     - Measurement
@@ -7262,7 +7262,7 @@ slots:
       \ de medida](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300379096)\
       \ do AAT, ou do nosso pr\xF3prio [vocabul\xE1rio controlado].\n"
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:unit
+    slot_uri: arqtrad:unit
     owner: Measurement
     domain_of:
     - Resource
@@ -7287,7 +7287,7 @@ slots:
       Examples may be Neolithic for a period, Impressionist for a style, or Cubism\
       \ for a movement.\n"
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:style_period
+    slot_uri: arqtrad:style_period
     owner: Work
     domain_of:
     - Event
@@ -7309,7 +7309,7 @@ slots:
       \ context is of particular interest. Examples may include the name of a culture,\
       \ a nation, or an ethnic group."
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:culture
+    slot_uri: arqtrad:culture
     owner: Work
     domain_of:
     - Event
@@ -7322,7 +7322,7 @@ slots:
     name: source
     definition_uri: https://tradicional.arq.br/schema/source
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:source
+    slot_uri: arqtrad:source
     owner: GeographicExtent
     domain_of:
     - ConceptReference
@@ -7336,7 +7336,7 @@ slots:
     name: rights
     definition_uri: https://tradicional.arq.br/schema/rights
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:rights
+    slot_uri: arqtrad:rights
     range: Right
     multivalued: true
     inlined: true
@@ -7349,7 +7349,7 @@ slots:
       \ este evento ou com uma informa\xE7\xE3o (por exemplo, a a\xE7\xE3o que resultou\
       \ na obten\xE7\xE3o da referida informa\xE7\xE3o)."
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:related_events
+    slot_uri: arqtrad:related_events
     owner: Event
     domain_of:
     - Measurement
@@ -7505,7 +7505,7 @@ slots:
     notes:
     - Published or external identifiers for the object.
     from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:identifiers
+    slot_uri: arqtrad:identifiers
     owner: Thing
     domain_of:
     - Thing
@@ -7524,7 +7524,7 @@ slots:
     - A set of structured information about rights regarding the content provided
       in this LIDO record.
     from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:record_rights
+    slot_uri: arqtrad:record_rights
     owner: Work
     domain_of:
     - Concept
@@ -7538,7 +7538,7 @@ slots:
     definition_uri: https://tradicional.arq.br/schema/legal_body
     description: "Informa\xE7\xF5es estruturadas sobre a pessoa jur\xEDdica."
     from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:legal_body
+    slot_uri: arqtrad:legal_body
     owner: Repository
     domain_of:
     - Repository
@@ -7566,7 +7566,7 @@ slots:
     description: "A localiza\xE7\xE3o real, atual da edifica\xE7\xE3o \u2014 \xE9\
       \ o que ser\xE1 usado em quase todos os casos."
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:site
+    slot_uri: arqtrad:site
     owner: Work
     domain_of:
     - Repository
@@ -7582,7 +7582,7 @@ slots:
       \ of the lat/long pair according to the ISO6709 standard. Sempre que poss\xED\
       vel, usar EPSG:4326, sen\xE3o os sistemas de refer\xEAncia nacionais."
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:srs_name
+    slot_uri: arqtrad:srs_name
     owner: GeographicExtent
     domain_of:
     - GeographicPoint
@@ -8003,7 +8003,7 @@ slots:
     name: concept__concept_type
     description: "Tipos de termos de vocabul\xE1rio baseados no Getty AAT.\n"
     from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: wasth:concept_type
+    slot_uri: arqtrad:concept_type
     ifabsent: ConceptType(concept)
     alias: concept_type
     owner: Concept
@@ -8016,7 +8016,7 @@ slots:
       \ Usar em refer\xEAncia a vocabul\xE1rios externos, como o Getty Art and Architecture\
       \ Thesaurus."
     from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: wasth:mapping
+    slot_uri: arqtrad:mapping
     alias: mapping
     owner: Concept
     domain_of:
@@ -8045,7 +8045,7 @@ slots:
     name: broaderConceptReference__broader_match
     description: "Tipo da rela\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: wasth:broader_match
+    slot_uri: arqtrad:broader_match
     alias: broader_match
     owner: BroaderConceptReference
     domain_of:
@@ -8059,7 +8059,7 @@ slots:
       \ n\xE3o \xE9 revers\xEDvel, ou seja, n\xE3o existe \"prefer\xEAncia\" por um\
       \ conceito mais espec\xEDfico em detrimento de outros.\n"
     from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: wasth:broader_preferred
+    slot_uri: arqtrad:broader_preferred
     ifabsent: 'False'
     alias: broader_preferred
     owner: BroaderConceptReference
@@ -8070,7 +8070,7 @@ slots:
     name: narrowerConceptReference__narrower_match
     description: "Tipo da rela\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: wasth:narrower_match
+    slot_uri: arqtrad:narrower_match
     alias: narrower_match
     owner: NarrowerConceptReference
     domain_of:
@@ -8081,7 +8081,7 @@ slots:
     name: mappingConceptReference__mapping_match
     description: "Tipo da rela\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: wasth:mapping_match
+    slot_uri: arqtrad:mapping_match
     alias: mapping_match
     owner: MappingConceptReference
     domain_of:
@@ -8098,7 +8098,7 @@ slots:
       \ deve cadastr\xE1-la primeiro nessa biblioteca para ent\xE3o extrair a chave\
       \ de cita\xE7\xE3o.\n"
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:refid
+    slot_uri: arqtrad:refid
     key: true
     alias: refid
     owner: BibliographicCitation
@@ -8112,7 +8112,7 @@ slots:
       o adicional, como o n\xFAmero da p\xE1gina da refer\xEAncia bibliogr\xE1fica\
       \ de onde a informa\xE7\xE3o foi extra\xEDda.\n"
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:note
+    slot_uri: arqtrad:note
     alias: note
     owner: BibliographicCitation
     domain_of:
@@ -8139,7 +8139,7 @@ slots:
       \ elementos\n  - 5 = detalhe\n  - 6 = mapa de revestimentos\n  - 7 = planta\
       \ de forro\n  - 8 = vista ou modelo 3D\n  - 9 = definido pelo agente\n"
     from_schema: https://tradicional.arq.br/schema/resource
-    slot_uri: wasth:perspective
+    slot_uri: arqtrad:perspective
     alias: perspective
     owner: Resource
     domain_of:
@@ -8153,7 +8153,7 @@ slots:
     description: "O tipo de medida pode se referir ao objeto propriamente dito `proper`\
       \ ou a um requisito para a sua conserva\xE7\xE3o ou uso, `requirement`.\n"
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:measurement_type
+    slot_uri: arqtrad:measurement_type
     ifabsent: MeasurementType(proper)
     alias: measurement_type
     owner: Measurement
@@ -8167,7 +8167,7 @@ slots:
       \ do Art and Architecture Thesaurus do Instituto Getty (AAT), enquanto n\xE3\
       o tivermos um vocabul\xE1rio controlado pr\xF3prio.\n"
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:measurement_extent
+    slot_uri: arqtrad:measurement_extent
     alias: measurement_extent
     owner: Measurement
     domain_of:
@@ -8179,7 +8179,7 @@ slots:
     name: measurement__measurement_value
     description: "Valor num\xE9rico, usar ponto como separador decimal."
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:measurement_value
+    slot_uri: arqtrad:measurement_value
     alias: measurement_value
     owner: Measurement
     domain_of:
@@ -8193,7 +8193,7 @@ slots:
 
       '
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:measurement_qualifier
+    slot_uri: arqtrad:measurement_qualifier
     ifabsent: MeasurementQualifier(derived)
     alias: measurement_qualifier
     owner: Measurement
@@ -8206,7 +8206,7 @@ slots:
       \ de formas do AAT](https://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273),\
       \ enquanto n\xE3o tivermos um vocabul\xE1rio controlado pr\xF3prio.\n"
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:measurement_shape
+    slot_uri: arqtrad:measurement_shape
     alias: measurement_shape
     owner: Measurement
     domain_of:
@@ -8219,7 +8219,7 @@ slots:
       \ pr\xE9vio a interven\xE7\xF5es que alteraram as dimens\xF5es da edifica\xE7\
       \xE3o).\nReferencia um evento cadastrado em `temporal` pelo seu `id`.\n"
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:measurement_event
+    slot_uri: arqtrad:measurement_event
     alias: measurement_event
     owner: Measurement
     domain_of:
@@ -8232,7 +8232,7 @@ slots:
       \ material de constru\xE7\xE3o (support), revestimento (medium), t\xE9cnica,\
       \ instrumento, cor, etc.\n"
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:material_tech_type
+    slot_uri: arqtrad:material_tech_type
     alias: material_tech_type
     owner: MaterialTech
     domain_of:
@@ -8248,7 +8248,7 @@ slots:
       like copyright or performance rights, or is a specific rights or license statement,
       for instance, Rights Statements or Creative Commons Licenses.
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:rights_type
+    slot_uri: arqtrad:rights_type
     alias: rights_type
     owner: Right
     domain_of:
@@ -8269,7 +8269,7 @@ slots:
       rights or license statement like a standardized statement on copyright, usage,
       or access rights.
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:statement
+    slot_uri: arqtrad:statement
     alias: statement
     owner: Right
     domain_of:
@@ -8282,7 +8282,7 @@ slots:
     name: right__earliest_date
     description: Date on which a right is or was current.
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:earliest_date
+    slot_uri: arqtrad:earliest_date
     alias: earliest_date
     owner: Right
     domain_of:
@@ -8294,7 +8294,7 @@ slots:
     name: right__latest_date
     description: Date on which a right is or will be no longer current.
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:latest_date
+    slot_uri: arqtrad:latest_date
     alias: latest_date
     owner: Right
     domain_of:
@@ -8311,7 +8311,7 @@ slots:
 
       '
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:holder
+    slot_uri: arqtrad:holder
     alias: holder
     owner: Right
     domain_of:
@@ -8324,7 +8324,7 @@ slots:
     description: "Define a natureza do ente legal\u2009: pessoa jur\xEDdica, per\xED\
       metro geogr\xE1fico de tutela, etc.\n"
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:legal_body_type
+    slot_uri: arqtrad:legal_body_type
     ifabsent: RepositoryType(corporate)
     alias: legal_body_type
     owner: LegalBody
@@ -8335,7 +8335,7 @@ slots:
     name: legalBody__weblink
     description: "Link para uma p\xE1gina descritiva da entidade."
     from_schema: https://tradicional.arq.br/schema/shared
-    slot_uri: wasth:weblink
+    slot_uri: arqtrad:weblink
     alias: weblink
     owner: LegalBody
     domain_of:
@@ -8347,7 +8347,7 @@ slots:
       \ processos, ou de resultados (in\xEDcio ou fim da exist\xEAncia, transforma\xE7\
       \xE3o).\n"
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:event_type
+    slot_uri: arqtrad:event_type
     alias: event_type
     owner: Event
     domain_of:
@@ -8358,7 +8358,7 @@ slots:
     name: event__actor_role
     description: "Identifica\xE7\xE3o de um agente e do seu papel no evento."
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:actor_role
+    slot_uri: arqtrad:actor_role
     alias: actor_role
     owner: Event
     domain_of:
@@ -8374,7 +8374,7 @@ slots:
       \ a ficha assegurar que `start_date` e `end_date` ocorram em ordem cronol\xF3\
       gica. N\xE3o dispomos de valida\xE7\xE3o autom\xE1tica para tanto.\n"
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:start_date
+    slot_uri: arqtrad:start_date
     alias: start_date
     owner: Event
     domain_of:
@@ -8392,7 +8392,7 @@ slots:
       \ ficha assegurar que `start_date` e `end_date` ocorram em ordem cronol\xF3\
       gica. N\xE3o dispomos de valida\xE7\xE3o autom\xE1tica para tanto.\n"
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:end_date
+    slot_uri: arqtrad:end_date
     alias: end_date
     owner: Event
     domain_of:
@@ -8408,7 +8408,7 @@ slots:
     description: "Lugares associados ao evento, sem incluir o pr\xF3prio local no\
       \ qual se situa a edifica\xE7\xE3o.\n"
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:event_place
+    slot_uri: arqtrad:event_place
     alias: event_place
     owner: Event
     domain_of:
@@ -8422,7 +8422,7 @@ slots:
     description: An index element for the method by which the event is or was carried
       out. Examples may include an acquisition method or a field collection method.
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:method
+    slot_uri: arqtrad:method
     alias: method
     owner: Event
     domain_of:
@@ -8437,7 +8437,7 @@ slots:
       is or was present at the event in focus. Repeated if there are multiple related
       objects or works.
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:things_present
+    slot_uri: arqtrad:things_present
     alias: things_present
     owner: Event
     domain_of:
@@ -8451,7 +8451,7 @@ slots:
     description: "Define se o agente \xE9 uma pessoa, uma organiza\xE7\xE3o ou corpora\xE7\
       \xE3o, uma oficina, uma fam\xEDlia, etc.\n"
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:actor_type
+    slot_uri: arqtrad:actor_type
     ifabsent: AgentType(personal)
     alias: actor_type
     owner: Actor
@@ -8462,7 +8462,7 @@ slots:
     name: actor__actor_name
     description: "Nome do agente extra\xEDdo de um vocabul\xE1rio controlado."
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:actor_name
+    slot_uri: arqtrad:actor_name
     alias: actor_name
     owner: Actor
     domain_of:
@@ -8474,7 +8474,7 @@ slots:
     name: actor__role_in_event
     description: "A\xE7\xE3o desempenhada pelo agente no evento."
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:role_in_event
+    slot_uri: arqtrad:role_in_event
     alias: role_in_event
     owner: Actor
     domain_of:
@@ -8488,7 +8488,7 @@ slots:
 
       '
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:actor_qualifier
+    slot_uri: arqtrad:actor_qualifier
     alias: actor_qualifier
     owner: Actor
     domain_of:
@@ -8501,7 +8501,7 @@ slots:
     name: actor__actor_extent
     description: Parte da obra sobre a qual o agente interveio.
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:actor_extent
+    slot_uri: arqtrad:actor_extent
     alias: actor_extent
     owner: Actor
     domain_of:
@@ -8515,7 +8515,7 @@ slots:
     description: "Qualifica a confiabilidade da data como sendo conhecida ou estimada.\
       \ A confiabilidade independe do grau de precis\xE3o da data.\n"
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:date_type
+    slot_uri: arqtrad:date_type
     alias: date_type
     owner: EventDate
     domain_of:
@@ -8529,7 +8529,7 @@ slots:
       \ delimitado, conforme se tratar de uma data de corte inicial ou final para\
       \ o evento, e descrever verbalmente o per\xEDodo no campo `display_date`.\n"
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:date_value
+    slot_uri: arqtrad:date_value
     alias: date_value
     owner: EventDate
     domain_of:
@@ -8539,7 +8539,7 @@ slots:
     name: stylePeriod__period_name_type
     description: "Designa a natureza ou origem do nome do per\xEDodo ou estilo indicado.\n"
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:period_name_type
+    slot_uri: arqtrad:period_name_type
     alias: period_name_type
     owner: StylePeriod
     domain_of:
@@ -8552,7 +8552,7 @@ slots:
 
       '
     from_schema: https://tradicional.arq.br/schema/temporal
-    slot_uri: wasth:event_name
+    slot_uri: arqtrad:event_name
     alias: event_name
     owner: RelatedEvent
     domain_of:
@@ -8568,7 +8568,7 @@ slots:
       \ ser atestado em mais de uma fonte, por isso este campo \xE9 uma lista de itens\
       \ (cada item come\xE7a com um h\xEDfen)."
     from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:title_source
+    slot_uri: arqtrad:title_source
     alias: title_source
     owner: Thing
     domain_of:
@@ -8586,7 +8586,7 @@ slots:
       \ item cont\xE9m o texto do t\xEDtulo (nome).\nEste bloco pode ser omitido por\
       \ completo se n\xE3o houver t\xEDtulos alternativos.\n"
     from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:alt_name
+    slot_uri: arqtrad:alt_name
     alias: alt_name
     owner: Thing
     domain_of:
@@ -8605,7 +8605,7 @@ slots:
       \ uncontrolled keywords. Prefer `classifications` or `subject` for curated vocabulary\
       \ terms."
     from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:tags
+    slot_uri: arqtrad:tags
     alias: tags
     owner: Thing
     domain_of:
@@ -8618,7 +8618,7 @@ slots:
       \xE3o ou \xE0 exist\xEAncia e/ou uso do objeto ou conceito.\nLer a respetiva\
       \ documenta\xE7\xE3o para estruturar este campo.\n"
     from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:temporal
+    slot_uri: arqtrad:temporal
     alias: temporal
     owner: Thing
     domain_of:
@@ -8639,7 +8639,7 @@ slots:
       \ designations known, or if former repositories or geographic places should\
       \ be listed.\n"
     from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:repositories
+    slot_uri: arqtrad:repositories
     alias: repositories
     owner: Thing
     domain_of:
@@ -8652,7 +8652,7 @@ slots:
     name: appellation__label
     description: "Nome ou t\xEDtulo (texto sem formata\xE7\xE3o)."
     from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:label
+    slot_uri: arqtrad:label
     alias: label
     owner: Appellation
     domain_of:
@@ -8663,7 +8663,7 @@ slots:
     description: "Indica se o nome em quest\xE3o deve ser oculto ou n\xE3o, se \xE9\
       \ uma vers\xE3o alternativa ou uma variante de grafia, etc."
     from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:appellation_preference
+    slot_uri: arqtrad:appellation_preference
     ifabsent: LabelType(alternative)
     alias: appellation_preference
     owner: Appellation
@@ -8676,7 +8676,7 @@ slots:
 
       '
     from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:title_type
+    slot_uri: arqtrad:title_type
     ifabsent: TitleType(descriptive)
     alias: title_type
     owner: Appellation
@@ -8687,7 +8687,7 @@ slots:
     name: repository__repository_type
     description: "Categoriza a natureza f\xEDsica ou jur\xEDdica do reposit\xF3rio."
     from_schema: https://tradicional.arq.br/schema/thing
-    slot_uri: wasth:repository_type
+    slot_uri: arqtrad:repository_type
     ifabsent: RepositoryType(corporate)
     alias: repository_type
     owner: Repository
@@ -8698,7 +8698,7 @@ slots:
     name: work__title_type
     description: Categoriza a natureza do nome dado ao objeto.
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:title_type
+    slot_uri: arqtrad:title_type
     alias: title_type
     owner: Work
     domain_of:
@@ -9002,7 +9002,7 @@ slots:
     description: "Indica que a edifica\xE7\xE3o n\xE3o se encontra mais no local indicado,\
       \ seja porque foi deslocada ou demolida."
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:former_site
+    slot_uri: arqtrad:former_site
     alias: former_site
     owner: Work
     domain_of:
@@ -9016,7 +9016,7 @@ slots:
     description: "Sinaliza que a edifica\xE7\xE3o devia ocupar um certo local, mas\
       \ n\xE3o chegou a ser constru\xEDda."
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:intended_site
+    slot_uri: arqtrad:intended_site
     alias: intended_site
     owner: Work
     domain_of:
@@ -9030,7 +9030,7 @@ slots:
     description: "Para casos de implanta\xE7\xE3o n\xE3o contemplados em nenhuma das\
       \ categorias acima."
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:other_site
+    slot_uri: arqtrad:other_site
     alias: other_site
     owner: Work
     domain_of:
@@ -9049,7 +9049,7 @@ slots:
       \ originalmente pertencia a Pernambuco, ou ainda se for relevante informar uma\
       \ regi\xE3o f\xEDsica."
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:location_historic
+    slot_uri: arqtrad:location_historic
     alias: location_historic
     owner: Work
     domain_of:
@@ -9064,7 +9064,7 @@ slots:
       \ aqueles referentes \xE0 estrutura como um todo e n\xE3o espec\xEDficos a alguma\
       \ de suas partes. N\xE3o usar para iconografia."
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:inscriptions
+    slot_uri: arqtrad:inscriptions
     alias: inscriptions
     owner: Work
     domain_of:
@@ -9198,7 +9198,7 @@ slots:
     name: site__site_type
     description: "Categoriza a natureza do recorte que define o s\xEDtio.\n"
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:site_type
+    slot_uri: arqtrad:site_type
     ifabsent: RepositoryType(geographic)
     alias: site_type
     owner: Site
@@ -9247,7 +9247,7 @@ slots:
       \ descobrimento do objeto, do local de origem ou destino do seu translado. Omitir\
       \ caso o evento n\xE3o se enquadre nesses casos.\n"
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:event_place_type
+    slot_uri: arqtrad:event_place_type
     alias: event_place_type
     owner: Site
     domain_of:
@@ -9257,7 +9257,7 @@ slots:
     name: geographicPoint__lat
     description: 'Latitude em graus decimais (separador decimal: ponto).'
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:lat
+    slot_uri: arqtrad:lat
     alias: lat
     owner: GeographicPoint
     domain_of:
@@ -9268,7 +9268,7 @@ slots:
     name: geographicPoint__lon
     description: 'Longitude em graus decimais (separador decimal: ponto).'
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:lon
+    slot_uri: arqtrad:lon
     alias: lon
     owner: GeographicPoint
     domain_of:
@@ -9279,7 +9279,7 @@ slots:
     name: geographicPoint__alt
     description: 'Altitude em metros (separador decimal: ponto)'
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:alt
+    slot_uri: arqtrad:alt
     alias: alt
     owner: GeographicPoint
     domain_of:
@@ -9292,7 +9292,7 @@ slots:
     description: "Usado para visualizar o mapa mais de longe se a precis\xE3o das\
       \ coordenadas for baixa.\n"
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:zoom
+    slot_uri: arqtrad:zoom
     ifabsent: integer(13)
     alias: zoom
     owner: GeographicPoint
@@ -9305,7 +9305,7 @@ slots:
     name: geographicExtent__geometry_type
     description: Tipo da geometria descrita pelas coordenadas.
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:geometry_type
+    slot_uri: arqtrad:geometry_type
     alias: geometry_type
     owner: GeographicExtent
     domain_of:
@@ -9318,7 +9318,7 @@ slots:
       \ pol\xEDgono (`extent`) com a op\xE7\xE3o `Get JSON` \u2014 copiar apenas os\
       \ colchetes `[[[ ]]]` e os valores num\xE9ricos dentro deles.\n"
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:coordinates
+    slot_uri: arqtrad:coordinates
     alias: coordinates
     owner: GeographicExtent
     domain_of:
@@ -9329,7 +9329,7 @@ slots:
     name: inscription__inscription_type
     description: "Determina a natureza da inscri\xE7\xE3o.\n"
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:inscription_type
+    slot_uri: arqtrad:inscription_type
     ifabsent: string(text)
     alias: inscription_type
     owner: Inscription
@@ -9341,7 +9341,7 @@ slots:
     name: topic__topic_type
     description: "Categoriza o n\xEDvel descritivo ou interpretativo do tema.\n"
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:topic_type
+    slot_uri: arqtrad:topic_type
     alias: topic_type
     owner: Topic
     domain_of:
@@ -9352,7 +9352,7 @@ slots:
     name: collection__collection_type
     description: "Descreve a natureza da cole\xE7\xE3o."
     from_schema: https://tradicional.arq.br/schema/work
-    slot_uri: wasth:collection_type
+    slot_uri: arqtrad:collection_type
     alias: collection_type
     owner: Collection
     domain_of:
@@ -9517,7 +9517,7 @@ slots:
     from_schema: https://tradicional.arq.br/schema/shared
     is_a: unit
     domain: Measurement
-    slot_uri: wasth:unit
+    slot_uri: arqtrad:unit
     alias: unit
     owner: Measurement
     domain_of:
@@ -9538,7 +9538,7 @@ slots:
     from_schema: https://tradicional.arq.br/schema/thing
     is_a: identifiers
     domain: LegalBody
-    slot_uri: wasth:identifiers
+    slot_uri: arqtrad:identifiers
     alias: identifiers
     owner: LegalBody
     domain_of:
@@ -9777,7 +9777,7 @@ slots:
     from_schema: https://tradicional.arq.br/schema/resource
     is_a: resources
     domain: Work
-    slot_uri: wasth:resources
+    slot_uri: arqtrad:resources
     alias: resources
     owner: Work
     domain_of:
@@ -9811,7 +9811,7 @@ slots:
     from_schema: https://tradicional.arq.br/schema/resource
     is_a: media
     domain: Work
-    slot_uri: wasth:media
+    slot_uri: arqtrad:media
     alias: media
     owner: Work
     domain_of:
@@ -9833,7 +9833,7 @@ slots:
     from_schema: https://tradicional.arq.br/schema/thing
     is_a: record_rights
     domain: Work
-    slot_uri: wasth:record_rights
+    slot_uri: arqtrad:record_rights
     alias: record_rights
     owner: Work
     domain_of:
@@ -9899,7 +9899,7 @@ slots:
     from_schema: https://tradicional.arq.br/schema/concept
     is_a: concept_name
     domain: Topic
-    slot_uri: wasth:concept_name
+    slot_uri: arqtrad:concept_name
     alias: concept_name
     owner: Topic
     domain_of:
@@ -10040,7 +10040,7 @@ classes:
     - description
     - bibliographic_citation
     - source
-    class_uri: wasth:ConceptReference
+    class_uri: arqtrad:ConceptReference
   BroaderConceptReference:
     name: BroaderConceptReference
     definition_uri: https://tradicional.arq.br/schema/BroaderConceptReference
@@ -10068,7 +10068,7 @@ classes:
           \ um conceito mais espec\xEDfico em detrimento de outros.\n"
         ifabsent: 'False'
         range: boolean
-    class_uri: wasth:BroaderConceptReference
+    class_uri: arqtrad:BroaderConceptReference
   NarrowerConceptReference:
     name: NarrowerConceptReference
     definition_uri: https://tradicional.arq.br/schema/NarrowerConceptReference
@@ -10087,7 +10087,7 @@ classes:
         description: "Tipo da rela\xE7\xE3o."
         range: SkosNarrowerRelation
         required: true
-    class_uri: wasth:NarrowerConceptReference
+    class_uri: arqtrad:NarrowerConceptReference
   MappingConceptReference:
     name: MappingConceptReference
     definition_uri: https://tradicional.arq.br/schema/MappingConceptReference
@@ -10106,7 +10106,7 @@ classes:
         description: "Tipo da rela\xE7\xE3o."
         range: SkosMappingRelation
         required: true
-    class_uri: wasth:MappingConceptReference
+    class_uri: arqtrad:MappingConceptReference
   BibliographicCitation:
     name: BibliographicCitation
     definition_uri: https://tradicional.arq.br/schema/BibliographicCitation
@@ -10217,7 +10217,7 @@ classes:
     - work_rights
     - relation_type
     - media
-    class_uri: wasth:RelatedWork
+    class_uri: arqtrad:RelatedWork
   LargerContextReference:
     name: LargerContextReference
     definition_uri: https://tradicional.arq.br/schema/LargerContextReference
@@ -10253,7 +10253,7 @@ classes:
         slot_uri: lido:relatedWorkRelType
         range: LargerContextType
         required: true
-    class_uri: wasth:LargerContextReference
+    class_uri: arqtrad:LargerContextReference
   Resource:
     name: Resource
     definition_uri: https://tradicional.arq.br/schema/Resource
@@ -10401,7 +10401,7 @@ classes:
       refid:
         name: refid
         key: true
-    class_uri: wasth:TypedReference
+    class_uri: arqtrad:TypedReference
   Measurement:
     name: Measurement
     definition_uri: https://tradicional.arq.br/schema/Measurement
@@ -10536,7 +10536,7 @@ classes:
           \ instrumento, cor, etc.\n"
         range: MaterialTechType
         required: true
-    class_uri: wasth:MaterialTech
+    class_uri: arqtrad:MaterialTech
   Right:
     name: Right
     definition_uri: https://tradicional.arq.br/schema/Right
@@ -10851,7 +10851,7 @@ classes:
         range: TypedReference
         multivalued: true
         inlined_as_list: true
-    class_uri: wasth:Actor
+    class_uri: arqtrad:Actor
   EventDate:
     name: EventDate
     definition_uri: https://tradicional.arq.br/schema/EventDate
@@ -10895,7 +10895,7 @@ classes:
           \ ou final para o evento, e descrever verbalmente o per\xEDodo no campo\
           \ `display_date`.\n"
         range: date
-    class_uri: wasth:EventDate
+    class_uri: arqtrad:EventDate
   StylePeriod:
     name: StylePeriod
     definition_uri: https://tradicional.arq.br/schema/StylePeriod
@@ -10914,7 +10914,7 @@ classes:
           \ indicado.\n"
         range: PeriodNameType
         required: true
-    class_uri: wasth:StylePeriod
+    class_uri: arqtrad:StylePeriod
   RelatedEvent:
     name: RelatedEvent
     definition_uri: https://tradicional.arq.br/schema/RelatedEvent
@@ -10933,7 +10933,7 @@ classes:
         required: true
         multivalued: true
         inlined: false
-    class_uri: wasth:RelatedEvent
+    class_uri: arqtrad:RelatedEvent
   Thing:
     name: Thing
     definition_uri: https://tradicional.arq.br/schema/Thing
@@ -11055,7 +11055,7 @@ classes:
           '
         ifabsent: TitleType(descriptive)
         range: TitleType
-    class_uri: wasth:Appellation
+    class_uri: arqtrad:Appellation
   Repository:
     name: Repository
     definition_uri: https://tradicional.arq.br/schema/Repository
@@ -11750,7 +11750,7 @@ classes:
         range: integer
         minimum_value: 0
         maximum_value: 18
-    class_uri: wasth:GeographicPoint
+    class_uri: arqtrad:GeographicPoint
   GeographicExtent:
     name: GeographicExtent
     definition_uri: https://tradicional.arq.br/schema/GeographicExtent
@@ -11775,7 +11775,7 @@ classes:
           \ os colchetes `[[[ ]]]` e os valores num\xE9ricos dentro deles.\n"
         range: GeoJSONCoordinateArray
         required: true
-    class_uri: wasth:GeographicExtent
+    class_uri: arqtrad:GeographicExtent
   Inscription:
     name: Inscription
     definition_uri: https://tradicional.arq.br/schema/Inscription
@@ -11800,7 +11800,7 @@ classes:
         ifabsent: string(text)
         range: InscriptionType
         required: true
-    class_uri: wasth:Inscription
+    class_uri: arqtrad:Inscription
   Topic:
     name: Topic
     definition_uri: https://tradicional.arq.br/schema/Topic
@@ -11821,7 +11821,7 @@ classes:
         description: "Categoriza o n\xEDvel descritivo ou interpretativo do tema.\n"
         range: SubjectType
         required: true
-    class_uri: wasth:Topic
+    class_uri: arqtrad:Topic
   Collection:
     name: Collection
     definition_uri: https://tradicional.arq.br/schema/Collection
@@ -11850,7 +11850,7 @@ classes:
         description: "Descreve a natureza da cole\xE7\xE3o."
         range: CollectionType
         required: true
-    class_uri: wasth:Collection
+    class_uri: arqtrad:Collection
   GeonamesFeature:
     name: GeonamesFeature
     definition_uri: https://tradicional.arq.br/schema/geonames/GeonamesFeature
@@ -11880,6 +11880,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-24T19:51:41'
-source_file_size: 102757
+source_file_date: '2026-11-24T20:17:14'
+source_file_size: 102760
 
