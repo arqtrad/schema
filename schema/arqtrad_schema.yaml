@@ -47,9 +47,12 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
-  wasth:
-    prefix_prefix: wasth
+  arqtrad:
+    prefix_prefix: arqtrad
     prefix_reference: https://tradicional.arq.br/schema/
+  vascon:
+    prefix_prefix: vascon
+    prefix_reference: https://vocabulario.tradicional.arq.br/w/
   crm:
     prefix_prefix: crm
     prefix_reference: http://www.cidoc-crm.org/cidoc-crm/
@@ -116,7 +119,7 @@ prefixes:
   EPSG:
     prefix_prefix: EPSG
     prefix_reference: http://www.opengis.net/def/crs/EPSG/0/
-default_prefix: wasth
+default_prefix: arqtrad
 default_range: string
 types:
   CslCitekey:
@@ -7961,7 +7964,7 @@ slots:
     name: container__works
     description: "Todas as edifica\xE7\xF5es documentadas."
     from_schema: https://tradicional.arq.br/schema
-    slot_uri: wasth:works
+    slot_uri: arqtrad:works
     alias: works
     owner: Container
     domain_of:
@@ -7974,7 +7977,7 @@ slots:
     name: container__concepts
     description: "Todos os termos de vocabul\xE1rio controlado."
     from_schema: https://tradicional.arq.br/schema
-    slot_uri: wasth:concepts
+    slot_uri: arqtrad:concepts
     alias: concepts
     owner: Container
     domain_of:
@@ -7987,7 +7990,7 @@ slots:
     name: container__places
     description: Lugares indexados pelo Geonames
     from_schema: https://tradicional.arq.br/schema
-    slot_uri: wasth:places
+    slot_uri: arqtrad:places
     alias: places
     owner: Container
     domain_of:
@@ -9937,7 +9940,7 @@ classes:
         range: GeonamesFeature
         multivalued: true
         inlined_as_list: true
-    class_uri: wasth:Container
+    class_uri: arqtrad:Container
     tree_root: true
   Concept:
     name: Concept
@@ -11881,6 +11884,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-24T18:39:46'
-source_file_size: 102710
+source_file_date: '2026-11-24T18:45:57'
+source_file_size: 102766
 
