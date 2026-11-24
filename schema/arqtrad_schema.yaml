@@ -119,6 +119,9 @@ prefixes:
   EPSG:
     prefix_prefix: EPSG
     prefix_reference: http://www.opengis.net/def/crs/EPSG/0/
+  orcid:
+    prefix_prefix: orcid
+    prefix_reference: https://orcid.org/
 default_prefix: arqtrad
 default_range: string
 types:
@@ -11880,6 +11883,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-24T21:12:57'
-source_file_size: 102760
+source_file_date: '2026-11-24T21:48:57'
+source_file_size: 102788
 
