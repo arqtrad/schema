@@ -1,33 +1,33 @@
 name: arqtrad_schema
 description: "O elemento central dos Document\xE1rios da Arquitetura Tradicional \xE9\
-  \ a ficha\n**[Work](Work/)**, que descreve uma edifica\xE7\xE3o usando elementos\
-  \ dos padr\xF5es\n[LIDO] e [DublinCore].\n\nA especifica\xE7\xE3o deste esquema\
-  \ permite validar bancos de dados de edifica\xE7\xF5es\nconstitu\xEDdos em diversos\
-  \ sistemas, incluindo bases de dados relacionais\n(como aquelas que alimentam diversos\
-  \ sistemas de produ\xE7\xE3o de sites, incluindo\no WordPress, Tainacan, Arches,\
-  \ etc.) e fichas em formato de texto.\nAtualmente, contudo, os Document\xE1rios\
-  \ da Arquitetura Tradicional usam\nunicamente fichas em formato de texto sem formata\xE7\
-  \xE3o, combinando\nmetadados estruturados segundo a especifica\xE7\xE3o YAML\n([explica\xE7\
-  \xE3o introdut\xF3ria aqui][1] e [tutorial t\xE9cnico aqui][2]) e conte\xFAdo\n\
-  descritivo podendo usar as conven\xE7\xF5es de formata\xE7\xE3o do Markdown\n(inclusive\
-  \ especificidades do [Pandoc]).\n\nAl\xE9m de um editor de texto, recomendamos tamb\xE9\
-  m que use um programa de\ngeoprocessamento como o [QGIS] para incluir os dados georreferenciados\
-  \ nas\nfichas.\n\nOs metadados das fichas dependem do vocabul\xE1rio controlado\
-  \ que est\xE1 em\ncontru\xE7\xE3o no nosso [Thesaurus da arquitetura tradicional][4]\
-  \ e de outros\nvocabul\xE1rios controlados, tais como o Getty Art and Architecture\
-  \ Thesaurus\nou a lista de unidades de medida do UCUM.\n\n\n## Por onde come\xE7\
-  o\u2009?\n\n> Leia a especifica\xE7\xE3o da ficha **[Work](Work/)** para saber como\
-  \ preencher\n> as fichas de edifica\xE7\xF5es dos Document\xE1rios da Arquitetura\
-  \ Tradicional.\n\nSe n\xE3o estiver \xE0 vontade para manipular diretamente os reposit\xF3\
-  rios do GitHub,\nsempre pode contribuir informa\xE7\xF5es, sugest\xF5es ou desejos\
-  \ no\n[F\xF3rum de discuss\xE3o] deste projeto de pesquisa.\nSe tiver contribui\xE7\
-  \xF5es pontuais sobre fichas espec\xEDficas, formatos ou lacunas,\npode tamb\xE9\
-  m abrir uma [*issue* no reposit\xF3rio da Casa].\n\n[LIDO]: https://lido-schema.org/\n\
-  \n[DublinCore]: https://www.dublincore.org/resources/userguide/creating_metadata/\n\
-  \n[1]: https://www.linkedin.com/pulse/xml-json-markdown-e-yaml-explica\xE7\xE3o-simples-vitor-martins-ufv5e\n\
-  \n[2]: https://www.yaml.info/learn/index.html\n\n[3]: https://dublincore.org\n\n\
-  [Pandoc]: https://pandoc.org\n\n[QGIS]: https://qgis.org\n\n[4]: https://vocabulario.tradicional.arq.br\n\
-  \n[F\xF3rum de discuss\xE3o]: https://github.com/orgs/arqtrad/discussions\n\n[*issue*\
+  \ a ficha **[Work](elements/Work/)**, que descreve uma edifica\xE7\xE3o usando elementos\
+  \ dos padr\xF5es [LIDO] e [DublinCore].\nA especifica\xE7\xE3o deste esquema permite\
+  \ validar bancos de dados de edifica\xE7\xF5es constitu\xEDdos em diversos sistemas,\
+  \ incluindo bases de dados relacionais (como aquelas que alimentam diversos sistemas\
+  \ de produ\xE7\xE3o de sites, incluindo o WordPress, Tainacan, Arches, etc.) e fichas\
+  \ em formato de texto. Atualmente, contudo, os Document\xE1rios da Arquitetura Tradicional\
+  \ usam unicamente fichas em formato de texto sem formata\xE7\xE3o, combinando metadados\
+  \ estruturados segundo a especifica\xE7\xE3o YAML ([explica\xE7\xE3o introdut\xF3\
+  ria aqui][1] e [tutorial t\xE9cnico aqui][2]) e conte\xFAdo descritivo podendo usar\
+  \ as conven\xE7\xF5es de formata\xE7\xE3o do Markdown (inclusive especificidades\
+  \ do [Pandoc]).\nAl\xE9m de um editor de texto, recomendamos tamb\xE9m que use um\
+  \ programa de geoprocessamento como o [QGIS] para incluir os dados georreferenciados\
+  \ nas fichas.\nOs metadados das fichas dependem do vocabul\xE1rio controlado que\
+  \ est\xE1 em contru\xE7\xE3o no nosso [Thesaurus da arquitetura tradicional][4]\
+  \ e de outros vocabul\xE1rios controlados, tais como o Getty Art and Architecture\
+  \ Thesaurus ou a lista de unidades de medida do UCUM.\n\n## Por onde come\xE7o\u2009\
+  ?\n> Leia a especifica\xE7\xE3o da ficha **[Work](elements/Work/)** para saber como\
+  \ preencher > as fichas de edifica\xE7\xF5es dos Document\xE1rios da Arquitetura\
+  \ Tradicional.\nSe n\xE3o estiver \xE0 vontade para manipular diretamente os reposit\xF3\
+  rios do GitHub, sempre pode contribuir informa\xE7\xF5es, sugest\xF5es ou desejos\
+  \ no [F\xF3rum de discuss\xE3o] deste projeto de pesquisa. Se tiver contribui\xE7\
+  \xF5es pontuais sobre fichas espec\xEDficas, formatos ou lacunas, pode tamb\xE9\
+  m abrir uma [*issue* no reposit\xF3rio da Casa].\n[LIDO]: https://lido-schema.org/\n\
+  [DublinCore]: https://www.dublincore.org/resources/userguide/creating_metadata/\n\
+  [1]: https://www.linkedin.com/pulse/xml-json-markdown-e-yaml-explica\xE7\xE3o-simples-vitor-martins-ufv5e\n\
+  [2]: https://www.yaml.info/learn/index.html\n[3]: https://dublincore.org\n[Pandoc]:\
+  \ https://pandoc.org\n[QGIS]: https://qgis.org\n[4]: https://vocabulario.tradicional.arq.br\n\
+  [F\xF3rum de discuss\xE3o]: https://github.com/orgs/arqtrad/discussions\n[*issue*\
   \ no reposit\xF3rio da Casa]: https://github.com/arqtrad/casa/issues\n"
 title: "Esquema de dados dos Document\xE1rios da Arquitetura Tradicional"
 see_also:
@@ -11881,6 +11881,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-21T14:28:18'
-source_file_size: 102692
+source_file_date: '2026-11-24T18:39:46'
+source_file_size: 102710
 
