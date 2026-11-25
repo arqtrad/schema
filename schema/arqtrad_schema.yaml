@@ -6831,23 +6831,6 @@ enums:
         text: America/Recife
         description: America/Recife
 slots:
-  broader:
-    name: broader
-    definition_uri: https://tradicional.arq.br/schema/broader
-    description: "Um conceito de significa\xE7\xE3o mais gen\xE9rica. Conceitos gen\xE9\
-      ricos s\xE3o tipicamente representados como pais em uma hierarquia de conceitos\
-      \ (\xE1rvore).\nPreenchimento manual."
-    from_schema: https://tradicional.arq.br/schema/concept
-    mappings:
-    - skos:broader
-    slot_uri: skos:broader
-    owner: Concept
-    domain_of:
-    - Concept
-    range: BroaderConceptReference
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   bibliographic_citation:
     name: bibliographic_citation
     definition_uri: https://tradicional.arq.br/schema/bibliographic_citation
@@ -7963,6 +7946,23 @@ slots:
     domain_of:
     - Concept
     range: ConceptType
+  concept__broader:
+    name: concept__broader
+    description: "Um conceito de significa\xE7\xE3o mais gen\xE9rica. Conceitos gen\xE9\
+      ricos s\xE3o tipicamente representados como pais em uma hierarquia de conceitos\
+      \ (\xE1rvore).\nPreenchimento manual."
+    from_schema: https://tradicional.arq.br/schema/concept
+    mappings:
+    - skos:broader
+    slot_uri: skos:broader
+    alias: broader
+    owner: Concept
+    domain_of:
+    - Concept
+    range: BroaderConceptReference
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   concept__mapping:
     name: concept__mapping
     description: "Um conceito com o qual existe um relacionamento sem\xE2ntico associativo.\
@@ -9921,9 +9921,9 @@ classes:
     - thing__tags
     - thing__temporal
     - thing__repositories
-    - broader
     - record_rights
     - concept__concept_type
+    - concept__broader
     - concept__mapping
     - concept__relation
     - Concept_id
@@ -9942,6 +9942,15 @@ classes:
         description: "Tipos de termos de vocabul\xE1rio baseados no Getty AAT.\n"
         ifabsent: ConceptType(concept)
         range: ConceptType
+      broader:
+        name: broader
+        description: "Um conceito de significa\xE7\xE3o mais gen\xE9rica. Conceitos\
+          \ gen\xE9ricos s\xE3o tipicamente representados como pais em uma hierarquia\
+          \ de conceitos (\xE1rvore).\nPreenchimento manual."
+        slot_uri: skos:broader
+        range: BroaderConceptReference
+        multivalued: true
+        inlined_as_list: true
       mapping:
         name: mapping
         description: "Um conceito com o qual existe um relacionamento sem\xE2ntico\
@@ -11817,6 +11826,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-25T19:44:24'
+source_file_date: '2026-11-25T19:47:59'
 source_file_size: 102410
 
