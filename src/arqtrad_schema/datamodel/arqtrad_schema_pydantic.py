@@ -4384,18 +4384,6 @@ class SkosBroaderRelation(str, Enum):
     partitive = "partitive"
 
 
-class SkosNarrowerRelation(str, Enum):
-    """
-    SKOS-THES narrower relation type.
-    """
-
-    broader = "broader"
-    transitive = "transitive"
-    generic = "generic"
-    instantial = "instantial"
-    partitive = "partitive"
-
-
 class TitleType(str, Enum):
     """
     VRA Core title types.
@@ -4427,325 +4415,6 @@ class SubjectType(str, Enum):
     other = "other"
 
 
-class ConceptReference(ConfiguredBaseModel):
-    """
-    Atribuição de vocabulário controlado com citação de apoio.
-    """
-
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {"from_schema": "https://tradicional.arq.br/schema/concept"}
-    )
-
-    concept_name: str = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
-    )
-    description: Optional[str] = Field(
-        default=None,
-        description="""A human-readable description for a thing""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "BibliographicCitation",
-                    "TypedReference",
-                    "Measurement",
-                    "RelatedEvent",
-                    "Thing",
-                    "Inscription",
-                    "Topic",
-                ],
-                "exact_mappings": ["schema:description"],
-                "slot_uri": "dcterms:description",
-            }
-        },
-    )
-    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
-        default=None,
-        description="""📚  Cadastro de uma referência bibliográfica.
-O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
-Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
-Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "TypedReference",
-                    "Measurement",
-                    "Actor",
-                    "Thing",
-                    "Appellation",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                    "Inscription",
-                ],
-                "recommended": True,
-                "slot_uri": "dcterms:bibliographicCitation",
-            }
-        },
-    )
-    source: Optional[LegalBody] = Field(
-        default=None,
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
-            }
-        },
-    )
-
-
-class BroaderConceptReference(ConceptReference):
-    """
-    Relações hierárquicas.
-    """
-
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {"from_schema": "https://tradicional.arq.br/schema/concept"}
-    )
-
-    broader_match: SkosBroaderRelation = Field(
-        default=...,
-        description="""Tipo da relação.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["BroaderConceptReference"]}},
-    )
-    broader_preferred: Optional[bool] = Field(
-        default=False,
-        description="""Informa qual é o conceito preferencial. Somente um conceito mais amplo pode ser marcado como preferencial em cada ficha!
-Esta propriedade não é reversível, ou seja, não existe \"preferência\" por um conceito mais específico em detrimento de outros.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": ["BroaderConceptReference"],
-                "ifabsent": "False",
-            }
-        },
-    )
-    concept_name: str = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
-    )
-    description: Optional[str] = Field(
-        default=None,
-        description="""A human-readable description for a thing""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "BibliographicCitation",
-                    "TypedReference",
-                    "Measurement",
-                    "RelatedEvent",
-                    "Thing",
-                    "Inscription",
-                    "Topic",
-                ],
-                "exact_mappings": ["schema:description"],
-                "slot_uri": "dcterms:description",
-            }
-        },
-    )
-    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
-        default=None,
-        description="""📚  Cadastro de uma referência bibliográfica.
-O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
-Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
-Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "TypedReference",
-                    "Measurement",
-                    "Actor",
-                    "Thing",
-                    "Appellation",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                    "Inscription",
-                ],
-                "recommended": True,
-                "slot_uri": "dcterms:bibliographicCitation",
-            }
-        },
-    )
-    source: Optional[LegalBody] = Field(
-        default=None,
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
-            }
-        },
-    )
-
-
-class NarrowerConceptReference(ConceptReference):
-    """
-    Relações hierárquicas.
-    """
-
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {"from_schema": "https://tradicional.arq.br/schema/concept"}
-    )
-
-    narrower_match: SkosNarrowerRelation = Field(
-        default=...,
-        description="""Tipo da relação.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["NarrowerConceptReference"]}},
-    )
-    concept_name: str = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
-    )
-    description: Optional[str] = Field(
-        default=None,
-        description="""A human-readable description for a thing""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "BibliographicCitation",
-                    "TypedReference",
-                    "Measurement",
-                    "RelatedEvent",
-                    "Thing",
-                    "Inscription",
-                    "Topic",
-                ],
-                "exact_mappings": ["schema:description"],
-                "slot_uri": "dcterms:description",
-            }
-        },
-    )
-    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
-        default=None,
-        description="""📚  Cadastro de uma referência bibliográfica.
-O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
-Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
-Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "TypedReference",
-                    "Measurement",
-                    "Actor",
-                    "Thing",
-                    "Appellation",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                    "Inscription",
-                ],
-                "recommended": True,
-                "slot_uri": "dcterms:bibliographicCitation",
-            }
-        },
-    )
-    source: Optional[LegalBody] = Field(
-        default=None,
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
-            }
-        },
-    )
-
-
-class MappingConceptReference(ConceptReference):
-    """
-    Relações semânticas.
-    """
-
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {"from_schema": "https://tradicional.arq.br/schema/concept"}
-    )
-
-    mapping_match: SkosMappingRelation = Field(
-        default=...,
-        description="""Tipo da relação.""",
-        json_schema_extra={"linkml_meta": {"domain_of": ["MappingConceptReference"]}},
-    )
-    concept_name: str = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
-    )
-    description: Optional[str] = Field(
-        default=None,
-        description="""A human-readable description for a thing""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "BibliographicCitation",
-                    "TypedReference",
-                    "Measurement",
-                    "RelatedEvent",
-                    "Thing",
-                    "Inscription",
-                    "Topic",
-                ],
-                "exact_mappings": ["schema:description"],
-                "slot_uri": "dcterms:description",
-            }
-        },
-    )
-    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
-        default=None,
-        description="""📚  Cadastro de uma referência bibliográfica.
-O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
-Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
-Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
-""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "TypedReference",
-                    "Measurement",
-                    "Actor",
-                    "Thing",
-                    "Appellation",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                    "Inscription",
-                ],
-                "recommended": True,
-                "slot_uri": "dcterms:bibliographicCitation",
-            }
-        },
-    )
-    source: Optional[LegalBody] = Field(
-        default=None,
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
-            }
-        },
-    )
-
-
 class BibliographicCitation(ConfiguredBaseModel):
     """
     Cadastro de uma referência bibliográfica.
@@ -4767,14 +4436,12 @@ class BibliographicCitation(ConfiguredBaseModel):
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -4849,14 +4516,12 @@ class TypedReference(ConfiguredBaseModel):
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -4873,7 +4538,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -4892,12 +4556,316 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         default=None,
         json_schema_extra={
             "linkml_meta": {
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
+            }
+        },
+    )
+
+
+class ConceptReference(TypedReference):
+    """
+    Atribuição de vocabulário controlado com citação de apoio.
+    """
+
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
+        {
+            "from_schema": "https://tradicional.arq.br/schema/concept",
+            "slot_usage": {"refid": {"name": "refid", "required": True}},
+        }
+    )
+
+    refid_type: Optional[ReferenceType] = Field(
+        default=ReferenceType("uri"),
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "ifabsent": "ReferenceType(uri)",
+            }
+        },
+    )
+    refid: str = Field(
+        default=...,
+        description="""Local or external identifier.""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "exact_mappings": ["schema:identifier"],
+                "slot_uri": "dcterms:identifier",
+            }
+        },
+    )
+    title: Optional[str] = Field(
+        default=None,
+        description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference", "Thing"],
+                "exact_mappings": ["schema:name"],
+                "slot_uri": "dcterms:title",
+            }
+        },
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""A human-readable description for a thing""",
+        json_schema_extra={
+            "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
+                    "BibliographicCitation",
                     "TypedReference",
+                    "Measurement",
+                    "RelatedEvent",
+                    "Thing",
+                    "Inscription",
+                ],
+                "exact_mappings": ["schema:description"],
+                "slot_uri": "dcterms:description",
+            }
+        },
+    )
+    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""📚  Cadastro de uma referência bibliográfica.
+O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
+Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
+Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "TypedReference",
+                    "Measurement",
+                    "Actor",
+                    "Thing",
+                    "Appellation",
                     "GeographicPoint",
                     "GeographicExtent",
-                ]
+                    "Inscription",
+                ],
+                "recommended": True,
+                "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    source: Optional[LegalBody] = Field(
+        default=None,
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
+            }
+        },
+    )
+
+
+class BroaderConceptReference(ConceptReference):
+    """
+    Relações hierárquicas.
+    """
+
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
+        {
+            "from_schema": "https://tradicional.arq.br/schema/concept",
+            "slot_usage": {
+                "refid_type": {"ifabsent": "ReferenceType(local)", "name": "refid_type"}
+            },
+        }
+    )
+
+    broader_match: SkosBroaderRelation = Field(
+        default=...,
+        description="""Tipo da relação.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["BroaderConceptReference"]}},
+    )
+    broader_preferred: Optional[bool] = Field(
+        default=False,
+        description="""Informa qual é o conceito preferencial. Somente um conceito mais amplo pode ser marcado como preferencial em cada ficha!
+Esta propriedade não é reversível, ou seja, não existe \"preferência\" por um conceito mais específico em detrimento de outros.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["BroaderConceptReference"],
+                "ifabsent": "False",
+            }
+        },
+    )
+    refid_type: Optional[ReferenceType] = Field(
+        default=ReferenceType("local"),
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "ifabsent": "ReferenceType(local)",
+            }
+        },
+    )
+    refid: str = Field(
+        default=...,
+        description="""Local or external identifier.""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "exact_mappings": ["schema:identifier"],
+                "slot_uri": "dcterms:identifier",
+            }
+        },
+    )
+    title: Optional[str] = Field(
+        default=None,
+        description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference", "Thing"],
+                "exact_mappings": ["schema:name"],
+                "slot_uri": "dcterms:title",
+            }
+        },
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""A human-readable description for a thing""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "BibliographicCitation",
+                    "TypedReference",
+                    "Measurement",
+                    "RelatedEvent",
+                    "Thing",
+                    "Inscription",
+                ],
+                "exact_mappings": ["schema:description"],
+                "slot_uri": "dcterms:description",
+            }
+        },
+    )
+    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""📚  Cadastro de uma referência bibliográfica.
+O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
+Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
+Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "TypedReference",
+                    "Measurement",
+                    "Actor",
+                    "Thing",
+                    "Appellation",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                    "Inscription",
+                ],
+                "recommended": True,
+                "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    source: Optional[LegalBody] = Field(
+        default=None,
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
+            }
+        },
+    )
+
+
+class MappingConceptReference(ConceptReference):
+    """
+    Relações semânticas.
+    """
+
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
+        {"from_schema": "https://tradicional.arq.br/schema/concept"}
+    )
+
+    mapping_match: SkosMappingRelation = Field(
+        default=...,
+        description="""Tipo da relação.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["MappingConceptReference"]}},
+    )
+    refid_type: Optional[ReferenceType] = Field(
+        default=ReferenceType("uri"),
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "ifabsent": "ReferenceType(uri)",
+            }
+        },
+    )
+    refid: str = Field(
+        default=...,
+        description="""Local or external identifier.""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "exact_mappings": ["schema:identifier"],
+                "slot_uri": "dcterms:identifier",
+            }
+        },
+    )
+    title: Optional[str] = Field(
+        default=None,
+        description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference", "Thing"],
+                "exact_mappings": ["schema:name"],
+                "slot_uri": "dcterms:title",
+            }
+        },
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""A human-readable description for a thing""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "BibliographicCitation",
+                    "TypedReference",
+                    "Measurement",
+                    "RelatedEvent",
+                    "Thing",
+                    "Inscription",
+                ],
+                "exact_mappings": ["schema:description"],
+                "slot_uri": "dcterms:description",
+            }
+        },
+    )
+    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""📚  Cadastro de uma referência bibliográfica.
+O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
+Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
+Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "TypedReference",
+                    "Measurement",
+                    "Actor",
+                    "Thing",
+                    "Appellation",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                    "Inscription",
+                ],
+                "recommended": True,
+                "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    source: Optional[LegalBody] = Field(
+        default=None,
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
             }
         },
     )
@@ -4977,14 +4945,12 @@ class Measurement(ConfiguredBaseModel):
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -5009,7 +4975,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -5094,9 +5059,37 @@ class MaterialTech(ConceptReference):
 """,
         json_schema_extra={"linkml_meta": {"domain_of": ["MaterialTech"]}},
     )
-    concept_name: str = Field(
+    refid_type: Optional[ReferenceType] = Field(
+        default=ReferenceType("uri"),
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "ifabsent": "ReferenceType(uri)",
+            }
+        },
+    )
+    refid: str = Field(
         default=...,
-        json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
+        description="""Local or external identifier.""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "exact_mappings": ["schema:identifier"],
+                "slot_uri": "dcterms:identifier",
+            }
+        },
+    )
+    title: Optional[str] = Field(
+        default=None,
+        description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference", "Thing"],
+                "exact_mappings": ["schema:name"],
+                "slot_uri": "dcterms:title",
+            }
+        },
     )
     description: Optional[str] = Field(
         default=None,
@@ -5104,14 +5097,12 @@ class MaterialTech(ConceptReference):
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -5128,7 +5119,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -5147,12 +5137,7 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         default=None,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
             }
         },
     )
@@ -5252,7 +5237,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -5356,9 +5340,37 @@ class StylePeriod(ConceptReference):
 """,
         json_schema_extra={"linkml_meta": {"domain_of": ["StylePeriod"]}},
     )
-    concept_name: str = Field(
+    refid_type: Optional[ReferenceType] = Field(
+        default=ReferenceType("uri"),
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "ifabsent": "ReferenceType(uri)",
+            }
+        },
+    )
+    refid: str = Field(
         default=...,
-        json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
+        description="""Local or external identifier.""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "exact_mappings": ["schema:identifier"],
+                "slot_uri": "dcterms:identifier",
+            }
+        },
+    )
+    title: Optional[str] = Field(
+        default=None,
+        description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference", "Thing"],
+                "exact_mappings": ["schema:name"],
+                "slot_uri": "dcterms:title",
+            }
+        },
     )
     description: Optional[str] = Field(
         default=None,
@@ -5366,14 +5378,12 @@ class StylePeriod(ConceptReference):
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -5390,7 +5400,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -5409,12 +5418,7 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         default=None,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
             }
         },
     )
@@ -5431,14 +5435,12 @@ class RelatedEvent(ConfiguredBaseModel):
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -5550,14 +5552,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -5628,7 +5628,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -5726,20 +5725,12 @@ class Concept(Thing):
         }
     )
 
-    broader: Optional[list[BroaderConceptReference]] = Field(
+    broader: Optional[list[str]] = Field(
         default=None,
         description="""Um conceito de significação mais genérica. Conceitos genéricos são tipicamente representados como pais em uma hierarquia de conceitos (árvore).
 Preenchimento manual.""",
         json_schema_extra={
             "linkml_meta": {"domain_of": ["Concept"], "slot_uri": "skos:broader"}
-        },
-    )
-    narrower: Optional[list[NarrowerConceptReference]] = Field(
-        default=None,
-        description="""Um conceito de significação mais específica. Conceitos específicos são tipicamente representados como descendentes em uma hierarquia de conceitos (árvore).
-Derivado automaticamente das relações `broader` em outras fichas. NÃO preencher manualmente.""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["Concept"], "slot_uri": "skos:narrower"}
         },
     )
     record_rights: Optional[list[Right]] = Field(
@@ -5839,14 +5830,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -5917,7 +5906,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -6088,14 +6076,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -6166,7 +6152,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -6361,14 +6346,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -6436,7 +6419,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -6623,14 +6605,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -6699,7 +6679,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -6948,14 +6927,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -7027,7 +7004,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -7243,14 +7219,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -7321,7 +7295,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -7494,14 +7467,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -7554,7 +7525,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -7843,14 +7813,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -7921,7 +7889,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -8003,7 +7970,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -8137,14 +8103,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -8215,7 +8179,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -9021,14 +8984,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -9100,7 +9061,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -9324,14 +9284,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -9402,7 +9360,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -9506,12 +9463,7 @@ class GeographicPoint(ConfiguredBaseModel):
         default=None,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
             }
         },
     )
@@ -9525,7 +9477,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -9593,12 +9544,7 @@ class GeographicExtent(ConfiguredBaseModel):
         default=None,
         json_schema_extra={
             "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "TypedReference",
-                    "GeographicPoint",
-                    "GeographicExtent",
-                ]
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
             }
         },
     )
@@ -9612,7 +9558,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -9665,14 +9610,12 @@ class Inscription(ConfiguredBaseModel):
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -9700,7 +9643,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -9725,38 +9667,15 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
     )
 
 
-class Topic(ConfiguredBaseModel):
+class Topic(TypedReference):
     """
     Subject or iconographic topic.
     """
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {
-            "from_schema": "https://tradicional.arq.br/schema/work",
-            "slot_usage": {"concept_name": {"name": "concept_name", "required": True}},
-        }
+        {"from_schema": "https://tradicional.arq.br/schema/work"}
     )
 
-    description: Optional[str] = Field(
-        default=None,
-        description="""A human-readable description for a thing""",
-        json_schema_extra={
-            "linkml_meta": {
-                "domain_of": [
-                    "ConceptReference",
-                    "BibliographicCitation",
-                    "TypedReference",
-                    "Measurement",
-                    "RelatedEvent",
-                    "Thing",
-                    "Inscription",
-                    "Topic",
-                ],
-                "exact_mappings": ["schema:description"],
-                "slot_uri": "dcterms:description",
-            }
-        },
-    )
     format_extent: Optional[TypedReference] = Field(
         default=None,
         description="""Indica a parte do objeto que está sendo medida — por exemplo, se a altura é até a linha de coroamento ou até a cumeeira, etc. — usar a `uri` de um vocabulário controlado.
@@ -9765,15 +9684,93 @@ class Topic(ConfiguredBaseModel):
             "linkml_meta": {"domain_of": ["Measurement", "Inscription", "Topic"]}
         },
     )
-    concept_name: str = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"domain_of": ["ConceptReference", "Topic"]}},
-    )
     topic_type: SubjectType = Field(
         default=...,
         description="""Categoriza o nível descritivo ou interpretativo do tema.
 """,
         json_schema_extra={"linkml_meta": {"domain_of": ["Topic"]}},
+    )
+    refid_type: Optional[ReferenceType] = Field(
+        default=ReferenceType("uri"),
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "ifabsent": "ReferenceType(uri)",
+            }
+        },
+    )
+    refid: str = Field(
+        default=...,
+        description="""Local or external identifier.""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "exact_mappings": ["schema:identifier"],
+                "slot_uri": "dcterms:identifier",
+            }
+        },
+    )
+    title: Optional[str] = Field(
+        default=None,
+        description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference", "Thing"],
+                "exact_mappings": ["schema:name"],
+                "slot_uri": "dcterms:title",
+            }
+        },
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""A human-readable description for a thing""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "BibliographicCitation",
+                    "TypedReference",
+                    "Measurement",
+                    "RelatedEvent",
+                    "Thing",
+                    "Inscription",
+                ],
+                "exact_mappings": ["schema:description"],
+                "slot_uri": "dcterms:description",
+            }
+        },
+    )
+    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""📚  Cadastro de uma referência bibliográfica.
+O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
+Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
+Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "TypedReference",
+                    "Measurement",
+                    "Actor",
+                    "Thing",
+                    "Appellation",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                    "Inscription",
+                ],
+                "recommended": True,
+                "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    source: Optional[LegalBody] = Field(
+        default=None,
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
+            }
+        },
     )
 
 
@@ -9846,14 +9843,12 @@ Alterar apenas no caso de a ficha ter sido substancialmente reescrita.
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "BibliographicCitation",
                     "TypedReference",
                     "Measurement",
                     "RelatedEvent",
                     "Thing",
                     "Inscription",
-                    "Topic",
                 ],
                 "exact_mappings": ["schema:description"],
                 "slot_uri": "dcterms:description",
@@ -9921,7 +9916,6 @@ Usar o campo `description` para formatar a referência, caso a formatação auto
         json_schema_extra={
             "linkml_meta": {
                 "domain_of": [
-                    "ConceptReference",
                     "TypedReference",
                     "Measurement",
                     "Actor",
@@ -10332,12 +10326,11 @@ class Container(ConfiguredBaseModel):
 
 # Model rebuild
 # see https://pydantic-docs.helpmanual.io/usage/models/#rebuilding-a-model
-ConceptReference.model_rebuild()
-BroaderConceptReference.model_rebuild()
-NarrowerConceptReference.model_rebuild()
-MappingConceptReference.model_rebuild()
 BibliographicCitation.model_rebuild()
 TypedReference.model_rebuild()
+ConceptReference.model_rebuild()
+BroaderConceptReference.model_rebuild()
+MappingConceptReference.model_rebuild()
 Measurement.model_rebuild()
 MaterialTech.model_rebuild()
 Right.model_rebuild()

@@ -847,6 +847,7 @@ classes:
       - bibliographic_citation
 
   Topic:
+    is_a: TypedReference
     description: Subject or iconographic topic.
 
     attributes:
@@ -856,14 +857,8 @@ classes:
         description: >
           Categoriza o nível descritivo ou interpretativo do tema.
 
-    slot_usage:
-      concept_name:
-        required: true
-
     slots:
-      - description
       - format_extent
-      - concept_name
 
   Collection:
     is_a: Thing

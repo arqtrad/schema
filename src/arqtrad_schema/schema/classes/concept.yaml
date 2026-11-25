@@ -94,7 +94,6 @@ classes:
 
     slots:
       - broader
-      - narrower
       - record_rights
 
 
@@ -110,11 +109,11 @@ classes:
 
   ConceptReference:
     description: Atribuição de vocabulário controlado com citação de apoio.
-    slots:
-      - concept_name
-      - description
-      - bibliographic_citation
-      - source
+    is_a: TypedReference
+
+    slot_usage:
+      refid:
+        required: true
 
   BroaderConceptReference:
     is_a: ConceptReference
@@ -136,14 +135,9 @@ classes:
           Esta propriedade não é reversível, ou seja, não existe "preferência"
           por um conceito mais específico em detrimento de outros.
 
-  NarrowerConceptReference:
-    is_a: ConceptReference
-    description: Relações hierárquicas.
-    attributes:
-      narrower_match:
-        required: true
-        description: Tipo da relação.
-        range: SkosNarrowerRelation
+    slot_usage:
+      refid_type:
+        ifabsent: ReferenceType(local)
 
   MappingConceptReference:
     is_a: ConceptReference
@@ -157,11 +151,6 @@ classes:
 
 slots:
 
-  concept_name:
-    range: Concept
-    inlined: false
-    required: true
-
   broader:
     slot_uri: skos:broader
     description: >-
@@ -171,18 +160,5 @@ slots:
 
       Preenchimento manual.
     range: BroaderConceptReference
-    multivalued: true
-    inlined: false
-
-  narrower:
-    slot_uri: skos:narrower
-    description: >-
-      Um conceito de significação mais específica.
-      Conceitos específicos são tipicamente representados como descendentes
-      em uma hierarquia de conceitos (árvore).
-
-      Derivado automaticamente das relações `broader` em outras fichas.
-      NÃO preencher manualmente.
-    range: NarrowerConceptReference
     multivalued: true
     inlined: false

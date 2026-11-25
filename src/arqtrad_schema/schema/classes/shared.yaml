@@ -288,8 +288,9 @@ slots:
     ifabsent: ReferenceType(uri)
 
   refid:
-    range: uriorcurie
     slot_uri: dcterms:identifier
+    range: uriorcurie
+    key: true
     exact_mappings:
       - schema:identifier
     description: Local or external identifier.

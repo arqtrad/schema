@@ -2413,27 +2413,13 @@ enums:
       broader:
         meaning: skos:broader
       transitive:
-        meaning: skos:broaderTransitive
+        meaning: iso:broaderTransitive
       generic:
-        meaning: skos:broaderGeneric
+        meaning: iso:broaderGeneric
       instantial:
-        meaning: skos:broaderInstantial
+        meaning: iso:broaderInstantial
       partitive:
-        meaning: skos:broaderPartitive
-
-  SkosNarrowerRelation:
-    description: SKOS-THES narrower relation type.
-    permissible_values:
-      broader:
-        meaning: skos:narrower
-      transitive:
-        meaning: skos:narrowerTransitive
-      generic:
-        meaning: skos:narrowerGeneric
-      instantial:
-        meaning: skos:narrowerInstantial
-      partitive:
-        meaning: skos:narrowerPartitive
+        meaning: iso:broaderPartitive
 
   TitleType:
     description: VRA Core title types.
