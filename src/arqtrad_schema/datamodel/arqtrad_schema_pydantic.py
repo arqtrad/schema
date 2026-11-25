@@ -5726,7 +5726,7 @@ class Concept(Thing):
         }
     )
 
-    broader: Optional[list[str]] = Field(
+    broader: Optional[list[BroaderConceptReference]] = Field(
         default=None,
         description="""Um conceito de significação mais genérica. Conceitos genéricos são tipicamente representados como pais em uma hierarquia de conceitos (árvore).
 Preenchimento manual.""",

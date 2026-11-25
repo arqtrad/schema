@@ -65,6 +65,18 @@ classes:
         description: >
           Tipos de termos de vocabulário baseados no Getty AAT.
 
+      broader:
+        slot_uri: skos:broader
+        description: >-
+          Um conceito de significação mais genérica.
+          Conceitos genéricos são tipicamente representados como pais em
+          uma hierarquia de conceitos (árvore).
+
+          Preenchimento manual.
+        range: BroaderConceptReference
+        multivalued: true
+        inlined_as_list: true
+
       mapping:
         description: >-
           Um conceito com o qual existe um relacionamento semântico associativo.
@@ -147,18 +159,3 @@ classes:
         required: true
         description: Tipo da relação.
         range: SkosMappingRelation
-
-
-slots:
-
-  broader:
-    slot_uri: skos:broader
-    description: >-
-      Um conceito de significação mais genérica.
-      Conceitos genéricos são tipicamente representados como pais em
-      uma hierarquia de conceitos (árvore).
-
-      Preenchimento manual.
-    range: BroaderConceptReference
-    multivalued: true
-    inlined: false
