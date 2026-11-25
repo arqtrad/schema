@@ -9463,27 +9463,6 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  TypedReference_refid:
-    name: TypedReference_refid
-    definition_uri: https://tradicional.arq.br/schema/refid
-    description: Local or external identifier.
-    from_schema: https://tradicional.arq.br/schema/shared
-    mappings:
-    - dcterms:identifier
-    exact_mappings:
-    - schema:identifier
-    is_a: refid
-    domain: TypedReference
-    slot_uri: dcterms:identifier
-    key: true
-    alias: refid
-    owner: TypedReference
-    domain_of:
-    - TypedReference
-    is_usage_slot: true
-    usage_slot_name: refid
-    range: uriorcurie
-    required: true
   Measurement_unit:
     name: Measurement_unit
     definition_uri: https://tradicional.arq.br/schema/unit
@@ -10341,21 +10320,18 @@ classes:
     definition_uri: https://tradicional.arq.br/schema/TypedReference
     description: "Permite referenciar um registro local ou externo por meio da sua\
       \ URI (localizador universal, como um link da internet, por padr\xE3o), IRI\
-      \ ou c\xF3digo na base local (n\xE3o recomendado)."
+      \ ou c\xF3digo na base local (n\xE3o recomendado).\nA URI pode ser abreviada\
+      \ como uma CURIE.\n"
     notes:
     - Reference to a local record, IRI, URI, or LIDO terminology term.
     from_schema: https://tradicional.arq.br/schema/shared
     slots:
     - refid_type
-    - TypedReference_refid
+    - refid
     - title
     - description
     - bibliographic_citation
     - source
-    slot_usage:
-      refid:
-        name: refid
-        key: true
     class_uri: arqtrad:TypedReference
   Measurement:
     name: Measurement
@@ -11768,7 +11744,7 @@ classes:
     is_a: TypedReference
     slots:
     - refid_type
-    - TypedReference_refid
+    - refid
     - title
     - description
     - bibliographic_citation
@@ -11840,6 +11816,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-25T18:30:16'
+source_file_date: '2026-11-25T19:09:56'
 source_file_size: 102410
 
