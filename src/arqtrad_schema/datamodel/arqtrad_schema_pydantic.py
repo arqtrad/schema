@@ -5726,14 +5726,6 @@ class Concept(Thing):
         }
     )
 
-    broader: Optional[list[BroaderConceptReference]] = Field(
-        default=None,
-        description="""Um conceito de significação mais genérica. Conceitos genéricos são tipicamente representados como pais em uma hierarquia de conceitos (árvore).
-Preenchimento manual.""",
-        json_schema_extra={
-            "linkml_meta": {"domain_of": ["Concept"], "slot_uri": "skos:broader"}
-        },
-    )
     record_rights: Optional[list[Right]] = Field(
         default=None,
         description="""Informações estruturadas sobre os direitos que incidem sobre o conteúdo textual desta ficha e o detentor desses direitos.
@@ -5758,6 +5750,14 @@ Preenchimento manual.""",
                 "domain_of": ["Concept"],
                 "ifabsent": "ConceptType(concept)",
             }
+        },
+    )
+    broader: Optional[list[BroaderConceptReference]] = Field(
+        default=None,
+        description="""Um conceito de significação mais genérica. Conceitos genéricos são tipicamente representados como pais em uma hierarquia de conceitos (árvore).
+Preenchimento manual.""",
+        json_schema_extra={
+            "linkml_meta": {"domain_of": ["Concept"], "slot_uri": "skos:broader"}
         },
     )
     mapping: Optional[list[MappingConceptReference]] = Field(
