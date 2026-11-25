@@ -2,60 +2,23 @@
 # Schema: arqtrad_schema
 #
 # id: https://tradicional.arq.br/schema
-# description: O elemento central dos Documentários da Arquitetura Tradicional é a ficha
-#   **[Work](Work/)**, que descreve uma edificação usando elementos dos padrões
-#   [LIDO] e [DublinCore].
-#
-#   A especificação deste esquema permite validar bancos de dados de edificações
-#   constituídos em diversos sistemas, incluindo bases de dados relacionais
-#   (como aquelas que alimentam diversos sistemas de produção de sites, incluindo
-#   o WordPress, Tainacan, Arches, etc.) e fichas em formato de texto.
-#   Atualmente, contudo, os Documentários da Arquitetura Tradicional usam
-#   unicamente fichas em formato de texto sem formatação, combinando
-#   metadados estruturados segundo a especificação YAML
-#   ([explicação introdutória aqui][1] e [tutorial técnico aqui][2]) e conteúdo
-#   descritivo podendo usar as convenções de formatação do Markdown
-#   (inclusive especificidades do [Pandoc]).
-#
-#   Além de um editor de texto, recomendamos também que use um programa de
-#   geoprocessamento como o [QGIS] para incluir os dados georreferenciados nas
-#   fichas.
-#
-#   Os metadados das fichas dependem do vocabulário controlado que está em
-#   contrução no nosso [Thesaurus da arquitetura tradicional][4] e de outros
-#   vocabulários controlados, tais como o Getty Art and Architecture Thesaurus
-#   ou a lista de unidades de medida do UCUM.
-#
+# description: O elemento central dos Documentários da Arquitetura Tradicional é a ficha **[Work](elements/Work/)**, que descreve uma edificação usando elementos dos padrões [LIDO] e [DublinCore].
+#   A especificação deste esquema permite validar bancos de dados de edificações constituídos em diversos sistemas, incluindo bases de dados relacionais (como aquelas que alimentam diversos sistemas de produção de sites, incluindo o WordPress, Tainacan, Arches, etc.) e fichas em formato de texto. Atualmente, contudo, os Documentários da Arquitetura Tradicional usam unicamente fichas em formato de texto sem formatação, combinando metadados estruturados segundo a especificação YAML ([explicação introdutória aqui][1] e [tutorial técnico aqui][2]) e conteúdo descritivo podendo usar as convenções de formatação do Markdown (inclusive especificidades do [Pandoc]).
+#   Além de um editor de texto, recomendamos também que use um programa de geoprocessamento como o [QGIS] para incluir os dados georreferenciados nas fichas.
+#   Os metadados das fichas dependem do vocabulário controlado que está em contrução no nosso [Thesaurus da arquitetura tradicional][4] e de outros vocabulários controlados, tais como o Getty Art and Architecture Thesaurus ou a lista de unidades de medida do UCUM.
 #
 #   ## Por onde começo ?
-#
-#   > Leia a especificação da ficha **[Work](Work/)** para saber como preencher
-#   > as fichas de edificações dos Documentários da Arquitetura Tradicional.
-#
-#   Se não estiver à vontade para manipular diretamente os repositórios do GitHub,
-#   sempre pode contribuir informações, sugestões ou desejos no
-#   [Fórum de discussão] deste projeto de pesquisa.
-#   Se tiver contribuições pontuais sobre fichas específicas, formatos ou lacunas,
-#   pode também abrir uma [*issue* no repositório da Casa].
-#
+#   > Leia a especificação da ficha **[Work](elements/Work/)** para saber como preencher > as fichas de edificações dos Documentários da Arquitetura Tradicional.
+#   Se não estiver à vontade para manipular diretamente os repositórios do GitHub, sempre pode contribuir informações, sugestões ou desejos no [Fórum de discussão] deste projeto de pesquisa. Se tiver contribuições pontuais sobre fichas específicas, formatos ou lacunas, pode também abrir uma [*issue* no repositório da Casa].
 #   [LIDO]: https://lido-schema.org/
-#
 #   [DublinCore]: https://www.dublincore.org/resources/userguide/creating_metadata/
-#
 #   [1]: https://www.linkedin.com/pulse/xml-json-markdown-e-yaml-explicação-simples-vitor-martins-ufv5e
-#
 #   [2]: https://www.yaml.info/learn/index.html
-#
 #   [3]: https://dublincore.org
-#
 #   [Pandoc]: https://pandoc.org
-#
 #   [QGIS]: https://qgis.org
-#
 #   [4]: https://vocabulario.tradicional.arq.br
-#
 #   [Fórum de discussão]: https://github.com/orgs/arqtrad/discussions
-#
 #   [*issue* no repositório da Casa]: https://github.com/arqtrad/casa/issues
 #
 # license: MIT
@@ -80,32 +43,34 @@ version = None
 
 # Namespaces
 EPSG = CurieNamespace("EPSG", "http://www.opengis.net/def/crs/EPSG/0/")
-AAT = CurieNamespace("aat", "http://vocab.getty.edu/aat/")
+AAT = CurieNamespace("aat", "https://vocab.getty.edu/aat/")
+ARQTRAD = CurieNamespace("arqtrad", "https://tradicional.arq.br/schema/")
 CRM = CurieNamespace("crm", "http://www.cidoc-crm.org/cidoc-crm/")
 DCTERMS = CurieNamespace("dcterms", "http://purl.org/dc/terms/")
 DCTYPES = CurieNamespace("dctypes", "http://purl.org/dc/dcmitype/")
 DOI = CurieNamespace("doi", "https://doi.org/")
 GEO = CurieNamespace("geo", "http://www.opengis.net/ont/geosparql#")
-GEONAMES = CurieNamespace("geonames", "https://www.geonames.org/ontology#")
+GEONAMES = CurieNamespace("geonames", "https://sws.geonames.org/")
 ISNI = CurieNamespace("isni", "https://isni.org/isni/")
 ISO = CurieNamespace("iso", "http://purl.org/iso25964/skos-thes#")
 LA = CurieNamespace("la", "https://linked.art/ns/terms/")
 LIDO = CurieNamespace("lido", "http://www.lido-schema.org/")
 LINKML = CurieNamespace("linkml", "https://w3id.org/linkml/")
+ORCID = CurieNamespace("orcid", "https://orcid.org/")
 RDFS = CurieNamespace("rdfs", "http://www.w3.org/2000/01/rdf-schema#")
 SCHEMA = CurieNamespace("schema", "http://schema.org/")
 SKOS = CurieNamespace("skos", "http://www.w3.org/2004/02/skos/core#")
 TERM = CurieNamespace("term", "http://terminology.lido-schema.org/")
-TGN = CurieNamespace("tgn", "http://vocab.getty.edu/tgn/")
+TGN = CurieNamespace("tgn", "https://vocab.getty.edu/tgn/")
 UCUM = CurieNamespace("ucum", "http://purl.oclc.org/NET/muo/ucum/")
-ULAN = CurieNamespace("ulan", "http://vocab.getty.edu/ulan/")
+ULAN = CurieNamespace("ulan", "https://vocab.getty.edu/ulan/")
 UNESCO = CurieNamespace("unesco", "http://vocabularies.unesco.org/thesaurus/")
+VASCON = CurieNamespace("vascon", "https://vocabulario.tradicional.arq.br/w/")
 VRA = CurieNamespace("vra", "http://purl.org/vra/")
-WASTH = CurieNamespace("wasth", "https://tradicional.arq.br/schema/")
 WD = CurieNamespace("wd", "http://www.wikidata.org/entity/")
 WGS84 = CurieNamespace("wgs84", "http://www.w3.org/2003/01/geo/wgs84_pos#")
 XSD = CurieNamespace("xsd", "http://www.w3.org/2001/XMLSchema#")
-DEFAULT_ = WASTH
+DEFAULT_ = ARQTRAD
 
 
 # Types
@@ -115,7 +80,7 @@ class CslCitekey(String):
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "CslCitekey"
-    type_model_uri = WASTH.CslCitekey
+    type_model_uri = ARQTRAD.CslCitekey
 
 
 class GeoJSONCoordinateArray(String):
@@ -124,7 +89,7 @@ class GeoJSONCoordinateArray(String):
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "GeoJSONCoordinateArray"
-    type_model_uri = WASTH.GeoJSONCoordinateArray
+    type_model_uri = ARQTRAD.GeoJSONCoordinateArray
 
 
 class Latitude(Double):
@@ -133,7 +98,7 @@ class Latitude(Double):
     type_class_uri = XSD["double"]
     type_class_curie = "xsd:double"
     type_name = "Latitude"
-    type_model_uri = WASTH.Latitude
+    type_model_uri = ARQTRAD.Latitude
 
 
 class Longitude(Double):
@@ -142,7 +107,7 @@ class Longitude(Double):
     type_class_uri = XSD["double"]
     type_class_curie = "xsd:double"
     type_name = "Longitude"
-    type_model_uri = WASTH.Longitude
+    type_model_uri = ARQTRAD.Longitude
 
 
 class OrcidId(String):
@@ -153,7 +118,7 @@ class OrcidId(String):
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "OrcidId"
-    type_model_uri = WASTH.OrcidId
+    type_model_uri = ARQTRAD.OrcidId
 
 
 class OlcPlusCode11(String):
@@ -162,15 +127,35 @@ class OlcPlusCode11(String):
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "OlcPlusCode11"
-    type_model_uri = WASTH.OlcPlusCode11
+    type_model_uri = ARQTRAD.OlcPlusCode11
 
 
 # Class references
-class BibliographicCitationRefid(CslCitekey):
+class BibliographicCitationCitekey(CslCitekey):
     pass
 
 
 class TypedReferenceRefid(URIorCURIE):
+    pass
+
+
+class ConceptReferenceRefid(TypedReferenceRefid):
+    pass
+
+
+class BroaderConceptReferenceRefid(ConceptReferenceRefid):
+    pass
+
+
+class MappingConceptReferenceRefid(ConceptReferenceRefid):
+    pass
+
+
+class MaterialTechRefid(ConceptReferenceRefid):
+    pass
+
+
+class StylePeriodRefid(ConceptReferenceRefid):
     pass
 
 
@@ -186,6 +171,10 @@ class WorkId(OlcPlusCode11):
     pass
 
 
+class TopicRefid(TypedReferenceRefid):
+    pass
+
+
 class GeonamesFeatureGeonameid(extended_int):
     pass
 
@@ -198,10 +187,10 @@ class Container(YAMLRoot):
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["Container"]
-    class_class_curie: ClassVar[str] = "wasth:Container"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["Container"]
+    class_class_curie: ClassVar[str] = "arqtrad:Container"
     class_name: ClassVar[str] = "Container"
-    class_model_uri: ClassVar[URIRef] = WASTH.Container
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Container
 
     works: Optional[
         Union[dict[Union[str, WorkId], Union[dict, "Work"]], list[Union[dict, "Work"]]]
@@ -239,132 +228,6 @@ class Container(YAMLRoot):
 
 
 @dataclass(repr=False)
-class ConceptReference(YAMLRoot):
-    """
-    Atribuição de vocabulário controlado com citação de apoio.
-    """
-
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = WASTH["ConceptReference"]
-    class_class_curie: ClassVar[str] = "wasth:ConceptReference"
-    class_name: ClassVar[str] = "ConceptReference"
-    class_model_uri: ClassVar[URIRef] = WASTH.ConceptReference
-
-    concept_name: Optional[Union[str, ConceptId]] = None
-    description: Optional[str] = None
-    bibliographic_citation: Optional[
-        Union[
-            dict[
-                Union[str, BibliographicCitationRefid],
-                Union[dict, "BibliographicCitation"],
-            ],
-            list[Union[dict, "BibliographicCitation"]],
-        ]
-    ] = empty_dict()
-    source: Optional[Union[dict, "LegalBody"]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self.concept_name is not None and not isinstance(
-            self.concept_name, ConceptId
-        ):
-            self.concept_name = ConceptId(self.concept_name)
-
-        if self.description is not None and not isinstance(self.description, str):
-            self.description = str(self.description)
-
-        self._normalize_inlined_as_list(
-            slot_name="bibliographic_citation",
-            slot_type=BibliographicCitation,
-            key_name="refid",
-            keyed=True,
-        )
-
-        if self.source is not None and not isinstance(self.source, LegalBody):
-            self.source = LegalBody(**as_dict(self.source))
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class BroaderConceptReference(ConceptReference):
-    """
-    Relações hierárquicas.
-    """
-
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = WASTH["BroaderConceptReference"]
-    class_class_curie: ClassVar[str] = "wasth:BroaderConceptReference"
-    class_name: ClassVar[str] = "BroaderConceptReference"
-    class_model_uri: ClassVar[URIRef] = WASTH.BroaderConceptReference
-
-    broader_match: Union[str, "SkosBroaderRelation"] = None
-    broader_preferred: Optional[Union[bool, Bool]] = False
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.broader_match):
-            self.MissingRequiredField("broader_match")
-        if not isinstance(self.broader_match, SkosBroaderRelation):
-            self.broader_match = SkosBroaderRelation(self.broader_match)
-
-        if self.broader_preferred is not None and not isinstance(
-            self.broader_preferred, Bool
-        ):
-            self.broader_preferred = Bool(self.broader_preferred)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class NarrowerConceptReference(ConceptReference):
-    """
-    Relações hierárquicas.
-    """
-
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = WASTH["NarrowerConceptReference"]
-    class_class_curie: ClassVar[str] = "wasth:NarrowerConceptReference"
-    class_name: ClassVar[str] = "NarrowerConceptReference"
-    class_model_uri: ClassVar[URIRef] = WASTH.NarrowerConceptReference
-
-    narrower_match: Union[str, "SkosNarrowerRelation"] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.narrower_match):
-            self.MissingRequiredField("narrower_match")
-        if not isinstance(self.narrower_match, SkosNarrowerRelation):
-            self.narrower_match = SkosNarrowerRelation(self.narrower_match)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class MappingConceptReference(ConceptReference):
-    """
-    Relações semânticas.
-    """
-
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = WASTH["MappingConceptReference"]
-    class_class_curie: ClassVar[str] = "wasth:MappingConceptReference"
-    class_name: ClassVar[str] = "MappingConceptReference"
-    class_model_uri: ClassVar[URIRef] = WASTH.MappingConceptReference
-
-    mapping_match: Union[str, "SkosMappingRelation"] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.mapping_match):
-            self.MissingRequiredField("mapping_match")
-        if not isinstance(self.mapping_match, SkosMappingRelation):
-            self.mapping_match = SkosMappingRelation(self.mapping_match)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
 class BibliographicCitation(YAMLRoot):
     """
     Cadastro de uma referência bibliográfica.
@@ -376,17 +239,17 @@ class BibliographicCitation(YAMLRoot):
     class_class_uri: ClassVar[URIRef] = DCTERMS["BibliographicCitation"]
     class_class_curie: ClassVar[str] = "dcterms:BibliographicCitation"
     class_name: ClassVar[str] = "BibliographicCitation"
-    class_model_uri: ClassVar[URIRef] = WASTH.BibliographicCitation
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.BibliographicCitation
 
-    refid: Union[str, BibliographicCitationRefid] = None
+    citekey: Union[str, BibliographicCitationCitekey] = None
     description: Optional[str] = None
     note: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.refid):
-            self.MissingRequiredField("refid")
-        if not isinstance(self.refid, BibliographicCitationRefid):
-            self.refid = BibliographicCitationRefid(self.refid)
+        if self._is_empty(self.citekey):
+            self.MissingRequiredField("citekey")
+        if not isinstance(self.citekey, BibliographicCitationCitekey):
+            self.citekey = BibliographicCitationCitekey(self.citekey)
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
@@ -402,14 +265,15 @@ class TypedReference(YAMLRoot):
     """
     Permite referenciar um registro local ou externo por meio da sua URI (localizador universal, como um link da
     internet, por padrão), IRI ou código na base local (não recomendado).
+    A URI pode ser abreviada como uma CURIE.
     """
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["TypedReference"]
-    class_class_curie: ClassVar[str] = "wasth:TypedReference"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["TypedReference"]
+    class_class_curie: ClassVar[str] = "arqtrad:TypedReference"
     class_name: ClassVar[str] = "TypedReference"
-    class_model_uri: ClassVar[URIRef] = WASTH.TypedReference
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.TypedReference
 
     refid: Union[str, TypedReferenceRefid] = None
     refid_type: Optional[Union[str, "ReferenceType"]] = "uri"
@@ -418,7 +282,7 @@ class TypedReference(YAMLRoot):
     bibliographic_citation: Optional[
         Union[
             dict[
-                Union[str, BibliographicCitationRefid],
+                Union[str, BibliographicCitationCitekey],
                 Union[dict, BibliographicCitation],
             ],
             list[Union[dict, BibliographicCitation]],
@@ -446,12 +310,108 @@ class TypedReference(YAMLRoot):
         self._normalize_inlined_as_list(
             slot_name="bibliographic_citation",
             slot_type=BibliographicCitation,
-            key_name="refid",
+            key_name="citekey",
             keyed=True,
         )
 
         if self.source is not None and not isinstance(self.source, LegalBody):
             self.source = LegalBody(**as_dict(self.source))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class ConceptReference(TypedReference):
+    """
+    Atribuição de vocabulário controlado com citação de apoio.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["ConceptReference"]
+    class_class_curie: ClassVar[str] = "arqtrad:ConceptReference"
+    class_name: ClassVar[str] = "ConceptReference"
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.ConceptReference
+
+    refid: Union[str, ConceptReferenceRefid] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.refid):
+            self.MissingRequiredField("refid")
+        if not isinstance(self.refid, ConceptReferenceRefid):
+            self.refid = ConceptReferenceRefid(self.refid)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class BroaderConceptReference(ConceptReference):
+    """
+    Relações hierárquicas.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["BroaderConceptReference"]
+    class_class_curie: ClassVar[str] = "arqtrad:BroaderConceptReference"
+    class_name: ClassVar[str] = "BroaderConceptReference"
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.BroaderConceptReference
+
+    refid: Union[str, BroaderConceptReferenceRefid] = None
+    broader_match: Union[str, "SkosBroaderRelation"] = None
+    broader_preferred: Optional[Union[bool, Bool]] = False
+    refid_type: Optional[Union[str, "ReferenceType"]] = "local"
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.refid):
+            self.MissingRequiredField("refid")
+        if not isinstance(self.refid, BroaderConceptReferenceRefid):
+            self.refid = BroaderConceptReferenceRefid(self.refid)
+
+        if self._is_empty(self.broader_match):
+            self.MissingRequiredField("broader_match")
+        if not isinstance(self.broader_match, SkosBroaderRelation):
+            self.broader_match = SkosBroaderRelation(self.broader_match)
+
+        if self.broader_preferred is not None and not isinstance(
+            self.broader_preferred, Bool
+        ):
+            self.broader_preferred = Bool(self.broader_preferred)
+
+        if self.refid_type is not None and not isinstance(
+            self.refid_type, ReferenceType
+        ):
+            self.refid_type = ReferenceType(self.refid_type)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class MappingConceptReference(ConceptReference):
+    """
+    Relações semânticas.
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["MappingConceptReference"]
+    class_class_curie: ClassVar[str] = "arqtrad:MappingConceptReference"
+    class_name: ClassVar[str] = "MappingConceptReference"
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.MappingConceptReference
+
+    refid: Union[str, MappingConceptReferenceRefid] = None
+    mapping_match: Union[str, "SkosMappingRelation"] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.refid):
+            self.MissingRequiredField("refid")
+        if not isinstance(self.refid, MappingConceptReferenceRefid):
+            self.refid = MappingConceptReferenceRefid(self.refid)
+
+        if self._is_empty(self.mapping_match):
+            self.MissingRequiredField("mapping_match")
+        if not isinstance(self.mapping_match, SkosMappingRelation):
+            self.mapping_match = SkosMappingRelation(self.mapping_match)
 
         super().__post_init__(**kwargs)
 
@@ -472,7 +432,7 @@ class Measurement(YAMLRoot):
     class_class_uri: ClassVar[URIRef] = CRM["E16_Measurement"]
     class_class_curie: ClassVar[str] = "crm:E16_Measurement"
     class_name: ClassVar[str] = "Measurement"
-    class_model_uri: ClassVar[URIRef] = WASTH.Measurement
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Measurement
 
     unit: Union[dict, TypedReference] = None
     measurement_value: float = None
@@ -481,7 +441,7 @@ class Measurement(YAMLRoot):
     bibliographic_citation: Optional[
         Union[
             dict[
-                Union[str, BibliographicCitationRefid],
+                Union[str, BibliographicCitationCitekey],
                 Union[dict, BibliographicCitation],
             ],
             list[Union[dict, BibliographicCitation]],
@@ -518,7 +478,7 @@ class Measurement(YAMLRoot):
         self._normalize_inlined_as_list(
             slot_name="bibliographic_citation",
             slot_type=BibliographicCitation,
-            key_name="refid",
+            key_name="citekey",
             keyed=True,
         )
 
@@ -570,14 +530,20 @@ class MaterialTech(ConceptReference):
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["MaterialTech"]
-    class_class_curie: ClassVar[str] = "wasth:MaterialTech"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["MaterialTech"]
+    class_class_curie: ClassVar[str] = "arqtrad:MaterialTech"
     class_name: ClassVar[str] = "MaterialTech"
-    class_model_uri: ClassVar[URIRef] = WASTH.MaterialTech
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.MaterialTech
 
+    refid: Union[str, MaterialTechRefid] = None
     material_tech_type: Union[str, "MaterialTechType"] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.refid):
+            self.MissingRequiredField("refid")
+        if not isinstance(self.refid, MaterialTechRefid):
+            self.refid = MaterialTechRefid(self.refid)
+
         if self._is_empty(self.material_tech_type):
             self.MissingRequiredField("material_tech_type")
         if not isinstance(self.material_tech_type, MaterialTechType):
@@ -601,7 +567,7 @@ class Right(YAMLRoot):
     class_class_uri: ClassVar[URIRef] = CRM["E30_Right"]
     class_class_curie: ClassVar[str] = "crm:E30_Right"
     class_name: ClassVar[str] = "Right"
-    class_model_uri: ClassVar[URIRef] = WASTH.Right
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Right
 
     rights_type: Union[str, "RightsType"] = None
     statement: Union[dict, TypedReference] = None
@@ -642,15 +608,15 @@ class Actor(YAMLRoot):
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["Actor"]
-    class_class_curie: ClassVar[str] = "wasth:Actor"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["Actor"]
+    class_class_curie: ClassVar[str] = "arqtrad:Actor"
     class_name: ClassVar[str] = "Actor"
-    class_model_uri: ClassVar[URIRef] = WASTH.Actor
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Actor
 
     bibliographic_citation: Optional[
         Union[
             dict[
-                Union[str, BibliographicCitationRefid],
+                Union[str, BibliographicCitationCitekey],
                 Union[dict, BibliographicCitation],
             ],
             list[Union[dict, BibliographicCitation]],
@@ -676,7 +642,7 @@ class Actor(YAMLRoot):
         self._normalize_inlined_as_list(
             slot_name="bibliographic_citation",
             slot_type=BibliographicCitation,
-            key_name="refid",
+            key_name="citekey",
             keyed=True,
         )
 
@@ -720,10 +686,10 @@ class EventDate(YAMLRoot):
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["EventDate"]
-    class_class_curie: ClassVar[str] = "wasth:EventDate"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["EventDate"]
+    class_class_curie: ClassVar[str] = "arqtrad:EventDate"
     class_name: ClassVar[str] = "EventDate"
-    class_model_uri: ClassVar[URIRef] = WASTH.EventDate
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.EventDate
 
     date_type: Union[str, "DateType"] = None
     date_value: Optional[Union[str, XSDDate]] = None
@@ -744,14 +710,20 @@ class EventDate(YAMLRoot):
 class StylePeriod(ConceptReference):
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["StylePeriod"]
-    class_class_curie: ClassVar[str] = "wasth:StylePeriod"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["StylePeriod"]
+    class_class_curie: ClassVar[str] = "arqtrad:StylePeriod"
     class_name: ClassVar[str] = "StylePeriod"
-    class_model_uri: ClassVar[URIRef] = WASTH.StylePeriod
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.StylePeriod
 
+    refid: Union[str, StylePeriodRefid] = None
     period_name_type: Union[str, "PeriodNameType"] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.refid):
+            self.MissingRequiredField("refid")
+        if not isinstance(self.refid, StylePeriodRefid):
+            self.refid = StylePeriodRefid(self.refid)
+
         if self._is_empty(self.period_name_type):
             self.MissingRequiredField("period_name_type")
         if not isinstance(self.period_name_type, PeriodNameType):
@@ -764,10 +736,10 @@ class StylePeriod(ConceptReference):
 class RelatedEvent(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["RelatedEvent"]
-    class_class_curie: ClassVar[str] = "wasth:RelatedEvent"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["RelatedEvent"]
+    class_class_curie: ClassVar[str] = "arqtrad:RelatedEvent"
     class_name: ClassVar[str] = "RelatedEvent"
-    class_model_uri: ClassVar[URIRef] = WASTH.RelatedEvent
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.RelatedEvent
 
     event_name: Union[Union[dict, "Event"], list[Union[dict, "Event"]]] = None
     description: Optional[str] = None
@@ -818,7 +790,7 @@ class Thing(YAMLRoot):
     class_class_uri: ClassVar[URIRef] = CRM["E1_CRM_Entity"]
     class_class_curie: ClassVar[str] = "crm:E1_CRM_Entity"
     class_name: ClassVar[str] = "Thing"
-    class_model_uri: ClassVar[URIRef] = WASTH.Thing
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Thing
 
     title: Optional[str] = None
     id: Optional[Union[str, URIorCURIE]] = None
@@ -838,7 +810,7 @@ class Thing(YAMLRoot):
     bibliographic_citation: Optional[
         Union[
             dict[
-                Union[str, BibliographicCitationRefid],
+                Union[str, BibliographicCitationCitekey],
                 Union[dict, BibliographicCitation],
             ],
             list[Union[dict, BibliographicCitation]],
@@ -848,7 +820,7 @@ class Thing(YAMLRoot):
     title_source: Optional[
         Union[
             dict[
-                Union[str, BibliographicCitationRefid],
+                Union[str, BibliographicCitationCitekey],
                 Union[dict, BibliographicCitation],
             ],
             list[Union[dict, BibliographicCitation]],
@@ -903,7 +875,7 @@ class Thing(YAMLRoot):
         self._normalize_inlined_as_list(
             slot_name="bibliographic_citation",
             slot_type=BibliographicCitation,
-            key_name="refid",
+            key_name="citekey",
             keyed=True,
         )
 
@@ -913,7 +885,7 @@ class Thing(YAMLRoot):
         self._normalize_inlined_as_list(
             slot_name="title_source",
             slot_type=BibliographicCitation,
-            key_name="refid",
+            key_name="citekey",
             keyed=True,
         )
 
@@ -990,19 +962,13 @@ class Concept(Thing):
     class_class_uri: ClassVar[URIRef] = SKOS["Concept"]
     class_class_curie: ClassVar[str] = "skos:Concept"
     class_name: ClassVar[str] = "Concept"
-    class_model_uri: ClassVar[URIRef] = WASTH.Concept
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Concept
 
     id: Union[str, ConceptId] = None
     broader: Optional[
         Union[
-            Union[dict, BroaderConceptReference],
-            list[Union[dict, BroaderConceptReference]],
-        ]
-    ] = empty_list()
-    narrower: Optional[
-        Union[
-            Union[dict, NarrowerConceptReference],
-            list[Union[dict, NarrowerConceptReference]],
+            Union[str, BroaderConceptReferenceRefid],
+            list[Union[str, BroaderConceptReferenceRefid]],
         ]
     ] = empty_list()
     record_rights: Optional[Union[Union[dict, Right], list[Union[dict, Right]]]] = (
@@ -1011,13 +977,19 @@ class Concept(Thing):
     concept_type: Optional[Union[str, "ConceptType"]] = "concept"
     mapping: Optional[
         Union[
-            Union[dict, MappingConceptReference],
+            dict[
+                Union[str, MappingConceptReferenceRefid],
+                Union[dict, MappingConceptReference],
+            ],
             list[Union[dict, MappingConceptReference]],
         ]
-    ] = empty_list()
+    ] = empty_dict()
     relation: Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
+    ] = empty_dict()
     content: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1026,19 +998,14 @@ class Concept(Thing):
         if not isinstance(self.id, ConceptId):
             self.id = ConceptId(self.id)
 
-        self._normalize_inlined_as_dict(
-            slot_name="broader",
-            slot_type=BroaderConceptReference,
-            key_name="broader_match",
-            keyed=False,
-        )
-
-        self._normalize_inlined_as_dict(
-            slot_name="narrower",
-            slot_type=NarrowerConceptReference,
-            key_name="narrower_match",
-            keyed=False,
-        )
+        if not isinstance(self.broader, list):
+            self.broader = [self.broader] if self.broader is not None else []
+        self.broader = [
+            v
+            if isinstance(v, BroaderConceptReferenceRefid)
+            else BroaderConceptReferenceRefid(v)
+            for v in self.broader
+        ]
 
         self._normalize_inlined_as_list(
             slot_name="record_rights",
@@ -1055,16 +1022,16 @@ class Concept(Thing):
         self._normalize_inlined_as_list(
             slot_name="mapping",
             slot_type=MappingConceptReference,
-            key_name="mapping_match",
-            keyed=False,
+            key_name="refid",
+            keyed=True,
         )
 
-        if not isinstance(self.relation, list):
-            self.relation = [self.relation] if self.relation is not None else []
-        self.relation = [
-            v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.relation
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="relation",
+            slot_type=ConceptReference,
+            key_name="refid",
+            keyed=True,
+        )
 
         if self.content is not None and not isinstance(self.content, str):
             self.content = str(self.content)
@@ -1090,7 +1057,7 @@ class RelatedObject(Thing):
     class_class_uri: ClassVar[URIRef] = SCHEMA["CreativeWork"]
     class_class_curie: ClassVar[str] = "schema:CreativeWork"
     class_name: ClassVar[str] = "RelatedObject"
-    class_model_uri: ClassVar[URIRef] = WASTH.RelatedObject
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.RelatedObject
 
     relation_type: Union[str, "RelatedWorkRelType"] = None
     work_rights: Optional[Union[Union[dict, Right], list[Union[dict, Right]]]] = (
@@ -1147,10 +1114,10 @@ class RelatedWork(RelatedObject):
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["RelatedWork"]
-    class_class_curie: ClassVar[str] = "wasth:RelatedWork"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["RelatedWork"]
+    class_class_curie: ClassVar[str] = "arqtrad:RelatedWork"
     class_name: ClassVar[str] = "RelatedWork"
-    class_model_uri: ClassVar[URIRef] = WASTH.RelatedWork
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.RelatedWork
 
     relation_type: Union[str, "RelatedWorkRelType"] = None
     media: Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]] = (
@@ -1181,10 +1148,10 @@ class LargerContextReference(RelatedObject):
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["LargerContextReference"]
-    class_class_curie: ClassVar[str] = "wasth:LargerContextReference"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["LargerContextReference"]
+    class_class_curie: ClassVar[str] = "arqtrad:LargerContextReference"
     class_name: ClassVar[str] = "LargerContextReference"
-    class_model_uri: ClassVar[URIRef] = WASTH.LargerContextReference
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.LargerContextReference
 
     relation_type: Union[str, "RelatedWorkRelType"] = None
     context_type: Union[str, "LargerContextType"] = None
@@ -1227,7 +1194,7 @@ class Resource(RelatedObject):
     class_class_uri: ClassVar[URIRef] = CRM["E31_Document"]
     class_class_curie: ClassVar[str] = "crm:E31_Document"
     class_name: ClassVar[str] = "Resource"
-    class_model_uri: ClassVar[URIRef] = WASTH.Resource
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Resource
 
     id: Union[str, ResourceId] = None
     relation_type: Union[str, "RelatedWorkRelType"] = None
@@ -1339,7 +1306,7 @@ class MediaObject(Thing):
     class_class_uri: ClassVar[URIRef] = SCHEMA["MediaObject"]
     class_class_curie: ClassVar[str] = "schema:MediaObject"
     class_name: ClassVar[str] = "MediaObject"
-    class_model_uri: ClassVar[URIRef] = WASTH.MediaObject
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.MediaObject
 
     format: str = None
     scale: Optional[float] = None
@@ -1417,7 +1384,7 @@ class LegalBody(Thing):
     class_class_uri: ClassVar[URIRef] = SCHEMA["Organization"]
     class_class_curie: ClassVar[str] = "schema:Organization"
     class_name: ClassVar[str] = "LegalBody"
-    class_model_uri: ClassVar[URIRef] = WASTH.LegalBody
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.LegalBody
 
     legal_body_type: Optional[Union[str, "RepositoryType"]] = "corporate"
     weblink: Optional[Union[str, URIorCURIE]] = None
@@ -1495,12 +1462,15 @@ class Event(Thing):
     class_class_uri: ClassVar[URIRef] = CRM["E5_Event"]
     class_class_curie: ClassVar[str] = "crm:E5_Event"
     class_name: ClassVar[str] = "Event"
-    class_model_uri: ClassVar[URIRef] = WASTH.Event
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Event
 
     event_type: Union[str, "EventType"] = None
     style_period: Optional[
-        Union[Union[dict, StylePeriod], list[Union[dict, StylePeriod]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, StylePeriodRefid], Union[dict, StylePeriod]],
+            list[Union[dict, StylePeriod]],
+        ]
+    ] = empty_dict()
     culture: Optional[
         Union[
             dict[Union[str, TypedReferenceRefid], Union[dict, TypedReference]],
@@ -1511,11 +1481,17 @@ class Event(Thing):
         Union[Union[dict, Measurement], list[Union[dict, Measurement]]]
     ] = empty_list()
     material: Optional[
-        Union[Union[dict, MaterialTech], list[Union[dict, MaterialTech]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, MaterialTechRefid], Union[dict, MaterialTech]],
+            list[Union[dict, MaterialTech]],
+        ]
+    ] = empty_dict()
     technique: Optional[
-        Union[Union[dict, MaterialTech], list[Union[dict, MaterialTech]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, MaterialTechRefid], Union[dict, MaterialTech]],
+            list[Union[dict, MaterialTech]],
+        ]
+    ] = empty_dict()
     media: Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]] = (
         empty_list()
     )
@@ -1535,8 +1511,11 @@ class Event(Thing):
         empty_list()
     )
     method: Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
+    ] = empty_dict()
     things_present: Optional[
         Union[Union[dict, RelatedWork], list[Union[dict, RelatedWork]]]
     ] = empty_list()
@@ -1553,8 +1532,8 @@ class Event(Thing):
         self._normalize_inlined_as_list(
             slot_name="style_period",
             slot_type=StylePeriod,
-            key_name="period_name_type",
-            keyed=False,
+            key_name="refid",
+            keyed=True,
         )
 
         self._normalize_inlined_as_list(
@@ -1569,17 +1548,11 @@ class Event(Thing):
         )
 
         self._normalize_inlined_as_list(
-            slot_name="material",
-            slot_type=MaterialTech,
-            key_name="material_tech_type",
-            keyed=False,
+            slot_name="material", slot_type=MaterialTech, key_name="refid", keyed=True
         )
 
         self._normalize_inlined_as_list(
-            slot_name="technique",
-            slot_type=MaterialTech,
-            key_name="material_tech_type",
-            keyed=False,
+            slot_name="technique", slot_type=MaterialTech, key_name="refid", keyed=True
         )
 
         if not isinstance(self.media, list):
@@ -1622,12 +1595,9 @@ class Event(Thing):
             v if isinstance(v, Site) else Site(**as_dict(v)) for v in self.event_place
         ]
 
-        if not isinstance(self.method, list):
-            self.method = [self.method] if self.method is not None else []
-        self.method = [
-            v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.method
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="method", slot_type=ConceptReference, key_name="refid", keyed=True
+        )
 
         self._normalize_inlined_as_list(
             slot_name="things_present",
@@ -1657,15 +1627,15 @@ class Event(Thing):
 class Appellation(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["Appellation"]
-    class_class_curie: ClassVar[str] = "wasth:Appellation"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["Appellation"]
+    class_class_curie: ClassVar[str] = "arqtrad:Appellation"
     class_name: ClassVar[str] = "Appellation"
-    class_model_uri: ClassVar[URIRef] = WASTH.Appellation
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Appellation
 
     bibliographic_citation: Optional[
         Union[
             dict[
-                Union[str, BibliographicCitationRefid],
+                Union[str, BibliographicCitationCitekey],
                 Union[dict, BibliographicCitation],
             ],
             list[Union[dict, BibliographicCitation]],
@@ -1679,7 +1649,7 @@ class Appellation(YAMLRoot):
         self._normalize_inlined_as_list(
             slot_name="bibliographic_citation",
             slot_type=BibliographicCitation,
-            key_name="refid",
+            key_name="citekey",
             keyed=True,
         )
 
@@ -1708,7 +1678,7 @@ class Repository(Thing):
     class_class_uri: ClassVar[URIRef] = SCHEMA["Organization"]
     class_class_curie: ClassVar[str] = "schema:Organization"
     class_name: ClassVar[str] = "Repository"
-    class_model_uri: ClassVar[URIRef] = WASTH.Repository
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Repository
 
     site: Union[dict, "Site"] = None
     legal_body: Union[dict, LegalBody] = None
@@ -1762,7 +1732,7 @@ class Work(Thing):
     class_class_uri: ClassVar[URIRef] = SCHEMA["LandmarksOrHistoricalBuildings"]
     class_class_curie: ClassVar[str] = "schema:LandmarksOrHistoricalBuildings"
     class_name: ClassVar[str] = "Work"
-    class_model_uri: ClassVar[URIRef] = WASTH.Work
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Work
 
     id: Union[str, WorkId] = None
     site: Union[dict, "Site"] = None
@@ -1776,14 +1746,23 @@ class Work(Thing):
         Union[Union[dict, Measurement], list[Union[dict, Measurement]]]
     ] = empty_list()
     material: Optional[
-        Union[Union[dict, MaterialTech], list[Union[dict, MaterialTech]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, MaterialTechRefid], Union[dict, MaterialTech]],
+            list[Union[dict, MaterialTech]],
+        ]
+    ] = empty_dict()
     technique: Optional[
-        Union[Union[dict, MaterialTech], list[Union[dict, MaterialTech]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, MaterialTechRefid], Union[dict, MaterialTech]],
+            list[Union[dict, MaterialTech]],
+        ]
+    ] = empty_dict()
     style_period: Optional[
-        Union[Union[dict, StylePeriod], list[Union[dict, StylePeriod]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, StylePeriodRefid], Union[dict, StylePeriod]],
+            list[Union[dict, StylePeriod]],
+        ]
+    ] = empty_dict()
     culture: Optional[
         Union[
             dict[Union[str, TypedReferenceRefid], Union[dict, TypedReference]],
@@ -1800,38 +1779,71 @@ class Work(Thing):
         empty_list()
     )
     work_type_condition: Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
+    ] = empty_dict()
     work_type_form: Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
+    ] = empty_dict()
     work_type_function: Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
+    ] = empty_dict()
     work_type_context: Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
+    ] = empty_dict()
     work_type_material_tech: Optional[
-        Union[Union[dict, MaterialTech], list[Union[dict, MaterialTech]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, MaterialTechRefid], Union[dict, MaterialTech]],
+            list[Union[dict, MaterialTech]],
+        ]
+    ] = empty_dict()
     work_type_subject: Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
+    ] = empty_dict()
     work_type_use: Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
+    ] = empty_dict()
     classification_genre: Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
+    ] = empty_dict()
     classification_subject: Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
+    ] = empty_dict()
     classification_local: Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
+    ] = empty_dict()
     classification_special: Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
-    ] = empty_list()
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
+    ] = empty_dict()
     part_of: Optional[
         Union[
             Union[dict, LargerContextReference],
@@ -1859,9 +1871,12 @@ class Work(Thing):
     related_works: Optional[
         Union[Union[dict, RelatedWork], list[Union[dict, RelatedWork]]]
     ] = empty_list()
-    subject: Optional[Union[Union[dict, "Topic"], list[Union[dict, "Topic"]]]] = (
-        empty_list()
-    )
+    subject: Optional[
+        Union[
+            dict[Union[str, TopicRefid], Union[dict, "Topic"]],
+            list[Union[dict, "Topic"]],
+        ]
+    ] = empty_dict()
     category: Optional[Union[str, URIorCURIE]] = TERM["lido00096"]
     content: Optional[str] = None
 
@@ -1922,24 +1937,18 @@ class Work(Thing):
         )
 
         self._normalize_inlined_as_list(
-            slot_name="material",
-            slot_type=MaterialTech,
-            key_name="material_tech_type",
-            keyed=False,
+            slot_name="material", slot_type=MaterialTech, key_name="refid", keyed=True
         )
 
         self._normalize_inlined_as_list(
-            slot_name="technique",
-            slot_type=MaterialTech,
-            key_name="material_tech_type",
-            keyed=False,
+            slot_name="technique", slot_type=MaterialTech, key_name="refid", keyed=True
         )
 
         self._normalize_inlined_as_list(
             slot_name="style_period",
             slot_type=StylePeriod,
-            key_name="period_name_type",
-            keyed=False,
+            key_name="refid",
+            keyed=True,
         )
 
         self._normalize_inlined_as_list(
@@ -1956,112 +1965,82 @@ class Work(Thing):
             v if isinstance(v, ResourceId) else ResourceId(v) for v in self.media
         ]
 
-        if not isinstance(self.work_type_condition, list):
-            self.work_type_condition = (
-                [self.work_type_condition]
-                if self.work_type_condition is not None
-                else []
-            )
-        self.work_type_condition = [
-            v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.work_type_condition
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="work_type_condition",
+            slot_type=ConceptReference,
+            key_name="refid",
+            keyed=True,
+        )
 
-        if not isinstance(self.work_type_form, list):
-            self.work_type_form = (
-                [self.work_type_form] if self.work_type_form is not None else []
-            )
-        self.work_type_form = [
-            v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.work_type_form
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="work_type_form",
+            slot_type=ConceptReference,
+            key_name="refid",
+            keyed=True,
+        )
 
-        if not isinstance(self.work_type_function, list):
-            self.work_type_function = (
-                [self.work_type_function] if self.work_type_function is not None else []
-            )
-        self.work_type_function = [
-            v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.work_type_function
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="work_type_function",
+            slot_type=ConceptReference,
+            key_name="refid",
+            keyed=True,
+        )
 
-        if not isinstance(self.work_type_context, list):
-            self.work_type_context = (
-                [self.work_type_context] if self.work_type_context is not None else []
-            )
-        self.work_type_context = [
-            v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.work_type_context
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="work_type_context",
+            slot_type=ConceptReference,
+            key_name="refid",
+            keyed=True,
+        )
 
         self._normalize_inlined_as_list(
             slot_name="work_type_material_tech",
             slot_type=MaterialTech,
-            key_name="material_tech_type",
-            keyed=False,
+            key_name="refid",
+            keyed=True,
         )
 
-        if not isinstance(self.work_type_subject, list):
-            self.work_type_subject = (
-                [self.work_type_subject] if self.work_type_subject is not None else []
-            )
-        self.work_type_subject = [
-            v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.work_type_subject
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="work_type_subject",
+            slot_type=ConceptReference,
+            key_name="refid",
+            keyed=True,
+        )
 
-        if not isinstance(self.work_type_use, list):
-            self.work_type_use = (
-                [self.work_type_use] if self.work_type_use is not None else []
-            )
-        self.work_type_use = [
-            v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.work_type_use
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="work_type_use",
+            slot_type=ConceptReference,
+            key_name="refid",
+            keyed=True,
+        )
 
-        if not isinstance(self.classification_genre, list):
-            self.classification_genre = (
-                [self.classification_genre]
-                if self.classification_genre is not None
-                else []
-            )
-        self.classification_genre = [
-            v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.classification_genre
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="classification_genre",
+            slot_type=ConceptReference,
+            key_name="refid",
+            keyed=True,
+        )
 
-        if not isinstance(self.classification_subject, list):
-            self.classification_subject = (
-                [self.classification_subject]
-                if self.classification_subject is not None
-                else []
-            )
-        self.classification_subject = [
-            v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.classification_subject
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="classification_subject",
+            slot_type=ConceptReference,
+            key_name="refid",
+            keyed=True,
+        )
 
-        if not isinstance(self.classification_local, list):
-            self.classification_local = (
-                [self.classification_local]
-                if self.classification_local is not None
-                else []
-            )
-        self.classification_local = [
-            v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.classification_local
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="classification_local",
+            slot_type=ConceptReference,
+            key_name="refid",
+            keyed=True,
+        )
 
-        if not isinstance(self.classification_special, list):
-            self.classification_special = (
-                [self.classification_special]
-                if self.classification_special is not None
-                else []
-            )
-        self.classification_special = [
-            v if isinstance(v, ConceptReference) else ConceptReference(**as_dict(v))
-            for v in self.classification_special
-        ]
+        self._normalize_inlined_as_list(
+            slot_name="classification_special",
+            slot_type=ConceptReference,
+            key_name="refid",
+            keyed=True,
+        )
 
         self._normalize_inlined_as_list(
             slot_name="part_of",
@@ -2123,7 +2102,7 @@ class Work(Thing):
         )
 
         self._normalize_inlined_as_list(
-            slot_name="subject", slot_type=Topic, key_name="topic_type", keyed=False
+            slot_name="subject", slot_type=Topic, key_name="refid", keyed=True
         )
 
         self.category = str(
@@ -2159,10 +2138,10 @@ class Site(Thing):
     class_class_uri: ClassVar[URIRef] = CRM["E92_Spacetime_Volume"]
     class_class_curie: ClassVar[str] = "crm:E92_Spacetime_Volume"
     class_name: ClassVar[str] = "Site"
-    class_model_uri: ClassVar[URIRef] = WASTH.Site
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Site
 
     location: Union[dict, "GeographicPoint"] = None
-    name: Optional[Union[dict, "GeonamesFeature"]] = None
+    name: Optional[Union[str, URIorCURIE]] = None
     site_type: Optional[Union[str, "RepositoryType"]] = "geographic"
     extent: Optional[Union[dict, "GeographicExtent"]] = None
     event_place_type: Optional[Union[str, "EventPlaceType"]] = None
@@ -2173,8 +2152,8 @@ class Site(Thing):
         if not isinstance(self.location, GeographicPoint):
             self.location = GeographicPoint(**as_dict(self.location))
 
-        if self.name is not None and not isinstance(self.name, GeonamesFeature):
-            self.name = GeonamesFeature(**as_dict(self.name))
+        if self.name is not None and not isinstance(self.name, URIorCURIE):
+            self.name = URIorCURIE(self.name)
 
         if self.site_type is not None and not isinstance(
             self.site_type, RepositoryType
@@ -2222,10 +2201,10 @@ class GeographicPoint(YAMLRoot):
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["GeographicPoint"]
-    class_class_curie: ClassVar[str] = "wasth:GeographicPoint"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["GeographicPoint"]
+    class_class_curie: ClassVar[str] = "arqtrad:GeographicPoint"
     class_name: ClassVar[str] = "GeographicPoint"
-    class_model_uri: ClassVar[URIRef] = WASTH.GeographicPoint
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.GeographicPoint
 
     lat: Union[float, Latitude] = None
     lon: Union[float, Longitude] = None
@@ -2234,7 +2213,7 @@ class GeographicPoint(YAMLRoot):
     bibliographic_citation: Optional[
         Union[
             dict[
-                Union[str, BibliographicCitationRefid],
+                Union[str, BibliographicCitationCitekey],
                 Union[dict, BibliographicCitation],
             ],
             list[Union[dict, BibliographicCitation]],
@@ -2263,7 +2242,7 @@ class GeographicPoint(YAMLRoot):
         self._normalize_inlined_as_list(
             slot_name="bibliographic_citation",
             slot_type=BibliographicCitation,
-            key_name="refid",
+            key_name="citekey",
             keyed=True,
         )
 
@@ -2284,10 +2263,10 @@ class GeographicExtent(YAMLRoot):
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["GeographicExtent"]
-    class_class_curie: ClassVar[str] = "wasth:GeographicExtent"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["GeographicExtent"]
+    class_class_curie: ClassVar[str] = "arqtrad:GeographicExtent"
     class_name: ClassVar[str] = "GeographicExtent"
-    class_model_uri: ClassVar[URIRef] = WASTH.GeographicExtent
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.GeographicExtent
 
     geometry_type: Union[str, "GeometryType"] = None
     coordinates: Union[str, GeoJSONCoordinateArray] = None
@@ -2296,7 +2275,7 @@ class GeographicExtent(YAMLRoot):
     bibliographic_citation: Optional[
         Union[
             dict[
-                Union[str, BibliographicCitationRefid],
+                Union[str, BibliographicCitationCitekey],
                 Union[dict, BibliographicCitation],
             ],
             list[Union[dict, BibliographicCitation]],
@@ -2323,7 +2302,7 @@ class GeographicExtent(YAMLRoot):
         self._normalize_inlined_as_list(
             slot_name="bibliographic_citation",
             slot_type=BibliographicCitation,
-            key_name="refid",
+            key_name="citekey",
             keyed=True,
         )
 
@@ -2343,10 +2322,10 @@ class Inscription(YAMLRoot):
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["Inscription"]
-    class_class_curie: ClassVar[str] = "wasth:Inscription"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["Inscription"]
+    class_class_curie: ClassVar[str] = "arqtrad:Inscription"
     class_name: ClassVar[str] = "Inscription"
-    class_model_uri: ClassVar[URIRef] = WASTH.Inscription
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Inscription
 
     inscription_type: Union[str, "InscriptionType"] = "text"
     format_extent: Optional[Union[dict, TypedReference]] = None
@@ -2355,7 +2334,7 @@ class Inscription(YAMLRoot):
     bibliographic_citation: Optional[
         Union[
             dict[
-                Union[str, BibliographicCitationRefid],
+                Union[str, BibliographicCitationCitekey],
                 Union[dict, BibliographicCitation],
             ],
             list[Union[dict, BibliographicCitation]],
@@ -2382,7 +2361,7 @@ class Inscription(YAMLRoot):
         self._normalize_inlined_as_list(
             slot_name="bibliographic_citation",
             slot_type=BibliographicCitation,
-            key_name="refid",
+            key_name="citekey",
             keyed=True,
         )
 
@@ -2390,36 +2369,32 @@ class Inscription(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Topic(YAMLRoot):
+class Topic(TypedReference):
     """
     Subject or iconographic topic.
     """
 
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["Topic"]
-    class_class_curie: ClassVar[str] = "wasth:Topic"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["Topic"]
+    class_class_curie: ClassVar[str] = "arqtrad:Topic"
     class_name: ClassVar[str] = "Topic"
-    class_model_uri: ClassVar[URIRef] = WASTH.Topic
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Topic
 
-    concept_name: Union[str, ConceptId] = None
+    refid: Union[str, TopicRefid] = None
     topic_type: Union[str, "SubjectType"] = None
-    description: Optional[str] = None
     format_extent: Optional[Union[dict, TypedReference]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.concept_name):
-            self.MissingRequiredField("concept_name")
-        if not isinstance(self.concept_name, ConceptId):
-            self.concept_name = ConceptId(self.concept_name)
+        if self._is_empty(self.refid):
+            self.MissingRequiredField("refid")
+        if not isinstance(self.refid, TopicRefid):
+            self.refid = TopicRefid(self.refid)
 
         if self._is_empty(self.topic_type):
             self.MissingRequiredField("topic_type")
         if not isinstance(self.topic_type, SubjectType):
             self.topic_type = SubjectType(self.topic_type)
-
-        if self.description is not None and not isinstance(self.description, str):
-            self.description = str(self.description)
 
         if self.format_extent is not None and not isinstance(
             self.format_extent, TypedReference
@@ -2433,10 +2408,10 @@ class Topic(YAMLRoot):
 class Collection(Thing):
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = WASTH["Collection"]
-    class_class_curie: ClassVar[str] = "wasth:Collection"
+    class_class_uri: ClassVar[URIRef] = ARQTRAD["Collection"]
+    class_class_curie: ClassVar[str] = "arqtrad:Collection"
     class_name: ClassVar[str] = "Collection"
-    class_model_uri: ClassVar[URIRef] = WASTH.Collection
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.Collection
 
     collection_type: Union[str, "CollectionType"] = None
 
@@ -2457,7 +2432,7 @@ class GeonamesFeature(YAMLRoot):
     class_class_uri: ClassVar[URIRef] = GEONAMES["Feature"]
     class_class_curie: ClassVar[str] = "geonames:Feature"
     class_name: ClassVar[str] = "GeonamesFeature"
-    class_model_uri: ClassVar[URIRef] = WASTH.GeonamesFeature
+    class_model_uri: ClassVar[URIRef] = ARQTRAD.GeonamesFeature
 
     geonameid: Union[int, GeonamesFeatureGeonameid] = None
     name: Optional[str] = None
@@ -4042,31 +4017,14 @@ class SkosBroaderRelation(EnumDefinitionImpl):
     """
 
     broader = PermissibleValue(text="broader", meaning=SKOS["broader"])
-    transitive = PermissibleValue(text="transitive", meaning=SKOS["broaderTransitive"])
-    generic = PermissibleValue(text="generic", meaning=SKOS["broaderGeneric"])
-    instantial = PermissibleValue(text="instantial", meaning=SKOS["broaderInstantial"])
-    partitive = PermissibleValue(text="partitive", meaning=SKOS["broaderPartitive"])
+    transitive = PermissibleValue(text="transitive", meaning=ISO["broaderTransitive"])
+    generic = PermissibleValue(text="generic", meaning=ISO["broaderGeneric"])
+    instantial = PermissibleValue(text="instantial", meaning=ISO["broaderInstantial"])
+    partitive = PermissibleValue(text="partitive", meaning=ISO["broaderPartitive"])
 
     _defn = EnumDefinition(
         name="SkosBroaderRelation",
         description="SKOS-THES broader relation type.",
-    )
-
-
-class SkosNarrowerRelation(EnumDefinitionImpl):
-    """
-    SKOS-THES narrower relation type.
-    """
-
-    broader = PermissibleValue(text="broader", meaning=SKOS["narrower"])
-    transitive = PermissibleValue(text="transitive", meaning=SKOS["narrowerTransitive"])
-    generic = PermissibleValue(text="generic", meaning=SKOS["narrowerGeneric"])
-    instantial = PermissibleValue(text="instantial", meaning=SKOS["narrowerInstantial"])
-    partitive = PermissibleValue(text="partitive", meaning=SKOS["narrowerPartitive"])
-
-    _defn = EnumDefinition(
-        name="SkosNarrowerRelation",
-        description="SKOS-THES narrower relation type.",
     )
 
 
@@ -7635,39 +7593,16 @@ class slots:
     pass
 
 
-slots.concept_name = Slot(
-    uri=WASTH.concept_name,
-    name="concept_name",
-    curie=WASTH.curie("concept_name"),
-    model_uri=WASTH.concept_name,
-    domain=None,
-    range=Optional[Union[str, ConceptId]],
-)
-
 slots.broader = Slot(
     uri=SKOS.broader,
     name="broader",
     curie=SKOS.curie("broader"),
-    model_uri=WASTH.broader,
+    model_uri=ARQTRAD.broader,
     domain=None,
     range=Optional[
         Union[
-            Union[dict, BroaderConceptReference],
-            list[Union[dict, BroaderConceptReference]],
-        ]
-    ],
-)
-
-slots.narrower = Slot(
-    uri=SKOS.narrower,
-    name="narrower",
-    curie=SKOS.curie("narrower"),
-    model_uri=WASTH.narrower,
-    domain=None,
-    range=Optional[
-        Union[
-            Union[dict, NarrowerConceptReference],
-            list[Union[dict, NarrowerConceptReference]],
+            Union[str, BroaderConceptReferenceRefid],
+            list[Union[str, BroaderConceptReferenceRefid]],
         ]
     ],
 )
@@ -7676,12 +7611,12 @@ slots.bibliographic_citation = Slot(
     uri=DCTERMS.bibliographicCitation,
     name="bibliographic_citation",
     curie=DCTERMS.curie("bibliographicCitation"),
-    model_uri=WASTH.bibliographic_citation,
+    model_uri=ARQTRAD.bibliographic_citation,
     domain=None,
     range=Optional[
         Union[
             dict[
-                Union[str, BibliographicCitationRefid],
+                Union[str, BibliographicCitationCitekey],
                 Union[dict, BibliographicCitation],
             ],
             list[Union[dict, BibliographicCitation]],
@@ -7690,19 +7625,19 @@ slots.bibliographic_citation = Slot(
 )
 
 slots.collection_type = Slot(
-    uri=WASTH.collection_type,
+    uri=ARQTRAD.collection_type,
     name="collection_type",
-    curie=WASTH.curie("collection_type"),
-    model_uri=WASTH.collection_type,
+    curie=ARQTRAD.curie("collection_type"),
+    model_uri=ARQTRAD.collection_type,
     domain=None,
     range=Optional[Union[str, "CollectionType"]],
 )
 
 slots.resources = Slot(
-    uri=WASTH.resources,
+    uri=ARQTRAD.resources,
     name="resources",
-    curie=WASTH.curie("resources"),
-    model_uri=WASTH.resources,
+    curie=ARQTRAD.curie("resources"),
+    model_uri=ARQTRAD.resources,
     domain=None,
     range=Optional[
         Union[
@@ -7716,7 +7651,7 @@ slots.content_url = Slot(
     uri=SCHEMA.contentUrl,
     name="content_url",
     curie=SCHEMA.curie("contentUrl"),
-    model_uri=WASTH.content_url,
+    model_uri=ARQTRAD.content_url,
     domain=None,
     range=Optional[Union[str, URIorCURIE]],
 )
@@ -7725,7 +7660,7 @@ slots.embed_url = Slot(
     uri=SCHEMA.embedUrl,
     name="embed_url",
     curie=SCHEMA.curie("embedUrl"),
-    model_uri=WASTH.embed_url,
+    model_uri=ARQTRAD.embed_url,
     domain=None,
     range=Optional[Union[str, URIorCURIE]],
 )
@@ -7734,52 +7669,52 @@ slots.format = Slot(
     uri=DCTERMS.format,
     name="format",
     curie=DCTERMS.curie("format"),
-    model_uri=WASTH.format,
+    model_uri=ARQTRAD.format,
     domain=None,
     range=str,
 )
 
 slots.media = Slot(
-    uri=WASTH.media,
+    uri=ARQTRAD.media,
     name="media",
-    curie=WASTH.curie("media"),
-    model_uri=WASTH.media,
+    curie=ARQTRAD.curie("media"),
+    model_uri=ARQTRAD.media,
     domain=None,
     range=Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]],
 )
 
 slots.preview_image = Slot(
-    uri=WASTH.preview_image,
+    uri=ARQTRAD.preview_image,
     name="preview_image",
-    curie=WASTH.curie("preview_image"),
-    model_uri=WASTH.preview_image,
+    curie=ARQTRAD.curie("preview_image"),
+    model_uri=ARQTRAD.preview_image,
     domain=None,
     range=Optional[Union[str, URIorCURIE]],
 )
 
 slots.provided_image = Slot(
-    uri=WASTH.provided_image,
+    uri=ARQTRAD.provided_image,
     name="provided_image",
-    curie=WASTH.curie("provided_image"),
-    model_uri=WASTH.provided_image,
+    curie=ARQTRAD.curie("provided_image"),
+    model_uri=ARQTRAD.provided_image,
     domain=None,
     range=Optional[Union[Union[dict, MediaObject], list[Union[dict, MediaObject]]]],
 )
 
 slots.provided_3d = Slot(
-    uri=WASTH.provided_3d,
+    uri=ARQTRAD.provided_3d,
     name="provided_3d",
-    curie=WASTH.curie("provided_3d"),
-    model_uri=WASTH.provided_3d,
+    curie=ARQTRAD.curie("provided_3d"),
+    model_uri=ARQTRAD.provided_3d,
     domain=None,
     range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]],
 )
 
 slots.resource_service = Slot(
-    uri=WASTH.resource_service,
+    uri=ARQTRAD.resource_service,
     name="resource_service",
-    curie=WASTH.curie("resource_service"),
-    model_uri=WASTH.resource_service,
+    curie=ARQTRAD.curie("resource_service"),
+    model_uri=ARQTRAD.resource_service,
     domain=None,
     range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]],
 )
@@ -7788,16 +7723,16 @@ slots.relation_type = Slot(
     uri=LIDO.relatedWorkRelType,
     name="relation_type",
     curie=LIDO.curie("relatedWorkRelType"),
-    model_uri=WASTH.relation_type,
+    model_uri=ARQTRAD.relation_type,
     domain=None,
     range=Union[str, "RelatedWorkRelType"],
 )
 
 slots.scale = Slot(
-    uri=WASTH.scale,
+    uri=ARQTRAD.scale,
     name="scale",
-    curie=WASTH.curie("scale"),
-    model_uri=WASTH.scale,
+    curie=ARQTRAD.curie("scale"),
+    model_uri=ARQTRAD.scale,
     domain=None,
     range=Optional[float],
 )
@@ -7806,25 +7741,25 @@ slots.work_rights = Slot(
     uri=LIDO.rightsWorkSet,
     name="work_rights",
     curie=LIDO.curie("rightsWorkSet"),
-    model_uri=WASTH.work_rights,
+    model_uri=ARQTRAD.work_rights,
     domain=None,
     range=Optional[Union[Union[dict, Right], list[Union[dict, Right]]]],
 )
 
 slots.credit = Slot(
-    uri=WASTH.credit,
+    uri=ARQTRAD.credit,
     name="credit",
-    curie=WASTH.curie("credit"),
-    model_uri=WASTH.credit,
+    curie=ARQTRAD.curie("credit"),
+    model_uri=ARQTRAD.credit,
     domain=None,
     range=Optional[str],
 )
 
 slots.refid_type = Slot(
-    uri=WASTH.refid_type,
+    uri=ARQTRAD.refid_type,
     name="refid_type",
-    curie=WASTH.curie("refid_type"),
-    model_uri=WASTH.refid_type,
+    curie=ARQTRAD.curie("refid_type"),
+    model_uri=ARQTRAD.refid_type,
     domain=None,
     range=Optional[Union[str, "ReferenceType"]],
 )
@@ -7833,16 +7768,16 @@ slots.refid = Slot(
     uri=DCTERMS.identifier,
     name="refid",
     curie=DCTERMS.curie("identifier"),
-    model_uri=WASTH.refid,
+    model_uri=ARQTRAD.refid,
     domain=None,
-    range=Optional[Union[str, URIorCURIE]],
+    range=URIRef,
 )
 
 slots.measurements = Slot(
-    uri=WASTH.measurements,
+    uri=ARQTRAD.measurements,
     name="measurements",
-    curie=WASTH.curie("measurements"),
-    model_uri=WASTH.measurements,
+    curie=ARQTRAD.curie("measurements"),
+    model_uri=ARQTRAD.measurements,
     domain=None,
     range=Optional[Union[Union[dict, Measurement], list[Union[dict, Measurement]]]],
 )
@@ -7851,52 +7786,67 @@ slots.material = Slot(
     uri=CRM.E57_Material,
     name="material",
     curie=CRM.curie("E57_Material"),
-    model_uri=WASTH.material,
+    model_uri=ARQTRAD.material,
     domain=None,
-    range=Optional[Union[Union[dict, MaterialTech], list[Union[dict, MaterialTech]]]],
+    range=Optional[
+        Union[
+            dict[Union[str, MaterialTechRefid], Union[dict, MaterialTech]],
+            list[Union[dict, MaterialTech]],
+        ]
+    ],
 )
 
 slots.technique = Slot(
     uri=VRA.Technique,
     name="technique",
     curie=VRA.curie("Technique"),
-    model_uri=WASTH.technique,
+    model_uri=ARQTRAD.technique,
     domain=None,
-    range=Optional[Union[Union[dict, MaterialTech], list[Union[dict, MaterialTech]]]],
+    range=Optional[
+        Union[
+            dict[Union[str, MaterialTechRefid], Union[dict, MaterialTech]],
+            list[Union[dict, MaterialTech]],
+        ]
+    ],
 )
 
 slots.format_extent = Slot(
-    uri=WASTH.format_extent,
+    uri=ARQTRAD.format_extent,
     name="format_extent",
-    curie=WASTH.curie("format_extent"),
-    model_uri=WASTH.format_extent,
+    curie=ARQTRAD.curie("format_extent"),
+    model_uri=ARQTRAD.format_extent,
     domain=None,
     range=Optional[Union[dict, TypedReference]],
 )
 
 slots.unit = Slot(
-    uri=WASTH.unit,
+    uri=ARQTRAD.unit,
     name="unit",
-    curie=WASTH.curie("unit"),
-    model_uri=WASTH.unit,
+    curie=ARQTRAD.curie("unit"),
+    model_uri=ARQTRAD.unit,
     domain=None,
     range=Optional[Union[dict, TypedReference]],
 )
 
 slots.style_period = Slot(
-    uri=WASTH.style_period,
+    uri=ARQTRAD.style_period,
     name="style_period",
-    curie=WASTH.curie("style_period"),
-    model_uri=WASTH.style_period,
+    curie=ARQTRAD.curie("style_period"),
+    model_uri=ARQTRAD.style_period,
     domain=None,
-    range=Optional[Union[Union[dict, StylePeriod], list[Union[dict, StylePeriod]]]],
+    range=Optional[
+        Union[
+            dict[Union[str, StylePeriodRefid], Union[dict, StylePeriod]],
+            list[Union[dict, StylePeriod]],
+        ]
+    ],
 )
 
 slots.culture = Slot(
-    uri=WASTH.culture,
+    uri=ARQTRAD.culture,
     name="culture",
-    curie=WASTH.curie("culture"),
-    model_uri=WASTH.culture,
+    curie=ARQTRAD.curie("culture"),
+    model_uri=ARQTRAD.culture,
     domain=None,
     range=Optional[
         Union[
@@ -7907,28 +7857,28 @@ slots.culture = Slot(
 )
 
 slots.source = Slot(
-    uri=WASTH.source,
+    uri=ARQTRAD.source,
     name="source",
-    curie=WASTH.curie("source"),
-    model_uri=WASTH.source,
+    curie=ARQTRAD.curie("source"),
+    model_uri=ARQTRAD.source,
     domain=None,
     range=Optional[Union[dict, LegalBody]],
 )
 
 slots.rights = Slot(
-    uri=WASTH.rights,
+    uri=ARQTRAD.rights,
     name="rights",
-    curie=WASTH.curie("rights"),
-    model_uri=WASTH.rights,
+    curie=ARQTRAD.curie("rights"),
+    model_uri=ARQTRAD.rights,
     domain=None,
     range=Optional[Union[Union[dict, Right], list[Union[dict, Right]]]],
 )
 
 slots.related_events = Slot(
-    uri=WASTH.related_events,
+    uri=ARQTRAD.related_events,
     name="related_events",
-    curie=WASTH.curie("related_events"),
-    model_uri=WASTH.related_events,
+    curie=ARQTRAD.curie("related_events"),
+    model_uri=ARQTRAD.related_events,
     domain=None,
     range=Optional[Union[Union[dict, RelatedEvent], list[Union[dict, RelatedEvent]]]],
 )
@@ -7937,7 +7887,7 @@ slots.title = Slot(
     uri=DCTERMS.title,
     name="title",
     curie=DCTERMS.curie("title"),
-    model_uri=WASTH.title,
+    model_uri=ARQTRAD.title,
     domain=None,
     range=Optional[str],
 )
@@ -7946,7 +7896,7 @@ slots.id = Slot(
     uri=DCTERMS.identifier,
     name="id",
     curie=DCTERMS.curie("identifier"),
-    model_uri=WASTH.id,
+    model_uri=ARQTRAD.id,
     domain=None,
     range=Optional[Union[str, URIorCURIE]],
 )
@@ -7955,7 +7905,7 @@ slots.author = Slot(
     uri=DCTERMS.contributor,
     name="author",
     curie=DCTERMS.curie("contributor"),
-    model_uri=WASTH.author,
+    model_uri=ARQTRAD.author,
     domain=None,
     range=Optional[Union[str, OrcidId]],
 )
@@ -7964,7 +7914,7 @@ slots.authors = Slot(
     uri=DCTERMS.contributor,
     name="authors",
     curie=DCTERMS.curie("contributor"),
-    model_uri=WASTH.authors,
+    model_uri=ARQTRAD.authors,
     domain=None,
     range=Optional[Union[Union[str, OrcidId], list[Union[str, OrcidId]]]],
 )
@@ -7973,7 +7923,7 @@ slots.record_date = Slot(
     uri=DCTERMS.created,
     name="record_date",
     curie=DCTERMS.curie("created"),
-    model_uri=WASTH.record_date,
+    model_uri=ARQTRAD.record_date,
     domain=None,
     range=Optional[Union[str, XSDDate]],
 )
@@ -7982,7 +7932,7 @@ slots.description = Slot(
     uri=DCTERMS.description,
     name="description",
     curie=DCTERMS.curie("description"),
-    model_uri=WASTH.description,
+    model_uri=ARQTRAD.description,
     domain=None,
     range=Optional[str],
 )
@@ -7991,16 +7941,16 @@ slots.category = Slot(
     uri=TERM.lidoCategory,
     name="category",
     curie=TERM.curie("lidoCategory"),
-    model_uri=WASTH.category,
+    model_uri=ARQTRAD.category,
     domain=None,
     range=Optional[Union[str, URIorCURIE]],
 )
 
 slots.identifiers = Slot(
-    uri=WASTH.identifiers,
+    uri=ARQTRAD.identifiers,
     name="identifiers",
-    curie=WASTH.curie("identifiers"),
-    model_uri=WASTH.identifiers,
+    curie=ARQTRAD.curie("identifiers"),
+    model_uri=ARQTRAD.identifiers,
     domain=None,
     range=Optional[
         Union[
@@ -8011,19 +7961,19 @@ slots.identifiers = Slot(
 )
 
 slots.record_rights = Slot(
-    uri=WASTH.record_rights,
+    uri=ARQTRAD.record_rights,
     name="record_rights",
-    curie=WASTH.curie("record_rights"),
-    model_uri=WASTH.record_rights,
+    curie=ARQTRAD.curie("record_rights"),
+    model_uri=ARQTRAD.record_rights,
     domain=None,
     range=Optional[Union[Union[dict, Right], list[Union[dict, Right]]]],
 )
 
 slots.legal_body = Slot(
-    uri=WASTH.legal_body,
+    uri=ARQTRAD.legal_body,
     name="legal_body",
-    curie=WASTH.curie("legal_body"),
-    model_uri=WASTH.legal_body,
+    curie=ARQTRAD.curie("legal_body"),
+    model_uri=ARQTRAD.legal_body,
     domain=None,
     range=Union[dict, LegalBody],
 )
@@ -8032,34 +7982,34 @@ slots.content = Slot(
     uri=LIDO.descriptiveNoteValue,
     name="content",
     curie=LIDO.curie("descriptiveNoteValue"),
-    model_uri=WASTH.content,
+    model_uri=ARQTRAD.content,
     domain=None,
     range=Optional[str],
 )
 
 slots.site = Slot(
-    uri=WASTH.site,
+    uri=ARQTRAD.site,
     name="site",
-    curie=WASTH.curie("site"),
-    model_uri=WASTH.site,
+    curie=ARQTRAD.curie("site"),
+    model_uri=ARQTRAD.site,
     domain=None,
     range=Union[dict, Site],
 )
 
 slots.srs_name = Slot(
-    uri=WASTH.srs_name,
+    uri=ARQTRAD.srs_name,
     name="srs_name",
-    curie=WASTH.curie("srs_name"),
-    model_uri=WASTH.srs_name,
+    curie=ARQTRAD.curie("srs_name"),
+    model_uri=ARQTRAD.srs_name,
     domain=None,
     range=Optional[Union[str, URIorCURIE]],
 )
 
 slots.geonameid = Slot(
-    uri=WASTH["geonames/geonameid"],
+    uri=ARQTRAD["geonames/geonameid"],
     name="geonameid",
-    curie=WASTH.curie("geonames/geonameid"),
-    model_uri=WASTH.geonameid,
+    curie=ARQTRAD.curie("geonames/geonameid"),
+    model_uri=ARQTRAD.geonameid,
     domain=None,
     range=URIRef,
 )
@@ -8068,16 +8018,16 @@ slots.name = Slot(
     uri=GEONAMES.name,
     name="name",
     curie=GEONAMES.curie("name"),
-    model_uri=WASTH.name,
+    model_uri=ARQTRAD.name,
     domain=None,
     range=Optional[str],
 )
 
 slots.asciiname = Slot(
-    uri=WASTH["geonames/asciiname"],
+    uri=ARQTRAD["geonames/asciiname"],
     name="asciiname",
-    curie=WASTH.curie("geonames/asciiname"),
-    model_uri=WASTH.asciiname,
+    curie=ARQTRAD.curie("geonames/asciiname"),
+    model_uri=ARQTRAD.asciiname,
     domain=None,
     range=Optional[str],
 )
@@ -8086,7 +8036,7 @@ slots.alternatenames = Slot(
     uri=GEONAMES.alternatenames,
     name="alternatenames",
     curie=GEONAMES.curie("alternatenames"),
-    model_uri=WASTH.alternatenames,
+    model_uri=ARQTRAD.alternatenames,
     domain=None,
     range=Optional[str],
 )
@@ -8095,7 +8045,7 @@ slots.latitude = Slot(
     uri=WGS84.lat,
     name="latitude",
     curie=WGS84.curie("lat"),
-    model_uri=WASTH.latitude,
+    model_uri=ARQTRAD.latitude,
     domain=None,
     range=Optional[Union[float, Latitude]],
 )
@@ -8104,7 +8054,7 @@ slots.longitude = Slot(
     uri=WGS84.long,
     name="longitude",
     curie=WGS84.curie("long"),
-    model_uri=WASTH.longitude,
+    model_uri=ARQTRAD.longitude,
     domain=None,
     range=Optional[Union[float, Longitude]],
 )
@@ -8113,7 +8063,7 @@ slots.feature_class = Slot(
     uri=GEONAMES.featureClass,
     name="feature class",
     curie=GEONAMES.curie("featureClass"),
-    model_uri=WASTH.feature_class,
+    model_uri=ARQTRAD.feature_class,
     domain=None,
     range=Optional[Union[str, "FeatureClassEnum"]],
 )
@@ -8122,7 +8072,7 @@ slots.feature_code = Slot(
     uri=GEONAMES.featureCode,
     name="feature code",
     curie=GEONAMES.curie("featureCode"),
-    model_uri=WASTH.feature_code,
+    model_uri=ARQTRAD.feature_code,
     domain=None,
     range=Optional[Union[str, "FeatureCodeEnum"]],
 )
@@ -8131,52 +8081,52 @@ slots.country_code = Slot(
     uri=GEONAMES.countryCode,
     name="country code",
     curie=GEONAMES.curie("countryCode"),
-    model_uri=WASTH.country_code,
+    model_uri=ARQTRAD.country_code,
     domain=None,
     range=Optional[Union[str, "CountryCodeEnum"]],
 )
 
 slots.cc2 = Slot(
-    uri=WASTH["geonames/cc2"],
+    uri=ARQTRAD["geonames/cc2"],
     name="cc2",
-    curie=WASTH.curie("geonames/cc2"),
-    model_uri=WASTH.cc2,
+    curie=ARQTRAD.curie("geonames/cc2"),
+    model_uri=ARQTRAD.cc2,
     domain=None,
     range=Optional[str],
 )
 
 slots.admin1_code = Slot(
-    uri=WASTH["geonames/admin1_code"],
+    uri=ARQTRAD["geonames/admin1_code"],
     name="admin1 code",
-    curie=WASTH.curie("geonames/admin1_code"),
-    model_uri=WASTH.admin1_code,
+    curie=ARQTRAD.curie("geonames/admin1_code"),
+    model_uri=ARQTRAD.admin1_code,
     domain=None,
     range=Optional[int],
 )
 
 slots.admin2_code = Slot(
-    uri=WASTH["geonames/admin2_code"],
+    uri=ARQTRAD["geonames/admin2_code"],
     name="admin2 code",
-    curie=WASTH.curie("geonames/admin2_code"),
-    model_uri=WASTH.admin2_code,
+    curie=ARQTRAD.curie("geonames/admin2_code"),
+    model_uri=ARQTRAD.admin2_code,
     domain=None,
     range=Optional[int],
 )
 
 slots.admin3_code = Slot(
-    uri=WASTH["geonames/admin3_code"],
+    uri=ARQTRAD["geonames/admin3_code"],
     name="admin3 code",
-    curie=WASTH.curie("geonames/admin3_code"),
-    model_uri=WASTH.admin3_code,
+    curie=ARQTRAD.curie("geonames/admin3_code"),
+    model_uri=ARQTRAD.admin3_code,
     domain=None,
     range=Optional[int],
 )
 
 slots.admin4_code = Slot(
-    uri=WASTH["geonames/admin4_code"],
+    uri=ARQTRAD["geonames/admin4_code"],
     name="admin4 code",
-    curie=WASTH.curie("geonames/admin4_code"),
-    model_uri=WASTH.admin4_code,
+    curie=ARQTRAD.curie("geonames/admin4_code"),
+    model_uri=ARQTRAD.admin4_code,
     domain=None,
     range=Optional[str],
 )
@@ -8185,52 +8135,52 @@ slots.population = Slot(
     uri=GEONAMES.population,
     name="population",
     curie=GEONAMES.curie("population"),
-    model_uri=WASTH.population,
+    model_uri=ARQTRAD.population,
     domain=None,
     range=Optional[int],
 )
 
 slots.elevation = Slot(
-    uri=WASTH["geonames/elevation"],
+    uri=ARQTRAD["geonames/elevation"],
     name="elevation",
-    curie=WASTH.curie("geonames/elevation"),
-    model_uri=WASTH.elevation,
+    curie=ARQTRAD.curie("geonames/elevation"),
+    model_uri=ARQTRAD.elevation,
     domain=None,
     range=Optional[int],
 )
 
 slots.dem = Slot(
-    uri=WASTH["geonames/dem"],
+    uri=ARQTRAD["geonames/dem"],
     name="dem",
-    curie=WASTH.curie("geonames/dem"),
-    model_uri=WASTH.dem,
+    curie=ARQTRAD.curie("geonames/dem"),
+    model_uri=ARQTRAD.dem,
     domain=None,
     range=Optional[int],
 )
 
 slots.timezone = Slot(
-    uri=WASTH["geonames/timezone"],
+    uri=ARQTRAD["geonames/timezone"],
     name="timezone",
-    curie=WASTH.curie("geonames/timezone"),
-    model_uri=WASTH.timezone,
+    curie=ARQTRAD.curie("geonames/timezone"),
+    model_uri=ARQTRAD.timezone,
     domain=None,
     range=Optional[Union[str, "TimezoneEnum"]],
 )
 
 slots.modification_date = Slot(
-    uri=WASTH["geonames/modification_date"],
+    uri=ARQTRAD["geonames/modification_date"],
     name="modification date",
-    curie=WASTH.curie("geonames/modification_date"),
-    model_uri=WASTH.modification_date,
+    curie=ARQTRAD.curie("geonames/modification_date"),
+    model_uri=ARQTRAD.modification_date,
     domain=None,
     range=Optional[Union[str, XSDDate]],
 )
 
 slots.container__works = Slot(
-    uri=WASTH.works,
+    uri=ARQTRAD.works,
     name="container__works",
-    curie=WASTH.curie("works"),
-    model_uri=WASTH.container__works,
+    curie=ARQTRAD.curie("works"),
+    model_uri=ARQTRAD.container__works,
     domain=None,
     range=Optional[
         Union[dict[Union[str, WorkId], Union[dict, Work]], list[Union[dict, Work]]]
@@ -8238,10 +8188,10 @@ slots.container__works = Slot(
 )
 
 slots.container__concepts = Slot(
-    uri=WASTH.concepts,
+    uri=ARQTRAD.concepts,
     name="container__concepts",
-    curie=WASTH.curie("concepts"),
-    model_uri=WASTH.container__concepts,
+    curie=ARQTRAD.curie("concepts"),
+    model_uri=ARQTRAD.container__concepts,
     domain=None,
     range=Optional[
         Union[
@@ -8252,10 +8202,10 @@ slots.container__concepts = Slot(
 )
 
 slots.container__places = Slot(
-    uri=WASTH.places,
+    uri=ARQTRAD.places,
     name="container__places",
-    curie=WASTH.curie("places"),
-    model_uri=WASTH.container__places,
+    curie=ARQTRAD.curie("places"),
+    model_uri=ARQTRAD.container__places,
     domain=None,
     range=Optional[
         Union[
@@ -8266,23 +8216,26 @@ slots.container__places = Slot(
 )
 
 slots.concept__concept_type = Slot(
-    uri=WASTH.concept_type,
+    uri=ARQTRAD.concept_type,
     name="concept__concept_type",
-    curie=WASTH.curie("concept_type"),
-    model_uri=WASTH.concept__concept_type,
+    curie=ARQTRAD.curie("concept_type"),
+    model_uri=ARQTRAD.concept__concept_type,
     domain=None,
     range=Optional[Union[str, "ConceptType"]],
 )
 
 slots.concept__mapping = Slot(
-    uri=WASTH.mapping,
+    uri=ARQTRAD.mapping,
     name="concept__mapping",
-    curie=WASTH.curie("mapping"),
-    model_uri=WASTH.concept__mapping,
+    curie=ARQTRAD.curie("mapping"),
+    model_uri=ARQTRAD.concept__mapping,
     domain=None,
     range=Optional[
         Union[
-            Union[dict, MappingConceptReference],
+            dict[
+                Union[str, MappingConceptReferenceRefid],
+                Union[dict, MappingConceptReference],
+            ],
             list[Union[dict, MappingConceptReference]],
         ]
     ],
@@ -8292,63 +8245,57 @@ slots.concept__relation = Slot(
     uri=SKOS.related,
     name="concept__relation",
     curie=SKOS.curie("related"),
-    model_uri=WASTH.concept__relation,
+    model_uri=ARQTRAD.concept__relation,
     domain=None,
     range=Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
     ],
 )
 
 slots.broaderConceptReference__broader_match = Slot(
-    uri=WASTH.broader_match,
+    uri=ARQTRAD.broader_match,
     name="broaderConceptReference__broader_match",
-    curie=WASTH.curie("broader_match"),
-    model_uri=WASTH.broaderConceptReference__broader_match,
+    curie=ARQTRAD.curie("broader_match"),
+    model_uri=ARQTRAD.broaderConceptReference__broader_match,
     domain=None,
     range=Union[str, "SkosBroaderRelation"],
 )
 
 slots.broaderConceptReference__broader_preferred = Slot(
-    uri=WASTH.broader_preferred,
+    uri=ARQTRAD.broader_preferred,
     name="broaderConceptReference__broader_preferred",
-    curie=WASTH.curie("broader_preferred"),
-    model_uri=WASTH.broaderConceptReference__broader_preferred,
+    curie=ARQTRAD.curie("broader_preferred"),
+    model_uri=ARQTRAD.broaderConceptReference__broader_preferred,
     domain=None,
     range=Optional[Union[bool, Bool]],
 )
 
-slots.narrowerConceptReference__narrower_match = Slot(
-    uri=WASTH.narrower_match,
-    name="narrowerConceptReference__narrower_match",
-    curie=WASTH.curie("narrower_match"),
-    model_uri=WASTH.narrowerConceptReference__narrower_match,
-    domain=None,
-    range=Union[str, "SkosNarrowerRelation"],
-)
-
 slots.mappingConceptReference__mapping_match = Slot(
-    uri=WASTH.mapping_match,
+    uri=ARQTRAD.mapping_match,
     name="mappingConceptReference__mapping_match",
-    curie=WASTH.curie("mapping_match"),
-    model_uri=WASTH.mappingConceptReference__mapping_match,
+    curie=ARQTRAD.curie("mapping_match"),
+    model_uri=ARQTRAD.mappingConceptReference__mapping_match,
     domain=None,
     range=Union[str, "SkosMappingRelation"],
 )
 
 slots.bibliographicCitation__citekey = Slot(
-    uri=WASTH.refid,
+    uri=ARQTRAD.citekey,
     name="bibliographicCitation__citekey",
-    curie=WASTH.curie("refid"),
-    model_uri=WASTH.bibliographicCitation__citekey,
+    curie=ARQTRAD.curie("citekey"),
+    model_uri=ARQTRAD.bibliographicCitation__citekey,
     domain=None,
     range=URIRef,
 )
 
 slots.bibliographicCitation__note = Slot(
-    uri=WASTH.note,
+    uri=ARQTRAD.note,
     name="bibliographicCitation__note",
-    curie=WASTH.curie("note"),
-    model_uri=WASTH.bibliographicCitation__note,
+    curie=ARQTRAD.curie("note"),
+    model_uri=ARQTRAD.bibliographicCitation__note,
     domain=None,
     range=Optional[str],
 )
@@ -8357,243 +8304,246 @@ slots.largerContextReference__context_type = Slot(
     uri=LIDO.relatedWorkRelType,
     name="largerContextReference__context_type",
     curie=LIDO.curie("relatedWorkRelType"),
-    model_uri=WASTH.largerContextReference__context_type,
+    model_uri=ARQTRAD.largerContextReference__context_type,
     domain=None,
     range=Union[str, "LargerContextType"],
 )
 
 slots.resource__perspective = Slot(
-    uri=WASTH.perspective,
+    uri=ARQTRAD.perspective,
     name="resource__perspective",
-    curie=WASTH.curie("perspective"),
-    model_uri=WASTH.resource__perspective,
+    curie=ARQTRAD.curie("perspective"),
+    model_uri=ARQTRAD.resource__perspective,
     domain=None,
     range=int,
 )
 
 slots.measurement__measurement_type = Slot(
-    uri=WASTH.measurement_type,
+    uri=ARQTRAD.measurement_type,
     name="measurement__measurement_type",
-    curie=WASTH.curie("measurement_type"),
-    model_uri=WASTH.measurement__measurement_type,
+    curie=ARQTRAD.curie("measurement_type"),
+    model_uri=ARQTRAD.measurement__measurement_type,
     domain=None,
     range=Optional[Union[str, "MeasurementType"]],
 )
 
 slots.measurement__measurement_extent = Slot(
-    uri=WASTH.measurement_extent,
+    uri=ARQTRAD.measurement_extent,
     name="measurement__measurement_extent",
-    curie=WASTH.curie("measurement_extent"),
-    model_uri=WASTH.measurement__measurement_extent,
+    curie=ARQTRAD.curie("measurement_extent"),
+    model_uri=ARQTRAD.measurement__measurement_extent,
     domain=None,
     range=Optional[Union[dict, TypedReference]],
 )
 
 slots.measurement__measurement_value = Slot(
-    uri=WASTH.measurement_value,
+    uri=ARQTRAD.measurement_value,
     name="measurement__measurement_value",
-    curie=WASTH.curie("measurement_value"),
-    model_uri=WASTH.measurement__measurement_value,
+    curie=ARQTRAD.curie("measurement_value"),
+    model_uri=ARQTRAD.measurement__measurement_value,
     domain=None,
     range=float,
 )
 
 slots.measurement__measurement_qualifier = Slot(
-    uri=WASTH.measurement_qualifier,
+    uri=ARQTRAD.measurement_qualifier,
     name="measurement__measurement_qualifier",
-    curie=WASTH.curie("measurement_qualifier"),
-    model_uri=WASTH.measurement__measurement_qualifier,
+    curie=ARQTRAD.curie("measurement_qualifier"),
+    model_uri=ARQTRAD.measurement__measurement_qualifier,
     domain=None,
     range=Optional[Union[str, "MeasurementQualifier"]],
 )
 
 slots.measurement__measurement_shape = Slot(
-    uri=WASTH.measurement_shape,
+    uri=ARQTRAD.measurement_shape,
     name="measurement__measurement_shape",
-    curie=WASTH.curie("measurement_shape"),
-    model_uri=WASTH.measurement__measurement_shape,
+    curie=ARQTRAD.curie("measurement_shape"),
+    model_uri=ARQTRAD.measurement__measurement_shape,
     domain=None,
     range=Optional[Union[str, TypedReferenceRefid]],
 )
 
 slots.measurement__measurement_event = Slot(
-    uri=WASTH.measurement_event,
+    uri=ARQTRAD.measurement_event,
     name="measurement__measurement_event",
-    curie=WASTH.curie("measurement_event"),
-    model_uri=WASTH.measurement__measurement_event,
+    curie=ARQTRAD.curie("measurement_event"),
+    model_uri=ARQTRAD.measurement__measurement_event,
     domain=None,
     range=Optional[Union[dict, Event]],
 )
 
 slots.materialTech__material_tech_type = Slot(
-    uri=WASTH.material_tech_type,
+    uri=ARQTRAD.material_tech_type,
     name="materialTech__material_tech_type",
-    curie=WASTH.curie("material_tech_type"),
-    model_uri=WASTH.materialTech__material_tech_type,
+    curie=ARQTRAD.curie("material_tech_type"),
+    model_uri=ARQTRAD.materialTech__material_tech_type,
     domain=None,
     range=Union[str, "MaterialTechType"],
 )
 
 slots.right__rights_type = Slot(
-    uri=WASTH.rights_type,
+    uri=ARQTRAD.rights_type,
     name="right__rights_type",
-    curie=WASTH.curie("rights_type"),
-    model_uri=WASTH.right__rights_type,
+    curie=ARQTRAD.curie("rights_type"),
+    model_uri=ARQTRAD.right__rights_type,
     domain=None,
     range=Union[str, "RightsType"],
 )
 
 slots.right__statement = Slot(
-    uri=WASTH.statement,
+    uri=ARQTRAD.statement,
     name="right__statement",
-    curie=WASTH.curie("statement"),
-    model_uri=WASTH.right__statement,
+    curie=ARQTRAD.curie("statement"),
+    model_uri=ARQTRAD.right__statement,
     domain=None,
     range=Union[dict, TypedReference],
 )
 
 slots.right__earliest_date = Slot(
-    uri=WASTH.earliest_date,
+    uri=ARQTRAD.earliest_date,
     name="right__earliest_date",
-    curie=WASTH.curie("earliest_date"),
-    model_uri=WASTH.right__earliest_date,
+    curie=ARQTRAD.curie("earliest_date"),
+    model_uri=ARQTRAD.right__earliest_date,
     domain=None,
     range=Optional[Union[dict, EventDate]],
 )
 
 slots.right__latest_date = Slot(
-    uri=WASTH.latest_date,
+    uri=ARQTRAD.latest_date,
     name="right__latest_date",
-    curie=WASTH.curie("latest_date"),
-    model_uri=WASTH.right__latest_date,
+    curie=ARQTRAD.curie("latest_date"),
+    model_uri=ARQTRAD.right__latest_date,
     domain=None,
     range=Optional[Union[dict, EventDate]],
 )
 
 slots.right__holder = Slot(
-    uri=WASTH.holder,
+    uri=ARQTRAD.holder,
     name="right__holder",
-    curie=WASTH.curie("holder"),
-    model_uri=WASTH.right__holder,
+    curie=ARQTRAD.curie("holder"),
+    model_uri=ARQTRAD.right__holder,
     domain=None,
     range=Optional[Union[dict, LegalBody]],
 )
 
 slots.legalBody__legal_body_type = Slot(
-    uri=WASTH.legal_body_type,
+    uri=ARQTRAD.legal_body_type,
     name="legalBody__legal_body_type",
-    curie=WASTH.curie("legal_body_type"),
-    model_uri=WASTH.legalBody__legal_body_type,
+    curie=ARQTRAD.curie("legal_body_type"),
+    model_uri=ARQTRAD.legalBody__legal_body_type,
     domain=None,
     range=Optional[Union[str, "RepositoryType"]],
 )
 
 slots.legalBody__weblink = Slot(
-    uri=WASTH.weblink,
+    uri=ARQTRAD.weblink,
     name="legalBody__weblink",
-    curie=WASTH.curie("weblink"),
-    model_uri=WASTH.legalBody__weblink,
+    curie=ARQTRAD.curie("weblink"),
+    model_uri=ARQTRAD.legalBody__weblink,
     domain=None,
     range=Optional[Union[str, URIorCURIE]],
 )
 
 slots.event__event_type = Slot(
-    uri=WASTH.event_type,
+    uri=ARQTRAD.event_type,
     name="event__event_type",
-    curie=WASTH.curie("event_type"),
-    model_uri=WASTH.event__event_type,
+    curie=ARQTRAD.curie("event_type"),
+    model_uri=ARQTRAD.event__event_type,
     domain=None,
     range=Union[str, "EventType"],
 )
 
 slots.event__actor_role = Slot(
-    uri=WASTH.actor_role,
+    uri=ARQTRAD.actor_role,
     name="event__actor_role",
-    curie=WASTH.curie("actor_role"),
-    model_uri=WASTH.event__actor_role,
+    curie=ARQTRAD.curie("actor_role"),
+    model_uri=ARQTRAD.event__actor_role,
     domain=None,
     range=Optional[Union[Union[dict, Actor], list[Union[dict, Actor]]]],
 )
 
 slots.event__start_date = Slot(
-    uri=WASTH.start_date,
+    uri=ARQTRAD.start_date,
     name="event__start_date",
-    curie=WASTH.curie("start_date"),
-    model_uri=WASTH.event__start_date,
+    curie=ARQTRAD.curie("start_date"),
+    model_uri=ARQTRAD.event__start_date,
     domain=None,
     range=Optional[Union[Union[dict, EventDate], list[Union[dict, EventDate]]]],
 )
 
 slots.event__end_date = Slot(
-    uri=WASTH.end_date,
+    uri=ARQTRAD.end_date,
     name="event__end_date",
-    curie=WASTH.curie("end_date"),
-    model_uri=WASTH.event__end_date,
+    curie=ARQTRAD.curie("end_date"),
+    model_uri=ARQTRAD.event__end_date,
     domain=None,
     range=Optional[Union[Union[dict, EventDate], list[Union[dict, EventDate]]]],
 )
 
 slots.event__event_place = Slot(
-    uri=WASTH.event_place,
+    uri=ARQTRAD.event_place,
     name="event__event_place",
-    curie=WASTH.curie("event_place"),
-    model_uri=WASTH.event__event_place,
+    curie=ARQTRAD.curie("event_place"),
+    model_uri=ARQTRAD.event__event_place,
     domain=None,
     range=Optional[Union[Union[dict, Site], list[Union[dict, Site]]]],
 )
 
 slots.event__method = Slot(
-    uri=WASTH.method,
+    uri=ARQTRAD.method,
     name="event__method",
-    curie=WASTH.curie("method"),
-    model_uri=WASTH.event__method,
+    curie=ARQTRAD.curie("method"),
+    model_uri=ARQTRAD.event__method,
     domain=None,
     range=Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
     ],
 )
 
 slots.event__things_present = Slot(
-    uri=WASTH.things_present,
+    uri=ARQTRAD.things_present,
     name="event__things_present",
-    curie=WASTH.curie("things_present"),
-    model_uri=WASTH.event__things_present,
+    curie=ARQTRAD.curie("things_present"),
+    model_uri=ARQTRAD.event__things_present,
     domain=None,
     range=Optional[Union[Union[dict, RelatedWork], list[Union[dict, RelatedWork]]]],
 )
 
 slots.actor__actor_type = Slot(
-    uri=WASTH.actor_type,
+    uri=ARQTRAD.actor_type,
     name="actor__actor_type",
-    curie=WASTH.curie("actor_type"),
-    model_uri=WASTH.actor__actor_type,
+    curie=ARQTRAD.curie("actor_type"),
+    model_uri=ARQTRAD.actor__actor_type,
     domain=None,
     range=Optional[Union[str, "AgentType"]],
 )
 
 slots.actor__actor_name = Slot(
-    uri=WASTH.actor_name,
+    uri=ARQTRAD.actor_name,
     name="actor__actor_name",
-    curie=WASTH.curie("actor_name"),
-    model_uri=WASTH.actor__actor_name,
+    curie=ARQTRAD.curie("actor_name"),
+    model_uri=ARQTRAD.actor__actor_name,
     domain=None,
     range=Optional[Union[dict, TypedReference]],
 )
 
 slots.actor__role_in_event = Slot(
-    uri=WASTH.role_in_event,
+    uri=ARQTRAD.role_in_event,
     name="actor__role_in_event",
-    curie=WASTH.curie("role_in_event"),
-    model_uri=WASTH.actor__role_in_event,
+    curie=ARQTRAD.curie("role_in_event"),
+    model_uri=ARQTRAD.actor__role_in_event,
     domain=None,
     range=Optional[Union[str, "RoleType"]],
 )
 
 slots.actor__actor_qualifier = Slot(
-    uri=WASTH.actor_qualifier,
+    uri=ARQTRAD.actor_qualifier,
     name="actor__actor_qualifier",
-    curie=WASTH.curie("actor_qualifier"),
-    model_uri=WASTH.actor__actor_qualifier,
+    curie=ARQTRAD.curie("actor_qualifier"),
+    model_uri=ARQTRAD.actor__actor_qualifier,
     domain=None,
     range=Optional[
         Union[
@@ -8604,10 +8554,10 @@ slots.actor__actor_qualifier = Slot(
 )
 
 slots.actor__actor_extent = Slot(
-    uri=WASTH.actor_extent,
+    uri=ARQTRAD.actor_extent,
     name="actor__actor_extent",
-    curie=WASTH.curie("actor_extent"),
-    model_uri=WASTH.actor__actor_extent,
+    curie=ARQTRAD.curie("actor_extent"),
+    model_uri=ARQTRAD.actor__actor_extent,
     domain=None,
     range=Optional[
         Union[
@@ -8618,51 +8568,51 @@ slots.actor__actor_extent = Slot(
 )
 
 slots.eventDate__date_type = Slot(
-    uri=WASTH.date_type,
+    uri=ARQTRAD.date_type,
     name="eventDate__date_type",
-    curie=WASTH.curie("date_type"),
-    model_uri=WASTH.eventDate__date_type,
+    curie=ARQTRAD.curie("date_type"),
+    model_uri=ARQTRAD.eventDate__date_type,
     domain=None,
     range=Union[str, "DateType"],
 )
 
 slots.eventDate__date_value = Slot(
-    uri=WASTH.date_value,
+    uri=ARQTRAD.date_value,
     name="eventDate__date_value",
-    curie=WASTH.curie("date_value"),
-    model_uri=WASTH.eventDate__date_value,
+    curie=ARQTRAD.curie("date_value"),
+    model_uri=ARQTRAD.eventDate__date_value,
     domain=None,
     range=Optional[Union[str, XSDDate]],
 )
 
 slots.stylePeriod__period_name_type = Slot(
-    uri=WASTH.period_name_type,
+    uri=ARQTRAD.period_name_type,
     name="stylePeriod__period_name_type",
-    curie=WASTH.curie("period_name_type"),
-    model_uri=WASTH.stylePeriod__period_name_type,
+    curie=ARQTRAD.curie("period_name_type"),
+    model_uri=ARQTRAD.stylePeriod__period_name_type,
     domain=None,
     range=Union[str, "PeriodNameType"],
 )
 
 slots.relatedEvent__event_name = Slot(
-    uri=WASTH.event_name,
+    uri=ARQTRAD.event_name,
     name="relatedEvent__event_name",
-    curie=WASTH.curie("event_name"),
-    model_uri=WASTH.relatedEvent__event_name,
+    curie=ARQTRAD.curie("event_name"),
+    model_uri=ARQTRAD.relatedEvent__event_name,
     domain=None,
     range=Union[Union[dict, Event], list[Union[dict, Event]]],
 )
 
 slots.thing__title_source = Slot(
-    uri=WASTH.title_source,
+    uri=ARQTRAD.title_source,
     name="thing__title_source",
-    curie=WASTH.curie("title_source"),
-    model_uri=WASTH.thing__title_source,
+    curie=ARQTRAD.curie("title_source"),
+    model_uri=ARQTRAD.thing__title_source,
     domain=None,
     range=Optional[
         Union[
             dict[
-                Union[str, BibliographicCitationRefid],
+                Union[str, BibliographicCitationCitekey],
                 Union[dict, BibliographicCitation],
             ],
             list[Union[dict, BibliographicCitation]],
@@ -8671,82 +8621,82 @@ slots.thing__title_source = Slot(
 )
 
 slots.thing__alt_name = Slot(
-    uri=WASTH.alt_name,
+    uri=ARQTRAD.alt_name,
     name="thing__alt_name",
-    curie=WASTH.curie("alt_name"),
-    model_uri=WASTH.thing__alt_name,
+    curie=ARQTRAD.curie("alt_name"),
+    model_uri=ARQTRAD.thing__alt_name,
     domain=None,
     range=Optional[Union[Union[dict, Appellation], list[Union[dict, Appellation]]]],
 )
 
 slots.thing__tags = Slot(
-    uri=WASTH.tags,
+    uri=ARQTRAD.tags,
     name="thing__tags",
-    curie=WASTH.curie("tags"),
-    model_uri=WASTH.thing__tags,
+    curie=ARQTRAD.curie("tags"),
+    model_uri=ARQTRAD.thing__tags,
     domain=None,
     range=Optional[Union[str, list[str]]],
 )
 
 slots.thing__temporal = Slot(
-    uri=WASTH.temporal,
+    uri=ARQTRAD.temporal,
     name="thing__temporal",
-    curie=WASTH.curie("temporal"),
-    model_uri=WASTH.thing__temporal,
+    curie=ARQTRAD.curie("temporal"),
+    model_uri=ARQTRAD.thing__temporal,
     domain=None,
     range=Optional[Union[Union[dict, Event], list[Union[dict, Event]]]],
 )
 
 slots.thing__repositories = Slot(
-    uri=WASTH.repositories,
+    uri=ARQTRAD.repositories,
     name="thing__repositories",
-    curie=WASTH.curie("repositories"),
-    model_uri=WASTH.thing__repositories,
+    curie=ARQTRAD.curie("repositories"),
+    model_uri=ARQTRAD.thing__repositories,
     domain=None,
     range=Optional[Union[Union[dict, Repository], list[Union[dict, Repository]]]],
 )
 
 slots.appellation__label = Slot(
-    uri=WASTH.label,
+    uri=ARQTRAD.label,
     name="appellation__label",
-    curie=WASTH.curie("label"),
-    model_uri=WASTH.appellation__label,
+    curie=ARQTRAD.curie("label"),
+    model_uri=ARQTRAD.appellation__label,
     domain=None,
     range=Optional[str],
 )
 
 slots.appellation__appellation_preference = Slot(
-    uri=WASTH.appellation_preference,
+    uri=ARQTRAD.appellation_preference,
     name="appellation__appellation_preference",
-    curie=WASTH.curie("appellation_preference"),
-    model_uri=WASTH.appellation__appellation_preference,
+    curie=ARQTRAD.curie("appellation_preference"),
+    model_uri=ARQTRAD.appellation__appellation_preference,
     domain=None,
     range=Optional[Union[str, "LabelType"]],
 )
 
 slots.appellation__title_type = Slot(
-    uri=WASTH.title_type,
+    uri=ARQTRAD.title_type,
     name="appellation__title_type",
-    curie=WASTH.curie("title_type"),
-    model_uri=WASTH.appellation__title_type,
+    curie=ARQTRAD.curie("title_type"),
+    model_uri=ARQTRAD.appellation__title_type,
     domain=None,
     range=Optional[Union[str, "TitleType"]],
 )
 
 slots.repository__repository_type = Slot(
-    uri=WASTH.repository_type,
+    uri=ARQTRAD.repository_type,
     name="repository__repository_type",
-    curie=WASTH.curie("repository_type"),
-    model_uri=WASTH.repository__repository_type,
+    curie=ARQTRAD.curie("repository_type"),
+    model_uri=ARQTRAD.repository__repository_type,
     domain=None,
     range=Optional[Union[str, "RepositoryType"]],
 )
 
 slots.work__title_type = Slot(
-    uri=WASTH.title_type,
+    uri=ARQTRAD.title_type,
     name="work__title_type",
-    curie=WASTH.curie("title_type"),
-    model_uri=WASTH.work__title_type,
+    curie=ARQTRAD.curie("title_type"),
+    model_uri=ARQTRAD.work__title_type,
     domain=None,
     range=Union[str, "TitleType"],
 )
@@ -8755,10 +8705,13 @@ slots.work__work_type_condition = Slot(
     uri=TERM.lido00937,
     name="work__work_type_condition",
     curie=TERM.curie("lido00937"),
-    model_uri=WASTH.work__work_type_condition,
+    model_uri=ARQTRAD.work__work_type_condition,
     domain=None,
     range=Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
     ],
 )
 
@@ -8766,10 +8719,13 @@ slots.work__work_type_form = Slot(
     uri=TERM.lido00766,
     name="work__work_type_form",
     curie=TERM.curie("lido00766"),
-    model_uri=WASTH.work__work_type_form,
+    model_uri=ARQTRAD.work__work_type_form,
     domain=None,
     range=Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
     ],
 )
 
@@ -8777,10 +8733,13 @@ slots.work__work_type_function = Slot(
     uri=TERM.lido00767,
     name="work__work_type_function",
     curie=TERM.curie("lido00767"),
-    model_uri=WASTH.work__work_type_function,
+    model_uri=ARQTRAD.work__work_type_function,
     domain=None,
     range=Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
     ],
 )
 
@@ -8788,10 +8747,13 @@ slots.work__work_type_context = Slot(
     uri=TERM.lido00934,
     name="work__work_type_context",
     curie=TERM.curie("lido00934"),
-    model_uri=WASTH.work__work_type_context,
+    model_uri=ARQTRAD.work__work_type_context,
     domain=None,
     range=Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
     ],
 )
 
@@ -8799,19 +8761,27 @@ slots.work__work_type_material_tech = Slot(
     uri=TERM.lido00789,
     name="work__work_type_material_tech",
     curie=TERM.curie("lido00789"),
-    model_uri=WASTH.work__work_type_material_tech,
+    model_uri=ARQTRAD.work__work_type_material_tech,
     domain=None,
-    range=Optional[Union[Union[dict, MaterialTech], list[Union[dict, MaterialTech]]]],
+    range=Optional[
+        Union[
+            dict[Union[str, MaterialTechRefid], Union[dict, MaterialTech]],
+            list[Union[dict, MaterialTech]],
+        ]
+    ],
 )
 
 slots.work__work_type_subject = Slot(
     uri=TERM.lido00768,
     name="work__work_type_subject",
     curie=TERM.curie("lido00768"),
-    model_uri=WASTH.work__work_type_subject,
+    model_uri=ARQTRAD.work__work_type_subject,
     domain=None,
     range=Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
     ],
 )
 
@@ -8819,10 +8789,13 @@ slots.work__work_type_use = Slot(
     uri=TERM.lido00938,
     name="work__work_type_use",
     curie=TERM.curie("lido00938"),
-    model_uri=WASTH.work__work_type_use,
+    model_uri=ARQTRAD.work__work_type_use,
     domain=None,
     range=Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
     ],
 )
 
@@ -8830,10 +8803,13 @@ slots.work__classification_genre = Slot(
     uri=TERM.lido00853,
     name="work__classification_genre",
     curie=TERM.curie("lido00853"),
-    model_uri=WASTH.work__classification_genre,
+    model_uri=ARQTRAD.work__classification_genre,
     domain=None,
     range=Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
     ],
 )
 
@@ -8841,10 +8817,13 @@ slots.work__classification_subject = Slot(
     uri=TERM.lido00932,
     name="work__classification_subject",
     curie=TERM.curie("lido00932"),
-    model_uri=WASTH.work__classification_subject,
+    model_uri=ARQTRAD.work__classification_subject,
     domain=None,
     range=Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
     ],
 )
 
@@ -8852,10 +8831,13 @@ slots.work__classification_local = Slot(
     uri=TERM.lido01135,
     name="work__classification_local",
     curie=TERM.curie("lido01135"),
-    model_uri=WASTH.work__classification_local,
+    model_uri=ARQTRAD.work__classification_local,
     domain=None,
     range=Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
     ],
 )
 
@@ -8863,10 +8845,13 @@ slots.work__classification_special = Slot(
     uri=TERM.lido01144,
     name="work__classification_special",
     curie=TERM.curie("lido01144"),
-    model_uri=WASTH.work__classification_special,
+    model_uri=ARQTRAD.work__classification_special,
     domain=None,
     range=Optional[
-        Union[Union[dict, ConceptReference], list[Union[dict, ConceptReference]]]
+        Union[
+            dict[Union[str, ConceptReferenceRefid], Union[dict, ConceptReference]],
+            list[Union[dict, ConceptReference]],
+        ]
     ],
 )
 
@@ -8874,7 +8859,7 @@ slots.work__part_of = Slot(
     uri=DCTERMS.isPartOf,
     name="work__part_of",
     curie=DCTERMS.curie("isPartOf"),
-    model_uri=WASTH.work__part_of,
+    model_uri=ARQTRAD.work__part_of,
     domain=None,
     range=Optional[
         Union[
@@ -8885,46 +8870,46 @@ slots.work__part_of = Slot(
 )
 
 slots.work__former_site = Slot(
-    uri=WASTH.former_site,
+    uri=ARQTRAD.former_site,
     name="work__former_site",
-    curie=WASTH.curie("former_site"),
-    model_uri=WASTH.work__former_site,
+    curie=ARQTRAD.curie("former_site"),
+    model_uri=ARQTRAD.work__former_site,
     domain=None,
     range=Optional[Union[Union[dict, Site], list[Union[dict, Site]]]],
 )
 
 slots.work__intended_site = Slot(
-    uri=WASTH.intended_site,
+    uri=ARQTRAD.intended_site,
     name="work__intended_site",
-    curie=WASTH.curie("intended_site"),
-    model_uri=WASTH.work__intended_site,
+    curie=ARQTRAD.curie("intended_site"),
+    model_uri=ARQTRAD.work__intended_site,
     domain=None,
     range=Optional[Union[Union[dict, Site], list[Union[dict, Site]]]],
 )
 
 slots.work__other_site = Slot(
-    uri=WASTH.other_site,
+    uri=ARQTRAD.other_site,
     name="work__other_site",
-    curie=WASTH.curie("other_site"),
-    model_uri=WASTH.work__other_site,
+    curie=ARQTRAD.curie("other_site"),
+    model_uri=ARQTRAD.work__other_site,
     domain=None,
     range=Optional[Union[Union[dict, Site], list[Union[dict, Site]]]],
 )
 
 slots.work__location_historic = Slot(
-    uri=WASTH.location_historic,
+    uri=ARQTRAD.location_historic,
     name="work__location_historic",
-    curie=WASTH.curie("location_historic"),
-    model_uri=WASTH.work__location_historic,
+    curie=ARQTRAD.curie("location_historic"),
+    model_uri=ARQTRAD.work__location_historic,
     domain=None,
     range=Optional[Union[Union[dict, LegalBody], list[Union[dict, LegalBody]]]],
 )
 
 slots.work__inscriptions = Slot(
-    uri=WASTH.inscriptions,
+    uri=ARQTRAD.inscriptions,
     name="work__inscriptions",
-    curie=WASTH.curie("inscriptions"),
-    model_uri=WASTH.work__inscriptions,
+    curie=ARQTRAD.curie("inscriptions"),
+    model_uri=ARQTRAD.work__inscriptions,
     domain=None,
     range=Optional[Union[Union[dict, Inscription], list[Union[dict, Inscription]]]],
 )
@@ -8933,7 +8918,7 @@ slots.work__collection = Slot(
     uri=LIDO.collection,
     name="work__collection",
     curie=LIDO.curie("collection"),
-    model_uri=WASTH.work__collection,
+    model_uri=ARQTRAD.work__collection,
     domain=None,
     range=Optional[Union[Union[dict, Collection], list[Union[dict, Collection]]]],
 )
@@ -8942,7 +8927,7 @@ slots.work__related_works = Slot(
     uri=DCTERMS.related,
     name="work__related_works",
     curie=DCTERMS.curie("related"),
-    model_uri=WASTH.work__related_works,
+    model_uri=ARQTRAD.work__related_works,
     domain=None,
     range=Optional[Union[Union[dict, RelatedWork], list[Union[dict, RelatedWork]]]],
 )
@@ -8951,25 +8936,29 @@ slots.work__subject = Slot(
     uri=LIDO.subjectSet,
     name="work__subject",
     curie=LIDO.curie("subjectSet"),
-    model_uri=WASTH.work__subject,
+    model_uri=ARQTRAD.work__subject,
     domain=None,
-    range=Optional[Union[Union[dict, Topic], list[Union[dict, Topic]]]],
+    range=Optional[
+        Union[
+            dict[Union[str, TopicRefid], Union[dict, Topic]], list[Union[dict, Topic]]
+        ]
+    ],
 )
 
 slots.site__name = Slot(
     uri=LIDO.partOfPlace,
     name="site__name",
     curie=LIDO.curie("partOfPlace"),
-    model_uri=WASTH.site__name,
+    model_uri=ARQTRAD.site__name,
     domain=None,
-    range=Optional[Union[dict, GeonamesFeature]],
+    range=Optional[Union[str, URIorCURIE]],
 )
 
 slots.site__site_type = Slot(
-    uri=WASTH.site_type,
+    uri=ARQTRAD.site_type,
     name="site__site_type",
-    curie=WASTH.curie("site_type"),
-    model_uri=WASTH.site__site_type,
+    curie=ARQTRAD.curie("site_type"),
+    model_uri=ARQTRAD.site__site_type,
     domain=None,
     range=Optional[Union[str, "RepositoryType"]],
 )
@@ -8978,7 +8967,7 @@ slots.site__location = Slot(
     uri=GEO.hasDefaultGeometry,
     name="site__location",
     curie=GEO.curie("hasDefaultGeometry"),
-    model_uri=WASTH.site__location,
+    model_uri=ARQTRAD.site__location,
     domain=None,
     range=Union[dict, GeographicPoint],
 )
@@ -8987,97 +8976,97 @@ slots.site__extent = Slot(
     uri=GEO.hasGeometry,
     name="site__extent",
     curie=GEO.curie("hasGeometry"),
-    model_uri=WASTH.site__extent,
+    model_uri=ARQTRAD.site__extent,
     domain=None,
     range=Optional[Union[dict, GeographicExtent]],
 )
 
 slots.site__event_place_type = Slot(
-    uri=WASTH.event_place_type,
+    uri=ARQTRAD.event_place_type,
     name="site__event_place_type",
-    curie=WASTH.curie("event_place_type"),
-    model_uri=WASTH.site__event_place_type,
+    curie=ARQTRAD.curie("event_place_type"),
+    model_uri=ARQTRAD.site__event_place_type,
     domain=None,
     range=Optional[Union[str, "EventPlaceType"]],
 )
 
 slots.geographicPoint__lat = Slot(
-    uri=WASTH.lat,
+    uri=ARQTRAD.lat,
     name="geographicPoint__lat",
-    curie=WASTH.curie("lat"),
-    model_uri=WASTH.geographicPoint__lat,
+    curie=ARQTRAD.curie("lat"),
+    model_uri=ARQTRAD.geographicPoint__lat,
     domain=None,
     range=Union[float, Latitude],
 )
 
 slots.geographicPoint__lon = Slot(
-    uri=WASTH.lon,
+    uri=ARQTRAD.lon,
     name="geographicPoint__lon",
-    curie=WASTH.curie("lon"),
-    model_uri=WASTH.geographicPoint__lon,
+    curie=ARQTRAD.curie("lon"),
+    model_uri=ARQTRAD.geographicPoint__lon,
     domain=None,
     range=Union[float, Longitude],
 )
 
 slots.geographicPoint__alt = Slot(
-    uri=WASTH.alt,
+    uri=ARQTRAD.alt,
     name="geographicPoint__alt",
-    curie=WASTH.curie("alt"),
-    model_uri=WASTH.geographicPoint__alt,
+    curie=ARQTRAD.curie("alt"),
+    model_uri=ARQTRAD.geographicPoint__alt,
     domain=None,
     range=Optional[float],
 )
 
 slots.geographicPoint__zoom = Slot(
-    uri=WASTH.zoom,
+    uri=ARQTRAD.zoom,
     name="geographicPoint__zoom",
-    curie=WASTH.curie("zoom"),
-    model_uri=WASTH.geographicPoint__zoom,
+    curie=ARQTRAD.curie("zoom"),
+    model_uri=ARQTRAD.geographicPoint__zoom,
     domain=None,
     range=Optional[int],
 )
 
 slots.geographicExtent__geometry_type = Slot(
-    uri=WASTH.geometry_type,
+    uri=ARQTRAD.geometry_type,
     name="geographicExtent__geometry_type",
-    curie=WASTH.curie("geometry_type"),
-    model_uri=WASTH.geographicExtent__geometry_type,
+    curie=ARQTRAD.curie("geometry_type"),
+    model_uri=ARQTRAD.geographicExtent__geometry_type,
     domain=None,
     range=Union[str, "GeometryType"],
 )
 
 slots.geographicExtent__coordinates = Slot(
-    uri=WASTH.coordinates,
+    uri=ARQTRAD.coordinates,
     name="geographicExtent__coordinates",
-    curie=WASTH.curie("coordinates"),
-    model_uri=WASTH.geographicExtent__coordinates,
+    curie=ARQTRAD.curie("coordinates"),
+    model_uri=ARQTRAD.geographicExtent__coordinates,
     domain=None,
     range=Union[str, GeoJSONCoordinateArray],
 )
 
 slots.inscription__inscription_type = Slot(
-    uri=WASTH.inscription_type,
+    uri=ARQTRAD.inscription_type,
     name="inscription__inscription_type",
-    curie=WASTH.curie("inscription_type"),
-    model_uri=WASTH.inscription__inscription_type,
+    curie=ARQTRAD.curie("inscription_type"),
+    model_uri=ARQTRAD.inscription__inscription_type,
     domain=None,
     range=Union[str, "InscriptionType"],
 )
 
 slots.topic__topic_type = Slot(
-    uri=WASTH.topic_type,
+    uri=ARQTRAD.topic_type,
     name="topic__topic_type",
-    curie=WASTH.curie("topic_type"),
-    model_uri=WASTH.topic__topic_type,
+    curie=ARQTRAD.curie("topic_type"),
+    model_uri=ARQTRAD.topic__topic_type,
     domain=None,
     range=Union[str, "SubjectType"],
 )
 
 slots.collection__collection_type = Slot(
-    uri=WASTH.collection_type,
+    uri=ARQTRAD.collection_type,
     name="collection__collection_type",
-    curie=WASTH.curie("collection_type"),
-    model_uri=WASTH.collection__collection_type,
+    curie=ARQTRAD.curie("collection_type"),
+    model_uri=ARQTRAD.collection__collection_type,
     domain=None,
     range=Union[str, "CollectionType"],
 )
@@ -9086,7 +9075,7 @@ slots.Concept_id = Slot(
     uri=DCTERMS.identifier,
     name="Concept_id",
     curie=DCTERMS.curie("identifier"),
-    model_uri=WASTH.Concept_id,
+    model_uri=ARQTRAD.Concept_id,
     domain=Concept,
     range=Union[str, ConceptId],
 )
@@ -9095,16 +9084,34 @@ slots.Concept_content = Slot(
     uri=SKOS.scopeNote,
     name="Concept_content",
     curie=SKOS.curie("scopeNote"),
-    model_uri=WASTH.Concept_content,
+    model_uri=ARQTRAD.Concept_content,
     domain=Concept,
     range=Optional[str],
+)
+
+slots.ConceptReference_refid = Slot(
+    uri=DCTERMS.identifier,
+    name="ConceptReference_refid",
+    curie=DCTERMS.curie("identifier"),
+    model_uri=ARQTRAD.ConceptReference_refid,
+    domain=ConceptReference,
+    range=Union[str, ConceptReferenceRefid],
+)
+
+slots.BroaderConceptReference_refid_type = Slot(
+    uri=ARQTRAD.refid_type,
+    name="BroaderConceptReference_refid_type",
+    curie=ARQTRAD.curie("refid_type"),
+    model_uri=ARQTRAD.BroaderConceptReference_refid_type,
+    domain=BroaderConceptReference,
+    range=Optional[Union[str, "ReferenceType"]],
 )
 
 slots.Resource_id = Slot(
     uri=DCTERMS.identifier,
     name="Resource_id",
     curie=DCTERMS.curie("identifier"),
-    model_uri=WASTH.Resource_id,
+    model_uri=ARQTRAD.Resource_id,
     domain=Resource,
     range=Union[str, ResourceId],
 )
@@ -9113,7 +9120,7 @@ slots.Resource_category = Slot(
     uri=TERM.lidoCategory,
     name="Resource_category",
     curie=TERM.curie("lidoCategory"),
-    model_uri=WASTH.Resource_category,
+    model_uri=ARQTRAD.Resource_category,
     domain=Resource,
     range=Optional[Union[str, URIorCURIE]],
 )
@@ -9122,7 +9129,7 @@ slots.MediaObject_description = Slot(
     uri=DCTERMS.description,
     name="MediaObject_description",
     curie=DCTERMS.curie("description"),
-    model_uri=WASTH.MediaObject_description,
+    model_uri=ARQTRAD.MediaObject_description,
     domain=MediaObject,
     range=Optional[str],
 )
@@ -9131,34 +9138,25 @@ slots.MediaObject_work_rights = Slot(
     uri=LIDO.rightsWorkSet,
     name="MediaObject_work_rights",
     curie=LIDO.curie("rightsWorkSet"),
-    model_uri=WASTH.MediaObject_work_rights,
+    model_uri=ARQTRAD.MediaObject_work_rights,
     domain=MediaObject,
     range=Optional[Union[Union[dict, Right], list[Union[dict, Right]]]],
 )
 
-slots.TypedReference_refid = Slot(
-    uri=DCTERMS.identifier,
-    name="TypedReference_refid",
-    curie=DCTERMS.curie("identifier"),
-    model_uri=WASTH.TypedReference_refid,
-    domain=TypedReference,
-    range=Union[str, TypedReferenceRefid],
-)
-
 slots.Measurement_unit = Slot(
-    uri=WASTH.unit,
+    uri=ARQTRAD.unit,
     name="Measurement_unit",
-    curie=WASTH.curie("unit"),
-    model_uri=WASTH.Measurement_unit,
+    curie=ARQTRAD.curie("unit"),
+    model_uri=ARQTRAD.Measurement_unit,
     domain=Measurement,
     range=Union[dict, TypedReference],
 )
 
 slots.LegalBody_identifiers = Slot(
-    uri=WASTH.identifiers,
+    uri=ARQTRAD.identifiers,
     name="LegalBody_identifiers",
-    curie=WASTH.curie("identifiers"),
-    model_uri=WASTH.LegalBody_identifiers,
+    curie=ARQTRAD.curie("identifiers"),
+    model_uri=ARQTRAD.LegalBody_identifiers,
     domain=LegalBody,
     range=Optional[
         Union[
@@ -9172,7 +9170,7 @@ slots.LegalBody_category = Slot(
     uri=TERM.lidoCategory,
     name="LegalBody_category",
     curie=TERM.curie("lidoCategory"),
-    model_uri=WASTH.LegalBody_category,
+    model_uri=ARQTRAD.LegalBody_category,
     domain=LegalBody,
     range=Optional[Union[str, URIorCURIE]],
 )
@@ -9181,7 +9179,7 @@ slots.Event_title = Slot(
     uri=DCTERMS.title,
     name="Event_title",
     curie=DCTERMS.curie("title"),
-    model_uri=WASTH.Event_title,
+    model_uri=ARQTRAD.Event_title,
     domain=Event,
     range=Optional[str],
 )
@@ -9190,7 +9188,7 @@ slots.Event_description = Slot(
     uri=DCTERMS.description,
     name="Event_description",
     curie=DCTERMS.curie("description"),
-    model_uri=WASTH.Event_description,
+    model_uri=ARQTRAD.Event_description,
     domain=Event,
     range=Optional[str],
 )
@@ -9199,7 +9197,7 @@ slots.Event_content = Slot(
     uri=LIDO.descriptiveNoteValue,
     name="Event_content",
     curie=LIDO.curie("descriptiveNoteValue"),
-    model_uri=WASTH.Event_content,
+    model_uri=ARQTRAD.Event_content,
     domain=Event,
     range=Optional[str],
 )
@@ -9208,7 +9206,7 @@ slots.Work_id = Slot(
     uri=DCTERMS.identifier,
     name="Work_id",
     curie=DCTERMS.curie("identifier"),
-    model_uri=WASTH.Work_id,
+    model_uri=ARQTRAD.Work_id,
     domain=Work,
     range=Union[str, WorkId],
 )
@@ -9217,7 +9215,7 @@ slots.Work_title = Slot(
     uri=DCTERMS.title,
     name="Work_title",
     curie=DCTERMS.curie("title"),
-    model_uri=WASTH.Work_title,
+    model_uri=ARQTRAD.Work_title,
     domain=Work,
     range=str,
 )
@@ -9226,7 +9224,7 @@ slots.Work_record_date = Slot(
     uri=DCTERMS.created,
     name="Work_record_date",
     curie=DCTERMS.curie("created"),
-    model_uri=WASTH.Work_record_date,
+    model_uri=ARQTRAD.Work_record_date,
     domain=Work,
     range=Union[str, XSDDate],
 )
@@ -9235,7 +9233,7 @@ slots.Work_description = Slot(
     uri=DCTERMS.description,
     name="Work_description",
     curie=DCTERMS.curie("description"),
-    model_uri=WASTH.Work_description,
+    model_uri=ARQTRAD.Work_description,
     domain=Work,
     range=str,
 )
@@ -9244,16 +9242,16 @@ slots.Work_category = Slot(
     uri=TERM.lidoCategory,
     name="Work_category",
     curie=TERM.curie("lidoCategory"),
-    model_uri=WASTH.Work_category,
+    model_uri=ARQTRAD.Work_category,
     domain=Work,
     range=Optional[Union[str, URIorCURIE]],
 )
 
 slots.Work_resources = Slot(
-    uri=WASTH.resources,
+    uri=ARQTRAD.resources,
     name="Work_resources",
-    curie=WASTH.curie("resources"),
-    model_uri=WASTH.Work_resources,
+    curie=ARQTRAD.curie("resources"),
+    model_uri=ARQTRAD.Work_resources,
     domain=Work,
     range=Optional[
         Union[
@@ -9264,19 +9262,19 @@ slots.Work_resources = Slot(
 )
 
 slots.Work_media = Slot(
-    uri=WASTH.media,
+    uri=ARQTRAD.media,
     name="Work_media",
-    curie=WASTH.curie("media"),
-    model_uri=WASTH.Work_media,
+    curie=ARQTRAD.curie("media"),
+    model_uri=ARQTRAD.Work_media,
     domain=Work,
     range=Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]],
 )
 
 slots.Work_record_rights = Slot(
-    uri=WASTH.record_rights,
+    uri=ARQTRAD.record_rights,
     name="Work_record_rights",
-    curie=WASTH.curie("record_rights"),
-    model_uri=WASTH.Work_record_rights,
+    curie=ARQTRAD.curie("record_rights"),
+    model_uri=ARQTRAD.Work_record_rights,
     domain=Work,
     range=Union[Union[dict, Right], list[Union[dict, Right]]],
 )
@@ -9285,7 +9283,7 @@ slots.Work_work_rights = Slot(
     uri=LIDO.rightsWorkSet,
     name="Work_work_rights",
     curie=LIDO.curie("rightsWorkSet"),
-    model_uri=WASTH.Work_work_rights,
+    model_uri=ARQTRAD.Work_work_rights,
     domain=Work,
     range=Union[Union[dict, Right], list[Union[dict, Right]]],
 )
@@ -9294,16 +9292,7 @@ slots.Work_content = Slot(
     uri=LIDO.descriptiveNoteValue,
     name="Work_content",
     curie=LIDO.curie("descriptiveNoteValue"),
-    model_uri=WASTH.Work_content,
+    model_uri=ARQTRAD.Work_content,
     domain=Work,
     range=Optional[str],
-)
-
-slots.Topic_concept_name = Slot(
-    uri=WASTH.concept_name,
-    name="Topic_concept_name",
-    curie=WASTH.curie("concept_name"),
-    model_uri=WASTH.Topic_concept_name,
-    domain=Topic,
-    range=Union[str, ConceptId],
 )

@@ -4466,6 +4466,8 @@ Se a referência que necessita citar não constar da biblioteca do Zotero, deve 
 class TypedReference(ConfiguredBaseModel):
     """
     Permite referenciar um registro local ou externo por meio da sua URI (localizador universal, como um link da internet, por padrão), IRI ou código na base local (não recomendado).
+    A URI pode ser abreviada como uma CURIE.
+
     """
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
@@ -4474,7 +4476,6 @@ class TypedReference(ConfiguredBaseModel):
             "notes": [
                 "Reference to a local record, IRI, URI, or LIDO terminology term."
             ],
-            "slot_usage": {"refid": {"key": True, "name": "refid"}},
         }
     )
 
