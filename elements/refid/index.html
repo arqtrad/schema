@@ -398,6 +398,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#slot-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slot Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -494,6 +505,36 @@
 <td>Permite referenciar um registro local ou externo por meio da sua URI (localiz...</td>
 <td>yes</td>
 </tr>
+<tr>
+<td><a href="../ConceptReference/">ConceptReference</a></td>
+<td>Atribuição de vocabulário controlado com citação de apoio</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../BroaderConceptReference/">BroaderConceptReference</a></td>
+<td>Relações hierárquicas</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MappingConceptReference/">MappingConceptReference</a></td>
+<td>Relações semânticas</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MaterialTech/">MaterialTech</a></td>
+<td>Usar discernimento para identificar sistemas, materiais e técnicas que intere...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../StylePeriod/">StylePeriod</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Topic/">Topic</a></td>
+<td>Subject or iconographic topic</td>
+<td>no</td>
+</tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
@@ -517,6 +558,39 @@
 <tr>
 <td>Slot URI</td>
 <td><a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a></td>
+</tr>
+<tr>
+<td>### Cardinality and Requirements</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Required</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slot-characteristics">Slot Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Key</td>
+<td>Yes</td>
 </tr>
 </tbody>
 </table>
@@ -557,9 +631,11 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schema:identifier</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:identifier</span>
+<span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
+<span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>

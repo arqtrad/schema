@@ -2820,37 +2820,16 @@ enums:
         meaning: skos:broader
       transitive:
         text: transitive
-        meaning: skos:broaderTransitive
+        meaning: iso:broaderTransitive
       generic:
         text: generic
-        meaning: skos:broaderGeneric
+        meaning: iso:broaderGeneric
       instantial:
         text: instantial
-        meaning: skos:broaderInstantial
+        meaning: iso:broaderInstantial
       partitive:
         text: partitive
-        meaning: skos:broaderPartitive
-  SkosNarrowerRelation:
-    name: SkosNarrowerRelation
-    definition_uri: https://tradicional.arq.br/schema/SkosNarrowerRelation
-    description: SKOS-THES narrower relation type.
-    from_schema: https://tradicional.arq.br/schema
-    permissible_values:
-      broader:
-        text: broader
-        meaning: skos:narrower
-      transitive:
-        text: transitive
-        meaning: skos:narrowerTransitive
-      generic:
-        text: generic
-        meaning: skos:narrowerGeneric
-      instantial:
-        text: instantial
-        meaning: skos:narrowerInstantial
-      partitive:
-        text: partitive
-        meaning: skos:narrowerPartitive
+        meaning: iso:broaderPartitive
   TitleType:
     name: TitleType
     definition_uri: https://tradicional.arq.br/schema/TitleType
@@ -6852,18 +6831,6 @@ enums:
         text: America/Recife
         description: America/Recife
 slots:
-  concept_name:
-    name: concept_name
-    definition_uri: https://tradicional.arq.br/schema/concept_name
-    from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: arqtrad:concept_name
-    owner: Topic
-    domain_of:
-    - ConceptReference
-    - Topic
-    range: Concept
-    required: true
-    inlined: false
   broader:
     name: broader
     definition_uri: https://tradicional.arq.br/schema/broader
@@ -6879,24 +6846,7 @@ slots:
     - Concept
     range: BroaderConceptReference
     multivalued: true
-    inlined: true
-  narrower:
-    name: narrower
-    definition_uri: https://tradicional.arq.br/schema/narrower
-    description: "Um conceito de significa\xE7\xE3o mais espec\xEDfica. Conceitos\
-      \ espec\xEDficos s\xE3o tipicamente representados como descendentes em uma hierarquia\
-      \ de conceitos (\xE1rvore).\nDerivado automaticamente das rela\xE7\xF5es `broader`\
-      \ em outras fichas. N\xC3O preencher manualmente."
-    from_schema: https://tradicional.arq.br/schema/concept
-    mappings:
-    - skos:narrower
-    slot_uri: skos:narrower
-    owner: Concept
-    domain_of:
-    - Concept
-    range: NarrowerConceptReference
-    multivalued: true
-    inlined: true
+    inlined: false
   bibliographic_citation:
     name: bibliographic_citation
     definition_uri: https://tradicional.arq.br/schema/bibliographic_citation
@@ -6915,7 +6865,6 @@ slots:
     slot_uri: dcterms:bibliographicCitation
     owner: Inscription
     domain_of:
-    - ConceptReference
     - TypedReference
     - Measurement
     - Actor
@@ -7160,10 +7109,12 @@ slots:
     exact_mappings:
     - schema:identifier
     slot_uri: dcterms:identifier
+    key: true
     owner: TypedReference
     domain_of:
     - TypedReference
     range: uriorcurie
+    required: true
   measurements:
     name: measurements
     definition_uri: https://tradicional.arq.br/schema/measurements
@@ -7329,7 +7280,6 @@ slots:
     slot_uri: arqtrad:source
     owner: GeographicExtent
     domain_of:
-    - ConceptReference
     - TypedReference
     - GeographicPoint
     - GeographicExtent
@@ -7452,16 +7402,14 @@ slots:
     exact_mappings:
     - schema:description
     slot_uri: dcterms:description
-    owner: Topic
+    owner: Inscription
     domain_of:
-    - ConceptReference
     - BibliographicCitation
     - TypedReference
     - Measurement
     - RelatedEvent
     - Thing
     - Inscription
-    - Topic
     range: string
   category:
     name: category
@@ -8070,17 +8018,6 @@ slots:
     domain_of:
     - BroaderConceptReference
     range: boolean
-  narrowerConceptReference__narrower_match:
-    name: narrowerConceptReference__narrower_match
-    description: "Tipo da rela\xE7\xE3o."
-    from_schema: https://tradicional.arq.br/schema/concept
-    slot_uri: arqtrad:narrower_match
-    alias: narrower_match
-    owner: NarrowerConceptReference
-    domain_of:
-    - NarrowerConceptReference
-    range: SkosNarrowerRelation
-    required: true
   mappingConceptReference__mapping_match:
     name: mappingConceptReference__mapping_match
     description: "Tipo da rela\xE7\xE3o."
@@ -9400,6 +9337,42 @@ slots:
     usage_slot_name: content
     range: string
     recommended: true
+  ConceptReference_refid:
+    name: ConceptReference_refid
+    definition_uri: https://tradicional.arq.br/schema/refid
+    description: Local or external identifier.
+    from_schema: https://tradicional.arq.br/schema/shared
+    mappings:
+    - dcterms:identifier
+    exact_mappings:
+    - schema:identifier
+    is_a: refid
+    domain: ConceptReference
+    slot_uri: dcterms:identifier
+    key: true
+    alias: refid
+    owner: ConceptReference
+    domain_of:
+    - ConceptReference
+    is_usage_slot: true
+    usage_slot_name: refid
+    range: uriorcurie
+    required: true
+  BroaderConceptReference_refid_type:
+    name: BroaderConceptReference_refid_type
+    definition_uri: https://tradicional.arq.br/schema/refid_type
+    from_schema: https://tradicional.arq.br/schema/shared
+    is_a: refid_type
+    domain: BroaderConceptReference
+    slot_uri: arqtrad:refid_type
+    ifabsent: ReferenceType(local)
+    alias: refid_type
+    owner: BroaderConceptReference
+    domain_of:
+    - BroaderConceptReference
+    is_usage_slot: true
+    usage_slot_name: refid_type
+    range: ReferenceType
   Resource_id:
     name: Resource_id
     definition_uri: https://tradicional.arq.br/schema/id
@@ -9897,22 +9870,6 @@ slots:
     usage_slot_name: content
     range: string
     recommended: true
-  Topic_concept_name:
-    name: Topic_concept_name
-    definition_uri: https://tradicional.arq.br/schema/concept_name
-    from_schema: https://tradicional.arq.br/schema/concept
-    is_a: concept_name
-    domain: Topic
-    slot_uri: arqtrad:concept_name
-    alias: concept_name
-    owner: Topic
-    domain_of:
-    - Topic
-    is_usage_slot: true
-    usage_slot_name: concept_name
-    range: Concept
-    required: true
-    inlined: false
 classes:
   Container:
     name: Container
@@ -9985,7 +9942,6 @@ classes:
     - thing__temporal
     - thing__repositories
     - broader
-    - narrower
     - record_rights
     - concept__concept_type
     - concept__mapping
@@ -10039,11 +9995,18 @@ classes:
     description: "Atribui\xE7\xE3o de vocabul\xE1rio controlado com cita\xE7\xE3o\
       \ de apoio."
     from_schema: https://tradicional.arq.br/schema/concept
+    is_a: TypedReference
     slots:
-    - concept_name
+    - refid_type
+    - title
     - description
     - bibliographic_citation
     - source
+    - ConceptReference_refid
+    slot_usage:
+      refid:
+        name: refid
+        required: true
     class_uri: arqtrad:ConceptReference
   BroaderConceptReference:
     name: BroaderConceptReference
@@ -10052,12 +10015,18 @@ classes:
     from_schema: https://tradicional.arq.br/schema/concept
     is_a: ConceptReference
     slots:
-    - concept_name
+    - title
     - description
     - bibliographic_citation
     - source
+    - ConceptReference_refid
     - broaderConceptReference__broader_match
     - broaderConceptReference__broader_preferred
+    - BroaderConceptReference_refid_type
+    slot_usage:
+      refid_type:
+        name: refid_type
+        ifabsent: ReferenceType(local)
     attributes:
       broader_match:
         name: broader_match
@@ -10073,25 +10042,6 @@ classes:
         ifabsent: 'False'
         range: boolean
     class_uri: arqtrad:BroaderConceptReference
-  NarrowerConceptReference:
-    name: NarrowerConceptReference
-    definition_uri: https://tradicional.arq.br/schema/NarrowerConceptReference
-    description: "Rela\xE7\xF5es hier\xE1rquicas."
-    from_schema: https://tradicional.arq.br/schema/concept
-    is_a: ConceptReference
-    slots:
-    - concept_name
-    - description
-    - bibliographic_citation
-    - source
-    - narrowerConceptReference__narrower_match
-    attributes:
-      narrower_match:
-        name: narrower_match
-        description: "Tipo da rela\xE7\xE3o."
-        range: SkosNarrowerRelation
-        required: true
-    class_uri: arqtrad:NarrowerConceptReference
   MappingConceptReference:
     name: MappingConceptReference
     definition_uri: https://tradicional.arq.br/schema/MappingConceptReference
@@ -10099,10 +10049,12 @@ classes:
     from_schema: https://tradicional.arq.br/schema/concept
     is_a: ConceptReference
     slots:
-    - concept_name
+    - refid_type
+    - title
     - description
     - bibliographic_citation
     - source
+    - ConceptReference_refid
     - mappingConceptReference__mapping_match
     attributes:
       mapping_match:
@@ -10526,10 +10478,12 @@ classes:
     from_schema: https://tradicional.arq.br/schema/shared
     is_a: ConceptReference
     slots:
-    - concept_name
+    - refid_type
+    - title
     - description
     - bibliographic_citation
     - source
+    - ConceptReference_refid
     - materialTech__material_tech_type
     attributes:
       material_tech_type:
@@ -10905,10 +10859,12 @@ classes:
     from_schema: https://tradicional.arq.br/schema/temporal
     is_a: ConceptReference
     slots:
-    - concept_name
+    - refid_type
+    - title
     - description
     - bibliographic_citation
     - source
+    - ConceptReference_refid
     - stylePeriod__period_name_type
     attributes:
       period_name_type:
@@ -11809,15 +11765,16 @@ classes:
     definition_uri: https://tradicional.arq.br/schema/Topic
     description: Subject or iconographic topic.
     from_schema: https://tradicional.arq.br/schema/work
+    is_a: TypedReference
     slots:
+    - refid_type
+    - TypedReference_refid
+    - title
     - description
+    - bibliographic_citation
+    - source
     - format_extent
-    - Topic_concept_name
     - topic__topic_type
-    slot_usage:
-      concept_name:
-        name: concept_name
-        required: true
     attributes:
       topic_type:
         name: topic_type
@@ -11883,6 +11840,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-24T21:48:57'
-source_file_size: 102788
+source_file_date: '2026-11-25T18:30:16'
+source_file_size: 102410
 

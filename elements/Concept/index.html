@@ -389,17 +389,6 @@
 
 
 
-      Concept : narrower
-
-
-
-
-
-        Concept --&gt; "*" NarrowerConceptReference : narrower
-        click NarrowerConceptReference href "../NarrowerConceptReference/"
-
-
-
       Concept : record_date
 
       Concept : record_rights
@@ -499,12 +488,6 @@
 <td><a href="../broader/">broader</a></td>
 <td>* <br/> <a href="../BroaderConceptReference/">BroaderConceptReference</a></td>
 <td>Um conceito de significação mais genérica</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../narrower/">narrower</a></td>
-<td>* <br/> <a href="../NarrowerConceptReference/">NarrowerConceptReference</a></td>
-<td>Um conceito de significação mais específica</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -653,48 +636,6 @@ The class must satisfy exactly one of:
 <td>range</td>
 <td><a href="./">Concept</a></td>
 </tr>
-<tr>
-<td><a href="../ConceptReference/">ConceptReference</a></td>
-<td><a href="../concept_name/">concept_name</a></td>
-<td>range</td>
-<td><a href="./">Concept</a></td>
-</tr>
-<tr>
-<td><a href="../BroaderConceptReference/">BroaderConceptReference</a></td>
-<td><a href="../concept_name/">concept_name</a></td>
-<td>range</td>
-<td><a href="./">Concept</a></td>
-</tr>
-<tr>
-<td><a href="../NarrowerConceptReference/">NarrowerConceptReference</a></td>
-<td><a href="../concept_name/">concept_name</a></td>
-<td>range</td>
-<td><a href="./">Concept</a></td>
-</tr>
-<tr>
-<td><a href="../MappingConceptReference/">MappingConceptReference</a></td>
-<td><a href="../concept_name/">concept_name</a></td>
-<td>range</td>
-<td><a href="./">Concept</a></td>
-</tr>
-<tr>
-<td><a href="../MaterialTech/">MaterialTech</a></td>
-<td><a href="../concept_name/">concept_name</a></td>
-<td>range</td>
-<td><a href="./">Concept</a></td>
-</tr>
-<tr>
-<td><a href="../StylePeriod/">StylePeriod</a></td>
-<td><a href="../concept_name/">concept_name</a></td>
-<td>range</td>
-<td><a href="./">Concept</a></td>
-</tr>
-<tr>
-<td><a href="../Topic/">Topic</a></td>
-<td><a href="../concept_name/">concept_name</a></td>
-<td>range</td>
-<td><a href="./">Concept</a></td>
-</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -763,7 +704,6 @@ The class must satisfy exactly one of:
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="nt">slots</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">broader</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">narrower</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_rights</span>
 <span class="nt">slot_usage</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">id</span><span class="p">:</span>
@@ -919,23 +859,6 @@ The class must satisfy exactly one of:
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BroaderConceptReference</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">narrower</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">narrower</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Um</span><span class="nv"> </span><span class="s">conceito</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">significação</span><span class="nv"> </span><span class="s">mais</span><span class="nv"> </span><span class="s">específica.</span><span class="nv"> </span><span class="s">Conceitos</span><span class="nv"> </span><span class="s">específicos</span>
-<span class="w">      </span><span class="s">são</span><span class="nv"> </span><span class="s">tipicamente</span><span class="nv"> </span><span class="s">representados</span><span class="nv"> </span><span class="s">como</span><span class="nv"> </span><span class="s">descendentes</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">uma</span><span class="nv"> </span><span class="s">hierarquia</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">conceitos</span>
-<span class="w">      </span><span class="s">(árvore).</span>
-
-<span class="w">      </span><span class="s">Derivado</span><span class="nv"> </span><span class="s">automaticamente</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">relações</span><span class="nv"> </span><span class="s">`broader`</span><span class="nv"> </span><span class="s">em</span><span class="nv"> </span><span class="s">outras</span><span class="nv"> </span><span class="s">fichas.</span><span class="nv"> </span><span class="s">NÃO</span><span class="nv"> </span><span class="s">preencher</span>
-<span class="w">      </span><span class="s">manualmente.'</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://tradicional.arq.br/schema</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skos:narrower</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NarrowerConceptReference</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">record_rights</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">record_rights</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Informações</span><span class="nv"> </span><span class="s">estruturadas</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">os</span><span class="nv"> </span><span class="s">direitos</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">incidem</span><span class="nv"> </span><span class="s">sobre</span><span class="nv"> </span><span class="s">o</span><span class="nv"> </span><span class="s">conteúdo</span>
@@ -1054,14 +977,12 @@ The class must satisfy exactly one of:
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:description</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BibliographicCitation</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RelatedEvent</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thing</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inscription</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">  </span><span class="nt">category</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">category</span>
@@ -1138,7 +1059,6 @@ The class must satisfy exactly one of:
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dcterms:bibliographicCitation</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConceptReference</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypedReference</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Measurement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Actor</span>
