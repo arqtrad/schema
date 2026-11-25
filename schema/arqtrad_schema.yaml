@@ -6846,7 +6846,8 @@ slots:
     - Concept
     range: BroaderConceptReference
     multivalued: true
-    inlined: false
+    inlined: true
+    inlined_as_list: true
   bibliographic_citation:
     name: bibliographic_citation
     definition_uri: https://tradicional.arq.br/schema/bibliographic_citation
@@ -11816,6 +11817,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-25T19:09:56'
+source_file_date: '2026-11-25T19:44:24'
 source_file_size: 102410
 
