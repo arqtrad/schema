@@ -2421,6 +2421,20 @@ enums:
       partitive:
         meaning: iso:broaderPartitive
 
+  SkosNarrowerRelation:
+    description: SKOS-THES narrower relation type.
+    permissible_values:
+      narrower:
+        meaning: skos:narrower
+      transitive:
+        meaning: skos:narrowerTransitive
+      generic:
+        meaning: skos:narrowerGeneric
+      instantial:
+        meaning: skos:narrowerInstantial
+      partitive:
+        meaning: skos:narrowerPartitive
+
   TitleType:
     description: VRA Core title types.
     permissible_values:

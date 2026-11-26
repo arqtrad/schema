@@ -150,6 +150,15 @@ classes:
       refid_type:
         ifabsent: ReferenceType(local)
 
+  NarrowerConceptReference:
+    is_a: ConceptReference
+    description: Relações hierárquicas.
+    attributes:
+      narrower_match:
+        required: true
+        description: Tipo da relação.
+        range: SkosNarrowerRelation
+
   MappingConceptReference:
     is_a: ConceptReference
     description: Relações semânticas.

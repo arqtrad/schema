@@ -4384,6 +4384,18 @@ class SkosBroaderRelation(str, Enum):
     partitive = "partitive"
 
 
+class SkosNarrowerRelation(str, Enum):
+    """
+    SKOS-THES narrower relation type.
+    """
+
+    narrower = "narrower"
+    transitive = "transitive"
+    generic = "generic"
+    instantial = "instantial"
+    partitive = "partitive"
+
+
 class TitleType(str, Enum):
     """
     VRA Core title types.
@@ -4696,6 +4708,104 @@ Esta propriedade não é reversível, ou seja, não existe \"preferência\" por 
             "linkml_meta": {
                 "domain_of": ["TypedReference"],
                 "ifabsent": "ReferenceType(local)",
+            }
+        },
+    )
+    refid: str = Field(
+        default=...,
+        description="""Local or external identifier.""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "exact_mappings": ["schema:identifier"],
+                "slot_uri": "dcterms:identifier",
+            }
+        },
+    )
+    title: Optional[str] = Field(
+        default=None,
+        description="""Nome pelo qual este item é mais comumente conhecido. Outros nomes podem ser cadastrados em `alt_name`.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference", "Thing"],
+                "exact_mappings": ["schema:name"],
+                "slot_uri": "dcterms:title",
+            }
+        },
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="""A human-readable description for a thing""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "BibliographicCitation",
+                    "TypedReference",
+                    "Measurement",
+                    "RelatedEvent",
+                    "Thing",
+                    "Inscription",
+                ],
+                "exact_mappings": ["schema:description"],
+                "slot_uri": "dcterms:description",
+            }
+        },
+    )
+    bibliographic_citation: Optional[list[BibliographicCitation]] = Field(
+        default=None,
+        description="""📚  Cadastro de uma referência bibliográfica.
+O campo `refid` deve conter a chave de citação (citation key) que consta do registro bibliográfico na biblioteca do nosso projeto de pesquisa no Zotero, começando com arroba @. Em geral, a chave de citação é o DOI ou ISBN da publicação, mas pode ser diferente.
+Se necessário, incluir no campo `note` uma especificação adicional, como o número da página da referência bibliográfica de onde a informação foi extraída.
+Usar o campo `description` para formatar a referência, caso a formatação automática do Zotero não for satisfatória.
+""",
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": [
+                    "TypedReference",
+                    "Measurement",
+                    "Actor",
+                    "Thing",
+                    "Appellation",
+                    "GeographicPoint",
+                    "GeographicExtent",
+                    "Inscription",
+                ],
+                "recommended": True,
+                "slot_uri": "dcterms:bibliographicCitation",
+            }
+        },
+    )
+    source: Optional[LegalBody] = Field(
+        default=None,
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference", "GeographicPoint", "GeographicExtent"]
+            }
+        },
+    )
+
+
+class NarrowerConceptReference(ConceptReference):
+    """
+    Relações hierárquicas.
+    """
+
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
+        {"from_schema": "https://tradicional.arq.br/schema/concept"}
+    )
+
+    narrower_match: SkosNarrowerRelation = Field(
+        default=...,
+        description="""Tipo da relação.""",
+        json_schema_extra={"linkml_meta": {"domain_of": ["NarrowerConceptReference"]}},
+    )
+    refid_type: Optional[ReferenceType] = Field(
+        default=ReferenceType("uri"),
+        json_schema_extra={
+            "linkml_meta": {
+                "domain_of": ["TypedReference"],
+                "ifabsent": "ReferenceType(uri)",
             }
         },
     )
@@ -10331,6 +10441,7 @@ BibliographicCitation.model_rebuild()
 TypedReference.model_rebuild()
 ConceptReference.model_rebuild()
 BroaderConceptReference.model_rebuild()
+NarrowerConceptReference.model_rebuild()
 MappingConceptReference.model_rebuild()
 Measurement.model_rebuild()
 MaterialTech.model_rebuild()
