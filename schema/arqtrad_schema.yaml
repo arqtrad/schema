@@ -2830,6 +2830,27 @@ enums:
       partitive:
         text: partitive
         meaning: iso:broaderPartitive
+  SkosNarrowerRelation:
+    name: SkosNarrowerRelation
+    definition_uri: https://tradicional.arq.br/schema/SkosNarrowerRelation
+    description: SKOS-THES narrower relation type.
+    from_schema: https://tradicional.arq.br/schema
+    permissible_values:
+      narrower:
+        text: narrower
+        meaning: skos:narrower
+      transitive:
+        text: transitive
+        meaning: skos:narrowerTransitive
+      generic:
+        text: generic
+        meaning: skos:narrowerGeneric
+      instantial:
+        text: instantial
+        meaning: skos:narrowerInstantial
+      partitive:
+        text: partitive
+        meaning: skos:narrowerPartitive
   TitleType:
     name: TitleType
     definition_uri: https://tradicional.arq.br/schema/TitleType
@@ -8019,6 +8040,17 @@ slots:
     domain_of:
     - BroaderConceptReference
     range: boolean
+  narrowerConceptReference__narrower_match:
+    name: narrowerConceptReference__narrower_match
+    description: "Tipo da rela\xE7\xE3o."
+    from_schema: https://tradicional.arq.br/schema/concept
+    slot_uri: arqtrad:narrower_match
+    alias: narrower_match
+    owner: NarrowerConceptReference
+    domain_of:
+    - NarrowerConceptReference
+    range: SkosNarrowerRelation
+    required: true
   mappingConceptReference__mapping_match:
     name: mappingConceptReference__mapping_match
     description: "Tipo da rela\xE7\xE3o."
@@ -10031,6 +10063,27 @@ classes:
         ifabsent: 'False'
         range: boolean
     class_uri: arqtrad:BroaderConceptReference
+  NarrowerConceptReference:
+    name: NarrowerConceptReference
+    definition_uri: https://tradicional.arq.br/schema/NarrowerConceptReference
+    description: "Rela\xE7\xF5es hier\xE1rquicas."
+    from_schema: https://tradicional.arq.br/schema/concept
+    is_a: ConceptReference
+    slots:
+    - refid_type
+    - title
+    - description
+    - bibliographic_citation
+    - source
+    - ConceptReference_refid
+    - narrowerConceptReference__narrower_match
+    attributes:
+      narrower_match:
+        name: narrower_match
+        description: "Tipo da rela\xE7\xE3o."
+        range: SkosNarrowerRelation
+        required: true
+    class_uri: arqtrad:NarrowerConceptReference
   MappingConceptReference:
     name: MappingConceptReference
     definition_uri: https://tradicional.arq.br/schema/MappingConceptReference
@@ -11826,6 +11879,6 @@ classes:
     class_uri: geonames:Feature
 metamodel_version: 1.12.0
 source_file: arqtrad_schema.yaml
-source_file_date: '2026-11-25T19:47:59'
-source_file_size: 102410
+source_file_date: '2026-11-26T01:09:21'
+source_file_size: 102785
 
